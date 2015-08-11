@@ -1,0 +1,167 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta property="wb:webmaster" content="f1fb53e0ae61a2d9" />
+    <title>联系我们</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=774df7769848d98cf1df3b2a3db5c69b"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        <style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+td {
+	font-size: 11pt;
+	line-height: 21pt;
+	color: #666666;
+}
+.td1 {
+	font-size: 9pt;
+	color: #666666;
+}
+a:link { color: #666666; text-decoration: none;}
+a:visited { color: #666666; text-decoration: none;}
+a:active { color: #666666; text-decoration: none;}
+a:hover { color: #FF0000; text-decoration: underline;}
+-->
+#bbs_search{
+    width:750px;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+{% include "header.html" %}
+<div id="mid" style="display: inline" align="center">
+<div class="user_con">
+    <div class="bbs_search" style="width: 750px;display:inline-block;" >
+        <div class="bbs_logo fl"><a href="{% url 'searchindex' %}"><img src="/static/images/logo1.png"/></a></div>
+            <div class="bbs_hunt textbox">
+                <form action="{% url 'searchindex' %}" method="post">
+                    {% if form.searchWord %}
+                        {{ form.searchWord }}
+                    {% else %}
+                        <input class="fl" id="id_searchWord" name="searchWord" type="text" placeholder="请输入投资金额"/>
+                    {% endif %}
+                    <input type="submit" class="bbs_search_btn" value="">
+                </form>
+            </div>
+        <div class="lastinput" style="display: none">
+            {{ form.searchWord }}
+        </div>
+    </div>
+</div>
+<table width="895" height="10" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+
+<table width="895" height="5" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<table width="895" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="247"><img src="/static/images/contact_about/nr_01bai.png" width="247" height="34" /></td>
+    <td width="636" background="/static/images/contact_about/nr_02.gif">联系方式</td>
+    <td width="12"><img src="/static/images/contact_about/nr_03.gif" width="12" height="34" /></td>
+  </tr>
+</table>
+<table width="895" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/static/images/contact_about/nr_04.gif" width="895" height="10" /></td>
+  </tr>
+</table>
+<table width="895" height="300" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="206" align="center" valign="top" background="/static/images/contact_about/nr_05.gif">
+    <table width="100" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="31" height="35"></td>
+        <td width="157" align="left"><a href="{% url 'about_us' %}">公司简介</a></td>
+      </tr>
+      <tr>
+        <td colspan="2"><img src="/static/images/contact_about/nr_08.gif" width="188" height="3" /></td>
+      </tr>
+
+      <tr>
+        <td height="35"></td>
+        <td height="35" align="left"><a href="{% url 'contact_us' %}">联系方式</a></td>
+      </tr>
+
+       <tr>
+        <td colspan="2"><img src="/static/images/contact_about/nr_08.gif" width="188" height="3" /></td>
+      </tr>
+      <tr>
+        <td height="35"></td>
+        <td height="35" align="left"><a href="{% url 'disclaimer' %}">免责条款</a></td>
+      </tr>
+    </table>
+    </td>
+    <td width="659">
+    <table width="95%" border="0" align="right" cellpadding="0" cellspacing="0">
+           <tr>
+                <td height="145" align="left" valign="top"><strong>上海辞达金融信息服务有限公司（天天搜贷）</strong><br />
+                  公司地址：上海市沪闵路7866号莲花国际广场2号楼908室 <br />
+                  服务热线：021-8888888 <br />
+                  邮政编码：200000 <br/>
+                  电子邮件：service@ddbid.com
+                </td>
+          </tr>
+          <tr>
+                <td align="left" valign="center">
+                    <strong>公交/地铁路线</strong><br />
+                 地铁1号线(莲花路站下)<br />
+                 公交120路 122路 150路 152路 162路 166路 166路区间 171路等等均经过莲花路
+                 </td>
+          </tr>
+          <tr>
+                <td height="58" align="left" valign="top"><strong>联系方式</strong><br />
+                  电话 : 13888888888<br />
+                </td>
+          </tr>
+          <tr>
+                <td height="424" align="left" valign="top"><strong>地图位置</strong><br/>
+                    <div id="allmap" style="width: 500px;height: 350px"></div>
+                </td>
+          </tr>
+    </table>
+    </td>
+    <td width="30" background="/static/images/contact_about/nr_06.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="895" height="6" border="0" align="center" cellpadding="0" cellspacing="0" background="/static/images/contact_about/nr_07.gif">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<div style="height: 50px;"></div>
+</div>
+{% include "footer.html" %}
+</div>
+</body>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(121.409331,31.138873);
+	map.centerAndZoom(point, 15);
+	map.enableScrollWheelZoom(true);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);               // 将标注添加到地图中
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+</script>
+</html>

@@ -1,0 +1,18 @@
+{% load i18n%}
+<div class="bbs_hot bbs_box mt10">
+    <div class="bbs_hd">
+        <h3>精华主题</h3>
+    </div>
+    <!--ul class="list-group"-->
+    <div class="bbs_bd">
+        {% for t in essence_topic %}
+        <dl class="bbs_hot_news">
+        <!--li class="list-group-item"-->
+            <dt><a href="#"><img src="{{ t.user.userinformation.photo_url }}" /></a></dt>
+            <dd><a href="{% url 'topic_view' t.id %}"> {{ t.title }}</a></dd>
+        <!--/li-->
+        </dl>
+        {% endfor %}
+    </div>
+    <!--/ul-->
+</div>

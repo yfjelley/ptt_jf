@@ -1,0 +1,40 @@
+.warp,.login_header,.registerform ul,.login_mid{ overflow:hidden;}
+.login_header,.login_mid{ width:980px; margin:0 auto;}
+.login_header{ padding:10px 0; height:70px; line-height:70px; background:url(../images/logo_bg.png) no-repeat 250px center;}
+.login_header a,.login_header a img{ width:224px; height:70px; display:block;}
+.login_header a{ float:left; margin-right:10px;}
+.logib_line{ background:url(../images/line.png) no-repeat center center; height:20px;}
+.login_mid{ padding:10px 0; min-height:525px;}
+.login_left,.login_right{ padding:0 10px;}
+.login_right{ padding-left:20px;}
+.login_left{ width:720px;}
+.login_right{ width:200px; height:100px; border-left:1px dashed #ddd; }
+.login_right p{font-size:14px; height:24px; line-height:24px;}
+.login_btn,.btn_reg{ margin-top:15px;  display:inline-block;width:94px; height:33px; border:0; cursor:pointer; }
+.btn_reg{ background:url(../images/reg_btn.png) no-repeat 0 0;}
+.login_btn{ background:url(../images/login_btn.png) no-repeat 0 0;}
+.registerform ul li{ padding-bottom:20px;}
+.registerform .label {display: inline-block;width: 90px; margin: 0 15px 0 4px; font-size:14px; text-align:right; font-weight:bold;}
+.registerform .inputxt{ width:238px; height:15px; line-height:15px; padding:5px; border:1px solid #ccc;}
+.login_zh{ color:#0e5fbc;}
+.login_zh:hover{ text-decoration:underline;}
+.login_dl{ display:inline-block; width:60px; height:30px; color:#fff; background:#c50512;  font-size:14px; font-weight:bold; border:0; cursor:pointer;}
+.login_dl:hover{ color:#fff; background:#d23c46;}
+.Validform_error{background-color: #ffe7e7;}
+.Validform_checktip{color: #999;font-size: 12px; height: 20px;line-height: 20px;overflow: hidden; margin-left:10px;}
+.Validform_wrong{color: red;padding-left: 20px;white-space: nowrap; background:url(../images/error.png) no-repeat 0 center;}
+.Validform_right{color: #71b83d;padding-left: 20px; background:url(../images/right.png) no-repeat 0 center;}
+
+/*注册*/
+.reg_header{ background:url(../images/reg_bg.png) no-repeat 250px center;}
+.reg_btn{ width:178px;}
+.registerform .need{ color: #b20202;width: 10px;}
+#Validform_msg{ display:none;}
+#footer{ position:fixed;bottom: 0;left: 0;}
+
+/*取回密码*/
+.retrieve_header{ background:url(../images/retrieve_pwd_bg.png) no-repeat 250px center;}
+.login_retrieve{ padding:5px 10px; border:1px solid #ddd; border-radius:5px;}
+.login_retrieve:hover{ background:#f2f2f2; color:#4c4c4c;}
+
+

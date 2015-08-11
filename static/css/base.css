@@ -1,0 +1,118 @@
+html,body{height: 100%; margin: 0; padding: 0;}
+*{ margin:0; padding:0; color:#4c4c4c;}
+body { margin:0 auto; font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif"; }
+ul,dl,dt,dd,h1,h2,h3,h4,h5,h6,form { padding:0; margin:0;}
+ul { list-style:none;}
+img { border:0px;}
+a { color:#4c4c4c; text-decoration:none;}
+a:hover { color:#ff0000;}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {margin:0;padding:0;}
+body, button, input, select, textarea {font:12px tahoma, arial, Verdana, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-size:12px;font-style:normal;}
+ol, ul, li, dl, dd, dt {list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+.fl {float:left;}
+.fr {float:right;}
+.cb {clear:both;}
+.mt10{ margin-top:10px;}
+.clearfix:after{ clear:both; content:" "; display:block; font-size:0; height:0; visibility:hidden;}
+b,i{ font-style:normal; font-weight:normal;}
+/*头部*/
+#header,#footer{ width:100%;}
+#header,.top{ height:30px; line-height:30px;}
+#header{   background:#2c2c2c;}
+.top,.middle{ width:1024px; margin:0 auto; }
+.top{ position:relative; background:#2c2c2c;}
+.nav{ float:left;}
+.nav li{ float:left;}
+.nav li a{ margin:0 10px; color:#ccc; font-size:14px;}
+.nav li a:hover{color:#ff0000;}
+.top_right{ float:right; color:#ccc; margin-right:50px;}
+#top_r li{ float:left; position:relative; margin:0 5px;}
+#top_r li a{color:#ccc;font-size:14px;}
+#top_r li a:hover{ color:#ff0000;}
+#top_r ul{ display:none; width:200px;  padding:10px; border: 1px solid #EEE;box-shadow: 0px 0px 2px #DDD;
+background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right:-100px; top:30px;}
+#top_r ul li{ width:190px; height:30px; line-height:30px;}
+#top_r ul li.user, #top_r ul li.pwd,#top_r ul li.yzm,#reg-li li{ padding-bottom:25px;}
+.login li input{ padding:5px; width:180px;border: 1px solid #ccc;}
+.login li input:hover{border:1px solid #c50512;}
+#top_r ul li.yzm input{ width:110px;}
+#top_r ul li.yzm a{ margin-top:5px; display:block; float:right;}
+.btn_login{ display:inline-block; width:190px; height:24px; text-align:center; line-height:24px; color:#fff!important; background:#c50512; font-size:12px!important; }
+.btn_login:hover{ background:#ff0000;}
+.forget,.reg{ color:#FF8400!important;font-size:12px!important;}
+.forget:hover,.reg:hover{ color:#ff0000!important;}
+#top_r ul.reg li{ margin-bottom:5px;}
+.qq,.wx,.web{ display:inline-block; float:left; width:24px; height:24px; margin:0 10px;}
+.qq{ background:url(../images/qq.png) no-repeat 0 0;}
+.wx{ background:url(../images/weixin.png) no-repeat 0 0;}
+.web{ background:url(../images/weblog.png) no-repeat 0 0;}
+#top_r ul.login  li.quick{ font-weight:bold; border-top:1px solid  #ddd; margin:5px 0;}
+.top_name li{ height:30px; line-height:30px; color:#ccc;}
+.top_name li img{ margin-top:3px; float:left; margin-right:10px; width:24px; height:24px;}
+.mun{ background:#ff0000; width:10px; display:inline-block; height:10px; text-align:center; line-height:10px; position:absolute; color:#fff; top:2px; left:18px; font-size:10px; border-radius:5px;} 
+.top_name ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; right:-30px!important;}
+.user_con{ width:1024px; margin:0 auto;}
+
+
+#container {min-height: 100%;height: auto; position: relative;}
+/*底部*/
+#footer{ position: absolute; bottom: 0; width: 100%; height: 40px;/*脚部的高度*/ background: #6cf; clear:both;}
+#footer{ height:40px; line-height:40px; background:#f1f1f1; border-top:1px solid #e4e4e4; width:100%;}
+.footer{ padding-left:20px; width:984px; color:#333; text-align:center;  margin:0 auto; font-size:14px; position:relative;}
+.footer a{ margin:0 10px; color:#333; font-size:14px; }
+.footer a.ico,.footer a.ico1{ margin-top:5px; display:inline-block; width:32px; height:32px;}
+.footer a:hover{ color:#ff0000;}
+.footer a.ico{ background:url(../images/web.png) no-repeat 0 0;}
+.footer a.ico:hover{ background:url(../images/web_1.png) no-repeat 0 0;}
+.footer a.ico1{ background:url(../images/wx.png) no-repeat 0 0;}
+.footer a.ico1:hover{ background:url(../images/wx_1.png) no-repeat 0 0;}
+#code{ position:absolute; top:-168px; right:-50px;}
+#mid{ width:100%; overflow:hidden; padding-bottom: 70px;} /*margin-bottom:70px; */
+.bbs_search{ padding:10px 0; overflow:hidden;}
+.bbs_logo{ width:226px; height:71px; float:left;}
+.bbs_hunt{ float:left; padding:15px 0 0 20px;}
+.bbs_hunt input{ width:440px; height:20px; line-height:20px; font-size:16px; color:#666; padding:10px 5px; float:left; border:1px solid #ddd;}
+.bbs_hunt input:hover{border:1px solid #c50512;}
+
+/*placeholder样式*/
+/*这是低端浏览器下placeholder的字体颜色*/
+placeholder{
+    color: #bfbfbf;
+}
+/*这是firefox下placeholder的字体颜色*/
+::-moz-placeholder {
+    color: #bfbfbf;
+}
+/*这是webkit下placeholder的字体颜色*/
+::-webkit-input-placeholder {
+    color: #bfbfbf;
+}
+/*
+ *    满足这两个条件，该js能工作的更好，更智能
+ *    1.文本框的父定位元素需加入*zoom: 1
+ *    2.文本框或其父元素的position，不能同时为static
+ */
+.textbox {
+    position: relative;
+    *zoom: 1;
+}
+/*分页*/
+.pages{ padding:20px 0 10px 0; text-align:right;}
+.pages a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
+.pages a.before{border-radius:15px 10px 10px 15px;}
+.pages a.after{border-radius:10px 15px 15px 10px;}
+.pages a.active,.pages a:hover{border:1px solid #c50512;color:#c50512;}
+.pages a.currentpage{border:1px solid #c50512;color:#fff; background:#c50512;}
+
+/*分页结束*/
+.bbs_hunt input.bbs_search_btn{ width:47px; height:42px; background:url(../images/search.png) no-repeat 0 0; border:none; cursor:pointer;}
+
+/*验证*/
+.Validform_error{background-color: #ffe7e7;border: 1px solid #ccc;}
+.Validform_checktip{color: #999;font-size: 12px; height: 20px;line-height: 20px;overflow: hidden; }
+.Validform_wrong{color: red;padding-left: 20px;white-space: nowrap; background:url(../images/error.png) no-repeat 0 center;}
+.Validform_right{color: #71b83d;padding-left: 20px; background:url(../images/right.png) no-repeat 0 center;}
+#Validform_msg{ display:none;}

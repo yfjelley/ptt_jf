@@ -1,0 +1,92 @@
+.mt3{ margin-top:3px;}
+.search_content,.search_list,.search_term,.search_term div,.search_outside{ overflow:hidden;}
+.search_content{ width:800px; margin:0 auto;}
+.search_result_box{ border:2px solid #ddd; padding:20px; border-radius:5px;}
+.search_list{ padding:5px 0; line-height:30px;}
+.search_list h3{ width:100px; text-align:left; font-size:14px;}
+.search_term{ font-size:14px; width:650px;}
+.search_term .search_txt{ width:80px; padding:0 5px; height:20px; line-height:20px; color:#999; margin-right:5px;}
+.search_term  span{ display:block; float:left; margin-right:10px; height:30px; line-height:30px;}
+.search_term  .search_checkbox{ margin-right:5px;}
+.search_more{ padding:0 15px; background:url(../images/arrow.png) no-repeat right center;}
+.search_more:hover{ color:#4c4c4c;}
+.search_term a.active{background:url(../images/arrow1.png) no-repeat right center;}
+.search_still{ text-align:center; padding:10px 0;}
+.search_still a{ padding:3px 10px; border:1px solid #999; border-radius:5px; display:inline-block;}
+.confirmDetail a{ background:url(../images/back_top.png) no-repeat 0 0; border:none; border-radius:none; height:20px;}
+/*登录弹出层*/
+#divEdit {position: absolute;z-index: 10003;display: none;background: none repeat scroll 0 0 #fff; border: 1px solid #eee;box-shadow: 0 0 2px #ddd;width:262px;}
+#divGray {position: absolute;z-index: 10001; left: 0px;    top: 0px;width: 100%;background-color: #EEEFFF;opacity: 0.6;                /* Firefox, Safari(WebKit), Opera)
+    filter: "alpha(opacity=60)"; /* IE 8 */filter: alpha(opacity=60);   /* IE 4-7 */ display: none;}
+#divShadow { position: absolute;z-index: 10002;background: #000EEE; opacity: 0.1;                /* Firefox, Safari(WebKit), Opera)
+    filter: "alpha(opacity=10)"; /* IE 8 */ filter: alpha(opacity=10);   /* IE 4-7 */ display: none;}
+.search_close{ float:right; display:block; padding:5px;}
+#divEdit ul{ margin-top:30px;padding:0 30px 30px 30px;z-index: 999;}
+#divEdit ul li.user, #divEdit ul li.pwd,#divEdit ul li.yzm {padding-bottom:25px;}
+#divEdit ul li {height: 30px;line-height: 30px;width: 190px;}
+#divEdit ul li.yzm input {width: 110px;}
+#divEdit ul li.yzm a {display: block;float: right;margin-top: 5px;}
+#divEdit ul.login li.quick {border-top: 1px solid #ddd;font-weight: bold;margin: 5px 0;}
+/* --end---*/
+
+.search_hd h2{ font-size:16px;}
+.search_bd{ padding:10px 0; border-bottom:1px dashed #999;}
+.search_Tab{ border:2px solid #ddd; margin-bottom:10px;}
+.search_Tab tr td{ padding:10px 5px; text-align:center; color:#868686;}
+.search_Tab tr td.search_tl{ text-align:left;}
+.search_Tab tr td.search_title{ font-size:14px; color:#333; font-weight:bold;}
+.search_Tab tr td img{ width:110px; height:30px;}
+.seach_cheek{ display:block; background:#c50512; color:#fff; text-align:center; line-height:30px; height:30px; font-size:14px; width:80px;}
+.seach_cheek:hover{ background:#d23c46; color:#fff;}
+.c_red{ font-size:14px; color:#ff0000; font-weight:bold;}
+.search_bd_no{ border:none;}
+#search_show{ display:none;}
+.search_reorder{ padding:10px 0; border-top:1px dashed #999; text-align:right;}
+.search_reorder a{ display:inline-block; padding:0 8px; border:1px solid #999; margin-left:10px; height:24px; line-height:24px;}
+.search_reorder a:hover{ color:#c50512; border:1px solid #c50512;}
+.search_reorder a i{ padding-left:5px;}
+.search_reorder a.order_jx,.search_reorder a.order_sx{ background:#c50512; color:#fff; border:1px solid #c50512;}
+.search_reorder a.order_jx i{ background:url(../images/jiantou.png) no-repeat right center; padding-right:10px;}
+.search_reorder a.order_sx i{background:url(../images/jiantou1.png) no-repeat right center;padding-right:10px;}
+
+.bbs_advert,.bbs_advert a,.bbs_advert a img{ display:inline-block; width:800px; height:100px;}
+
+
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.pagination > li {
+    display: inline;
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857;
+    text-decoration: none;
+    color: #428BCA;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    margin-left: -1px;
+}
+
+a.btn_blue_ {
+    background: none repeat scroll 0% 0% #C50512;
+    border-radius: 15px;
+    /*display: block;*/
+    padding: 0px 8px;
+    border-radius: 5px;
+    /*float: left;*/
+    margin-right: 15px;
+    color: #FFFFF0;
+}
+
+.choices a {
+    margin-right: 15px;
+}

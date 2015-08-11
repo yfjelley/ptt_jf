@@ -1,0 +1,14 @@
+html, body {
+    font: 14px/1.8 "Microsoft YaHei",Arial;
+    color: #636363;
+}
+a.btn_blue_ {
+    background: none repeat scroll 0% 0% #369FD6;
+    /*display: block;
+
+    padding: 0px 8px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 20px;
+    color: #FFFFF0;*/
+}

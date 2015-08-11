@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="/static/css/modmobile-download-banner0.css" type="text/css">
+<title>天天搜贷标的详情</title>
+</head>
+
+<body>
+<header>
+     <div class="" style="display: inline-block; width: 100%; text-align: left;"><img class="fr" style="height: 30px; text-align: center; padding-top: 10px;" src="{{ bid.platform.logo }}"/></div>
+    <div class="placeholder"></div>
+    <div class="title"></div>
+</header>
+
+<section>
+    <div class="position-city J_citylist">
+        <span class="text">{{ bid.name }}</span>
+
+        <a></a>
+    </div>
+
+    <div class="hot-trade modebox">
+        <div class="hd">￥{{ bid.amount|floatformat:"0" }}</div>
+        <div class="home-place-list">
+            <ul class="J_citylist">
+                <li><a href="" data-id="1">每万元收益</a>￥{{ bid.ten_thousand_revenue|floatformat:"-2" }}</li>
+                <li><a href="" data-id="2">年利率</a>{{ bid.income_rate|floatformat:"-2" }}<span>%</span></li>
+                <li><a href="" data-id="3">期限</a>{{ bid.term_name|floatformat:"-2" }}<span>{{ bid.term_unit }}</span></li>
+                <li><a href="" data-id="4">最低可投金额</a>{% if bid.min_amount %} ￥{{ bid.min_amount }} {% else %} 无 {% endif %}</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<div class="scroll-top" id="srcollTop"></div>
+<footer class="footer">
+    <p class="copyright">沪ICP备14053786</p>
+</footer>
+</body>
+</html>

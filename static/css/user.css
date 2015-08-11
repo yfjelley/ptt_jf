@@ -1,0 +1,100 @@
+.user,.user_conter,.user_box,.user_list,.user_detail,.user_detail dd,.user_detail dd p{ overflow:hidden;}
+
+
+
+.user_left{ width:150px;}
+.user_box{ border:2px solid #ddd; border-radius:5px;}
+.user_list{ padding:20px 0;}
+.user_list li{ height:30px; line-height:30px;}
+.user_list li a{ font-size:14px; font-weight:bold; padding-left:20px; height:30px; line-height:30px; display:block;}
+.user_list li a.active,.user_list li a:hover{ background:#ffb2b2; color:#c95124;}
+.user_right{ width:846px;}
+.user_message{ padding:20px 40px;}
+.user_title{ font-size:18px; font-weight:bold; margin-bottom:20px;}
+.user_detail dt{ float:left;}
+.user_detail dt{ width:150px; }
+.user_detail dt p,.user_detail dt p img{ width:80px; height:80px;}
+.user_detail dt p{ margin-left:30px;}
+.user_detail dt input{ margin:10px 0 0 5px; }
+.user_detail dd{ width:550px; float:right; }
+.user_detail dd p{ padding-bottom:20px; height:30px; line-height:30px;}
+.user_detail dd p label{ font-size:14px; font-weight:bold; display:inline-block; width:100px; text-align:left; float:left;}
+.user_text{ width:200px; border:1px solid #ddd; padding:5px; height:18px; line-height:18px; color:#666; float:left;}
+.user_check{ margin-right:25px; font-size:14px;}
+.user_radio{ margin-right:5px;}
+.user_select{ width:210px; height:30px; border:1px solid #ddd; line-height:30px; color:#666; font-size:14px; }
+.user_btn{ color:#fff; background:#C50512; padding:5px 10px; margin-left:100px; border: medium none}
+.user_btn:hover{ background:#ff0000; color:#fff;}
+.reminder_btn{ color:#fff; background:#C50512; padding:5px 10px; margin-left:10px; border: medium none}
+.reminder_btn:hover{ background:#ff0000; color:#fff;}
+
+/*reminder.html*/
+.user_set_lsist,.user_set_lsist dt,.user_set_lsist dd{ overflow:hidden;}
+.user_set{ padding:10px;}
+.user_set_lsist{ padding:10px; border-bottom:1px solid #ddd; position:relative;}
+.user_set_lsist dt,.user_set_lsist dd{ height:24px; line-height:24px;}
+.user_set_lsist dt{ font-size:18px; font-weight:bold; height:30px; line-height:30px;}
+.reminder_title{ font-size:18px; font-weight:bold; height:30px; line-height:30px;}
+.user_set_lsist dd{ padding-top:5px;}
+.user_set_lsist dd span{ font-size:14px; margin-right:10px; color:#868686;}
+.user_checkbox{ margin-right:5px;}
+.user_txt{ width:80px; padding:0 5px;}
+/*#footer{position:fixed;bottom:0; left:0;}*/
+
+/*开启关闭*/
+.button-group, .button-group-y{ display:inline-block; position:absolute; vertical-align:middle; top:10px; right:0;}
+.button{ background:none; border:1px solid #ddd;border-radius:4px; display:inline-block; font-size:14px; line-height:20px; margin:0; padding:6px 15px;transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s; cursor:pointer;}
+.button-group .button, .button-group .button-group{ float:left;font-weight:normal; position:relative;}
+.button-group .button, .button-group .button-group .button{ margin-left:-1px;}
+.button-group .button:first-child:not(:last-child):not(.dropdown-toggle){border-bottom-right-radius:0;border-top-right-radius:0;}
+input[type="checkbox"], input[type="radio"]{box-sizing:border-box; padding:0;}
+.button-group label input{opacity:0; position:absolute;z-index:-1;}
+[class*="icon-"]:before{ display:inline-block;font-family:"FontAwesome";font-style:normal;font-weight:normal; line-height:1;vertical-align:baseline;}
+.button.active{ background:#f5f5f5;}
+
+
+/*shortut.html*/
+.search_list,.search_head,.search_body{ overflow:hidden;}
+.user_shortcut{ padding:10px;}
+.search_list{ padding:5px 0; line-height:30px;}
+.search_list h3{ width:100px; text-align:left; font-size:14px;}
+.search_term{ font-size:14px; width:700px;}
+.search_term .search_txt{ width:80px; padding:0 5px; height:20px; line-height:20px; color:#999; margin-right:5px;}
+.search_term  span{ display:block; float:left; margin-right:10px; height:30px; line-height:30px;}
+.search_term  .search_checkbox{ margin-right:5px;}
+.search_more{ padding:0 15px; background:url(../images/arrow.png) no-repeat right center;}
+.search_more:hover{ color:#4c4c4c;}
+.search_term a.active{background:url(../images/arrow1.png) no-repeat right center;}
+.shortcut_quick,.shortcut_con{ overflow:hidden;}
+.shortcut_quick,.shortcut_con{ text-align:center; padding:10px 0; }
+.shortcut_quick a,.shortcut_con a{display:inline-block; padding:2px 10px; border:1px solid #ddd; border-radius:5px;}
+.shortcut_con{ border-top:1px solid #ddd;}
+.shortcut_nr{ float:left; position:relative;}
+.shorcut_close{ background:url(../images/close.png) no-repeat 0 0; position:absolute; right:0; top:0; height:16px; width:16px; cursor:pointer;}
+.shortcut_con a{ margin:0 5px;}
+
+
+/*collection.html*/
+.user_collection_list{ overflow:hidden;}
+.user_collection{ padding:10px;}
+.user_hd a{ display:inline-block; border:1px solid #ddd; color:#666; border-radius:5px; padding:3px 20px; margin-right:15px;}
+.user_hd a.active,.user_hd a:hover{ background:#f5f5f5;}
+#detail1,#detail2{ padding:10px 0;}
+.search_Tab,.user_collection_list{ border:2px solid #ddd; margin-bottom:10px;}
+.search_Tab tr td{ padding:10px 5px; text-align:center; color:#868686;}
+.search_Tab tr td.search_tl{ text-align:left;}
+.search_Tab tr td.search_title{ font-size:14px; color:#333; font-weight:bold;}
+.search_Tab tr td img,.user_collection_list dt,.user_collection_list dt a,.user_collection_list dt a img{ width:110px; height:30px;}
+.user_collection_list dt a { display:block;}
+.seach_cheek{ display:block; background:#008bdf; color:#fff; text-align:center; line-height:30px; height:30px; font-size:14px; width:80px;}
+.c_red{ font-size:14px; color:#ff0000; font-weight:bold;}
+.user_collection_list{ padding:10px;}
+.user_collection_list dt,.user_collection_list dd{ float:left;}
+.user_collection_list dd{ text-align:right; width:680px;}
+
+/*上传文件按钮样式*/
+.input-button{background: none repeat scroll 0 0 transparent; border: 1px solid #ddd;border-radius: 4px;display: inline-block;font-size: 14px;line-height: 20px;margin: 0;padding: 6px;transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s; }
+.input-file{display:inline-block;position:relative;overflow:hidden;text-align:center;width:auto;color:#333; margin:10px 0 0 28px;}
+.input-file input[type="file"]{position:absolute;top:0;right:0;font-size:14px;background-color:#fff;transform:translate(-300px, 0px) scale(4);height:40px;opacity:0;filter:alpha(opacity=0);}
+.input-button:hover{ background:#f2f2f2; color:#c50512;}
+.input-button input{cursor:pointer;}

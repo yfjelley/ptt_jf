@@ -1,0 +1,171 @@
+{% extends 'base-with-sidebar.html' %}
+{% load i18n %}
+{% block left %}
+{% load humanize %}
+{% load pagination_tags %}
+{% load settingsvalue %}
+{% load emoji_tags %}
+<div class="bbs_content  mt10">
+	<div class="bbs_con_box">
+        <div class="bbs_add"><a href="{% url 'bbsindex' %}">首页</a> ><a href="{% url 'node_view' topic.node.id %}">{{topic.node.title}}</a></div>
+        <div class="bbs_ideas mt10">
+           <div class="bbs_ideas_left fl">
+               <h2>{{topic.title}}</h2>
+               <p>By {{ topic.user.username }} at {{ topic.time_created|date:"Y-m-j  H:i:s"  }}
+					{% if request.user == topic.user%}
+					<span class="bbs_operate"><a class="label-success label" href="{% url 'add_appendix' topic.id %}">{% trans 'add appendix' %}</a></span>
+					{% endif %}
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser or topic.user == request.user %}
+                        <span class="bbs_operate"><a class="label-warning label" href="{% url 'edit_topic' topic.id %}">{% trans 'edit' %}</a></span>
+                          {% if request.user.is_superuser %}
+                            <span class="bbs_operate"><a class="label-danger label" href="{% url 'delete_topic' topic.id %}">{% trans 'delete' %}</a></span>
+                          {% endif %}
+                        {% else %}
+                                {% if collected == True %}
+                                   <span class="bbs_operate"><a class="label-warning label" href="{% url 'collect_topic' topic.id %}">关注该主题</a></span>
+                                {% else %}
+                                   <span class="bbs_operate"><a class="label-warning label" href="{% url 'collect_topic' topic.id %}">取消关注</a></span>
+                                {% endif %}
+                         {% endif %}
+                    {% endif %}
+			   </p>
+           </div>
+             {% ifequal user.id None %}
+              <div class="bbs_ideas_right fr"><a href="{% url 'login' %}"><img src="{{topic.user.userinformation.photo_url}}" /></a></div>
+             {% else %}
+              <div class="bbs_ideas_right fr"><a href="{% url 'user_info' topic.user.id %}"><img src="{{topic.user.userinformation.photo_url}}" /></a></div>
+             {% endifequal %}
+        </div>
+	</div>
+	<div class="bbs_article">
+		{{topic.content|safe|emoji_replace}}
+    </div>
+	{% if topic.appendix_set.all %}
+	<ul class="list-group">
+		{% for a in topic.appendix_set.all %}
+		<div class="list-group-item list-appendix-item">
+			<p class="appendix-meta">
+				{% blocktrans with number=forloop.counter %}appendix {{number}}{% endblocktrans %} {{a.time_created|naturaltime}}
+			</p>
+			<div class="bbs_article">{{a.content | safe|emoji_replace}}</div>
+		</div>
+		{% endfor %}
+	</ul>
+	{% endif %}
+    <div class="bbs_bottom">
+                	<div class="bbs_click fr">{{ topic.click }}次点击</div>
+                	<!-- JiaThis Button BEGIN -->
+                    <div class="jiathis_style">
+                        <a class="jiathis_button_qzone"></a>
+                        <a class="jiathis_button_tsina"></a>
+                        <a class="jiathis_button_tqq"></a>
+                        <a class="jiathis_button_weixin"></a>
+                        <a class="jiathis_button_renren"></a>
+                        <a class="jiathis_button_xiaoyou"></a>
+                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                        <a class="jiathis_counter_style"></a>
+                    </div>
+                    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                    <!-- JiaThis Button END -->
+    </div>
+</div><!--end content panel-->
+
+<div class="bbs_reply mt10 bbs_box">
+    <div class="bbs_reply_num">{{ topic.reply_count }}&nbsp;&nbsp;回复&nbsp;&nbsp;|&nbsp;&nbsp;直到&nbsp;&nbsp;{{ topic.last_replied|date:"Y-m-j  H:i:s" }}</div>
+	{% if topic.reply_count != 0 %}
+		{% autopaginate posts 18 %}
+		{% for r in posts %}
+            <dl class="bbs_reply_list">
+               {% ifequal user.id None  %}
+                <dt><a href="{% url 'login' %}"><img title="{{r.user.username}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+               {% else %}
+                <dt><a href="{% url 'user_info' r.user.id %}"><img title="{{r.user.username}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+               {% endifequal %}
+                <dd>
+                 {% ifequal user.id None  %}
+                   <p><span class="bbs_reply_number fr">{{ forloop.counter }}</span><a href="{% url 'login' %}" class="bbs_username">{{r.user.username}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                 {% else %}
+                   <p><span class="bbs_reply_number fr">{{ forloop.counter }}</span><a href="{% url 'user_info' r.user.id %}" class="bbs_username">{{r.user.username}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                 {% endifequal %}
+                      {% if request.user.is_authenticated %}
+					     <a href="#create_reply" data-user="{{r.user.username}}" class="label-info label pull-right reply-btn" onclick="{Javascript:send_messige()}" >回复</a>
+					  {% endif %}
+                   </p>
+                   <div class="bbs_reply_con">
+                      {{r.content|safe|emoji_replace}}
+                   </div>
+                </dd>
+            </dl>
+		{% endfor %}
+     <dl class="bbs_reply_list"></dl>
+	 <div class="panel-footer">
+		{% paginate %}
+	 </div>
+	{% else %}
+	<div class="panel-body">
+		<div class="alert alert-info">
+			{% trans 'no replies yet' %}
+		</div>
+	</div>
+	{% endif %}
+</div><!--end reply panel-->
+<div class="bbs_publish bbs_box mt10" id="create_reply">
+    {% if messages %}
+		<div class="messages">
+			{% for message in messages %}
+			<p class="text-{{ message.tags }}">
+				{{ message }}
+			</p>
+			{% endfor %}
+		</div>
+    {% endif %}
+    {% if request.user.is_authenticated %}
+    <div class="bbs_hd"><a href="#" class="bbs_backtop fr">回到顶部</a><h3>快速回复  <a id='addemoji'onclick="show_emoji()"><img src="/static/emoji/img/grinning.png" title="添加表情" style="width: 23px;height: 23px;" /></a></h3></div>
+    {% include 'emoji.html' %}
+    <form class="form" action="{% url 'create_reply' topic.id%}" method="post">
+	   {% csrf_token %}
+        <div class="bbs_bd">
+           <textarea id="content" name="content"></textarea>
+            <div style="padding-top: 5px">
+            <input type="submit" class="bbs_post_btn"   value="回复" />
+            </div>
+                <li class="yzm" >
+                   <div style="padding-top: 5px">
+                   <input name="log_code" id="log_code" type="text" placeholder="验证码"
+                          onfocus="$('#code_pic').click();yzmshow()" />
+
+                   <a href="javascript:void(0);" id="yzm" style="display: none"><img id="code_pic"
+                     onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                     src="{% url 'verifycode' %}"/></a>
+                   {% include 'remind.html' %}
+                   </div>
+                </li>
+        </div>
+    </form>
+    {% else %}
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block right %}
+{% include 'user-panel.html' %}
+{% include 'advert.html' %}
+{% include 'hot-topic.html' %}
+{% include 'essence_topic.html' %}
+{% include 'friendly-link.html' %}
+{% endblock %}
+{% block footer_ext %}
+<script src="/static/js/previewer.js"></script>
+<script src="/static/js/mention.js"></script>
+<script type="text/javascript">
+    function insert_img(){
+        var tc = document.getElementById("content");
+        var tclen = tc.value.length;
+        tc.focus();
+        str = "<img>在此输入图片链接</img>";
+        tc.value = tc.value.substr(0,tc.selectionStart)+str+tc.value.substring(tc.selectionStart,tclen);
+
+    }
+</script>
+{% endblock %}

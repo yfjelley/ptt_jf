@@ -1,0 +1,4 @@
+{% load i18n %}
+{% for node in conf.nodes %}
+   <dd><a href="{% url 'node_view' node.id %}">{{node.title}}</a></dd>
+{% endfor %}

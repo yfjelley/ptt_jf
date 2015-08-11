@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>注册账户</title>
+<link rel="stylesheet" href="/static/css/signup.css" />
+<link rel="stylesheet" href="/static/css/index.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/signup.js"></script>
+</head>
+
+<body>
+<div id="container">
+  		<ul class="ul7">
+    		<li>
+				<a href="#">首页</a>
+				<a href="#">关于我们</a>
+				<a href="#">投资指引</a>
+    			<a href="#">葡萄藤社区</a>
+			</li>
+  		
+		</ul>
+		
+		<ul class="ul8">
+    		<li>
+     			<label class="lab1">24小时客服电话</label>
+				<label class="lab2">400-8800-6799</label>
+				<label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+			</li>
+		</ul>		
+</div>
+
+<div id="sub">
+	<div id="div2">
+        <form class="registerform" action="{% url 'register' %}" method="post">
+       {% csrf_token %}
+		<ul class="ul1">
+		<ul id="ul2">	
+			<li>
+				<label>注册账户</label>
+			</li>
+			<li>
+				<hr />
+			</li>
+		</ul>
+	
+		<ul id="ul3">
+			<li>
+				<label>手机</label>
+			</li>		
+			<li>
+				{{ form.username }}
+
+			</li>
+		</ul>
+	
+		<ul id="ul4">
+			<li>
+				<label>密码</label>
+				<label class="lab1">确认密码</label>
+			</li>
+			<li style="float:left">
+				<div>{{ form.password }}</div>
+			</li>
+			<li>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.password2 }}</div>
+			</li>
+		</ul>
+
+		<ul id="ul5">
+			<li>
+				<label>短信验证</label>
+				<label class="lab2">图片验证码</label>
+			</li>
+	
+			<li>{{ form.smscode }}
+				<input type="button" id="rulesubmit" style=" background-color:#4a3c70;position:absolute; z-index:1;width:88px;margin-left:10px;height:38px;margin-top:3px; " value="发送验证码" />		
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.vcode }}
+				<img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                             src="{% url 'verifycode' %}"/>
+			</li>
+		</ul>
+	
+		<ul id="ul6">
+			<li>
+				<hr />
+			</li>		
+			<li>
+				<div style=" margin-left:120px;">注册即视为同意葡萄藤金融<a href="#"><<服务条款>></a></div>
+			</li>
+			<li>
+				<hr />
+			</li>
+		</ul>
+		<ul id="Cul1">
+			<li>
+				<input type="submit" value="确认注册" style=" margin-top:20px; margin-left:-40px;width:512px; height:30px;" />
+			</li>
+			<li>
+				<div style="margin-top:10px; margin-left:320px;font-size:12px;">已有葡萄藤金服账号,<a href="{% url 'login' %}">登录</a></div>
+			</li>
+		</ul>
+		</ul>
+            </form>
+	</div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.password2.errors %}
+            {% for error in form.password2.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.vcode.errors %}
+            {% for error in form.vcode.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.smscode.errors %}
+            {% for error in form.smscode.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+    });
+
+</script>
+</body>
+</html>

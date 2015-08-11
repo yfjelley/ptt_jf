@@ -1,0 +1,31 @@
+#conternt{ position:relative; min-height:540px;_height:540px;}
+.middle_search{ padding-top:20px;}
+.middle{ min-height:540px;_height:540px; position:absolute; left:50%; margin-left:-512px; top:50%; margin-top:-200px; }
+.search{ height:60px; line-height:60px;padding-left:244px; margin-top:30px; padding-bottom:40px;}
+.search input,.btn_search{ float:left;}
+.search input:hover{ border:1px solid #c50512;}
+.btn_search{ background:url(../image/search.png) no-repeat 0 0; display:inline-block; width:47px; height:42px;}
+
+
+.hot{ text-align:center; overflow:hidden; height:30px; line-height:30px; font-size:14px; margin-top:80px;}
+.hot h3{ display:inline; font-size:16px;}
+.hot a{ color:#666; text-decoration:underline; margin:0 5px;}
+.hot a:hover{ color:#ff0000;}
+#footer{ position:fixed;bottom:0; left:0;}
+
+
+/*index_login.html*/
+.mid_search .search{ padding-bottom:0!important;}
+.group{ width:530px; margin:10px auto; }
+.g_hd{ height:30px; line-height:30px;}
+.g_hd h3{ color:#666; background:url(../image/ico.png) no-repeat 0 center; padding-left:30px; font-size:14px;}
+.g_bd,.g_list{ overflow:hidden;}
+.g_list{ padding:10px 0;}
+.g_list li { float:left; margin:0 15px;}
+.g_list li a{ font-size:12px; text-decoration:underline;}
+
+
+
+
+
+

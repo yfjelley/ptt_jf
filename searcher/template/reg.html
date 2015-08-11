@@ -1,0 +1,206 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>注册</title>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/login.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div id="header">
+    <div class="top">
+        <ul class="nav">
+            <li><a href="{% url 'searchindex' %}">首页</a></li>
+            <li><a href="{% url 'do_reminder' %}">提醒</a></li>
+            <li><a href="{% url 'myfavorite' 4 %}">收藏</a></li>
+            <li><a href="{% url 'bbsindex' %}">社区</a></li>
+        </ul>
+    </div>
+</div>
+<div id="warp">
+    <div class="login_header reg_header">
+        <a href="index.html"><img src="/static/images/logo1.png"/></a>
+    </div>
+    <div class="logib_line"></div>
+    <div class="login_mid">
+        <div class="login_left fl">
+            <form class="registerform" action="{% url 'register' %}" method="post" name="form1">
+                <ul>
+                    <li>
+                        <label class="label"> 手机号：<span class="need">*</span></label>
+                        {{ form.username }}
+{#                        <input type="button" value="验证用户名是否存在？" name="un_valid" onclick="check_valid()">#}
+                    </li>
+                    <li>
+                        <label class="label"> 短信验证码：<span class="need">*</span></label>
+                        {{ form.smscode }}
+					    <button type="button" id="send_smscode">发送手机验证码</button>
+					</li>
+
+                    <li>
+                        <label class="label"> 密码：<span class="need">*</span></label>
+                        {{ form.password }}
+                    </li>
+                    <li>
+                        <label class="label">确认密码：<span class="need">*</span></label>
+                        {{ form.password2 }}
+                    </li>
+                    {#                    <li>#}
+                    {#                        <label class="label"> 昵称：<span class="need">*</span></label>#}
+                    {#                        {{ form.nickname }}#}
+                    {#                        {{ form.nickname.errors }}#}
+                    {#                    </li>#}
+                    <li>
+                        <label class="label">验证码：<span class="need">*</span></label>
+                        {{ form.vcode }}
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        <img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                             src="{% url 'verifycode' %}"/>
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        <input type="submit" class="login_dl reg_btn" value="同意以下协议并注册">
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        <a href="#" class="login_zh">《本站协议规章内容》</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="login_right fr">
+
+            <a href="{% url 'login' %}" class="login_btn"></a>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="footer">
+        <a href="#" class="ico1 fr" onmouseover="show()" onmouseout="hide()"></a><a href="#" class="ico fr"></a><a
+            href="#" class="fl">关于我们</a><a href="#" class="fl">联系我们</a>&nbsp;&nbsp;©2014 Cida 上海辞达金融信息服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;沪ICP证0000001号
+        <p id="code" style="display:none;"><img src="/static/images/code.png"/></p>
+    </div>
+
+</div>
+<script type="text/javascript">
+$(function () {
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.smscode.errors %}
+            {% for error in form.smscode.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+       
+	   	{% if form.password2.errors %}
+            {% for error in form.password2.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+
+        {% if form.vcode.errors %}
+            {% for error in form.vcode.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+        //$(".registerform").Validform();  //就这一行代码！;
+        var demo = $(".registerform").Validform({
+            tiptype: 3,
+            label: ".label",
+            showAllError: true,
+            datatype: {
+                "zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+            },
+            ajaxPost: false,
+            callback:function(data){
+                str = "success";
+        }
+        });
+
+        //通过$.Tipmsg扩展默认提示信息;
+        //$.Tipmsg.w["zh1-6"]="请输入1到6个字符！";
+        demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+        demo.addRule([
+            {
+                ele: "#id_username",
+                datatype: "*1-200"
+            },
+            {
+                ele: "#id_smscode",
+                datatype: "n4"
+            },
+            {
+                ele: "#id_password",
+                datatype: "*6-20"
+            },
+            {
+                ele: "#id_password2",
+                datatype: "*6-20",
+                recheck: "password"
+            },
+            {
+                ele: "#id_vcode",
+                datatype: "n4"
+            }
+        ]);
+    });
+    //ajax验证username是否存在
+    function check_valid() {
+        var username = $("input[name=username]").val();
+        if(username.length > 0){
+            var valid_un = 'shuangwaiwai';
+            $.post("{% url 'register' %}",
+                    {
+                        name: username,
+                        valid_un: valid_un
+                    },
+                    function (data) {
+                        if (data == 5) {
+                            alert('用户名已存在');
+                            {#                $("input[name=return_data]").value='用户名已存在';#}
+                        } else if (data == 1) {
+                            alert('恭喜用户名可用');
+                            {#                $("input[name=return_data]").value='恭喜用户名可用';#}
+                        } else
+                            alert("yqdDB!")
+                    }
+            );
+        }
+    }
+
+$(function(){
+$("#send_smscode").click(function(){
+	var username = $("input[name=username]").val();
+	$.post("/send_smscode/", {"phoneNum":username}, function(){});
+})
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% load i18n %}
+{% load humanize %}
+{% load pagination_tags %}
+   <div class="bbs_content bbs_post mt10">
+   <div class="bbs_navigation_bar">
+    <div style="font-size: 16px;font-weight:bold;padding-left: 10px">收藏的主题</div>
+   </div>
+   </div>
+		{% autopaginate topics 18 %}
+      <div class="bbs_con mt10">
+      {% if topics %}
+		{% for t in topics %}
+		<div id="topic-{{t.id}}" >
+          <dl class="bbs_note">
+           <dt><a href="{% url 'user_info' t.user.id %}"><img title="{{t.user.username}}"src="{{t.user.userinformation.photo_url}}" width="42" height="42"></a></dt>
+           <dd>
+               <h3><a href="{% url 'topic_view' t.id %}">{{t.title}}</a></h3>
+               <p>
+                   <a href="{% url 'node_view' t.node.id%}">{{t.node.title}}</a> •
+                   <a href="{% url 'user_info' t.user.id %}">{{t.user.profile.username}}</a> •
+                   {{t.click}}浏览 • {{t.time_created | naturaltime}}
+               </p>
+           </dd>
+            <div class="col-xs-9 col-md-10 col-sm-9">
+				<h3 class="list-post-title"></h3>
+				<p class="list-meta">
+					<span class="list-time"></span>
+					<span class="list-username"></span>
+					<span class="list-reply-count-xs visible-xs">{{reply_count}}</span>
+				</p>
+			</div>
+				<div class="col-xs-1 col-sm-1">
+					<span class="badge pull-right list-reply-count hidden-xs">{{t.reply_count}}</span>
+				</div>
+          </dl>
+		</div>
+		{% endfor %}
+      {% else %}
+        您还没有收藏任何主题！
+      {% endif %}
+		{% paginate %}
+      </div>

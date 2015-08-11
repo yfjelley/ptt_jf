@@ -1,0 +1,72 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>天天搜贷</title>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/user.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+        $(document).ready(function () {
+            $("#id_birthday").datepicker({changeYear: true,
+                changeMonth: true,
+                dateFormat: 'yy-mm-dd',
+                yearRange:"1900:2015"});
+        });
+    </script>
+</head>
+
+<body>
+<div id="container">
+{% include "header.html" %}
+<div id="mid">
+    <div class="user_con">
+        {% include "little_search.html" %}
+        <div class="user_conter mt10">
+            {% include "user_config_nav.html" %}
+            <div class="user_right fr">
+                <div class="user_message user_box">
+                    <div class="user_title">个人信息</div>
+                    <dl class="user_detail">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <dt>
+                            <p>
+                                <img src="{{ user.userinformation.photo_url }}"/>
+                            </p>
+                            <input size="100" type="file" name="file" style="width:200px;" title="浏览" alt="浏览"/>
+                            </dt>
+                            <dd>
+                                {{ form.as_p }}
+                                <input type="submit" class="user_btn" value="保存">
+                            </dd>
+
+                        </form>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if error %}
+    <script>
+        alert('{{ error }}');
+    </script>
+{% endif %}
+{% include "footer.html" %}
+</div>
+</body>

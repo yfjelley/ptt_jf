@@ -1,0 +1,18 @@
+{% extends 'base-with-sidebar.html' %}
+{% block top_title %}
+    {% include 'top_title1.html' %}
+{% endblock %}
+{% block header_ext%}
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+{% endblock %}
+{% block left %}
+{% include 'topic-list.html' %}
+{% endblock %}
+{% block right %}
+{% include 'user-panel.html' %}
+{% include 'advert.html' %}
+{% include 'hot-topic.html' %}
+{% include 'essence_topic.html' %}
+{% include 'friendly-link.html' %}
+{% endblock %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>注册账户</title>
+<link rel="stylesheet" href="/static/css/signup.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/signup.js"></script>
+</head>
+
+<body>
+<div id="div1">
+<iframe name="aa" src="{% url "index"  %}"  scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="1140px" height="700px" ></iframe>
+</div>
+<div style=" position:absolute; z-index:2; color:#CCCCCC; margin-top:-250px; margin-left:625px; font-size:10px; ">已发送，</div><div id="div3" style=" position:absolute; z-index:2; color:#CCCCCC; margin-top:-250px; margin-left:665px; font-size:10px; "></div>
+<div id="div3" style=" position:absolute; z-index:2; color:#CCCCCC; margin-top:-250px; margin-left:680px; font-size:10px; ">秒后重发</div>
+<div style=" position:absolute; z-index:2; margin-top:-250px; margin-left:960px; font-size:10px; ">看不清楚,点击刷新</div>
+<div id="sub">
+<div id="div2">
+	<form class="registerform" action="{% url 'register' %}" method="post" name="form1">
+<table align="center" class="tab1">
+	<table id="tab2">	
+	<tr align="center">
+		<td>注册账户</td>
+		
+	</tr>
+	<tr>
+		<td><hr /></td>
+	</tr>
+	</table>
+	
+	<table id="tab3">
+	<tr>
+		<td>手机</td>
+	</tr>
+	<tr>		
+		<td>{{ form.username }}</td>
+	</tr>
+	</table>
+	
+	<table id="tab4">
+	<tr>
+		<td>密码</td>
+		<td><div style="margin-left:160px;">确认密码</div></td>
+	</tr>
+	<tr>
+		<td>{{ form.password }}</td>
+		<td>{{ form.password2 }}</td>
+	</tr>
+	</table>
+
+	<table id="tab5">
+	<tr>
+		<td>短信验证</td>
+
+		<td><div style="margin-left:243px;">图片验证码</div></td>
+	</tr>
+	<tr>
+		<td>{{ form.smscode }}</td>
+
+		<td><input type="button" id="rulesubmit" style="position:absolute; z-index:2;width:80px;margin-left:10px;background-color:#4a3c70;height:30px;margin-top:-24px; color:#FFFFFF;" value="发送duanxin验证码" />
+		</td>	
+		<td><input type="text"  style="margin-left:-65px;width:80px;"/></td>
+		<td> <img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                             src="{% url 'verifycode' %}"/></td>
+	</tr>
+	</table>
+	
+	<table id="tab6">
+	<tr>
+		<td><hr /></td>
+	</tr>
+	<tr>		
+		<td><div align="center">注册即视为同意葡萄藤金融<<服务条款>></div></td>
+	</tr>
+	<tr>
+		<td><hr /></td>
+	</tr>
+	</table>
+
+	<tr>
+
+		<td><input type="submit"   class="login_dl reg_btn" value="确认注册" style=" margin-top:20px; margin-left:45px;width:520px; height:30px;" /></td>
+	</tr>
+	<tr style="float:right">
+		<td><div style="margin-top:10px; margin-left:420px;font-size:12px;">已有葡萄藤金福账号,登录</div></td>
+	</tr>
+</table>
+		 </form>
+</div>
+</div>
+</body>
+</html>

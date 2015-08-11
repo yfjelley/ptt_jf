@@ -1,0 +1,21 @@
+{% extends 'base-with-sidebar.html' %}
+{% block top_theme %}
+    {% include 'theme.html' %}
+{% endblock %}
+{% block top_tip %}
+    {% include 'node.html' %}
+{% endblock %}
+{% block header_ext%}
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+{% endblock %}
+{% block left %}
+{% include 'topic-list.html' %}
+{% endblock %}
+{% block right %}
+{% include 'user-panel.html' %}
+{% include 'links.html' %}
+{% include 'theme.html' %}
+{% include 'node.html' %}
+{% include 'hot-topic.html' %}
+{% endblock %}

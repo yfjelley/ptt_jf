@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <etkids@163.com>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-15 14:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/account/change-password.html:6
+#: templates/account/user-setting.html:29 views.py:148
+msgid "change password"
+msgstr "修改密码"
+
+#: templates/account/change-password.html:20
+msgid "current password"
+msgstr "原始密码"
+
+#: templates/account/change-password.html:26
+msgid "new password"
+msgstr "新密码"
+
+#: templates/account/change-password.html:33
+msgid "new password again"
+msgstr "重复"
+
+#: templates/account/change-password.html:42
+#: templates/account/user-avatar.html:29
+#: templates/account/user-setting.html:27
+msgid "update"
+msgstr "更新"
+
+#: templates/account/login.html:6 templates/account/login.html.py:29
+#: views.py:91
+msgid "sign in"
+msgstr "登陆"
+
+#: templates/account/login.html:18 templates/account/reg.html:18
+msgid "username"
+msgstr "用户名"
+
+#: templates/account/login.html:23 templates/account/reg.html:28
+msgid "password"
+msgstr "密码"
+
+#: templates/account/login.html:31
+msgid "reg?"
+msgstr "注册？"
+
+#: templates/account/login.html:32
+msgid "forget password?"
+msgstr "忘记密码？"
+
+#: templates/account/reg.html:6 views.py:58
+msgid "register"
+msgstr "注册"
+
+#: templates/account/reg.html:18 templates/account/reg.html.py:19
+msgid "letters,digits,underscore"
+msgstr "字母，数字，下划线"
+
+#: templates/account/reg.html:23
+msgid "Email"
+msgstr "Email"
+
+#: templates/account/reg.html:33
+msgid "repeat password"
+msgstr "重复密码"
+
+#: templates/account/reg.html:39
+#: templates/account/reset-password-confirm.html:44
+#: templates/account/reset-password.html:43
+msgid "submit"
+msgstr "提交"
+
+#: templates/account/reg.html:41
+msgid "sign in?"
+msgstr "已有账户？"
+
+#: templates/account/reset-password-confirm.html:5
+#: templates/account/reset-password-confirm.html:35
+#: templates/account/reset-password.html:5
+#: templates/account/reset-password.html:35
+msgid "reset password"
+msgstr "密码重置"
+
+#: templates/account/user-avatar.html:6 templates/account/user-setting.html:30
+msgid "avatar settings"
+msgstr "头像设置"
+
+#: templates/account/user-avatar.html:11
+msgid "upload new avatar(leave blank will not change your current avatar)"
+msgstr "上传新头像（留空不修改）"
+
+#: templates/account/user-avatar.html:13
+msgid "maximum 512K, png,jpg and gif only"
+msgstr "最大512k，png,jpg和gif格式"
+
+#: templates/account/user-avatar.html:15
+msgid "Use Gravatar"
+msgstr "使用Gravatar"
+
+#: templates/account/user-setting.html:6
+msgid "user settings"
+msgstr "用户设置"
+
+#: templates/account/user-setting.html:11
+msgid "website"
+msgstr "网站"
+
+#: views.py:49
+msgid "user info"
+msgstr "用户信息"
+
+#: views.py:52
+#, python-format
+msgid "%s's topics"
+msgstr "%s的话题"
+
+#: views.py:69
+msgid "username can only contain letters digits and underscore"
+msgstr "用户名只能包含字母，数字和下划线"
+
+#: views.py:73
+msgid "username already exists"
+msgstr "用户名已经存在"
+
+#: views.py:77 views.py:155
+msgid "passwords don't match, or are blank"
+msgstr "密码不匹配或为空"
+
+#: views.py:99
+msgid "username does not exist"
+msgstr "用户名不存在"
+
+#: views.py:103
+msgid "password is invalid"
+msgstr "密码不正确"
+
+#: views.py:114 views.py:123
+msgid "settings"
+msgstr "设置"
+
+#: views.py:138
+msgid "mentions"
+msgstr "提醒"
+
+#: views.py:161
+msgid "password updated successfully"
+msgstr "密码修改成功"
+
+#: views.py:164
+msgid "unable to change your password, the current password may be invalid"
+msgstr "错误，可能是原始密码不对"
+
+#: views.py:171
+#| msgid "avatar settings"
+msgid "avatar setting"
+msgstr "头像设置"
+
+#: views.py:181
+msgid "file too big"
+msgstr "文件太大"
+
+#: views.py:183
+msgid "file type not permitted"
+msgstr "文件类型不允许"

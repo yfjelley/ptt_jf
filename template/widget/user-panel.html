@@ -1,0 +1,21 @@
+{% load i18n %}
+
+        {% if request.user.is_authenticated %}
+        <div class="bbs_mes bbs_box">
+                	<div class="bbs_amount">
+                        <p><a href="{% url 'mention' %}">{{ mes }}</a></p>
+                        <p><a href="{% url 'mention' %}">未读信息</a></p>
+                    </div>
+                    <div class="bbs_amount">
+                    	<p>{{ collects }}</p>
+                        <p><a href="{% url 'collected_view' %}">主题收藏</a></p>
+                    </div>
+                    <div class="bbs_amount bbs_last">
+                    	<p>{{ user_collects }}</p>
+                        <p><a href="{% url 'collected_user_view' %}">关注的人</a></p>
+                    </div>
+            </div>
+            <div class="bbs_samall mt10 bbs_box textbox">
+              <input type="text" id="search" name="search" onkeypress="if(event.keyCode==13){Javascript:search()}" placeholder="请输入搜索主题"/><a style="cursor: default" id="search-btn">搜索</a>
+            </div>
+        {% endif %}

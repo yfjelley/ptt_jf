@@ -1,0 +1,22 @@
+{% extends 'base-with-sidebar.html' %}
+{% block left %}
+{% include 'topic-list.html' %}
+{% endblock %}
+{% block right %}
+{% include 'user-panel.html' %}
+{% include 'advert.html' %}
+{% include 'hot-topic.html' %}
+{% include 'essence_topic.html' %}
+{% include 'friendly-link.html' %}
+{% endblock %}
+{% block footer_ext %}
+<script> var host = "{{request.META.HTTP_HOST}}";var page = "{{page}}"; </script>
+<script>
+    function next_page(){
+        window.location = 'http://' + host + "{% url 'node_view' node.id %}" + "?page=" + (parseInt(page) + 1);
+    }
+    function prev_page(){
+        window.location = 'http://' + host + "{% url 'node_view' node.id %}" + "?page=" + (parseInt(page) - 1);
+    }
+</script>
+{% endblock %}

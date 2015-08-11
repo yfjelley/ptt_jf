@@ -1,0 +1,44 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>天天搜贷</title>
+        <!-- Bootstrap -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!--link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        <link href="{% static 'css/codehilite.css' %}" rel="stylesheet"-->
+        <link href="{% static 'css/bbs.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+    <div id="container">
+    {% include "header.html" %}
+
+    <div id="mid">
+        <div class="bbs">
+            {% block inside_row %}{% endblock %}
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+    </div>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/search.js' %}"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+	$("#bbs_norm a.bbs_theme").click(function(){
+		$(this).parent().parent().find('ul').removeClass("bbs_active");
+			$(this).next("ul.bbs_list_hot").addClass("bbs_active");
+
+	})
+
+});
+</script>
+        {% block footer_ext %}{% endblock %}
+    </body>
+</html>

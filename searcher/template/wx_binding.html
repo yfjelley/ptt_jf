@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>登录</title>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/login.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div id="header">
+    <div class="top">
+        <ul class="nav">
+            <li><a href="{% url 'searchindex' %}">首页</a></li>
+            <li><a href="{% url 'do_reminder' %}">提醒</a></li>
+            <li><a href="{% url 'myfavorite' 4 %}">收藏</a></li>
+            <li><a href="{% url 'bbsindex' %}">社区</a></li>
+        </ul>
+    </div>
+</div>
+<div id="warp">
+    <div class="login_header">
+        <a href="index.html"><img src="/static/images/logo1.png"/></a>
+    </div>
+    <div class="logib_line"></div>
+    <div class="login_mid">
+        <div class="login_left fl">
+            <form class="registerform" action="/login/" method="post">
+                {% csrf_token %}
+                <ul>
+                    <li>
+                        <label class="label"> 用户名：</label>
+                        {{ form.username }}
+                    </li>
+                    <li>
+                        <label class="label"> 密码：</label>
+                        {{ form.password }}
+                    </li>
+                    <li>
+                        <label class="label">验证码：</label>
+                        {{ form.vcode }}
+
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        <img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                             src="{% url 'verifycode' %}"/>
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        <a href="#" class="login_zh">找回密码</a>
+                    </li>
+                    <li>
+                        <label class="label"> </label>
+                        {% if next %}
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        {% endif %}
+                        <input type="submit" class="login_dl" value="登录">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="login_right fr">
+            <p>还没有帐号？</p>
+            <a href="{% url 'register' %}" class="login_btn"><img src="/static/images/reg_btn.png" /></a>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+<script type="text/javascript">
+    $(function () {
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+            alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.password.errors %}
+            {% for error in form.password.errors %}
+            alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+        {% if form.vcode.errors %}
+            {% for error in form.vcode.errors %}
+            alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+
+
+        //$(".registerform").Validform();  //就这一行代码！;
+
+        var demo = $(".registerform").Validform({
+            tiptype: 3,
+            label: ".label",
+            showAllError: true,
+            datatype: {
+                "zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+            },
+            ajaxPost: false
+        });
+
+        //通过$.Tipmsg扩展默认提示信息;
+        //$.Tipmsg.w["zh1-6"]="请输入1到6个字符！";
+        demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+        demo.addRule([
+            {
+                ele: ".inputxt:eq(0)",
+                datatype: "*1-200"
+            },
+            {
+                ele: ".inputxt:eq(1)",
+                datatype: "*1-20"
+            },
+            {
+                ele: ".inputxt:eq(2)",
+                datatype: "n4"
+            }
+        ]);
+
+    })
+</script>
+</body>
+</html>

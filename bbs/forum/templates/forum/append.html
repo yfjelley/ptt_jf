@@ -1,0 +1,43 @@
+{% extends 'base-with-sidebar.html' %}
+{% load i18n %}
+{% block left %}
+<div class="bbs_content bbs_post mt10">
+    <div class="bbs_post_add">
+		<p class="panel-title">
+		  添加附言--<a href="{% url 'bbsindex' %}">首页</a>-<a href="{% url 'node_view' topic.node.id %}">{{ topic.node.title }}</a>-{{topic.title}}
+		</p>
+	</div>
+	<div class="panel-body">
+		{% if messages %}
+		<div class="messages">
+			{% for message in messages %}
+			<p class="text-{{ message.tags }}">
+				{{ message }}
+			</p>
+			{% endfor %}
+		</div>
+		{% endif %}
+		<form class="form" action="{% url 'add_appendix' topic.id%}" method="post">
+			{% csrf_token %}
+			<div class="bbs_post_con textbox ">
+				<label class="sr-only" for="content">{% trans 'content' %}</label>
+				<textarea placeholder="{% trans 'content' %}"  class="bbs_post_txt" id="content" name="content"></textarea>
+				<input type="submit" class="bbs_post_btn"   value="提交" />
+			</div>
+		</form>
+		<div class="previewer">
+
+		</div>
+	</div>
+</div><!--end reply panel-->
+{% endblock %}
+{% block right %}
+{% include 'user-panel.html' %}
+{% include 'advert.html' %}
+{% include 'hot-topic.html' %}
+{% include 'essence_topic.html' %}
+{% include 'friendly-link.html' %}
+{% endblock %}
+{% block footer_ext %}
+<script src="{{STATIC_URL}}js/previewer.js"></script>
+{% endblock %}

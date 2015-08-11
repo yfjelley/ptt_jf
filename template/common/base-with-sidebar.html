@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block inside_top %}
+    {% block top %}{% endblock %}
+{% endblock %}
+{% block inside_row %}
+<div class="bbs_left fl">
+   {% include 'little_search.html' %}
+   {% block top_title %}{% endblock %}
+   <div class="bbs_advert mt10">
+      <a href="#"><img src="/static/images/advert.png" /></a>
+   </div>
+   {% block left %}{% endblock %}
+</div>
+<!--end left-->
+<!--div class="col-md-4" id="right"-->
+<div class="bbs_right fr">
+ {% block right %}{% endblock %}
+</div><!--end right-->
+
+{% endblock %}

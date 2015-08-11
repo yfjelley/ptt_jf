@@ -1,0 +1,4 @@
+{% load i18n %}
+ {% for theme in conf.themes %}
+    <dd><a href="{% url 'node_list' theme.id %}">{{theme.title}}</a></dd>
+ {% endfor %}

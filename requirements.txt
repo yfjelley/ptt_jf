@@ -1,0 +1,7 @@
+PIL
+PIL
+django
+Markdown==2.4
+Pygments==1.6
+django-pagination==1.0.7
+pillow==2.4.0

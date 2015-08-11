@@ -1,0 +1,57 @@
+a{
+text-decoration:none;
+color:#FFFFFF;
+margin:0 10px;
+}
+
+
+#container{
+	
+	background-color:#372c3a;
+	height:70px;
+	width:1140px;
+	margin-left:210px;
+
+
+}
+
+.ul7{
+list-style:none;
+color:#FFFFFF;
+float:left;
+
+font-size:18px;
+margin-left:280px;
+
+}
+
+.ul8{
+position:absolute;
+	font-size:18px;
+	color:#FFFFFF;
+	float:left;
+	margin-left:670px;
+}
+	
+
+
+
+.ul8 .lab1{
+font-size:8px; 
+color:#999999;
+}
+
+.ul8 .lab2{
+font-size:18px; 
+color:#999999; 
+margin-left:20px;
+}
+.ul8 .lab3{
+margin-left:30px;
+font-size:12px;
+}
+.ul8 .lab4{
+margin-left:20px;
+font-size:12px;
+}
+

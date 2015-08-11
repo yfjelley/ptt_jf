@@ -1,0 +1,57 @@
+{% load i18n %}
+<div class="bbs_title mt10">
+ <dl id="bbs_norm" class="bbs_list">
+  {% for t in theme1  %}
+      <dd><a href="#" class="bbs_theme">{{t.title}}</a>
+       {% if this_theme == t.id  %}
+         <ul class="bbs_list_hot bbs_active" >
+       {% else %}
+         <ul class="bbs_list_hot" >
+       {% endif %}
+          {% for n in conf.node1 %}
+              <li><a href="{% url 'node_view' n.id %}">{{ n.title }}</a></li>
+          {% endfor %}
+         </ul>
+    </dd>
+  {% endfor %}
+  {% for t in theme2  %}
+      <dd><a href="#" class="bbs_theme ">{{t.title}}</a>
+      {% if this_theme == t.id  %}
+         <ul class="bbs_list_hot bbs_active" style="padding-left:100px;" >
+      {% else %}
+         <ul class="bbs_list_hot " style="padding-left:100px;" >
+      {% endif %}
+          {% for n in conf.node2 %}
+              <li><a href="{% url 'node_view' n.id %}">{{ n.title }}</a></li>
+          {% endfor %}
+         </ul>
+    </dd>
+  {% endfor %}
+  {% for t in theme3  %}
+      <dd><a href="#" class="bbs_theme">{{t.title}}</a>
+       {% if this_theme == t.id  %}
+         <ul class="bbs_list_hot bbs_active" style="padding-left:200px;" >
+       {% else %}
+         <ul class="bbs_list_hot" style="padding-left:200px;" >
+       {% endif %}
+          {% for n in conf.node3 %}
+              <li><a href="{% url 'node_view' n.id %}">{{ n.title }}</a></li>
+          {% endfor %}
+         </ul>
+    </dd>
+  {% endfor %}
+  {% for t in theme4  %}
+      <dd><a href="#" class="bbs_theme">{{t.title}}</a>
+        {% if this_theme == t.id  %}
+         <ul class="bbs_list_hot bbs_active" style="padding-left:300px;" >
+        {% else %}
+         <ul class="bbs_list_hot" style="padding-left:300px;" >
+        {% endif %}
+          {% for n in conf.node4 %}
+              <li><a href="{% url 'node_view' n.id %}">{{ n.title }}</a></li>
+          {% endfor %}
+         </ul>
+    </dd>
+  {% endfor %}
+ </dl>
+</div>

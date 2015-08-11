@@ -1,0 +1,31 @@
+.detail,.detail_box,.detail_hd,.detail_bd,.detail_con{ overflow:hidden;}
+.detail{ width:1020px; margin:0 auto; border:2px solid #ddd;  border-radius:5px;}
+.detail_box{padding:20px 40px;}
+.detail_hd{ border-bottom:2px solid #ddd; padding-bottom:20px;}
+.detail_hd h3{ font-size:24px; font-weight:bold; line-height:70px; width:650px; height:70px; padding-left:20px; overflow:hidden;}
+.detail_hd img{ width:247px; height:70px; margin-right:20px;}
+.detail_bd{ padding:20px 0;}
+.detail_con{ padding-bottom:20px;}
+.detail_type{ float:left; width:270px; border-right:1px solid #999; padding:0 20px; text-align:center;}
+.detail_last{ border:none;}
+.detail_type dt{ font-size:18px; font-weight:bold; color:#666;}
+.detail_type dd{ color:#ff0000; font-size:30px; font-weight:bold; padding:20px 0;}
+.detail_type dd span{ font-size:18px; color:#999;}
+.detail_tab{ margin:20px 0;}
+.detail_tab tr td{ text-align:right; padding:10px 5px; height:24px; line-height:24px; color:#999; font-size:18px; font-weight:bold;}
+.detail_tab tr td.detail_double{ text-align:left; color:#333;}
+.detail_date{ display:inline-block; padding:3px 10px; font-weight:normal; color:#ff0000; border:1px solid #666; background:#f2f2f2;}
+.detail_percent{ display:inline-block; width:100px; border:1px solid #999; height:10px; margin-right:10px;}
+.detail_percent em{ background:#ff0000; display:block; height:10px;}
+.detail_deal,.detail_num{ width:773px; height:196px; margin:0 auto;}
+.detail_btn{ padding:10px 0; text-align:center;}
+.detail_btn a{ display:inline-block; margin-right:20px; padding:3px 20px; border:1px solid #999; border-radius:5px;}
+.detail_list{ border-bottom:2px solid #ddd;}
+.detail_border{ border-bottom:2px solid #ddd;}
+#detail_a{ height:30px; width:500px; margin:0 auto; padding-top:60px;}
+#detail_a dd{ display:inline-block; float:left; position:relative; margin:0 18px;}
+#detail_a dd a{ margin:0; width:120px; display:block; padding:0; height:30px; line-height:30px; text-align:center; cursor:pointer;}
+#detail_a dd ul{ overflow:hidden; background:#ddd; width:120px; position:absolute; bottom:32px; left:0; display:none;}
+#detail_a dd ul.active{ display:block;}
+#detail_a dd ul li{ line-height:24px; border-bottom:1px solid #f2f2f2;}
+#detail_a dd ul li a{ border:none;}

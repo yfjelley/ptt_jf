@@ -1,0 +1,259 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>天天搜贷</title>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3896768758&debug=true" type="text/javascript" charset="utf-8"></script>
+    <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101181599" data-redirecturi="http://ddbid.com/static/html/qc_callback.html" charset="utf-8" ></script>
+-->
+</head>
+<body>
+<div id="header">
+    <div class="top">
+        <ul class="nav">
+            <li><a href="{% url 'searchindex' %}">首页</a></li>
+            <li><a href="{% url 'do_reminder' %}">提醒</a></li>
+            <li><a href="{% url 'myfavorite' 1%}">收藏</a></li>
+            <li><a href="{% url 'bbsindex' %}">社区</a></li>
+        </ul>
+        <div class="top_right">
+            {% ifequal request.user.id None %}
+                <ul id="top_r">
+                    <li><a class="signin" href="#">登录</a>
+
+                            <form action="">
+                                <ul class="login" id="login-li">
+                                    <li class="user">
+                                        <input name="log_un" type="text" placeholder="用户名"/>
+                                    </li>
+                                    <li class="pwd">
+                                        <input name="log_pwd" type="text" placeholder="密码"/>
+                                    </li>
+                                    <li class="yzm">
+                                    <input name="log_code" type="text" placeholder="验证码"/>
+                                    <a href="#"><img id="code_pic"
+                                            onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                                            src="{% url 'verifycode' %}"/></a>
+                                    </li>
+                                    <li><a href="#" id="btn_login" class="btn_login">登录</a></li>
+                                    <li><a href="#" class="forget fl">忘记密码</a><a href="#" class="reg fr">立即注册</a></li>
+                                    <li class="quick">快捷注册：</li>
+                                    <li><a href="#" id="qqLoginBtn" class="qq" onclick="test()" style="background: {% static 'image/qq.png' %}"></a>
+                                        <a href="#" class="wx"></a>
+                                        <div id="wb_connect_btn"><a href="#" class="web"></a></div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </li>
+                        <li>/</li>
+                        <li><a class="register_li" href="#">注册</a>
+
+                        <form action="">
+                            <ul class="login reg" id="reg-li">
+                                <li><input name="reg_un" type="text" placeholder="用户名"/></li>
+                                <li><input name="reg_pwd" type="text" placeholder="密码"/></li>
+                                <li><input name="reg_pwd2" type="text" placeholder="再输一次密码"/></li>
+                                <li><input name="reg_email" type="text" placeholder="邮箱"/></li>
+                                <li><a href="#" id="btn_reg" class="btn_login">注册</a></li>
+                            </ul>
+                        </form>
+                    </li>
+                </ul>
+            {% else %}
+                <ul id="top_r" class="top_name">
+                    <div id="logged">
+                        <a id="check_log" style="display: none">1</a>
+                        <li><a href="#"><img src="{{ request.user.userinformation.photo_url }}"/></a>{{ request.user.username }}
+                            <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="logout()">退出</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            {% endifequal %}
+
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    window.onload=function(){
+       // alert("onload");
+        var script = document.createElement('script');
+        script.setAttribute('data-appid', '101181599');
+        script.setAttribute('data-redirecturi', 'http://ddbid.com/static/html/qc_callback.html');
+        script.setAttribute('charset', 'utf-8');
+        script.src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js";
+        document.head.appendChild(script);
+{#        setTimeout(function() {#}
+{#	        if (window.QC && QC.Login) {#}
+{#                alert("qc.login");#}
+{#	        	QC.Login();#}
+{#	        } else {#}
+{#                alert("timeout");#}
+{#	        	setTimeout(arguments.callee, 16);#}
+{#	        }#}
+{#        }, 16);#}
+       // alert("test");
+        //test();
+    }
+    function logout(){
+        alert("logout");
+       QC.Login.signOut();
+    }
+
+function test(){
+ //if (QC.Login.check()){
+ //}else{
+     QC.Login({
+  btnId : "qqLoginBtn",//插入按钮的html标签id
+  size : "C_S",//按钮尺寸
+  scope : "get_user_info",//展示授权，全部可用授权可填 all
+  display : "pc"//应用场景，可选
+ }, function(reqData, opts){
+    // alert("login success：" + QC.Login.check());
+     //判断登陆是否成功
+     if (QC.Login.check()){
+         //拿取平台openid
+         QC.Login.getMe(function(openId, accessToken){
+             //alert("拿到的openid：" + openId + " accessToken:" + accessToken);
+             //判断是否为首次登陆
+             $.post("{% url 'qq_is_first' %}",
+                {
+                    openid: openId,
+                    accessToken: accessToken
+                },
+                function (data) {
+                    //alert(data);
+                    window.document.write(data);
+                    //window.focus();
+                    //parent.location.reload();
+                    //location.reload("www.ddbid.com");
+                    window.document.write("www.ddbid.com");
+                    //window.location.replace();
+                },"html");
+         });
+     }else{
+         alert("login failed! please try again!");
+     }
+   }, function(opts){//注销成功
+         alert('QQ登录 注销成功');
+   });
+}
+//}
+
+WB2.anyWhere(function (W) {
+    W.widget.connectButton({
+        id: "wb_connect_btn",
+        type: '3,2',
+        callback: {
+            login: function (o) { //登录后的回调函数
+
+                alert("login: " + o.id);
+                id = o.id;
+                $.post("{% url 'wb_is_first' %}",
+                {
+                    wbid: id
+                },
+                function (data) {
+                    //alert(data);
+                    window.document.write(data);
+                    //window.focus();
+                    //parent.location.reload();
+                    //location.reload("www.ddbid.com");
+                    window.document.write("www.ddbid.com");
+                    //window.location.replace();
+                },"html");
+            },
+            logout: function () { //退出后的回调函数
+                alert('logout');
+            }
+        }
+    });
+});
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#logged li').hover(function () {
+            $('ul', this).slideDown(200);
+            $(this).children('a:first').addClass("hov");
+        }, function () {
+            $('ul', this).slideUp(100);
+            $(this).children('a:first').removeClass("hov");
+        });
+    });
+    $(".signin").click(function (e) {
+        e.preventDefault();
+        $("#login-li").toggle();
+        $("#login-li").toggleClass("hov");
+    });
+
+    $("#login-li").mouseup(function () {
+        return false
+    });
+    $(document).mouseup(function (e) {
+        if ($(e.target).parent("a.signin").length == 0) {
+            $(".signin").removeClass("hov");
+            $("#login-li").hide();
+        }
+    });
+
+    $(".register_li").click(function (e) {
+        e.preventDefault();
+        $("#reg-li").toggle();
+        $("#reg-li").toggleClass("hov");
+    });
+
+    $("#reg-li").mouseup(function () {
+        return false
+    });
+    $(document).mouseup(function (e) {
+        if ($(e.target).parent("a.register_li").length == 0) {
+            $(".register_li").removeClass("hov");
+            $("#reg-li").hide();
+        }
+    });
+
+    $('#btn_reg').on("click", function () {
+        var username = $("input[name=reg_un]").val();
+        var pwd = $("input[name=reg_pwd]").val();
+        var pwd2 = $("input[name=reg_pwd2]").val();
+        var email = $("input[name=reg_email]").val();
+        $.post("{% url 'register' %}",
+                {
+                    un: username,
+                    pwd: pwd,
+                    pwd2: pwd2,
+                    em: email
+                },
+                function (data) {
+                    alert(data);
+                    location.reload()
+                }
+        );
+    });
+    $('#btn_login').on("click", function () {
+        var username = $("input[name=log_un]").val();
+        var pwd = $("input[name=log_pwd]").val();
+        $.post("{% url 'login' %}",
+                {
+                    un: username,
+                    pwd: pwd
+                },
+                function (data) {
+                    location.reload();
+                }
+        );
+    });
+</script>
+</body>
+</html>
