@@ -3,6 +3,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('searcher.views',
     url(r'^contact/$', 'contact', name='contact'),
     url(r'^$', 'index', name='index'),
+    url(r'^zc$', 'index_page', name='index_page'),
     url(r'^login/$',  'login', name='login'),
     url(r'^logout/$',  'logout', name='logout'),
     url(r'^register/$',  'register', name='register'),
@@ -26,6 +27,7 @@ urlpatterns = patterns('searcher.views',
     # url(r'^other_page_reg/$',  'other_page_reg', name='other_page_reg'),
     # url(r'^other_reg/$',  'other_reg', name='other_reg'),
     url(r'^about_us/$',  'about_us', name='about_us'),
+    url(r'^agreement/$',  'agreement', name='agreement'),
     url(r'^contact_us/$',  'contact_us', name='contact_us'),
     url(r'^disclaimer/$',  'disclaimer', name='disclaimer'),
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
@@ -46,4 +48,8 @@ urlpatterns += patterns('searcher.viewss',
 urlpatterns += patterns('searcher.views',
    
     url(r'^send_smscode/$',  'send_smscode', name='send_smscode'),
+        )
+urlpatterns += patterns('searcher.agreement_views',
+
+    url(r'^write/$',  'writeagreement', name='writeagreement'),
         )

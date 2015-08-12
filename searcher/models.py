@@ -303,3 +303,6 @@ class WeekHotSpot(models.Model):
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
 
+class RegistrationAgreement(models.Model):
+    name = models.CharField(max_length=50)
+    agreement = models.TextField()

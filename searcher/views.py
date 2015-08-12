@@ -32,6 +32,9 @@ from searcher.models import Bid, UserFavorite, Platform, UserInformation, Dimens
 from ddbid import conf
 
 
+from searcher.models import RegistrationAgreement
+
+
 __author__ = 'pony'
 
 storage = FileSystemStorage(
@@ -157,7 +160,6 @@ def login(request):
         pwd = request.REQUEST.get('log_pwd', None)
         if username is None:
             form = LoginForm(request.POST)
-            print form
             if form.is_valid():
                 cd = form.clean()
                 username = cd['username']
@@ -165,7 +167,6 @@ def login(request):
                 user = auth.authenticate(username=username, password=pwd)
                 print "user is %s" % user
                 if user is None:
-                    print "not anyone"
                     form.valiatetype(4)
                     print form
                     return render_to_response("login.html", {'form': form}, context_instance=RequestContext(request))
@@ -282,7 +283,7 @@ def register(request):
                 return response
 
         form = RegisterForm(request.POST)
-        print form
+
         if form.is_valid():
             cd = form.cleaned_data
             username = cd['username']
@@ -299,19 +300,23 @@ def register(request):
             f = ca.check(code)
             if u.exists():
                 form.valiatetype(2)
+                print "flag2"
                 flag = 1
-            if flag != 1 and pwd1 != pwd2:
+            elif flag != 1 and pwd1 != pwd2:
                 form.valiatetype(3)
+                print "flag3"
                 flag = 1
-            if flag != 1 and not f:
+            elif flag != 1 and not f:
                 form.valiatetype(4)
+                print "flag4"
                 flag = 1
 
-            if flag != 1 and dict_code.get('smscode') != int(smscode):
+            elif flag != 1 and dict_code.get('smscode') != int(smscode):
                 form.valiatetype(5)
                 flag = 1
 
             if flag == 1:
+                print "yyyyyyyyyyyyyyyyy"
                 return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
             elif pwd1 == pwd2 and f:
                 new_user = User.objects.create_user(username=username, password=pwd1)
@@ -729,3 +734,11 @@ def send_smscode(request):
     print opener.open(request).read()
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
+
+
+def agreement(request):
+    return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
+
+
+def index_page(request):
+    return render_to_response('index_page.html',{}, context_instance=RequestContext(request))

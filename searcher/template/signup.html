@@ -13,7 +13,7 @@
 <div id="container">
   		<ul class="ul7">
     		<li>
-				<a href="#">首页</a>
+				<a href="{% url 'index_page' %}">首页</a>
 				<a href="#">关于我们</a>
 				<a href="#">投资指引</a>
     			<a href="#">葡萄藤社区</a>
@@ -60,11 +60,9 @@
 				<label>密码</label>
 				<label class="lab1">确认密码</label>
 			</li>
-			<li style="float:left">
-				<div>{{ form.password }}</div>
-			</li>
 			<li>
-				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.password2 }}</div>
+				{{ form.password }}
+				{{ form.password2 }}
 			</li>
 		</ul>
 
@@ -75,8 +73,8 @@
 			</li>
 	
 			<li>{{ form.smscode }}
-				<input type="button" id="rulesubmit" style=" background-color:#4a3c70;position:absolute; z-index:1;width:88px;margin-left:10px;height:38px;margin-top:3px; " value="发送验证码" />		
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.vcode }}
+				<input type="button" id="rulesubmit" style=" background-color:#4a3c70;position:absolute; z-index:1;width:88px;margin-left:10px;height:38px;margin-top:-5px; " value="发送验证码" />		
+				{{ form.vcode }}
 				<img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
                              src="{% url 'verifycode' %}"/>
 			</li>
@@ -93,35 +91,36 @@
 				<hr />
 			</li>
 		</ul>
-		<ul id="Cul1">
 			<li>
-				<input type="submit" value="确认注册" style=" margin-top:20px; margin-left:-40px;width:512px; height:30px;" />
+				<input type="submit" id="login" value="确认注册" style=" margin-top:20px; margin-left:-2px;width:512px; height:30px;" />
 			</li>
 			<li>
-				<div style="margin-top:10px; margin-left:320px;font-size:12px;">已有葡萄藤金服账号,<a href="{% url 'login' %}">登录</a></div>
+				<div style="margin-top:10px; margin-left:370px;font-size:12px;">已有葡萄藤金福账号,<a href="{% url 'login' %}">登录</a></div>
 			</li>
-		</ul>
 		</ul>
             </form>
 	</div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    $("#login").click(function(){
         {% if form.username.errors %}
             {% for error in form.username.errors %}
                 alert('{{ error }}');
+                return flase;
             {% endfor %}
         {% endif %}
 
         {% if form.password2.errors %}
             {% for error in form.password2.errors %}
                 alert('{{ error }}');
+                return flase;
             {% endfor %}
         {% endif %}
 
         {% if form.vcode.errors %}
             {% for error in form.vcode.errors %}
                 alert('{{ error }}');
+                return flase;
             {% endfor %}
         {% endif %}
 
@@ -131,7 +130,6 @@
             {% endfor %}
         {% endif %}
     });
-
 </script>
 </body>
 </html>

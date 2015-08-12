@@ -1,50 +1,11 @@
+body{margin:0px;padding:0px;background-color:#eeeef0;width:1140px;}
+#div1{margin-left:480px;}
 
-body{
-	background-color:#eeeef0;
-	width:1140px;
-	margin:0px;
-}
-#div1{
-		margin-left:460px;
-}
+#div2{width:600px;height:400px;background-color:#FFFFFF;position:absolute;z-index:1;margin-top:100px;}
+#div1 label{font-size:32px;}
+.Overhidden{ height:250px;width:560px;overflow-y:hidden;overflow-y:scroll;}
+#div3{font-size:12px;margin:20px 0;}
+#div3 hr{margin:0 auto;width:505px;color:#eeeef0;border:none;}
+li{list-style:none;}
 
-#div2{
-/*border:1px solid #000000;*/
-	width:760px;
-	height:400px;
-	background-color:#FFFFFF;
-	position:absolute;
-	z-index:1;	
-	margin-top:-600px;
-
-}
-
-#main iframe{
-margin-left:200px;
-}
-
-#tab1{
-/*	border:1px solid #999999;*/
-	width:700px;
-	height:450px;
-	margin:0 auto;	
-}
-
-#div1 p{
-	font-size:32px;
-	
-}
-
-textarea{
-width:750px;
-height:200px;
-}
-
-#div3{
-	font-size:12px;
-	margin:20px 0;
-}
-#div3 hr{
-margin:0 auto;
-width:505px;
-}
+.return input{color:#FFFFFF;}

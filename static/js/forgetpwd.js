@@ -7,8 +7,8 @@ if (num == (wait/1000)){
 } 
 else{ 
 printnr = (wait/1000) - num; 
-$("#rulesubmit").val("免费获取"); 
-document.getElementById("div3").innerHTML=printnr;
+$("#rulesubmit").val("免费获取("+printnr+")"); 
+document.getElementById("rulesubmit").style.backgroundColor="#CCCCCC";
 } 
 }; 
 var timer = function(){ 
@@ -18,8 +18,8 @@ $("#rulesubmit").val("免费获取");
 $(function(){ 
 (function(){ 
 function getValidateCode(){ 
-$("#rulesubmit").val("免费获取");
-document.getElementById("div3").innerHTML=secs;
+$("#rulesubmit").val("免费获取("+secs+")"); 
+document.getElementById("rulesubmit").style.backgroundColor="#CCCCCC";
 $("#rulesubmit").attr("disabled",true); 
 for (i = 1; i <= secs;i++){ 
 window.setTimeout("update(" + i + ")",i*1000); 
