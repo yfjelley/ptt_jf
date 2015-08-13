@@ -182,7 +182,6 @@ class UserInformation(models.Model):
     birthday = models.DateField('生日', blank=True, null=True)
     cellphone = models.CharField('手机号码', max_length=11, blank=True, null=True)
     email = models.EmailField('邮箱地址', blank=True, null=True)
-    smscode = models.CharField('短信验证码', max_length=20, blank=True, null=True)
     city = models.CharField('居住城市', max_length=255,blank=True, null=True)
     address = models.CharField('居住地址', max_length=255, blank=True, null=True)
     education = models.CharField('学历', max_length=1, choices=ED_CHOICES, null=True, default=0)
@@ -194,6 +193,17 @@ class UserInformation(models.Model):
     abcdefg = models.CharField(max_length=50, blank=True, null=True)
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
+    authentication_class = models.CharField('认证类别', max_length=255, blank=True, null=True)
+    id_card = models.URLField('省份证', max_length=255, blank=True, null=True)
+    business_card = models.URLField('名片', max_length=255, blank=True, null=True)
+    financial_assets = models.URLField('金融资产证明', max_length=255, blank=True, null=True)
+    fixed_assets = models.URLField('固定资产证明', max_length=255, blank=True, null=True)
+    income_assets = models.URLField('收入证明', max_length=255, blank=True, null=True)
+    ideas = models.CharField('投资理念', max_length=255, blank=True, null=True)
+    direction = models.CharField('投资方向', max_length=255, blank=True, null=True)
+    attention = models.CharField('关注的项目', max_length=255, blank=True, null=True)
+    collection = models.CharField('收藏的项目', max_length=255, blank=True, null=True)
+    link = models.URLField('推广链接', max_length=255, blank=True, null=True)
 
 
 class ThirdLogin(models.Model):
@@ -306,3 +316,63 @@ class WeekHotSpot(models.Model):
 class RegistrationAgreement(models.Model):
     name = models.CharField(max_length=50)
     agreement = models.TextField()
+    add_date = models.DateTimeField('添加时间', auto_now_add=True)
+
+
+class Project(models.Model):
+    publish = models.ForeignKey(User,related_name = "publish_set")#项目发布者 可以发布多个项目
+    Founder =  models.ManyToManyField(User, related_name = "founder_set")#项目可以有多个创始人
+    team = models.ManyToManyField(User, related_name = "team_set")#项目团队一个项目有多个成员
+    manager = models.ManyToManyField(User, related_name = "manager_set")#领投人
+    Investor = models.ManyToManyField(User, related_name = "investor_set")#跟投人
+    name = models.CharField(max_length=255, blank=True)#项目名称
+    logo = models.URLField(max_length=255, blank=True)#项目标志
+    photo_url = models.URLField(max_length=255, blank=True)#项目宣传图片
+    introduction = models.TextField(blank=True)#项目简介
+    description = models.TextField(blank=True)#项目描述
+    category = models.CharField(max_length=255, blank=True)#行业类别
+    amount = models.CharField(max_length=255, blank=True)#融资总额
+    finish = models.CharField(max_length=255, blank=True)#已完成融资金额
+    fund_use = models.CharField(max_length=255, blank=True)#资金用途
+    transfer_equity = models.CharField(max_length=255, blank=True)#出让的股权份额
+    company = models.URLField(max_length=255, blank=True)#注册公司
+    url = models.URLField(max_length=255, blank=True)#公司链接
+    patent = models.TextField(blank=True)#专利
+    business_plan_url = models.CharField(max_length=255, blank=True)#商业计划书
+    status = models.IntegerField(blank=True, null=True)#是否是精选
+    add_date = models.DateTimeField('添加时间', auto_now_add=True)
+    modify_date = models.DateTimeField('编辑时间', auto_now=True)
+    Preheat_date = models.DateTimeField()
+    preheat_end_date = models.DateTimeField()
+    crowd_date = models.DateTimeField()
+    crowd_end_date = models.DateTimeField()
+
+    class Meta:
+        db_table = 't_project'
+
+class about_us(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)#公司名称
+    address = models.CharField(max_length=255, blank=True, null=True)#公司地址
+    hotline = models.CharField(max_length=255, blank=True, null=True)#公司热线
+    zip_code = models.CharField(max_length=255, blank=True, null=True)#邮政编码
+    email = models.CharField(max_length=255, blank=True, null=True)#电子邮件
+    routing = models.CharField(max_length=255, blank=True, null=True)#公交地铁线路
+    phonenumber = models.CharField(max_length=255, blank=True, null=True)#电话
+
+class partners(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)#公司名称
+    url = models.URLField(max_length=255, blank=True, null=True)#网址
+    active_status = models.IntegerField(blank=True, null=True)#活跃状态
+    add_date = models.DateTimeField('添加时间', auto_now_add=True)
+    modify_date = models.DateTimeField('编辑时间', auto_now=True)
+
+
+class frendlink(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)#公司名称
+    url = models.URLField(max_length=255, blank=True, null=True)#网址
+    active_status = models.IntegerField(blank=True, null=True)#活跃状态
+    add_date = models.DateTimeField('添加时间', auto_now_add=True)
+    modify_date = models.DateTimeField('编辑时间', auto_now=True)
+
+
+
