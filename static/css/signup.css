@@ -5,108 +5,35 @@
 	background-color:#FFFFFF;
 	height:500px;
 }*/
-body{
-	background-color:#eeeef0;
-	width:1140px;
-	margin:0px;
-}
+body{background-color:#eeeef0;width:1140px;margin:0px;}
+#sub{margin-left:480px;}
 
 
-#sub{
-margin-left:480px;
-}
+#div2{position:absolute;z-index:1;margin:0 auto;width:600px;height:550px;background:#FFFFFF;margin-top:100px;}
 
-
-#div2{
-	position:absolute;
-	z-index:1;	
-	margin:0 auto;
-	width:600px;
-	height:550px;
-	background:#FFFFFF;
-	margin-top:100px;
-}
-
-#ul2{
-text-align:center;
-font-size:12px;
-font-style:normal;
-margin:30px 0;
-
-	
-}
+#ul2{text-align:center;font-size:12px;font-style:normal;margin:30px 0;	}
 #ul2 hr{height:1px;margin-left:-38px;width:512px;border:none;border-top:1px solid #eeeef0}
-#ul2 label{
-	font-size:32px;
-	margin-left:-50px;	
-}
-#ul3{
-font-size:12px;
-margin:30px 0;
-	margin-left:-38px;
-}
+#ul2 label{font-size:32px;margin-left:-50px;	}
+#ul3{font-size:12px;margin:30px 0;margin-left:-38px;}
 
-#ul3 input[type="text"]{		
-	width:505px;
-	height:30px;
-	margin:0 auto;
-}
+#ul3 input[type="text"]{width:505px;height:30px;margin:0 auto;}
 
-#ul4{
-margin:30px 0;
-margin-left:-38px;
-font-size:12px;
-}
-#ul4 input[type="text"]{		
-	width:230px;
-	height:30px;
-	margin:0 auto;
-}
-#ul4 .lab1{
-margin-left:248px;
-}
+#ul4{margin:30px 0;margin-left:-38px;font-size:12px;}
+#ul4 input[type="text"]{		width:230px;height:30px;margin:0 auto;}
+#ul4 .lab1{margin-left:248px;}
+#ul5 .lab2{margin-left:224px;}
+#ul5{margin:30px 0;margin-left:-38px;font-size:12px;}
+#ul5 input[type="text"]{width:130px;height:30px;margin:0 auto;}
 
-#ul5 .lab2{
-margin-left:224px;
-}
-#ul5{
-margin:30px 0;
-margin-left:-38px;
-font-size:12px;
-
-}
-#ul5 input[type="text"]{		
-	width:130px;
-	height:30px;
-	margin:0 auto;
-}
-
-#inp{
-color:#FFFFFF;
-}
-#ul6{
-	font-size:12px;
-}
+#inp{color:#FFFFFF;}
+#ul6{font-size:12px;}
 
 #ul6 hr{height:1px;margin-left:-38px;width:512px;border:none;border-top:1px solid #eeeef0}
-#ul6 a{
-color:#000000;
-}
-#ul6 a:hover{
-color:#e1640d;
-}
+#ul6 a{color:#000000;}
+#ul6 a:hover{color:#e1640d;cursor:pointer;}
 
-#Cul1 a{
-color:#000000;
-}
-#Cul1 a:hover{
-color:#e1640d;
-}
+#Cul1 a{color:#000000;}
+#Cul1 a:hover{color:#e1640d;cursor:pointer;}
 
-li{
-list-style:none;}
-
-a:hover{
-color:#e1640d;
-cursor:pointer;
-}
+li{list-style:none;}
+a{text-decoration:none}

@@ -26,8 +26,10 @@ urlpatterns = patterns('searcher.views',
 
     # url(r'^other_page_reg/$',  'other_page_reg', name='other_page_reg'),
     # url(r'^other_reg/$',  'other_reg', name='other_reg'),
-    url(r'^about_us/$',  'about_us', name='about_us'),
+
     url(r'^agreement/$',  'agreement', name='agreement'),
+    url(r'^about/$',  'about', name='about'),
+    url(r'^investor/$',  'investor', name='investor'),
     url(r'^contact_us/$',  'contact_us', name='contact_us'),
     url(r'^disclaimer/$',  'disclaimer', name='disclaimer'),
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),

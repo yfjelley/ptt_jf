@@ -28,7 +28,7 @@ from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationFo
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project
 from ddbid import conf
 
 
@@ -689,9 +689,6 @@ def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))
 
 
-def about_us(request):
-    return render_to_response('about_us.html', context_instance=RequestContext(request))
-
 def disclaimer(request):
     return render_to_response('disclaimer.html', context_instance=RequestContext(request))
 
@@ -737,8 +734,19 @@ def index(request):
 
 
 def agreement(request):
-    return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
+    us = About_us.objects.all()
+    print us[0].address
+    ag = RegistrationAgreement.objects.all()
+    return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
 def index_page(request):
+    pj = Project.objects.filter(active=1)
+    print pj
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
+
+def about(request):
+    return render_to_response('about.html',{}, context_instance=RequestContext(request))
+
+def investor(request):
+    return render_to_response('investor.html',{}, context_instance=RequestContext(request))

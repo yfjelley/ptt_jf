@@ -28,8 +28,11 @@ from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationFo
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project
 from ddbid import conf
+
+
+from searcher.models import RegistrationAgreement
 
 
 __author__ = 'pony'
@@ -127,28 +130,6 @@ def contact(request):
     return render_to_response('contact_form.html', {'form': form}, context_instance=RequestContext(request))
 
 
-# def login(request):
-# if request.method == 'GET':
-# form = LoginForm()
-# return render_to_response('login.html', {'form': form, },
-# context_instance=RequestContext(request))
-# else:
-# form = LoginForm(request.POST)
-# if form.is_valid():
-#             username = request.POST.get('username', '')
-#             password = request.POST.get('password', '')
-#             user = auth.authenticate(username=username, password=password)
-#             if user is not None and user.is_active:
-#                 auth.login(request, user)
-#                 return HttpResponse('1')
-#
-#             else:
-#                 return render_to_response('login.html',
-#                                           {'form': form, 'password_is_wrong': True},
-#                                           context_instance=RequestContext(request))
-#         else:
-#             return render_to_response('login.html', {'form': form, },
-#                                       context_instance=RequestContext(request))
 
 def login(request):
     if request.method == 'POST':
@@ -157,7 +138,6 @@ def login(request):
         pwd = request.REQUEST.get('log_pwd', None)
         if username is None:
             form = LoginForm(request.POST)
-            print form
             if form.is_valid():
                 cd = form.clean()
                 username = cd['username']
@@ -165,10 +145,9 @@ def login(request):
                 user = auth.authenticate(username=username, password=pwd)
                 print "user is %s" % user
                 if user is None:
-                    print "not anyone"
                     form.valiatetype(4)
-                    return render_to_response('login.html', {'form': form, },
-                                          context_instance=RequestContext(request))
+                    print form
+                    return render_to_response("login.html", {'form': form}, context_instance=RequestContext(request))
                 else:
                     auth.login(request, user)
                     return HttpResponseRedirect(reverse('index'))
@@ -282,7 +261,7 @@ def register(request):
                 return response
 
         form = RegisterForm(request.POST)
-        print form
+
         if form.is_valid():
             cd = form.cleaned_data
             username = cd['username']
@@ -299,24 +278,23 @@ def register(request):
             f = ca.check(code)
             if u.exists():
                 form.valiatetype(2)
+                print "flag2"
                 flag = 1
-            if flag != 1 and pwd1 != pwd2:
+            elif flag != 1 and pwd1 != pwd2:
                 form.valiatetype(3)
+                print "flag3"
                 flag = 1
-            if flag != 1 and not f:
+            elif flag != 1 and not f:
                 form.valiatetype(4)
+                print "flag4"
                 flag = 1
-            print "smscode is %s "%dict_code.get('smscode')
-            print smscode
-            print type(dict_code.get('smscode'))
-            print type(smscode)
-            if flag != 1 and dict_code.get('smscode') != int(smscode):
-                print "ggggggggggg"
+
+            elif flag != 1 and dict_code.get('smscode') != int(smscode):
                 form.valiatetype(5)
                 flag = 1
 
-            print flag
             if flag == 1:
+                print "yyyyyyyyyyyyyyyyy"
                 return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
             elif pwd1 == pwd2 and f:
                 new_user = User.objects.create_user(username=username, password=pwd1)
@@ -689,9 +667,6 @@ def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))
 
 
-def about_us(request):
-    return render_to_response('about_us.html', context_instance=RequestContext(request))
-
 def disclaimer(request):
     return render_to_response('disclaimer.html', context_instance=RequestContext(request))
 
@@ -734,3 +709,23 @@ def send_smscode(request):
     print opener.open(request).read()
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
+
+
+def agreement(request):
+    us = About_us.objects.all()
+    print us[0].address
+    ag = RegistrationAgreement.objects.all()
+    return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
+
+
+def index_page(request):
+    pj = Project.objects.filter(active=1)
+    print pj
+    return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
+
+def about(request):
+    return render_to_response('about.html',{}, context_instance=RequestContext(request))
+
+def investor(request):
+
+    return render_to_response('investor.html',{}, context_instance=RequestContext(request))
