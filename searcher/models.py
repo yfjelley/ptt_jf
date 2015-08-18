@@ -204,6 +204,7 @@ class UserInformation(models.Model):
     direction = models.CharField('投资方向', max_length=255, blank=True, null=True)
     attention = models.CharField('关注的项目', max_length=255, blank=True, null=True)
     industry = models.CharField('关注的行业', max_length=255, blank=True, null=True)
+    cate = models.CharField('行业类别', max_length=255, blank=True, null=True)
     collection = models.CharField('收藏的项目', max_length=255, blank=True, null=True)
     link = models.URLField('推广链接', max_length=255, blank=True, null=True)
 
@@ -227,7 +228,7 @@ class ThirdLogin(models.Model):
 class WXAccessToken(models.Model):
     accessToken = models.CharField('访问秘钥', max_length=1000, blank=True, null=True)
     expiresIn = models.IntegerField('time', max_length=30, blank=True, null=True)
-    Flag = models.CharField('WX', max_length=30, blank=True, null=True)
+    flag = models.CharField('WX', max_length=30, blank=True, null=True)
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
 
@@ -323,10 +324,10 @@ class RegistrationAgreement(models.Model):
 
 class Project(models.Model):
     publish = models.ForeignKey(User,related_name = "publish_set")#项目发布者 可以发布多个项目
-    Founder =  models.ManyToManyField(User, related_name = "founder_set")#项目可以有多个创始人
-    team = models.ManyToManyField(User, related_name = "team_set")#项目团队一个项目有多个成员
-    manager = models.ManyToManyField(User, related_name = "manager_set")#领投人
-    Investor = models.ManyToManyField(User, related_name = "investor_set")#跟投人
+    founder =  models.CharField(max_length=255, blank=True)#项目可以有多个创始人
+    team = models.CharField(max_length=255, blank=True)#项目团队一个项目有多个成员
+    leader = models.ManyToManyField(User, related_name = "manager_set")#领投人
+    investor = models.ManyToManyField(User, related_name = "investor_set")#跟投人
     name = models.CharField(max_length=255, blank=True)#项目名称
     logo = models.URLField(max_length=255, blank=True)#项目标志
     photo_url = models.URLField(max_length=255, blank=True)#项目宣传图片

@@ -130,28 +130,6 @@ def contact(request):
     return render_to_response('contact_form.html', {'form': form}, context_instance=RequestContext(request))
 
 
-# def login(request):
-# if request.method == 'GET':
-# form = LoginForm()
-# return render_to_response('login.html', {'form': form, },
-# context_instance=RequestContext(request))
-# else:
-# form = LoginForm(request.POST)
-# if form.is_valid():
-#             username = request.POST.get('username', '')
-#             password = request.POST.get('password', '')
-#             user = auth.authenticate(username=username, password=password)
-#             if user is not None and user.is_active:
-#                 auth.login(request, user)
-#                 return HttpResponse('1')
-#
-#             else:
-#                 return render_to_response('login.html',
-#                                           {'form': form, 'password_is_wrong': True},
-#                                           context_instance=RequestContext(request))
-#         else:
-#             return render_to_response('login.html', {'form': form, },
-#                                       context_instance=RequestContext(request))
 
 def login(request):
     if request.method == 'POST':
@@ -746,7 +724,10 @@ def index_page(request):
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
 def about(request):
-    return render_to_response('about.html',{}, context_instance=RequestContext(request))
+    return render_to_response('about2.html',{}, context_instance=RequestContext(request))
+
+def guide(request):
+    return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))

@@ -28,6 +28,7 @@ urlpatterns = patterns('searcher.views',
     # url(r'^other_reg/$',  'other_reg', name='other_reg'),
 
     url(r'^agreement/$',  'agreement', name='agreement'),
+    url(r'^guide/$',  'guide', name='guide'),
     url(r'^about/$',  'about', name='about'),
     url(r'^investor/$',  'investor', name='investor'),
     url(r'^contact_us/$',  'contact_us', name='contact_us'),

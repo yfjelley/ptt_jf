@@ -35,14 +35,28 @@ def writeagreement(request):
     user = User.objects.all()
     #print user
     user=UserInformation.objects.filter(authentication_class=1)
+
+     #游客0 投资人1 资深投资人2 创业者3
+    us = {0:u'游客',1:u'投资人',2:u'资深投资人',3:u'创业者'}
+    #金融在线 0 电子商务1 医疗2 互联网3 社交4
+    ind = {0:u'金融在线',1:u'电子商务',2:u'医疗',3:u'互联网',4:u'社交'}
     for i in user:
         print i.user
         print i.position
         print i.user.username
-        a=Project()
-        a.save()
-        a.founder.add(i.user)
-        a.save()
+        pr=Project(publish=i.user,name="众筹",founder="yang")
+        pr.save()
+        f = Project.objects.filter(founder="yang")
+        for i in f:
+            print len(f)
+            print i.founder
+
+        #Project.leader.all()
+    ui = UserInformation.objects.filter(authentication_class=2)
+    for i in  ui:
+        print i.user
+
+
 
     return render_to_response('test.html',{'user':user}, context_instance=RequestContext(request))
 
