@@ -723,6 +723,11 @@ def index_page(request):
     print pj
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
+def index_zc(request):
+    pj = Project.objects.filter(active=1)
+    print pj
+    return render_to_response('home.html',{}, context_instance=RequestContext(request))
+
 def about(request):
     return render_to_response('about2.html',{}, context_instance=RequestContext(request))
 

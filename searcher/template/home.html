@@ -1,31 +1,68 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>忘记密码</title>
-<link rel="stylesheet" href="/static/css/forgetpwd.css" />
-<link rel="stylesheet" href="/static/css/index2.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>葡萄藤众筹首页</title>
+<link rel="stylesheet" href="/static/css/home1.css" />
+<link rel="stylesheet" href="/static/css/home2.css" />
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/js/forgetpwd.js"></script>
+<script type="text/javascript">
+<!--显示和隐藏-->
+$(function (){
+	mouseout();
+});
+
+$(function (){
+	Lmouseout();
+});
+
+
+	function Lmouseover()
+	{
+		$("#img2").show();
+	}
+	
+	function Lmouseout()
+	{
+		$("#img2").hide();
+	}
+	
+  function mouseover()
+  {
+  	$("#img1").show();
+  }
+  function mouseout()
+  {
+  	$("#img1").hide();
+  }
+	
+</script>
 </head>
+
 <body>
+<!--头部-->
 <div id="Fdiv1">
 	<div id="Fdiv2">
 		<ul id="Fmain">
+		<ul style=" position:absolute;left:240px; top:12px;">
+			<li>
+				<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" />
+			</li>
+		</ul>
 		<ul class="Ful1">
 		<ul>
 			<li>
-				<a href="{% url 'index_page' %}">首页</a>
+				<a href="{% url 'index_zc' %}">首页</a>
 			</li>
  		</ul>
 		<ul>
     		<li>
-				<a href="#">投资人风采</a>
+				<a href="{% url 'investor' %}">投资人风采</a>
 			</li>
   		</ul>
   		<ul>
     		<li>
-				<a href="#"项目风采></a>
+				<a href="#">项目风采</a>
 			</li>
   		</ul>
   		<ul>
@@ -60,61 +97,41 @@
 	</div>
 </div>
 
-<div id="sub">
-	<div id="div1">
-		<ul id="ul1">	
-		<ul id="ul2">      
-        	<li>
-				<label>忘记密码</label>
+<div class="Cpic">
+		<ul style=" float:left;">
+		<ul>
+			<li class="left1">
+				<img src="/static/images/left.jpg" style="width:570px;height:350px;z-index:1" onmouseover="Lmouseover()" onmouseout="Lmouseout()"/>
 			</li>
-     	</ul>
-	  
-      	<ul id="ul3">
-        	<li>
-				<hr />
-			</li>       
-         	<li>
-				<label>请输入注册时填写的手机号获取验证码输入</label>
+			<li style="position:absolute; top:80px;left:200px;z-index:2;">
+				<img src="/static/images/jinfulogo.png" width="540px" height="440px;"/>
 			</li>
-      		<li>
-				<hr />
-			</li>
-     	</ul>
-      <form class="registerform" action="" method="post">
-	  	<ul id="ul4">
-        	<li>
-				<label class="labe1">手机号</label>
-				<label class="labe2">短信验证</label>
-			</li>
-		<ul class="elul1">
-			<li>
-				 {{ form.username }}
+			<li	id="img2" style="position:absolute;top:200px;left:640px;z-index:2">
+				<img src="/static/images/open.png" width="189px" height="89px"  />
 			</li>
 		</ul>
-		<ul class="elul2">
-			<li>
-            	{{ form.smscode }}
-			</li>
-		</ul>
-		<ul class="elul3">
-			<li>
-            	<input type="button" id="rulesubmit" value="发送验证码" />
-			</li>
-		</ul>
-	 </ul>
+		</ul>	
+		
+		<ul class="Rul1">		
+			<li class="Rpic">
+				<img src="/static/images/right.jpg" style="width:570px;height:350px;margin-left:-1px;z-index:1" onmouseover="mouseover()" onmouseout="mouseout()"/>
 
-	  <ul id="ul5">
-       		<li>
-				<input type="image" value="登录" style=" width:520px; height:59px;background-image:url(/static/images/open.png);background-repeat:no-repeat" />
+			</li>	
+			
+			<li style="position:absolute;top:30px;z-index:2;left:800px;">
+				<img src="/static/images/Slogo.png" width="540px;" height="440px;"/>
 			</li>
-	  </ul>
-		  </form>
-    </ul>
-  </div>
+			<li id="img1" style="top:215px;position:absolute;right:425px;z-index:2;">
+			<img  src="/static/images/open.png" width="189px" height="89px" />
+			</li>
+				
+			<!--style="top:215px; position:absolute;right:315px;z-index:2;"-->
+			
+			
+		</ul>
 </div>
 
-
-	<div id="footer">
+<div id="footer">
 		<ul class="ful1">
 			<li>
 				<label>合作伙伴</label>
@@ -198,16 +215,11 @@
 				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
 			</li>
 		</ul>
-	</div>
-
-
-<script type="text/javascript">
-$("#rulesubmit").click(function(){
-  var username = $("input[name=username]").val();
-  if(username){
-  $.post("/send_smscode/", {"phoneNum":username}, function(){});}
-  else{alert("请输入手机号！");}
-});
-</script>
+		<ul style="position:absolute;left:1150px;top:440px;list-style:none">
+			<li>
+				<img src="/static/images/8cm.jpg" width="110px;" height="90px;" />
+			</li>
+		</ul>
+</div>
 </body>
 </html>

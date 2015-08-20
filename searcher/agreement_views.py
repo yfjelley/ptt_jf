@@ -41,17 +41,18 @@ def writeagreement(request):
     #金融在线 0 电子商务1 医疗2 互联网3 社交4
     ind = {0:u'金融在线',1:u'电子商务',2:u'医疗',3:u'互联网',4:u'社交'}
     for i in user:
-        print i.user
-        print i.position
-        print i.user.username
+        #print i.user
+        #print i.position
+        #print i.user.username
         pr=Project(publish=i.user,name="众筹",founder="yang")
         pr.save()
-        f = Project.objects.filter(founder="yang")
-        for i in f:
-            print len(f)
-            print i.founder
+        f = Project.objects.filter(founder="yang").filter(name__contains="筹")
+        print "xxxxx",Project.objects.filter(founder="yang").filter(name__contains="筹").count()
+        if f:
+            print "ceshi chenggong"
+        print len(f)
+        print f[0].founder
 
-        #Project.leader.all()
     ui = UserInformation.objects.filter(authentication_class=2)
     for i in  ui:
         print i.user
