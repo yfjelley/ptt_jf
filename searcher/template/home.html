@@ -20,11 +20,19 @@ $(function (){
 	function Lmouseover()
 	{
 		$("#img2").show();
+		$("#img3").show();
+		$("#img4").hide();
+		$("#img5").hide();
+		$("#img6").show();
 	}
 	
 	function Lmouseout()
 	{
 		$("#img2").hide();
+		$("#img3").hide();
+		$("#img4").show();
+		$("#img5").show();
+		$("#img6").hide();
 	}
 	
   function mouseover()
@@ -44,15 +52,15 @@ $(function (){
 <div id="Fdiv1">
 	<div id="Fdiv2">
 		<ul id="Fmain">
-		<ul style=" position:absolute;left:240px; top:12px;">
+		<ul style="position:absolute;top:20px;left:270px;">
 			<li>
-				<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" />
+				<img src="/static/images/mainlogo.png" />
 			</li>
 		</ul>
 		<ul class="Ful1">
 		<ul>
 			<li>
-				<a href="{% url 'index_zc' %}">首页</a>
+				<a href="{% url 'index_jf' %}">首页</a>
 			</li>
  		</ul>
 		<ul>
@@ -87,7 +95,7 @@ $(function (){
 				<a href="{% url 'register' %}">注册</a>
 			</li>
   		</ul>
-  		<ul type="disc">
+  		<ul  type="disc">
     		<li>
 				<a href="{% url 'login' %}">登录</a>
 			</li>
@@ -99,34 +107,41 @@ $(function (){
 
 <div class="Cpic">
 		<ul style=" float:left;">
+			<a href="{% url 'index_jf' %}">
 		<ul>
 			<li class="left1">
 				<img src="/static/images/left.jpg" style="width:570px;height:350px;z-index:1" onmouseover="Lmouseover()" onmouseout="Lmouseout()"/>
 			</li>
-			<li style="position:absolute; top:80px;left:200px;z-index:2;">
-				<img src="/static/images/jinfulogo.png" width="540px" height="440px;"/>
+			<li id="img4" style="position:absolute; top:150px;left:350px;z-index:2;">
+				<img src="/static/images/jinfu.png" width="200px" height="176px;"/>
 			</li>
-			<li	id="img2" style="position:absolute;top:200px;left:640px;z-index:2">
-				<img src="/static/images/open.png" width="189px" height="89px"  />
+			<li id="img3" style="position:absolute; top:50px;left:350px;z-index:2;">
+				<img src="/static/images/borderjinfu.png" width="400px" height="400px;"/>
+			</li>
+			<li	id="img2" style="position:absolute;top:240px;left:750px;z-index:2">
+				<img src="/static/images/button.png" width="150px" height="55px"  />
 			</li>
 		</ul>
+				</a>
 		</ul>	
 		
-		<ul class="Rul1">		
+		<ul class="Rul1">
+
 			<li class="Rpic">
 				<img src="/static/images/right.jpg" style="width:570px;height:350px;margin-left:-1px;z-index:1" onmouseover="mouseover()" onmouseout="mouseout()"/>
 
 			</li>	
-			
-			<li style="position:absolute;top:30px;z-index:2;left:800px;">
-				<img src="/static/images/Slogo.png" width="540px;" height="440px;"/>
+            <a href="http://ddbid.com">
+			<li id="img5" style="position:absolute;top:140px;z-index:2;left:1020px;">
+				<img src="/static/images/soudai.png" width="200px;" height="188px;"/>
 			</li>
+			<li id="img6" style="position:absolute;top:140px;z-index:2;left:1020px;">
+				<img src="/static/images/bordersoudai.png" width="400px;" height="400px;"/>
+			</li>
+             </a>
 			<li id="img1" style="top:215px;position:absolute;right:425px;z-index:2;">
-			<img  src="/static/images/open.png" width="189px" height="89px" />
-			</li>
-				
-			<!--style="top:215px; position:absolute;right:315px;z-index:2;"-->
-			
+			<img  src="/static/images/button.png" width="150px" height="55px" />
+			</li>			
 			
 		</ul>
 </div>

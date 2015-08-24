@@ -13,9 +13,23 @@
 			$('#daohang').find('li').click(function(){
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
-			});			
-		});		
+			});	
+			$('#daohang>ul>li a').hover(function(){
+  				$('#daohang li a').css('color','#808080');
+  				$(this).css('color','#000000');
+			});  		
+		});	 
+			
   </script>
+  	<script type="text/javascript">  
+	$(function(){
+			
+			$('#daohang>ul>li a').hover(function(){
+  				$('#daohang li a').css('color','#808080');
+  				$(this).css('color','#000000');
+			});  		
+	});	 
+	</script>
 
 
 </head>
@@ -28,7 +42,7 @@
 		<ul class="Hul1">
 		<ul>
 			<li style="margin-top:18px;">
-				<img src="/static/images/jinfulogo.png" width="150px" height="90px;" /></li>
+				<img src="/static/images/mainlogo.png" /></li>
 		</ul>
 		</ul>
 		<ul class="Hul2">
@@ -84,17 +98,17 @@
 <div class="div1">
 	     <div class="div_left" id="daohang">
 			<ul>
-				<li data-pp="company"><a href="javascript:void(0);">公司简介</a></li>			
+				<li data-pp="company"><a href="javascript:void(0);"class="blockColor">公司简介</a></li>			
 				<li><div class="downline"></div></li>
-				<li data-pp="chat"><a href="javascript:;">联系方式</a></li>
+				<li data-pp="chat"><a href="javascript:;" class="grayColor">联系方式</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="clause"><a href="javascript:;">免费条款</a></li>
+				<li data-pp="clause"><a href="javascript:;" class="grayColor">免费条款</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="partner"><a href="javascript:;">合作伙伴</a></li>
+				<li data-pp="partner"><a href="javascript:;" class="grayColor">合作伙伴</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="media"><a href="javascript:;">媒体报道</a></li>
+				<li data-pp="media"><a href="javascript:;" class="grayColor">媒体报道</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="joinour"><a href="javascript:;">加入我们</a></li>
+				<li data-pp="joinour"><a href="javascript:;" class="grayColor">加入我们</a></li>
 			</ul>
 		</div>
 		
@@ -116,12 +130,12 @@
 					 <p>邮政编码：365214</p>
 					 <p>邮箱地址：aaaa@aaa.com</p>
 					 <p>手机：1389999999</p>
-					 <div style="width:360px;height:1px;background:#ccc;"></div>
+					 <div style="width:245px;height:1px;background:#ccc;"></div>
 					 <p><img src="/static/images/subway.png" alt="subway" style="width:30px;height:30px;float:left"/>
 					 地铁一号线（莲花路站下）<br/>公交路线986、3645、126、452莲花路站下</p>
-					 <div style="width:360px;height:1px;background:#ccc;"></div>
+					 <div style="width:245px;height:1px;background:#ccc;"></div>
 					 <p>地图位置</p>
-					 <div style="width:500px;height:350px;border:#ccc solid 1px;font-size:12px;margin-bottom:15px;" id="map"></div>
+					 <div style="width:500px;height:350px;border:#ccc solid 1px;font-size:12px" id="map"></div>
 				 </div>
 		   </div> 
 		   <div id="clause" class="display">	   
@@ -268,8 +282,8 @@
   <script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("map");
-	var point = new BMap.Point(121.407999,31.138649);
-	map.centerAndZoom(point, 18);
+	var point = new BMap.Point(121.409331,31.138873);
+	map.centerAndZoom(point, 15);
 	map.enableScrollWheelZoom(true);
 	var marker = new BMap.Marker(point);  // 创建标注
 	map.addOverlay(marker);               // 将标注添加到地图中

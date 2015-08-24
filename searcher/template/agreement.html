@@ -3,89 +3,68 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>注册协议</title>
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <link rel="stylesheet" href="/static/css/agreement.css" />
-<link rel="stylesheet" href="/static/css/index2.css" />
-</head>
 
+</head>
 <body>
 <div id="Fdiv1">
-	<div id="Fdiv2">
-		<ul id="Fmain">
-		<ul class="Ful1">
-		<ul>
+		<ul style="position:absolute;top:-11px;left:270px;">
 			<li>
+				<img src="/static/images/mainlogo.png" />
+			</li>
+		</ul>
+		<ul class="ul7">
+    		<li>
 				<a href="{% url 'index_zc' %}">首页</a>
-			</li>
- 		</ul>
-		<ul>
+				<a href="{% url 'about' %}">关于我们</a>
+				<a href="#">投资指引</a>
+    			<a href="#">葡萄藤社区</a>
+			</li>  		
+		</ul>
+		
+		<ul class="ul8">
     		<li>
-				<a href="#">投资人风采</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#"项目风采></a>
-			</li>
-  		</ul>
-  		<ul>
-			<li>
-				<a href="#">项目发起</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#">葡萄藤社区</a>
+     			<label class="lab1">24小时客服电话</label>
+				<label class="lab2">400-8800-6799</label>
+				<label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
 			</li>
 		</ul>
-		</ul>
-		<ul class="Ful2">
-  		<ul>
-    		<li>
-      			<input type="text" placeholder="找项目,领头人" />
-    		</li>
-  		</ul>
-  		<ul type="disc">
-    		<li>
-				<a href="{% url 'register' %}">注册</a>
-			</li>
-  		</ul>
-  		<ul type="disc">
-    		<li>
-				<a href="{% url 'login' %}">登录</a>
-			</li>
-  		</ul>
-		</ul>
-		</ul>
-	</div>
 </div>
 
 <div id="div1">
 	<div id="div2">
 	<div align="center">
-		<ul>
+		<ul class="div2ul">
 			<li>
-				<label>注册协议</p>
+				<label>注册协议</label>
+			</li>
+			<li style="margin-left:-38px;">
+				<div style="border-top:1px solid #eeeef0; width:518px; height:1px; "></div>
 			</li>
 		</ul>
 				
 	</div>
 	<div id="div3">
-		<ul>
-			<li>
-				<hr />
-			</li>
+		<ul>			
 			<li>
 	<div class="Overhidden">
-	{{agreement}}
+	{{agreement|safe}}
 	</div>
-			</li>
-			<li>
-				<hr />
-			</li>
+			</li>		
 		</ul>
 	</div>
 	<div class="return" align="center">
-				<input type="button" style="height:30px;background-color:#4a3c70;width:80px;" value="返回" />
+		<ul class="returnul">
+			<li style=" margin-left:-38px;">
+				<div style="border-top:1px solid #eeeef0; width:518px; height:1px;"></div>
+			</li>
+			<li>
+				<input  id = "return_to_register"  type="button" style="height:30px;background-color:#4a3c70;width:80px;" value="返回" />
+			</li>
+		</ul>
+				
 	</div>
 	</div>
 </div>
@@ -100,17 +79,17 @@
 		</ul>
 		<ul class="ful2">
 			<li>
-				<label class="flab1">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:75px;margin-left:50px;"></div>
 				</label>
-				<label class="flab2">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
 				</label>
-				<label class="flab3">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
 				</label>
 			</li>
-		</ul>		
+		</ul>	
 		<ul class="ful3">
 			<li>
 				<a href="#">天使客</a>				
@@ -129,7 +108,7 @@
 		</ul>
 		<ul class="ful5">
 			<li>
-				<a href="#">咨询热线:400-000-0000</a>	
+				咨询热线:400-000-0000
 			</li>
 		</ul>
 		<ul class="ful6">
@@ -150,7 +129,7 @@
 		</ul>
 		<ul class="ful8">
 			<li>
-				<a href="#">公司邮箱:sys@pttjf.com</a>	
+				公司邮箱:sys@pttjf.com	
 			</li>
 		</ul>
 		<ul class="ful9">
@@ -171,9 +150,24 @@
 		</ul>
 		<ul class="ful11">
 			<li>
-				<a href="#">公司地址:{{address}}</a>
+				公司地址:{{address}}
+			</li>
+		</ul>
+		<ul class="ful12">
+			<li>
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
 			</li>
 		</ul>
 	</div>
+<script type="text/javascript">
+   $(function(){
+         $("#return_to_register").click(function(){
+           window.location.replace("/register/");
+          })
+   })
+</script>
 </body>
 </html>

@@ -30,6 +30,10 @@
 			     $(this).find('span').hide();
 				  $(this).find('#donline').hide();
 			});
+			$('#daohang>ul>li a').hover(function(){
+  				$('#daohang li a').css('color','#808080');
+  				$(this).css('color','#000');
+			});   
 		});
 		
     </script>  
@@ -46,13 +50,13 @@
 		<ul class="Hul1">
 		<ul>
 			<li style="margin-top:18px;">
-				<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" /></li>
+				<img src="/static/images/mainlogo.png" /></li>
 		</ul>
 		</ul>
 		<ul class="Hul2">
 		<ul>
 			<li>
-				<a href="{% url 'index_page' %}">首页</a>
+				<a href="{% url 'index_zc' %}">首页</a>
 			</li>
  		</ul>
 		<ul>
@@ -102,7 +106,7 @@
 <div class="div11">
 		<div class="div_left" id="daohang">
 			<ul>		   
-				<li data-pp="gyzc"> <a href="javascript:void(0);">关于众筹</a></li>
+				<li data-pp="gyzc"> <a href="javascript:void(0);">关于众筹sds</a></li>
 				<li><div class="downline"></div></li>
 				<li data-pp="tzlc"><a href="javascript:;">投资流程</a></li>
 				<li><div class="downline"></div></li>

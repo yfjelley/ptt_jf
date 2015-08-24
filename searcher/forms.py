@@ -50,9 +50,9 @@ class LoginForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"密码",
-                'type': 'text',
+                'type': 'password',
                 'name': 'userpassword',
-                'class': 'inputxt'
+                'class': 'inputxt',
             }
         ),
     )
@@ -87,7 +87,6 @@ class RegisterForm(forms.Form):
                 'placeholder': u"手机号",
                 'type': 'text',
                 'class': 'inputxt',
-                'ajaxurl': '/register/'
             }
         ),
     )
@@ -109,7 +108,7 @@ class RegisterForm(forms.Form):
     password2 = forms.CharField(
         required=True,
         label=u"确认密码",
-        error_messages={'required': u'再次输入密码'},
+        error_messages={'required': u'请重新输入密码'},
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"确认密码",
@@ -129,23 +128,10 @@ class RegisterForm(forms.Form):
                 'type': 'text',
                 'name': 'smscode',
                 'class': 'inputxt',
-                'ajaxurl': '/checksmscode/'
             }
         ),
     )
-    # nickname = forms.CharField(
-    #     required=True,
-    #     label=u"昵称",
-    #     error_messages={'required': u'请输入昵称'},
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             'placeholder': u"昵称",
-    #             'type': 'text',
-    #             'name': 'nickname',
-    #             'class': 'inputxt'
-    #         }
-    #     ),
-    # )
+
     vcode = forms.CharField(
         required=True,
         label=u"验证码",
@@ -156,7 +142,6 @@ class RegisterForm(forms.Form):
                 'type': 'text',
                 'name': 'yzm',
                 'class': 'inputxt',
-                'ajaxurl': '/checkvcode/'
             }
         ),
     )
@@ -254,7 +239,7 @@ class WXRegisterForm(forms.Form):
     password2 = forms.CharField(
         required=True,
         label=u"确认密码",
-        error_messages={'required': u'再次输入密码'},
+        error_messages={'required': u'请重新输入密码'},
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"确认密码",

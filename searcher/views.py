@@ -252,15 +252,17 @@ def register(request):
         response = HttpResponse()
         response['Content-Type'] = "text/javascript"
 
-        u_ajax = request.POST.get('username', None)
+        u_ajax = request.POST.get('name', None)
         if u_ajax:
             response['Content-Type'] = "application/json"
             u = User.objects.filter(username=u_ajax)
             if u.exists():
-                response.write('{"info": "user is exist!","status": "n"}')  # 用户已存在
-                return response
+                return HttpResponse(u'用户已xxxx存在')
+                #response.write('{"info": "user is exist!","status": "n"}')  # 用户已存在
+                #return response
 
         form = RegisterForm(request.POST)
+        print form
 
         if form.is_valid():
             cd = form.cleaned_data
@@ -305,8 +307,9 @@ def register(request):
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
 
-                return HttpResponseRedirect(reverse('index'))
+                return HttpResponseRedirect(reverse('index_jf'))
         else:
+            print "else"
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
         form = RegisterForm()
@@ -718,12 +721,12 @@ def agreement(request):
     return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
-def index_page(request):
+def index_zc(request):
     pj = Project.objects.filter(active=1)
     print pj
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
-def index_zc(request):
+def index_jf(request):
     pj = Project.objects.filter(active=1)
     print pj
     return render_to_response('home.html',{}, context_instance=RequestContext(request))

@@ -3,14 +3,17 @@
 #Fmain ul{list-style:none;color:#FFFFFF;float:left;padding:0 10px;}
 .Hul1{margin-top:-30px; margin-left:80px;}
 .Hul2{margin-left:20px;font-size:18px;margin-top:10px;}
+.Hul2 a{color:#fff;}
 .Hul3{font-size:12px;margin-top:10px;}
 .Hul3 input{width:140px;}
 .Hul3 ul[type="disc"]{margin-top:2px;}
-a{text-decoration:none;color:#FFFFFF;}
+.Hul3 a{color:#fff;}
+a{text-decoration:none;}
 a:hover{color:#e1604d}
 li{list-style:none;}
 
 #footer{width:1140px;background-color:#372c3a;color:#FFFFFF;height:180px;clear:both; overflow:hidden;margin-top:-37px;margin-left:208px;}
+#footer a{color:#fff;}
 .flab1 hr{width:180px;margin-top:50px;margin-left:50px;}
 .flab2 hr{width:180px;margin-top:-7px;margin-left:270px;}
 .flab3 hr{width:420px;margin-top:-7px;margin-left:480px;}

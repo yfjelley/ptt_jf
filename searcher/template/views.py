@@ -257,8 +257,9 @@ def register(request):
             response['Content-Type'] = "application/json"
             u = User.objects.filter(username=u_ajax)
             if u.exists():
+                #return HttpResponse(u'用户已存在')
                 response.write('{"info": "user is exist!","status": "n"}')  # 用户已存在
-                return response
+                #return response
 
         form = RegisterForm(request.POST)
 
@@ -718,14 +719,21 @@ def agreement(request):
     return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
-def index_page(request):
+def index_zc(request):
     pj = Project.objects.filter(active=1)
     print pj
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
+def index_jf(request):
+    pj = Project.objects.filter(active=1)
+    print pj
+    return render_to_response('home.html',{}, context_instance=RequestContext(request))
+
 def about(request):
-    return render_to_response('about.html',{}, context_instance=RequestContext(request))
+    return render_to_response('about2.html',{}, context_instance=RequestContext(request))
+
+def guide(request):
+    return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
 def investor(request):
-
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))

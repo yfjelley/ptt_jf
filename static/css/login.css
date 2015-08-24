@@ -1,40 +1,70 @@
-.warp,.login_header,.registerform ul,.login_mid{ overflow:hidden;}
-.login_header,.login_mid{ width:980px; margin:0 auto;}
-.login_header{ padding:10px 0; height:70px; line-height:70px; background:url(../images/logo_bg.png) no-repeat 250px center;}
-.login_header a,.login_header a img{ width:224px; height:70px; display:block;}
-.login_header a{ float:left; margin-right:10px;}
-.logib_line{ background:url(../images/line.png) no-repeat center center; height:20px;}
-.login_mid{ padding:10px 0; min-height:525px;}
-.login_left,.login_right{ padding:0 10px;}
-.login_right{ padding-left:20px;}
-.login_left{ width:720px;}
-.login_right{ width:200px; height:100px; border-left:1px dashed #ddd; }
-.login_right p{font-size:14px; height:24px; line-height:24px;}
-.login_btn,.btn_reg{ margin-top:15px;  display:inline-block;width:94px; height:33px; border:0; cursor:pointer; }
-.btn_reg{ background:url(../images/reg_btn.png) no-repeat 0 0;}
-.login_btn{ background:url(../images/login_btn.png) no-repeat 0 0;}
-.registerform ul li{ padding-bottom:20px;}
-.registerform .label {display: inline-block;width: 90px; margin: 0 15px 0 4px; font-size:14px; text-align:right; font-weight:bold;}
-.registerform .inputxt{ width:238px; height:15px; line-height:15px; padding:5px; border:1px solid #ccc;}
-.login_zh{ color:#0e5fbc;}
-.login_zh:hover{ text-decoration:underline;}
-.login_dl{ display:inline-block; width:60px; height:30px; color:#fff; background:#c50512;  font-size:14px; font-weight:bold; border:0; cursor:pointer;}
-.login_dl:hover{ color:#fff; background:#d23c46;}
-.Validform_error{background-color: #ffe7e7;}
-.Validform_checktip{color: #999;font-size: 12px; height: 20px;line-height: 20px;overflow: hidden; margin-left:10px;}
-.Validform_wrong{color: red;padding-left: 20px;white-space: nowrap; background:url(../images/error.png) no-repeat 0 center;}
-.Validform_right{color: #71b83d;padding-left: 20px; background:url(../images/right.png) no-repeat 0 center;}
+body{margin:0px;}
+.ul7 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
+.ul7 a:hover{color:#e1604d;cursor:pointer;}
+.ul7{list-style:none;color:#FFFFFF;float:left;font-size:18px;margin-left:220px; margin-top:30px}
+.ul8 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
+.ul8 a:hover{color:#e1604d;cursor:pointer;}
+.ul8{ margin-top:-40px;font-size:18px;color:#FFFFFF;float:left;margin-left:670px;}
+	
+.ul8 .lab1{font-size:8px; color:#999999;}
 
-/*注册*/
-.reg_header{ background:url(../images/reg_bg.png) no-repeat 250px center;}
-.reg_btn{ width:178px;}
-.registerform .need{ color: #b20202;width: 10px;}
-#Validform_msg{ display:none;}
-#footer{ position:fixed;bottom: 0;left: 0;}
-
-/*取回密码*/
-.retrieve_header{ background:url(../images/retrieve_pwd_bg.png) no-repeat 250px center;}
-.login_retrieve{ padding:5px 10px; border:1px solid #ddd; border-radius:5px;}
-.login_retrieve:hover{ background:#f2f2f2; color:#4c4c4c;}
+.ul8 .lab2{font-size:18px; color:#999999; margin-left:10px;}
+.ul8 .lab3{margin-left:16px;font-size:12px;}
+.ul8 .lab4{margin-left:-5px;font-size:12px;}
+#container{	background-color:#372c3a;height:70px;width:1140px;margin-left:210px;}
+#sub{background-color:#eeeef0;width:1140px;height:700px;margin-left:210px;margin-top:-1px;}
+#div2{width:600px;height:500px;background:#FFFFFF;margin-top:50px;position:absolute;z-index:1; margin-left:270px;}
+li{list-style:none;}
+#ul1{margin:0 auto;font-size:12px;}
+#ul2{margin:30px 0;margin-left:-28px;font-size:12px; line-height:25px;}
+#ul2 input[type="password"]{width:500px;height:40px;margin:0 auto;}
+#ul3{font-size:12px;margin:30px 0; line-height:25px;}
+#ul3 hr{height:1px;margin-left:-28px;width:505px;border:none;border-top:1px solid #eeeef0}
+input.input_butt{display:inline-block; border:0}
+#ul4 label{margin-left:150px;font-size:32px;}
+#ul4{font-style:normal;margin:30px 0;margin-left:45px;font-size:18px;}
+#ul4 hr{height:1px;margin-left:-70px;width:505px;border:none;border-top:1px solid #eeeef0}
+#ul5{font-size:12px;margin:30px 0;margin-left:-28px; line-height:25px;}
+#ul5 input[type="text"]{width:500px;height:40px;margin:0 auto;}
+a{text-decoration:none; color:#FFFFFF}
+#ul3 a{color:#000000;}
+#ul11 a{color:#000000;}
+#ul3 a:hover{color:#e1640d;}
+#ul11 a:hover{color:#e1640d;}
+a:hover{color:#e1640d;cursor:pointer;}
 
 
+#footer{width:1140px;background-color:#372c3a;height:180px;clear:both;overflow:hidden;margin-top:-15px;margin-left:208px;}
+a:hover{
+color:#e1604d;
+cursor:pointer;
+}
+.ful{margin-top:15px; margin-left:-50px;}
+.ful1,.ful2,.ful3,.ful4,.ful5,.ful6,.ful7,.ful8,.ful9,.ful10,.ful11,.ful12,.ful13{font-size:10px;}
+.ful1 label{color:#e1604d;}
+.ful2 hr{color:#e1604d;}
+.ful1{font-size:16px;margin-left:50px;}
+.ful1 li{position:absolute;margin-top:20px;}
+.ful2{position:absolute;}
+.ful3{position:absolute;margin-top:75px;margin-left:25px;}
+.ful3 li{float:left;padding:0px 24px;}
+.ful4{position:absolute;margin-top:75px;margin-left:248px;}
+.ful4 li{float:left;padding:0px 20px;}
+.ful5{position:absolute;margin-top:75px;margin-left:458px; color:#FFFFFF}
+.ful5 li{float:left;padding:0px 20px;}
+
+.ful6{position:absolute;margin-top:100px;margin-left:25px;}
+.ful6 li{float:left;padding:0px 20px;}
+.ful7{position:absolute;margin-top:100px;margin-left:248px;}
+.ful7 li{float:left;padding:0px 20px;}
+.ful8{position:absolute;margin-top:100px;margin-left:458px; color:#FFFFFF}
+.ful8 li{float:left;padding:0px 20px;}
+
+.ful9{position:absolute;margin-top:125px;margin-left:25px;}
+.ful9 li{float:left;padding:0px 20px;}
+.ful10{position:absolute;margin-top:125px;margin-left:248px;}
+.ful10 li{float:left;padding:0px 20px;}
+.ful11{position:absolute;margin-top:125px;margin-left:458px;}
+.ful11 li{float:left;padding:0px 20px; color:#FFFFFF}
+.ful12{position:absolute; margin-left:930px; line-height:20px; margin-top:10px;}
+.fuldy{margin-left:40px; color:#FFFFFF;}
