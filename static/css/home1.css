@@ -1,6 +1,6 @@
 
 li{list-style:none}
-.Cpic{margin-left:128px;margin-top:-16px;overflow:hidden; width:1800px;}
+.Cpic{margin-left:130px;margin-top:-1px;overflow:hidden; width:1360px; height:460px;}
 
 .left1 img:hover{
 -webkit-transform: scaleX(1.25);/*图片向x轴移动*/
