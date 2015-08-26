@@ -214,25 +214,22 @@
 	</ul>
 </div>
 <script type="text/javascript">
-    $("#login").click(function(){
+    $(function(){
         {% if form.username.errors %}
             {% for error in form.username.errors %}
                 alert('{{ error }}');
-                return flase;
             {% endfor %}
         {% endif %}
 
         {% if form.password2.errors %}
             {% for error in form.password2.errors %}
                 alert('{{ error }}');
-                return flase;
             {% endfor %}
         {% endif %}
 
         {% if form.vcode.errors %}
             {% for error in form.vcode.errors %}
                 alert('{{ error }}');
-                return flase;
             {% endfor %}
         {% endif %}
 

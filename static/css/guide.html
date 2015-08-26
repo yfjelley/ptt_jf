@@ -14,17 +14,10 @@
 			});
 			
 			$('#bzzx_content').find('li').click(function(){
-			
-			 $(this).find('#donline').show();
-				var this_div = $(this).find('div');
-				if(this_div.is(':hidden')){
-					this_div.show();
-				}else{
-					this_div.hide();
-				}
-			});
+				var id = $(this).data('pp');
+			    $('#'+id).show().siblings().hide();
 				
-			
+			});
 				
 			$('#daohang>ul>li a').click(function(){
   				$('#daohang li a').css('color','#808080');
@@ -179,26 +172,47 @@
 			</div>  
 			  <div id="bzzx" class="bzzx" >
 			
+				<div>
 					  <div style="margin-left:40px;font-size:24px;">帮助中心</div>				  
-					  <ul id="bzzx_content" class="helpcenter">	
-					      		     
-						  <li> <div class="donline" id="donline"></div>	<a href="#">如何进行项目预约？<span>▼</span></a>
+					  <ul id="bzzx_content" class="helpcenter">		
+					  		     
+						  <li data-pp="yy"> <a href="#"> 如何进行项目预约？<span id="lthb" style="color:#FF0000">◀</span></a></li>
+						      <div id="yy" class="xx">
+						        <div class="donline" id="donline"></div>
+						        <span id="sp1" style="color:#FF0000">◀</span><span id="sp2" style="color:#FF0000;display:none;">▼</span>
 								<div class="b_span"><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p></div>  
-								<div class="donline"/></div>        
-						  </li>
-						  <li><div class="donline" id="donline"></div>	<a href="#">什么是保证金？<span >▼</span> </a>
-						  		<div class="b_span"><p>sdfsdfsdfsdfsdfsd凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline"/></div></div>
-						  </li>
-						  <li><div class="donline" id="donline"></div>	<a href="#">保证金的使用规则？<span >▼</span> </a>
-						  		<div class="b_span"><p>融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline"/></div></div>                                
-						  </li>
-						  <li><div class="donline" id="donline"></div>	<a href="#">领投人的回报是什么？<span >▼</span> </a>
-						  		<div class="b_span"><p>糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金</p><div class="donline"/></div></div>
-					      </li>
-					 </ul>
-					  <div style="height:140px;"></div>	     
-			</div>
-				   
+								<div class="donline"/></div>
+							  </div>          
+						 
+						  <li data-pp="bzj" > <a href="#"> 什么是保证金？<span id="lthb" style="color:#FF0000">◀</span></a></li>
+						  <div id="bzj" class="xx">
+							  <div class="donline" id="donline"></div>
+									<span id="sp1" style="color:#FF0000">◀</span><span id="sp2" style="color:#FF0000;display:none;">▼</span>
+									<div class="b_span"><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p></div>  
+									<div class="donline"/></div>  
+							  </div>	 
+						  
+						  <li data-pp="sygz"><a href="#"> 保证金的使用规则？<span id="lthb" style="color:#FF0000">◀</span></a></li>
+							  <div id="sygz" class="xx">
+								  <div class="donline" id="donline"></div>
+								  <span id="sp1" style="color:#FF0000">◀</span><span id="sp2" style="color:#FF0000;display:none;">▼</span>
+									<div class="b_span" ><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p></div>  
+									<div class="donline"/></div>  
+							  </div>                               
+						  
+						 
+						  <li data-pp="lthb"><a href="#"> 领投人的回报是什么？ <span id="lthb" style="color:#FF0000">◀</span></a></li>
+							  <div id="ptxy" class="xx">
+								   <div class="donline" id="donline"></div>
+								  <span id="sp2" style="color:#FF0000;display:none;">▼</span>
+									<div class="b_span" ><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p></div>  
+									<div class="donline"/></div>  
+							  </div>
+					      
+						   
+					   </ul>
+				     </div>
+				     <div style="height:140px;"></div>
 			</div> 
 		   <div id="right_media" class="display" style="margin-top:60px;background:#FFFFFF;">2222222222222</div> 	
 		   <div id="right_joinour" class="display" style="margin-top:60px;background:#FFFFFF;">6666666666666</div>

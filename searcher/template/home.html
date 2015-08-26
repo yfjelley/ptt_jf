@@ -70,8 +70,23 @@ $(function (){
     		<li>
      			<label class="lab1">24小时客服电话</label>
 				<label class="lab2">400-8800-6799</label>
-				<label class="lab3"><a href="{% url 'register' %}">注册</a></label>
-				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+				{% ifequal user.id None %}
+				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+				{% else %}
+				    <ul id="top_r" class="top_name">
+                       <div id="logged">
+                          <a id="check_log" style="display: none">1</a>
+                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                             <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+						     </ul>
+                          </li>
+					   </div>
+                    </ul>
+
+                {% endifequal %}
 			</li>
 		</ul>		
 </div>
@@ -211,5 +226,26 @@ $(function (){
 			</li>
 		</ul>
 	</ul>
-</div></body>
+</div>
+<script type="text/javascript">
+        //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
+</body>
 </html>

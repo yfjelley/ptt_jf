@@ -92,13 +92,14 @@ def forgetpw(request):
 
                 auth.login(request, user)
                 message = u'success login!'
-                return HttpResponseRedirect(reverse('index'))
+                return HttpResponseRedirect(reverse('index_jf'))
                 #return render_to_response('success_login.html',{"message":message},
                 #                     context_instance=RequestContext(request))
 
             else:
                 message = u'手机号或者验证码错误'
-                return render_to_response('success_login.html',{"message":message},
+                form.valiatetype(2)
+                return render_to_response('forgetpwd.html',{"form":form},
                                       context_instance=RequestContext(request))
 
 

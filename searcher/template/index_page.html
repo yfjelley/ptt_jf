@@ -3,18 +3,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/index_page.css" />
-<link rel="stylesheet" href="/static/css/rotate.css" />
-<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/js/slider.js"></script>
-<script type="text/javascript" src="/static/js/rotate.js"></script>
 <script type="text/javascript" src="/static/js/fixed.js"></script>
 <script type="text/javascript" src="/static/js/rightFixed.js"></script>
+
+<style type="text/css">
+#owl-demo{width:1140px;height:500px;}
+#owl-demo .item{ position:relative;display:block;}
+#owl-demo img{display:block;width:1140px;height:500px;}
+#owl-demo b{position:absolute;left:0;bottom:0;width:100%;height:78px;background-color:#000;opacity:.5;filter:alpha(opacity=50);}
+#owl-demo span{position:absolute;left:0;bottom:37px;width:100%;font:18px/32px "微软雅黑","黑体";color:#fff;text-align:center;}
+
+.owl-pagination{position:absolute;left:0;bottom:10px;width:100%;height:22px;text-align:center;}
+.owl-page{display:inline-block;width:10px;height:10px;margin:0 5px;background-image:url(/static/images/bg15.png);*display:inline;*zoom:1; }
+.owl-pagination .active{width:25px;background-image:url(/static/images/bg16.png);}
+.owl-buttons{display:none;}
+.owl-buttons div{position:absolute;top:50%;width:50px;height:100px;margin-top:-40px;text-indent:-9999px;}
+.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:40px; margin-top:-30px;}
+.owl-next{right:0;background-image:url(/static/images/jiantou5.png);}
+.owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
+.owl-next:hover{background-image:url(/static/images/jiantou3.png);}
+</style>
+
+<link rel="stylesheet" href="/static/css/owl.carousel.css" />
+<script type="text/javascript" src="/static/js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#owl-demo').owlCarousel({
+		items: 1,
+		navigation: true,
+		navigationText: ["上一个","下一个"],
+		autoPlay: true,
+		stopOnHover: true
+	}).hover(function(){
+		$('.owl-buttons').show();
+	}, function(){
+		$('.owl-buttons').hide();
+	});
+});
+</script>
+
+
 <title>葡萄藤众筹</title>
 </head>
 <body>
-<div id="container">
-	<div id="header">
+<div id="header">
 		<ul class="tul1">
 			<li>
 				<a href="{% url 'index_zc' %}">首页</a>
@@ -31,57 +64,26 @@
 				<a href="{% url 'login' %}" style="font-size:10px;">登录</a>
 			</li>
 		</ul>
-	</div>
-	
+</div>
 	<div class="rotate">
-		<!-- 轮播广告 -->
-	<div id="banner_tabs" class="flexslider">
-		<ul class="slides">
-			<li>
-				<a title="" target="_blank" href="#">
-					<img width="1920" height="482" alt="" style="background: url(images/banner1.jpg) no-repeat center;" src="images/alpha.png">
-				</a>
-			</li>
-			<li>
-				<a title="" href="#">
-						<img width="1920" height="482" alt="" style="background: url(images/banner2.jpg) no-repeat center;" src="images/alpha.png">
-				</a>
-			</li>
-			<li>
-				<a title="" href="#">
-						<img width="1920" height="482" alt="" style="background: url(images/banner3.jpg) no-repeat center;" src="images/alpha.png">
-				</a>
-			</li>
-		</ul>
-		<ul class="flex-direction-nav">
-			<li>
-				<a class="flex-prev" href="javascript:;">Previous</a>
-			</li>
-			<li>
-				<a class="flex-next" href="javascript:;">Next</a>
-			</li>
-		</ul>
-		<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
-				<li><a>1</a></li>
-				<li><a>2</a></li>
-				<li><a>2</a></li>
-		</ol>
-	</div>
-	</div>
-	
-	<div id="sidebarWrap">
-		<div id="sidebar">
-			<img src="images/Desert.jpg" width="90px;" height="60px;" />
+		<!--图片轮播 -->
+		<div id="owl-demo" class="owl-carousel">
+			<a class="item" href="#" ><img src="/static/images/zc_banner.png"  alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
+			<a class="item" href="#" ><img src="/static/images/banner2.png" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
+			<a class="item" href="#" ><img src="/static/images/banner3.png" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>	
 		</div>
-	</div>
 
-
+		<div id="sidebar">
+			<img src="/static/images/sqtzr.png" width="110;" height="160px;" />
+		</div>
+	
+	<div id="menu">
 	<div id="menu2">
 		<ul>
 			<li>
 				<h2>每日精选</h2>
 			</li>
-			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-40px;">
+			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:-10px;">
 				1111				
 			</li>
 		</ul>
@@ -90,7 +92,7 @@
 		<ul>
 			<li>
 			</li>
-			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
 				222				
 			</li>
 		</ul>
@@ -100,7 +102,7 @@
 			<li>
 			
 			</li>
-			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
 				333				
 			</li>
 		</ul>
@@ -110,18 +112,23 @@
 			<li>
 		
 			</li>
-			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
 				333				
 			</li>
 		</ul>
 	</div>
-	<div id="rightFloat">
-		<div id="rightSidebar">
-			<img src="images/Desert.jpg" width="90px;" height="60px;" />
-		</div>
 	</div>
+		<div id="rightSidebar">
+			<ul>
+				<li><img src="/static/images/phone.png" width="60px;" height="60px;" /></li>
+				<li><img src="/static/images/qq.png" width="50px;" height="50px;" /></li>
+				<li><img src="/static/images/email.png" width="60px;" height="60px;" /></li>
+				<li><img src="/static/images/gototop.png" width="45px;" height="45px;" /></li>
+			</ul>
+		</div>
+
 	
-	
+	</div>
 	<div id="footer">
 		<ul class="ful1">
 			<li>
@@ -207,6 +214,6 @@
 			</li>
 		</ul>
 	</div>
-</div>
+
 </body>
 </html>

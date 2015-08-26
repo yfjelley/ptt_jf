@@ -1,11 +1,8 @@
 {% load staticfiles %}
-{% load settingsvalue %}
-{% load url from future %}
-{% load i18n %}
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>天天搜贷</title>
+    <title></title>
     <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
     <link href="/static/css/user.css" rel="stylesheet" type="text/css"/>
     <link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
@@ -32,12 +29,12 @@
 
 <body>
 <div id="container">
-{% include "header.html" %}
+
 <div id="mid">
     <div class="user_con">
-        {% include "little_search.html" %}
+
         <div class="user_conter mt10">
-            {% include "user_config_nav.html" %}
+
             <div class="user_right fr">
                 <div class="user_message user_box">
                     <div class="user_title">个人信息</div>
@@ -67,6 +64,6 @@
         alert('{{ error }}');
     </script>
 {% endif %}
-{% include "footer.html" %}
+
 </div>
 </body>

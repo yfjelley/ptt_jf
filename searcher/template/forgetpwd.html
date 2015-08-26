@@ -210,6 +210,14 @@ $("#rulesubmit").click(function(){
   $.post("/send_smscode/", {"phoneNum":username}, function(){});}
   else{alert("请输入手机号！");}
 });
+
+$(function(){
+        {% if form.smscode.errors %}
+            {% for error in form.smscode.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+        })
 </script>
 </body>
 </html>

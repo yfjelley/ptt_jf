@@ -1,6 +1,6 @@
 #Fdiv1{background-color:#372c3a;height:70px;width:1140px;margin-left:208px; overflow:hidden;}
 #Fdiv2{margin-left:20px;}
-#Fmain ul{list-style:none;color:#FFFFFF;float:left;padding:0 10px;}
+#Fmain ul{color:#FFFFFF;float:left;padding:0 10px;}
 .Hul1{margin-top:-30px; margin-left:80px;}
 .Hul2{margin-left:20px;font-size:18px;margin-top:10px;}
 .Hul2 a{color:#fff;}
@@ -10,7 +10,7 @@
 .Hul3 a{color:#fff;}
 a{text-decoration:none;}
 a:hover{color:#e1604d}
-li{list-style:none;}
+li{list-style:none;margin:0; padding:0;}
 
 #footer{width:1140px;background-color:#372c3a;color:#FFFFFF;height:180px;clear:both; overflow:hidden;margin-top:-37px;margin-left:208px;}
 #footer a{color:#fff;}

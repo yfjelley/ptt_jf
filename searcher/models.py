@@ -324,7 +324,7 @@ class RegistrationAgreement(models.Model):
 
 class Project(models.Model):
     publish = models.ForeignKey(User,related_name = "publish_set")#项目发布者 可以发布多个项目
-    founder =  models.CharField(max_length=255, blank=True)#项目可以有多个创始人
+    founder =models.CharField(max_length=255, blank=True)#项目可以有多个创始人
     team = models.CharField(max_length=255, blank=True)#项目团队一个项目有多个成员
     leader = models.ManyToManyField(User, related_name = "manager_set")#领投人
     investor = models.ManyToManyField(User, related_name = "investor_set")#跟投人
@@ -335,6 +335,8 @@ class Project(models.Model):
     description = models.TextField(blank=True)#项目描述
     category = models.CharField(max_length=255, blank=True)#行业类别
     amount = models.CharField(max_length=255, blank=True)#融资总额
+    #leader_inv_min = models.CharField(max_length=255, blank=True)#领头最低投资额
+    #inv_min = models.CharField(max_length=255, blank=True)#跟头最低投资额
     finish = models.CharField(max_length=255, blank=True)#已完成融资金额
     fund_use = models.CharField(max_length=255, blank=True)#资金用途
     transfer_equity = models.CharField(max_length=255, blank=True)#出让的股权份额
@@ -346,10 +348,10 @@ class Project(models.Model):
     status = models.IntegerField(blank=True, null=True)#进行到什么程度
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
-    Preheat_date = models.DateTimeField(blank=True, null=True)
-    preheat_end_date = models.DateTimeField(blank=True, null=True)
-    crowd_date = models.DateTimeField(blank=True, null=True)
-    crowd_end_date = models.DateTimeField(blank=True, null=True)
+    Preheat_date = models.DateTimeField(blank=True, null=True) #预热时间
+    preheat_end_date = models.DateTimeField(blank=True, null=True)#预热结束时间
+    crowd_date = models.DateTimeField(blank=True, null=True)#众筹开始时间
+    crowd_end_date = models.DateTimeField(blank=True, null=True)#众筹结束时间
 
     class Meta:
         db_table = 't_project'

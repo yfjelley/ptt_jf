@@ -99,7 +99,7 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"密码",
-                'type': 'password',
+                'type': 'text',
                 'name': 'userpassword',
                 'class': 'inputxt'
             }
@@ -112,7 +112,7 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"确认密码",
-                'type': 'password',
+                'type': 'text',
                 'name': 'userpassword2',
                 'class': 'inputxt'
             }
@@ -427,6 +427,12 @@ class ForgetPW(forms.Form):
             }
         ),
     )
+
+    def valiatetype(self, a):
+        global msg
+        if a == 2:
+            msg = u"验证码错误!"
+            self._errors["smscode"] = self.error_class([msg])
 
 class ModfiyPW(forms.Form):
      password = forms.CharField(
