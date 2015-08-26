@@ -4,9 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/index_page.css" />
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/js/fixed.js"></script>
-<script type="text/javascript" src="/static/js/rightFixed.js"></script>
-
+<script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
+<style type="text/css">
+	#lt-div{width:105px; height:338px;margin-left:180px; margin-top:280px;}
+	#rt-div{height:320px;width:100px;border:1px solid white; background:#FFFFFF; margin-top:280px; margin-left:-380px;}
+	#rt-div li{ margin:0px -20px; line-height:40px;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#lt-div").floatdiv({left:"0",top:"50px"});//设置浮动层靠左距离为0，靠上距离50px 根据需求调整
+	$("#rt-div").floatdiv({right:"0",top:"50px"});//设置浮动层靠右距离为0，靠上距离50px 根据需求调整
+});
+</script>
 <style type="text/css">
 #owl-demo{width:1140px;height:500px;}
 #owl-demo .item{ position:relative;display:block;}
@@ -18,9 +27,9 @@
 .owl-page{display:inline-block;width:10px;height:10px;margin:0 5px;background-image:url(/static/images/bg15.png);*display:inline;*zoom:1; }
 .owl-pagination .active{width:25px;background-image:url(/static/images/bg16.png);}
 .owl-buttons{display:none;}
-.owl-buttons div{position:absolute;top:50%;width:50px;height:100px;margin-top:-40px;text-indent:-9999px;}
-.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:40px; margin-top:-30px;}
-.owl-next{right:0;background-image:url(/static/images/jiantou5.png);}
+.owl-buttons div{position:absolute;top:120px;width:50px;height:100px;text-indent:-9999px;}
+.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:120px;}
+.owl-next{background-image:url(/static/images/jiantou5.png);margin-left:940px;}
 .owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
 .owl-next:hover{background-image:url(/static/images/jiantou3.png);}
 </style>
@@ -73,9 +82,10 @@ $(function(){
 			<a class="item" href="#" ><img src="/static/images/banner3.png" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>	
 		</div>
 
-		<div id="sidebar">
-			<img src="/static/images/sqtzr.png" width="110;" height="160px;" />
+		<div id="lt-div">
+			<img src="/static/images/sqtzr.png" style="background-repeat:no-repeat">
 		</div>
+		
 	
 	<div id="menu">
 	<div id="menu2">
@@ -118,12 +128,12 @@ $(function(){
 		</ul>
 	</div>
 	</div>
-		<div id="rightSidebar">
+		<div id="rt-div">
 			<ul>
-				<li><img src="/static/images/phone.png" width="60px;" height="60px;" /></li>
-				<li><img src="/static/images/qq.png" width="50px;" height="50px;" /></li>
-				<li><img src="/static/images/email.png" width="60px;" height="60px;" /></li>
-				<li><img src="/static/images/gototop.png" width="45px;" height="45px;" /></li>
+				<li><img src="/static/images/phone.png" width="60px;" height="60px;" /></li>					
+				<li><img src="/static/images/qq_1.png" width="60px;" height="60px;" /></li>			
+				<li><img src="/static/images/email.png" width="60px;" height="60px;" /></li>			
+				<li><img src="/static/images/gototop.png" style="margin-top:30px; margin-left:10px;" width="45px;" height="45px;" /></li>
 			</ul>
 		</div>
 

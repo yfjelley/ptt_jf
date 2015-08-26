@@ -99,7 +99,7 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"密码",
-                'type': 'text',
+                'type': 'password',
                 'name': 'userpassword',
                 'class': 'inputxt'
             }
@@ -112,7 +112,7 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"确认密码",
-                'type': 'text',
+                'type': 'password',
                 'name': 'userpassword2',
                 'class': 'inputxt'
             }

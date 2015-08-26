@@ -7,7 +7,7 @@
 .grayColor{color:#808080;}
 .div_left ul li a:hover{border-left:2px solid red;}
 .downline{width:75px;height:1px;background:#ccc;margin-left:17px;}
-.div_right{margin-left:140px;width:653;height:100%;background-color:#FFFFFF;}
+.div_right{width:648;height:100%;background-color:#FFFFFF;}
 .biaoti{font-size:24px;}
 .con_right{padding-top:55px;background:#FFFFFF;margin-left:40px;}
 .con_right p span{font-size:18px;font-weight:bold;}
@@ -15,15 +15,7 @@
 .display{display:none;padding-top:55px;background:#FFFFFF;margin-left:40px;}
 .display p span{font-size:18px;font-weight:bold;}
 .display p{font-size:16px;width:570px;}
-.b_span{display:none;}
-.b_span p{font-size:16px;}
-.helpcenter li{margin-top:20px;}
-.helpcenter li a{font-size:18px;text-decoration:none;color:#000000;}
-.helpcenter li a span{display:none;right:460px;position:absolute;}
-.helpcenter li p{width:570px;}
-.flat_left{margin-left:20px;}
-.helpcenter li a:hover{color:#FF0000;}
-.donline{width:530px;height:1px;background:#EEEEF0;}
+.donline{width:530px;height:1px;background: #EEEEF0;}
 .bzzx{display:none;padding-top:55px;background:#FFFFFF;}
 .xx{diplay:none;}
 #nav111{
@@ -39,7 +31,6 @@
  color:#FF0000;
  font-size:16px;
  line-height: 35px; 
- margin-left:0px;
  /*Width(一定要)，否则下面的Li会变形*/
 }
 #nav111 li {
@@ -106,13 +97,3 @@
 #PARENT{
  width:570px;
 }
-
-
-.ptxy_div{margin-top:20px;width:560px;margin-left:-30px;}
-.ptxy_div ul li .ptxy_a{float:left;}
-.ptxy_div ul li a .ptxy_img{width:55px;height:60px;}
-.ptxy_div ul li div{clear:both;}
-.ptxy_div ul li p{padding-top:15px;font-size:20px;padding-left:10px;width:540px;}
-.ptxy_div ul li p span{float:right;}
-.ptxy_div ul li p span img{width:26px;height:26px;}
-.ptxy_div ul li{height:50px;}
