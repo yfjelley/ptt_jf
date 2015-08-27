@@ -14,10 +14,15 @@ urlpatterns = patterns('searcher.views',
 
     url(r'^agreement/$',  'agreement', name='agreement'),
     url(r'^guide/$',  'guide', name='guide'),
-    url(r'^about/$',  'about', name='about'),
+    url(r'^about_us/$',  'about_us', name='about_us'),
     url(r'^investor/$',  'investor', name='investor'),
+    url(r'^safety/(?P<objectid>\d+)/$',  'safety', name='safety'),
+    url(r'^investor_info/$',  'investor_info', name='investor_info'),
     url(r'^contact_us/$',  'contact_us', name='contact_us'),
 
+    url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
+    url(r'^publish/$',  'publish', name='publish'),
+    url(r'^investor_detail/$',  'investor_detail', name='investor_detail'),
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
     url(r'^checksmscode/$',  'checksmscode', name='checksmscode'),
 

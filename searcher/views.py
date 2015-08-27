@@ -158,7 +158,7 @@ def register(request):
                 return HttpResponse(u'用户已存在')
 
         form = RegisterForm(request.POST)
-        print form
+
 
         if form.is_valid():
             cd = form.cleaned_data
@@ -205,7 +205,6 @@ def register(request):
 
                 return HttpResponseRedirect(reverse('index_jf'))
         else:
-            print "else"
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
         form = RegisterForm()
@@ -401,19 +400,43 @@ def index_jf(request):
     print pj
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
-def about(request):
+def about_us(request):
     p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
     p2 = About_us.objects.all()
     for i in p2:
         i.hotline
 
-    return render_to_response('about2.html',{"p1":p1[0].agreement,"name":p2[0].name, "address":p2[0].address, "zip_code":p2[0].zip_code, "email":p2[0].email, "hotline":p2[0].hotline}, context_instance=RequestContext(request))
+    return render_to_response('about.html',{"p1":p1[0].agreement,"name":p2[0].name, "address":p2[0].address, "zip_code":p2[0].zip_code, "email":p2[0].email, "hotline":p2[0].hotline}, context_instance=RequestContext(request))
 
 def guide(request):
     return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
+def publish(request):
+    return render_to_response('publish.html',{}, context_instance=RequestContext(request))
+
+def investor_detail(request):
+    return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
+
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
+
+def investor_info(request):
+    return render_to_response('investor_intro.html',{}, context_instance=RequestContext(request))
+
+def safety(request, objectid):
+    if int(objectid) == 1:
+        name = u"项目风控"
+        ag = RegistrationAgreement.objects.filter(name="wind_control")
+    elif int(objectid) == 2:
+        name = u"资金保障"
+        ag = RegistrationAgreement.objects.filter(name="fund_security")
+    elif int(objectid) == 3:
+        name = u"财务监管系统"
+        ag = RegistrationAgreement.objects.filter(name="financial_supervision")
+    elif int(objectid) == 4:
+        name = u"技术保障"
+        ag = RegistrationAgreement.objects.filter(name="technical_support")
+    return render_to_response('safety.html',{"name":name, "agreement":ag[0].agreement}, context_instance=RequestContext(request))
 
 def intermediary(request, objectid):
     print objectid,type(objectid)

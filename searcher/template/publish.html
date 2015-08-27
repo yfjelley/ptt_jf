@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>众筹首页</title>
+<link rel="stylesheet" href="/static/css/index22.css" />
+<link  rel="stylesheet"  href="/static/css/publish.css" />
+	<script src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">  
+		$(function(){
+			$('#daohang').find('li').click(function(){
+				var id =$(this).data('pp');
+				$('#'+id).show().siblings().hide();
+			});
+			
+			$('#bzzx_content').find('li').click(function(){
+				var this_div = $(this).find('div');
+				if(this_div.is(':hidden')){
+					this_div.show();
+				}else{
+					this_div.hide();
+				}
+			});
+				
+			$('#bzzx_content').find('li').mouseover(function(){
+		    	 $(this).find('span').show();
+               	 $(this).find('#donline').show();
+			});
+			$('#bzzx_content').find('li').mouseout(function(){
+			     $(this).find('span').hide();
+				  $(this).find('#donline').hide();
+			});
+			$('#daohang>ul>li a').click(function(){
+  				$('#daohang li a').css('color','#000');
+  				$(this).css('color','#E1604D');
+			});
+			
+			$('#table').find('.xmbz').mouseout(function(){
+			     $(this).find('div').hide();
+			});
+		});
+    </script>  
+
+</head>
+
+<body>
+
+<div id="Fdiv1">
+	<div id="Fdiv2">
+		<ul id="Fmain">	
+		<ul class="Hul1">
+		<ul>
+			<li style="margin-top:18px;">
+				<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" /></li>
+		</ul>
+		</ul>
+		<ul class="Hul2">
+		<ul>
+			<li>
+				<a href="{% url 'index_zc' %}">首页</a>
+			</li>
+ 		</ul>
+		<ul>
+    		<li>
+				<a href="{% url 'investor' %}">投资人风采</a>
+			</li>
+  		</ul>
+  		<ul>
+    		<li>
+				<a href="#"项目风采></a>
+			</li>
+  		</ul>
+  		<ul>
+			<li>
+				<a href="#">项目发起</a>
+			</li>
+  		</ul>
+  		<ul>
+    		<li>
+				<a href="#">葡萄藤社区</a>
+			</li>
+		</ul>
+		</ul>
+		<ul class="Hul3">
+  		<ul>
+    		<li>
+      			<input type="text" placeholder="找项目,领头人" />
+    		</li>
+  		</ul>
+  		<ul type="disc">
+    		<li>
+				<a href="{% url 'register' %}">注册</a>
+			</li>
+  		</ul>
+  		<ul type="disc">
+    		<li>
+				<a href="{% url 'login' %}">登录</a>
+			</li>
+  		</ul>
+		</ul>
+		</ul>
+	</div>
+</div>
+
+<!--内容-->
+<div class="conext">
+<div class="div11">
+		<div class="div_left" id="daohang">
+			<ul>		   
+				<li data-pp="gyzc"> <a href="javascript:void(0);" class="blockColor">1&nbsp;&nbsp;创建项目</a></li>
+	
+				<li data-pp="tzlc"><a href="javascript:;" class="grayColor">2&nbsp;&nbsp;提交审核</a></li>
+				
+				<li data-pp="aqbz"><a href="javascript:;" class="grayColor">3&nbsp;&nbsp;平台审核</a></li>
+				
+				<li data-pp="ptxy"><a href="javascript:;" class="grayColor">4&nbsp;&nbsp;约定协议</a></li>
+				
+				<li data-pp="bzzx"><a href="javascript:;" class="grayColor">5&nbsp;&nbsp;确认发布</a></li>
+			</ul>
+		</div>
+		<div class="centerline"></div>
+		<div class="div_right">
+		   <div id="gyzc" class="con_right">   
+		       <div style="padding-top:45px;" class="table_cjxm">
+				<table width="760px;" height="540px"; cellpadding="1" cellspacing="1" id="table" >
+				<tr>
+				<td style="padding-bottom:45px;">项目标志</td>
+				<td class="tpsc"><img src="/static/images/ali.jpg" alt="上传" class="xmbz" onclick="romoveFont"/>
+				<div style="position:absolute;width:100px;height:100px;z-indent:2;left:0;top:0;">64×64px</div>
+                &nbsp;&nbsp;<input type="button" class="scbz" value="上传标志" name=""/>
+				<span style="width:450px;height:30px;font-size:12px;color:#999999;">
+				产品logo而非公司logo。比如手机App的图标。<br/>&nbsp;&nbsp;&nbsp;像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</span></td>
+				</tr>
+				
+				<tr>
+				<td>项目名称</td>
+				<td><input  type="text" class="xmcj_input" name="" id=""></td>
+				</tr>
+				
+				<tr>
+				<td>项目简介</td>
+				<td><input  type="text" class="xmcj_input" name="" id=""></td>
+				</tr>
+				
+				<tr>
+				<td>详细描述</td>
+				<td><input  type="text" class="xxms_input" name="" id=""></td>
+				</tr>
+				
+				<tr>
+				<td>行业领域</td>
+				<td><input  type="text" class="xmcj_input" name="" id=""></td>
+				</tr>
+				
+				<tr>
+				<td>项目阶段</td>
+				<td>
+				<select id="" name="" class="xmjd_input">
+				<option></option>
+				<option></option>
+				<option></option>
+				</select>
+				</td>
+				</tr>
+				
+				<tr>
+				<td>创始人</td>
+				<td><input  type="text" class="xmcj_input" name="" id=""></td>
+				</tr>
+				
+				<tr>
+				<td>商业计划书</td>
+				<td><input type="button"  value="上传计划书" name="" class="jhs"/>
+				<span style="width:430px;height:30px;font-size:12px;color:#999999;">
+				&nbsp;&nbsp;&nbsp;请选择PPT、PPTX、PDF文件，文件大小不要超过20M;</span></td>
+				</tr>
+				
+				<tr>
+				<td></td>
+				<td>
+				<input type="checkbox" id="" name=""  value="#"/>
+				<a href="#" class="fwtk_input" >提交项目视为同意葡萄藤众筹的《服务条款》</a></td>
+				</tr>
+				
+				<tr>
+				<td></td>
+				<td><input type="button"  value="提交待审核" name=""  class="dsh"/></td>
+				</tr>
+				
+				</table>
+				</div>
+		   </div> 
+		   <div id="#" class="display">
+		         
+					 <div class="biaoti">安全保障</div>
+					   <div style="margin-left:100px;margin-top:230px;">
+					 	<div style="width:400px;height:1px;background:#ccc;"></div>
+					 	<div style="width:1px;height:440px;background:#ccc;position:absolute;top:225px;left:850px;"></div>
+				 	</div>
+					
+					<div style="width:180px;height:220px;position: absolute;top:230px;left:650px;">
+						<a href="#"><img src="/static/images/xmfk180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">项目风控</span></a>
+					</div>
+					
+					<div style="width:180px;height:100px;position: absolute;top:230px;left:870px;">
+						<a href="#"><img src="/static/images/zjbz180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">资金保障</span></a>					</div>
+					
+					<div style="width:180px;height:100px;position: absolute;top:460px;left:650px;">
+						<a href="#"><img src="/static/images/cwjg180-180.png" width="180" height="180"/><span style="margin-left:35px;line-height:35px;font-size:18px;">财务监管系统</span></a>					</div>
+					
+					<div style="width:180px;height:100px;position: absolute;top:460px;left:870px;">
+						<a href="#"><img src="/static/images/jsbz180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">技术保障</span></a>					</div>
+					 <div style="height:240px;"></div>
+		   </div> 
+		   <div id="#" class="display" >	   
+				<div>
+					 <div class="biaoti">平台协议</div>
+					 <div style="width:900px; height:30px;position:absolute;top:230px;left:1030px;"><a href="#"><img src="/static/images/xiazai38-32.png" width="20" height="16"/></a>
+					 <a  href="#"><img src="/static/images/liulan38-32.png" width="20" height="16"/></a></div>
+					 <div style="width:150px;height:150px;position: absolute;top:260px;left:650px;">
+						<a href="#"><img src="/static/images/xxx.png" width="150" height="150"/></a></div>
+					
+					<div style="width:150px;height:150px;position: absolute;top:260px;left:860px;">
+						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>
+					
+					<div style="width:150px;height:150px;position: absolute;top:470px;left:650px;">
+						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>
+					
+					<div style="width:150px;height:150px;position: absolute;top:470px;left:860px;">
+						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>	
+						 <div style="height:440px;"></div>	 
+			   </div>
+			</div>  
+			<div id="#" class="display" >	   
+				<div>
+					 <div class="biaoti">投资流程</div>
+					 <p><span>上海辞达金融服务有限公司</span></p>
+					 <p>投资网络贷款。。。。。。。。。。。。。。。</p>
+					 <p>凡依据葡萄糖金融。。。。。。。。。。。。。。</p>	
+					 <div style="height:200px;"></div>			 
+			   </div>
+			</div>  
+			<div id="#" class="display" >
+			     <div class="">
+					  <div class="biaoti">帮助中心</div>				  
+					  <ul id="bzzx_content" class="helpcenter">				     
+						  <li> <a href="#">如何进行项目预约？<span>▼</span></a><div class="donline" id="donline"></div>
+						  		<div class="b_span"><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p>
+								<div class="donline1"/></div> </div>         
+						  </li>
+						  <li><a href="#">什么是保证金？<span >▼</span> </a><div class="donline" id="donline"></div>
+						  		<div class="b_span"><p>sdfsdfsdfsdfsdfsd凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline1"/></div></div>
+						  </li>
+						  <li><a href="#">保证金的使用规则？<span >▼</span> </a><div class="donline" id="donline"></div>
+						  		<div class="b_span"><p>融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline1"/></div></div>                                
+						  </li>
+						  <li><a href="#">领投人的回报是什么？<span >▼</span> </a><div class="donline" id="donline"></div>
+						  		<div class="b_span"><p>糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金</p><div class="donline1"/></div></div>
+					    </li>
+					 </ul>
+				 </div>
+				 <div style="height:140px;"></div>
+			</div> 
+		   <div id="#" class="display" style="margin-top:60px;background:#FFFFFF;">2222222222222</div> 	
+		   <div id="#" class="display" style="margin-top:60px;background:#FFFFFF;">6666666666666</div>
+	    </div>
+	</div>
+</div>
+
+<!--结尾-->
+
+<div id="footer">
+		<ul class="ful1">
+			<li>
+				<label>合作伙伴</label>
+				<label style="margin-left:150px;">友情链接</label>
+				<label style="margin-left:145px;">联系我们</label>
+			</li>
+		</ul>
+		<ul class="ful2">
+			<li>
+				<label class="flab1">
+					<hr />
+				</label>
+				<label class="flab2">
+					<hr />
+				</label>
+				<label class="flab3">
+					<hr />
+				</label>
+			</li>
+		</ul>		
+		<ul class="ful3">
+			<li>
+				<a href="#">天使客</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;天使街</a>	
+			</li>
+		</ul>
+		<ul class="ful4">
+			<li>			
+				<a href="#">股权众筹</a>	
+			</li>
+			<li>
+				<a href="#">众筹工坊</a>	
+			</li>
+		</ul>
+		<ul class="ful5">
+			<li>
+				<a href="#">咨询热线:400-000-0000</a>	
+			</li>
+		</ul>
+		<ul class="ful6">
+			<li>
+				<a href="#">&nbsp;京东众筹</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;大家投</a>	
+			</li>
+		</ul>
+		<ul class="ful7">
+			<li>			
+				<a href="#">新金融</a>	
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;P2P理财</a>	
+			</li>
+		</ul>
+		<ul class="ful8">
+			<li>
+				<a href="#">公司邮箱:sys@pttjf.com</a>	
+			</li>
+		</ul>
+		<ul class="ful9">
+			<li>
+				<a href="#">&nbsp;众筹之家</a>				
+			</li>
+			<li>
+				<a href="#"></a>	
+			</li>
+		</ul>
+		<ul class="ful10">
+			<li>			
+				<a href="#">证券中星</a>	
+			</li>
+			<li>
+				<a href="#">中申网</a>	
+			</li>
+		</ul>
+		<ul class="ful11">
+			<li>
+				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
+			</li>
+		</ul>
+		<ul class="ful12">
+			<li>
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+		</ul>
+</div>
+</body>
+</html>

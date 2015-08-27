@@ -1,0 +1,48 @@
+#Fdiv1{background-color:#372c3a;height:70px;width:1400px;margin-left:100px; overflow:hidden;}
+#Fdiv2{margin-left:20px;}
+#Fmain ul{list-style:none;color:#FFFFFF;float:left;padding:0 10px;}
+.Hul1{margin-top:-30px; margin-left:80px;}
+.Hul2{margin-left:20px;font-size:18px;margin-top:10px;}
+.Hul2 a{color:#fff;}
+.Hul3{font-size:12px;margin-top:10px;}
+.Hul3 input{width:140px;}
+.Hul3 ul[type="disc"]{margin-top:2px;}
+.Hul3 a{color:#fff;}
+a{text-decoration:none;}
+a:hover{color:#e1604d}
+li{list-style:none;}
+
+#footer{width:1400px;background-color:#372c3a;color:#FFFFFF;height:180px;clear:both; overflow:hidden;margin-left:100px;}
+#footer a{color:#fff;}
+.flab1 hr{width:180px;margin-top:50px;margin-left:50px;}
+.flab2 hr{width:180px;margin-top:-7px;margin-left:270px;}
+.flab3 hr{width:420px;margin-top:-7px;margin-left:480px;}
+.ful1,.ful2,.ful3,.ful4,.ful5,.ful6,.ful7,.ful8,.ful9,.ful10,.ful11,.ful12,.ful13{font-size:10px;}
+.ful1 label{color:#e1604d;}
+.ful2 hr{color:#e1604d;}
+.ful1{font-size:16px;margin-left:50px;}
+.ful1 li{position:absolute;margin-top:20px;}
+.ful2{position:absolute;}
+.ful3{position:absolute;margin-top:75px;margin-left:25px;}
+.ful3 li{float:left;padding:0px 24px;}
+.ful4{position:absolute;margin-top:75px;margin-left:248px;}
+.ful4 li{float:left;padding:0px 20px;}
+.ful5{position:absolute;margin-top:75px;margin-left:458px;}
+.ful5 li{float:left;padding:0px 20px;}
+
+.ful6{position:absolute;margin-top:100px;margin-left:25px;}
+.ful6 li{float:left;padding:0px 20px;}
+.ful7{position:absolute;margin-top:100px;margin-left:248px;}
+.ful7 li{float:left;padding:0px 20px;}
+.ful8{position:absolute;margin-top:100px;margin-left:458px;}
+.ful8 li{float:left;padding:0px 20px;}
+
+.ful9{position:absolute;margin-top:125px;margin-left:25px;}
+.ful9 li{float:left;padding:0px 20px;}
+.ful10{position:absolute;margin-top:125px;margin-left:248px;}
+.ful10 li{float:left;padding:0px 20px;}
+.ful11{position:absolute;margin-top:125px;margin-left:458px;}
+.ful11 li{float:left;padding:0px 20px;}
+.ful12{position:absolute; margin-left:930px;}
+
+

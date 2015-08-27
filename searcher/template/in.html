@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/static/css/index_page.css" />
+<link rel="stylesheet" href="/static/css/rotate.css" />
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/slider.js"></script>
+<script type="text/javascript" src="/static/js/rotate.js"></script>
+<script type="text/javascript" src="/static/js/fixed.js"></script>
+<script type="text/javascript" src="/static/js/rightFixed.js"></script>
+<title>葡萄藤众筹</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<ul class="tul1">
+			<li>
+				<a href="{% url 'index_zc' %}">首页</a>
+				<a href="{% url 'about_us' %}">关于我们</a>
+				<a href="{% url 'guide' %}">投资指引</a>
+				<a href="#">葡萄藤社区</a>
+			</li>
+		</ul>
+		<ul class="tul2">
+			<li>
+				<label  style="font-size:10px;">24小时电话</label>
+				<label style="font-size:16px;">400-8800-6799</label>
+				<a href="{% url 'register' %}" style="font-size:10px;">注册</a>
+				<a href="{% url 'login' %}" style="font-size:10px;">登录</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="rotate">
+		<!-- 轮播广告 -->
+	<div id="banner_tabs" class="flexslider">
+		<ul class="slides">
+			<li>
+				<a title="" target="_blank" href="#">
+					<img width="1920" height="482" alt="" style="background: url(images/banner1.jpg) no-repeat center;" src="images/alpha.png">
+				</a>
+			</li>
+			<li>
+				<a title="" href="#">
+						<img width="1920" height="482" alt="" style="background: url(images/banner2.jpg) no-repeat center;" src="images/alpha.png">
+				</a>
+			</li>
+			<li>
+				<a title="" href="#">
+						<img width="1920" height="482" alt="" style="background: url(images/banner3.jpg) no-repeat center;" src="images/alpha.png">
+				</a>
+			</li>
+		</ul>
+		<ul class="flex-direction-nav">
+			<li>
+				<a class="flex-prev" href="javascript:;">Previous</a>
+			</li>
+			<li>
+				<a class="flex-next" href="javascript:;">Next</a>
+			</li>
+		</ul>
+		<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+				<li><a>1</a></li>
+				<li><a>2</a></li>
+				<li><a>2</a></li>
+		</ol>
+	</div>
+	</div>
+	
+	<div id="sidebarWrap">
+		<div id="sidebar">
+			<img src="images/Desert.jpg" width="90px;" height="60px;" />
+		</div>
+	</div>
+
+
+	<div id="menu2">
+		<ul>
+			<li>
+				<h2>每日精选</h2>
+			</li>
+			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-40px;">
+				1111				
+			</li>
+		</ul>
+	</div>
+	<div id="menu3">
+		<ul>
+			<li>
+			</li>
+			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+				222				
+			</li>
+		</ul>
+	</div>
+  	<div id="menu4">
+		<ul>
+			<li>
+			
+			</li>
+			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+				333				
+			</li>
+		</ul>
+	</div>	
+  	<div id="menu5">
+		<ul>
+			<li>
+		
+			</li>
+			<li style="border:1px solid #000000;width:260px;height:200px;margin-top:-20px;">
+				333				
+			</li>
+		</ul>
+	</div>
+	<div id="rightFloat">
+		<div id="rightSidebar">
+			<img src="images/Desert.jpg" width="90px;" height="60px;" />
+		</div>
+	</div>
+	
+	
+	<div id="footer">
+		<ul class="ful1">
+			<li>
+				<label>合作伙伴</label>
+				<label style="margin-left:150px;">友情链接</label>
+				<label style="margin-left:145px;">联系我们</label>
+			</li>
+		</ul>
+		<ul class="ful2">
+			<li>
+				<label class="flab1">
+					<hr />
+				</label>
+				<label class="flab2">
+					<hr />
+				</label>
+				<label class="flab3">
+					<hr />
+				</label>
+			</li>
+		</ul>		
+		<ul class="ful3">
+			<li>
+				<a href="#">天使客</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;天使街</a>	
+			</li>
+		</ul>
+		<ul class="ful4">
+			<li>			
+				<a href="#">股权众筹</a>	
+			</li>
+			<li>
+				<a href="#">众筹工坊</a>	
+			</li>
+		</ul>
+		<ul class="ful5">
+			<li>
+				<a href="#">咨询热线:400-000-0000</a>	
+			</li>
+		</ul>
+		<ul class="ful6">
+			<li>
+				<a href="#">&nbsp;京东众筹</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;大家投</a>	
+			</li>
+		</ul>
+		<ul class="ful7">
+			<li>			
+				<a href="#">新金融</a>	
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;P2P理财</a>	
+			</li>
+		</ul>
+		<ul class="ful8">
+			<li>
+				<a href="#">公司邮箱:sys@pttjf.com</a>	
+			</li>
+		</ul>
+		<ul class="ful9">
+			<li>
+				<a href="#">&nbsp;众筹之家</a>				
+			</li>
+			<li>
+				<a href="#"></a>	
+			</li>
+		</ul>
+		<ul class="ful10">
+			<li>			
+				<a href="#">证券中星</a>	
+			</li>
+			<li>
+				<a href="#">中申网</a>	
+			</li>
+		</ul>
+		<ul class="ful11">
+			<li>
+				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

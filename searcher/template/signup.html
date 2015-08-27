@@ -20,7 +20,7 @@
   		<ul class="ul7">
     		<li>
 				<a href="{% url 'index_zc' %}">首页</a>
-				<a href="{% url 'about' %}">关于我们</a>
+				<a href="{% url 'about_us' %}">关于我们</a>
 				<a href="{% url 'guide' %}">投资指引</a>
     			<a href="#">葡萄藤社区</a>
 			</li>  		
@@ -219,21 +219,18 @@
             {% for error in form.username.errors %}
                 alert('{{ error }}');
             {% endfor %}
-        {% endif %}
 
-        {% if form.password2.errors %}
+        {% elif form.password2.errors %}
             {% for error in form.password2.errors %}
                 alert('{{ error }}');
             {% endfor %}
-        {% endif %}
 
-        {% if form.vcode.errors %}
+        {% elif form.vcode.errors %}
             {% for error in form.vcode.errors %}
                 alert('{{ error }}');
             {% endfor %}
-        {% endif %}
 
-        {% if form.smscode.errors %}
+        {% elif form.smscode.errors %}
             {% for error in form.smscode.errors %}
                 alert('{{ error }}');
             {% endfor %}

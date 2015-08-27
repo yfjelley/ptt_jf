@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>投资人详情页</title>
-<link rel="stylesheet" href="css/investor_intro.css" />
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="/static/css/investor_intro.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script>
 	$(function(){
 		$("#daohang>ul>li>a").click(function(){
@@ -38,23 +38,23 @@
 <div id="Fdiv1">
 	<ul style=" position:absolute;left:230px; top:-24px;">
 		<li>
-			<img src="images/Conpanylogo.png" width="95px;" height="72px" />
+			<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" />
 		</li>
 	</ul>
 	<ul class="Ful1">
 		<li>
-			<a href="#">首页</a>
-			<a href="#">投资人风采</a>
+			<a href="{% url 'index_jf' %}">首页</a>
+			<a href="{% url 'investor' %}">投资人风采</a>
 			<a href="#">项目风采</a>	
-			<a href="#">项目发起</a>	
+			<a href="{% url 'publish' %}">项目发起</a>
 			<a href="#">葡萄藤社区</a>
 		</li>
 	</ul>
 	<ul class="Ful2">
   		<li>
       		<input type="text" placeholder="找项目,领头人" />    
-			<a href="#">注册</a>	
-			<a href="#">登录</a>
+			<a href="{% url 'register' %}">注册</a>
+			<a href="{% url 'login' %}">登录</a>
 		</li>
 	</ul>
 </div>
@@ -64,7 +64,7 @@
 <div class="content1">
 	<ul>
 		<li style="float:left;margin-left:-25px;">
-			<img src="images/newsplogo.png"width="187px" height="188px" />
+			<img src="/static/images/newsplogo.png"width="187px" height="188px" />
 		</li>
 	</ul>
 	<ul class="touziren" style="float:left;">
@@ -76,7 +76,7 @@
 			<label style="font-size:12px;margin-left:30px;">葡萄藤金融认证资深投资人</label>			
 		</li>
 		<li style="margin-top:-25px; margin-left:170px">
-			<img src="images/Nstart.png" />
+			<img src="/static/images/Nstart.png" />
 		</li>
 		<li><div style="border-top:1px solid #eeeef0;width:340px;height:1px;"></div></li>
 		<li style="font-size:14px;">
@@ -86,7 +86,7 @@
 			<label>经济学学士,具有20多年企业管理经验和投资经验。</label>
 		</li>
 		<li style="margin-top:-160px; margin-left:440px;">
-			<img src="images/touzi.png" />
+			<img src="/static/images/touzi.png" />
 		</li>
 	</ul>
 	<div id="daohang">		
@@ -282,7 +282,7 @@
 		</ul>
 		<ul class="ful12">
 			<li>
-				<img src="images/8cm.jpg" width="120px;" height="120px;" />
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
 			</li>
 			<li class="fuldy">
 				<label>订阅号</label>
