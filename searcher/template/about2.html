@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>葡萄藤金融信息服务有限公司首页</title>
+<title>关于我们</title>
 <link rel="stylesheet" href="/static/css/index21.css" />
 <link  rel="stylesheet"  href="/static/css/catalog.css" />
+<link rel="stylesheet" href="/static/css/home1.css" />
+<link rel="stylesheet" href="/static/css/home2.css" />
 	<script src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">  
 		$(function(){
@@ -27,64 +29,90 @@
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+<script type="text/javascript">
+<!--显示和隐藏-->
+$(function (){
+	mouseout();
+});
+
+$(function (){
+	Lmouseout();
+});
+
+
+	function Lmouseover()
+	{
+		$("#img2").show();
+		$("#img3").show();
+		$("#img4").hide();
+		
+	}
+	
+	function Lmouseout()
+	{
+		$("#img2").hide();
+		$("#img3").hide();
+		$("#img4").show();				
+	}
+	
+  function mouseover()
+  { 	
+  	$("#img1").show();
+	$("#img5").hide();
+	$("#img6").show();
+  }
+  function mouseout()
+  {
+  	$("#img1").hide();
+	$("#img5").show();
+	$("#img6").hide();
+  }
+	
+</script>
 </head>
 <body>
 
-<div id="Fdiv1">
-	<div id="Fdiv2">
-		<ul id="Fmain">	
-		<ul class="Hul1">
-		<ul>
-			<li style="margin-top:18px;">
-				<img src="/static/images/mainlogo.png" /></li>
-		</ul>
-		</ul>
-		<ul class="Hul2">
-		<ul>
+<!--头部-->
+<div id="container">
+	<ul style="position:absolute;top:-11px;left:270px;">
 			<li>
-				<a href="{% url 'index_zc' %}">首页</a>
-			</li>
- 		</ul>
-		<ul>
-    		<li>
-				<a href="{% url 'investor' %}">投资人风采</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#"项目风采></a>
-			</li>
-  		</ul>
-  		<ul>
-			<li>
-				<a href="#">项目发起</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#">葡萄藤社区</a>
+				<img src="/static/images/mainlogo.png" />
 			</li>
 		</ul>
-		</ul>
-		<ul class="Hul3">
-  		<ul>
+		
+  		<ul class="ul7">
     		<li>
-      			<input type="text" placeholder="找项目,领头人" />
-    		</li>
-  		</ul>
-  		<ul type="disc">
-    		<li>
-				<a href="{% url 'register' %}">注册</a>
+				<a href="{% url 'index_jf' %}">首页</a>
+				<a href="{% url 'about' %}">关于我们</a>
+				<a href="{% url 'guide' %}">投资指引</a>
+    			<a href="#">葡萄藤社区</a>
 			</li>
-  		</ul>
-  		<ul type="disc">
+		</ul>
+		
+		<ul class="ul8">
     		<li>
-				<a href="{% url 'login' %}">登录</a>
+     			<label class="lab1">24小时客服电话</label>
+				<label class="lab2">400-8800-6799</label>
+				{% ifequal user.id None %}
+				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+				{% else %}
+				    <ul id="top_r" class="top_name">
+                       <div id="logged">
+                          <a id="check_log" style="display: none">1</a>
+                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                             <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+						     </ul>
+                          </li>
+					   </div>
+                    </ul>
+
+                {% endifequal %}
 			</li>
-  		</ul>
-		</ul>
-		</ul>
-	</div>
+		</ul>		
 </div>
 
 <!--内容-->
@@ -119,11 +147,11 @@
 		   <div id="chat" class="display">
 		         <div style="width:600px; height:100%;border:1px solid #FFFFFF;overfllow:Hidden;">
 					 <div class="biaoti">联系方式</div>
-					 <p>上海辞达金融服务有限公司</p>
-					 <p>公司地址：上海市闵行区沪闵路7866号莲花国际广场2号楼908室</p>
-					 <p>服务热线：021-34222366</p>
-					 <p>邮政编码：201100</p>
-					 <p>邮箱地址：sys@pttjf.com</p>
+					 <p>{{name}}</p>
+					 <p>公司地址：{{address}}</p>
+					 <p>服务热线：{{hotline}}</p>
+					 <p>邮政编码：{{zip_code}}</p>
+					 <p>邮箱地址：{{email}}</p>
 					 <div style="width:500px;height:1px;background:#ccc;"></div>
 					 <p><img src="/static/images/subway.png" alt="subway" style="width:30px;height:30px;float:left"/>
 					 地铁一号线（莲花路站下）<br/>公交路线986、3645、126、452莲花路站下</p>
@@ -139,11 +167,7 @@
 				<div>
 					 <div class="biaoti">免责条款</div>
 					 <p><span style="font-size:16px;font-weight:bold;">上海辞达金融服务有限公司</span></p>
-					 <p style="width:570px;">&nbsp;&nbsp;&nbsp;&nbsp;鉴于，上海辞达金融信息服务有限公司（下称“葡萄藤金服”）通过其旗下网站葡萄藤金服（网址：www.pttjf.com及www.pttzc.com）和微信公众号、手机软件客户端等其他平台（合称“平台”），旨在为创业企业提供股权众筹融资和为投资人提供安全可靠的众筹创投服务。平台所涉及的所有事项，相关权利义务以及最终法律责任均由葡萄藤金服承担。
-鉴于，为帮助投资人更好地理解平台相关股权众筹项目的风险，根据相关法律法规和《注册协议》其他配套制度、规则与协议的有关规定，特制定本《投资风险提示书》。
-在投资人接受《注册协议》并注册成为平台用户时，表明投资人已充分知晓、理解和接受本《投资风险提示书》以及平台相关股权众筹项目的风险，并愿意自行承担相关风险。本《投资风险提示书》的全部条款属于《注册协议》的一部分。
-请注意，本《投资风险提示书》将会不时进行更新，平台将会即时公告更新后的版本，敬请关注。一旦发生争议，《投资风险提示书》以最新的条款为准。
-</p>
+					 <p style="width:570px;">{{p1|safe}}</p>
 					 <div style="height:270px;"></div>			 
 			   </div>
 		   </div>  
@@ -189,6 +213,7 @@
 <!--结尾-->
 
 <div id="footer">
+	<ul class="ful">
 		<ul class="ful1">
 			<li>
 				<label>合作伙伴</label>
@@ -198,14 +223,14 @@
 		</ul>
 		<ul class="ful2">
 			<li>
-				<label class="flab1">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
 				</label>
-				<label class="flab2">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
 				</label>
-				<label class="flab3">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
 				</label>
 			</li>
 		</ul>		
@@ -227,7 +252,7 @@
 		</ul>
 		<ul class="ful5">
 			<li>
-				<a href="#">咨询热线:400-000-0000</a>	
+				咨询热线:400-000-0000
 			</li>
 		</ul>
 		<ul class="ful6">
@@ -248,7 +273,7 @@
 		</ul>
 		<ul class="ful8">
 			<li>
-				<a href="#">公司邮箱:sys@pttjf.com</a>	
+				公司邮箱:sys@pttjf.com
 			</li>
 		</ul>
 		<ul class="ful9">
@@ -269,15 +294,39 @@
 		</ul>
 		<ul class="ful11">
 			<li>
-				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
+				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
 			</li>
 		</ul>
 		<ul class="ful12">
 			<li>
-				<img src="/static/images/wechatlogo.png" width="120px;" height="120px;" />
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
 			</li>
 		</ul>
+	</ul>
 </div>
+<script type="text/javascript">
+        //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
 </body>
 
 

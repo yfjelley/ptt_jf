@@ -260,7 +260,6 @@ def add_reminder(request, objectid):
         u_r.save()
         return HttpResponse(u'已添加')
 
-
 @login_required
 def myfavorite(request, tid):
     flag = int(tid)
@@ -403,10 +402,41 @@ def index_jf(request):
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
 def about(request):
-    return render_to_response('about2.html',{}, context_instance=RequestContext(request))
+    p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
+    p2 = About_us.objects.all()
+    for i in p2:
+        i.hotline
+
+    return render_to_response('about2.html',{"p1":p1[0].agreement,"name":p2[0].name, "address":p2[0].address, "zip_code":p2[0].zip_code, "email":p2[0].email, "hotline":p2[0].hotline}, context_instance=RequestContext(request))
 
 def guide(request):
     return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
+
+def intermediary(request, objectid):
+    print objectid,type(objectid)
+    if int(objectid) == 1:
+        file_name = '/root/zc/static/download/融资居间协议.htm'
+    elif int(objectid) == 2:
+        file_name = '/root/zc/static/download/有限合伙协议.htm'
+    elif int(objectid) == 3:
+        file_name = '/root/zc/static/download/投资协议.htm'
+    elif int(objectid) == 4:
+        file_name = '/root/zc/static/download/股权转让协议.htm'
+
+    response = HttpResponse(readFile(file_name))
+    return response
+
+
+def readFile(fn, buf_size=262144):
+    print fn
+    f = open(fn, "rb")
+    while True:
+        c = f.read(buf_size)
+        if c:
+            yield c
+        else:
+            break
+    f.close()

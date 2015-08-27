@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>投资人详情页</title>
+<link rel="stylesheet" href="css/investor_intro.css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script>
+	$(function(){
+		$("#daohang>ul>li>a").click(function(){
+			$("#daohang li a").css("color","#808080");
+			$(this).css("color","#000");	
+		});
+		
+		$("#daohang2>ul>li>a").click(function(){
+			$("#daohang2 li a").css("color","#808080");
+			$(this).css("color","#000");
+		});
+	});
+</script>
+<script>
+	$(function(){
+		$("#daohang").find("li").click(function(){
+			var id=$(this).data("pp");
+			$("#"+id).show().siblings().hide();
+		});		
+		$("#daohang2").find("li").click(function(){		
+			var id=$(this).data("aa");
+			$("#"+id).show().siblings().hide();
+		});								
+	});
+	
+</script>
+</head>
+
+<body>
+<!--头部-->
+<div id="Fdiv1">
+	<ul style=" position:absolute;left:230px; top:-24px;">
+		<li>
+			<img src="images/Conpanylogo.png" width="95px;" height="72px" />
+		</li>
+	</ul>
+	<ul class="Ful1">
+		<li>
+			<a href="#">首页</a>
+			<a href="#">投资人风采</a>
+			<a href="#">项目风采</a>	
+			<a href="#">项目发起</a>	
+			<a href="#">葡萄藤社区</a>
+		</li>
+	</ul>
+	<ul class="Ful2">
+  		<li>
+      		<input type="text" placeholder="找项目,领头人" />    
+			<a href="#">注册</a>	
+			<a href="#">登录</a>
+		</li>
+	</ul>
+</div>
+
+<!---内容center-->
+<div class="content">
+<div class="content1">
+	<ul>
+		<li style="float:left;margin-left:-25px;">
+			<img src="images/newsplogo.png"width="187px" height="188px" />
+		</li>
+	</ul>
+	<ul class="touziren" style="float:left;">
+		<li style="font-weight:bold;font-size:25px;">
+			<label>赵葡萄</label>
+		</li>
+		<li>
+			<label style="font-size:12px">中国风险投资公司高级副总裁</label>
+			<label style="font-size:12px;margin-left:30px;">葡萄藤金融认证资深投资人</label>			
+		</li>
+		<li style="margin-top:-25px; margin-left:170px">
+			<img src="images/Nstart.png" />
+		</li>
+		<li><div style="border-top:1px solid #eeeef0;width:340px;height:1px;"></div></li>
+		<li style="font-size:14px;">
+			<label>现任中国风险投资有限公司合伙人,高级副总裁。</label>
+		</li>
+		<li style="font-size:14px;">
+			<label>经济学学士,具有20多年企业管理经验和投资经验。</label>
+		</li>
+		<li style="margin-top:-160px; margin-left:440px;">
+			<img src="images/touzi.png" />
+		</li>
+	</ul>
+	<div id="daohang">		
+		<ul class="tabul">
+			<li><div style="border-top:1px solid #eeeef0;width:700px;height:1px; margin-top:-10px;"></div></li>
+			<li data-pp="jbxx" style="float:left;">
+				<a href="javascript:void(0);" style="color:#000">基本信息</a>
+			</li>
+			<li><div style="border-right:1px solid #eeeef0;float:left;width:1px; height:30px; margin-top:-2px;"></div></li>
+			<li data-pp="tzfx" style="float:left;">
+				<a href="javascript:void(0);" style="color:#808080">投资方向</a>
+			</li>
+			<li><div style="border-right:1px solid #eeeef0;float:left;width:1px; height:30px; margin-top:-2px;"></div></li>
+			<li data-pp="jyjl" style="float:left;">
+				<a href="javascript:void(0);" style="color:#808080">教育经历</a>
+			</li>
+			<li><div style="border-right:1px solid #eeeef0;float:left;width:1px; height:30px; margin-top:-2px;"></div></li>
+			<li data-pp="tzln" style="float:left;">
+				<a href="javascript:void(0);" style="color:#808080">投资理念</a>
+			</li>
+			<li><div style="border-right:1px solid #eeeef0;float:left;width:1px; height:30px; margin-top:-2px;"></div></li>
+			<li data-pp="tzal" style="float:left;">
+				<a href="javascript:void(0);" style="color:#808080">投资案例</a>
+			</li>
+			<li><div style="border-top:1px solid #eeeef0;  width:700px; height:1px; margin-top:40px;"></div></li>
+		</ul>
+	</div>
+	<div class="div_right">
+		<div id="jbxx">
+			<ul>
+				<li>
+					毕业于华南理工大学
+				</li>
+				<li>上海融京城资产有限公司 总经理</li>
+			</ul>
+		</div>
+		<div id="tzfx" class="display">
+			<ul>
+				<li>
+					投资方向
+				</li>
+				<li>金融,房地产</li>
+			</ul>
+		</div>
+		<div id="jyjl" class="display">
+			<ul>
+				<li>
+					名牌大学毕业
+				</li>
+			</ul>
+		</div>
+		<div id="tzln" class="display">
+			<ul>
+				<li>
+					和善,诚信
+				</li>
+			</ul>
+		</div>
+		<div id="tzal" class="display">
+			<ul>
+				<li>
+					天使客,天使街
+				</li>
+			</ul>
+		</div>
+	</div>	
+</div>
+<div class="content2">
+	<div id="daohang2">
+		<ul class="tabul2">
+			<li data-aa="guanzhu" style="float:left">
+				<a style="color:#000" href="javascript:void(0);">关注</a>
+			</li>
+			<li style="float:left"><div style="border-right:1px solid #eeeef0; width:1px;height:30px;"></div></li>
+			<li data-aa="fensi" style="float:left">
+				<a style="color:#808080" href="javascript:void(0);">粉丝</a>
+			</li>
+			<li style="float:left">
+			<div style="border-top:1px solid #eeeef0; width:180px;height:1px; margin-left:-30px;"></div>
+			</li>
+		</ul>
+	</div>
+	<div class="div_right2">
+		<div id="guanzhu">
+			<ul class="gzPeople">
+				<li>
+					<label>张三</label>
+					<label>李四</label>	
+					<label>王五</label>
+				</li>
+			</ul>
+		</div>
+		<div id="fensi" class="display">
+			<ul class="fsPeople">
+				<li>
+					<label>kk</label>
+					<label>tt</label>
+					<label>hh</label>
+					<label>mm</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!--底部-->
+<div id="footer">
+	<ul class="ful">
+		<ul class="ful1">
+			<li>
+				<label>合作伙伴</label>
+				<label style="margin-left:150px;">友情链接</label>
+				<label style="margin-left:145px;">联系我们</label>
+			</li>
+		</ul>
+		<ul class="ful2">
+			<li>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
+				</label>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
+				</label>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
+				</label>
+			</li>
+		</ul>		
+		<ul class="ful3">
+			<li>
+				<a href="#">天使客</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;天使街</a>	
+			</li>
+		</ul>
+		<ul class="ful4">
+			<li>			
+				<a href="#">股权众筹</a>	
+			</li>
+			<li>
+				<a href="#">众筹工坊</a>	
+			</li>
+		</ul>
+		<ul class="ful5">
+			<li>
+				咨询热线:400-000-0000
+			</li>
+		</ul>
+		<ul class="ful6">
+			<li>
+				<a href="#">&nbsp;京东众筹</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;大家投</a>	
+			</li>
+		</ul>
+		<ul class="ful7">
+			<li>			
+				<a href="#">新金融</a>	
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;P2P理财</a>	
+			</li>
+		</ul>
+		<ul class="ful8">
+			<li>
+				公司邮箱:sys@pttjf.com
+			</li>
+		</ul>
+		<ul class="ful9">
+			<li>
+				<a href="#">&nbsp;众筹之家</a>				
+			</li>
+			<li>
+				<a href="#"></a>	
+			</li>
+		</ul>
+		<ul class="ful10">
+			<li>			
+				<a href="#">证券中星</a>	
+			</li>
+			<li>
+				<a href="#">中申网</a>	
+			</li>
+		</ul>
+		<ul class="ful11">
+			<li>
+				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
+			</li>
+		</ul>
+		<ul class="ful12">
+			<li>
+				<img src="images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
+			</li>
+		</ul>
+	</ul>
+</div>
+</body>
+</html>

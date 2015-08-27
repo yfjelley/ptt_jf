@@ -10,7 +10,7 @@ urlpatterns = patterns('searcher.views',
     url(r'^userinformation/$',  'userinformation', name='userinformation'),
     url(r'getverifycode/$', 'verifycode', name='verifycode'),
     url(r'forgetpw/$', 'forgetpw', name='forgetpw'),
-    url(r'intermediary/(?P<objectid>\d+)/$', 'intermediary', name='intermediary'),
+    url(r'intermediary/$', 'intermediary', name='intermediary'),
 
     url(r'^agreement/$',  'agreement', name='agreement'),
     url(r'^guide/$',  'guide', name='guide'),

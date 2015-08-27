@@ -47037,3 +47037,1462 @@ Quit the server with CONTROL-C.
 [26/Aug/2015 10:38:21] "GET /forgetpw/ HTTP/1.1" 200 5203
 [26/Aug/2015 10:38:27] "POST /send_smscode/ HTTP/1.1" 500 8007
 [26/Aug/2015 10:38:32] "POST /forgetpw/ HTTP/1.1" 500 86097
+[26/Aug/2015 18:29:39] "GET / HTTP/1.1" 200 6075
+[26/Aug/2015 18:29:42] "GET /zc HTTP/1.1" 200 6788
+[26/Aug/2015 18:29:42] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[26/Aug/2015 18:29:45] "GET /about/ HTTP/1.1" 200 13704
+[26/Aug/2015 18:29:45] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[26/Aug/2015 18:29:45] "GET /static/images/subway.png HTTP/1.1" 304 0
+[26/Aug/2015 18:29:45] "GET /static/css/index21.css HTTP/1.1" 304 0
+[26/Aug/2015 18:29:45] "GET /static/images/BMW.jpg HTTP/1.1" 304 0
+[26/Aug/2015 18:29:45] "GET /static/images/wechatlogo.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:51] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:51] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /zc HTTP/1.1" 200 6788
+[26/Aug/2015 21:21:52] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/phone.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/email.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:52] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /zc HTTP/1.1" 200 6788
+[26/Aug/2015 21:21:55] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/phone.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/email.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[26/Aug/2015 21:21:55] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:22] "GET /about/ HTTP/1.1" 200 13704
+[26/Aug/2015 21:22:22] "GET /static/css/index21.css HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /guide/ HTTP/1.1" 200 14520
+[26/Aug/2015 21:22:34] "GET /guide/ HTTP/1.1" 200 14520
+[26/Aug/2015 21:22:34] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:34] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[26/Aug/2015 21:22:48] "GET /static/download/%E8%9E%8D%E8%B5%84%E5%B1%85%E9%97%B4%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 40960
+[26/Aug/2015 23:01:58] "GET /guide/ HTTP/1.1" 200 14520
+[26/Aug/2015 23:01:58] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[26/Aug/2015 23:01:58] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[26/Aug/2015 23:01:58] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:58] "GET /static/css/index21.css HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[26/Aug/2015 23:01:59] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[27/Aug/2015 00:23:23] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[27/Aug/2015 00:43:02] "GET http://szwindoor.com/test/check_proxy.php HTTP/1.1" 404 1712
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[27/Aug/2015 01:41:56] "GET / HTTP/1.1" 200 6075
+[27/Aug/2015 01:42:04] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00TZ\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x10\x04\x01.\x05\x00\x00\x00\x00\x81I\xa8\xc0\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 34-35: illegal multibyte sequence
+[27/Aug/2015 09:22:44] "GET /guide/ HTTP/1.1" 200 14520
+[27/Aug/2015 09:22:44] "GET /static/css/index21.css HTTP/1.1" 304 0
+[27/Aug/2015 09:22:44] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:22:44] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:44] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[27/Aug/2015 09:22:44] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:22:44] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[27/Aug/2015 09:22:45] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /zc HTTP/1.1" 200 6788
+[27/Aug/2015 09:27:43] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/phone.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/email.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:43] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:44] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[27/Aug/2015 09:27:44] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:01] "GET /zc HTTP/1.1" 200 6788
+[27/Aug/2015 09:31:03] "GET /about/ HTTP/1.1" 200 13704
+[27/Aug/2015 09:31:03] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:03] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:05] "GET /investor/ HTTP/1.1" 200 7382
+[27/Aug/2015 09:31:23] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:31:23] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:23] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:31:23] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:23] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:23] "GET /getverifycode/ HTTP/1.1" 200 2637
+[27/Aug/2015 09:31:25] "GET /login/ HTTP/1.1" 200 4833
+[27/Aug/2015 09:31:25] "GET /static/css/login.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:26] "GET /static/images/open.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:31:45] "GET /static/css/home1.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/css/home2.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/upload/default.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/left.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/jinfu.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/borderjinfu.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/button.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/right.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:45] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:56] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:31:58] "GET /zc HTTP/1.1" 200 6788
+[27/Aug/2015 09:31:58] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/phone.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:58] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:59] "GET /static/images/email.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:59] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:59] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[27/Aug/2015 09:31:59] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:00] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:32:01] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:32:01] "GET /getverifycode/ HTTP/1.1" 200 2682
+[27/Aug/2015 09:32:01] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:01] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:03] "GET /guide/ HTTP/1.1" 200 14520
+[27/Aug/2015 09:32:03] "GET /static/css/index21.css HTTP/1.1" 304 0
+[27/Aug/2015 09:32:03] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[27/Aug/2015 09:32:03] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:04] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[27/Aug/2015 09:32:05] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:32:05] "GET /getverifycode/ HTTP/1.1" 200 2671
+[27/Aug/2015 09:32:07] "GET /static/download/%E8%9E%8D%E8%B5%84%E5%B1%85%E9%97%B4%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 40960
+[27/Aug/2015 09:32:10] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:32:10] "GET /getverifycode/ HTTP/1.1" 200 2682
+[27/Aug/2015 09:32:30] "GET /static/download/%E8%9E%8D%E8%B5%84%E5%B1%85%E9%97%B4%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 40960
+[27/Aug/2015 09:36:46] "GET /guide/ HTTP/1.1" 200 14628
+[27/Aug/2015 09:36:56] "GET /static/download/%E6%9C%89%E9%99%90%E5%90%88%E4%BC%99%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 87552
+[27/Aug/2015 09:36:59] "GET /static/download/%E6%8A%95%E8%B5%84%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 99328
+[27/Aug/2015 09:37:02] "GET /static/download/%E8%82%A1%E6%9D%83%E8%BD%AC%E8%AE%A9%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 56320
+[27/Aug/2015 09:37:12] "GET /guide/ HTTP/1.1" 200 14628
+[27/Aug/2015 09:37:16] "GET /static/download/%E8%9E%8D%E8%B5%84%E5%B1%85%E9%97%B4%E5%8D%8F%E8%AE%AE.doc HTTP/1.1" 200 40960
+[27/Aug/2015 09:37:28] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:37:29] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /getverifycode/ HTTP/1.1" 200 2677
+[27/Aug/2015 09:37:29] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:37:29] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:45:37] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /getverifycode/ HTTP/1.1" 200 2690
+[27/Aug/2015 09:45:37] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:45:37] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /register/ HTTP/1.1" 200 5750
+[27/Aug/2015 09:46:59] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /getverifycode/ HTTP/1.1" 200 2681
+[27/Aug/2015 09:46:59] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:46:59] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:47:00] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:47:22] "GET /register/ HTTP/1.1" 200 5750
+[27/Aug/2015 09:47:23] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:47:23] "GET /getverifycode/ HTTP/1.1" 200 2689
+[27/Aug/2015 09:48:29] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:48:29] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:48:29] "GET /getverifycode/ HTTP/1.1" 200 2678
+[27/Aug/2015 09:48:29] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:36] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:49:36] "GET /static/css/signup.css HTTP/1.1" 200 3937
+[27/Aug/2015 09:49:36] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:36] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:36] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:36] "GET /getverifycode/ HTTP/1.1" 200 2638
+[27/Aug/2015 09:49:36] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:36] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:49:38] "GET /static/css/signup.css HTTP/1.1" 200 3937
+[27/Aug/2015 09:49:38] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:49:38] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:49:39] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:49:39] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:49:40] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /getverifycode/ HTTP/1.1" 200 2671
+[27/Aug/2015 09:49:40] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:49:40] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /getverifycode/ HTTP/1.1" 200 2653
+[27/Aug/2015 09:49:40] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:49:40] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:52:21] "GET /static/css/signup.css HTTP/1.1" 200 3953
+[27/Aug/2015 09:52:21] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:52:21] "GET /getverifycode/ HTTP/1.1" 200 2651
+[27/Aug/2015 09:52:21] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:23] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:52:23] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:52:23] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:23] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:23] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:24] "GET /getverifycode/ HTTP/1.1" 200 2674
+[27/Aug/2015 09:52:24] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:24] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:52:24] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:52:53] "GET /static/css/signup.css HTTP/1.1" 200 3947
+[27/Aug/2015 09:52:53] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:52:53] "GET /getverifycode/ HTTP/1.1" 200 2685
+[27/Aug/2015 09:52:53] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:52:54] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:52:54] "GET /getverifycode/ HTTP/1.1" 200 2670
+[27/Aug/2015 09:52:54] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:53:44] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:53:45] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:53:47] "GET /guide/ HTTP/1.1" 200 14641
+[27/Aug/2015 09:53:49] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:53:49] "GET /static/css/signup.css HTTP/1.1" 200 3933
+[27/Aug/2015 09:53:49] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:53:49] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:53:49] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:53:49] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:53:49] "GET /getverifycode/ HTTP/1.1" 200 2672
+[27/Aug/2015 09:53:49] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:53:49] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:53:50] "GET /intermediary/ HTTP/1.1" 404 5600
+[27/Aug/2015 09:54:52] "GET /intermediary/ HTTP/1.1" 404 5600
+[27/Aug/2015 09:54:57] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:54:59] "GET /guide/ HTTP/1.1" 200 14641
+[27/Aug/2015 09:55:03] "GET /intermediary/ HTTP/1.1" 404 5600
+Validating models...
+
+0 errors found
+August 26, 2015 - 18:29:33
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[]
+[]
+[]
+[]
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 43906)
+----------------------------------------
+[]
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 1563)
+----------------------------------------
+[]
+[]
+this is get
+[]
+[]
+[]
+[]
+[]
+[]
+/usr/lib/python2.7/wsgiref/handlers.py:127: DeprecationWarning: Creating streaming responses with `HttpResponse` is deprecated. Use `StreamingHttpResponse` instead if you need the streaming behavior.
+  for data in self.result:
+
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:40] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:41] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:41] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:42] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:42] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:46] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:56:49] "GET /guide/ HTTP/1.1" 200 14641
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:52] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:53] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:53] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:54] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:54] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:54] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:54] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:56:55] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:56:58] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:57:00] "GET /guide/ HTTP/1.1" 200 14641
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Validating models...
+
+0 errors found
+August 27, 2015 - 09:56:32
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52074)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52073)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52077)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52076)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52078)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52075)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52079)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52081)
+----------------------------------------
+[]
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52083)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52086)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52084)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52085)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52093)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52094)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52095)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52096)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52097)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52098)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52099)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52100)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52101)
+----------------------------------------
+[]
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52105)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52106)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52109)
+----------------------------------------
+----------------------------------------
+ExceptiTraceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:04] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:05] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:05] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 200 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 127, in finish_response
+    for data in self.result:
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/six.py", line 473, in next
+    return type(self).__next__(self)
+  File "/usr/local/lib/python2.7/dist-packages/django/http/response.py", line 292, in __next__
+    return self.make_bytes(next(self._iterator))
+  File "/root/zc/searcher/views.py", line 420, in readFile
+    f = open(fn, "rb")
+IOError: [Errno 2] No such file or directory: '/static/download/\xe8\x9e\x8d\xe8\xb5\x84\xe5\xb1\x85\xe9\x97\xb4\xe5\x8d\x8f\xe8\xae\xae.doc'
+[27/Aug/2015 09:57:06] "GET /intermediary/ HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 124, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 92, in run
+    self.close()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 33, in close
+    self.status.split(' ',1)[0], self.bytes_sent
+AttributeError: 'NoneType' object has no attribute 'split'
+[27/Aug/2015 09:57:10] "GET / HTTP/1.1" 200 6518
+[27/Aug/2015 09:57:13] "GET /zc HTTP/1.1" 200 6788
+[27/Aug/2015 09:58:53] "GET /register/ HTTP/1.1" 200 5779
+[27/Aug/2015 09:58:53] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:58:53] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:58:53] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:58:53] "GET /static/css/signup.css HTTP/1.1" 200 3937
+[27/Aug/2015 09:58:54] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:58:54] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:58:54] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:58:54] "GET /getverifycode/ HTTP/1.1" 200 2265
+[27/Aug/2015 09:59:47] "GET /register/ HTTP/1.1" 200 5744
+[27/Aug/2015 09:59:47] "GET /static/css/signup.css HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 09:59:47] "GET /getverifycode/ HTTP/1.1" 200 2685
+[27/Aug/2015 10:00:03] "GET /register/ HTTP/1.1" 200 5744
+[27/Aug/2015 10:00:03] "GET /static/css/signup.css HTTP/1.1" 200 3937
+[27/Aug/2015 10:00:03] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[27/Aug/2015 10:00:03] "GET /static/js/signup.js HTTP/1.1" 304 0
+[27/Aug/2015 10:00:04] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[27/Aug/2015 10:00:04] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[27/Aug/2015 10:00:04] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[27/Aug/2015 10:00:04] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[27/Aug/2015 10:00:04] "GET /getverifycode/ HTTP/1.1" 200 2629
+on happened during processing of request from ('211.95.56.242', 52110)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52112)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52113)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52114)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52115)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52116)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 52118)
+----------------------------------------
+[]
+[]

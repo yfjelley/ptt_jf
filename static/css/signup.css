@@ -39,7 +39,7 @@ body{margin:0px;}
 #ul3 input[type="text"]{width:505px;height:40px;}
 .li3 input[type="text"]{ margin-left: 143px;}
 #ul4{margin:-10px 0;margin-left:-38px;font-size:12px;}
-#ul4 input[type="text"]{width:230px;height:40px;}
+#ul4 input[type="password"]{width:230px;height:40px;}
 #ul4 .lab1{margin-left:248px;}
 #ul4{line-height:25px;}
 #ul4 input[type="text"]{float:left;}
