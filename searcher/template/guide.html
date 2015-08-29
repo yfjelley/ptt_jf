@@ -5,6 +5,8 @@
 <title>投资指引</title>
 <link rel="stylesheet" href="/static/css/index21.css" />
 <link  rel="stylesheet"  href="/static/css/zhongchou.css" />
+<link rel="stylesheet" href="/static/css/home1.css" />
+<link rel="stylesheet" href="/static/css/home2.css" />
 	<script src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">  
 		$(function(){
@@ -120,61 +122,89 @@
 
 <body>
 
-<div id="Fdiv1">
-	<div id="Fdiv2">
-		<ul id="Fmain">	
-		<ul class="Hul1">
-		<ul>
-			<li style="margin-top:18px;">
-				<img src="/static/images/Conpanylogo.png" width="95px;" height="72px" /></li>
-		</ul>
-		</ul>
-		<ul class="Hul2">
-		<ul>
+<script type="text/javascript">
+<!--显示和隐藏-->
+$(function (){
+	mouseout();
+});
+
+$(function (){
+	Lmouseout();
+});
+
+
+	function Lmouseover()
+	{
+		$("#img2").show();
+		$("#img3").show();
+		$("#img4").hide();
+		
+	}
+	
+	function Lmouseout()
+	{
+		$("#img2").hide();
+		$("#img3").hide();
+		$("#img4").show();				
+	}
+	
+  function mouseover()
+  { 	
+  	$("#img1").show();
+	$("#img5").hide();
+	$("#img6").show();
+  }
+  function mouseout()
+  {
+  	$("#img1").hide();
+	$("#img5").show();
+	$("#img6").hide();
+  }
+	
+</script>
+</head>
+<body>
+
+<!--头部-->
+<div id="container">
+	<ul style="position:absolute;top:-11px;left:270px;">
 			<li>
-				<a href="{% url 'index_zc' %}">首页</a>
-			</li>
- 		</ul>
-		<ul>
-    		<li>
-				<a href="{% url 'investor' %}">投资人风采</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#"项目风采></a>
-			</li>
-  		</ul>
-  		<ul>
-			<li>
-				<a href="{% url 'publish' %}">项目发起</a>
-			</li>
-  		</ul>
-  		<ul>
-    		<li>
-				<a href="#">葡萄藤社区</a>
+				<img src="/static/images/mainlogo.png" />
 			</li>
 		</ul>
-		</ul>
-		<ul class="Hul3">
-  		<ul>
+		
+  		<ul class="ul7">
     		<li>
-      			<input type="text" placeholder="找项目,领头人" />
-    		</li>
-  		</ul>
-  		<ul type="disc">
-    		<li>
-				<a href="{% url 'register' %}">注册</a>
+				<a href="{% url 'index_jf' %}">首页</a>
+				<a href="{% url 'about_us' %}">关于我们</a>
+				<a href="{% url 'guide' %}">投资指引</a>
+    			<a href="#">葡萄藤社区</a>
 			</li>
-  		</ul>
-  		<ul type="disc">
+		</ul>
+		
+		<ul class="ul8">
     		<li>
-				<a href="{% url 'login' %}">登录</a>
+     			<label class="lab1">24小时客服电话</label>
+				<label class="lab2">400-8800-6799</label>
+				{% ifequal user.id None %}
+				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+				{% else %}
+				    <ul id="top_r" class="top_name">
+                       <div id="logged">
+                          <a id="check_log" style="display: none">1</a>
+                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                             <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+						     </ul>
+                          </li>
+					   </div>
+                    </ul>
+
+                {% endifequal %}
 			</li>
-  		</ul>
-		</ul>
-		</ul>
-	</div>
+		</ul>		
 </div>
 
 <!--内容-->
@@ -211,23 +241,24 @@
 					 	<div style="width:400px;height:1px;background:#ccc;"></div>
 					 	<div style="width:1px;height:440px;background:#ccc;position:absolute;top:225px;left:850px;"></div>
 				 	</div>
-					
-					<div style="width:180px;height:220px;position: absolute;top:230px;left:650px;">
+					<div id="color" class="change_color">
+					<div style="width:180px;height:220px;position: absolute;top:220px;left:650px;">
 						<a href="/safety/1"><img src="/static/images/xmfk180-180.png" width="180" height="180"/>
 						<span style="margin-left:55px;line-height:35px;font-size:18px;">项目风控</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:230px;left:870px;">
+					<div style="width:180px;height:100px;position: absolute;top:220px;left:870px;">
 						<a href="/safety/2"><img src="/static/images/zjbz180-180.png" width="180" height="180"/>
 						<span style="margin-left:55px;line-height:35px;font-size:18px;">资金保障</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:460px;left:650px;">
+					<div style="width:180px;height:100px;position: absolute;top:450px;left:650px;">
 						<a href="/safety/3"><img src="/static/images/cwjg180-180.png" width="180" height="180"/>
 						<span style="margin-left:35px;line-height:35px;font-size:18px;">财务监管系统</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:460px;left:870px;">
+					<div style="width:180px;height:100px;position: absolute;top:450px;left:870px;">
 						<a href="/safety/4"><img src="/static/images/jsbz180-180.png" width="180" height="180"/>
 						<span style="margin-left:55px;line-height:35px;font-size:18px;">技术保障</span></a></div>
 					 <div style="height:240px;"></div>
+					 </div>
 		   </div> 
 		   	 <div id="ptxy" class="display" >	   
 					
@@ -342,6 +373,7 @@
 <!--结尾-->
 
 <div id="footer">
+	<ul class="ful">
 		<ul class="ful1">
 			<li>
 				<label>合作伙伴</label>
@@ -351,14 +383,14 @@
 		</ul>
 		<ul class="ful2">
 			<li>
-				<label class="flab1">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
 				</label>
-				<label class="flab2">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
 				</label>
-				<label class="flab3">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
 				</label>
 			</li>
 		</ul>		
@@ -380,7 +412,7 @@
 		</ul>
 		<ul class="ful5">
 			<li>
-				<a href="#">咨询热线:400-000-0000</a>	
+				咨询热线:400-000-0000
 			</li>
 		</ul>
 		<ul class="ful6">
@@ -401,7 +433,7 @@
 		</ul>
 		<ul class="ful8">
 			<li>
-				<a href="#">公司邮箱:sys@pttjf.com</a>	
+				公司邮箱:sys@pttjf.com
 			</li>
 		</ul>
 		<ul class="ful9">
@@ -422,14 +454,38 @@
 		</ul>
 		<ul class="ful11">
 			<li>
-				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
+				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
 			</li>
 		</ul>
 		<ul class="ful12">
 			<li>
 				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
 			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
+			</li>
 		</ul>
+	</ul>
 </div>
+<script type="text/javascript">
+        //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
 </body>
 </html>

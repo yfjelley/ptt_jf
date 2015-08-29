@@ -116,3 +116,7 @@
 .ptxy_div ul li p span{float:right;}
 .ptxy_div ul li p span img{width:26px;height:26px;}
 .ptxy_div ul li{height:50px;}
+
+.change_color a{color:#000;}
+a{text-decoration:none;}
+a:hover{color:#e1604d}

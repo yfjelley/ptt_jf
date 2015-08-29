@@ -21,7 +21,7 @@ function goTop(){
 </script>
 
 <style type="text/css">
-#side{position:fixed;width:70px;height:350px;right:100px;top:214px; }
+#side{position:fixed;width:70px;height:350px;right:285px;top:214px; }
 #side ul li{width:70px;height:70px;float:left;position:relative;}
 #side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#fff;font:14px/54px "微软雅黑";overflow:hidden;}
 #side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
@@ -31,14 +31,13 @@ function goTop(){
 </style>
 
 <style type="text/css">
-	#lt-div{width:105px; height:338px;margin-left:180px; margin-top:280px;}
-/*	#rt-div{height:320px;width:100px;border:1px solid white; background:#FFFFFF; margin-top:280px; margin-left:-380px;}
-	#rt-div li{ margin:0px -20px; line-height:40px;}*/
+	#lt-div{width:105px; height:338px;margin-left:220px; margin-top:280px;}
+
 </style>
 <script type="text/javascript">
 $(function(){
 	$("#lt-div").floatdiv({left:"0",top:"50px"});//设置浮动层靠左距离为0，靠上距离50px 根据需求调整
-	$("#side").floatdiv({right:"0",top:"50px"});//设置浮动层靠右距离为0，靠上距离50px 根据需求调整
+	
 });
 </script>
 <style type="text/css">
@@ -58,7 +57,24 @@ $(function(){
 .owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
 .owl-next:hover{background-image:url(/static/images/jiantou3.png);}
 </style>
-
+<style>
+div.transbox
+{
+  width: 300px;
+  height: 204px;
+  margin:30px;
+  background-color:#372c3a;
+  border: 1px solid black;
+  /* for IE */
+  filter:alpha(opacity=60);
+  /* CSS3 standard */
+  opacity:0.6;
+  position:absolute;
+  top:150px;
+  left:730px;  
+}
+div.transbox p{color:#FFFFFF; margin:10px 20px}
+</style>
 <link rel="stylesheet" href="/static/css/owl.carousel.css" />
 <script type="text/javascript" src="/static/js/owl.carousel.js"></script>
 <script type="text/javascript">
@@ -81,90 +97,250 @@ $(function(){
 <title>葡萄藤众筹</title>
 </head>
 <body>
-<div id="header">
-		<ul class="tul1">
+
+
+<div id="container">		
+		<ul style="position:absolute;top:-14px;left:270px;">
 			<li>
-				<a href="{% url 'index_zc' %}">首页</a>
-				<a href="{% url 'about_us' %}">关于我们</a>
-				<a href="{% url 'guide' %}">投资指引</a>
-				<a href="#">葡萄藤社区</a>
+				<img src="/static/images/zhongchoulogo.png" />
 			</li>
 		</ul>
-		<ul class="tul2">
-			<li>
-				<label  style="font-size:10px;">24小时电话</label>
-				<label style="font-size:16px;">400-8800-6799</label>
-				<a href="{% url 'register' %}" style="font-size:10px;">注册</a>
-				<a href="{% url 'login' %}" style="font-size:10px;">登录</a>
+		
+  		<ul class="ul7">
+    		<li>
+				<a href="{% url 'index_zc' %}">首页</a>
+				<a href="{% url 'investor' %}">投资人风采</a>
+				<a href="#">项目风采</a>
+    			<a href="{% url 'publish' %}">项目发起</a>
+				<a href="#">众筹社区</a>
+			</li>  		
+		</ul>
+		
+		<ul class="ul8">
+    		<li>
+     			<input type="text" placeholder="找项目,领头人" />
+				<label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
 			</li>
 		</ul>
 </div>
+
 	<div class="rotate">
 		<!--图片轮播 -->
 		<div id="owl-demo" class="owl-carousel">
 			<a class="item" href="#" ><img src="/static/images/zc_banner.png"  alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
 			<a class="item" href="#" ><img src="/static/images/banner2.png" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
 			<a class="item" href="#" ><img src="/static/images/banner3.png" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>	
+			
 		</div>
-
+		<div class="transbox">
+			<p style="font-size:36px; margin-left:65px;">葡萄藤众筹</p>
+				<p>
+					葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+					葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹.
+					葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+					葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+					葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+				</p>
+			</div>
 		<div id="lt-div">
 			<img src="/static/images/sqtzr.png" style="background-repeat:no-repeat">
-		</div>
-		
-	
+		</div>			
 	<div id="menu">
 	<div id="menu2">
-		<ul>
+		<ul style="margin-top:35px;margin-left:90px;">
 			<li>
-				<h2>每日精选</h2>
+				<label style="font-size:25px; color:#000000;">每日精选</label>
+				<label style="position:absolute;left:1170px;top:600px;"><a style="font-size:12px; color:#000000;" href="#">更多精选......</a></label>
 			</li>
-			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:-10px;">
-				1111				
+		</ul>
+		<ul class="mojing">
+			
+			<li style="position:absolute;left:348px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:532px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:463px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
 			</li>
 		</ul>
 	</div>
 	<div id="menu3">
-		<ul>
-			<li>
+	<ul class="mojing2">	
+			<li style="position:absolute;left:580px">
+				<img src="/static/images/heart.png" />				
 			</li>
-			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
-				222				
+			<li style="position:absolute;left:761px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:693px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
 			</li>
 		</ul>
 	</div>
   	<div id="menu4">
-		<ul>
-			<li>
-			
+	<ul class="mojing3">	
+			<li style="position:absolute;left:808px">
+				<img src="/static/images/heart.png" />				
 			</li>
-			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
-				333				
+			<li style="position:absolute;left:990px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:923px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
 			</li>
 		</ul>
+	</div>	  
+	<div id="menu5">
+	<ul class="mojing4">	
+			<li style="position:absolute;left:1040px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:1222px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:1150px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
 	</div>	
-  	<div id="menu5">
-		<ul>
-			<li>
-		
-			</li>
-			<li style="border:1px solid #000000;width:180px;height:200px;margin-top:20px;">
-				333				
-			</li>
-		</ul>
-	</div>
-	</div>
 		
 		<div id="side">
 			<ul class="rightText">
 				<li><a href="#"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服:</label><label style="font-size:10px">4008851234</label></div></a></li>
-				<li><a href="#"><div class="sidebox"><img src="/static/images/qq.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+				<li><a href="#"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
 				<li><a href="#"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
-				<li style="border:none;"><a href="javascript:goTop();"><div class="sidetop"><img  src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+				<li style="border:none;"><a onclick="goTop()" href="javascript:void(0);"><div class="sidetop"><img  src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
 		</ul>
 	</div>
-	
-	</div>
-	<div id="footer">
+</div>
+
+
+<div id="footer">
+	<ul class="ful">
 		<ul class="ful1">
 			<li>
 				<label>合作伙伴</label>
@@ -174,14 +350,14 @@ $(function(){
 		</ul>
 		<ul class="ful2">
 			<li>
-				<label class="flab1">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
 				</label>
-				<label class="flab2">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
 				</label>
-				<label class="flab3">
-					<hr />
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
 				</label>
 			</li>
 		</ul>		
@@ -203,7 +379,7 @@ $(function(){
 		</ul>
 		<ul class="ful5">
 			<li>
-				<a href="#">咨询热线:400-000-0000</a>	
+				咨询热线:400-000-0000
 			</li>
 		</ul>
 		<ul class="ful6">
@@ -224,7 +400,7 @@ $(function(){
 		</ul>
 		<ul class="ful8">
 			<li>
-				<a href="#">公司邮箱:sys@pttjf.com</a>	
+				公司邮箱:sys@pttjf.com
 			</li>
 		</ul>
 		<ul class="ful9">
@@ -245,10 +421,18 @@ $(function(){
 		</ul>
 		<ul class="ful11">
 			<li>
-				<a href="#">公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室</a>	
+				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
 			</li>
 		</ul>
-	</div>
-
+		<ul class="ful12">
+			<li>
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
+			</li>
+		</ul>
+	</ul>
+</div>
 </body>
 </html>

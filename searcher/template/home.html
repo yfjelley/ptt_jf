@@ -8,43 +8,49 @@
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 <!--显示和隐藏-->
-$(function (){
-	mouseout();
-});
-
-$(function (){
-	Lmouseout();
-});
-
-
-	function Lmouseover()
-	{
-		$("#img2").show();
-		$("#img3").show();
-		$("#img4").hide();
-		
-	}
-	
-	function Lmouseout()
-	{
+	$(function (){
 		$("#img2").hide();
 		$("#img3").hide();
-		$("#img4").show();				
-	}
+		$("#img4").show();	
+	});
+
+	$(function (){
+		$("#img1").hide();
+		$("#img5").show();
+		$("#img6").hide();
+	});
 	
-  function mouseover()
-  { 	
-  	$("#img1").show();
-	$("#img5").hide();
-	$("#img6").show();
-  }
-  function mouseout()
-  {
-  	$("#img1").hide();
-	$("#img5").show();
-	$("#img6").hide();
-  }
+	$(function(){
+		$(".left1").mouseover(function(){
+				$("#img2").show();
+			$("#img3").show();
+			$("#img4").hide();
+		});
+	});
+		
+	$(function(){
+		$(".left1").mouseout(function(){
+			$("#img2").hide();
+			$("#img3").hide();
+			$("#img4").show();	
+		});
+	});
 	
+	$(function(){
+		$(".Rpic").mouseover(function(){
+			$("#img1").show();
+			$("#img5").hide();
+			$("#img6").show();
+		});
+	});
+		
+	$(function(){
+		$(".Rpic").mouseout(function(){
+			$("#img1").hide();
+			$("#img5").show();
+			$("#img6").hide();	
+		});
+	});	
 </script>
 </head>
 
@@ -73,11 +79,15 @@ $(function (){
 				{% ifequal user.id None %}
 				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
 				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
-				{% else %}
+				
+			</li>
+		</ul>		
+			{% else %}
 				    <ul id="top_r" class="top_name">
                        <div id="logged">
-                          <a id="check_log" style="display: none">1</a>
-                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                          <a id="check_log" style="display: none;">1</a>
+                          <li class="image_size">
+						  	<a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
                              <ul>
                                 <li><a href="{% url 'userinformation' %}">我的资料</a></li>
                                 <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
@@ -85,10 +95,7 @@ $(function (){
                           </li>
 					   </div>
                     </ul>
-
                 {% endifequal %}
-			</li>
-		</ul>		
 </div>
 
 <div class="Cpic">
@@ -96,7 +103,7 @@ $(function (){
 			<a href="{% url 'index_jf' %}">
 		<ul>
 			<li class="left1">
-				<img src="/static/images/left.jpg" style="width:570px;height:460px;z-index:1; margin-top:-20px;" onmouseover="Lmouseover()" onmouseout="Lmouseout()"/>
+				<img src="/static/images/left.jpg" style="width:570px;height:460px;z-index:1; margin-top:-20px;"/>
 			</li>
 			<li id="img4" style="position:absolute; top:130px;left:425px;z-index:2;">
 				<img src="/static/images/jinfu.png" width="200px" height="176px;"/>
@@ -114,7 +121,7 @@ $(function (){
 		<ul class="Rul1">
 
 			<li class="Rpic">
-				<img src="/static/images/right.jpg" style="width:570px;height:460px;margin-left:-1px;z-index:1;margin-top:-20px;" onmouseover="mouseover()" onmouseout="mouseout()"/>
+				<img src="/static/images/right.jpg" style="width:570px;height:460px;margin-left:-1px;z-index:1;margin-top:-20px;"/>
 
 			</li>	
             <a href="http://ddbid.com">

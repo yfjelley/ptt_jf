@@ -418,10 +418,14 @@ def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
 
 def investor(request):
+
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
-def investor_info(request):
-    return render_to_response('investor_intro.html',{}, context_instance=RequestContext(request))
+def investor_info(request, investor):
+    investor=u"大大"
+    p1 = UserInformation.objects.filter(realname=investor)
+    print p1[0].realname, p1[0].position, p1[0].industry, p1[0].authentication_class
+    return render_to_response('investor_intro.html',{"investor_info":p1[0]}, context_instance=RequestContext(request))
 
 def safety(request, objectid):
     if int(objectid) == 1:

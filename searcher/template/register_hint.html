@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+　　<html xmlns="http://www.w3.org/1999/xhtml">
+　　<head>
+　　<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+　　<title>前往注册</title>
+　 <script language="javascript" type="text/javascript">
+	 function showdiv() {
+	 document.getElementById("bg").style.display ="block";
+	 document.getElementById("show").style.display ="block";
+	 }
+	 function hidediv() {
+	 document.getElementById("bg").style.display ='none';
+	 document.getElementById("show").style.display ='none';
+	 }
+	</script>
+<style type="text/css">
+ #bg{ display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index:1001;
+     -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);}
+ #show{display: none; position: absolute; top: 25%; left: 30%; width:410px; height:190px;background-color: white; z-index:1002; overflow: auto;}
+ .but_box{width:225px;height:40px;background-image:url(/static/images/qwzc.png);border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;
+          border:1px solid color:#FF6600;color:#FFFFFF;text-align:center;-moz-border-radius:10px;border-radius:10px;font-size:16px;}
+ #btnclose{width:26px;height:26px;background-image:url(/static/images/close.gif);border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;}
+</style>
+</head>
+ <body>
+	 <input id="btnshow" type="button" value="Show" onclick="showdiv();"/>
+	 <div id="bg"></div>
+	 <div id="show">
+		<div class="rz_box" style="margin-top:15px;">
+			<p style="margin-right:15px;float:right;margin-bottom:15px;">
+			<input id="btnclose" type="button" onclick="hidediv();"/><p>
+			<p style="padding-left:30px;float:left;"><img src="/static/images/rz_sign.png" width="47" height="40"/><p>
+			<div style="height:30px;padding-top:20px;margin-left:-10px;">&nbsp;&nbsp;必须注册之后才能浏览本页面内容</div>
+			<div style="margin-top:40px;margin-left:23%;">	<input type="button" class="but_box" id="" name=""></div>
+		</div>
+	 </div>
+ </body>
+</html>

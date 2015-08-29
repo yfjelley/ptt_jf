@@ -69,11 +69,16 @@
 	</ul>
 	<ul class="touziren" style="float:left;">
 		<li style="font-weight:bold;font-size:25px;">
-			<label>赵葡萄</label>
+			<label>{{investor_info.realname}}</label>
 		</li>
 		<li>
-			<label style="font-size:12px">中国风险投资公司高级副总裁</label>
-			<label style="font-size:12px;margin-left:30px;">葡萄藤金融认证资深投资人</label>			
+			<label style="font-size:12px">{{investor_info.position}}</label>
+			{% ifequal investor_info.authentication_class 1 %}
+			<label style="font-size:12px;margin-left:30px;">认证投资人</label>
+			{% endifequal %}
+			{% ifequal investor_info.authentication_class 2 %}
+			<label style="font-size:12px;margin-left:30px;">认证资深投资人</label>
+			{% endifequal  %}
 		</li>
 		<li style="margin-top:-25px; margin-left:170px">
 			<img src="/static/images/Nstart.png" />
@@ -86,7 +91,12 @@
 			<label>经济学学士,具有20多年企业管理经验和投资经验。</label>
 		</li>
 		<li style="margin-top:-160px; margin-left:440px;">
+			{% ifequal investor_info.authentication_class 1 %}
 			<img src="/static/images/touzi.png" />
+			{% endifequal  %}
+			{% ifequal investor_info.authentication_class 2 %}
+			<img src="/static/images/touzi.png" />
+			{% endifequal  %}
 		</li>
 	</ul>
 	<div id="daohang">		

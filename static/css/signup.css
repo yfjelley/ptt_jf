@@ -42,8 +42,8 @@ body{margin:0px;}
 #ul4 input[type="password"]{width:230px;height:40px;}
 #ul4 .lab1{margin-left:248px;}
 #ul4{line-height:25px;}
-#ul4 input[type="text"]{float:left;}
-.li2 input[type="text"]{ margin:0px 40px;}
+#ul4 input[type="password"]{float:left;}
+.li2 input[type="password"]{ margin:0px 40px;}
 #ul5 .lab2{margin-left:224px;}
 #ul5 input[type="text"]{float:left;}
 #ul5{margin-top:70px;margin-left:-38px;font-size:12px;line-height:25px;}

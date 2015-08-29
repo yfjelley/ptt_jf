@@ -35,8 +35,8 @@
   				$(this).css('color','#E1604D');
 			});
 			
-			$('#table').find('.xmbz').mouseout(function(){
-			     $(this).find('div').hide();
+			$('.xmbz').find('div').mouseover(function(){
+			     $(this).show();
 			});
 		});
     </script>  
@@ -125,8 +125,8 @@
 				<table width="760px;" height="540px"; cellpadding="1" cellspacing="1" id="table" >
 				<tr>
 				<td style="padding-bottom:45px;">项目标志</td>
-				<td class="tpsc"><img src="/static/images/ali.jpg" alt="上传" class="xmbz" onclick="romoveFont"/>
-				<div style="position:absolute;width:100px;height:100px;z-indent:2;left:0;top:0;">64×64px</div>
+				<td class="tpsc"><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a>
+				<div style="position:absolute;left:555px;top:180px;display:none;">64×64px</div>
                 &nbsp;&nbsp;<input type="button" class="scbz" value="上传标志" name=""/>
 				<span style="width:450px;height:30px;font-size:12px;color:#999999;">
 				产品logo而非公司logo。比如手机App的图标。<br/>&nbsp;&nbsp;&nbsp;像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</span></td>
