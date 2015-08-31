@@ -461,4 +461,95 @@ class ModfiyPW(forms.Form):
             }
         ),
      )
+cate_choice = (('1', 'First',), ('2', 'Second',))
+status_choice = (('3', 'First',), ('4', 'Second',))
+class PublishForm(forms.Form):
+    project = forms.CharField(
+        required=True,
+        label=u"项目名称",
+        error_messages={'required': '请输入项目名称'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"项目名称",
+                'type': 'text',
+                'name': 'project',
+                'class': 'xmcj_input',
+            }
+        ),
+    )
+
+
+    introduction = forms.CharField(
+        required=True,
+        label=u"项目简介",
+        error_messages={'required': u'请输入项目简介'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"项目简介",
+                'type': 'text',
+                'name': 'introduction',
+                'class': 'xmcj_input'
+            }
+        ),
+    )
+
+    description = forms.CharField(
+        required=True,
+        label=u"项目描述",
+        error_messages={'required': u'请输入项目描述'},
+        widget=forms.Textarea(
+            attrs={
+                'placeholder': u"项目描述",
+                'type': 'textarea',
+                'name': 'description',
+                'class': 'xxms_input'
+            }
+        ),
+    )
+
+
+    category = forms.CharField(
+        required=True,
+        label=u"行业领域",
+        error_messages={'required': u'请选择行业领域'},
+        widget=forms.RadioSelect(
+            attrs={
+                'choices':  'cate_choice',
+                'placeholder': u"请选择行业领域",
+                'type': 'checkbox',
+                'name': 'category',
+                'class': 'xmcj_input'
+            }
+        ),
+    )
+
+    status = forms.CharField(
+        required=True,
+        label=u"项目阶段",
+        error_messages={'required': u'请选择项目阶段'},
+        widget=forms.RadioSelect(
+            attrs={
+                'choices':  'status_choice',
+                'placeholder': u"请选择项目阶段",
+                'type': 'checkbox',
+                'name': 'status',
+                'class': 'xmjd_input'
+            }
+        ),
+    )
+
+    founder = forms.CharField(
+        required=True,
+        label=u"项目创始人",
+        error_messages={'required': u'请输入项目创始人'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"项目创始人",
+                'type': 'text',
+                'name': 'founder',
+                'class': 'xmcj_input'
+            }
+        ),
+    )
+
 

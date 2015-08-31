@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/static/css/index_page.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"220px"},200).css({"opacity":"1","filter":"Alpha(opacity=30)","background":"#eeeef0"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"70px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=50)","background":"#eeeef0"})	
+	});
+});
+
+//回到顶部
+function goTop(){
+	$('html,body').animate({'scrollTop':0},200);
+}
+</script>
+
+<style type="text/css">
+#side{position:fixed;width:70px;height:350px;right:285px;top:214px; }
+#side ul li{width:70px;height:70px;float:left;position:relative;}
+#side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#fff;font:14px/54px "微软雅黑";overflow:hidden;}
+#side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
+#side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
+#side ul li img{float:left;}
+.rightText li label{color:#000000}
+</style>
+
+<style type="text/css">
+	#lt-div{width:105px; height:338px;margin-left:220px; margin-top:280px;}
+
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#lt-div").floatdiv({left:"0",top:"50px"});//设置浮动层靠左距离为0，靠上距离50px 根据需求调整
+	
+});
+</script>
+<style type="text/css">
+#owl-demo{width:1140px;height:500px;}
+#owl-demo .item{ position:relative;display:block;}
+#owl-demo img{display:block;width:1140px;height:500px;}
+#owl-demo b{position:absolute;left:0;bottom:0;width:100%;height:78px;background-color:#000;opacity:.5;filter:alpha(opacity=50);}
+#owl-demo span{position:absolute;left:0;bottom:37px;width:100%;font:18px/32px "微软雅黑","黑体";color:#fff;text-align:center;}
+
+.owl-pagination{position:absolute;left:0;bottom:10px;width:100%;height:22px;text-align:center;}
+.owl-page{display:inline-block;width:10px;height:10px;margin:0 5px;background-image:url(/static/images/bg15.png);*display:inline;*zoom:1; }
+.owl-pagination .active{width:25px;background-image:url(/static/images/bg16.png);}
+.owl-buttons{display:none;}
+.owl-buttons div{position:absolute;top:120px;width:50px;height:100px;text-indent:-9999px;}
+.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:120px;}
+.owl-next{background-image:url(/static/images/jiantou5.png);margin-left:940px;}
+.owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
+.owl-next:hover{background-image:url(/static/images/jiantou3.png);}
+</style>
+<style>
+div.transbox
+{
+  width: 300px;
+  height: 204px;
+  margin:30px;
+  background-color:#372c3a;
+  border: 1px solid black;
+  /* for IE */
+  filter:alpha(opacity=60);
+  /* CSS3 standard */
+  opacity:0.6;
+  position:absolute;
+  top:150px;
+  left:730px;  
+}
+div.transbox p{color:#FFFFFF; margin:10px 20px}
+</style>
+<link rel="stylesheet" href="/static/css/owl.carousel.css" />
+<script type="text/javascript" src="/static/js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#owl-demo').owlCarousel({
+		items: 1,
+		navigation: true,
+		navigationText: ["上一个","下一个"],
+		autoPlay: true,
+		stopOnHover: true
+	}).hover(function(){
+		$('.owl-buttons').show();
+	}, function(){
+		$('.owl-buttons').hide();
+	});
+});
+</script>
+
+
+<title>葡萄藤众筹</title>
+</head>
+<body>
+
+
+<div id="container">		
+		<ul style="position:absolute;top:-14px;left:270px;">
+			<li>
+				<img src="/static/images/zhongchoulogo.png" />
+			</li>
+		</ul>
+		
+  		<ul class="ul7">
+    		<li>
+				<a href="{% url 'index_zc' %}">首页</a>
+				<a href="{% url 'investor' %}">投资人风采</a>
+				<a href="#">项目风采</a>
+    			<a href="{% url 'publish' %}">项目发起</a>
+				<a href="#">众筹社区</a>
+			</li>  		
+		</ul>
+		
+		<ul class="ul8">
+    		<li>
+     			<input type="text" placeholder="找项目,领头人" />
+				<label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+			</li>
+		</ul>
+</div>
+
+	<div class="rotate">
+		<div class="xuanxiang">
+		    <ul>
+				<li>111</li>
+				<li>111</li>
+				<li>111</li>
+				<li>111</li>
+			</ul>
+			  <ul>
+				<li>111</li>
+				<li>1111</li>
+				<li>11</li>
+				<li>11</li>
+				<li>11</li>
+				<li>11</li>
+				<li>11</li>
+				<li>11</li>
+			</ul>
+		</div>
+	<div id="menu">
+	<div id="menu2">
+		<ul style="margin-top:35px;margin-left:90px;">
+			<li>
+				<label style="font-size:25px; color:#000000;">每日精选</label>
+				<label style="position:absolute;left:1170px;top:600px;"><a style="font-size:12px; color:#000000;" href="#">更多精选......</a></label>
+			</li>
+		</ul>
+		<ul class="mojing">
+			
+			<li style="position:absolute;left:348px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:532px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:463px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="menu3">
+	<ul class="mojing2">	
+			<li style="position:absolute;left:580px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:761px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:693px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
+			</li>
+		</ul>
+	</div>
+  	<div id="menu4">
+	<ul class="mojing3">	
+			<li style="position:absolute;left:808px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:990px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:923px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+					</div>
+				</ul>
+			</li>
+		</ul>
+	</div>	  
+	<div id="menu5">
+	<ul class="mojing4">	
+			<li style="position:absolute;left:1040px">
+				<img src="/static/images/heart.png" />				
+			</li>
+			<li style="position:absolute;left:1222px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="/static/images/mojing.jpg" />	
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">魔镜在线</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:1150px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	</div>	
+		
+		<div id="side">
+			<ul class="rightText">
+				<li><a href="#"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服:</label><label style="font-size:10px">4008851234</label></div></a></li>
+				<li><a href="#"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+				<li><a href="#"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
+				<li style="border:none;"><a onclick="goTop()" href="javascript:void(0);"><div class="sidetop"><img  src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="footer">
+	<ul class="ful">
+		<ul class="ful1">
+			<li>
+				<label>合作伙伴</label>
+				<label style="margin-left:150px;">友情链接</label>
+				<label style="margin-left:145px;">联系我们</label>
+			</li>
+		</ul>
+		<ul class="ful2">
+			<li>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
+				</label>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
+				</label>
+				<label>
+					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
+				</label>
+			</li>
+		</ul>		
+		<ul class="ful3">
+			<li>
+				<a href="#">天使客</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;天使街</a>	
+			</li>
+		</ul>
+		<ul class="ful4">
+			<li>			
+				<a href="#">股权众筹</a>	
+			</li>
+			<li>
+				<a href="#">众筹工坊</a>	
+			</li>
+		</ul>
+		<ul class="ful5">
+			<li>
+				咨询热线:400-000-0000
+			</li>
+		</ul>
+		<ul class="ful6">
+			<li>
+				<a href="#">&nbsp;京东众筹</a>				
+			</li>
+			<li>
+				<a href="#">&nbsp;大家投</a>	
+			</li>
+		</ul>
+		<ul class="ful7">
+			<li>			
+				<a href="#">新金融</a>	
+			</li>
+			<li>
+				<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;P2P理财</a>	
+			</li>
+		</ul>
+		<ul class="ful8">
+			<li>
+				公司邮箱:sys@pttjf.com
+			</li>
+		</ul>
+		<ul class="ful9">
+			<li>
+				<a href="#">&nbsp;众筹之家</a>				
+			</li>
+			<li>
+				<a href="#"></a>	
+			</li>
+		</ul>
+		<ul class="ful10">
+			<li>			
+				<a href="#">证券中星</a>	
+			</li>
+			<li>
+				<a href="#">中申网</a>	
+			</li>
+		</ul>
+		<ul class="ful11">
+			<li>
+				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
+			</li>
+		</ul>
+		<ul class="ful12">
+			<li>
+				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
+			</li>
+			<li class="fuldy">
+				<label>订阅号</label>
+			</li>
+		</ul>
+	</ul>
+</div>
+</body>
+</html>
