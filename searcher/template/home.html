@@ -23,7 +23,6 @@
 		})
 	});
 </script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
 <script type="text/javascript">
 <!--显示和隐藏-->
@@ -253,6 +252,24 @@ $(function (){
             {% endfor %}
         {% endif %}
     });
+    //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
 </script>
 </body>
 </html>

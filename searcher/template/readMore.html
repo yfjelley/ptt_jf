@@ -3,61 +3,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/index_page.css" />
+<link rel="stylesheet" href="/static/css/owl.carousel.css" />
+<script type="text/javascript" src="/static/js/owl.carousel.js"></script>
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#side ul li").hover(function(){
-		$(this).find(".sidebox").stop().animate({"width":"220px"},200).css({"opacity":"1","filter":"Alpha(opacity=30)","background":"#eeeef0"})	
-	},function(){
-		$(this).find(".sidebox").stop().animate({"width":"70px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=50)","background":"#eeeef0"})	
-	});
-});
-
-//回到顶部
-function goTop(){
-	$('html,body').animate({'scrollTop':0},200);
-}
+   $(function(){
+	   $('#seatch_norm').find('a').on("click",function(){
+	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+	   //alert($(this).text());
+        var a = getElementsByClassName('btn_blue','choiceid');
+       // var amount = $(".lastinput").children("#id_searchWord").val(); 
+        checkparam(1);
+       });
+   });
+   function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
 </script>
 
 <style type="text/css">
-#side{position:fixed;width:70px;height:350px;right:285px;top:214px; }
-#side ul li{width:70px;height:70px;float:left;position:relative;}
-#side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#fff;font:14px/54px "微软雅黑";overflow:hidden;}
-#side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
-#side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
-#side ul li img{float:left;}
-.rightText li label{color:#000000}
-</style>
 
-<style type="text/css">
-	#lt-div{width:105px; height:338px;margin-left:220px; margin-top:280px;}
-
-</style>
-<script type="text/javascript">
-$(function(){
-	$("#lt-div").floatdiv({left:"0",top:"50px"});//设置浮动层靠左距离为0，靠上距离50px 根据需求调整
-	
-});
-</script>
-<style type="text/css">
-#owl-demo{width:1140px;height:500px;}
-#owl-demo .item{ position:relative;display:block;}
-#owl-demo img{display:block;width:1140px;height:500px;}
-#owl-demo b{position:absolute;left:0;bottom:0;width:100%;height:78px;background-color:#000;opacity:.5;filter:alpha(opacity=50);}
-#owl-demo span{position:absolute;left:0;bottom:37px;width:100%;font:18px/32px "微软雅黑","黑体";color:#fff;text-align:center;}
-
-.owl-pagination{position:absolute;left:0;bottom:10px;width:100%;height:22px;text-align:center;}
-.owl-page{display:inline-block;width:10px;height:10px;margin:0 5px;background-image:url(/static/images/bg15.png);*display:inline;*zoom:1; }
-.owl-pagination .active{width:25px;background-image:url(/static/images/bg16.png);}
-.owl-buttons{display:none;}
-.owl-buttons div{position:absolute;top:120px;width:50px;height:100px;text-indent:-9999px;}
-.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:120px;}
-.owl-next{background-image:url(/static/images/jiantou5.png);margin-left:940px;}
-.owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
-.owl-next:hover{background-image:url(/static/images/jiantou3.png);}
-</style>
-<style>
 div.transbox
 {
   width: 300px;
@@ -75,26 +48,8 @@ div.transbox
 }
 div.transbox p{color:#FFFFFF; margin:10px 20px}
 </style>
-<link rel="stylesheet" href="/static/css/owl.carousel.css" />
-<script type="text/javascript" src="/static/js/owl.carousel.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#owl-demo').owlCarousel({
-		items: 1,
-		navigation: true,
-		navigationText: ["上一个","下一个"],
-		autoPlay: true,
-		stopOnHover: true
-	}).hover(function(){
-		$('.owl-buttons').show();
-	}, function(){
-		$('.owl-buttons').hide();
-	});
-});
-</script>
 
-
-<title>葡萄藤众筹</title>
+<title>查看更多</title>
 </head>
 <body>
 
@@ -123,33 +78,31 @@ $(function(){
 				<label class="lab4"><a href="{% url 'login' %}">登录</a></label>
 			</li>
 		</ul>
-</div>
-
-	<div class="rotate">
-		<div class="xuanxiang">
-		    <ul>
-				<li>111</li>
-				<li>111</li>
-				<li>111</li>
-				<li>111</li>
-			</ul>
-			  <ul>
-				<li>111</li>
-				<li>1111</li>
-				<li>11</li>
-				<li>11</li>
-				<li>11</li>
-				<li>11</li>
-				<li>11</li>
-				<li>11</li>
-			</ul>
-		</div>
+     </div>
+	 <div class="asssd">
+		 <div id="seatch_norm" class="dhclass">
+			<div id="search_list" class="search_list">
+				<div class="serch_term">
+				  <label class="choices" id="choices">
+				  <a class="f1">投资人类别:</a>
+				  <a class="btn_blue" href="#" choiceid="1"> 不限</a>
+				  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
+				  <a href="javascript:void(0)"   choiceid="3">预热中</a>
+				  <a href="javascript:void(0)" choiceid="4"> 众筹中</a>
+				  <a href="javascript:void(0)"   choiceid="5">众筹成功</a>
+				  <a href="javascript:void(0)"   choiceid="6">成功案例</a>
+				  </label>
+				</div>
+			</div>
+		 </div>	
+	 </div>
+	<div class="rotate">	
 	<div id="menu">
+	<div class="search_bd" id="result_form">
 	<div id="menu2">
 		<ul style="margin-top:35px;margin-left:90px;">
 			<li>
 				<label style="font-size:25px; color:#000000;">每日精选</label>
-				<label style="position:absolute;left:1170px;top:600px;"><a style="font-size:12px; color:#000000;" href="#">更多精选......</a></label>
 			</li>
 		</ul>
 		<ul class="mojing">
@@ -184,8 +137,8 @@ $(function(){
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:463px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:463px;top:472px;"><img src="/static/images/tag.png" /></li>
 					<li style="clear:both">
 					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
 					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
@@ -194,6 +147,7 @@ $(function(){
 				</ul>
 			</li>
 		</ul>
+		</div>
 	</div>
 	<div id="menu3">
 	<ul class="mojing2">	
@@ -227,8 +181,8 @@ $(function(){
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:693px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:693px;top:472px;"><img src="/static/images/tag.png" /></li>
 					<li style="clear:both">
 					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
 					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
@@ -270,8 +224,8 @@ $(function(){
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:923px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:923px;top:472px;"><img src="/static/images/tag.png" /></li>
 					<li style="clear:both">
 					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
 					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
@@ -313,8 +267,8 @@ $(function(){
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style=" position:absolute;top:864px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:1150px;top:864px;"><img src="/static/images/tag.png" /></li>
+					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:1150px;top:472px;"><img src="/static/images/tag.png" /></li>
 					<li style="clear:both">
 					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
 					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
@@ -326,14 +280,6 @@ $(function(){
 	
 	</div>	
 		
-		<div id="side">
-			<ul class="rightText">
-				<li><a href="#"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服:</label><label style="font-size:10px">4008851234</label></div></a></li>
-				<li><a href="#"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
-				<li><a href="#"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
-				<li style="border:none;"><a onclick="goTop()" href="javascript:void(0);"><div class="sidetop"><img  src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
-		</ul>
-	</div>
 </div>
 
 
@@ -433,4 +379,5 @@ $(function(){
 	</ul>
 </div>
 </body>
+
 </html>

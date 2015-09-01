@@ -372,6 +372,32 @@
     <script>
         alert('{{ error }}');
     </script>
+{% else %}
+<script type="text/javascript">
+
+    $(function(){
+        {% if form.project.errors %}
+            {% for error in form.project.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+
+        {% elif form.introduction.errors %}
+            {% for error in form.introduction.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+
+        {% elif form.description.errors %}
+            {% for error in form.description.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+
+        {% elif form.founder.errors %}
+            {% for error in form.founder.errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+    });
+</script>
 {% endif %}
 </body>
 </html>

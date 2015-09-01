@@ -6,7 +6,7 @@ html{overflow:hidden}
 .Ful2{font-size:12px;margin-top:20px; margin-left:30px;}
 .Ful2 input{width:140px;}
 .Ful2 ul[type="disc"]{margin-top:2px;}
-a{text-decoration:none;color:#FFFFFF;}
+
 a:hover{color:#e1604d}
 
 #Icontainer{width:1330px; height:500px; background-color:#CCCCCC; position:absolute;left:138px;}

@@ -325,7 +325,7 @@ class RegistrationAgreement(models.Model):
 
 
 class Project(models.Model):
-    publish = models.ForeignKey(User,related_name = "publish_set",blank=True, null=True)#项目发布者 可以发布多个项目
+    publish = models.ForeignKey(User,related_name = "publish_set", blank=True, null=True)#项目发布者 可以发布多个项目
     founder =models.CharField(max_length=255, blank=True, null=True)#项目可以有多个创始人
     team = models.CharField(max_length=255, blank=True, null=True)#项目团队一个项目有多个成员
     leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#领投人
@@ -337,8 +337,8 @@ class Project(models.Model):
     description = models.TextField(blank=True, null=True)#项目描述
     category = models.CharField(max_length=255, blank=True, null=True)#行业类别
     amount = models.CharField(max_length=255, blank=True, null=True)#融资总额
-    #leader_inv_min = models.CharField(max_length=255, blank=True)#领头最低投资额
-    #inv_min = models.CharField(max_length=255, blank=True)#跟头最低投资额
+    leader_inv_min = models.CharField(max_length=255, blank=True)#领头最低投资额
+    inv_min = models.CharField(max_length=255, blank=True)#跟头最低投资额
     finish = models.CharField(max_length=255, blank=True, null=True)#已完成融资金额
     fund_use = models.CharField(max_length=255, blank=True, null=True)#资金用途
     transfer_equity = models.CharField(max_length=255, blank=True, null=True)#出让的股权份额

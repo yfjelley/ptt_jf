@@ -386,9 +386,9 @@ def index(request):
 def agreement(request):
     us = About_us.objects.all()
     print us[0].address
-    ag = RegistrationAgreement.objects.all()
-    print ag[0].agreement
-    return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
+    ag = RegistrationAgreement.objects.filter(name="registration_agreement")
+    print "ag is :",ag
+    return render_to_response('agreement.html',{'agreement':ag[2].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
 def index_zc(request):
@@ -433,8 +433,13 @@ def publish(request):
             im.thumbnail((120, 120))
             name = 'logo' + storage.get_available_name(str(user.id)) + '.png'
             im.save('%s/%s' % (storage.location, name), 'PNG')
-            url = storage.url(name)
-            print(url)
+            logo_url = storage.url(name)
+            print(logo_url)
+        else:
+            msg = u"请上传logo"
+            return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))
+
 
         f = request.FILES.get('plan', None)
         if f:
@@ -447,29 +452,43 @@ def publish(request):
                 msg = u"文件格式必须为ppt，pptx，pdf"
             if msg:
                 return render_to_response("publish.html", {'form': form, 'error': msg},
-                                          context_instance=RequestContext(request))   #返回用户信息页面
+                                          context_instance=RequestContext(request))
+            plan_url = handle_uploaded_file(f)
+            print plan_url
+        else:
+            msg = u"请上传logo"
+            return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))
 
-            file_name = handle_uploaded_file(f)
-            print file_name
 
         if form.is_valid():
             cd = form.cleaned_data
-
+            project = cd['project']
             introduction = cd['introduction']
-
             description = cd['description']
             category = cd['category']
             status = cd['status']
             founder = cd['founder']
-            print "is valid xxxxxxxxxxxxxxxxxxxxx"
-            print introduction
-            if introduction is None:
+            flag = 0
+            if project is None:
                 form.valiatetype(2)
-                print 'is none'
+                flag =1
+            elif flag != 1 and introduction is None:
+                form.valiatetype(3)
+                flag =1
+            elif flag != 1 and description is None:
+                form.valiatetype(4)
+                flag =1
+            elif flag !=1 and founder is None:
+                form.valiatetype(5)
+                flag =1
 
-            p1 = Project(introduction=cd['introduction'],description = cd['description'],category = cd['category'],status = cd['status'],founder = cd['founder'])
-            p1.save()
-            return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+            if flag == 1:
+                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+            else:
+                p1 = Project(name=cd['project'],introduction=cd['introduction'],description = cd['description'],category = cd['category'],status = cd['status'],founder = cd['founder'],business_plan_url=plan_url,logo=logo_url)
+                p1.save()
+                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
         else:
             return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
     else:
@@ -481,8 +500,10 @@ def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
 
 def investor(request):
-
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
+
+def readmore(request):
+    return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
 
 def investor_info(request, investor):
     investor=u"大大"

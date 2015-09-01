@@ -14,7 +14,7 @@ def writeagreement(request):
 鉴于，为帮助投资人更好地理解平台相关股权众筹项目的风险，根据相关法律法规和《注册协议》其他配套制度、规则与协议的有关规定，特制定本《投资风险提示书》。
 在投资人接受《注册协议》并注册成为平台用户时，表明投资人已充分知晓、理解和接受本《投资风险提示书》以及平台相关股权众筹项目的风险，并愿意自行承担相关风险。本《投资风险提示书》的全部条款属于《注册协议》的一部分。
 请注意，本《投资风险提示书》将会不时进行更新，平台将会即时公告更新后的版本，敬请关注。一旦发生争议，《投资风险提示书》以最新的条款为准。"""
-    #t=RegistrationAgreement(name="mianzetiaokuan",agreement=test)
+
     agreement ="""葡萄藤金服(www.pttjf.com)是上海辞达金融信息服务有限公司（简称“葡萄藤金服”）运营的网络平台，，用户是指向葡萄藤金服（上海辞达金融信息服务有限公司）申请注册成为用户的个人或者法人、其他组织。本协议的双方是葡萄藤金服的注册用户与葡萄藤金服。用户在网上点击“同意”本在线注册协议即视为用户亲自签字、盖章了纸质书面协议书，同意了本注册条款的所有内容及即时刊登的信息，遵守有关互联网及/或本网站的相关法律、规定与规则。只有用户完全同意所有服务条款并完成注册程序，才能成为葡萄藤金服的正式用户。本注册条款自用户注册成功之日起在用户与葡萄藤金服之间发生法律效力。<br />
 第一条　葡萄藤金服服务简介和用户要求 <br />
 葡萄藤金服向其用户提供各类型股权众筹投资信息、咨询信息以及其他相关互联网信息服务，同时，用户必须： <br />
@@ -89,6 +89,11 @@ def writeagreement(request):
 第十六条　附则 <br />
 用户保证已仔细阅读并完全理解以上《葡萄藤金服注册协议》，明确知晓关于股权投资的重要提示及相关风险，愿意承担投资股权所面临的各种风险，由此可能带来的损失由用户自行承担。用户自愿正式进入葡萄藤金服会员在线注册程序，接受上述所有条款的约束
 """
+    t=RegistrationAgreement(name="registration_agreement",agreement=agreement)
+    t.save()
+    """
+    t=RegistrationAgreement(name="mianzetiaokuan",agreement=test)
+    t.save()
     t=RegistrationAgreement(name="wind_control",agreement=test)
     t.save()
     t=RegistrationAgreement(name="fund_security",agreement=test)
@@ -97,15 +102,15 @@ def writeagreement(request):
     t.save()
     t=RegistrationAgreement(name="technical_support",agreement=test)
     t.save()
-    """
+
     p1 = About_us(name="上海辞达金融信息服务有限公司", address="上海市闵行区沪闵路7866号莲花广场2号楼908室", hotline="021-34222366",zip_code="211100", email="sys@pttjf.com")
     p1.save()
     p2 = About_us.objects.all()
     print p2[0].name
     for i in p2:
         print i.address,i.hotline
-    """
-    """
+
+
 
     name= ['明明','笨笨','芳芳','圆圆','大大','东东']
     position=['中国风险投资公司高级总裁','总裁','总经理']

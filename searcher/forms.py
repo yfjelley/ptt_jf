@@ -543,7 +543,7 @@ class PublishForm(forms.Form):
             }
         ),
     )
-    """
+
     def valiatetype(self, a):
         global msg
         if a == 2:
@@ -558,5 +558,5 @@ class PublishForm(forms.Form):
         elif a == 5:
             msg = u"请输入项目创始人"
             self._errors["founder"] = self.error_class([msg])
-    """
+
 
