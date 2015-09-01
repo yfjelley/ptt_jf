@@ -461,8 +461,8 @@ class ModfiyPW(forms.Form):
             }
         ),
      )
-cate_choice = (('1', 'First',), ('2', 'Second',))
-status_choice = (('3', 'First',), ('4', 'Second',))
+cate_choice = (('1', '在线金融',), ('2', '生活服务',),('3', '电子商务',),('4', '医疗',),('5', '互联网',),('6', '社交',),)
+status_choice = (('1', '预热',), ('2', '众筹',),('3', '预热',))
 class PublishForm(forms.Form):
     project = forms.CharField(
         required=True,
@@ -470,7 +470,7 @@ class PublishForm(forms.Form):
         error_messages={'required': '请输入项目名称'},
         widget=forms.TextInput(
             attrs={
-                'placeholder': u"项目名称",
+                'placeholder': u"",
                 'type': 'text',
                 'name': 'project',
                 'class': 'xmcj_input',
@@ -478,14 +478,13 @@ class PublishForm(forms.Form):
         ),
     )
 
-
     introduction = forms.CharField(
         required=True,
         label=u"项目简介",
         error_messages={'required': u'请输入项目简介'},
         widget=forms.TextInput(
             attrs={
-                'placeholder': u"项目简介",
+                'placeholder': u"",
                 'type': 'text',
                 'name': 'introduction',
                 'class': 'xmcj_input'
@@ -499,7 +498,7 @@ class PublishForm(forms.Form):
         error_messages={'required': u'请输入项目描述'},
         widget=forms.Textarea(
             attrs={
-                'placeholder': u"项目描述",
+                'placeholder': u"",
                 'type': 'textarea',
                 'name': 'description',
                 'class': 'xxms_input'
@@ -507,31 +506,24 @@ class PublishForm(forms.Form):
         ),
     )
 
-
-    category = forms.CharField(
-        required=True,
+    category = forms.ChoiceField(
         label=u"行业领域",
-        error_messages={'required': u'请选择行业领域'},
-        widget=forms.RadioSelect(
-            attrs={
-                'choices':  'cate_choice',
-                'placeholder': u"请选择行业领域",
-                'type': 'checkbox',
+        choices= cate_choice,
+        widget=forms.Select(
+             attrs={
+                'type': 'select',
                 'name': 'category',
-                'class': 'xmcj_input'
+                'class': 'xmly_input',
             }
-        ),
+         ),
     )
 
-    status = forms.CharField(
-        required=True,
+    status = forms.ChoiceField(
         label=u"项目阶段",
-        error_messages={'required': u'请选择项目阶段'},
-        widget=forms.RadioSelect(
+        choices= status_choice,
+        widget=forms.Select(
             attrs={
-                'choices':  'status_choice',
-                'placeholder': u"请选择项目阶段",
-                'type': 'checkbox',
+                'type': 'select',
                 'name': 'status',
                 'class': 'xmjd_input'
             }
@@ -544,12 +536,27 @@ class PublishForm(forms.Form):
         error_messages={'required': u'请输入项目创始人'},
         widget=forms.TextInput(
             attrs={
-                'placeholder': u"项目创始人",
+                'placeholder': u"",
                 'type': 'text',
                 'name': 'founder',
                 'class': 'xmcj_input'
             }
         ),
     )
-
+    """
+    def valiatetype(self, a):
+        global msg
+        if a == 2:
+            msg = u"请输入项目名称"
+            self._errors["project"] = self.error_class([msg])
+        elif a == 3:
+            msg = u"请输入项目简介"
+            self._errors["introduction"] = self.error_class([msg])
+        elif a == 4:
+            msg = u"请输入项目描述"
+            self._errors["description"] = self.error_class([msg])
+        elif a == 5:
+            msg = u"请输入项目创始人"
+            self._errors["founder"] = self.error_class([msg])
+    """
 

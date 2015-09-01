@@ -22,7 +22,7 @@ body{margin:0px;}
 #div1 label{font-size:32px;}
 a{text-decoration:none;color:#FFFFFF;}
 a:hover{color:#e1604d}
-.Overhidden{ height:370px;width:520px;overflow-y:hidden;overflow-y:scroll;arrow-color:#999999;track-color:white;font-size:14px; border:1px;}
+.Overhidden{ height:370px;width:520px;overflow-y:hidden;overflow-y:scroll;color:#333333;arrow-color:#333333;track-color:white;font-size:14px; border:1px;}
 ::-webkit-scrollbar {
 	width:8px;
 }

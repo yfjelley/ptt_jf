@@ -204,6 +204,8 @@ class UserInformation(models.Model):
     direction = models.CharField('投资方向', max_length=255, blank=True, null=True)
     attention = models.CharField('关注的项目', max_length=255, blank=True, null=True)
     industry = models.CharField('关注的行业', max_length=255, blank=True, null=True)
+    #attention_persion = models.CharField('关注他的人', max_length=255, blank=True, null=True)
+    #fans = models.CharField('粉丝', max_length=255, blank=True, null=True)
     cate = models.CharField('行业类别', max_length=255, blank=True, null=True)
     collection = models.CharField('收藏的项目', max_length=255, blank=True, null=True)
     link = models.URLField('推广链接', max_length=255, blank=True, null=True)
@@ -323,27 +325,27 @@ class RegistrationAgreement(models.Model):
 
 
 class Project(models.Model):
-    publish = models.ForeignKey(User,related_name = "publish_set")#项目发布者 可以发布多个项目
-    founder =models.CharField(max_length=255, blank=True)#项目可以有多个创始人
-    team = models.CharField(max_length=255, blank=True)#项目团队一个项目有多个成员
-    leader = models.ManyToManyField(User, related_name = "manager_set")#领投人
-    investor = models.ManyToManyField(User, related_name = "investor_set")#跟投人
-    name = models.CharField(max_length=255, blank=True)#项目名称
-    logo = models.URLField(max_length=255, blank=True)#项目标志
-    photo_url = models.URLField(max_length=255, blank=True)#项目宣传图片
-    introduction = models.TextField(blank=True)#项目简介
-    description = models.TextField(blank=True)#项目描述
-    category = models.CharField(max_length=255, blank=True)#行业类别
-    amount = models.CharField(max_length=255, blank=True)#融资总额
+    publish = models.ForeignKey(User,related_name = "publish_set",blank=True, null=True)#项目发布者 可以发布多个项目
+    founder =models.CharField(max_length=255, blank=True, null=True)#项目可以有多个创始人
+    team = models.CharField(max_length=255, blank=True, null=True)#项目团队一个项目有多个成员
+    leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#领投人
+    investor = models.ManyToManyField(User, related_name = "investor_set",blank=True, null=True)#跟投人
+    name = models.CharField(max_length=255, blank=True, null=True)#项目名称
+    logo = models.URLField(max_length=255, blank=True, null=True)#项目标志
+    photo_url = models.URLField(max_length=255, blank=True, null=True)#项目宣传图片
+    introduction = models.TextField(blank=True, null=True)#项目简介
+    description = models.TextField(blank=True, null=True)#项目描述
+    category = models.CharField(max_length=255, blank=True, null=True)#行业类别
+    amount = models.CharField(max_length=255, blank=True, null=True)#融资总额
     #leader_inv_min = models.CharField(max_length=255, blank=True)#领头最低投资额
     #inv_min = models.CharField(max_length=255, blank=True)#跟头最低投资额
-    finish = models.CharField(max_length=255, blank=True)#已完成融资金额
-    fund_use = models.CharField(max_length=255, blank=True)#资金用途
-    transfer_equity = models.CharField(max_length=255, blank=True)#出让的股权份额
-    company = models.URLField(max_length=255, blank=True)#注册公司
-    url = models.URLField(max_length=255, blank=True)#公司链接
-    patent = models.TextField(blank=True)#专利
-    business_plan_url = models.CharField(max_length=255, blank=True)#商业计划书
+    finish = models.CharField(max_length=255, blank=True, null=True)#已完成融资金额
+    fund_use = models.CharField(max_length=255, blank=True, null=True)#资金用途
+    transfer_equity = models.CharField(max_length=255, blank=True, null=True)#出让的股权份额
+    company = models.URLField(max_length=255, blank=True, null=True)#注册公司
+    url = models.URLField(max_length=255, blank=True, null=True)#公司链接
+    patent = models.TextField(blank=True, null=True)#专利
+    business_plan_url = models.CharField(max_length=255,blank=True, null=True)#商业计划书
     active = models.IntegerField(blank=True, null=True)#是否是精选
     status = models.IntegerField(blank=True, null=True)#进行到什么程度
     add_date = models.DateTimeField('添加时间', auto_now_add=True)

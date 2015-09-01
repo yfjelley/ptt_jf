@@ -24,7 +24,7 @@ from django.template.loader import get_template
 from django.core.files.storage import FileSystemStorage
 from ddbid.settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
-from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPW, ModfiyPW
+from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPW, ModfiyPW, PublishForm
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
@@ -387,6 +387,7 @@ def agreement(request):
     us = About_us.objects.all()
     print us[0].address
     ag = RegistrationAgreement.objects.all()
+    print ag[0].agreement
     return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
@@ -411,8 +412,70 @@ def about_us(request):
 def guide(request):
     return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
+@login_required
 def publish(request):
-    return render_to_response('publish.html',{}, context_instance=RequestContext(request))
+    user = auth.get_user(request)
+    if request.method == "POST":
+        form = PublishForm(request.POST)
+        f = request.FILES.get('logo', None)
+        if f:
+            extension = os.path.splitext(f.name)[-1]
+            msg = None
+            if f.size > 1048576:
+                msg = u"图片大小不能超过2MB"
+            if (extension not in ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF']) or ('image' not in f.content_type):
+                msg = u"图片格式必须为jpg，png，gif"
+            if msg:
+                return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))   #返回用户信息页面
+
+            im = Image.open(f)
+            im.thumbnail((120, 120))
+            name = 'logo' + storage.get_available_name(str(user.id)) + '.png'
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+            print(url)
+
+        f = request.FILES.get('plan', None)
+        if f:
+            extension = os.path.splitext(f.name)[-1]
+            print extension
+            msg = None
+            if f.size > 10485760:
+                msg = u"文件大小不能超过20MB"
+            if (extension not in ['.ppt', '.pptx', '.pdf', '.PPT', '.PPTX', '.PDF']):
+                msg = u"文件格式必须为ppt，pptx，pdf"
+            if msg:
+                return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))   #返回用户信息页面
+
+            file_name = handle_uploaded_file(f)
+            print file_name
+
+        if form.is_valid():
+            cd = form.cleaned_data
+
+            introduction = cd['introduction']
+
+            description = cd['description']
+            category = cd['category']
+            status = cd['status']
+            founder = cd['founder']
+            print "is valid xxxxxxxxxxxxxxxxxxxxx"
+            print introduction
+            if introduction is None:
+                form.valiatetype(2)
+                print 'is none'
+
+            p1 = Project(introduction=cd['introduction'],description = cd['description'],category = cd['category'],status = cd['status'],founder = cd['founder'])
+            p1.save()
+            return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+        else:
+            return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+    else:
+        form = PublishForm()
+
+    return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
 
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
@@ -467,3 +530,12 @@ def readFile(fn, buf_size=262144):
         else:
             break
     f.close()
+
+def handle_uploaded_file(f):
+    path = '/root/zc/static/project/'
+    file_name = path + f.name
+    destination = open(file_name, 'wb+')
+    for chunk in f.chunks():
+        destination.write(chunk)
+    destination.close()
+    return file_name

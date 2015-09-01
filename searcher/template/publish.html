@@ -87,6 +87,7 @@
       			<input type="text" placeholder="找项目,领头人" />
     		</li>
   		</ul>
+			{% ifequal user.id None %}
   		<ul type="disc">
     		<li>
 				<a href="{% url 'register' %}">注册</a>
@@ -97,6 +98,19 @@
 				<a href="{% url 'login' %}">登录</a>
 			</li>
   		</ul>
+			{% else %}
+			<ul id="top_r" class="top_name">
+                       <div id="logged">
+                          <a id="check_log" style="display: none">1</a>
+                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                             <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+						     </ul>
+                          </li>
+					   </div>
+                    </ul>
+			{% endifequal %}
 		</ul>
 		</ul>
 	</div>
@@ -122,72 +136,67 @@
 		<div class="div_right">
 		   <div id="gyzc" class="con_right">   
 		       <div style="padding-top:45px;" class="table_cjxm">
-				<table width="760px;" height="540px"; cellpadding="1" cellspacing="1" id="table" >
-				<tr>
-				<td style="padding-bottom:45px;">项目标志</td>
-				<td class="tpsc"><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a>
-				<div style="position:absolute;left:555px;top:180px;display:none;">64×64px</div>
-                &nbsp;&nbsp;<input type="file" class="scbz"  name="logo" value="上传标志" name=""/>
-				<span style="width:450px;height:30px;font-size:12px;color:#999999;">
-				产品logo而非公司logo。比如手机App的图标。<br/>&nbsp;&nbsp;&nbsp;像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</span></td>
-				</tr>
-				
-				<tr>
-				<td>项目名称</td>
-				<td><input  type="text" class="xmcj_input" name="" id=""></td>
-				</tr>
-				
-				<tr>
-				<td>项目简介</td>
-				<td><input  type="text" class="xmcj_input" name="" id=""></td>
-				</tr>
-				
-				<tr>
-				<td>详细描述</td>
-				<td><input  type="text" class="xxms_input" name="" id=""></td>
-				</tr>
-				
-				<tr>
-				<td>行业领域</td>
-				<td><input  type="text" class="xmcj_input" name="" id=""></td>
-				</tr>
-				
-				<tr>
-				<td>项目阶段</td>
-				<td>
-				<select id="" name="" class="xmjd_input">
-				<option></option>
-				<option></option>
-				<option></option>
-				</select>
-				</td>
-				</tr>
-				
-				<tr>
-				<td>创始人</td>
-				<td><input  type="text" class="xmcj_input" name="" id=""></td>
-				</tr>
-				
-				<tr>
-				<td>商业计划书</td>
-				<td><input type="file"  value="上传计划书" name="plan" class="jhs"/>
+				   <form class="publishform" action="{% url 'publish' %}" method="post"  enctype="multipart/form-data" >
+						{% csrf_token %}
+					   <ul id="u100">
+					   <li style="padding-bottom:45px;">项目标志</li>
+				       <li class="tpsc"><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a></li>
+				       <li style="position:absolute;left:555px;top:180px;display:none;">64×64px</li>
+					   <li>&nbsp;&nbsp;<input type="file" class="scbz"  name="logo" value="上传标志" /><span style="width:450px;height:30px;font-size:12px;color:#999999;">
+				产品logo而非公司logo。比如手机App的图标。<br/>&nbsp;&nbsp;&nbsp;像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</span></li>
+                       </ul>
+		<ul id="u110">
+			<li>
+				<label>项目名称</label>
+				{{ form.project }}
+			</li>
+		</ul>
+
+		<ul id="u120">
+			<li>
+				<label>项目简介</label>
+			</li>
+				{{ form.introduction  }}
+		</ul>
+
+		<ul id="u130">
+			<li>
+				<label>项目描述</label>
+			</li>
+				{{ form.description }}
+		</ul>
+
+	    <ul id="u140">
+			<li>
+				<label>行业领域</label>
+			</li>
+				{{ form.category }}
+		</ul>
+
+        <ul id="u150">
+			<li>
+				<label>项目阶段</label>
+			</li>
+				{{ form.status }}
+		</ul>
+
+        <ul id="u160">
+			<li>
+				<label>项目创始人</label>
+			</li>
+				{{ form.founder }}
+		</ul>
+
+		<ul id="u170">
+				<li><label>商业计划书</label></li>
+				<li><input type="file"  value="上传计划书" name="plan" class="jhs"/>
 				<span style="width:430px;height:30px;font-size:12px;color:#999999;">
-				&nbsp;&nbsp;&nbsp;请选择PPT、PPTX、PDF文件，文件大小不要超过20M;</span></td>
-				</tr>
-				
-				<tr>
-				<td></td>
-				<td>
+				&nbsp;&nbsp;&nbsp;请选择PPT、PPTX、PDF文件，文件大小不要超过20M;</span></li>
 				<input type="checkbox" id="" name=""  value="#"/>
-				<a href="#" class="fwtk_input" >提交项目视为同意葡萄藤众筹的《服务条款》</a></td>
-				</tr>
-				
-				<tr>
-				<td></td>
-				<td><input type="file"  value="提交待审核" name="application"  class="dsh"/></td>
-				</tr>
-				
-				</table>
+				<a href="#" class="fwtk_input" >提交项目视为同意葡萄藤众筹的《服务条款》</a>
+				<li><input type="submit"  value="提交待审核" name="application"  class="dsh"/></li>
+        </ul>
+				   </form>
 				</div>
 		   </div> 
 		   <div id="#" class="display">
@@ -359,5 +368,10 @@
 			</li>
 		</ul>
 </div>
+{% if error %}
+    <script>
+        alert('{{ error }}');
+    </script>
+{% endif %}
 </body>
 </html>
