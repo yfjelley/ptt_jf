@@ -6,12 +6,12 @@ html{overflow:hidden}
 .Ful2{font-size:12px;margin-top:20px; margin-left:30px;}
 .Ful2 input{width:140px;}
 .Ful2 ul[type="disc"]{margin-top:2px;}
-
+a{text-decoration:none;color:#FFFFFF;}
 a:hover{color:#e1604d}
 
 #Icontainer{width:1330px; height:500px; background-color:#CCCCCC; position:absolute;left:138px;}
 .Cleft1{ float:left;width:95px;height:500px;}
-.Cleft2{background-color:#FFFFFF; float:left;width:1140;height:100px;margin-top:30px; margin-left:-1px;}
+.Cleft2{background-color:#FFFFFF; float:left;width:1160;height:100px;margin-top:30px; margin-left:-1px;}
 .Ititle li:hover{color:#e1604d; cursor:pointer;}
 .Ititle2 li:hover{color:#e1604d; cursor:pointer;}
 .Ititle li{padding:0 30px;}
@@ -22,16 +22,17 @@ a:hover{color:#e1604d}
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
 .Rlogo img{position:absolute;left:920px;top:25px;}
 
+
 .Cleft3,Cleft4{ padding:0 30px;}
-.Cleft3{background-color:#FFFFFF;width:500px;height:250px;position:absolute;top:145px;left:95px;}
-.Cleft4{background-color:#FFFFFF;width:500px;height:250px; float:left;margin-top:102px; margin-left:488px;}
+.Cleft3{background-color:#FFFFFF;width:500px;height:250px;position:absolute;top:140px;left:95px;}
+.Cleft4{background-color:#FFFFFF;width:500px;height:250px; float:left;margin-top:29px; margin-left:580px;}
 li.investPelPic{margin-top:-260px;margin-left:440px;}
 li.investPelPic2{margin-top:-260px;margin-left:410px;}
 .PelPic img{margin-left:-60px; margin-top:-40px;}
 .DesPel{margin-top:-320px;margin-left:160px; }
 .DesPel li{padding:0 10px;}
 .DesPel hr{border:none;height:45px; border-right:1px solid #eeeef0; width:1px;}
-.Cright{ float:left;width:95px;height:500px; clear:right}
+.Cright{ float:left;width:80px;height:500px; clear:right}
 
 
 #footer{width:1330px;background-color:#372c3a;color:#FFFFFF;height:180px;clear:both;margin-top:500px;margin-left:129px;}

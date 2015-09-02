@@ -69879,3 +69879,860 @@ Exception happened during processing of request from ('80.82.70.24', 38276)
 [01/Sep/2015 09:40:48] "POST /publish/ HTTP/1.1" 200 12691
 [01/Sep/2015 09:40:48] "GET /static/images/xxx.png HTTP/1.1" 404 1648
 [01/Sep/2015 09:40:48] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[01/Sep/2015 17:55:16] "GET /publish/ HTTP/1.1" 302 0
+[01/Sep/2015 17:55:16] "GET /login?next=/publish/ HTTP/1.1" 301 0
+[01/Sep/2015 17:55:16] "GET /login/?next=/publish/ HTTP/1.1" 200 4836
+[01/Sep/2015 17:55:20] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 17:55:20] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[01/Sep/2015 17:55:21] "GET /investor/ HTTP/1.1" 200 8750
+[01/Sep/2015 17:55:21] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 17:55:34] "GET /publish/ HTTP/1.1" 200 13213
+[01/Sep/2015 17:55:35] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[01/Sep/2015 17:55:35] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[01/Sep/2015 17:55:39] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 17:55:39] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[01/Sep/2015 17:57:57] "GET /investor/ HTTP/1.1" 200 8750
+[01/Sep/2015 17:57:57] "GET /static/css/investor.css HTTP/1.1" 304 0
+[01/Sep/2015 17:57:57] "GET /static/css/investor_search.css HTTP/1.1" 200 856
+[01/Sep/2015 17:58:55] "GET /investor/ HTTP/1.1" 200 8750
+[01/Sep/2015 17:58:55] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /investor/ HTTP/1.1" 200 8716
+[01/Sep/2015 18:01:53] "GET /static/css/investor.css HTTP/1.1" 200 3275
+[01/Sep/2015 18:01:53] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:01:53] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:09:27] "GET /investor/ HTTP/1.1" 200 8718
+[01/Sep/2015 18:09:28] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[01/Sep/2015 18:09:28] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:28] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /investor/ HTTP/1.1" 200 8718
+[01/Sep/2015 18:09:30] "GET /static/css/investor.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:30] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /investor/ HTTP/1.1" 200 8718
+[01/Sep/2015 18:09:50] "GET /static/css/investor.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:09:50] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:12:42] "GET /investor/ HTTP/1.1" 200 8718
+[01/Sep/2015 18:12:43] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[01/Sep/2015 18:12:43] "GET /static/css/investor_search.css HTTP/1.1" 200 856
+[01/Sep/2015 18:12:43] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:12:43] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /investor/ HTTP/1.1" 200 7543
+[01/Sep/2015 18:14:17] "GET /static/css/investor.css HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:14:17] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /investor/ HTTP/1.1" 200 8766
+[01/Sep/2015 18:16:24] "GET /static/css/investor.css HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:16:24] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /investor/ HTTP/1.1" 200 8766
+[01/Sep/2015 18:21:36] "GET /static/css/investor.css HTTP/1.1" 200 3264
+[01/Sep/2015 18:21:36] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:21:36] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /investor/ HTTP/1.1" 200 8766
+[01/Sep/2015 18:24:44] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[01/Sep/2015 18:24:44] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[01/Sep/2015 18:24:44] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:20] "GET /static/css/home.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/css/home2.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/css/home1.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/left.jpg HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/button.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/right.jpg HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:20] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 19:52:23] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:24] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:25] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:26] "GET /about_us/ HTTP/1.1" 200 15030
+[01/Sep/2015 19:52:26] "GET /static/css/index21.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:26] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /guide/ HTTP/1.1" 200 16111
+[01/Sep/2015 19:52:27] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:27] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:29] "GET /guide/ HTTP/1.1" 200 16111
+[01/Sep/2015 19:52:30] "GET /about_us/ HTTP/1.1" 200 15030
+[01/Sep/2015 19:52:30] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:36] "GET /guide/ HTTP/1.1" 200 16111
+[01/Sep/2015 19:52:37] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 19:52:37] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 19:52:37] "GET /static/css/index_page.css HTTP/1.1" 200 3925
+[01/Sep/2015 19:52:37] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/heart.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:37] "GET /static/images/flag.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/phone.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/email.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/people.png HTTP/1.1" 304 0
+[01/Sep/2015 19:52:38] "GET /static/images/tag.png HTTP/1.1" 304 0
+[01/Sep/2015 20:13:57] code 400, message Bad request syntax ('\x00')
+[01/Sep/2015 20:13:57] " " 400 -
+[01/Sep/2015 20:13:58] "GET http://httpheader.net HTTP/1.1" 404 1653
+[01/Sep/2015 20:14:22] code 400, message Bad request syntax ('\x04\x01\x00P\xc0\x03\xb1\xaa0\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 5-6: illegal multibyte sequence
+[01/Sep/2015 20:14:40] code 400, message Bad request syntax ('\x05\x01\x00')
+[01/Sep/2015 20:14:40] " " 400 -
+[01/Sep/2015 21:06:43] "GET /publish/ HTTP/1.1" 200 13213
+[01/Sep/2015 21:06:43] "GET /static/css/index22.css HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/css/publish.css HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/upload/default.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/ali.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:43] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[01/Sep/2015 21:06:43] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[01/Sep/2015 21:06:50] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 21:06:50] "GET /static/css/index_page.css HTTP/1.1" 200 3925
+[01/Sep/2015 21:06:57] "GET / HTTP/1.1" 200 6816
+[01/Sep/2015 21:06:57] "GET / HTTP/1.1" 200 6816
+[01/Sep/2015 21:06:57] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[01/Sep/2015 21:06:57] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[01/Sep/2015 21:07:14] "GET /userinformation/ HTTP/1.1" 200 5061
+[01/Sep/2015 21:22:43] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 21:22:43] "GET /static/css/home.css HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/css/home1.css HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/css/home2.css HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/left.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/zise400-400.png HTTP/1.1" 200 37380
+[01/Sep/2015 21:22:43] "GET /static/images/zise200-176.png HTTP/1.1" 200 20797
+[01/Sep/2015 21:22:43] "GET /static/images/button.png HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/right.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[01/Sep/2015 21:22:43] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[01/Sep/2015 21:22:44] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:23:12] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 21:23:13] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 21:23:13] "GET /static/css/index_page.css HTTP/1.1" 200 3925
+[01/Sep/2015 21:23:13] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/flag.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/heart.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/phone.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/email.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/tag.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:13] "GET /static/images/people.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:16] "GET /investor/ HTTP/1.1" 200 8766
+[01/Sep/2015 21:23:16] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[01/Sep/2015 21:23:16] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:16] "GET /static/css/investor_search.css HTTP/1.1" 200 856
+[01/Sep/2015 21:23:16] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 200 4254
+[01/Sep/2015 21:23:16] "GET /static/images/uiele_150812_01.png HTTP/1.1" 200 36610
+[01/Sep/2015 21:23:17] "GET /static/images/Rlogo.png HTTP/1.1" 200 296409
+[01/Sep/2015 21:23:37] "GET /register/ HTTP/1.1" 200 5746
+[01/Sep/2015 21:23:37] "GET /static/css/signup.css HTTP/1.1" 304 0
+[01/Sep/2015 21:23:37] "GET /static/js/signup.js HTTP/1.1" 304 0
+[01/Sep/2015 21:23:37] "GET /getverifycode/ HTTP/1.1" 200 2536
+[01/Sep/2015 21:23:37] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:37] "GET /static/images/zhuce.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:39] "GET /login/ HTTP/1.1" 200 4836
+[01/Sep/2015 21:23:39] "GET /static/css/login.css HTTP/1.1" 304 0
+[01/Sep/2015 21:23:39] "GET /static/images/open.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:40] "GET /forgetpw/ HTTP/1.1" 200 5206
+[01/Sep/2015 21:23:41] "GET /static/css/forgetpwd.css HTTP/1.1" 200 3297
+[01/Sep/2015 21:23:41] "GET /static/js/forgetpwd.js HTTP/1.1" 200 1127
+[01/Sep/2015 21:23:44] "GET /guide/ HTTP/1.1" 200 16111
+[01/Sep/2015 21:23:44] "GET /static/css/index21.css HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:44] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[01/Sep/2015 21:23:51] "GET / HTTP/1.1" 200 6373
+[01/Sep/2015 21:23:52] "GET /zc HTTP/1.1" 200 15230
+[01/Sep/2015 21:24:04] "GET /readmore/ HTTP/1.1" 200 11662
+[02/Sep/2015 09:15:59] "GET / HTTP/1.1" 200 6816
+[02/Sep/2015 09:15:59] "GET /static/css/home.css HTTP/1.1" 304 0
+[02/Sep/2015 09:15:59] "GET /static/css/home1.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/css/home2.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/upload/default.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/images/button.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:00] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:16:01] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/heart.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:01] "GET /static/images/flag.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/people.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/tag.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/phone.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/email.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:02] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:03] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:03] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:03] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:03] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:03] "GET /static/images/jiantou3.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:04] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:16:06] "GET /investor/ HTTP/1.1" 200 8766
+[02/Sep/2015 09:16:06] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:16:06] "GET /static/css/investor_search.css HTTP/1.1" 200 856
+[02/Sep/2015 09:16:09] "GET /publish/ HTTP/1.1" 200 13213
+[02/Sep/2015 09:16:10] "GET /static/css/index22.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/css/publish.css HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/ali.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[02/Sep/2015 09:16:10] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:16:10] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:16:19] "POST /publish/ HTTP/1.1" 200 13231
+[02/Sep/2015 09:16:19] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:16:19] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:16:34] "POST /publish/ HTTP/1.1" 200 13191
+[02/Sep/2015 09:16:34] "POST /publish/ HTTP/1.1" 200 13191
+[02/Sep/2015 09:16:35] "POST /publish/ HTTP/1.1" 200 13191
+[02/Sep/2015 09:16:35] "POST /publish/ HTTP/1.1" 200 13191
+[02/Sep/2015 09:16:51] "POST /publish/ HTTP/1.1" 200 13254
+[02/Sep/2015 09:16:51] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:16:51] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:17:09] "GET /investor/ HTTP/1.1" 200 8766
+[02/Sep/2015 09:28:57] "GET /guide/ HTTP/1.1" 200 16111
+[02/Sep/2015 09:28:58] "GET /static/css/index21.css HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/css/home2.css HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/xmfk180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/cwjg180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/zjbz180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/jsbz180-180.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/xiazai38-32.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[02/Sep/2015 09:28:58] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:00] "GET / HTTP/1.1" 200 6373
+[02/Sep/2015 09:29:01] "GET /static/css/home.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:01] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:01] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:02] "GET / HTTP/1.1" 200 6373
+[02/Sep/2015 09:29:03] "GET /static/css/home.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/css/home1.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/css/home2.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/left.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/button.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/right.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:03] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:29:08] "GET /publish/ HTTP/1.1" 302 0
+[02/Sep/2015 09:29:08] "GET /login?next=/publish/ HTTP/1.1" 301 0
+[02/Sep/2015 09:29:08] "GET /login/?next=/publish/ HTTP/1.1" 200 4836
+[02/Sep/2015 09:29:10] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:29:10] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:10] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/phone.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/email.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:11] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[02/Sep/2015 09:29:17] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:29:17] "GET /static/css/investor.css HTTP/1.1" 304 0
+[02/Sep/2015 09:29:17] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:43:48] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 09:43:48] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:43:48] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:47:03] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:47:06] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:47:10] "GET /publish/ HTTP/1.1" 200 13213
+[02/Sep/2015 09:47:10] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:47:10] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:47:12] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:47:14] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:47:14] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:47:14] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:47:14] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:47:14] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:47:14] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:47:15] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:47:23] "GET /readmore/ HTTP/1.1" 200 11662
+[02/Sep/2015 09:48:28] "GET / HTTP/1.1" 200 6816
+[02/Sep/2015 09:48:28] "GET /static/css/home.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/css/home1.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/css/home2.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/mainlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/left.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/upload/default.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/button.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/right.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/soudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:28] "GET /static/images/bordersoudai.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:48:30] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/js/owl.carousel.js HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/phone.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/email.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/qq_1.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/zc_banner.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/flag.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/banner2.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/bg16.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/heart.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/bg15.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/banner3.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/people.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:30] "GET /static/images/tag.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:31] "GET /static/images/jiantou4.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:31] "GET /static/images/jiantou5.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:32] "GET /publish/ HTTP/1.1" 200 13213
+[02/Sep/2015 09:48:32] "GET /static/css/index22.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:32] "GET /static/css/publish.css HTTP/1.1" 304 0
+[02/Sep/2015 09:48:32] "GET /static/images/ali.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:48:32] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:48:32] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:48:33] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 09:48:38] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:48:38] "GET /static/css/investor_search.css HTTP/1.1" 200 856
+[02/Sep/2015 09:48:38] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:48:38] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:38] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:38] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:48:44] "GET /publish/ HTTP/1.1" 200 13213
+[02/Sep/2015 09:48:45] "GET /static/images/xxx.png HTTP/1.1" 404 1648
+[02/Sep/2015 09:48:45] "GET /static/images/xxx-180.png HTTP/1.1" 404 1660
+[02/Sep/2015 09:50:08] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:50:08] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:50:08] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:50:08] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:50:08] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:50:09] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:09] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:09] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:09] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:09] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:50:20] "GET /readmore/ HTTP/1.1" 200 11682
+[02/Sep/2015 09:50:30] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:50:30] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:50:30] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:50:30] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:52:28] "GET /readmore/ HTTP/1.1" 200 11690
+[02/Sep/2015 09:53:35] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:53:35] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:53:35] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:53:35] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:53:35] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:53:36] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:53:36] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:53:36] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:53:36] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:53:36] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:55:14] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:55:14] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:55:14] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 09:56:25] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 09:56:25] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:56:25] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 09:56:25] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 09:56:25] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 09:56:45] "GET /static/css/investor.css HTTP/1.1" 200 3260
+[02/Sep/2015 09:56:45] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:56:45] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 09:56:45] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 09:56:45] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 09:56:45] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:00:07] "GET /readmore/ HTTP/1.1" 200 11706
+[02/Sep/2015 10:02:42] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 10:03:02] "GET /investor/ HTTP/1.1" 200 7584
+[02/Sep/2015 10:03:02] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/css/investor.css HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:03:02] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:04:36] "GET /investor/ HTTP/1.1" 200 8693
+[02/Sep/2015 10:04:37] "GET /static/css/investor.css HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:04:37] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[02/Sep/2015 10:05:10] "GET / HTTP/1.0" 200 6373
+[02/Sep/2015 10:05:20] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[02/Sep/2015 10:05:20] "l          " 400 -
+[02/Sep/2015 10:05:20] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 404 6984
+[02/Sep/2015 10:05:25] "OPTIONS / HTTP/1.0" 200 6373
+[02/Sep/2015 10:05:30] code 400, message Bad request version ('RTSP/1.0')
+[02/Sep/2015 10:05:30] "OPTIONS / RTSP/1.0" 400 -
+[02/Sep/2015 10:05:35] code 400, message Bad request syntax ('\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 1-2: illegal multibyte sequence
+[02/Sep/2015 10:05:40] code 400, message Bad request syntax ('\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03')
+[02/Sep/2015 10:05:40] "          versionbind   " 400 -
+[02/Sep/2015 10:05:45] code 400, message Bad HTTP/0.9 request type ('\x00')
+[02/Sep/2015 10:05:45] "            " 400 -
+[02/Sep/2015 10:05:45] code 400, message Bad request syntax ('HELP')
+[02/Sep/2015 10:05:45] "HELP" 400 -
+[02/Sep/2015 10:05:45] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 16-17: illegal multibyte sequence
+[02/Sep/2015 10:05:50] code 400, message Bad request syntax ('\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[02/Sep/2015 10:05:50] code 400, message Bad request syntax ('\x01default')
+[02/Sep/2015 10:05:50] "default" 400 -
+[02/Sep/2015 10:05:55] code 400, message Bad HTTP/0.9 request type ('0')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 13-14: illegal multibyte sequence
+[02/Sep/2015 10:06:00] code 400, message Bad request syntax ('TNMP\x04\x00\x00\x00TNME\x00\x00\x04\x00')
+[02/Sep/2015 10:06:00] "TNMP   TNME   " 400 -
+[02/Sep/2015 10:06:05] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 6-7: illegal multibyte sequence
+[02/Sep/2015 10:06:10] code 400, message Bad request syntax ('DmdT\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x00\x11\x11\x00\xff\x01\xff\x13')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 20-21: illegal multibyte sequence
+[02/Sep/2015 10:06:15] code 400, message Bad request syntax (':\x00\x00\x00/\x00\x00\x00\x02\x00\x00@\x02\x0f\x00\x01\x00=\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x1f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[02/Sep/2015 10:06:15] ":   /     @  =            /         @                 " 400 -
+[02/Sep/2015 10:06:15] code 400, message Bad request version ('>')
+[02/Sep/2015 10:06:15] "< NTP/1.0 >" 400 -
+[02/Sep/2015 10:06:20] code 400, message Bad request syntax ('\x01\x00\x00\xfd\xce\xfa\x0b\xb0\xa0\x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00\xf0\xf0\xf0\xf0\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00\xe0m\xdf_')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[02/Sep/2015 10:06:25] code 400, message Bad HTTP/0.9 request type ('\x00Z\x00\x00\x01\x00\x00\x00\x016\x01,\x00\x00\x08\x00\x7f\xff\x7f\x08\x00\x00\x00\x01\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 18-19: illegal multibyte sequence
+[02/Sep/2015 10:09:25] "GET /investor/ HTTP/1.1" 200 8686
+[02/Sep/2015 10:09:25] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:09:25] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:09:25] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:10:50] "GET /investor/ HTTP/1.1" 200 8686
+[02/Sep/2015 10:11:10] "GET /investor/ HTTP/1.1" 200 8686
+[02/Sep/2015 10:11:10] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:11:10] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:11:10] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /investor/ HTTP/1.1" 200 8685
+[02/Sep/2015 10:13:56] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:13:56] "GET /static/css/investor_search.css HTTP/1.1" 200 633
+[02/Sep/2015 10:13:56] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:13:56] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /investor/ HTTP/1.1" 200 8685
+[02/Sep/2015 10:15:20] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:15:20] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:20] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:15:32] "GET / HTTP/1.1" 200 6373
+[02/Sep/2015 10:15:32] "GET /static/css/home.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:32] "GET /static/css/home2.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:32] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:15:32] "GET /static/images/zise200-176.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:32] "GET /static/images/zise400-400.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:34] "GET /zc HTTP/1.1" 200 15230
+[02/Sep/2015 10:15:34] "GET /static/css/index_page.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:34] "GET /static/images/zhongchoulogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:34] "GET /static/images/mojing.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /investor/ HTTP/1.1" 200 8685
+[02/Sep/2015 10:15:48] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:15:48] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:15:48] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /investor/ HTTP/1.1" 200 8685
+[02/Sep/2015 10:16:20] "GET /static/css/investor.css HTTP/1.1" 200 3261
+[02/Sep/2015 10:16:20] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/images/Conpanylogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/images/uiele_150812_01.png HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/images/uiele_150812_02_02.png HTTP/1.1" 304 0
+[02/Sep/2015 10:16:20] "GET /static/images/8cm.jpg HTTP/1.1" 304 0

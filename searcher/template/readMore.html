@@ -13,7 +13,9 @@
 	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
 	   //alert($(this).text());
         var a = getElementsByClassName('btn_blue','choiceid');
-       // var amount = $(".lastinput").children("#id_searchWord").val(); 
+        alert(a);
+        var amount = $(".lastinput").children("#id_searchWord").val();
+        alert(amount);
         checkparam(1);
        });
    });
@@ -84,7 +86,7 @@ div.transbox p{color:#FFFFFF; margin:10px 20px}
 			<div id="search_list" class="search_list">
 				<div class="serch_term">
 				  <label class="choices" id="choices">
-				  <a class="f1">投资人类别:</a>
+				  <label class="f1">投资人类别:</label>
 				  <a class="btn_blue" href="#" choiceid="1"> 不限</a>
 				  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
 				  <a href="javascript:void(0)"   choiceid="3">预热中</a>
