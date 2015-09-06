@@ -89,9 +89,10 @@ def writeagreement(request):
 第十六条　附则 <br />
 用户保证已仔细阅读并完全理解以上《葡萄藤金服注册协议》，明确知晓关于股权投资的重要提示及相关风险，愿意承担投资股权所面临的各种风险，由此可能带来的损失由用户自行承担。用户自愿正式进入葡萄藤金服会员在线注册程序，接受上述所有条款的约束
 """
+    """
     t=RegistrationAgreement(name="registration_agreement",agreement=agreement)
     t.save()
-    """
+
     t=RegistrationAgreement(name="mianzetiaokuan",agreement=test)
     t.save()
     t=RegistrationAgreement(name="wind_control",agreement=test)
@@ -109,6 +110,7 @@ def writeagreement(request):
     print p2[0].name
     for i in p2:
         print i.address,i.hotline
+    """
 
 
 
@@ -116,6 +118,11 @@ def writeagreement(request):
     position=['中国风险投资公司高级总裁','总裁','总经理']
     industry = ['软件服务', '通讯', '电子产品','教育培训','市场营销']
     username=random.randint(13521448969,13698766400)
+    print "username is :%s"%username
+    status=random.randint(0,4)
+
+    print "status is :%s"%status
+    active=random.randint(0,1)
 
     password = str(username)[2:8]
     realname = random.choice(name)
@@ -140,14 +147,17 @@ def writeagreement(request):
         #print i.user
         #print i.position
         #print i.user.username
-        pr=Project(publish=i.user,name="众筹",founder="yang")
+        #pr=Project(publish=i.user,photo_url="/root/zc/static/images/mojing.jpg",category=u"生活服务",status=status,active=active)
+        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",amount=200,finish=160,photo_url="/static/images/mojing.jpg",category=u"生活服务",introduction="魔镜在线-您的私人购物助理",)
+        #        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",introduction="魔镜在线-您的私人购物助理",amount=200,finish=160,photo_url="/root/zc/static/images/mojing.jpg",category=u"生活服务")
+        #
         pr.save()
         f = Project.objects.filter(founder="yang").filter(name__contains="筹")
         print "xxxxx",Project.objects.filter(founder="yang").filter(name__contains="筹").count()
         if f:
             print "ceshi chenggong"
         print len(f)
-        print f[0].founder
+
 
     ui = UserInformation.objects.filter(authentication_class=2)
     for i in  ui:
@@ -156,7 +166,7 @@ def writeagreement(request):
 
 
     return render_to_response('test.html',{'user':user}, context_instance=RequestContext(request))
-    """
+
 
 
 

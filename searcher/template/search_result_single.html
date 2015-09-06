@@ -5,71 +5,72 @@
 <div class="search_bd" id="result_form">
     {% if results %}
         {% for result in results.object_list %}
-            <table cellpadding="0" cellspacing="0" border="0" class="search_Tab" width="100%;">
-                <tr>
-                    <td rowspan="2" width="130" align="center" valign="middle"><img
-                            src="{{ result.platform.logo }}"/>
-                    </td>
-                    <td class="search_title search_tl">{{ result.name }}</td>
-                    <td width="80">期限</td>
-                    <td width="100">年化收益</td>
-                    <td rowspan="2" width="100"><a href="{% url 'bid_detail' result.id %}" target="_blank"
-                                                   class="seach_cheek">查看详情</a></td>
-                </tr>
-                <tr>
-                    <td class="search_tl">借款金额：<font
-                            class="c_red">{{ result.amount|floatformat:"0" }}</font>&nbsp;&nbsp;每万元总收益：<font
-                            class="c_red">{{ result.ten_thousand_revenue|floatformat:"-2" }}元</font>
-                    </td>
-                    <td><font class="c_red">
-                        {{ result.term_name|floatformat:"-2" }}
-                    </font>{{ result.term_unit }}
-                    </td>
-                    <td><font class="c_red">{{ result.income_rate|floatformat:"-2" }}</font>%</td>
-                </tr>
-            </table>
+             <ul class="mojing">
+			<li style="position:absolute;left:348px">
+				<img src="/static/images/heart.png" />
+			</li>
+			<li style="position:absolute;left:532px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>
+				<img src="{{ result.photo_url }}" />
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">{{result.name}}</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">{{result.amount}}</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已完成</label><b style="color:#000000;;font-size:12px">{{result.finish}}</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
+					<li style=" position:absolute;left:463px;top:472px;"><img src="/static/images/tag.png" /></li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">{{result.publish}}</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">{{result.category}}</label>
+					</li>
+					</div>
+				</ul>
+			</li>
+		</ul>
         {% endfor %}
     {% else %}
+
         <a>无符合查询条件的纪录</a>
     {% endif %}
     <div class="pages">
         <a href="javascript:void(0)" class="before"
            onclick="takepage(1)">《</a>
-        {% if results.has_previous %}
+        {% if result.has_previous %}
             <a href="javascript:void(0)"
-               onclick="takepage({{ results.previous_page_number }})">〈</a>
+               onclick="takepage({{ result.previous_page_number }})">〈</a>
         {% endif %}
         {% for page in page_set %}
-            <a href="javascript:void(0)" {% ifequal page results.number %}
+            <a href="javascript:void(0)" {% ifequal page result.number %}
                class="currentpage" {% endifequal %}
                onclick="takepage({{ page }})">{{ page }} </a>
         {% endfor %}
-        {% if results.has_next %}
+        {% if result.has_next %}
             <a href="javascript:void(0)"
-               onclick="takepage({{ results.next_page_number }})">〉</a>
+               onclick="takepage({{ result.next_page_number }})">〉</a>
         {% endif %}
         <a href="javascript:void(0)" class="after"
            onclick="takepage({{ last_page }})">》</a>
     </div>
 </div>
 </body>
-<script>
-    $(".rm a").on("click", function () {
-        var t = $(this).attr("remindertype");
-        var a = $(this).parent().attr("oid");
-        var value = 1;
-        $.post("{% url 'do_reminder' %}",
-                {
-                    objectid: a,
-                    method: 'add',
-                    type: t
-                },
-                function (data) {
-                    alert(data);
-                }
-        );
-    });
 
-
-</script>
 </html>

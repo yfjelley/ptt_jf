@@ -12,10 +12,6 @@
 .div_right{margin-left:30px;width:950px;height:100%;background-color:#FFFFFF;}
 .con_right{background:#FFFFFF;margin-left:165px;height:620px;}
 .xmbz{border:1px solid color:#000000;width:60px;height:60px;position:relative;text-align:center;line-height:60px;float:left;}
-.scbz{border:1px solid color:#715C83;border-left:0px;border-top:0px;border-right:0px;border-bottom:1px; 
-      width:110px;height:30px; background:#715C83;color:#FFFFFF; text-align:center;-moz-border-radius:3px;border-radius:3px;margin-left:40px;float:left;}
-.jhs{border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;border:1px solid color:#715C83; width:110px;
-     height:30px; background:#715C83;color:#FFFFFF; text-align:center;-moz-border-radius:3px;border-radius:3px;float:left;}
 .dsh{border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;border:1px solid color:#715C83;width:110px;
      height:40px; background:#715C83;color:#FFFFFF;text-align:center;-moz-border-radius:3px;border-radius:3px;float:left;}
 .xmcj_input{width:400px;height:30px;}
@@ -23,7 +19,8 @@
 .xmjd_input{width:200px;height:30px;}
 .fwtk_input{color:#E9948A;font-size:12px;}
 .table_cjxm{font-size:14px;}
-
+.table_cjxm ul li{float:left;}
+.table_cjxm lable{width:75px;}
 .con_right p span{font-size:18px;font-weight:bold;}
 .con_right p{font-size:16px;width:570px;}
 .display{display:none;background:#FFFFFF;margin-left:40px;}
@@ -161,3 +158,39 @@
 #nav ul:hover li {
     margin-top:0;
 }
+.a-upload {
+    width:110px;height:30px;
+	padding: 4px 10px;
+	height: 20px;
+	line-height: 20px;
+	position: relative;
+	cursor: pointer;
+	color:#FFFFFF;
+	text-align:center;
+	background: #715C83;
+	border: 1px solid #715C83;
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+ 
+.a-upload  input {
+    width:110px;height:30px;
+	position: absolute;
+	font-size: 100px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer
+}
+ 
+.a-upload:hover {
+	color:#444;
+	border-color:#ccc;
+	text-decoration: none
+}
+
+

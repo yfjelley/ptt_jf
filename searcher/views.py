@@ -456,7 +456,7 @@ def publish(request):
             plan_url = handle_uploaded_file(f)
             print plan_url
         else:
-            msg = u"请上传logo"
+            msg = u"请上传商业计划书"
             return render_to_response("publish.html", {'form': form, 'error': msg},
                                           context_instance=RequestContext(request))
 
@@ -503,7 +503,48 @@ def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
 def readmore(request):
-    return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+    #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+    search_word = request.GET.get('search_word[]',None)
+    if search_word is not None:
+        if int(search_word) == 2 :
+            results = Project.objects.filter(active=0)
+        elif int(search_word) == 3 :
+            results = Project.objects.filter(status=0)
+        elif int(search_word) == 4 :
+            results = Project.objects.filter(status=1)
+        elif int(search_word) == 5 :
+            results = Project.objects.filter(status=2)
+        elif int(search_word) == 6 :
+            results = Project.objects.filter(status=2)
+        else :
+            results = Project.objects.all()
+    else :
+        print "else else"
+        results = Project.objects.all()
+        #return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+
+    ppp = Paginator(results, 20)
+    print "dir issss :%s"%dir(Paginator)
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+    last_page = ppp.page_range[len(ppp.page_range) - 1]
+    page_set = get_pageset(last_page, page)
+    t = get_template('search_result_single.html')
+    print "results isssssss :%s"%results
+    content_html = t.render(
+            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
 
 def investor_info(request, investor):
     investor=u"大大"
@@ -560,3 +601,23 @@ def handle_uploaded_file(f):
         destination.write(chunk)
     destination.close()
     return file_name
+
+def get_pageset(last_page, pagenum):
+    page_set = []
+    if pagenum <= 3:
+        start = 0
+        end = 6
+    elif pagenum > last_page - 3:
+        start = last_page - 4
+        end = last_page + 1
+    else:
+        start = pagenum - 2
+        end = pagenum + 3
+    for i in range(start, end, 1):
+        if i <= 0:
+            pass
+        elif i > last_page:
+            break
+        else:
+            page_set.append(i)
+    return page_set

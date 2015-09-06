@@ -12,7 +12,7 @@ li{list-style:none;}
 .Cdiv1{width: 250px;height: 240px;-moz-border-radius:320px;-webkit-border-radius: 50px;border-radius: 320px;border:1px solid #000000;margin-left:200px;margin-top:20px; overflow:hidden; }
 
 .box{ height: 475px; position: relative;}
-.box-l{ width: 600px; position: absolute; top: 0;margin-left:80px;}
+.box-l{ width: 570px; position: absolute; top: 0;margin-left:210px;}
 .box-l .img-one{ display: block;}
 .box-l .img-two{ display: none}
 .box-l .img-three{ display: none}
@@ -22,7 +22,7 @@ li{list-style:none;}
 .box-l.current .img-two{ display: block;}
 .box-l.current .img-three{ display:block;}
 
-.box-r{ width: 600px; position: absolute; top: 0; right:0;margin-right:140px;}
+.box-r{ width: 570px; position: absolute; top: 0; right:0;margin-right:250px;}
 .box-r .img-ones{ display: block;}
 .box-r .img-twos{ display: none}
 .box-r .img-threes{ display: none}

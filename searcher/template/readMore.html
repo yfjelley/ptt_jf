@@ -3,20 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/index_page.css" />
-<link rel="stylesheet" href="/static/css/owl.carousel.css" />
-<script type="text/javascript" src="/static/js/owl.carousel.js"></script>
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
 <script type="text/javascript">
+    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
    $(function(){
+       checkparam(1,1);
+       alert(1);
 	   $('#seatch_norm').find('a').on("click",function(){
 	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
-	   //alert($(this).text());
-        var a = getElementsByClassName('btn_blue','choiceid');
-        alert(a);
-        var amount = $(".lastinput").children("#id_searchWord").val();
-        alert(amount);
-        checkparam(1);
+       var a = getElementsByClassName('btn_blue','choiceid');
+       checkparam(1,a);
        });
    });
    function getElementsByClassName(n,m) {
@@ -28,6 +25,22 @@
             }
         }
         return el;
+    }
+
+   function takepage(n) {
+        checkparam(n);
+   }
+
+   function checkparam(page,a) {
+        $.get("{% url 'readmore' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    $('#result_form').html(data.content_html);
+                }
+        );
     }
 </script>
 
@@ -107,179 +120,6 @@ div.transbox p{color:#FFFFFF; margin:10px 20px}
 				<label style="font-size:25px; color:#000000;">每日精选</label>
 			</li>
 		</ul>
-		<ul class="mojing">
-			
-			<li style="position:absolute;left:348px">
-				<img src="/static/images/heart.png" />				
-			</li>
-			<li style="position:absolute;left:532px">
-				<img src="/static/images/flag.png" />
-			</li>
-			<li>
-				<img src="/static/images/mojing.jpg" />	
-			</li>
-			<li>
-				<ul class="Cul1">
-					<div class="wzfudong">
-					<li>
-						<b style="color:#000000">魔镜在线</b>
-					</li>
-					<li>
-						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
-					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
-					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
-					</li>
-					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
-					</li>
-					<li style="clear:both">
-						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-					</li>
-					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:463px;top:472px;"><img src="/static/images/tag.png" /></li>
-					<li style="clear:both">
-					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
-					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
-					</li>
-					</div>
-				</ul>
-			</li>
-		</ul>
-		</div>
-	</div>
-	<div id="menu3">
-	<ul class="mojing2">	
-			<li style="position:absolute;left:580px">
-				<img src="/static/images/heart.png" />				
-			</li>
-			<li style="position:absolute;left:761px">
-				<img src="/static/images/flag.png" />
-			</li>
-			<li>
-				<img src="/static/images/mojing.jpg" />	
-			</li>
-			<li>
-				<ul class="Cul1">
-					<div class="wzfudong">
-					<li>
-						<b style="color:#000000">魔镜在线</b>
-					</li>
-					<li>
-						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
-					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
-					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
-					</li>
-					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
-					</li>
-					<li style="clear:both">
-						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-					</li>
-					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:693px;top:472px;"><img src="/static/images/tag.png" /></li>
-					<li style="clear:both">
-					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
-					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
-					</li>
-					</div>
-				</ul>
-			</li>
-		</ul>
-	</div>
-  	<div id="menu4">
-	<ul class="mojing3">	
-			<li style="position:absolute;left:808px">
-				<img src="/static/images/heart.png" />				
-			</li>
-			<li style="position:absolute;left:990px">
-				<img src="/static/images/flag.png" />
-			</li>
-			<li>
-				<img src="/static/images/mojing.jpg" />	
-			</li>
-			<li>
-				<ul class="Cul1">
-					<div class="wzfudong">
-					<li>
-						<b style="color:#000000">魔镜在线</b>
-					</li>
-					<li>
-						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
-					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
-					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
-					</li>
-					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
-					</li>
-					<li style="clear:both">
-						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-					</li>
-					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:923px;top:472px;"><img src="/static/images/tag.png" /></li>
-					<li style="clear:both">
-					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
-					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
-					</li>
-					</div>
-				</ul>
-			</li>
-		</ul>
-	</div>	  
-	<div id="menu5">
-	<ul class="mojing4">	
-			<li style="position:absolute;left:1040px">
-				<img src="/static/images/heart.png" />				
-			</li>
-			<li style="position:absolute;left:1222px">
-				<img src="/static/images/flag.png" />
-			</li>
-			<li>
-				<img src="/static/images/mojing.jpg" />	
-			</li>
-			<li>
-				<ul class="Cul1">
-					<div class="wzfudong">
-					<li>
-						<b style="color:#000000">魔镜在线</b>
-					</li>
-					<li>
-						<label style="color:#000000;font-size:12px">魔镜在线-您的私人购物助理</label>
-					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
-					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">200万</b>
-					</li>
-					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已预约</label><b style="color:#000000;;font-size:12px">80%</b>
-					</li>
-					<li style="clear:both">
-						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-					</li>
-					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:1150px;top:472px;"><img src="/static/images/tag.png" /></li>
-					<li style="clear:both">
-					<label style="color:#000000;font-size:12px;margin-left:25px;">都市人</label>
-					<label style="color:#000000;;font-size:12px;margin-left:32px;">生活服务</label>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-	
 	</div>	
 		
 </div>

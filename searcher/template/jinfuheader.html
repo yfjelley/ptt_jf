@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>葡萄藤金福头部</title>
+
+</head>
+<body>
+<div id="container">		
+		<ul style="position:absolute;top:-11px;left:270px;">
+			<li>
+				<img src="/static/images/mainlogo.png" />
+			</li>
+		</ul>
+		
+  		<ul class="ul7">
+    		<li>
+				<a href="{% url 'index_zc' %}">首页</a>
+				<a href="{% url 'about_us' %}">关于我们</a>
+				<a href="{% url 'guide' %}">投资指引</a>
+    			<a href="#">葡萄藤社区</a>
+			</li>  		
+		</ul>
+		
+		<ul class="ul8">
+    		<li>
+     			<label class="lab1">24小时客服电话</label>
+				<label class="lab2">400-8800-6799</label>
+				{% ifequal user.id None %}
+				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
+				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
+				{% else %}
+				    <ul id="top_r" class="top_name">
+                       <div id="logged">
+                          <a id="check_log" style="display: none">1</a>
+                          <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username }}
+                             <ul>
+                                <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+						     </ul>
+                          </li>
+					   </div>
+                    </ul>
+
+                {% endifequal %}
+			</li>
+		</ul>
+</div>
+</body>
+</html>

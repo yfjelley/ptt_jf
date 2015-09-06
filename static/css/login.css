@@ -1,17 +1,4 @@
-body{margin:0px;}
-.ul7 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
-.ul7 a:hover{color:#e1604d;cursor:pointer;}
-.ul7{list-style:none;color:#FFFFFF;float:left;font-size:18px;margin-left:220px; margin-top:30px}
-.ul8 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
-.ul8 a:hover{color:#e1604d;cursor:pointer;}
-.ul8{ margin-top:-40px;font-size:18px;color:#FFFFFF;float:left;margin-left:670px;}
-	
-.ul8 .lab1{font-size:8px; color:#999999;}
 
-.ul8 .lab2{font-size:18px; color:#999999; margin-left:10px;}
-.ul8 .lab3{margin-left:16px;font-size:12px;}
-.ul8 .lab4{margin-left:-5px;font-size:12px;}
-#container{	background-color:#372c3a;height:70px;width:1140px;margin-left:210px;}
 #sub{background-color:#eeeef0;width:1140px;height:700px;margin-left:210px;margin-top:-1px;}
 #div2{width:600px;height:500px;background:#FFFFFF;margin-top:50px;position:absolute;z-index:1; margin-left:270px;}
 li{list-style:none;}
@@ -34,37 +21,3 @@ a{text-decoration:none; color:#FFFFFF}
 a:hover{color:#e1640d;cursor:pointer;}
 
 
-#footer{width:1140px;background-color:#372c3a;height:180px;clear:both;overflow:hidden;margin-top:-15px;margin-left:208px;}
-a:hover{
-color:#e1604d;
-cursor:pointer;
-}
-.ful{margin-top:15px; margin-left:-50px;}
-.ful1,.ful2,.ful3,.ful4,.ful5,.ful6,.ful7,.ful8,.ful9,.ful10,.ful11,.ful12,.ful13{font-size:10px;}
-.ful1 label{color:#e1604d;}
-.ful2 hr{color:#e1604d;}
-.ful1{font-size:16px;margin-left:50px;}
-.ful1 li{position:absolute;margin-top:20px;}
-.ful2{position:absolute;}
-.ful3{position:absolute;margin-top:75px;margin-left:25px;}
-.ful3 li{float:left;padding:0px 24px;}
-.ful4{position:absolute;margin-top:75px;margin-left:248px;}
-.ful4 li{float:left;padding:0px 20px;}
-.ful5{position:absolute;margin-top:75px;margin-left:458px; color:#FFFFFF}
-.ful5 li{float:left;padding:0px 20px;}
-
-.ful6{position:absolute;margin-top:100px;margin-left:25px;}
-.ful6 li{float:left;padding:0px 20px;}
-.ful7{position:absolute;margin-top:100px;margin-left:248px;}
-.ful7 li{float:left;padding:0px 20px;}
-.ful8{position:absolute;margin-top:100px;margin-left:458px; color:#FFFFFF}
-.ful8 li{float:left;padding:0px 20px;}
-
-.ful9{position:absolute;margin-top:125px;margin-left:25px;}
-.ful9 li{float:left;padding:0px 20px;}
-.ful10{position:absolute;margin-top:125px;margin-left:248px;}
-.ful10 li{float:left;padding:0px 20px;}
-.ful11{position:absolute;margin-top:125px;margin-left:458px;}
-.ful11 li{float:left;padding:0px 20px; color:#FFFFFF}
-.ful12{position:absolute; margin-left:930px; line-height:20px; margin-top:10px;}
-.fuldy{margin-left:40px; color:#FFFFFF;}

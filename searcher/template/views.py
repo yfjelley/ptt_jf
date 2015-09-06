@@ -24,7 +24,7 @@ from django.template.loader import get_template
 from django.core.files.storage import FileSystemStorage
 from ddbid.settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
-from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPW, ModfiyPW
+from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPW, ModfiyPW, PublishForm
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
@@ -43,93 +43,6 @@ storage = FileSystemStorage(
 )
 
 dict_code = {}
-
-def index(request):
-    hotspots = WeekHotSpot.objects.filter(status=1).order_by('?')
-    if hotspots.exists():
-        hs = random.sample(hotspots, 5)
-    else:
-        hs = []
-    if request.method == 'POST':
-        # print(request.POST.get('params', None))
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            amount = cd['searchWord']
-        else:
-            return render_to_response('index.html', {'form': form, 'hs': hs}, context_instance=RequestContext(request))
-
-        try:
-            page = int(request.GET.get('page', '1'))
-        except ValueError:
-            page = 1
-        index_parts = index_loading(amount, None, page)
-        return render_to_response('search_result.html',
-                                  {'results': index_parts.get('results'), 'dimensions': index_parts.get('dimensions'),
-                                   'c_results': index_parts.get('c_result'), 'last_page': index_parts.get('last_page'),
-                                   'page_set': index_parts.get('page_set'), 'form': form},
-                                  context_instance=RequestContext(request))
-    elif request.GET.get('params[]', None) is not None:
-        params = ','.join(request.GET.getlist('params[]'))
-        a = params.split(',')
-        sorttype = request.REQUEST.get('sorttype', None)
-        sortorder = request.REQUEST.get('sortorder', None)
-        amount = request.REQUEST.get('amount', None)
-        if amount:
-            results = Bid.objects.filter(amount__gte=amount).order_by("random_rank")
-        else:
-            results = Bid.objects.all().order_by("random_rank")
-        filters = DimensionChoice.objects.filter(id__in=a)
-        results = data_filter(results, filters)
-        if sorttype is not None and sortorder is not None:
-            results = result_sort(results, sorttype, sortorder)
-        ppp = Paginator(results, 5)
-        try:
-            page = int(request.GET.get('page', '1'))
-        except ValueError:
-            page = 1
-        try:
-            results = ppp.page(page)
-        except (EmptyPage, InvalidPage):
-            results = ppp.page(ppp.num_pages)
-        last_page = ppp.page_range[len(ppp.page_range) - 1]
-        page_set = get_pageset(last_page, page)
-        t = get_template('search_result_single.html')
-        content_html = t.render(
-            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
-        payload = {
-            'content_html': content_html,
-            'success': True
-        }
-        return HttpResponse(json.dumps(payload), content_type="application/json")
-    else:
-        form = SearchForm()
-        user = auth.get_user(request)
-        if user.id is not None:
-            f_l = get_user_filter(user)
-            return render_to_response('index.html', {'form': form, 'f_ls': f_l, 'hs': hs},
-                                      context_instance=RequestContext(request))
-        else:
-            return render_to_response('index.html', {'form': form, 'hs': hs}, context_instance=RequestContext(request))
-
-
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            send_mail(
-                cd['subject'],
-                cd['message'],
-                cd.get('email', 'noreply@example.com'),
-                ['siteowner@example.com'],
-            )
-            return HttpResponseRedirect('/contact/thanks/')
-    else:
-        form = ContactForm(initial={'subject': 'I love your site!'})
-    return render_to_response('contact_form.html', {'form': form}, context_instance=RequestContext(request))
-
-
 
 def login(request):
     if request.method == 'POST':
@@ -150,7 +63,7 @@ def login(request):
                     return render_to_response("login.html", {'form': form}, context_instance=RequestContext(request))
                 else:
                     auth.login(request, user)
-                    return HttpResponseRedirect(reverse('index'))
+                    return HttpResponseRedirect(reverse('index_jf'))
 
             else:
                 return render_to_response('login.html', {'form': form, },
@@ -174,18 +87,13 @@ def forgetpw(request):
             print type(pw), type(smscode), type(_code)
 
             if pw is not None and _code == int(smscode):
-
                 user = auth.authenticate(username=username, password=pw)
-
                 auth.login(request, user)
-                message = u'success login!'
-                return HttpResponseRedirect(reverse('index'))
-                #return render_to_response('success_login.html',{"message":message},
-                #                     context_instance=RequestContext(request))
+                return HttpResponseRedirect(reverse('index_jf'))
 
             else:
-                message = u'手机号或者验证码错误'
-                return render_to_response('success_login.html',{"message":message},
+                form.valiatetype(2)
+                return render_to_response('forgetpwd.html',{"form":form},
                                       context_instance=RequestContext(request))
 
 
@@ -194,16 +102,6 @@ def forgetpw(request):
     else:
         form = ForgetPW()
         return render_to_response('forgetpwd.html', {'form': form}, context_instance=RequestContext(request))
-
-def modfiypw(request):
-    print request.method
-    if request.method == 'POST':
-
-        return HttpResponseRedirect(reverse('searchindex'))
-    else:
-        print "gggggg"
-        #return HttpResponseRedirect('searchindex')
-        return render_to_response('forget_password.html',  context_instance=RequestContext(request))
 
 def verifycode(request):
     figures = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -252,16 +150,15 @@ def register(request):
         response = HttpResponse()
         response['Content-Type'] = "text/javascript"
 
-        u_ajax = request.POST.get('username', None)
+        u_ajax = request.POST.get('name', None)
         if u_ajax:
             response['Content-Type'] = "application/json"
             u = User.objects.filter(username=u_ajax)
             if u.exists():
-                #return HttpResponse(u'用户已存在')
-                response.write('{"info": "user is exist!","status": "n"}')  # 用户已存在
-                #return response
+                return HttpResponse(u'用户已存在')
 
         form = RegisterForm(request.POST)
+
 
         if form.is_valid():
             cd = form.cleaned_data
@@ -306,7 +203,7 @@ def register(request):
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
 
-                return HttpResponseRedirect(reverse('index'))
+                return HttpResponseRedirect(reverse('index_jf'))
         else:
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
@@ -321,7 +218,7 @@ def logout(request):
     :return:
     """
     auth.logout(request)
-    return HttpResponseRedirect(reverse('searchindex'))
+    return HttpResponseRedirect(reverse('index_jf'))
 
 
 @login_required
@@ -361,126 +258,6 @@ def add_reminder(request, objectid):
         u_r = UserReminder(user=user, bid=objectid, reminder=1, value=1, status=1)
         u_r.save()
         return HttpResponse(u'已添加')
-
-
-@login_required
-def del_reminder(request, objectid):
-    user = auth.get_user(request)
-    try:
-        u_r = UserReminder.objects.get(user=user, bid=objectid)
-        u_r.delete()
-        return HttpResponse(u'已删除')
-    except ObjectDoesNotExist:
-        return HttpResponse(u'不存在')
-
-
-@login_required
-def do_reminder(request):
-    user = auth.get_user(request)
-    days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-            30, 31]
-    if request.method == 'POST':
-        b_id = request.POST.get('bid', None)
-        method = request.POST.get('method', None)
-        rtype = request.POST.get('type', None)
-        if method == 'add':
-            try:
-                u_r = UserReminder.objects.get(user=user, bid_id=int(b_id), reminder_id=int(rtype))
-                return HttpResponse(u'已存在')
-            except ObjectDoesNotExist:
-                if rtype == u'1' or rtype == u'2' or rtype == u'3':
-                    value = 1
-                else:
-                    value = 0
-                u_r = UserReminder(user=user, bid_id=int(b_id), reminder_id=int(rtype), value=value, status=1)
-                u_r.save()
-                return HttpResponse(u'已添加')
-        elif method == 'active':
-            try:
-                u_r = UserReminder.objects.filter(user=user, bid_id=int(b_id)).update(status=1)
-                return HttpResponse(u'提醒已打开')
-            except ObjectDoesNotExist:
-                return HttpResponse(u'不存在')
-        elif method == 'inactive':
-            try:
-                u_r = UserReminder.objects.filter(user=user, bid_id=int(b_id)).update(status=0)
-                return HttpResponse(u'提醒已关闭')
-            except ObjectDoesNotExist:
-                return HttpResponse(u'不存在')
-        elif method == 'del':
-            try:
-                u_r = UserReminder.objects.filter(user=user, bid_id=int(b_id))
-                u_r.delete()
-                return HttpResponse(u'已删除')
-            except ObjectDoesNotExist:
-                return HttpResponse(u'不存在')
-        elif method == 'change':
-            a = request.POST.getlist('params[]')
-            r_u = ReminderUnit.objects.all().order_by('id')
-            i = 0
-            for r in r_u:
-                try:
-                    u_r = UserReminder.objects.get(user=user, bid_id=int(b_id), reminder_id=r.id)
-                except ObjectDoesNotExist:
-                    u_r = UserReminder(user=user, bid_id=int(b_id), reminder_id=r.id)
-                if int(a[i]) == 0:
-                    u_r.value = 0
-                    u_r.status = 1
-                else:
-                    u_r.value = a[i]
-                    u_r.status = 1
-                if int(a[i]) != u_r.value:
-                    u_r.is_reminded = 0
-                u_r.save()
-                i += 1
-            return HttpResponse(u'修改已保存')
-    else:
-        reminders = UserReminder.objects.filter(user=user)
-        flag = 2
-        aa = []
-        bb = {}
-        if len(reminders) > 0:
-            t = reminders[0].bid_id
-            for a in reminders:
-                if a.bid_id == t:
-                    bid = Bid.objects.filter(id=a.bid_id)
-                    if not bid.exists():
-                        bid = BidHis.objects.filter(id=a.bid_id)
-
-                    if a.reminder_id == 1:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'a': a.value}
-                    elif a.reminder_id == 2:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'b': a.value}
-                    elif a.reminder_id == 3:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'c': a.value}
-                    elif a.reminder_id == 4:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'd': a.value}
-                    elif a.reminder_id == 5:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'e': a.value}
-                    bb.update(ttt)
-                    t = a.bid_id
-                else:
-                    aa.append(bb)
-                    bb = {}
-                    bid = Bid.objects.filter(id=a.bid_id)
-                    if not bid.exists():
-                        bid = BidHis.objects.filter(id=a.bid_id)
-                    if a.reminder_id == 1:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'a': a.value}
-                    elif a.reminder_id == 2:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'b': a.value}
-                    elif a.reminder_id == 3:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'c': a.value}
-                    elif a.reminder_id == 4:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'd': a.value}
-                    elif a.reminder_id == 5:
-                        ttt = {'bid_id': a.bid_id, 'bid_name': bid[0].name, 'status': a.status, 'e': a.value}
-                    bb.update(ttt)
-                    t = a.bid_id
-            aa.append(bb)
-        return render_to_response("user_reminder.html", {'reminders': aa, 'flag': flag, 'days': days},
-                                  context_instance=RequestContext(request))
-
 
 @login_required
 def myfavorite(request, tid):
@@ -557,113 +334,6 @@ def userinformation(request):
     return render_to_response("user_information.html", {'form': form, 'flag': flag},
                               context_instance=RequestContext(request))
 
-
-@login_required
-def save_filter(request):
-    user = auth.get_user(request)
-    if request.method == 'POST':
-        method = request.REQUEST.get('method', None)
-        fid = request.REQUEST.get('fid', None)
-        name = request.REQUEST.get('name', None)
-        params = str(','.join(request.POST.getlist('params[]')))
-        if method == 'add':
-            f_l = UserFilter.objects.filter(user=user)
-            num = len(f_l)
-            if 0 == num:
-                t = UserFilter(user=user, filter_order=1, choices=params, name=name)
-            # t = UserFilter(user=user, filter_order=1, choice_yr_id=yieldrate_id, choice_tm_id=time_id)
-            elif 5 <= num:
-                return HttpResponse(u'最多只能保存5个')
-            else:
-                for f in f_l:
-                    if str(f.choices) == params:
-                        return HttpResponse(u'已经保存过了')
-                t = UserFilter(user=user, filter_order=num + 1, choices=params, name=name)
-            t.save()
-            return HttpResponse(u'保存成功')
-        elif method == 'rename':
-            f_l = UserFilter.objects.get(id=fid)
-            f_l.choices = params
-            f_l.name = name
-            f_l.save()
-            return HttpResponse(u'修改成功')
-    else:
-
-        flag = 3
-        f_l = get_user_filter(user)
-        dimensions = DimensionChoice.objects.all()
-        return render_to_response("user_shortcut.html", {'f_ls': f_l, 'flag': flag, 'dimensions': dimensions},
-                                  context_instance=RequestContext(request))
-
-
-@login_required
-def del_filter(request, fid):
-    try:
-        u = UserFilter.objects.get(id=fid)
-        u.delete()
-        return HttpResponse(u'1')
-    except:
-        return HttpResponse(u'2')
-
-
-def bid_detail(request, objectid):
-    try:
-        b = Bid.objects.get(id=objectid)
-    except ObjectDoesNotExist:
-        b = BidHis.objects.get(id=objectid)
-    now_date = datetime.datetime.now()
-    yes_time_1 = now_date + datetime.timedelta(days=-1)
-    connection = MySQLdb.connect(host="ddbid2015.mysql.rds.aliyuncs.com", user="django", passwd="ddbid_django1243", db="ddbid_db")
-    cursor = connection.cursor()
-    arr_money = []
-    arr_mount = []
-    arr_day = []
-    if b.platform.id != 13:
-        sql = "select day_id,amount,inv_quantity from t_platform_info_daily where platform_id=%d order by day_id" %(b.platform.id)
-    else:
-        sql = 'select day_id,amount,inv_quantity from t_platform_info_daily where platform_id=10 order by day_id'
-    cursor.execute(sql)
-    cds = cursor.fetchall()
-    i = 0
-    for abc in cds:
-        i += 1
-
-        money = {'money%d' % i: abc[1]}
-        mount = {'amount%d' % i: abc[2]}
-        day = {'day%d' % i: abc[0]}
-        arr_money.append(money)
-        arr_mount.append(mount)
-        arr_day.append(day)
-
-    json_money = json.dumps(arr_money, cls=DjangoJSONEncoder)
-    json_mount = json.dumps(arr_mount, cls=DjangoJSONEncoder)
-    json_day = json.dumps(arr_day, cls=DjangoJSONEncoder)
-    cursor.close()
-    return render_to_response("bid_detail.html",
-                              {'bid': b, 'json_money': json_money, 'json_mount': json_mount, 'json_day': json_day},
-                              context_instance=RequestContext(request))
-
-
-def comb_detail(request, ids):
-    if ids is None:
-        return HttpResponse(u'1')
-    ids = ids.split('&')
-    bids = Bid.objects.filter(id__in=ids)
-    return render_to_response('comb_detail.html', {'bids': bids}, context_instance=RequestContext(request))
-
-
-@login_required
-def shortcut_request(request, objectid):
-    filters = UserFilter.objects.get(id=objectid).choices
-    index_parts = index_loading(None, filters, 1)
-    return render_to_response('search_result.html',
-                              {'results': index_parts.get('results'), 'dimensions': index_parts.get('dimensions'),
-                               'c_results': index_parts.get('c_result'), 'params': filters,
-                               'last_page': index_parts.get('last_page'),
-                               'page_set': index_parts.get('page_set')},
-                              context_instance=RequestContext(request))
-
-
 def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))
 
@@ -708,6 +378,7 @@ def send_smscode(request):
                               )
     print "send phone"
     print opener.open(request).read()
+
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
 
@@ -715,8 +386,9 @@ def index(request):
 def agreement(request):
     us = About_us.objects.all()
     print us[0].address
-    ag = RegistrationAgreement.objects.all()
-    return render_to_response('agreement.html',{'agreement':ag[0].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
+    ag = RegistrationAgreement.objects.filter(name="registration_agreement")
+    print "ag is :",ag
+    return render_to_response('agreement.html',{'agreement':ag[2].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
 
 
 def index_zc(request):
@@ -729,11 +401,223 @@ def index_jf(request):
     print pj
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
-def about(request):
-    return render_to_response('about2.html',{}, context_instance=RequestContext(request))
+def about_us(request):
+    p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
+    p2 = About_us.objects.all()
+    for i in p2:
+        i.hotline
+
+    return render_to_response('about.html',{"p1":p1[0].agreement,"name":p2[0].name, "address":p2[0].address, "zip_code":p2[0].zip_code, "email":p2[0].email, "hotline":p2[0].hotline}, context_instance=RequestContext(request))
 
 def guide(request):
     return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
+@login_required
+def publish(request):
+    user = auth.get_user(request)
+    if request.method == "POST":
+        form = PublishForm(request.POST)
+        f = request.FILES.get('logo', None)
+        if f:
+            extension = os.path.splitext(f.name)[-1]
+            msg = None
+            if f.size > 1048576:
+                msg = u"图片大小不能超过2MB"
+            if (extension not in ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF']) or ('image' not in f.content_type):
+                msg = u"图片格式必须为jpg，png，gif"
+            if msg:
+                return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))   #返回用户信息页面
+
+            im = Image.open(f)
+            im.thumbnail((120, 120))
+            name = 'logo' + storage.get_available_name(str(user.id)) + '.png'
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            logo_url = storage.url(name)
+            print(logo_url)
+        else:
+            msg = u"请上传logo"
+            return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))
+
+
+        f = request.FILES.get('plan', None)
+        if f:
+            extension = os.path.splitext(f.name)[-1]
+            print extension
+            msg = None
+            if f.size > 10485760:
+                msg = u"文件大小不能超过20MB"
+            if (extension not in ['.ppt', '.pptx', '.pdf', '.PPT', '.PPTX', '.PDF']):
+                msg = u"文件格式必须为ppt，pptx，pdf"
+            if msg:
+                return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))
+            plan_url = handle_uploaded_file(f)
+            print plan_url
+        else:
+            msg = u"请上传商业计划书"
+            return render_to_response("publish.html", {'form': form, 'error': msg},
+                                          context_instance=RequestContext(request))
+
+
+        if form.is_valid():
+            cd = form.cleaned_data
+            project = cd['project']
+            introduction = cd['introduction']
+            description = cd['description']
+            category = cd['category']
+            status = cd['status']
+            founder = cd['founder']
+            flag = 0
+            if project is None:
+                form.valiatetype(2)
+                flag =1
+            elif flag != 1 and introduction is None:
+                form.valiatetype(3)
+                flag =1
+            elif flag != 1 and description is None:
+                form.valiatetype(4)
+                flag =1
+            elif flag !=1 and founder is None:
+                form.valiatetype(5)
+                flag =1
+
+            if flag == 1:
+                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+            else:
+                p1 = Project(name=cd['project'],introduction=cd['introduction'],description = cd['description'],category = cd['category'],status = cd['status'],founder = cd['founder'],business_plan_url=plan_url,logo=logo_url)
+                p1.save()
+                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+        else:
+            return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+    else:
+        form = PublishForm()
+
+    return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
+
+def investor_detail(request):
+    return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
+
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
+
+def readmore(request):
+    #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+    search_word = request.GET.get('search_word[]',None)
+    if search_word is not None:
+        if int(search_word) == 2 :
+            results = Project.objects.filter(active=0)
+        elif int(search_word) == 3 :
+            results = Project.objects.filter(status=0)
+        elif int(search_word) == 4 :
+            results = Project.objects.filter(status=1)
+        elif int(search_word) == 5 :
+            results = Project.objects.filter(status=2)
+        elif int(search_word) == 6 :
+            results = Project.objects.filter(status=2)
+        else :
+            results = Project.objects.all()
+    else :
+        print "else else"
+        results = Project.objects.all()
+        return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+
+    ppp = Paginator(results, 5)
+    print "dir issss :%s"%dir(Paginator)
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+    last_page = ppp.page_range[len(ppp.page_range) - 1]
+    page_set = get_pageset(last_page, page)
+    t = get_template('search_result_single.html')
+    print "results isssssss :%s"%results
+    content_html = t.render(
+            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
+
+def investor_info(request, investor):
+    investor=u"大大"
+    p1 = UserInformation.objects.filter(realname=investor)
+    print p1[0].realname, p1[0].position, p1[0].industry, p1[0].authentication_class
+    return render_to_response('investor_intro.html',{"investor_info":p1[0]}, context_instance=RequestContext(request))
+
+def safety(request, objectid):
+    if int(objectid) == 1:
+        name = u"项目风控"
+        ag = RegistrationAgreement.objects.filter(name="wind_control")
+    elif int(objectid) == 2:
+        name = u"资金保障"
+        ag = RegistrationAgreement.objects.filter(name="fund_security")
+    elif int(objectid) == 3:
+        name = u"财务监管系统"
+        ag = RegistrationAgreement.objects.filter(name="financial_supervision")
+    elif int(objectid) == 4:
+        name = u"技术保障"
+        ag = RegistrationAgreement.objects.filter(name="technical_support")
+    return render_to_response('safety.html',{"name":name, "agreement":ag[0].agreement}, context_instance=RequestContext(request))
+
+def intermediary(request, objectid):
+    print objectid,type(objectid)
+    if int(objectid) == 1:
+        file_name = '/root/zc/static/download/融资居间协议.htm'
+    elif int(objectid) == 2:
+        file_name = '/root/zc/static/download/有限合伙协议.htm'
+    elif int(objectid) == 3:
+        file_name = '/root/zc/static/download/投资协议.htm'
+    elif int(objectid) == 4:
+        file_name = '/root/zc/static/download/股权转让协议.htm'
+
+    response = HttpResponse(readFile(file_name))
+    return response
+
+
+def readFile(fn, buf_size=262144):
+    print fn
+    f = open(fn, "rb")
+    while True:
+        c = f.read(buf_size)
+        if c:
+            yield c
+        else:
+            break
+    f.close()
+
+def handle_uploaded_file(f):
+    path = '/root/zc/static/project/'
+    file_name = path + f.name
+    destination = open(file_name, 'wb+')
+    for chunk in f.chunks():
+        destination.write(chunk)
+    destination.close()
+    return file_name
+
+def get_pageset(last_page, pagenum):
+    page_set = []
+    if pagenum <= 3:
+        start = 0
+        end = 6
+    elif pagenum > last_page - 3:
+        start = last_page - 4
+        end = last_page + 1
+    else:
+        start = pagenum - 2
+        end = pagenum + 3
+    for i in range(start, end, 1):
+        if i <= 0:
+            pass
+        elif i > last_page:
+            break
+        else:
+            page_set.append(i)
+    return page_set
