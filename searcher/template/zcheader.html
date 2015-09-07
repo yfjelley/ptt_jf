@@ -24,11 +24,14 @@
 		
 		<ul class="ul8">
     		<li>
-     			<label><input type="text" placeholder="找项目,领头人" /></label>
+     			<label>
+                	<input type="text" style="width:140px;height:17px;" placeholder="找项目,领头人" />
+                    <input type="submit" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />				  				
+				</label>
 				{% ifequal user.id None %}
 				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
 				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
-				{% else %}
+				{% else %}			
 				    <ul id="top_r" class="top_name">
                        <div id="logged">
                           <a id="check_log" style="display: none">1</a>
@@ -42,7 +45,7 @@
                     </ul>
 
                 {% endifequal %}
-			</li>
+			
 		</ul>
 </div>
 

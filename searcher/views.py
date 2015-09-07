@@ -613,6 +613,44 @@ def search(request):
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
+def search_zc(request):
+    #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+    search_word = request.GET.get('search_word[]',None)
+    if search_word is not None:
+        if int(search_word) == 2 :
+            results = Project.objects.filter(active=0)
+        elif int(search_word) == 3 :
+            results = Project.objects.filter(status=0)
+        elif int(search_word) == 4 :
+            results = Project.objects.filter(status=1)
+        elif int(search_word) == 5 :
+            results = Project.objects.filter(status=2)
+        elif int(search_word) == 6 :
+            results = Project.objects.filter(status=2)
+        else :
+            results = Project.objects.all()
+    else :
+        results = Project.objects.all()
+
+    ppp = Paginator(results, 4)
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+    last_page = ppp.page_range[len(ppp.page_range) - 1]
+    page_set = get_pageset(last_page, page)
+    t = get_template('search_result_zc.html')
+    content_html = t.render(
+            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def investor_info(request, investor):
     investor=u"大大"

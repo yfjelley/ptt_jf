@@ -27,7 +27,7 @@ background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right
 .top_name li{ height:30px; line-height:30px; color:#ccc;}
 .top_name li img{ margin-top:3px; float:left; margin-left:15px; width:24px; height:24px;}
 .top_name ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; right:-15px!important;}
-
+.seacher-btn{border:1px solid white; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px}
 
 
 #footer{width:1140px;background-color:#372c3a;height:180px;clear:both;overflow:hidden;margin-top:-5px;margin-left:210px;}

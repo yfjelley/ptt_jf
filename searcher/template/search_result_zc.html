@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    {% if results %}
+        {% for result in results.object_list %}
+       
+	<div class="touzi-content">
+		<ul class="mojing">
+		<li style="position:relative;top:60px">
+				<img src="/static/images/heart.png" />
+			</li>
+			<li style="position:relative;top:38px;left:187px">
+				<img src="/static/images/flag.png" />
+			</li>
+			<li>            
+            	
+                
+                <img src="{{ result.photo_url }}" />				
+			</li>
+			<li>
+				<ul class="Cul1">
+					<div class="wzfudong">
+					<li>
+						<b style="color:#000000">{{result.name}}</b>
+					</li>
+					<li>
+						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><b style="color:#000000;;font-size:12px">{{result.amount}}</b>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已完成</label><b style="color:#000000;;font-size:12px">{{result.finish}}</b>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li style="clear:both">
+					<label style="color:#000000;font-size:12px;margin-left:25px;">{{result.publish}}</label>
+					<label style="color:#000000;;font-size:12px;margin-left:32px;">{{result.category}}</label>
+					</li>
+                    <li style=" position:relative;top:-24px"><img src="/static/images/people.png" /></li>
+					<li style=" position:relative;top:-48px;left:110px;"><img src="/static/images/tag.png" /></li>
+					</div>
+				</ul>
+			</li>
+		</ul>
+	</div>
+        {% endfor %}
+
+    {% else %}
+
+        <a>无符合查询条件的纪录</a>
+    {% endif %}
+</div>
+</body>
+
+</html>

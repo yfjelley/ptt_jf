@@ -8,12 +8,12 @@
 .div_left ul li a{margin-left:18px;font-size:18px;width:100px;}
 .div_left ul li a:hover{border-left:2px solid red;}
 .display{display:none;padding-top:50px;background:#FFFFFF;}
-.display p{font-size:16px;}
+.display p{font-size:16px;width:570px}
 .downline{width:75px;height:1px;background:#ccc;margin-left:17px;}
 .div_right{margin-left:170px;width:653;height:100%;background-color:#FFFFFF;}
 .biaoti{font-size:20px;}
 .con_right{padding-top:50px;background:#FFFFFF;}
-.con_right p{font-size:14px;}
+.con_right p{font-size:16px;}
 .div_left ul{margin-top:40px;}
 .div_left ul li{list-style-type:none;}
 .partner ul{margin-right:5px;}
