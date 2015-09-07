@@ -116,7 +116,6 @@ def writeagreement(request):
 
     name= ['明明','笨笨','芳芳','圆圆','大大','东东']
     position=['中国风险投资公司高级总裁','总裁','总经理']
-    industry = ['软件服务', '通讯', '电子产品','教育培训','市场营销']
     username=random.randint(13521448969,13698766400)
     print "username is :%s"%username
     status=random.randint(0,4)
@@ -127,22 +126,17 @@ def writeagreement(request):
     password = str(username)[2:8]
     realname = random.choice(name)
     position = random.choice(position)
-    industry = random.choice(industry)
 
     new_user = User.objects.create_user(username=username, password=password)
     new_user.save()
 
-    u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=password,realname =realname,position=position,industry=industry,authentication_class=1)
+    u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=password,realname =realname,position=position,cate=random.randint(5,10),authentication_class=random.randint(1,4))
     u.save()
 
     user = User.objects.all()
     #print user
     user=UserInformation.objects.filter(authentication_class=1)
 
-     #游客0 投资人1 资深投资人2 创业者3
-    us = {0:u'游客',1:u'投资人',2:u'资深投资人',3:u'创业者'}
-    #金融在线 0 电子商务1 医疗2 互联网3 社交4
-    ind = {0:u'金融在线',1:u'电子商务',2:u'医疗',3:u'互联网',4:u'社交'}
     for i in user:
         #print i.user
         #print i.position

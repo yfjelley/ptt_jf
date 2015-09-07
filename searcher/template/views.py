@@ -502,6 +502,9 @@ def investor_detail(request):
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
+#def readmore(request):
+    return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+
 def readmore(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     search_word = request.GET.get('search_word[]',None)
@@ -521,9 +524,9 @@ def readmore(request):
     else :
         print "else else"
         results = Project.objects.all()
-        return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+        #return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
 
-    ppp = Paginator(results, 5)
+    ppp = Paginator(results, 20)
     print "dir issss :%s"%dir(Paginator)
     try:
             page = int(request.GET.get('page', '1'))

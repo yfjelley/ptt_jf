@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<body>
+<div class="search_bd" id="result_form">
+    {% if results %}
+        {% for result in results.object_list %}
+
+	    <ul class="Cleft3">
+			<li class="PelPic">
+				<img src="/static/images/uiele_150812_01.png" width="260px;" height="380px;"/>
+			</li>
+			<li class="DesPel">
+				<ul>
+					<li style=" font-weight:bold;font-size:25px;padding:5px 0;margin-left:10px;">
+						{{result.realname}}
+					</li>
+					<li style="padding-top:2px; padding-bottom:18px;font-size:12px;">
+						{{result.position}}
+					</li>
+					<li style=" position:relative;left:-100px;top:-18px">
+						<hr />
+					</li>
+					<li style="position:relative;left:-10px;top:-70px">
+						<hr />
+					</li>
+					<li style="float:left;margin-top:-130px;margin-left:230px">
+						<hr />
+					</li>
+                    <li class="pro-content">
+                    	<ul>
+                            <li>                        	
+                                <label style="font-weight:bold;font-size:14px; margin-left:10px;">
+                                    领投项目
+                                </label>
+                                <label style="margin-left:25px;font-weight:bold;font-size:14px;">
+                                    跟投项目
+                                </label>
+                            </li>
+                            <li>
+                                <label style="padding:0 22px;font-weight:bold;font-size:16px;">
+                                    5
+                                </label>
+                                <label style="padding:0 30px;margin-left:20px;font-weight:bold;font-size:16px;">
+                                    5
+                                </label>
+                            </li>
+                            <li style="padding:15px 0; font-size:12px;">
+                                <label style="margin-left:-15px;">
+                                    关注行业
+                                </label>
+                            </li>
+                            <li style="font-size:12px;margin-left:10px;">
+                                {{result.industry}}
+                            </li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="investPelPic">
+				<img src="/static/images/uiele_150812_02_02.png" width="114px;" height="114px;" />
+			</li>
+		</ul>
+        
+     
+        {% endfor %}
+    {% else %}
+        <a>无符合查询条件的纪录</a>
+    {% endif %}
+    <div class="pages">
+        <a href="javascript:void(0)" class="before"
+           onclick="takepage(1)">《</a>
+        {% if result.has_previous %}
+            <a href="javascript:void(0)"
+               onclick="takepage({{ result.previous_page_number }})">〈</a>
+        {% endif %}
+        {% for page in page_set %}
+            <a href="javascript:void(0)" {% ifequal page result.number %}
+               class="currentpage" {% endifequal %}
+               onclick="takepage({{ page }})">{{ page }} </a>
+        {% endfor %}
+        {% if result.has_next %}
+            <a href="javascript:void(0)"
+               onclick="takepage({{ result.next_page_number }})">〉</a>
+        {% endif %}
+        <a href="javascript:void(0)" class="after"
+           onclick="takepage({{ last_page }})">》</a>
+    </div>
+</div>
+</body>
+
+</html>

@@ -360,12 +360,8 @@ class Project(models.Model):
 
 class About_us(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)#公司名称
-    address = models.CharField(max_length=255, blank=True, null=True)#公司地址
-    hotline = models.CharField(max_length=255, blank=True, null=True)#公司热线
-    zip_code = models.CharField(max_length=255, blank=True, null=True)#邮政编码
-    email = models.CharField(max_length=255, blank=True, null=True)#电子邮件
-    routing = models.CharField(max_length=255, blank=True, null=True)#公交地铁线路
-    phonenumber = models.CharField(max_length=255, blank=True, null=True)#电话
+    description = models.TextField()#公司简介
+
 
 class Partners(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)#公司名称

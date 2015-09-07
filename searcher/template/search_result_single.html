@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>
-<body>
-<div class="search_bd" id="result_form">
     {% if results %}
         {% for result in results.object_list %}
-             <ul class="mojing">
-			<li style="position:absolute;left:348px">
+       
+	<div class="touzi-content">
+		<ul class="mojing">
+		<li style="position:relative;top:60px">
 				<img src="/static/images/heart.png" />
 			</li>
-			<li style="position:absolute;left:532px">
+			<li style="position:relative;top:38px;left:187px">
 				<img src="/static/images/flag.png" />
 			</li>
-			<li>
-				<img src="{{ result.photo_url }}" />
+			<li>            
+            	
+                
+                <img src="{{ result.photo_url }}" />				
 			</li>
 			<li>
 				<ul class="Cul1">
@@ -36,17 +38,19 @@
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style=" position:absolute;top:472px"><img src="/static/images/people.png" /></li>
-					<li style=" position:absolute;left:463px;top:472px;"><img src="/static/images/tag.png" /></li>
 					<li style="clear:both">
 					<label style="color:#000000;font-size:12px;margin-left:25px;">{{result.publish}}</label>
 					<label style="color:#000000;;font-size:12px;margin-left:32px;">{{result.category}}</label>
 					</li>
+                    <li style=" position:relative;top:-24px"><img src="/static/images/people.png" /></li>
+					<li style=" position:relative;top:-48px;left:110px;"><img src="/static/images/tag.png" /></li>
 					</div>
 				</ul>
 			</li>
 		</ul>
+	</div>
         {% endfor %}
+
     {% else %}
 
         <a>无符合查询条件的纪录</a>

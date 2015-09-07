@@ -384,11 +384,10 @@ def index(request):
 
 
 def agreement(request):
-    us = About_us.objects.all()
-    print us[0].address
+
     ag = RegistrationAgreement.objects.filter(name="registration_agreement")
     print "ag is :",ag
-    return render_to_response('agreement.html',{'agreement':ag[2].agreement, 'address':us[0].address}, context_instance=RequestContext(request))
+    return render_to_response('agreement.html',{'agreement':ag[2].agreement}, context_instance=RequestContext(request))
 
 
 def index_zc(request):
@@ -403,16 +402,13 @@ def index_jf(request):
 
 def about_us(request):
     p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
-    p2 = About_us.objects.all()
-    for i in p2:
-        i.hotline
-
-    return render_to_response('about.html',{"p1":p1[0].agreement,"name":p2[0].name, "address":p2[0].address, "zip_code":p2[0].zip_code, "email":p2[0].email, "hotline":p2[0].hotline}, context_instance=RequestContext(request))
+    p2 = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
+    return render_to_response('about.html',{"p1":p1[0].agreement,"description":p2[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
     return render_to_response('guide.html',{}, context_instance=RequestContext(request))
 
-@login_required
+#@login_required
 def publish(request):
     user = auth.get_user(request)
     if request.method == "POST":
@@ -499,10 +495,86 @@ def publish(request):
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
 
+def search_investor(request):
+    #web(1:不限，2：认证资深投资人，3：认证投资人，)
+    #web(4：不限，5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)
+    #sql(1:注册用户,2：认证资深投资人，3：认证投资人，4: 创业者),字段：authentication_class
+    #sql(5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)，字段：cate
+    search_word = request.GET.getlist('search_word[]')
+    print search_word
+    if search_word == [u'1', u'4']:
+        results = UserInformation.objects.all()
+    elif search_word == [u'1', u'5']:
+        results = UserInformation.objects.filter(cate=5)
+    elif search_word == [u'1', u'6']:
+        results = UserInformation.objects.filter(cate=6)
+    elif search_word == [u'1', u'7']:
+        results = UserInformation.objects.filter(cate=7)
+    elif search_word == [u'1', u'8']:
+        results = UserInformation.objects.filter(cate=8)
+    elif search_word == [u'1', u'9']:
+        results = UserInformation.objects.filter(cate=9)
+    elif search_word == [u'1', u'10']:
+        results = UserInformation.objects.filter(cate=10)
+    elif search_word == [u'2', u'4']:
+        results = UserInformation.objects.filter(authentication_class=2)
+    elif search_word == [u'2', u'5']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=5)
+    elif search_word == [u'2', u'6']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=6)
+    elif search_word == [u'2', u'7']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=7)
+    elif search_word == [u'2', u'8']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=8)
+    elif search_word == [u'2', u'9']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=9)
+    elif search_word == [u'2', u'10']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=10)
+    elif search_word == [u'3', u'4']:
+        results = UserInformation.objects.filter(authentication_class=3)
+    elif search_word == [u'3', u'5']:
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=5)
+    elif search_word == [u'3', u'6']:
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=6)
+    elif search_word == [u'3', u'7']:
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=7)
+    elif search_word == [u'3', u'8']:
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=8)
+    elif search_word == [u'3', u'9']:
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=9)
+    elif search_word == [u'3', u'10']:
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=10)
+    else:
+        results = UserInformation.objects.all()
+    print results
+    ppp = Paginator(results, 10)
+
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+    last_page = ppp.page_range[len(ppp.page_range) - 1]
+    page_set = get_pageset(last_page, page)
+    t = get_template('search_result_investor.html')
+    content_html = t.render(
+            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
 def readmore(request):
+    return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+
+def search(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     search_word = request.GET.get('search_word[]',None)
     if search_word is not None:
@@ -519,12 +591,9 @@ def readmore(request):
         else :
             results = Project.objects.all()
     else :
-        print "else else"
         results = Project.objects.all()
-        #return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
 
     ppp = Paginator(results, 20)
-    print "dir issss :%s"%dir(Paginator)
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -536,7 +605,6 @@ def readmore(request):
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_single.html')
-    print "results isssssss :%s"%results
     content_html = t.render(
             RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
     payload = {

@@ -125,11 +125,11 @@ $(function (){
 				<li><div class="downline"></div></li>
 				<li data-pp="chat"><a href="javascript:;" class="grayColor">联系方式</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="clause"><a href="javascript:;" class="grayColor">免责条款</a></li>
+				<li data-pp="clause"><a href="javascript:;" class="grayColor">免费条款</a></li>
 				<li><div class="downline"></div></li>
 				<li data-pp="partner"><a href="javascript:;" class="grayColor">合作伙伴</a></li>
 				<li><div class="downline"></div></li>
-				<li data-pp="media"><a href="javascript:;" class="grayColor">媒体咨询</a></li>
+				<li data-pp="media"><a href="javascript:;" class="grayColor">媒体报道</a></li>
 				<li><div class="downline"></div></li>
 				<li data-pp="joinour"><a href="javascript:;" class="grayColor">加入我们</a></li>
 			</ul>
@@ -139,19 +139,18 @@ $(function (){
 		   <div id="company" class="con_right">
 		         <div >
 					 <div class="biaoti">公司简介</div>
-					 <p>葡萄藤金服务。。。。。。。。。。。。。。。</p>
-					 <p>上海辞达金融。。。。。。。。。。。。。。。。。。。。</p>
+					 <p>{{description|safe}}</p>
 					 <div style="height:270px;"></div>
 				 </div>
 		   </div> 
 		   <div id="chat" class="display">
 		         <div style="width:600px; height:100%;border:1px solid #FFFFFF;overfllow:Hidden;">
 					 <div class="biaoti">联系方式</div>
-					 <p>{{name}}</p>
-					 <p>公司地址：{{address}}</p>
-					 <p>服务热线：{{hotline}}</p>
-					 <p>邮政编码：{{zip_code}}</p>
-					 <p>邮箱地址：{{email}}</p>
+					 <p>上海辞达金融信息服务有限公司</p>
+					 <p>公司地址：上海市闵行区沪闵路7866号莲花国际广场2号楼908室</p>
+					 <p>服务热线：4007091818</p>
+					 <p>邮政编码：201100</p>
+					 <p>邮箱地址：sys@pttjf.com</p>
 					 <div style="width:500px;height:1px;background:#ccc;"></div>
 					 <p><img src="/static/images/subway.png" alt="subway" style="width:30px;height:30px;float:left"/>
 					 地铁一号线（莲花路站下）<br/>公交路线986、3645、126、452莲花路站下</p>
@@ -167,7 +166,7 @@ $(function (){
 				<div>
 					 <div class="biaoti">免责条款</div>
 					 <p><span style="font-size:16px;font-weight:bold;">上海辞达金融服务有限公司</span></p>
-					 <p style="width:570px;color:#333333">{{p1|safe}}</p>
+					 <p style="width:570px;">{{p1|safe}}</p>
 					 <div style="height:270px;"></div>			 
 			   </div>
 		   </div>  
@@ -195,7 +194,7 @@ $(function (){
 			    </div>
 		   </div> 
 		   <div id="media" class="display">
-					 <div class="biaoti">媒体咨询</div>
+					 <div class="biaoti">媒体报道</div>
 					 <p>葡萄藤金服务。。。。。。。。。。。。。。。</p>
 					 <p>上海辞达金融。。。。。。。。。。。。。。。。。。。。</p>
 					 <div style="height:270px;"></div>
