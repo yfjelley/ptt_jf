@@ -139,7 +139,7 @@
 				   <form class="publishform" action="{% url 'publish' %}" method="post"  enctype="multipart/form-data" >
 					   {% csrf_token %}
 					   <ul id="u100">
-						   <li style="padding-bottom:45px;">项目标志</li>
+						   <li style="padding-bottom:45px;">项目标志 &nbsp;&nbsp;</li>
 						   <li class="tpsc"><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a></li>
 						   <li style="position:absolute;left:555px;top:180px;display:none;">64×64px</li>
 						   <li> 
@@ -157,47 +157,47 @@
 				
 						<ul id="u120">
 							<li>
-								<label>项目名称</label>
+								<label>项目名称 &nbsp;&nbsp;</label>
 							</li>
 							{{ form.project }}
 								
 						</ul>
 				         <ul id="u110"> 
 							<li>
-								<label>项目简介</label>
+								<label>项目简介 &nbsp;&nbsp;</label>
 							</li>
 							{{ form.introduction  }}
 						</ul>
 						<ul id="u130">
 							<li>
-								<label>项目描述</label>
+								<label>项目描述 &nbsp;&nbsp;</label>
 							</li>
 								{{ form.description }}
 						</ul>
 				
 						<ul id="u140">
 							<li>
-								<label>行业领域</label>
+								<label>行业领域 &nbsp;&nbsp;</label>
 							</li>
 								{{ form.category }}
 						</ul>
 				
 						<ul id="u150">
 							<li>
-								<label>项目阶段</label>
+								<label>项目阶段 &nbsp;&nbsp;</label>
 							</li>
 								{{ form.status }}
 						</ul>
 				
 						<ul id="u160">
 							<li>
-								<label>项目创始人</label>
+								<label>项目创始人&nbsp;</label>
 							</li>
 								{{ form.founder }}
 						</ul>
 				
 						<ul id="u170">
-								<li><label>商业计划书</label></li>
+								<li><label>商业计划书&nbsp;</label></li>
 								<li>
 								 <a href="javascript:;" class="a-upload">
     	                         <input type="file" name="plan" class="jhs">上传计划书

@@ -25,7 +25,7 @@
 			 <div id="search_list" class="search_list">
 				<div class="serch_term">
 				  <label class="choices" id="choices">
-				  <a class="f1">投资人类别:</a>
+                  <label class="f1">投资人类别:</label>
 				  <a class="btn_blue" href="#" choiceid="1"> 不限</a>
 				  <a href="javascript:void(0)"   choiceid="2">认证资深投资人</a>
 				  <a href="javascript:void(0)"   choiceid="3">认证投资人</a>
@@ -36,7 +36,7 @@
 		    <div id="search_list" class=" search_list">
 				<div class="serch_term">
 				  <label class="choices" id="choices">
-				  <a class="f1">行业类别:</a>
+                  <label class="f1">行业类别:</label>
 				  <a class="btn_blue" href="javascript:void(0)" choiceid="4"> 不限</a>
 				  <a href="javascript:void(0)"   choiceid="5">金融在线</a>
 				  <a href="javascript:void(0)"   choiceid="6">电子商务</a>
@@ -82,12 +82,13 @@
    $(function(){
        checkparam(1,[1,4]);
 	   $('#seatch_norm').find('a').on("click",function(){
-	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
-        var a = getElementsByClassName('btn_blue','choiceid');
-        //alert(a);
-        checkparam(1,a);
+	           $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+               var a = getElementsByClassName('btn_blue','choiceid');
+               checkparam(1,a);
        });
    });
+
+
    function getElementsByClassName(n,m) {
         var el = [],
                 _el = document.getElementsByTagName('*');
@@ -114,7 +115,6 @@
                 }
         );
     }
-
 </script>
 </body>
 </html>

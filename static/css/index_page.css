@@ -1,19 +1,29 @@
 
-.rotate{width:1140px;margin-left:210px;height:3000px; background-color:#eeeef0;}
-.eday-jingxuan{float:left;padding:0 5px;margin:-20px 0px;}
+.rotate{width:1140px;margin-left:210px;height:2400px; background-color:#eeeef0;}
+
 .Cul1{width:180px;height:150px; background-color:#FFFFFF;}
 .Cul1 li{margin-left:-30px; line-height:25px; }
 .input_btt{border:1px solid #FF6600; background:#FF6600;width:200px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
-.search_bd{margin-left:50px;}
-.mojing{margin-left:95px;margin-top:-45px;float:left;}
-.preheat{margin-left:-32px;margin-top:5px;float:left;}
-.manytou{margin-left:-32px;margin-top:-35px;float:left;}
-.manytousucce{margin-left:-32px;margin-top:-35px;float:left;}
-.succeecase{margin-left:-32px;margin-top:-35px;float:left;}
+.mojing{float:left;padding:0 5px;margin:-20px 0px;}
+.search_bd{margin-left:90px;margin-top:-30px;}
 .wzfudong{z-index:1;}
 
-#menu3{height:1000px;width:260px;float:left;}
-#menu4{height:1000px;width:260px;float:left;}
-#menu5{height:1000px;width:260px;float:left}
+
+#owl-demo{width:1140px;height:500px;}
+#owl-demo .item{ position:relative;display:block;}
+#owl-demo img{display:block;width:1140px;height:500px;}
+#owl-demo b{position:absolute;top:100px;left:600px;width:300px;height:204px;;background-color:#000;opacity:.5;filter:alpha(opacity=50);}
+#owl-demo span{position:absolute;top:100px;left:600px;width:300px;color:#fff;}
+
+.owl-pagination{position:absolute;left:0;bottom:10px;width:100%;height:22px;text-align:center;}
+.owl-page{display:inline-block;width:10px;height:10px;margin:0 5px;background-image:url(/static/images/bg15.png);*display:inline;*zoom:1; }
+.owl-pagination .active{width:25px;background-image:url(/static/images/bg16.png);}
+.owl-buttons{display:none;}
+.owl-buttons div{position:absolute;top:120px;width:50px;height:100px;text-indent:-9999px;}
+.owl-prev{background-image:url(/static/images/jiantou4.png); margin-left:120px;}
+.owl-next{background-image:url(/static/images/jiantou5.png);margin-left:940px;}
+.owl-prev:hover{background-image:url(/static/images/jiantou2.png);}
+.owl-next:hover{background-image:url(/static/images/jiantou3.png);}
+
 
 

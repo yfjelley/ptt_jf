@@ -2,21 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="/static/css/readMore.css" />
+
 <link rel="stylesheet" href="/static/css/zcheader.css" />
+<link rel="stylesheet" href="/static/css/readMore.css" />
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
 <script type="text/javascript">
     //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
    $(function(){
-       checkparam(1,2);
+       checkparam(1,{{objectid}});
+	   $('#seatch_norm a:eq({{objectid|add:"-1"}})').addClass("btn_blue");
 	   $('#seatch_norm').find('a').on("click",function(){
-	  // alert(2);
+
 	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
        var a = getElementsByClassName('btn_blue','choiceid');
        checkparam(1,a);
+
        });
    });
+
    function getElementsByClassName(n,m) {
         var el = [],
                 _el = document.getElementsByTagName('*');
@@ -39,7 +43,6 @@
                     search_word: a,
                 },
                 function (data) {
-                    //alert(122222);
                     $('#result_form').html(data.content_html);
                 }
         );
@@ -77,7 +80,7 @@ div.transbox p{color:#FFFFFF; margin:10px 20px}
 				  <label class="choices" id="choices">
 				  <label class="f1">投资人类别:</label>
 				  <a href="#" choiceid="1"> 不限</a>
-				  <a class="btn_blue"  href="javascript:void(0)"   choiceid="2">每日精选</a>
+				  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
 				  <a href="javascript:void(0)"   choiceid="3">预热中</a>
 				  <a href="javascript:void(0)" choiceid="4"> 众筹中</a>
 				  <a href="javascript:void(0)"   choiceid="5">众筹成功</a>
@@ -90,12 +93,35 @@ div.transbox p{color:#FFFFFF; margin:10px 20px}
 	<div class="rotate">	
 		<div id="menu">
 			<div class="search_bd" id="result_form">
-				
+				<div id="menu2">
+					<ul style="margin-top:35px;margin-left:90px;">
+						<li>
+							<label style="font-size:25px; color:#000000;">每日精选</label>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 
 {% include "footer.html" %}
+<script type="text/javascript">
+   $(function(){
+	   $('#seatch_norm').find('a').on("click",function(){
+       investor_info(a);
+       });
+   });
+
+   function investor_info(a) {
+        $.get("{% url 'investor' %}",
+                {
+                    person: a,
+                },
+                function (data) {
+                }
+        );
+    }
+</script>
 
 </body>
 

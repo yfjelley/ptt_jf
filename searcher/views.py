@@ -406,7 +406,9 @@ def about_us(request):
     return render_to_response('about.html',{"p1":p1[0].agreement,"description":p2[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
-    return render_to_response('guide.html',{}, context_instance=RequestContext(request))
+    p2 = About_us.objects.filter(name=u"关于众投")
+    print p2
+    return render_to_response('guide.html',{"description":p2[0].description}, context_instance=RequestContext(request))
 
 #@login_required
 def publish(request):
@@ -546,7 +548,25 @@ def search_investor(request):
        results = UserInformation.objects.filter(authentication_class=3).filter(cate=10)
     else:
         results = UserInformation.objects.all()
-    print results
+    print "xxxxxxxxxxxxxx"
+    """
+    for i in results:
+        print "testxxxxx",i.realname,i.position,i.industry,i.user.username
+        print dir(i.user)
+        print "all leadertttttttttttttttttttttttttttt:%s"%i.user.manager_set.all().count()
+        print "all investortttttttttttttttttttttttttttt:%s"%i.user.investor_set.all().count()
+        p1=Project.objects.all()
+        #print p1
+        print dir(p1)
+        print "xxxxxx"
+        print dir(p1.leader)
+        for i in p1:
+             print dir(i)
+             p2 =  p1.leader.filter(username = i.user.username)
+             print "p2:%s"%p2
+        #print "p1.count:%s"%p1.count
+    """
+    print "ppppp"
     ppp = Paginator(results, 10)
 
     try:
@@ -571,8 +591,11 @@ def search_investor(request):
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
-def readmore(request):
-    return render_to_response('readMore.html',{}, context_instance=RequestContext(request))
+def prodetails(request):
+    return render_to_response('prodetails.html',{}, context_instance=RequestContext(request))
+
+def readmore(request,objectid):
+    return render_to_response('readMore.html',{"objectid":objectid}, context_instance=RequestContext(request))
 
 def search(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
@@ -652,10 +675,10 @@ def search_zc(request):
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
-def investor_info(request, investor):
-    investor=u"大大"
-    p1 = UserInformation.objects.filter(realname=investor)
-    print p1[0].realname, p1[0].position, p1[0].industry, p1[0].authentication_class
+def investor_info(request,objectid):
+    investor=u"%s"%objectid
+    p1 = UserInformation.objects.filter(user=User.objects.filter(username=investor)[0])
+    #print p1[0].realname, p1[0].position, p1[0].industry, p1[0].authentication_class
     return render_to_response('investor_intro.html',{"investor_info":p1[0]}, context_instance=RequestContext(request))
 
 def safety(request, objectid):

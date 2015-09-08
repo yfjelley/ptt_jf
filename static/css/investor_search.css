@@ -19,6 +19,7 @@ outline:0none;
 .choices a {
     margin-right: 15px;
 	color:#000000;
+	text-decoration: none;
 }
 
 .btn_blue {

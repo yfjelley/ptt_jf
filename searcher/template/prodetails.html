@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="/static/css/zcheader.css" />
+<link rel="stylesheet" href="/static/css/prodetails.css">
+<title>项目详情</title>
+<script type="text/javascript" src="/static/js/jquery-1.8.2.min.js"></script>
+<script>
+	$(function(){
+		$("#pro-daohang>ul>li>a").click(function(){
+			$("#pro-daohang li a").css("color","#808080");
+			$(this).css("color","#000");	
+		});
+	
+		$('#pro-daohang').find('li').click(function(){
+				var id =$(this).data('pp');
+				$('#'+id).show().siblings().hide();
+		});
+	});
+</script>
+</head>
+
+<body>
+{% include "zcheader.html" %}
+<div class="pro-content">
+	<div class="pro-contains">
+		<div class="pro-details">
+    		<ul>
+            	<li style="float:left;margin-top:20px;margin-left:-20px">
+                	<img src="/static/images/mojing.jpg" />
+                </li>
+                <li style="float:left">
+                	<ul>
+                		<li class="pro-title">
+                			<label class="mongjing">魔镜在线</label>
+                    		<label class="mongjiangimg"><img src="/static/images/redgou.png" /></label>
+                    		<label class="zczhong">众筹中</label>
+                		</li>
+                        <li class="pro-writing">
+                       		<label>魔镜在线是一款基于大数据的网络助手应用,</label><br />          
+                            <label>提供1对1的购物咨询。搜索找不到的商品</label><br>
+                            <label>我们能帮你找到,不知道什么适合自己?</label><br>
+                            <label>我们帮你推荐</label>
+                        </li>
+                	</ul>
+                </li>
+                <li class="pro-btn" >
+                	<input class="btn-focus" type="button" value="关注"/><br>             
+                	<input class="btn-remind" style="margin-top:5px;" type="button" value="提醒" /><br>                
+                    <input class="btn-lingtou" style="margin-top:5px;" type="button" value="我要领投" /><br>                
+                    <input class="btn-gentou" style="margin-top:-150px;margin-left:412px;" type="button" value="我要跟投" />
+                </li>
+                <li style="margin-top:30px;margin-left:-40px;">               
+                    <label><div style="border-top:1px solid #eeeef0;width:800px;height:1px;"></div></label>                 	
+                </li>
+                <li> 
+                <div id="pro-daohang">
+                               
+                	<ul class="pro-list">
+                		<li data-pp="projianjie" style="float:left">
+                			<a href="javascript:void(0);" style="color:#000;">项目简介</a>
+						</li>
+                		<li style="float:left">
+                			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
+                		</li>
+                       	<li data-pp="temjianjie" style="float:left">
+                			<a href="javascript:void(0);" style="color:#808080;">团队介绍</a>
+						</li>
+                		<li style="float:left">
+                			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
+                		</li>
+                    	<li data-pp="touzi" style="float:left">
+                			<a href="javascript:void(0);" style="color:#808080;">投资预算</a>
+						</li>
+                		<li style="float:left">
+                			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
+                		</li>
+                    	<li data-pp="shangye" style="float:left">
+                			<a href="javascript:void(0);" style="color:#808080;">商业企划书</a>
+						</li>
+                		<li style="float:left">
+                			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
+                		</li>                  
+                    	<li data-pp="qita" style="float:left">
+                			<a href="javascript:void(0);" style="color:#808080;">其他资料</a>
+						</li>
+                		<li style="float:left">
+                			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
+                		</li>
+                  		<li data-pp="protaolun" style="float:left">
+                			<a href="javascript:void(0);" style="color:#808080;">项目讨论</a>
+						</li>               	                   
+					</ul>				
+                </div>
+                </li>
+                <li style="margin-top:60px;">
+                	<label><div style="border-top:1px solid #eeeef0;width:700px;height:1px;"></div></label> 
+                </li>
+                <div class="div-right">
+                	<div id="projianjie">
+                    	<ul style="projianjie-text">
+                        	<li>
+                            	魔镜在线是一款购物咨询类手机软件，你只要在app上告诉客服你想买什么，比如衣服、鞋、包包、墨镜等，
+                                以及一些大致要求（比如价格颜色），客服就会为你进行推荐。你也可以直接发送货品图片，客服会快速帮你寻找同款
+                            </li>
+                        </ul>
+                    </div>
+                
+                
+                <div id="temjianjie" class="display">
+                	<div class="temjianjie-size">
+                		<ul>
+                    		<li>
+                        		现阶段“魔镜在线”主要依靠人工客服提供推荐服务，并通过建立商品内容库和用户数据库，方便客服快速查找相关商品信息，以及根据用户偏好进行高效精准的个性化推荐。
+                        	</li>
+                    	</ul>
+                    </div>
+                </div>
+                
+                <div id="touzi" class="display">
+                	<div class="touzi-size">
+                		<ul>
+                    		<li>
+                        		文字在语言学中指书面语的视觉形式，古代把独体字叫做“文”，把合体字叫做“字”，如今联合起来叫做“文字”，文字的基本个体叫做“字”。在日常生活中，“文字”还可以                                  指书面语、语言、文章、字等。视觉符号形式，突破口语的时间和空间限制。例如汉字、拉丁字母。
+                        	</li>
+                    	</ul>
+                    </div>
+                </div>
+                
+               <div id="shangye" class="display">
+                	<div class="shangye-size">
+                		<ul>
+                    		<li>
+                        		在电子信息传输的初期，人们还采用阿拉伯数字代替汉字传输书面语。这种数字代码可以给任何文字编码。但是汉字因为数量多，需要专门的代码翻译人员才能使用。
+                        	</li>
+                    	</ul>
+                    </div>
+                </div>
+                
+                    <div id="qita" class="display">
+                	<div class="qita-size">
+                		<ul>
+                    		<li>
+                        		人类长期只有口语，用文字记录口语形成的书面语历史很短。系统的语言成为人和禽兽分离的重要工具，文字使人类能进入有历史记录的文明社会。把时空的影像变化转                                   码成视觉可见的符号系统，使后人能通过间接的文字想象出画面，了解历史和学习技术经验。、拉丁字母。
+                        	</li>
+                    	</ul>
+                    </div>
+                </div>
+                
+                    <div id="protaolun" class="display">
+                	<div class="protaolun-size">
+                		<ul>
+                    		<li>
+                        		文字突破口语受到时间和空间的限制，是人类可以在书面语的基础上完整地传承人类的智慧和精神财富，使人类能够完善教育体系，提高自己的智慧，发展科学技术，进入文明社会。
+                        	</li>
+                    	</ul>
+                    </div>
+                </div>
+                          
+               </div>
+            	</ul>    		
+		</div>
+    	<div class="pro-people">
+			<ul>
+            	<li style="float:left;margin-left:-20px;">
+                	<img src="/static/images/newsplogo.png" width="87px;" height="80px;" />
+                </li>
+                <li style="float:left;margin-left:20px;margin-top:5px;">
+                	<label>赵葡萄</label>        
+                </li>
+                <li style="float:left;margin-top:40px;margin-left:-55px;">
+                	 <img src="/static/images/touzi.png" />
+                </li>                
+            </ul>
+            <ul class="pro-touziren" style="clear:both">
+            	<li>
+                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>    
+                </li>
+                <li>
+                	<label>项目发起时间</label>
+                    <label>2015-09-01</label>                    
+                </li>                
+                <li>
+    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+                </li>
+                  <li>
+    				<label>融资计划</label>
+                    <label>100万</label>
+                </li>
+                <li>
+    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+                </li>
+                <li style="float:left;margin-left:-40px;">
+                	<ul>                                        
+                        <li>
+                            <label>出让股份</label>
+                            
+                        </li>
+                        <li style="margin-top:-10px;">
+                            <label>3%</label>                    
+                        </li>
+                        <li style="position:absolute;top:280px;right:470px;">
+                			<label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
+						</li>
+                	</ul>
+                </li>
+              	<li style="float:left;margin-left:-20px;">
+                	<ul>
+                         <li>
+                            <label>投资人数</label>
+                        </li>
+                         <li style="margin-top:-10px;">
+                            <label>18人</label>                    
+                        </li>
+                        <li style="position:absolute;top:280px;right:390px;">
+                            <label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
+                        </li>
+					</ul>
+                </li>
+                <li style="float:left;margin-top:-50px;margin-left:120px;">
+                  	<ul> 
+                         <li>
+                            <label>最低投资额</label>
+                        </li>               
+                         <li style="margin-top:-10px;">
+                            <label>3万</label>                    
+                        </li>
+                        
+                     </ul>
+                </li>
+                <li style="clear:both"></li>
+                 <li>
+                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+				</li>
+                 <li>
+    				<label>预约金额</label>
+                    <label>1500万</label>
+                    <label>完成率150%</label>
+                </li>
+               	<li>
+					<div class="input_btt"></div>
+				</li>
+                <li style="margin-top:10px;">
+    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+                </li>
+                 <li>
+					<label>投资人列表</label>
+				</li>
+            </ul>
+    	</div>
+     </div>
+</div>
+
+
+<!--底部-->
+{% include "footer.html" %}
+</body>
+</html>
