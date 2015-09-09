@@ -33,12 +33,12 @@
                 <li style="float:left">
                 	<ul>
                 		<li class="pro-title">
-                			<label class="mongjing">魔镜在线</label>
+                			<label class="mongjing">{{project.name}}</label>
                     		<label class="mongjiangimg"><img src="/static/images/redgou.png" /></label>
-                    		<label class="zczhong">众筹中</label>
+                    		<label class="zczhong">{{project.status}}</label>
                 		</li>
                         <li class="pro-writing">
-                       		<label>魔镜在线是一款基于大数据的网络助手应用,</label><br />          
+                       		<label>{{project.description}}</label><br />
                             <label>提供1对1的购物咨询。搜索找不到的商品</label><br>
                             <label>我们能帮你找到,不知道什么适合自己?</label><br>
                             <label>我们帮你推荐</label>
@@ -167,7 +167,7 @@
                 	<img src="/static/images/newsplogo.png" width="87px;" height="80px;" />
                 </li>
                 <li style="float:left;margin-left:20px;margin-top:5px;">
-                	<label>赵葡萄</label>        
+                	<label>{{project.leader.all}}</label>
                 </li>
                 <li style="float:left;margin-top:40px;margin-left:-55px;">
                 	 <img src="/static/images/touzi.png" />

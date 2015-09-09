@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
+<a>
     {% if results %}
         {% for result in results.object_list %}
-       
+    <a href="/prodetails/{{result.id}}">
 	<div class="touzi-content">
 		<ul class="mojing">
 		<li style="position:relative;top:60px">
@@ -49,6 +49,7 @@
 			</li>
 		</ul>
 	</div>
+	</a>
         {% endfor %}
 
     {% else %}

@@ -1,6 +1,6 @@
 
 
-#Icontainer{width:1140px; height:1800px;margin-left:210px; background-color:#CCCCCC; }
+#Icontainer{width:1140px; height:1600px;margin-left:210px; background-color:#CCCCCC; }
 
 .Cleft2{background-color:#FFFFFF; float:left;width:1000;height:78px;margin-top:20px; }
 .Ititle li:hover{color:#e1604d; cursor:pointer;}
@@ -13,14 +13,13 @@
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
 .Rlogo img{position:absolute;left:920px;top:70px;}
 
-.Cleft3{background-color:#FFFFFF;width:507px;height:250px;float:left;margin:0 10px; border:1px solid #F00;margin-top:30px;}
+.Cleft3{background-color:#FFFFFF;width:507px;height:250px;float:left;margin:0 10px; margin-top:30px;}
 .Cleft4{background-color:#FFFFFF;width:500px;height:250px; float:left;margin-top:29px; margin-left:580px;}
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
 .PelPic img{margin-left:-60px; margin-top:-40px;}
-.DesPel{margin-top:-320px;margin-left:160px; }
+.DesPel{margin-top:-320px;margin-left:150px; }
 .DesPel li{padding:0 10px;}
-.DesPel hr{border:none;height:45px; border-right:1px solid red; width:1px;}
 .pro-content{margin-top:-120px}
 
 /*·ÖÒ³*/

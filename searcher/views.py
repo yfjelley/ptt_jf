@@ -282,6 +282,9 @@ def platform(request):
     # print(pfs)
     return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
+def userinfo(request):
+
+    return render_to_response("userinfo.html", {}, context_instance=RequestContext(request))
 
 @login_required
 def userinformation(request):
@@ -591,8 +594,10 @@ def search_investor(request):
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
-def prodetails(request):
-    return render_to_response('prodetails.html',{}, context_instance=RequestContext(request))
+def prodetails(request,objectid):
+    p = Project.objects.filter(id=objectid)
+    print "p[0].leader",p[0].leader.all()
+    return render_to_response('prodetails.html',{"project":p[0]}, context_instance=RequestContext(request))
 
 def readmore(request,objectid):
     return render_to_response('readMore.html',{"objectid":objectid}, context_instance=RequestContext(request))
