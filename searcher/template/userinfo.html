@@ -91,7 +91,16 @@ $(function () {
 			$('#prorzmessage').find('li').click(function(){
 				var id=$(this).data('jj');
 				$('#'+id).show().siblings().hide();
-			});						
+			});
+			
+			$("#xieyi-next").click(function(){
+				var flag=$("#fuwuxieyi").is(":checked");
+				if(flag==true){
+					return true;
+				}else{
+					return false;	
+				}
+			})
 	});
 </script>
 </head>
@@ -138,6 +147,8 @@ $(function () {
 	<div class="div_right">
 <!--基本信息-->
 		<div id="basicmessage">
+         <form class="userinfoform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
+             {% csrf_token %}
 			<ul style="float:left" class="Userul">
 				<li>
 					<label style="font-size:30px;">基本信息</label>
@@ -158,7 +169,7 @@ $(function () {
 				<li class="Userli1">
 					<label style="padding:0px;">用户名</label>
 					<label>
-						<input type="text" style="height:35px;width:170px;margin-top:14px;"/>
+						{{ form.nickname }}
 					</label>
 				</li>
                 <li id="checkbox">
@@ -183,95 +194,60 @@ $(function () {
 				</li>
 				<li class="Userli2">
 					<label style="padding:0px;">真实姓名</label>
-					<label>
-						<input type="text" style="height:35px;width:170px;margin-top:10px;"/>
-					</label>					
+						{{ form.realname }}
 				</li>
              
 				<li class="Userli3">
 						<label style="padding:0px">性别</label>
-					<label>
-						<input type="radio" name="sex" value="men" style="margin:20px 0px;"/>男
-					
-						<input type="radio" name="sex" value="women" style="margin:20px 0px;"/>女
-				
-						<input type="radio" name="sex" value="privary" style="margin:20px 0px;"/>保密
-					</label>
+                        {{ form.gender }}
 				</li>
 				<li class="Userli4">
 					<label style="padding:0px">生日</label>
-					<label>			                            					   		                          
-                            <select style="width:60px; height:28px;margin-top:8px;" id="sel_year"></select>年
-                            <select style="width:45px; height:28px;margin-top:8px;" id="sel_month"></select>月
-                            <select style="width:45px; height:28px;margin-top:8px;" id="sel_day"></select>日                                   				
-					</label>
+                        {{ form.birthday }}
 				</li>
 				<li class="Userli5">
 					<label style="padding:0px">邮箱地址</label>
-					<label>
-						<input type="text" style="height:35px;width:100px;margin-top:10px"/>
-					</label>
+                    {{ form.email }}
 				</li>
 				<li class="Userli6">
 					<label style="padding:0px">居住城市</label>
-					<label>
-						<input type="text" style="height:35px;width:100px;margin-top:10px"/>
-					</label>
+                    {{ form.city }}
 				</li>
 				<li class="Userli7">
 					<label style="padding:0px">居住地址</label>
-					<label>
-						<input type="text" style="height:35px; width:280px;margin-top:10px"/>
-					</label>
+                    {{ form.address }}
 				</li>
 				<li class="Userli8">
 					<label style="padding:0px">学历</label>
-					<label>
-						<select style="width:60px;height:28px;margin-top:10px">
-								<option></option>
-							</select>
-					</label>
+                    {{ form.education }}
 				</li>
 				<li class="Userli9">
 					<label style="padding:0px">月收入</label>
-					<label>
-						<select style="width:120px;height:28px;margin-top:15px">
-									<option></option>									
-						</select>
-					</label>
+                    {{ form.monthly_income }}
 				</li>
 				<li class="Userli10">
 					<label style="padding:0px">婚姻状况</label>
-					<label>
-						<input type="radio" name="marry" style="margin:20px 0px"/>已婚
-						<input type="radio" name="marry" style="margin:20px 0px"/>未婚
-						<input type="radio" name="marry" style="margin:20px 0px"/>保密
-					</label>
+                    {{form.marriage}}
 				</li>
 				<li class="Userli11">
 					<label style="padding:0px">微信</label>
-					<label>
-						<input type="text" style="height:35px;width:170px;margin-top:10px"/>
-					</label>
+					{{form.wechat_num}}
 				</li>
 				<li class="Userli12">
 					<label style="padding:0px">QQ</label>
-					<label>
-						<input type="text" style="height:35px;width:170px;margin-top:10px"/>
-					</label>
+                    {{form.qq_num}}
 				</li>
 				<li class="Userli13">
 					<label style="padding:0px">微博</label>
-					<label>
-						<input type="text" style="height:35px;width:170px; margin-top:10px;"/>
-					</label>
+                    {{form.weibo_num}}
 				</li>
 				<li>
 					<label>
-						<input class="button_save" type="button" value="保存"/>
+						<input class="button_save" type="submit" value="保存"/>
 					</label>
 				</li>
 			</ul>
+         </form>
 		</div>
 <!--基本信息 end-->
 	
@@ -719,10 +695,10 @@ $(function () {
                     <label>第十一条 附则</label>
                 </li>
                 <li style="color:#e1604d">
-                    <input type="checkbox" />我已阅并同意该服务条款
+                    <input id="fuwuxieyi" type="checkbox" />我已阅并同意该服务条款
                 </li>
                 <li data-cc="fxts">
-                    <input class="xieyi_button" type="button" value="下一页"/>
+                    <input id="xieyi-next" class="xieyi_button" type="button" value="下一页"/>
                 </li>
                 </ul>
             </ul>
@@ -1139,38 +1115,41 @@ $(function () {
             </div>
             <div style="margin-top:-45px; margin-left:-55px" class="prosonPage2">
                 <div id="xgmm">
+                    <form name="formPW" class="modifyPWform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
                     <ul class="pwdpadding">
                         <li>
                             <label>新密码</label>
-                            <label style="margin-left:15px;"><input type="text" style="width:200px; height:30px;"/></label>
+                            <label style="margin-left:15px;">{{ModfiyPW.password}}</label>
                         </li>
                         <li>
                             <label>确认密码</label>
-                            <label><input type="text" style="width:200px; height:30px;"/></label>
+                            <label>{{ModfiyPW.password2}}</label>
                         </li>
                         <li style="margin-left:70px;">
-                            <label><input type="button" class="resetpwd-btn" value="确认修改"/></label>
+                            <label><input type="submit" class="resetpwd-btn" value="确认修改"/></label>
                         </li>
                     </ul>
+                        </form>
                 </div>
-                <div id="ghsj" class="display">
+                <form  id="ghsj" class="display" action="{% url 'publish' %}" method="post" >
                     <ul class="pwdpadding2">
                         <li>
                             <label>新手机号</label>
-                            <label><input type="text" style="width:200px; height:30px;"/></label>
+                            <label>{{ForgetPW.username}}</label>
                         </li>
                         <li style="float:left">
                             <label>短信验证</label>
-                            <label><input type="text" style="width:200px; height:30px;"/></label>
+                            <label>{{ForgetPW.smscode}}</label>
                             <label></label>
                         </li>
                         <li style="float:left; margin-left:20px;">
                             <label><input type="button"  class="send-btn" value="发送验证码"/></label>
                         </li>
                         <li style="margin-left:70px; clear:both">
-                            <label><input type="button" class="resetpwd-btn" value="确认修改" /></label>
+                            <label><input type="submit" class="resetpwd-btn" value="确认修改" /></label>
                         </li>
-                    </ul>																		
+                    </ul>
+                </form>
                 </div>
             </div>
         </div>
