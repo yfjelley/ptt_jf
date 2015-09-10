@@ -449,6 +449,34 @@ def index_jf(request):
     print pj
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
+def safecenter(request):
+    form = ModfiyPW()
+    t = get_template('safecenter.html')
+    content_html = t.render(
+            RequestContext(request,{'form':form}))
+
+    payload = {
+            'content_html': content_html,
+            'success': True,
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
+def change_phone_number(request):
+    #form = ModfiyPW()
+    form = ForgetPW()
+    t = get_template('changephone.html')
+    content_html = t.render(
+            RequestContext(request,{'form':form}))
+
+    payload = {
+            'content_html': content_html,
+            'success': True,
+        }
+    print "change phone number"
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
+
+
 def about_us(request):
     p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
     p2 = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")

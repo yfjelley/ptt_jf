@@ -14,6 +14,8 @@ urlpatterns = patterns('searcher.views',
     url(r'intermediary/(?P<objectid>\d+)/$', 'intermediary', name='intermediary'),
 
     url(r'^agreement/$',  'agreement', name='agreement'),
+    url(r'^safecenter/$',  'safecenter', name='safecenter'),
+    url(r'^change_phone_number/$',  'change_phone_number', name='change_phone_number'),
     url(r'^guide/$',  'guide', name='guide'),
     url(r'^about_us/$',  'about_us', name='about_us'),
     url(r'^investor/$',  'investor', name='investor'),

@@ -3,6 +3,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>葡萄藤众筹首页</title>
+<script>
+		function pageScroll(){
+		//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+			window.scrollBy(0,-100);
+			//延时递归调用，模拟滚动向上效果
+			scrolldelay = setTimeout('pageScroll()',0);
+			//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和	值可以得到网页的真正的scrollTop值
+			var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+			//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+			if(sTop==0) 
+				clearTimeout(scrolldelay);
+		}
+</script>
 </head>
 <body>
 <div id="container">		
@@ -53,10 +66,10 @@
 		</div>
 	<div id="side">
         <ul class="rightText">
-            <li><a href="#"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服:</label><label style="font-size:10px">4008851234</label></div></a></li>
-            <li><a href="#"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
-            <li><a href="#"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
-            <li  style="border:none;"><a href="javascript:void(0);"><div class="sidetop"><img onclick="goTop()" src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+            <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服:</label><label style="font-size:10px">4008851234</label></div></a></li>
+            <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+            <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
+            <li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop"><img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
     	</ul>
 	</div>
 </div>

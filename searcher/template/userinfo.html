@@ -57,7 +57,10 @@ $(function () {
 
 			$('#anquanzhongxin').find('li').click(function(){
 				var id =$(this).data('dd');
-				$('#'+id).show().siblings().hide();
+				if (id =='xgmm' )
+				{$.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});}
+				else
+				{$.get("/change_phone_number/",function(data){ $('#safe_center').html(data.content_html);});};
 			});
 
 			$('#xiaoxitongzhi').find('li').click(function(){
@@ -103,6 +106,19 @@ $(function () {
 			})
 	});
 </script>
+<script type="text/javascript">
+$(function(){
+    $('#selfcenterclick').click(function(){
+             $.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});
+			});
+	//$('#anquanzhongxin a:eq(1)').click();
+	$('#anquanzhongxin a:eq(1)').click(function(){
+	         alert("xxx");
+             $.get("/change_phone_number/",function(data){ $('#change_phone').html(data.content_html);});
+			});
+	});
+</script>
+
 </head>
 <body>
 <!--头部-->
@@ -129,7 +145,7 @@ $(function () {
 				<a href="javascript:void(0);" style="color:#808080;">投资认证</a>
 			</li>
 			<div class="Prohr"><hr /></div>
-			<li data-pp="selfcenter">
+			<li data-pp="selfcenter" id="selfcenterclick">
 				<a href="javascript:void(0);" style="color:#808080;">安全中心</a>
 			</li>
 			<div class="Prohr"><hr /></div>
@@ -1094,7 +1110,7 @@ $(function () {
 
 <!--安全中心-->			
         <div id="selfcenter" class="display">
-            <div class="ProCenter1" id="anquanzhongxin">
+            <div class="ProCenter1"  id="anquanzhongxin">
                 <ul>
                     <li style="margin-top:-20px; margin-left:-60px">
                         <label style="font-size:30px;">安全中心</label>
@@ -1106,88 +1122,52 @@ $(function () {
                     <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
                     </li>
                     <li style="margin-top:-18px; margin-left:70px" data-dd="ghsj" style="float:left">
-                        <a href="javascript:void(0)"> 更换手机</a>
+                        <laberl id="change">更换手机</laberl>
                     </li>
                     <li style="margin-top:20px; margin-left:-55px;">
                     <div style="width:600px; height:1px; background-color:#D5D5D5;overflow:hidden;"></div>
                     </li>			
                 </ul>
             </div>
-            <div style="margin-top:-45px; margin-left:-55px" class="prosonPage2">
-                <div id="xgmm">
-                    <form name="formPW" class="modifyPWform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
-                    <ul class="pwdpadding">
-                        <li>
-                            <label>新密码</label>
-                            <label style="margin-left:15px;">{{ModfiyPW.password}}</label>
-                        </li>
-                        <li>
-                            <label>确认密码</label>
-                            <label>{{ModfiyPW.password2}}</label>
-                        </li>
-                        <li style="margin-left:70px;">
-                            <label><input type="submit" class="resetpwd-btn" value="确认修改"/></label>
-                        </li>
-                    </ul>
-                        </form>
-                </div>
-                <form  id="ghsj" class="display" action="{% url 'publish' %}" method="post" >
-                    <ul class="pwdpadding2">
-                        <li>
-                            <label>新手机号</label>
-                            <label>{{ForgetPW.username}}</label>
-                        </li>
-                        <li style="float:left">
-                            <label>短信验证</label>
-                            <label>{{ForgetPW.smscode}}</label>
-                            <label></label>
-                        </li>
-                        <li style="float:left; margin-left:20px;">
-                            <label><input type="button"  class="send-btn" value="发送验证码"/></label>
-                        </li>
-                        <li style="margin-left:70px; clear:both">
-                            <label><input type="submit" class="resetpwd-btn" value="确认修改" /></label>
-                        </li>
-                    </ul>
-                </form>
-                </div>
+            <div  style="margin-top:-45px; margin-left:-55px" class="prosonPage2">
+                <div id = "safe_center"></div>
             </div>
         </div>
 <!---安全中心 end-->
 
 <!--消息通知-->
 		<div id="messageinfo" class="display">
-			<div class="ProCenter2" id="xiaoxitongzhi">
-				<ul>
-					<li style="margin-left:-80px; margin-top:-20px;">
-						<label style="font-size:30px;">消息通知</label>
-					</li>
-					<ul style="margin-top:30px; margin-left:-120px">
-					<li data-aa="grxx" style="float:left">
-						<a href="javascript:void(0)">个人信息</a>
-					</li>
-					<li style="float:left">
-						<div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
-					</li>
-					<li data-aa="tz" style="float:left">
-						<a href="javascript:void(0)"> 通知</a>
-					</li>
-					<li style="float:left">
-						<div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
-					</li>
-					<li data-aa="xtxx" style="float:left">
-						<a href="javascript:void(0)"> 系统消息</a>
-					</li>
-                 	<li data-aa="txsz" style="float:left;margin-left:320px;">
-						<a href="javascript:void(0)"> 提醒设置</a>
-					</li>
-                    
-					</ul>
-					<li style="margin-top:70px; margin-left:-65px;">
-						<div style="width:700px;height:1px;background-color:#D5D5D5;overflow:hidden"></div>
-					</li>
-				</ul>
-			</div>
+                <div class="ProCenter2" id="xiaoxitongzhi">
+                    <ul>
+                        <li style="margin-left:-80px; margin-top:-20px;">
+                            <label style="font-size:30px;">消息通知</label>
+                        </li>
+                        <ul style="margin-top:30px; margin-left:-120px">
+                        <li data-aa="grxx" style="float:left">
+                            <a href="javascript:void(0)">个人信息</a>
+                        </li>
+                        <li style="float:left">
+                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
+                        </li>
+                        <li data-aa="tz" style="float:left">
+                            <a href="javascript:void(0)"> 通知</a>
+                        </li>
+                        <li style="float:left">
+                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
+                        </li>
+                        <li data-aa="xtxx" style="float:left">
+                            <a href="javascript:void(0)"> 系统消息</a>
+                        </li>
+                        <li data-aa="txsz" style="float:left;margin-left:320px;">
+                            <a href="javascript:void(0)"> 提醒设置</a>
+                        </li>
+
+                        </ul>
+                        <li style="margin-top:70px; margin-left:-65px;">
+                            <div style="width:700px;height:1px;background-color:#D5D5D5;overflow:hidden"></div>
+                        </li>
+                    </ul>
+                </div>
 			<div class="prosonPage2">
                 <div id="grxx">
                     <ul class="personal-message">

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>安全中心</title>
+<!--安全中心-->
+
+    <form name="formPW" class="modifyPWform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
+    <ul class="pwdpadding">
+        <li>
+            <label>新密码</label>
+            <label style="margin-left:15px;">{{form.password}}</label>
+        </li>
+        <li>
+            <label>确认密码</label>
+            <label>{{form.password2}}</label>
+        </li>
+        <li style="margin-left:70px;">
+            <label><input type="submit" class="resetpwd-btn" value="确认修改"/></label>
+        </li>
+    </ul>
+        </form>
+
+<!---安全中心 end-->
+
+</html>
