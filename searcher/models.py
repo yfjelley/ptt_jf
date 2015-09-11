@@ -328,7 +328,7 @@ class Project(models.Model):
     publish = models.ForeignKey(User,related_name = "publish_set", blank=True, null=True)#项目发布者 可以发布多个项目
     founder =models.CharField(max_length=255, blank=True, null=True)#项目可以有多个创始人
     team = models.CharField(max_length=255, blank=True, null=True)#项目团队一个项目有多个成员
-    leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#领投人
+    leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#只能有一个领投人
     investor = models.ManyToManyField(User, related_name = "investor_set",blank=True, null=True)#跟投人
     name = models.CharField(max_length=255, blank=True, null=True)#项目名称
     logo = models.URLField(max_length=255, blank=True, null=True)#项目标志
@@ -359,7 +359,7 @@ class Project(models.Model):
         db_table = 't_project'
 
 class About_us(models.Model):
-    name = models.CharField(max_length=255, blank=True, null=True)#公司名称
+    name = models.CharField(max_length=255, blank=True, null=True)#名称(公司，关于众筹)
     description = models.TextField()#公司简介
 
 

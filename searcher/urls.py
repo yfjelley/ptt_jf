@@ -28,6 +28,8 @@ urlpatterns = patterns('searcher.views',
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
     url(r'^readmore/(?P<objectid>\d+)/$',  'readmore', name='readmore'),
     url(r'^search/$',  'search', name='search'),
+    url(r'^search_project/$',  'search_project', name='search_project'),
+    url(r'^project/$',  'project', name='project'),
     url(r'^publish/$',  'publish', name='publish'),
     url(r'^investor_detail/$',  'investor_detail', name='investor_detail'),
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
@@ -38,6 +40,7 @@ urlpatterns = patterns('searcher.views',
 urlpatterns += patterns('searcher.views',
    
     url(r'^send_smscode/$',  'send_smscode', name='send_smscode'),
+    url(r'^send_smscode_modify/$',  'send_smscode_modify', name='send_smscode_modify'),
         )
 urlpatterns += patterns('searcher.agreement_views',
 

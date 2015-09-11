@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="/static/css/zcheader.css" />
+<link rel="stylesheet" href="/static/css/readMore.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
+<script type="text/javascript">
+    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+   $(function(){
+       checkparam(1,{{objectid}});
+	   $('#seatch_norm a:eq(0)').addClass("btn_blue");
+	   $('#seatch_norm a:eq(14)').addClass("btn_blue");
+	   $('#seatch_norm').find('a').on("click",function(){
+
+	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+       var a = getElementsByClassName('btn_blue','choiceid');
+       checkparam(1,a);
+
+       });
+   });
+
+   function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+
+   function takepage(n) {
+        checkparam(n);
+   }
+
+   function checkparam(page,a) {
+        $.get("{% url 'search_project' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+</script>
+
+<style type="text/css">
+
+div.transbox
+{
+  width: 300px;
+  height: 204px;
+  margin:30px;
+  background-color:#372c3a;
+  border: 1px solid black;
+  /* for IE */
+  filter:alpha(opacity=60);
+  /* CSS3 standard */
+  opacity:0.6;
+  position:absolute;
+  top:150px;
+  left:730px;  
+}
+div.transbox p{color:#FFFFFF; margin:10px 20px}
+</style>
+
+<title>查看更多</title>
+</head>
+<body>
+	{% include "zcheader.html" %}
+	 <div class="asssd">
+		 <div id="seatch_norm" class="dhclass">
+			<div id="search_list" class="search_list">
+				<div class="serch_term">
+				  <label class="choices" id="choices">
+				  <label class="f1">项目类别:</label>
+				  <a href="#" choiceid="1"> 不限</a>
+				  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
+				  <a href="javascript:void(0)"   choiceid="3">预热中</a>
+				  <a href="javascript:void(0)" choiceid="4"> 众筹中</a>
+				  <a href="javascript:void(0)"   choiceid="5">众筹成功</a>
+				  <a href="javascript:void(0)"   choiceid="6">成功案例</a>
+				  </label>
+				</div>
+			</div>
+            <div id="search_list" class=" search_list">
+                <div class="serch_term">
+                  <label class="choices" id="choices">
+                  <label class="f1">行业类别:</label>
+                  <a class="btn_blue" href="javascript:void(0)" choiceid="14"> 不限</a>
+                  <a href="javascript:void(0)"   choiceid="15">金融在线</a>
+                  <a href="javascript:void(0)"   choiceid="16">电子商务</a>
+                  <a href="javascript:void(0)" choiceid="17"> 医疗</a>
+                  <a href="javascript:void(0)"   choiceid="18">互联网</a>
+                  <a href="javascript:void(0)"   choiceid="19">社交</a>
+                  <a href="javascript:void(0)" choiceid="20"> 生活服务</a>
+                  </label>
+                </div>
+            </div>
+		 </div>	
+	 </div>
+
+	<div class="rotate">	
+		<div id="menu">
+			<div class="search_bd" id="result_form">
+				<div id="menu2">
+					<ul style="margin-top:35px;margin-left:90px;">
+						<li>
+							<label style="font-size:25px; color:#000000;">每日精选</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% include "footer.html" %}
+
+
+</body>
+
+</html>

@@ -24,7 +24,7 @@ from django.template.loader import get_template
 from django.core.files.storage import FileSystemStorage
 from ddbid.settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
-from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPW, ModfiyPW, PublishForm
+from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPWForm, ModfiyPWForm, PublishForm
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
@@ -76,7 +76,7 @@ def login(request):
 
 def forgetpw(request):
     if request.method == 'POST':
-        form = ForgetPW(request.POST)
+        form = ForgetPWForm(request.POST)
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
@@ -100,7 +100,7 @@ def forgetpw(request):
         else:
             return render_to_response('forgetpwd.html', {'form': form}, context_instance=RequestContext(request))
     else:
-        form = ForgetPW()
+        form = ForgetPWForm()
         return render_to_response('forgetpwd.html', {'form': form}, context_instance=RequestContext(request))
 
 def verifycode(request):
@@ -285,7 +285,7 @@ def platform(request):
 @login_required
 def userinfo(request):
     form = UserInformationForm()
-    formPW = ModfiyPW()
+    formPW = ModfiyPWForm()
     """
     if request.method == 'POST':
         form  = UserInformationForm(request.POST)
@@ -400,7 +400,7 @@ def send_smscode(request):
     print phoneNum
     m = hashlib.md5()
     m.update('cs20150727')
-    random_code = random.randint(1000, 9999)
+    random_code = random.randint(100000, 999999)
     dict_code['smscode'] = random_code
     print "the random_code %s" % dict_code
     content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会"%random_code
@@ -417,7 +417,7 @@ def send_smscode(request):
               </Item>
               </Group>
            """ % ("cs20150727", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
-    print data
+
     cookies = urllib2.HTTPCookieProcessor()
     opener = urllib2.build_opener(cookies)
     request = urllib2.Request(
@@ -427,6 +427,45 @@ def send_smscode(request):
                               )
     print "send phone"
     print opener.open(request).read()
+
+def send_smscode_modify(request):
+    phoneNum = request.POST.get('phoneNum', '')
+    user = User.objects.filter(username=int(phoneNum))
+    print "this send smscode modify"
+    print user
+    if not len(user):
+        print "ceshi"
+        m = hashlib.md5()
+        m.update('cs20150727')
+        random_code = random.randint(100000, 999999)
+        dict_code['smscode'] = random_code
+        print "the random_code %s" % dict_code
+        content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会"%random_code
+        print content
+        data = """
+                  <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
+                  <E_Time></E_Time>
+                  <Item>
+                  <Task>
+                  <Recive_Phone_Number>%d</Recive_Phone_Number>
+                  <Content><![CDATA[%s]]></Content>
+                  <Search_ID>111</Search_ID>
+                  </Task>
+                  </Item>
+                  </Group>
+               """ % ("cs20150727", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
+
+        cookies = urllib2.HTTPCookieProcessor()
+        opener = urllib2.build_opener(cookies)
+        request = urllib2.Request(
+                                   url = r'http://userinterface.vcomcn.com/Opration.aspx',
+                                   headers= {'Content-Type':'text/xml'},
+                                   data = data
+                                  )
+        print "send phone"
+        print opener.open(request).read()
+    else:
+        print "xxxxxxxxxxxxxxxxx"
 
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
@@ -450,30 +489,105 @@ def index_jf(request):
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
 def safecenter(request):
-    form = ModfiyPW()
-    t = get_template('safecenter.html')
-    content_html = t.render(
-            RequestContext(request,{'form':form}))
+    if request.method =="POST":
+        form = ModfiyPWForm(request.POST)
 
-    payload = {
-            'content_html': content_html,
-            'success': True,
-        }
-    return HttpResponse(json.dumps(payload), content_type="application/json")
+        if form.is_valid():
+            cd = form.clean()
+            password = cd['password']
+            password2 = cd['password2']
+            print "password",password,password2
+            if int(password) == password2 :
+                user = auth.get_user(request)
+                user.password = password
+                user.save()
+                return HttpResponse("bucune")
+                """
+                t = get_template('sucess.html')
+                content_html = t.render(
+                        RequestContext(request,{'form':form}))
+
+                payload = {
+                        'content_html': content_html,
+                        'success': True,
+                    }
+                return HttpResponse(json.dumps(payload), content_type="application/json")
+              """
+            else:
+
+                t = get_template('success.html')
+                content_html = t.render(
+                        RequestContext(request,{'form':form}))
+
+                payload = {
+                        'content_html': content_html,
+                        'success': True,
+                    }
+                return HttpResponse(json.dumps(payload), content_type="application/json")
+        else:
+            t = get_template('success.html')
+            content_html = t.render(
+                    RequestContext(request,{'form':form}))
+
+            payload = {
+                    'content_html': content_html,
+                    'success': True,
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
+
+    else:
+        form = ModfiyPWForm()
+        t = get_template('safecenter.html')
+        content_html = t.render(
+                RequestContext(request,{'form':form}))
+
+        payload = {
+                'content_html': content_html,
+                'success': True,
+            }
+        return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def change_phone_number(request):
-    #form = ModfiyPW()
-    form = ForgetPW()
-    t = get_template('changephone.html')
-    content_html = t.render(
-            RequestContext(request,{'form':form}))
+    if request.method == "POST":
+        form = ForgetPWForm(request.POST)
+        print form
+        if form.is_valid():
+            cd = form.clean()
+            username = cd['username']
+            _code = dict_code.get('smscode')
+            smscode = cd['smscode']
 
-    payload = {
-            'content_html': content_html,
-            'success': True,
-        }
-    print "change phone number"
-    return HttpResponse(json.dumps(payload), content_type="application/json")
+            print _code ,smscode
+
+            if  _code == int(smscode) :
+                print "11111"
+                user = auth.get_user(request)
+                user.username = username
+                user.save()
+                form.valiatetype(10)
+                return render_to_response('userinfo.html',{"form":form},
+                                      context_instance=RequestContext(request))
+                print "xxx"
+            else:
+                print "else xxxx"
+                form.valiatetype(2)
+                return render_to_response('userinfo.html',{"form":form},
+                                      context_instance=RequestContext(request))
+
+        else:
+            return render_to_response('userinfo.html', {'form': form}, context_instance=RequestContext(request))
+    else:
+        form = ForgetPWForm()
+        t = get_template('changephone.html')
+        content_html = t.render(
+                RequestContext(request,{'form':form}))
+
+        payload = {
+                'content_html': content_html,
+                'success': True,
+            }
+        print "change phone number"
+        return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
 
@@ -676,12 +790,83 @@ def prodetails(request,objectid):
 def readmore(request,objectid):
     return render_to_response('readMore.html',{"objectid":objectid}, context_instance=RequestContext(request))
 
+def project(request):
+    return render_to_response('project.html',{"objectid":[1,14]}, context_instance=RequestContext(request))
+
+
+def search_project(request):
+    #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
+    #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
+    #sql(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
+    search_word = request.GET.getlist('search_word[]')
+    print request
+    print "search_word",search_word
+    if search_word is not None:
+        if int(search_word[1]) == 14:
+            if int(search_word[0]) == 2 :
+                results = Project.objects.filter(active=1)
+            elif int(search_word[0]) == 3 :
+                results = Project.objects.filter(status=0)
+            elif int(search_word[0]) == 4 :
+                results = Project.objects.filter(status=1)
+            elif int(search_word[0]) == 5 :
+                results = Project.objects.filter(status=2)
+            elif int(search_word[0]) == 6 :
+                results = Project.objects.filter(status=2)
+            else :
+                results = Project.objects.all()
+
+        if int(search_word[0]) == 1:
+            if int(search_word[1]) == 15 :
+                results = Project.objects.filter(category=15)
+            elif int(search_word[1]) == 16 :
+                results = Project.objects.filter(category=16)
+            elif int(search_word[1]) == 17 :
+                results = Project.objects.filter(category=17)
+            elif int(search_word[1]) == 18 :
+                results = Project.objects.filter(category=18)
+            elif int(search_word[1]) == 19 :
+                results = Project.objects.filter(category=19)
+            elif int(search_word[1]) == 20 :
+                results = Project.objects.filter(category=20)
+            else :
+                results = Project.objects.all()
+
+        if int(search_word[0]) != 1 and int(search_word[1]) != 14 :
+            results = Project.objects.filter(status=int(search_word[0])).filter(category=int(search_word[1]))
+
+    else :
+        results = Project.objects.all()
+
+    ppp = Paginator(results, 20)
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+    last_page = ppp.page_range[len(ppp.page_range) - 1]
+    page_set = get_pageset(last_page, page)
+    t = get_template('search_result_single.html')
+    content_html = t.render(
+            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
+
 def search(request):
-    #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+    #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
+    #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     search_word = request.GET.get('search_word[]',None)
+    print request
+    print "search_word",search_word
     if search_word is not None:
         if int(search_word) == 2 :
-            results = Project.objects.filter(active=0)
+            results = Project.objects.filter(active=1)
         elif int(search_word) == 3 :
             results = Project.objects.filter(status=0)
         elif int(search_word) == 4 :
@@ -717,24 +902,31 @@ def search(request):
 
 def search_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-    search_word = request.GET.get('search_word[]',None)
+    search_word = request.GET.get('search_word',None)
+    print request
+    print search_word
+    results = None
     if search_word is not None:
         if int(search_word) == 2 :
-            results = Project.objects.filter(active=0)
+            results = Project.objects.filter(active=1).distinct()
         elif int(search_word) == 3 :
-            results = Project.objects.filter(status=0)
+            results_hot = Project.objects.filter(status=0).distinct()
         elif int(search_word) == 4 :
-            results = Project.objects.filter(status=1)
+            results = Project.objects.filter(status=1).distinct()
         elif int(search_word) == 5 :
-            results = Project.objects.filter(status=2)
+            results = Project.objects.filter(status=2).distinct()
         elif int(search_word) == 6 :
-            results = Project.objects.filter(status=2)
+            results = Project.objects.filter(status=2).distinct()
         else :
-            results = Project.objects.all()
+            results = Project.objects.all().distinct()
     else :
-        results = Project.objects.all()
-
-    ppp = Paginator(results, 4)
+        results = Project.objects.all().distinct()
+    if results :
+        print "4444"
+        ppp = Paginator(results, 4)
+    else:
+        ppp = Paginator(results_hot, 8)
+        print "888888"
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:

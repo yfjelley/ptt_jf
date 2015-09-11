@@ -4,15 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>安全中心</title>
 <!--安全中心-->
-
-    <form name="formPW" class="modifyPWform" action="{% url 'userinfo' %}" method="post" >
+    <form name="formPW" class="modifyPWform" action="{% url 'change_phone_number' %}" method="post" >
     <ul class="pwdpadding">
         <li>
             <label>新手机号</label>
             <label style="margin-left:15px;">{{form.username}}</label>
         </li>
-        <li style="float:left; margin-left:20px;">
-                <label><input type="button"  class="send-btn" value="发送验证码"/></label>
+        <li  style="float:left; margin-left:20px;">
+                <label ><input type="button" id ="rulesubmit"  class="send-btn" value="发送验证码"/></label>
         </li>
         <li style="float:left">
             <label>短信验证</label>
@@ -25,5 +24,24 @@
         </form>
 
 <!---安全中心 end-->
+
+<script type="text/javascript">
+$(function(){
+	$("#rulesubmit").click(function(){
+        var username = $("input[name=username]").val();
+            if(username){
+                if (username == {{user.username}}){
+                   alert("请输入不同的手机号码！");
+                }
+                else{
+                    alert(1);
+                    $.post("/send_smscode_modify/", {"phoneNum":username}, function(){});
+                };
+            }
+            else{alert("请输入手机号！");};
+    });
+
+});
+</script>
 
 </html>

@@ -398,7 +398,7 @@ class UserReminderForm(forms.Form):
     checkhk = forms.CheckboxInput(attrs={'class': 'user_checkbox'})
 
 
-class ForgetPW(forms.Form):
+class ForgetPWForm(forms.Form):
     username = forms.CharField(
         required=True,
         label=u"手机号",
@@ -433,8 +433,13 @@ class ForgetPW(forms.Form):
         if a == 2:
             msg = u"验证码错误!"
             self._errors["smscode"] = self.error_class([msg])
+    def valiatetype(self, a):
+        global msg
+        if a == 10:
+            msg = u"修改密码成功!"
+            self._errors["username"] = self.error_class([msg])
 
-class ModfiyPW(forms.Form):
+class ModfiyPWForm(forms.Form):
      password = forms.CharField(
         required=True,
         label=u"密码",
@@ -461,6 +466,22 @@ class ModfiyPW(forms.Form):
             }
         ),
      )
+     def valiatetype(self, a):
+        global msg
+        if a == 2:
+            msg = u"两次输入密码不一致!"
+            self._errors["password2"] = self.error_class([msg])
+     def valiatetype(self, a):
+        global msg
+        if a == 3:
+            msg = u"请重新输入密码!"
+            self._errors["password"] = self.error_class([msg])
+     def valiatetype(self, a):
+        global msg
+        if a == 4:
+            msg = u"密码修改成功!"
+            self._errors["password"] = self.error_class([msg])
+
 cate_choice = (('1', '在线金融',), ('2', '生活服务',),('3', '电子商务',),('4', '医疗',),('5', '互联网',),('6', '社交',),)
 status_choice = (('1', '预热',), ('2', '众筹',),('3', '预热',))
 class PublishForm(forms.Form):

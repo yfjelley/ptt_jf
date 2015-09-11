@@ -1,8 +1,8 @@
 
 
-#Icontainer{width:1140px; height:1600px;margin-left:210px; background-color:#CCCCCC; }
+#Icontainer{width:100%; height:1600px;background-color:#CCCCCC; }
 
-.Cleft2{background-color:#FFFFFF; float:left;width:1000;height:78px;margin-top:20px; }
+.Cleft2{background-color:#FFFFFF; float:left;width:1115px;height:78px;margin-top:20px;margin-left:180px;}
 .Ititle li:hover{color:#e1604d; cursor:pointer;}
 .Ititle2 li:hover{color:#e1604d; cursor:pointer;}
 .Ititle li{padding:0 30px;}
@@ -12,13 +12,13 @@
 .Ititle2 li{padding:0 30px;}
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
 .Rlogo img{position:absolute;left:920px;top:70px;}
-
+.search_bd{width:1150px;;height:1000px;margin-left:-10px;}
 .Cleft3{background-color:#FFFFFF;width:507px;height:250px;float:left;margin:0 10px; margin-top:30px;}
-.Cleft4{background-color:#FFFFFF;width:500px;height:250px; float:left;margin-top:29px; margin-left:580px;}
+
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
-.PelPic img{margin-left:-60px; margin-top:-40px;}
-.DesPel{margin-top:-320px;margin-left:150px; }
+.PelPic img{margin-left:-20px; margin-top:20px; }
+.DesPel{margin-top:-180px;margin-left:150px; }
 .DesPel li{padding:0 10px;}
 .pro-content{margin-top:-120px}
 

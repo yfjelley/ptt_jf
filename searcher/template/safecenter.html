@@ -5,7 +5,7 @@
 <title>安全中心</title>
 <!--安全中心-->
 
-    <form name="formPW" class="modifyPWform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
+    <form id="formPW" class="modifyPWform" action="" method="post"  enctype="multipart/form-data" >
     <ul class="pwdpadding">
         <li>
             <label>新密码</label>
@@ -22,5 +22,12 @@
         </form>
 
 <!---安全中心 end-->
+<script type="text/javascript">
+$(function(){
+    $('#selfcenterclick').click(function(){
+            // $.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});
+			});
+	});
+</script>
 
 </html>
