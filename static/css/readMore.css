@@ -1,10 +1,10 @@
-
-#menu{width:1140px; height:1650px; margin-top:-1px;margin-left:212px;background-color:#eeeef0;}
+.more_content{width:100%;background-color:#eeeef0;}
+#menu{width:1140px; height:1730px; margin-top:-1px;margin-left:100px;background-color:#eeeef0;}
 
 .Cul1{width:180px;height:150px; background-color:#FFFFFF;}
 .Cul1 li{margin-left:-30px; line-height:25px; }
 .input_btt{border:1px solid #FF6600; background:#FF6600;width:200px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
-.mojing{float:left;padding:0 5px;margin:-20px 0px;}
+.mojing{float:left;padding:0 15px;margin:-20px 0px;}
 
 .search_bd{margin-left:125px}
 /*分页*/
@@ -19,19 +19,41 @@
 .bbs_hunt input.bbs_search_btn{ width:47px; height:42px; background:url(../images/search.png) no-repeat 0 0; border:none; cursor:pointer;}
 
 .wzfudong{z-index:1;}
-.asssd{width:1140px;height:90px;margin-left:212px;background:#EEEEF0;}
+/*首页更多精选*/
+.asssd{width:100%;height:90px;background:#EEEEF0;}
 .dhclass{
 position:absolute;
-left:340px;
-top:110px;
+left:240px;
+top:90px;
 border-radius: 5px;
 background:#FFFFFF;
-width:918px;
+width:1040px;
 height:50px;
-margin-right:234px;}
+margin-left:-60px;}
 .search_list{
 padding: 10px 10px;
 overflow: hidden;}
+
+
+/*项目风采*/
+.asssd1{width:100%;height:120px;background:#EEEEF0;}
+.dhclass1{
+position:absolute;
+left:240px;
+top:90px;
+border-radius: 5px;
+background:#FFFFFF;
+width:1040px;
+height:80px;
+margin-left:-60px;}
+.search_list1{
+padding: 10px 10px;
+overflow: hidden;
+
+}
+
+
+
 .fl {
 float: left;
 margin: 0px;

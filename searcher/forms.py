@@ -443,12 +443,12 @@ class ModfiyPWForm(forms.Form):
      password = forms.CharField(
         required=True,
         label=u"密码",
-        error_messages={'required': u'请输入xin密码'},
+        error_messages={'required': u'请输入新密码'},
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"密码",
                 'type': 'password',
-                'name': 'userpassword',
+                #'name': 'userpassword',
                 'class': 'inputxt'
             }
         ),
@@ -456,12 +456,12 @@ class ModfiyPWForm(forms.Form):
      password2 = forms.CharField(
         required=True,
         label=u"确认密码",
-        error_messages={'required': u'再次输入xin密码'},
+        error_messages={'required': u'再次输入新密码'},
         widget=forms.PasswordInput(
             attrs={
                 'placeholder': u"确认密码",
                 'type': 'password',
-                'name': 'userpassword2',
+                #'name': 'userpassword2',
                 'class': 'inputxt'
             }
         ),

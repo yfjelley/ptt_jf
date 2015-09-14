@@ -40,7 +40,7 @@ $(function(){
 		}
 </script>
 <style>
-#side{position:fixed;width:70px;height:350px;right:120px;top:214px; z-index:2}
+#side{position:fixed;width:70px;height:350px;right:190px;top:214px; z-index:2}
 #side ul li{width:70px;height:70px;float:left;position:relative;}
 #side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#fff;font:14px/54px "微软雅黑";overflow:hidden;}
 #side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
@@ -55,7 +55,7 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
 #side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
 #side ul li img{float:left;}
 .rightText li label{color:#000000}
-#lt-div{position:fixed;width:105px; height:338px;left:215px;top:214px;z-index:2}
+#lt-div{position:fixed;width:105px; height:338px;left:160px;top:214px;z-index:2}
 </style>
 
 </head>
@@ -63,7 +63,7 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
 
 
 {% include "zcheader.html" %}
-
+<div class="index_content">
 	<div class="rotate">
 		<!--图片轮播 -->
 		<div id="owl-demo" class="owl-carousel">
@@ -103,20 +103,21 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
 			
 		<div class="zc-content">
         	<ul>
-				<ul style="margin-top:15px;margin-left:55px;">
+				<ul style="margin-top:40px;margin-left:55px;">
 					<li>
-                        <label style="font-size:25px; color:#000000;">每日精选</label>
-                        <label style="position:absolute;left:1170px;top:600px;"><a style="font-size:12px; color:#000000;" href="/readmore/2">更多精选......</a></label>
+
+                        <label style="position:absolute;left:280px;top:595px;font-size:25px;font-weight:bold; color:#000000;">每日精选</label>
+                        <label style="position:absolute;left:1090px;top:605px;"><a style="font-size:12px; color:#000000;" href="/readmore/2">更多每日精选......</a></label>
                     </li>
               	</ul>
-				<div class="search_bd" id="result_form_jingxuan"></div>
+		<div class="search_bd" id="result_form_jingxuan"></div>
 			</ul>
             <ul style="clear:both"></ul>
             <ul>
 				<ul style="margin-top:45px;margin-left:55px;">
 					<li>
-                        <label style="font-size:25px; color:#000000;">预热中</label>
-                        <label style="position:relative;left:740px;top:-10px;"><a style="font-size:12px; color:#000000;" href="/readmore/3">更多精选......</a></label>
+                        <label style="position:relative;left:-3px;top:15px;font-size:25px; font-weight:bold;color:#000000;">预热中</label>
+                        <label style="position:relative;left:730px;top:15px;"><a style="font-size:12px; color:#000000;" href="/readmore/3">更多预热中......</a></label>
                     </li>
               	</ul>
 				<div class="search_bd" id="result_form_preheat"></div>
@@ -125,8 +126,9 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
             <ul>
 				<ul style="margin-top:45px;margin-left:55px;">
 					<li>
-                        <label style="font-size:25px; color:#000000;">众投中</label>
-                        <label style="position:relative;left:740px;top:-10px;"><a style="font-size:12px; color:#000000;" href="/readmore/4">更多精选......</a></label>
+                    <label style="position:relative;left:-3px;top:15px;font-size:25px; font-weight:bold;color:#000000;">众投中</label>
+                    <label style="position:relative;left:730px;top:15px;"><a style="font-size:12px; color:#000000;" href="/readmore/4">更多众投中......</a></label>
+
                     </li>
               	</ul>
 				<div class="search_bd" id="result_form_manytou"></div>
@@ -136,8 +138,10 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
             <ul>
 				<ul style="margin-top:45px;margin-left:55px;">
 					<li>
-                        <label style="font-size:25px; color:#000000;">众投成功</label>
-                        <label style="position:relative;left:740px;top:-10px;"><a style="font-size:12px; color:#000000;" href="/readmore/5">更多精选......</a></label>
+
+                        <label style="position:relative;left:-3px;top:15px;font-size:25px; font-weight:bold;color:#000000;">众投成功</label>
+                        <label style="position:relative;left:695px;top:15px"><a style="font-size:12px; color:#000000;" href="/readmore/5">更多众投成功......</a></label>
+
                     </li>
               	</ul>
                  <div class="search_bd" id="result_form_manytousucce"></div>
@@ -146,8 +150,10 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
             <ul>
 				<ul style="margin-top:45px;margin-left:55px;">
 					<li>
-                        <label style="font-size:25px; color:#000000;">众投案例</label>
-                        <label style="position:relative;left:740px;top:-10px;"><a style="font-size:12px; color:#000000;" href="/readmore/6">更多精选......</a></label>
+                    <label style="position:relative;left:-3px;top:15px;font-size:25px; font-weight:bold;color:#000000;">众投案例</label>
+
+                        <label style="position:relative;left:695px;top:15px;"><a style="font-size:12px; color:#000000;" href="/readmore/6">更多众投案例......</a></label>
+
                     </li>
               	</ul>
 				<div class="search_bd" id="result_form_succeecase"></div>
@@ -177,8 +183,8 @@ background: none repeat scroll 0% 0% #FFF; z-index:2; position:absolute; right:-
     	</ul>
 	</div>
 		</div>
-
-
+	</div>
+</div>
 {% include "footer.html" %}
 <script>
 	  $(document).ready(function () {

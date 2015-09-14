@@ -75,6 +75,7 @@ def login(request):
                                   context_instance=RequestContext(request))
 
 def forgetpw(request):
+    print "xxxxxxxxxxx"
     if request.method == 'POST':
         form = ForgetPWForm(request.POST)
         if form.is_valid():
@@ -85,11 +86,20 @@ def forgetpw(request):
             user = User.objects.get(username=username)
             pw = user.userinformation.abcdefg
             print type(pw), type(smscode), type(_code)
+            print user ,pw
 
             if pw is not None and _code == int(smscode):
+                print 'index iiff'
                 user = auth.authenticate(username=username, password=pw)
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('index_jf'))
+                if user is not None and user.is_active:
+                    auth.login(request, user)
+                    return HttpResponse(u'登录成功')
+                    #return HttpResponseRedirect(reverse('index_jf'))
+                else:
+                    return HttpResponse(u'输入错误')
+                    #return render_to_response('forgetpwd.html',{"form":form},
+                      #                context_instance=RequestContext(request))
+
 
             else:
                 form.valiatetype(2)
@@ -198,7 +208,7 @@ def register(request):
                 new_user = User.objects.create_user(username=username, password=pwd1)
                 new_user.save()
 
-                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1)
+                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1, authentication_class=u'游客')
                 u.save()
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
@@ -479,42 +489,51 @@ def agreement(request):
 
 
 def index_zc(request):
-    pj = Project.objects.filter(active=1)
-    print pj
+
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
 def index_jf(request):
-    pj = Project.objects.filter(active=1)
-    print pj
+
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
 def safecenter(request):
+    #print "safecenter:", request
     if request.method =="POST":
         form = ModfiyPWForm(request.POST)
-
+        print "POST:",request.POST
+        print form
+        print dir(form)
         if form.is_valid():
-            cd = form.clean()
+            print "form is valid"
+            username = request.user.username
+
+            old_user = User.objects.get(username=username)
+            old_user_info = userinformation.objects.filter(user=old_user)
+            pw = old_user_info.abcdefg
+
+            cd = form.cleaned_data
             password = cd['password']
             password2 = cd['password2']
-            print "password",password,password2
-            if int(password) == password2 :
-                user = auth.get_user(request)
-                user.password = password
-                user.save()
-                return HttpResponse("bucune")
-                """
-                t = get_template('sucess.html')
-                content_html = t.render(
-                        RequestContext(request,{'form':form}))
 
-                payload = {
-                        'content_html': content_html,
-                        'success': True,
-                    }
-                return HttpResponse(json.dumps(payload), content_type="application/json")
-              """
+            if int(password) == int(password2) :
+                user = auth.authenticate(username=username, password=pw)
+                if user is not None and user.is_active:
+                    user.set_password(password)
+                    user.save()
+                    old_user_info.abcdefg = password
+                    old_user_info.save()
+                    t = get_template('success.html')
+                    content_html = t.render(
+                            RequestContext(request,{'form':form}))
+
+                    payload = {
+                            'content_html': content_html,
+                            'success': True,
+                        }
+                    return HttpResponse(json.dumps(payload), content_type="application/json")
+
             else:
-
+                print "is not valid"
                 t = get_template('success.html')
                 content_html = t.render(
                         RequestContext(request,{'form':form}))
@@ -525,6 +544,10 @@ def safecenter(request):
                     }
                 return HttpResponse(json.dumps(payload), content_type="application/json")
         else:
+            print "form error",form.errors
+            print "form is not valid kkkkkk"
+
+            print "xxxxxxxxxxxxxxxx"
             t = get_template('success.html')
             content_html = t.render(
                     RequestContext(request,{'form':form}))
@@ -550,7 +573,6 @@ def safecenter(request):
 def change_phone_number(request):
     if request.method == "POST":
         form = ForgetPWForm(request.POST)
-        print form
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
@@ -567,9 +589,7 @@ def change_phone_number(request):
                 form.valiatetype(10)
                 return render_to_response('userinfo.html',{"form":form},
                                       context_instance=RequestContext(request))
-                print "xxx"
             else:
-                print "else xxxx"
                 form.valiatetype(2)
                 return render_to_response('userinfo.html',{"form":form},
                                       context_instance=RequestContext(request))
@@ -586,7 +606,6 @@ def change_phone_number(request):
                 'content_html': content_html,
                 'success': True,
             }
-        print "change phone number"
         return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
@@ -739,7 +758,6 @@ def search_investor(request):
        results = UserInformation.objects.filter(authentication_class=3).filter(cate=10)
     else:
         results = UserInformation.objects.all()
-    print "xxxxxxxxxxxxxx"
     """
     for i in results:
         print "testxxxxx",i.realname,i.position,i.industry,i.user.username
@@ -799,8 +817,6 @@ def search_project(request):
     #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     #sql(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     search_word = request.GET.getlist('search_word[]')
-    print request
-    print "search_word",search_word
     if search_word is not None:
         if int(search_word[1]) == 14:
             if int(search_word[0]) == 2 :
@@ -862,8 +878,6 @@ def search(request):
     #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
     #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     search_word = request.GET.get('search_word[]',None)
-    print request
-    print "search_word",search_word
     if search_word is not None:
         if int(search_word) == 2 :
             results = Project.objects.filter(active=1)
@@ -903,8 +917,6 @@ def search(request):
 def search_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     search_word = request.GET.get('search_word',None)
-    print request
-    print search_word
     results = None
     if search_word is not None:
         if int(search_word) == 2 :
@@ -922,11 +934,9 @@ def search_zc(request):
     else :
         results = Project.objects.all().distinct()
     if results :
-        print "4444"
         ppp = Paginator(results, 4)
     else:
         ppp = Paginator(results_hot, 8)
-        print "888888"
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:

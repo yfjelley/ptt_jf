@@ -1,10 +1,10 @@
-
-.rotate{width:1140px;margin-left:210px;height:2550px; background-color:#eeeef0;}
+.index_content{width:100%;background-color:#eeeef0;}
+.rotate{width:1200px;height:2620px; background-color:#eeeef0;margin-left:150px;}
 
 .Cul1{width:180px;height:150px; background-color:#FFFFFF;}
 .Cul1 li{margin-left:-30px; line-height:25px; }
 .input_btt{border:1px solid #FF6600; background:#FF6600;width:200px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
-.mojing{float:left;padding:0 5px;margin:-20px 0px;}
+.mojing{float:left;padding:0 5px;margin:-22px 0px;}
 .search_bd{margin-left:90px;margin-top:-30px;}
 .wzfudong{z-index:1;}
 

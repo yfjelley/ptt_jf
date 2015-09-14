@@ -16,7 +16,7 @@
             <label>{{form.password2}}</label>
         </li>
         <li style="margin-left:70px;">
-            <label><input type="submit" class="resetpwd-btn" value="确认修改"/></label>
+            <label><input id ="submit_password" type="button" class="resetpwd-btn" value="确认修改"/></label>
         </li>
     </ul>
         </form>
@@ -24,10 +24,14 @@
 <!---安全中心 end-->
 <script type="text/javascript">
 $(function(){
-    $('#selfcenterclick').click(function(){
-            // $.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});
-			});
+    $('#submit_password').click(function(){
+             var formdata = $("#formPW").serialize();
+             $.post("{% url 'safecenter' %}",
+                     formdata,
+                     function(data){ $('#safe_center').html(data.content_html);}
+                     );
 	});
+});
 </script>
 
 </html>
