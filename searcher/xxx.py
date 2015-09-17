@@ -208,7 +208,7 @@ def register(request):
                 new_user = User.objects.create_user(username=username, password=pwd1)
                 new_user.save()
 
-                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1, authentication_class=u'游客')
+                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1)
                 u.save()
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
@@ -292,7 +292,6 @@ def platform(request):
     # print(pfs)
     return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
-
 @login_required
 def userinfo(request):
     url = None
@@ -352,7 +351,7 @@ def userinfo(request):
 def userinformation(request):
     url = None
     user = auth.get_user(request)
-    flag = 1
+    flag  = 1
     if request.method == 'POST':
         form = UserInformationForm(request.POST)
         f = request.FILES.get('file', None)
@@ -573,8 +572,6 @@ def safecenter(request):
                 'success': True,
             }
         return HttpResponse(json.dumps(payload), content_type="application/json")
-
-
 
 def change_phone_number(request):
     if request.method == "POST":

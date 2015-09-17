@@ -3,7 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>葡萄藤众筹首页</title>
-
+<script>
+$(function(){
+	$("#choose").bind('click change',function(){
+		var name=$(this).val();
+		$("#inptext").attr("value",name);
+	});
+	
+});
+</script>
 </head>
 <body>
 <div id="container">		
@@ -26,7 +34,11 @@
 		<ul class="ul8">
     		<li>
      			<label>
-                	<input type="text" style="width:140px;height:17px;" placeholder="找项目,领头人" />
+                	<select id="choose" class="seacher-sele">
+                    	<option>找项目</option>
+                        <option>领投人</option>
+                    </select>
+                	<input id="inptext" type="text" class="seacher-text" style="width:140px;height:17px;" placeholder="找项目,领头人" value="找项目"/>
                     <input type="submit" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />				  				
 				</label>
 				{% ifequal user.id None %}
@@ -50,6 +62,25 @@
 		</ul>
 </div>
 
-
+<script type="text/javascript">    	
+	    //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
 </body>
 </html>

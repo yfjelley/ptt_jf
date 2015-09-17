@@ -9,7 +9,7 @@
 	    <ul class="Cleft3">
 
 			<li class="PelPic">
-				<img src="/static/images/newsplogo.png" />
+				<img src="{{ result.user.userinformation.photo_url }}" />
 			</li>
 			<li class="DesPel">
 				<ul>
@@ -55,9 +55,11 @@
 					</li>
 				</ul>
 			</li>
+			{% ifequal result.authentication_class|safe  "游客" %}
 			<li style="position:relative;left:360px;top:-295px; overflow:hidden; width:77px; height:49px;">
 				<img src="/static/images/touzi.png" />
 			</li>
+			{% endifequal %}
 				 
 		</ul>
 	    </a>

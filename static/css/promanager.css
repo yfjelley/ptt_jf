@@ -27,7 +27,8 @@ li.Userli13 label{padding-left:42px;}
 .ProChange li{padding:15px 0px;}
 .div_right{ float:left;width:620px;height:800px; margin-top:-34px;}
 .display{display:none}
-
+.touzi_message{width:600px;height:500px;}
+.touzi-class{width:600px;height:50px;}
 .ProChange a{text-decoration:none;font-size:16px;color:#000000;}
 .ProChange a:link,a:visited{border-left-style:solid;border-width:2px;border-color:transparent;}
 .ProChange a:hover{border-color:#e1604d; font-weight:bold;}
@@ -97,7 +98,7 @@ ul{list-style:none;}
 .upload-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px; cursor:pointer}
 .upload-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
 .tzrzrule{margin-top:65px;margin-left:-80px;line-height:25px;}
-.tzrzMessage{margin-top:155px}
+.tzrzMessage{margin-top:155px;width:700px;}
 .tzrzMessage li{line-height:50px}
 .ltrmessage{margin-top:60px; margin-left:-80px;}
 .ltrRzmessage{margin-top:-150px;margin-left:50px; line-height:20px;}

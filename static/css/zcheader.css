@@ -6,7 +6,7 @@ body{margin:0px;}
 
 .ul8 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
 .ul8 a:hover{color:#e1604d;cursor:pointer;}
-.ul8{ margin-top:-40px;font-size:18px;color:#FFFFFF;float:left;margin-left:880px;}
+.ul8{ margin-top:-40px;font-size:18px;color:#FFFFFF;float:left;margin-left:820px;}
 	
 .ul8 .lab3{font-size:12px; color:#999999;}
 
@@ -18,7 +18,7 @@ body{margin:0px;}
 .ul7 a{text-decoration:none;color:#FFFFFF;}
 .ul7 a:hover{color:#e1604d;cursor:pointer;}
 li{list-style:none;}
-.top_name{margin-top:-30px; margin-left:160px;}
+.top_name{margin-top:-30px; margin-left:190px;}
 #top_r li{ float:left; position:relative; margin:0 5px;}
 #top_r li a{color:#ccc;font-size:14px;}
 #top_r li a:hover{ color:#ff0000;}
@@ -28,9 +28,9 @@ background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right
 .top_name li{ height:30px; line-height:30px; color:#ccc;}
 .top_name li img{ margin-top:3px; float:left; margin-left:15px; width:24px; height:24px;}
 .top_name ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; right:-15px!important;}
-.seacher-btn{border:1px solid white; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;position:relative}
-
-
+.seacher-btn{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;position:relative;top:1px;}
+.seacher-text{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;margin-left:-10px;}
+.seacher-sele{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px; height:21px; padding:0px;margin:0px;}
 
 
 

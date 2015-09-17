@@ -8,7 +8,7 @@
 
 .search_bd{margin-left:125px}
 /*分页*/
-.pages{ padding:50px 0 10px 0; text-align:right;clear:both;}
+.pages{ padding:50px 0 10px 0; text-align:right;clear:both;margin-right:40px;}
 .pages a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
 .pages a.before{border-radius:15px 10px 10px 15px;}
 .pages a.after{border-radius:10px 15px 15px 10px;}
@@ -27,12 +27,14 @@ left:240px;
 top:90px;
 border-radius: 5px;
 background:#FFFFFF;
-width:1040px;
+width:1020px;
 height:50px;
-margin-left:-60px;}
+margin-left:-60px; 
+margin-top:20px;}
 .search_list{
 padding: 10px 10px;
-overflow: hidden;}
+overflow: hidden;
+}
 
 
 /*项目风采*/
@@ -43,9 +45,10 @@ left:240px;
 top:90px;
 border-radius: 5px;
 background:#FFFFFF;
-width:1040px;
+width:1020px;
 height:80px;
-margin-left:-60px;}
+margin-left:-60px;
+margin-top:20px;}
 .search_list1{
 padding: 10px 10px;
 overflow: hidden;
