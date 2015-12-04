@@ -1,44 +1,40 @@
 
 
-#div1{background-color:#eeeef0;width:100%; height:730px;}
-
-#div2{width:600px;height:600px;background-color:#FFFFFF;position:absolute;z-index:1;margin-top:50px; margin-left:390px;}
-.div2ul li{line-height:70px;}
-
-.returnul li{line-height:70px;}
-#div1 label{font-size:32px;}
+#div1{background-color:#eeeef0;height:730px;margin:0px auto;max-width:1660px;min-width: 1024px;width:expression(document.body.clientWidth < 1050? "1050px": "auto" );}
+#div2{width:600px;height:600px;background-color:#FFFFFF;z-index:1;margin-top:50px;margin: 0px auto;}
+.sign_title{
+	padding: 20px 0;}
+.sign_title label{font-size:32px;}
 a{text-decoration:none;color:#FFFFFF;}
 a:hover{color:#e1604d}
-.Overhidden{ height:370px;width:520px;overflow-y:hidden;overflow-y:scroll;color:#333333;arrow-color:#333333;track-color:white;font-size:14px; border:1px;}
+.Overhidden{ height:370px;width:520px;overflow-y:hidden;overflow-y:scroll;color:#333333;arrow-color:#333333;track-color:white;font-size:14px; border:1px;margin-left:40px;margin-top:10px;}
+.Overhidden label{font-weight:bold;font-size:16px;}
 ::-webkit-scrollbar {
 	width:8px;
 }
 ::-webkit-scrollbar-track {
-		  background-color:#FFFFFF;
-	} /* 滚动条的滑轨背景颜色 */
+	background-color:#FFFFFF;
+} /* 滚动条的滑轨背景颜色 */
 
-	::-webkit-scrollbar-thumb {
-		  background-color:#999999;
-		  border-radius:3px;-moz-border-raduis:3px;-webkit-border-radius:3px
-	} /* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+	background-color:#999999;
+	border-radius:3px;-moz-border-raduis:3px;-webkit-border-radius:3px
+} /* 滑块颜色 */
 
-	::-webkit-scrollbar-button {
-		  background-color:#999;
-		  border-radius:3px;-moz-border-raduis:3px;-webkit-border-radius:3px
-	} /* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {
+	background-color:#999;
+	border-radius:3px;-moz-border-raduis:3px;-webkit-border-radius:3px
+} /* 滑轨两头的监听按钮颜色 */
 
-	::-webkit-scrollbar-corner {
-		  background-color:#FFFFFF;
-	} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
-	
-	::-webkit-scrollbar {
+::-webkit-scrollbar-corner {
+	background-color:#FFFFFF;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+::-webkit-scrollbar {
 	width:8px;
 }
-
-	
-#div3{font-size:12px;margin-top:15px;}
 li{list-style:none;}
-.return input{color:#FFFFFF;}
-
-
-
+.return_content input[type="button"]{
+	color:#FFFFFF;
+	margin-top:20px;
+}

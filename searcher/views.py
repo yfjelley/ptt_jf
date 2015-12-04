@@ -100,12 +100,10 @@ def forgetpw(request):
                     #return render_to_response('forgetpwd.html',{"form":form},
                       #                context_instance=RequestContext(request))
 
-
             else:
                 form.valiatetype(2)
                 return render_to_response('forgetpwd.html',{"form":form},
                                       context_instance=RequestContext(request))
-
 
         else:
             return render_to_response('forgetpwd.html', {'form': form}, context_instance=RequestContext(request))
@@ -343,9 +341,16 @@ def userinfo(request):
             form = UserInformationForm(instance=user.userinformation)
         except ObjectDoesNotExist:
             form = UserInformationForm()
-            # print(form)
+        #领投项目
+        leader  = Project.objects.filter(leader=user)
+        #跟投项目
+        invest = Project.objects.filter(investor=user)
+        #我发布的项目
+        publish_pr = Project.objects.filter(publish=user)
+        #我关注的项目
+        attention_pr = user.userinformation.attention
 
-    return render_to_response("userinfo.html", {'form': form},
+    return render_to_response("userinfo.html", {'form': form,"leader":leader,"invest":invest,"publish_pr":publish_pr,"attention_pr":attention_pr},
                               context_instance=RequestContext(request))
 
 @login_required
@@ -416,7 +421,7 @@ def send_smscode(request):
     print phoneNum
     m = hashlib.md5()
     m.update('cs20150727')
-    random_code = random.randint(100000, 999999)
+    random_code = random.randint(1000, 9999)
     dict_code['smscode'] = random_code
     print "the random_code %s" % dict_code
     content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会"%random_code
@@ -495,7 +500,6 @@ def agreement(request):
 
 
 def index_zc(request):
-
     return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
 
 def index_jf(request):
@@ -808,14 +812,29 @@ def investor(request):
 
 def prodetails(request,objectid):
     p = Project.objects.filter(id=objectid)
-    print "p[0].leader",p[0].leader.all()
-    return render_to_response('prodetails.html',{"project":p[0]}, context_instance=RequestContext(request))
+    return render_to_response('prodetails.html',{"result":p[0]}, context_instance=RequestContext(request))
 
 def readmore(request,objectid):
     return render_to_response('readMore.html',{"objectid":objectid}, context_instance=RequestContext(request))
 
 def project(request):
     return render_to_response('project.html',{"objectid":[1,14]}, context_instance=RequestContext(request))
+
+def invest_pr(request,objectid):
+    p = Project.objects.get(id=objectid[:-1])
+    print objectid[-1],type(objectid[-1])
+    return render_to_response('invest_pr.html',{"invest_type":int(objectid[-1]),"project":p}, context_instance=RequestContext(request))
+
+def add_attion(request,objectid):
+    t = Project.objects.get(id=objectid)
+    print len(t.click.all()) ,type(t.click.all())
+    click = len(t.click.all()) + 1
+    print request.user
+    t.click.add(request.user)
+    t.save()
+    t = Project.objects.get(id=objectid)
+    print len(t.click.all()) ,type(t.click.all())
+    return HttpResponse(json.dumps({'attion': click}), content_type="application/json")
 
 
 def search_project(request):

@@ -1,3 +1,4 @@
+{% load settingsvalue %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -5,7 +6,7 @@
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <link rel="stylesheet" href="/static/css/prodetails.css">
 <title>项目详情</title>
-<script type="text/javascript" src="/static/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 <script>
 	$(function(){
 		$("#pro-daohang>ul>li>a").click(function(){
@@ -18,6 +19,13 @@
 				$('#'+id).show().siblings().hide();
 		});
 	});
+	function attion_pr(){
+	    {% if user.id %}
+        $.post("/add_attion/"+{{result.id}}+"/",{},function(data){if(data){document.getElementById('click').innerText=data.attion;};});
+        {% else %}
+         alert('请先登录!');
+        {% endif %}
+    }
 </script>
 </head>
 
@@ -25,31 +33,30 @@
 {% include "zcheader.html" %}
 <div class="pro-content">
 	<div class="pro-contains">
+
 		<div class="pro-details">
     		<ul>
             	<li style="float:left;margin-top:20px;margin-left:-20px">
-                	<img src="/static/images/mojing.jpg" />
+                	<img src="{{result.logo}}" />
                 </li>
                 <li style="float:left">
                 	<ul>
                 		<li class="pro-title">
-                			<label class="mongjing">魔镜在线</label>
+                			<label class="mongjing">{{result.name}}</label>
                     		<label class="mongjiangimg"><img src="/static/images/redgou.png" /></label>
-                    		<label class="zczhong">众筹中</label>
+                    		<label class="zczhong" id="click">{{result.click.all|length}}</label>
+
                 		</li>
                         <li class="pro-writing">
-                       		<label>魔镜在线是一款基于大数据的网络助手应用,</label><br />          
-                            <label>提供1对1的购物咨询。搜索找不到的商品</label><br>
-                            <label>我们能帮你找到,不知道什么适合自己?</label><br>
-                            <label>我们帮你推荐</label>
+                       		<label>{{result.introduction}}</label>
                         </li>
                 	</ul>
                 </li>
                 <li class="pro-btn" >
-                	<input class="btn-focus" type="button" value="关注"/><br>             
+                	<input class="btn-focus" type="button" onclick="attion_pr()" value="关注"/><br>
                 	<input class="btn-remind" style="margin-top:5px;" type="button" value="提醒" /><br>                
-                    <input class="btn-lingtou" style="margin-top:5px;" type="button" value="我要领投" /><br>                
-                    <input class="btn-gentou" style="margin-top:-150px;margin-left:412px;" type="button" value="我要跟投" />
+                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" style="margin-top:5px;"  type="button" value="我要领投"/></a><br>
+                    <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" style="margin-top:-150px;margin-left:412px;"  type="button" value="我要跟投" /></a>
                 </li>
                 <li style="margin-top:30px;margin-left:-40px;">               
                     <label><div style="border-top:1px solid #eeeef0;width:800px;height:1px;"></div></label>                 	
@@ -101,8 +108,7 @@
                 	<div id="projianjie">
                     	<ul style="projianjie-text">
                         	<li>
-                            	魔镜在线是一款购物咨询类手机软件，你只要在app上告诉客服你想买什么，比如衣服、鞋、包包、墨镜等，
-                                以及一些大致要求（比如价格颜色），客服就会为你进行推荐。你也可以直接发送货品图片，客服会快速帮你寻找同款
+                            {{result.description}}
                             </li>
                         </ul>
                     </div>
@@ -112,7 +118,7 @@
                 	<div class="temjianjie-size">
                 		<ul>
                     		<li>
-                        		现阶段“魔镜在线”主要依靠人工客服提供推荐服务，并通过建立商品内容库和用户数据库，方便客服快速查找相关商品信息，以及根据用户偏好进行高效精准的个性化推荐。
+                        		{{result.team}}
                         	</li>
                     	</ul>
                     </div>
@@ -122,7 +128,7 @@
                 	<div class="touzi-size">
                 		<ul>
                     		<li>
-                        		文字在语言学中指书面语的视觉形式，古代把独体字叫做“文”，把合体字叫做“字”，如今联合起来叫做“文字”，文字的基本个体叫做“字”。在日常生活中，“文字”还可以                                  指书面语、语言、文章、字等。视觉符号形式，突破口语的时间和空间限制。例如汉字、拉丁字母。
+
                         	</li>
                     	</ul>
                     </div>
@@ -132,7 +138,7 @@
                 	<div class="shangye-size">
                 		<ul>
                     		<li>
-                        		在电子信息传输的初期，人们还采用阿拉伯数字代替汉字传输书面语。这种数字代码可以给任何文字编码。但是汉字因为数量多，需要专门的代码翻译人员才能使用。
+                        		{{result.business_plan_url}}
                         	</li>
                     	</ul>
                     </div>
@@ -142,7 +148,7 @@
                 	<div class="qita-size">
                 		<ul>
                     		<li>
-                        		人类长期只有口语，用文字记录口语形成的书面语历史很短。系统的语言成为人和禽兽分离的重要工具，文字使人类能进入有历史记录的文明社会。把时空的影像变化转                                   码成视觉可见的符号系统，使后人能通过间接的文字想象出画面，了解历史和学习技术经验。、拉丁字母。
+
                         	</li>
                     	</ul>
                     </div>
@@ -152,7 +158,7 @@
                 	<div class="protaolun-size">
                 		<ul>
                     		<li>
-                        		文字突破口语受到时间和空间的限制，是人类可以在书面语的基础上完整地传承人类的智慧和精神财富，使人类能够完善教育体系，提高自己的智慧，发展科学技术，进入文明社会。
+
                         	</li>
                     	</ul>
                     </div>
@@ -164,10 +170,11 @@
     	<div class="pro-people">
 			<ul>
             	<li style="float:left;margin-left:-20px;">
-                	<img src="/static/images/newsplogo.png" width="87px;" height="80px;" />
+
+                	<img src="{{result.publish.userinformation.photo_url}}" width="87px;" height="80px;" />
                 </li>
                 <li style="float:left;margin-left:20px;margin-top:5px;">
-                	<label>赵葡萄</label>        
+                	<label>{{result.publish}}</label>
                 </li>
                 <li style="float:left;margin-top:40px;margin-left:-55px;">
                 	 <img src="/static/images/touzi.png" />
@@ -178,15 +185,15 @@
                 	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>    
                 </li>
                 <li>
-                	<label>项目发起时间</label>
-                    <label>2015-09-01</label>                    
+                	<label>项目发起时间 : </label>
+                    <label>{{result.add_date|date:"Y - n - j" }}</label>
                 </li>                
                 <li>
     				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
                 </li>
                   <li>
-    				<label>融资计划</label>
-                    <label>100万</label>
+    				<label>融资计划 : </label>
+                    <label>{{result.amount}}</label>
                 </li>
                 <li>
     				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
@@ -198,7 +205,7 @@
                             
                         </li>
                         <li style="margin-top:-10px;">
-                            <label>3%</label>                    
+                            <label>{{result.transfer_equity}}%</label>
                         </li>
                         <li style="position:absolute;top:280px;right:470px;">
                 			<label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
@@ -211,7 +218,7 @@
                             <label>投资人数</label>
                         </li>
                          <li style="margin-top:-10px;">
-                            <label>18人</label>                    
+                            <label>{{ result.investor.all|add_filter:result.leader.all }}</label>
                         </li>
                         <li style="position:absolute;top:280px;right:390px;">
                             <label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
@@ -224,7 +231,7 @@
                             <label>最低投资额</label>
                         </li>               
                          <li style="margin-top:-10px;">
-                            <label>3万</label>                    
+                            <label>{{result.inv_min}}</label>
                         </li>
                         
                      </ul>
@@ -235,8 +242,8 @@
 				</li>
                  <li>
     				<label>预约金额</label>
-                    <label>1500万</label>
-                    <label>完成率150%</label>
+                    <label>{{result.finish}}</label>
+                    <label>完成率{% widthratio result.finish result.amount 100 %}%</label>
                 </li>
                	<li>
 					<div class="input_btt"></div>
@@ -245,7 +252,11 @@
     				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
                 </li>
                  <li>
-					<label>投资人列表</label>
+					<label>
+						{% for i in result.investor.all %}
+						        {{i}}
+						{% endfor %}
+					</label>
 				</li>
             </ul>
     	</div>

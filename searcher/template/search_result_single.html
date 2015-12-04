@@ -4,33 +4,27 @@
     {% if results %}
         {% for result in results.object_list %}
 	<a href="/prodetails/{{result.id}}">
-	<div class="touzi-content">
 		<ul class="mojing">
-		<li style="position:relative;top:92px;left:12px;z-index:1">
-
+		<li style="position:relative;top:12px;z-index:1;margin-left:12px;">
 					<img src="/static/images/heart.png" />
-                
 			</li>
-             <div style="position:relative;top:70px;left:12px;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;width:50px;height:18px;">
+             <div style="position:relative;top:-10px;margin-left:10px;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;width:50px;height:18px;">
             <label style="margin-left:20px;font-weight:bold; color:#FFF;">123</label>
              </div>
 			{% ifequal result.active 1 %}
-			<li style="position:relative;top:38px;left:187px">
+			<li style="position:relative;top:-42px;margin-left:186px;">
 				<img src="/static/images/flag.png" />
 			</li>
             {% else %}
-            <li style="position:relative;top:38px;left:187px">
-				<div style="border:0px solid red;width:38px;height:38px;"></div>
+            <li style="position:relative;">
+				<div style="border:0 solid red;width:38px;height:38px;"></div>
 			</li>
 			{% endifequal %}
-			<li>            
-            	
-                
+			<li style="margin-top:-79px;">
                 <img src="{{ result.photo_url }}" />				
 			</li>
 			<li>
 				<ul class="Cul1">
-					<div class="wzfudong">
 					<li>
 						<b style="color:#000000">{{result.name}}</b>
 					</li>
@@ -49,19 +43,17 @@
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 					</li>
-					<li style="clear:both">
-					<label style="color:#000000;font-size:12px;margin-left:25px;">{{result.publish}}</label>
-					<label style="color:#000000;;font-size:12px;margin-left:32px;">{{result.category}}</label>
+					<li>
+						<label style="float:left"><img src="/static/images/people.png" /></label>
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish}}</label>
+						<label style="float:left;margin-left:30px;"><img src="/static/images/tag.png" /></label>
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.category}}</label>
 					</li>
-                    <li style=" position:relative;top:-24px"><img src="/static/images/people.png" /></li>
-					<li style=" position:relative;top:-48px;left:110px;"><img src="/static/images/tag.png" /></li>
-					</div>
 				</ul>
 			</li>
 		</ul>
-	</div>
-		</a>
-        {% endfor %}
+	</a>
+     	{% endfor %}
 
     {% else %}
 
@@ -86,7 +78,4 @@
         <a href="javascript:void(0)" class="after"
            onclick="takepage({{ last_page }})">》</a>
     </div>
-</div>
-</body>
-
 </html>

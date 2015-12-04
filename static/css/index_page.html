@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>葡萄藤众投</title>
+<link rel="stylesheet" href="/static/css/index_page.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+		$(function(){
+		    
+		  
+		/*四秒钟换一张*/
+		var a = 0;
+		$(".btn li").click(function(){	
+		 $(".btn li").removeClass("on");
+		 $(this).addClass("on");
+		 a=$(this).index();
+		 $(".banner li a").hide();
+		
+		 $(".banner li a").eq(a).show();
+		});
+		function sroll(){
+			if(a<2){
+			a++;
+			$("#sp2").show();
+			$("#sp3").show();
+			}else{
+			a=0;
+			}
+		 on();	
+		}
+		var timer=setInterval(sroll,4000);
+		$(".banner,.prev,.next").mouseover(function(){
+		  clearInterval(timer);
+		}).mouseout(function(){
+		  timer=setInterval(sroll,4000);
+		})
+		$(".prev").click(function(){
+			if(a>0){
+				a--;
+				$("#sp2").show();
+			}else{
+				a=2;
+				$("#sp3").show();
+				}
+			on();
+			
+		})
+		$(".next").click(function(){
+			if(a<2){
+			a++;
+			$("#sp2").show();
+			$("#sp3").show();
+			}else {
+				a=0;
+		
+			}
+		  on(); 
+
+		});
+	    
+		$('.box').mouseover(function(){
+            $('.prev,.next').addClass('ho');
+            $('.prev,.next').removeClass('ho1');
+            }).mouseout(function(){
+            $('.prev,.next').addClass('ho1');
+            $('.prev,.next').removeClass('ho');
+        })
+		
+		function on(){
+		 $(".btn li").removeClass("on");
+		 $(".btn li").eq(a).addClass("on");
+		 $(".banner li a").hide();
+		 $(".banner li a").eq(a).show();
+		}	
+	})
+	
+	</script>
+</head>
+<body>
+{% include "zcheader.html" %}
+<div class="index_content">
+
+	<div class="box">
+		<ul class="banner" >
+			<li ><a style="display:block;"><img src="/static/images/zc_banner.png" width="100%"  height="400">
+			<span id="sp1">
+						<label style="font-size:36px; font-weight:bold; margin-left:50px;">葡萄藤众投</label><br />			
+						葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+						葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹.
+						葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+						葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+						葡萄藤众筹葡萄藤众筹葡萄藤众筹葡萄藤众筹
+					
+			</span></a></li>
+			<li ><a style="display:block;"><img src="/static/images/banner2.png" width="100%"  height="400">
+			<span id="sp2" style="display:none">
+            		<label style="font-size:36px; font-weight:bold; color:#933;margin-left:50px;">天天搜贷</label><br />			
+						天天搜贷是中国最专业的第三方P2P网贷垂直智能搜索平台
+                        由上海辞达金融信息服务有限公司精心打造。
+						上海辞达金融信息服务有限公司的创始人及主要研发团队皆来自
+                        于国际知名的IT公司具有多年的商务智能及大数据分析经验
+                        核心人员都是大数据分析方面的专家。
+            </span></a></li>
+			<li ><a style="display:block;" href="http://ddbid.com/activearea/"><img src="/static/images/banner3.png" width="100%" height="400">
+			<span id="sp3" style="display:none">  
+                <label style="font-size:36px; font-weight:bold; color:#C90;margin-left:50px;">葡萄藤金福</label><br />			
+						眼下，对于发展势头很猛的P2P市场，监管层面尚未出台
+                        具体的法律规范，对这一新兴领域的态度仍不明确。对于
+                        大多数大众理财者来说，P2P的高风险性也的确让人“玩不起”。
+                        从这点看，蚂蚁金服、腾讯等互联网公司的取舍，比较巧妙绕
+                        开了可能的政策红线，追求的是在平稳安全的环境中逐步培养用户的在线理财习惯。
+           </span></a></li>
+		</ul>
+		<a class="prev" href="javascript:void(0)"><</a>
+		<a class="next" href="javascript:void(0)">></a>
+	 </div>
+	
+	<div class="zc-content">
+		
+	    <div class="xujgstyle">
+	        <div class="biaotidiv">
+			    <ul>
+					<li class="btstyle">每日精选</li>
+                    <li class="ckgdstyle"><a href="/readmore/2">更多每日精选......</a></li>    
+              	</ul>
+			</div> 	
+		    <div class="search_bd" id="result_form_jingxuan"></div>		
+		</div>        
+   		
+	    <div class="xujgstyle">
+	        <div class="biaotidiv">
+			    <ul>
+					<li class="btstyle">预热中</li>
+                    <li class="ckgdstyle"><a href="/readmore/3">更多预热中......</a></li>    
+              	</ul>
+			</div> 	
+		    <div class="search_bd" id="result_form_preheat"></div>
+		</div>
+            		
+		<div class="xujgstyle">
+	        <div class="biaotidiv">
+			    <ul>
+					<li class="btstyle">众投中</li>
+                    <li class="ckgdstyle"><a href="/readmore/4">更多众投中......</a></li>    
+              	</ul>
+			</div> 	
+		    <div class="search_bd" id="result_form_manytou"></div>
+		</div>
+            			
+		<div class="xujgstyle">
+	        <div class="biaotidiv">
+			    <ul>
+					<li class="btstyle">众投成功</li>
+                    <li class="ckgdstyle"><a href="/readmore/5">更多众投成功......</a></li>    
+              	</ul>
+			</div>	
+		    <div class="search_bd" id="result_form_manytousucce"></div>
+		</div>	
+			      
+		<div class="xujgstyle">
+	        <div class="biaotidiv">
+			    <ul>
+					<li class="btstyle">众投案例</li>
+                    <li class="ckgdstyle"><a href="/readmore/6">更多众投案例......</a></li>    
+              	</ul>
+			</div>
+		    <div class="search_bd" id="result_form_succeecase"></div>
+		</div>	
+	</div>
+	
+	
+</div>
+
+{% include "footer.html" %}
+
+<script type="text/javascript">
+    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+   $(function(){
+       checkparam(1,2);
+       checkparam(1,3);
+       checkparam(1,4);
+       checkparam(1,5);
+       checkparam(1,6);
+   });
+   function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+
+   function takepage(n) {
+        checkparam(n);
+   }
+
+   function checkparam(page,a) {
+        $.get("{% url 'search_zc' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    if (a==2)
+                    {
+                    $('#result_form_jingxuan').html(data.content_html);
+                     };
+                    if (a==3)
+                    {
+                    $('#result_form_preheat').html(data.content_html);
+                     };
+                     if (a==4)
+                    {
+                    $('#result_form_manytou').html(data.content_html);
+                     };
+                     if (a==5)
+                    {
+                    $('#result_form_manytousucce').html(data.content_html);
+                     };
+                     if (a==6)
+                    {
+                    $('#result_form_succeecase').html(data.content_html);
+                     };
+
+                }
+        );
+    }
+</script>
+<script>
+$(document).ready(function(){
+
+	$(".side ul li").hover(function(){
+		$(this).find(".sidebox").stop().animate({"width":"190px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#eeeef0"})	
+	},function(){
+		$(this).find(".sidebox").stop().animate({"width":"70px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#eeeef0"})	
+	});
+	
+});
+</script>
+
+
+<script>
+		function pageScroll(){
+		//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+			window.scrollBy(0,-100);
+			//延时递归调用，模拟滚动向上效果
+			scrolldelay = setTimeout('pageScroll()',0);
+			//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和	值可以得到网页的真正的scrollTop值
+			var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+			//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+			if(sTop==0) 
+				clearTimeout(scrolldelay);
+		}
+</script>
+</body>
+</html>

@@ -25,5 +25,7 @@ def settings_value(name):
 def conf_value(name):
     return getattr(conf, name, "")
 
-
+@register.filter(is_safe=False)
+def add_filter(value, arg):
+    return len(value) + len(arg)
 

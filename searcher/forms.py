@@ -87,6 +87,7 @@ class RegisterForm(forms.Form):
                 'placeholder': u"手机号",
                 'type': 'text',
                 'class': 'inputxt',
+                'ajaxurl': '/register/'
             }
         ),
     )
@@ -128,6 +129,7 @@ class RegisterForm(forms.Form):
                 'type': 'text',
                 'name': 'smscode',
                 'class': 'inputxt',
+                'ajaxurl': '/checksmscode/'
             }
         ),
     )
@@ -142,6 +144,7 @@ class RegisterForm(forms.Form):
                 'type': 'text',
                 'name': 'yzm',
                 'class': 'inputxt',
+                'ajaxurl': '/checkvcode/'
             }
         ),
     )

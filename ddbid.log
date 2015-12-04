@@ -1,3 +1,0 @@
-Mon, 14 Sep 2015 22:00:40 response.py[line:376] WARNING /usr/lib/python2.7/wsgiref/handlers.py:127: DeprecationWarning: Creating streaming responses with `HttpResponse` is deprecated. Use `StreamingHttpResponse` instead if you need the streaming behavior.
-  for data in self.result:
-

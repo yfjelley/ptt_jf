@@ -130,7 +130,12 @@ def writeagreement(request):
     new_user = User.objects.create_user(username=username, password=password)
     new_user.save()
 
-    u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=password,realname =realname,position=position,cate=random.randint(5,10),authentication_class=random.randint(1,4))
+    u = UserInformation(user=new_user, photo_url='/static/upload/default.png', \
+                        abcdefg=password,realname =realname,position=position,\
+                        cate=random.randint(5,10),authentication_class=random.randint(1,4),\
+                        nickname="tom",gender=u"男", birthday="2014-06-15",cellphone=username,\
+                        email="549636@qq.com",city=u"闵行",address=u"上海",\
+                        fans=10)
     u.save()
 
     user = User.objects.all()
@@ -142,9 +147,20 @@ def writeagreement(request):
         #print i.position
         #print i.user.username
         #pr=Project(publish=i.user,photo_url="/root/zc/static/images/mojing.jpg",category=u"生活服务",status=status,active=active)
-        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",amount=200,finish=160,photo_url="/static/images/mojing.jpg",category=u"生活服务",introduction="魔镜在线-您的私人购物助理",)
-        #        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",introduction="魔镜在线-您的私人购物助理",amount=200,finish=160,photo_url="/root/zc/static/images/mojing.jpg",category=u"生活服务")
-        #
+        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",\
+                   amount=200,finish=160,photo_url="/static/images/mojing.jpg",category=u"生活服务",\
+                   introduction=u"您的私人购物助理",team=u"小明，小李，小张，小小，小葛",description=u"墨迹在线墨迹在线墨迹在线",\
+                   leader_inv_min=100000,inv_min=10000,fund_use=u"购物购物购物",\
+                   transfer_equity=10,company=u"辞达金融", url="http://ddbid.com/",patent=u"专利专利专利专利",\
+                   business_plan_url="",Preheat_date="2015-12-22",\
+                   preheat_end_date="2015-12-24",crowd_date="2015-12-25",crowd_end_date="2015-12-28",logo="/static/images/mojing.jpg")
+
+
+        pr.save()
+        #pr=Project.objects.get(id=)
+        pr.leader.add(i.user)
+        pr.investor.add(i.user)
+        pr.click.add(i.user)
         pr.save()
         f = Project.objects.filter(founder="yang").filter(name__contains="筹")
         print "xxxxx",Project.objects.filter(founder="yang").filter(name__contains="筹").count()
@@ -156,8 +172,6 @@ def writeagreement(request):
     ui = UserInformation.objects.filter(authentication_class=2)
     for i in  ui:
         print i.user
-
-
 
     return render_to_response('test.html',{'user':user}, context_instance=RequestContext(request))
 

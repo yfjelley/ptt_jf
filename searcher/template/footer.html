@@ -1,105 +1,93 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站底部</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="baidu-tc-verification" content="fcb12b2cc7f02674c9f8ad1facbdc736" />
+	<link href="{% static 'css/footer.css' %}" rel="stylesheet"/>
+
+	<!--百度统计-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?afdeb5d28fdd744142dbe81b4203efac";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<meta name="baidu-tc-verification" content="fcb12b2cc7f02674c9f8ad1facbdc736" />
 </head>
 
 <body>
 <div id="footer">
-	<ul class="ful">
-		<ul class="ful1">
-			<li>
-				<label>合作伙伴</label>
-				<label style="margin-left:150px;">友情链接</label>
-				<label style="margin-left:145px;">联系我们</label>
-			</li>
-		</ul>
-		<ul class="ful2">
-			<li>
-				<label>
-					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:50px;margin-left:50px;"></div>
-				</label>
-				<label>
-					<div style="border-top:1px solid #e1604d;height:1px;width:180px;margin-top:-2px;margin-left:270px;"></div>
-				</label>
-				<label>
-					<div style="border-top:1px solid #e1604d;height:1px;width:380px;margin-top:-2px;margin-left:480px;"></div>
-				</label>
-			</li>
-		</ul>		
-		<ul class="ful3">
-			<li>
-				<a href="javascript:void(0);">天使客</a>				
-			</li>
-			<li>
-				<a href="javascript:">天使街</a>	
-			</li>
-		</ul>
-		<ul class="ful4">
-			<li>			
-				<a href="javascript:">股权众筹</a>	
-			</li>
-			<li>
-				<a href="javascript:">众筹工坊</a>	
-			</li>
-		</ul>
-		<ul class="ful5">
-			<li>
-				咨询热线:400-000-0000
-			</li>
-		</ul>
-		<ul class="ful6">
-			<li>
-				<a href="javascript:">京东众筹</a>				
-			</li>
-			<li>
-				<a href="javascript:">大家投</a>	
-			</li>
-		</ul>
-		<ul class="ful7">
-			<li>			
-				<a href="javascript:">新金融</a>	
-			</li>
-			<li>
-				<a href="javascript:">&nbsp;P2P理财</a>	
-			</li>
-		</ul>
-		<ul class="ful8">
-			<li>
-				公司邮箱:sys@pttjf.com
-			</li>
-		</ul>
-		<ul class="ful9">
-			<li>
-				<a href="javascript:">众筹之家</a>				
-			</li>
-			<li>
-				<a href="javascript:"></a>
-			</li>
-		</ul>
-		<ul class="ful10">
-			<li>			
-				<a href="javascript:">证券中星</a>	
-			</li>
-			<li>
-				<a href="javascript:">中申网</a>	
-			</li>
-		</ul>
-		<ul class="ful11">
-			<li>
-				公司地址:上海市闵行区沪闵路7866号莲花广场2号楼908室	
-			</li>
-		</ul>
-		<ul class="ful12">
-			<li>
-				<img src="/static/images/8cm.jpg" width="120px;" height="120px;" />
-			</li>
-			<li class="fuldy">
-				<label>订阅号</label>
-			</li>
-		</ul>
-	</ul>
+	<div class="footer_content">
+		<div class="footer_main mauto clearfix">
+			<div class="footer_box f1">
+				<h3>合作伙伴</h3>
+				<div style="border-top:1px solid #e1604d;height:1px;width:185px;margin:10px 0 10px 10%"></div>
+				<dl>
+					<dd>
+						<a href="http://www.aliyun.com/" target="_blank">阿里云</a>
+						<a href="http://www.wangdaizhijia.com/" target="_blank" style="font-family:'Times New Roman'">&nbsp;&nbsp;&nbsp;网贷之家</a>
+					</dd>
+					<dd>
+						<a href="http://www.p2peye.com/" target="_blank">网贷天眼</a>
+						<a href="https://www.rongjutong.com/" target="_blank">融聚通</a>
+					</dd>
+					<dd>
+						<a href="http://www.jnlc.com/" target="_blank">金牛理财网</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="footer_box f1">
+				<h3>友情链接</h3>
+				<div style="border-top:1px solid #e1604d;height:1px;width:185px;margin:10px 0 10px 10%"></div>
+				<dl>
+					<dd>
+						<a href="http://www.yicai.com/" target="_blank">第一财经</a>
+						<a href="http://www.hexun.com/" target="_blank"> 和讯</a>
+					</dd>
+					<dd>
+						<a href="http://if.pedaily.cn/" target="_blank">新金融</a>
+						<a href="http://finance.sina.com.cn/" target="_blank" style="font-family:'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;新浪财经</a>
+					</dd>
+					<dd>
+						<a href="http://insurance.stockstar.com/" target="_blank">证券之星</a>
+						<a href="http://www.zcifc.com/" target="_blank" style="font-family:'Times New Roman'">&nbsp;中申网</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="footer_box f1">
+				<h3 >联系我们</h3>
+				<div style="border-top:1px solid #e1604d;height:1px;width:330px;margin:10px 0 10px 10%"></div>
+				<dl style="padding-left: 11%;color:#FFFFFF;">
+					<dd>
+						咨询热线:400-709-1818
+					</dd>
+					<dd>
+						公司邮箱:service@ddbid.com
+					</dd>
+					<dd>
+						公司地址:上海市沪闵路7866号莲花广场2号楼908室
+					</dd>
+				</dl>
+			</div>
+			<div class="footer_boxImg">
+				<dl>
+					<dd>
+						<img src="/static/images/8cm.jpg" width="100px;" height="100px;" />
+					</dd>
+					<dd class="dyhImg">
+						<label style="color:#FFFFFF;">订阅号</label>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 </html>

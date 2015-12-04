@@ -6,8 +6,10 @@
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <link rel="stylesheet" href="/static/css/promanager.css" />
 <link rel="stylesheet" href="/static/css/btn-change.css" />
+<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="/static/js/jquery-1.8.3.min.js"></script>
 <script src="/static/js/birthday.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#daohang>ul>li>a").click(function(){
@@ -15,6 +17,12 @@ $(function(){
 		$(this).css("color","#000");
 	
 	});
+
+	$("#id_birthday").datepicker({changeYear: true,
+		changeMonth: true,
+		dateFormat: 'yy-mm-dd',
+		yearRange:"1900:2015"});
+    $("#save_success").click(function(){alert("保存成功！");});
 });
 </script>
 <script>
@@ -141,6 +149,7 @@ $(function () {
 	
 			$('#Prodaohang').find('li').click(function(){
 				var id =$(this).data('qq');
+				alert(id);
 				$('#'+id).show().siblings().hide();
 			});
 			
@@ -192,17 +201,6 @@ $(function(){
              $.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});
 			});
 	});
-	{% if form.username.errors %}
-            {% for error in form.username.errors %}
-                alert('{{ error }}');
-            {% endfor %}
-
-    {% elif form.smscode.errors %}
-            {% for error in form.smscode.errors %}
-                alert('{{ error }}');
-            {% endfor %}
-    {% endif %}
-
 </script>
 
 
@@ -346,7 +344,7 @@ $(function(){
 				</li>
 				<li>
 					<label>
-						<input class="button_save" type="submit" value="保存"/>
+						<input id="save_success" class="button_save" type="submit" value="保存"/>
 					</label>
 				</li>
 			</ul>
@@ -389,15 +387,18 @@ $(function(){
 			</div>
 <!--项目管理:领投项目-->
 			<div class="prosonPage1"><!--定义内容的宽度,高度--->
+
                 <div id="ltxm">
+				{% if leader %}
+			    {% for i in leader %}
                     <ul style="margin-left:-70px;">
                         <li style="float:left;margin-top:10px;">
-                            <img src="/static/images/mojing.jpg" />												
+                            <img src="{{ i.logo }}" />
                         </li>
                         <li>
                             <ul style="margin-top:-60px;padding-top:15px;">										
                                 <li>
-                                    <label style="margin-left:25px;">魔镜在线</label>
+                                    <label style="margin-left:25px;">{{i.name}}</label>
                                 </li>
                                 <li>
                                     <li style="margin-left:210px;">
@@ -409,26 +410,26 @@ $(function(){
                         <li>
                         	<ul style="float:left;padding-left:25px;">
                                 <li>
-                                    <label>融资金额</label><b>150.00万</b>									
+                                    <label>融资金额</label><b>{{i.amount}}</b>
                                 </li>
                                 <li>
-                                    <label>已融资</label><b>0.00万</b>								
+                                    <label>已融资</label><b>{{i.finish}}</b>
                                 </li>
                                 <li>
-                                    <label>完成率</label><b style="color:#CC6633">100%</b>					
+                                    <label>完成率</label><b style="color:#CC6633">{%  widthratio i.finish i.amount 100 %}%</b>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <ul style="float:left">
                                 <li>
-                                    <label>融资金额</label><b>150.00万</b>		
+                                    <label>我已领投</label><b>150.00万</b>
                                 </li>
                                 <li>
-                                    <label>已融资</label><b>0.00万</b>								
+                                    <label>我已跟投</label><b>0.00万</b>
                                 </li>
                                 <li>
-                                    <label>完成率</label><b style="color:#CC6633">100%</b>					
+                                    <label>认筹人数</label><b style="color:#CC6633">100%</b>
                                 </li>
                             </ul>
                         </li>
@@ -449,61 +450,20 @@ $(function(){
                         </li>
                     </ul>
                     <ul style="clear:both"></ul>
-                    <ul style="margin-left:-70px;">					
-                        <li style=" margin-top:30px;">
-                            <img src="/static/images/mojing.jpg" />
-                        </li>
-                        <ul style="margin-top:-135px;">			
-                                <li style="margin-left:210px;">
-                                    <label>黄包车</label>
-                                </li>
-                                <li style="margin-left:210px;">
-                                    <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                </li>
-                         </ul>                    	
-                         <ul style="float:left;margin-left:210px;">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>									
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>
-                         <ul style="float:left">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>		
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>						
-                        <li style="float:left;margin-top:5px;margin-left:-150px;">
-                            <div style="border-right:1px solid #eeeef0;width:1px; height:65px;"></div>
-                        </li>
-                         <li style="float:left;">
-                        	<label style="margin-top:60px;"><img src="/static/images/redgou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">众投完成</label>
-                         </li>
-                         <li style="float:left;">
-                            <label><img src="/static/images/bluegou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">已付款</label>
-                        </li>
-                    </ul>
+				{% endfor %}
+				{% else %}
+				     你没有领投项目！
+				{% endif %}
                 </div>
+
+
+
 <!--项目管理:领投项目 end-->
 
 <!--项目管理:跟投项目-->
                 <div id="gtxm" class="display">
+					{% if invest %}
+			    	{% for i in invest %}
                     <ul style="margin-left:-70px;">
                         <li style="float:left;margin-top:10px;">
                             <img src="/static/images/mojing.jpg" />												
@@ -569,67 +529,18 @@ $(function(){
 						</li>
                     </ul>
                     <ul style="clear:both"></ul>
-                    <ul style="margin-left:-70px;">					
-                        <li style=" margin-top:30px;">
-                            <img src="/static/images/mojing.jpg" />
-                        </li>
-                        <ul style="margin-top:-135px;">			
-                                <li style="margin-left:210px;">
-                                    <label>黄包车</label>
-                                </li>
-                                <li style="margin-left:210px;">
-                                    <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                </li>
-                         </ul>                    	
-                         <ul style="float:left;margin-left:210px;">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>									
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>
-                         <ul style="float:left">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>		
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>						
-                        <li style="float:left;margin-top:5px;margin-left:-150px;">
-                            <div style="border-right:1px solid #eeeef0;width:1px; height:65px;"></div>
-                        </li>
-                         <li style="float:left;">
-                        	<label style="margin-top:60px;"><img src="/static/images/redgou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">众投完成</label>
-                         </li>
-                         <li style="float:left;">
-                            <label><img src="/static/images/bluegou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">已付款</label>
-                        </li>
-                        <li>
-							<label>
-								<input class="gupiao-change" type="button" value="股票转让申请"/>
-							</label>
-						</li>
-                    </ul>
+
+				{% endfor %}
+				{% else %}
+				     你还没有跟投项目！
+				{% endif %}
                 </div>
                 
 <!--项目管理:跟投项目 end-->
 
 <!--项目管理:我的项目-->                
                <div id="wdxm" class="display">
+
                		<ul>
                     	<li>
                         	<label style="text-align:center;">我没有创建的项目</label>
@@ -640,6 +551,8 @@ $(function(){
 
 <!--项目管理:关注项目-->                
                <div id="gzxm" class="display">
+				   	{% if  attention_pr %}
+			    	{% for i in  attention_pr %}
                		   <ul style="margin-left:-70px;">
                         <li style="float:left;margin-top:10px;">
                             <img src="/static/images/mojing.jpg" />												
@@ -698,55 +611,11 @@ $(function(){
 						</li>
                     </ul>
                     <ul style="clear:both"></ul>
-                    <ul style="margin-left:-70px;">					
-                        <li style=" margin-top:30px;">
-                            <img src="/static/images/mojing.jpg" />
-                        </li>
-                        <ul style="margin-top:-135px;">			
-                                <li style="margin-left:210px;">
-                                    <label>黄包车</label>
-                                </li>
-                                <li style="margin-left:210px;">
-                                    <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                </li>
-                         </ul>                    	
-                         <ul style="float:left;margin-left:210px;">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>									
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>
-                         <ul style="float:left">
-                              <li>
-                                  <label>融资金额</label><b>150.00万</b>		
-                              </li>
-                              <li>
-                                  <label>已融资</label><b>0.00万</b>								
-                              </li>
-                              <li>
-                                  <label>完成率</label><b style="color:#CC6633">100%</b>					
-                              </li>
-                         </ul>						
-                        <li style="float:left;margin-top:5px;margin-left:-150px;">
-                            <div style="border-right:1px solid #eeeef0;width:1px; height:65px;"></div>
-                        </li>
-                         <li style="float:left;">
-                        	<label style="margin-top:60px;"><img src="/static/images/redgou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
-                         </li>
-                          <li>
-							<label>
-								<input id="focus-pro2" class="quxiao-attention" type="button" value="取消关注"/>
-							</label>
-						</li>
-                    </ul>
+				{% endfor %}
+				{% else %}
+				     你还没有跟投项目！
+				{% endif %}
+
                </div>
 <!--项目管理:关注项目 end-->       
 			</div>
@@ -1411,10 +1280,10 @@ $(function(){
 				</li>
 				<ul class="giftpadding" style="margin-top:-240px;margin-left:380px;">				
 					<li>
-						<label><input type="text" /></label>				
+						<label><textarea cols="40" rows="2" id="biao1">http://42.96.131.5:8001/</textarea></label>
 					</li>
 					<li >
-						<label><input class="input_butt" type="button" value="一键复制" /></label>
+						<label><input class="input_butt" type="button" onClick="copyUrl()" value="一键复制" /></label>
 					</li>
 				</ul>
 			</ul>
@@ -1427,6 +1296,17 @@ $(function(){
 	</div>
 </div>
 </div>
+ <script type="text/javascript">
+	 function copyUrl()
+	  {
+		  var Url=document.getElementById("biao1");
+		  Url.select(); // 选择对象
+		  document.execCommand("Copy"); // 执行浏览器复制命令
+		  alert("已复制好，可贴粘。");
+	  }
+  </script>
+
+
 
 <!--底部-->
 {% include "footer.html" %}

@@ -330,6 +330,7 @@ class Project(models.Model):
     team = models.CharField(max_length=255, blank=True, null=True)#项目团队一个项目有多个成员
     leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#只能有一个领投人
     investor = models.ManyToManyField(User, related_name = "investor_set",blank=True, null=True)#跟投人
+    click = models.ManyToManyField(User, related_name = "click_set",blank=True, null=True)#关注的人
     name = models.CharField(max_length=255, blank=True, null=True)#项目名称
     logo = models.URLField(max_length=255, blank=True, null=True)#项目标志
     photo_url = models.URLField(max_length=255, blank=True, null=True)#项目宣传图片
@@ -345,7 +346,7 @@ class Project(models.Model):
     company = models.URLField(max_length=255, blank=True, null=True)#注册公司
     url = models.URLField(max_length=255, blank=True, null=True)#公司链接
     patent = models.TextField(blank=True, null=True)#专利
-    business_plan_url = models.CharField(max_length=255,blank=True, null=True)#商业计划书
+    business_plan_url = models.URLField(max_length=255, blank=True, null=True)#商业计划书
     active = models.IntegerField(blank=True, null=True)#是否是精选
     status = models.IntegerField(blank=True, null=True)#进行到什么程度
     add_date = models.DateTimeField('添加时间', auto_now_add=True)

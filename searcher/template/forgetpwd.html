@@ -3,69 +3,75 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>忘记密码</title>
-<link rel="stylesheet" href="/static/css/jinfuheader.css" />
-<link rel="stylesheet" href="/static/css/forgetpwd.css" />
-
-<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/js/forgetpwd.js"></script>
+	<link href="/static/css/login.css" rel="stylesheet" type="text/css"/>
+	<link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+	<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/static/js/yz.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/static/js/sendtime.js"></script>
 </head>
 <body>
 {% include "jinfuheader.html" %}
 
-<div id="sub">
-	<div id="div1">
-		<ul id="ul1">	
-		<ul id="ul2">      
-        	<li>
-				<label>忘记密码</label>
-			</li>
-     	</ul>
-	  
-      	<ul id="ul3">
-        	<li>
-				<div style="margin-left:-80px;border-top:1px solid #eeeef0; width:488px;height:1px;"></div>
-			</li>       
-         	<li>
-				<label>请输入注册时填写的手机号获取验证码输入</label>
-			</li>
-      		<li>
-				<div style="margin-left:-80px;border-top:1px solid #eeeef0; width:488px;height:1px;"></div>
-				
-			</li>
-     	</ul>
-      <form class="registerform" action="" method="post">
-	  	<ul id="ul4">
-        	<li>
-				<label class="labe1">手机号</label>
-				<label class="labe2">短信验证</label>
-			</li>
-		<ul class="elul1">
-			<li>
-				 {{ form.username }}
-			</li>
-		</ul>
-		<ul class="elul2">
-			<li>
-            	{{ form.smscode }}
-			</li>
-		</ul>
-		<ul class="elul3">
-			<li>
-            	<input type="button" id="rulesubmit" value="发送验证码" />
-			</li>
-		</ul>
-	 </ul>
+<div id="forger_conent">
+	<div style="height:50px;"></div>
+	<div class="get_pwd">
 
-	  <ul id="ul5">
-       		<li>
-				<input type="submit" class="input_butt" alt=" " value=" " style="width:512px; height:59px;background:url(/static/images/open.png);background-repeat:no-repeat" />
-			</li>
-	  </ul>
-		  </form>
-    </ul>
-  </div>
+		{% if message %}
+		<a style="font-size: 14px">{{ message }}</a>
+		{% else %}
+		<form class="registerform" action="{% url 'forgetpw' %}" method="post">
+			<ul class="get_all">
+				<ul class="log_text">
+					<li style="font-size:32px;margin-left:220px;margin-top:-20px;">
+						<label>忘记密码</label>
+					</li>
+				</ul>
+				<ul id="ul3">
+					<li>
+						<div style="margin-left:40px;border-top:1px solid #eeeef0; width:505px;height:1px;"></div>
+					</li>
+					<li>
+						<label>请输入注册时填写的手机号获取验证码输入</label>
+					</li>
+					<li>
+						<div style="margin-left:40px;border-top:1px solid #eeeef0; width:505px;height:1px;"></div>
+
+					</li>
+				</ul>
+				<ul id="print_ucon">
+					<ul class="elul1">
+						<li>
+							<label class="label1"> 输入手机号：</label>
+						</li>
+						<li>
+							<label style="float:left; z-index:999">{{ form.username }}</label>
+							<label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
+						</li>
+						<li style="clear:both"></li>
+					</ul>
+					<ul class="elul2">
+						<li>
+							<label class="label2"> 手机验证码：</label>
+						</li>
+						<li>
+							<label style="float:left; z-index:999">{{ form.smscode }}</label>
+							<input type="button" id="rulesubmit" style="float:left;color:#FFFFFF; background-color:#4a3c70;border:1px solid #4a3c70; border-radius:3px;-webkit-border-radius:3px;z-index:1;width:94px;height:50px;margin-left:10px;" value="发送验证码" />
+							<label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
+						</li>
+						<li style="clear:both;"></li>
+					</ul>
+				</ul>
+				<ul id="ul5">
+					<li>
+						<input type="submit" class="input_butt" alt=" " value=" " style="width:512px; height:59px;background:url(/static/images/open.png);background-repeat:no-repeat;margin-top:20px;" />
+					</li>
+				</ul>
+			</ul>
+		</form>
+		{% endif %}
+
+	</div>
 </div>
-
 {% include "footer.html" %}
 
 
@@ -83,8 +89,33 @@ $(function(){
                 alert('{{ error }}');
             {% endfor %}
         {% endif %}
-        })
 
+			var demo = $(".registerform").Validform({
+				tiptype: 3,
+				label: ".label",
+				showAllError: true,
+				datatype: {
+					"zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+				},
+				ajaxPost: false,
+				callback:function(data){
+					str = "success";
+				}
+			});
+
+			demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+			demo.addRule([
+				{
+					ele: "#id_username",
+					datatype: "m"
+				},
+				{
+					ele: "#id_smscode",
+					datatype: "n4"
+				}
+			]);
+		})
  //已登陆
         $(document).ready(function () {
             $('#logged li').hover(function () {

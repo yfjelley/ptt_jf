@@ -1,13 +1,11 @@
 
-
-#Icontainer{width:100%; height:1600px;background-color:#CCCCCC; }
-
-.Cleft2{background-color:#FFFFFF; float:left;width:1020px;height:78px;margin-top:40px;margin-left:180px;border-radius:5px;}
+#Icontainer{width:100%; height:100%;background-color:#CCCCCC;min-width: 1440px;max-width: 1660px; }
+.Cleft2{width:980px;margin-top:40px;border-radius:5px;margin:0px auto;padding-top: 20px;}
 .search_list{
 padding: 10px 10px;
 overflow: hidden;
-
 }
+#seatch_norm{width:980px;height:78px; background:#FFFFFF;position: absolute;}
 .fl {
 float: left;
 margin: 0px;
@@ -21,6 +19,10 @@ outline:0none;
     margin:0px;
     font-size: 14px;
 	overflow: hidden;
+}
+.serch_term{
+font-size: 14px;
+width:600px;
 }
 .choices a {
     margin-right: 15px;
@@ -52,24 +54,24 @@ outline:0none;
 .Ititle2{position:absolute;top:80px;}
 .Ititle2 li{padding:0 30px;}
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
-.Rlogo img{position:absolute;left:920px;top:70px;}
-.search_bd{width:1250px;;height:1000px;margin-left:-10px;}
-.Cleft3{background-color:#FFFFFF;width:480px;height:250px;float:left;margin:0 10px; margin-top:30px;}
+.Rlogo img{position: relative;left: 75%;top: -15px;width: 90px;height: 75px;}
+.search_bd{width:1000px;;height:100%;margin-left:-10px;}
+.Cleft3{background-color:#FFFFFF;width:440px;height:250px;float:left;margin:0 10px; margin-top:20px;}
 
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
 .PelPic img{margin-left:-20px; margin-top:20px; }
-.DesPel{margin-top:-180px;margin-left:150px; }
+.DesPel{margin-top:-130px;margin-left:100px; }
 .DesPel li{padding:0 10px;}
 .pro-content{margin-top:-120px}
 
-/*·ÖÒ³*/
-.pages{ padding:50px 0 10px 0; text-align:right;clear:both;margin-right:240px;}
+/*ï¿½ï¿½Ò³*/
+.pages{ padding:20px 0 10px 0; text-align:right;clear:both;margin-right:240px;width:100%;}
 .pages a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
 .pages a.before{border-radius:15px 10px 10px 15px;}
 .pages a.after{border-radius:10px 15px 15px 10px;}
 .pages a.active,.pages a:hover{border:1px solid #c50512;color:#c50512;}
 .pages a.currentpage{border:1px solid #c50512;color:#fff; background:#c50512;}
 
-/*·ÖÒ³½áÊø*/
+/*ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½*/
 .bbs_hunt input.bbs_search_btn{ width:47px; height:42px; background:url(../images/search.png) no-repeat 0 0; border:none; cursor:pointer;}
