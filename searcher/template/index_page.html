@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>葡萄藤众投</title>
 <link rel="stylesheet" href="/static/css/index_page.css" />
-<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/myjs.js"></script>
 <script type="text/javascript">
 		$(function(){
 		    
@@ -115,174 +116,332 @@
 		<a class="prev" href="javascript:void(0)"><</a>
 		<a class="next" href="javascript:void(0)">></a>
 	 </div>
-	<div id="right_scroll">
-	<img src="/static/images/sqtzr.png"/>
-	</div>
-    <script type="text/javascript">
-var b_v = navigator.appVersion;
-var IE6 = b_v.search(/MSIE 6/i) != -1;
-function objscroll(divname){
-	var objs=document.getElementById(divname),
-	    divname=$("#"+divname);	    
-	var o={};
-	o.obj=divname;	
-	o.objH=divname.height();
-	o.objs=objs;
- 
-	$(function(){
-	  if($("body").width()>=1024){
-	  $("#right_scroll").show();
-	  }
-	  $(window).resize(function(){
-		if($("body").width()<=1024){
-			$("#right_scroll").hide();
-		}else{
-			$("#right_scroll").show();				
-		}
-	  });	
-	});	
-	$(window).scroll(function(){		
-		var bodyH=$(document).scrollTop(),		    
-			 menuH = $("#menu_box").height();
-		     o.objs.style.top=menuH+"px";
-		if (IE6){
-				if(bodyH>=menuH){
-			       o.objs.style.top=bodyH+"px";				   
-			       }				
-		  }else if(bodyH>=menuH){
-			divname.css("position","fixed");
-			o.objs.style.top=0;
-			}else{
-				divname.css("position","absolute");
-				}			
-		});	
-	}
-objscroll("right_scroll");
-
-</script>
-    <div class="side">
-		<ul>
-			<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服</label></div></a></li>            
-			<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
-			<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
-			<li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop">
-			<img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
-		</ul>
-    </div>
+	 
+	<div class="fixed"><img src="/static/images/sqtzr.png"/></div>
+	   
 	<div class="zc-content">
 		
 	    <div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
 					<li class="btstyle">每日精选</li>
-                    <li class="ckgdstyle"><a href="/readmore/2">更多每日精选......</a></li>    
+                    <li class="ckgdstyle"><a href="/project/2">更多每日精选......</a></li>
               	</ul>
 			</div> 	
-		    <div class="search_bd" id="result_form_jingxuan"></div>		
+		    <div class="search_bd" id="result_form_jingxuan">
+						{% if daily_selection %}
+						 {% for result in daily_selection %}
+											<div class="resultpage">
+											  <a href="/prodetails/{{result.id}}">
+												 <div style="width:255px;height:310px">
+													<div style="position:absolute;width:255px;height:80px;">
+														 <div class="heartimg">
+															 <div class="littleimg"> <img src="/static/images/heart.png" />
+															 <label style="padding-right: 10px;font-weight:bold; color:#FFF;float: right;">{{result.click.all|length}}</label></div>
+														 </div>
+														 <div style="float:right">
+														{% ifequal result.active 1 %}
+														 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
+														{% else %}
+														 <div style="border:0px solid red;width:38px;height:38px;"></div>
+														{% endifequal %}
+														</div>
+													 </div>
+													<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
+													<div>
+														<ul class="Cul1">
+															<li><b>{{result.name}}</b></li>
+															<li>{{result.introduction}}</li>
+															<li><div class="input_btt"></div></li>
+															<li style="float:left">
+																<label>融资目标</label><b>{{result.amount}}</b>
+															</li>
+															<li style="float:left;margin-left:50px;">
+																<label>已完成</label><b>{{result.finish}}</b>
+															</li>
+															<li style="clear:both">
+																<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+															</li>
+															<li style="clear:both">
+															<label style="margin-left:20px;">{{result.publish}}</label>
+															<label style="color:#000000;;font-size:12px;margin-left:43px;">{{result.get_category_display}}</label>
+															</li>
+															<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
+															<li style=" position:relative;top: -55px;left: 116px;"><img src="/static/images/tag.png" /></li>
+														</ul>
+													</div>
+												 </div>
+											  </a>
+											</div>
+												{% endfor %}
+
+											{% else %}
+
+												<a>无符合查询条件的纪录</a>
+											{% endif %}
+			</div>
 		</div>        
    		
 	    <div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
 					<li class="btstyle">预热中</li>
-                    <li class="ckgdstyle"><a href="/readmore/3">更多预热中......</a></li>    
+                    <li class="ckgdstyle"><a href="/project/3">更多预热中......</a></li>
               	</ul>
 			</div> 	
-		    <div class="search_bd" id="result_form_preheat"></div>
+		    <div class="search_bd" id="result_form_preheat">
+				    {% if preheating %}
+								{% for result in preheating %}
+							<div class="resultpage">
+							  <a href="/prodetails/{{result.id}}">
+								 <div style="width:255px;height:310px">
+									<div style="position:absolute;width:255px;height:80px;">
+										 <div class="heartimg">
+											 <div class="littleimg"> <img src="/static/images/heart.png" />
+											 <label style="padding-right: 10px;font-weight:bold; color:#FFF;float: right;">{{result.click.all|length}}</label></div>
+										 </div>
+										 <div style="float:right">
+										{% ifequal result.active 1 %}
+										 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
+										{% else %}
+										 <div style="border:0px solid red;width:38px;height:38px;"></div>
+										{% endifequal %}
+										</div>
+									 </div>
+									<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
+									<div>
+										<ul class="Cul1">
+											<li><b>{{result.name}}</b></li>
+											<li>{{result.introduction}}</li>
+											<li><div class="input_btt"></div></li>
+											<li style="float:left">
+												<label>融资目标</label><b>{{result.amount}}</b>
+											</li>
+											<li style="float:left;margin-left:50px;">
+												<label>已完成</label><b>{{result.finish}}</b>
+											</li>
+											<li style="clear:both">
+												<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+											</li>
+											<li style="clear:both">
+											<label style="margin-left:20px;">{{result.publish}}</label>
+											<label style="color:#000000;;font-size:12px;margin-left:43px;">{{result.get_category_display}}</label>
+											</li>
+											<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
+											<li style=" position:relative;top: -55px;left: 116px;"><img src="/static/images/tag.png" /></li>
+										</ul>
+									</div>
+								 </div>
+							  </a>
+							</div>
+								{% endfor %}
+
+							{% else %}
+
+								<a>无符合查询条件的纪录</a>
+							{% endif %}
+			</div>
 		</div>
             		
 		<div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
 					<li class="btstyle">众投中</li>
-                    <li class="ckgdstyle"><a href="/readmore/4">更多众投中......</a></li>    
+                    <li class="ckgdstyle"><a href="/project/4">更多众投中......</a></li>
               	</ul>
 			</div> 	
-		    <div class="search_bd" id="result_form_manytou"></div>
+		    <div class="search_bd" id="result_form_manytou">
+				    {% if crowdfunded %}
+											{% for result in crowdfunded %}
+										<div class="resultpage">
+										  <a href="/prodetails/{{result.id}}">
+											 <div style="width:255px;height:310px">
+												<div style="position:absolute;width:255px;height:80px;">
+													 <div class="heartimg">
+														 <div class="littleimg"> <img src="/static/images/heart.png" />
+														 <label style="padding-right: 10px;font-weight:bold; color:#FFF;float: right;">{{result.click.all|length}}</label></div>
+													 </div>
+													 <div style="float:right">
+													{% ifequal result.active 1 %}
+													 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
+													{% else %}
+													 <div style="border:0px solid red;width:38px;height:38px;"></div>
+													{% endifequal %}
+													</div>
+												 </div>
+												<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
+												<div>
+													<ul class="Cul1">
+														<li><b>{{result.name}}</b></li>
+														<li>{{result.introduction}}</li>
+														<li><div class="input_btt"></div></li>
+														<li style="float:left">
+															<label>融资目标</label><b>{{result.amount}}</b>
+														</li>
+														<li style="float:left;margin-left:50px;">
+															<label>已完成</label><b>{{result.finish}}</b>
+														</li>
+														<li style="clear:both">
+															<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+														</li>
+														<li style="clear:both">
+														<label style="margin-left:20px;">{{result.publish}}</label>
+														<label style="color:#000000;;font-size:12px;margin-left:43px;">{{result.get_category_display}}</label>
+														</li>
+														<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
+														<li style=" position:relative;top: -55px;left: 116px;"><img src="/static/images/tag.png" /></li>
+													</ul>
+												</div>
+											 </div>
+										  </a>
+										</div>
+											{% endfor %}
+
+										{% else %}
+
+											<a>无符合查询条件的纪录</a>
+										{% endif %}
+			</div>
 		</div>
             			
 		<div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
 					<li class="btstyle">众投成功</li>
-                    <li class="ckgdstyle"><a href="/readmore/5">更多众投成功......</a></li>    
+                    <li class="ckgdstyle"><a href="/project/5">更多众投成功......</a></li>
               	</ul>
 			</div>	
-		    <div class="search_bd" id="result_form_manytousucce"></div>
+		    <div class="search_bd" id="result_form_manytousucce">
+											    {% if crowdfunded_success %}
+														{% for result in crowdfunded_success %}
+													<div class="resultpage">
+													  <a href="/prodetails/{{result.id}}">
+														 <div style="width:255px;height:310px">
+															<div style="position:absolute;width:255px;height:80px;">
+																 <div class="heartimg">
+																	 <div class="littleimg"> <img src="/static/images/heart.png" />
+																	 <label style="padding-right: 10px;font-weight:bold; color:#FFF;float: right;">{{result.click.all|length}}</label></div>
+																 </div>
+																 <div style="float:right">
+																{% ifequal result.active 1 %}
+																 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
+																{% else %}
+																 <div style="border:0px solid red;width:38px;height:38px;"></div>
+																{% endifequal %}
+																</div>
+															 </div>
+															<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
+															<div>
+																<ul class="Cul1">
+																	<li><b>{{result.name}}</b></li>
+																	<li>{{result.introduction}}</li>
+																	<li><div class="input_btt"></div></li>
+																	<li style="float:left">
+																		<label>融资目标</label><b>{{result.amount}}</b>
+																	</li>
+																	<li style="float:left;margin-left:50px;">
+																		<label>已完成</label><b>{{result.finish}}</b>
+																	</li>
+																	<li style="clear:both">
+																		<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+																	</li>
+																	<li style="clear:both">
+																	<label style="margin-left:20px;">{{result.publish}}</label>
+																	<label style="color:#000000;;font-size:12px;margin-left:43px;">{{result.get_category_display}}</label>
+																	</li>
+																	<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
+																	<li style=" position:relative;top: -55px;left: 116px;"><img src="/static/images/tag.png" /></li>
+																</ul>
+															</div>
+														 </div>
+													  </a>
+													</div>
+														{% endfor %}
+
+													{% else %}
+
+														<a>无符合查询条件的纪录</a>
+													{% endif %}
+			</div>
 		</div>	
 			      
 		<div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
 					<li class="btstyle">众投案例</li>
-                    <li class="ckgdstyle"><a href="/readmore/6">更多众投案例......</a></li>    
+                    <li class="ckgdstyle"><a href="/project/6">更多众投案例......</a></li>
               	</ul>
 			</div>
-		    <div class="search_bd" id="result_form_succeecase"></div>
+		    <div class="search_bd" id="result_form_succeecase">
+												{% if crowdfunded_finsh %}
+									{% for result in crowdfunded_finsh %}
+								<div class="resultpage">
+								  <a href="/prodetails/{{result.id}}">
+									 <div style="width:255px;height:310px">
+										<div style="position:absolute;width:255px;height:80px;">
+											 <div class="heartimg">
+												 <div class="littleimg"> <img src="/static/images/heart.png" />
+												 <label style="padding-right: 10px;font-weight:bold; color:#FFF;float: right;">{{result.click.all|length}}</label></div>
+											 </div>
+											 <div style="float:right">
+											{% ifequal result.active 1 %}
+											 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
+											{% else %}
+											 <div style="border:0px solid red;width:38px;height:38px;"></div>
+											{% endifequal %}
+											</div>
+										 </div>
+										<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
+										<div>
+											<ul class="Cul1">
+												<li><b>{{result.name}}</b></li>
+												<li>{{result.introduction}}</li>
+												<li><div class="input_btt"></div></li>
+												<li style="float:left">
+													<label>融资目标</label><b>{{result.amount}}</b>
+												</li>
+												<li style="float:left;margin-left:50px;">
+													<label>已完成</label><b>{{result.finish}}</b>
+												</li>
+												<li style="clear:both">
+													<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+												</li>
+												<li style="clear:both">
+												<label style="margin-left:20px;">{{result.publish}}</label>
+												<label style="color:#000000;;font-size:12px;margin-left:43px;">{{result.get_category_display}}</label>
+												</li>
+												<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
+												<li style=" position:relative;top: -55px;left: 116px;"><img src="/static/images/tag.png" /></li>
+											</ul>
+										</div>
+									 </div>
+								  </a>
+								</div>
+									{% endfor %}
+
+								{% else %}
+
+									<a>无符合查询条件的纪录</a>
+								{% endif %}
+			</div>
 		</div>	
 	</div>
 	
-	
+	<div class="side">
+			<ul>
+				<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服</label></div></a></li>            
+				<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+				<li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
+				<li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop">
+				<img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+			</ul>
+	</div>
+ 
 </div>
 
 {% include "footer.html" %}
 
-<script type="text/javascript">
-    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-   $(function(){
-       checkparam(1,2);
-       checkparam(1,3);
-       checkparam(1,4);
-       checkparam(1,5);
-       checkparam(1,6);
-   });
-   function getElementsByClassName(n,m) {
-        var el = [],
-                _el = document.getElementsByTagName('*');
-        for (var i = 0; i < _el.length; i++) {
-            if (_el[i].className == n) {
-                el[el.length] = _el[i].getAttribute(m);
-            }
-        }
-        return el;
-    }
 
-   function takepage(n) {
-        checkparam(n);
-   }
-
-   function checkparam(page,a) {
-        $.get("{% url 'search_zc' %}",
-                {
-                    page: page,
-                    search_word: a,
-                },
-                function (data) {
-                    if (a==2)
-                    {
-                    $('#result_form_jingxuan').html(data.content_html);
-                     };
-                    if (a==3)
-                    {
-                    $('#result_form_preheat').html(data.content_html);
-                     };
-                     if (a==4)
-                    {
-                    $('#result_form_manytou').html(data.content_html);
-                     };
-                     if (a==5)
-                    {
-                    $('#result_form_manytousucce').html(data.content_html);
-                     };
-                     if (a==6)
-                    {
-                    $('#result_form_succeecase').html(data.content_html);
-                     };
-
-                }
-        );
-    }
-</script>
 <script>
 $(document).ready(function(){
 

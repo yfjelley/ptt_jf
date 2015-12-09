@@ -348,7 +348,7 @@ def userinfo(request):
         #我发布的项目
         publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
-        attention_pr = user.userinformation.attention
+        attention_pr = user.userinformation.industry
 
     return render_to_response("userinfo.html", {'form': form,"leader":leader,"invest":invest,"publish_pr":publish_pr,"attention_pr":attention_pr},
                               context_instance=RequestContext(request))
@@ -500,7 +500,21 @@ def agreement(request):
 
 
 def index_zc(request):
-    return render_to_response('index_page.html',{}, context_instance=RequestContext(request))
+    #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+
+    daily_selection = Project.objects.filter(active=1).distinct()[0:4]
+
+    preheating = Project.objects.filter(status=0).distinct()[0:8]
+
+    crowdfunded = Project.objects.filter(status=1).distinct()[0:4]
+
+    crowdfunded_success = Project.objects.filter(status=2).distinct()[0:4]
+
+    crowdfunded_finsh= Project.objects.filter(status=2).distinct()[0:4]
+
+    return render_to_response('index_page.html',{"daily_selection":daily_selection,"preheating":preheating, \
+                              "crowdfunded":crowdfunded,"crowdfunded_success":crowdfunded_success,\
+                                         "crowdfunded_finsh":crowdfunded_finsh},context_instance=RequestContext(request))
 
 def index_jf(request):
 
@@ -626,9 +640,8 @@ def about_us(request):
     return render_to_response('about.html',{"p1":p1[0].agreement,"description":p2[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
-    p2 = About_us.objects.filter(name=u"关于众投")
-    print p2
-    return render_to_response('guide.html',{"description":p2[0].description}, context_instance=RequestContext(request))
+
+    return render_to_response('guide.html',{"description":u"关于众筹"}, context_instance=RequestContext(request))
 
 #@login_required
 def publish(request):
@@ -814,11 +827,10 @@ def prodetails(request,objectid):
     p = Project.objects.filter(id=objectid)
     return render_to_response('prodetails.html',{"result":p[0]}, context_instance=RequestContext(request))
 
-def readmore(request,objectid):
-    return render_to_response('readMore.html',{"objectid":objectid}, context_instance=RequestContext(request))
 
-def project(request):
-    return render_to_response('project.html',{"objectid":[1,14]}, context_instance=RequestContext(request))
+def project(request,objectid):
+
+    return render_to_response('project.html',{"objectid":[int(objectid),14]}, context_instance=RequestContext(request))
 
 def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
@@ -843,7 +855,7 @@ def search_project(request):
     #sql(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     search_word = request.GET.getlist('search_word[]')
     if search_word is not None:
-        if int(search_word[1]) == 14:
+        if int(search_word[1]) == 14 and int(search_word[0]) != 1 :
             if int(search_word[0]) == 2 :
                 results = Project.objects.filter(active=1)
             elif int(search_word[0]) == 3 :
@@ -854,28 +866,27 @@ def search_project(request):
                 results = Project.objects.filter(status=2)
             elif int(search_word[0]) == 6 :
                 results = Project.objects.filter(status=2)
-            else :
-                results = Project.objects.all()
 
-        if int(search_word[0]) == 1:
+        elif int(search_word[0]) == 1 and int(search_word[1]) != 14:
             if int(search_word[1]) == 15 :
-                results = Project.objects.filter(category=15)
+                results = Project.objects.filter(category=1)
             elif int(search_word[1]) == 16 :
-                results = Project.objects.filter(category=16)
+                results = Project.objects.filter(category=2)
             elif int(search_word[1]) == 17 :
-                results = Project.objects.filter(category=17)
+                results = Project.objects.filter(category=3)
             elif int(search_word[1]) == 18 :
-                results = Project.objects.filter(category=18)
+                results = Project.objects.filter(category=4)
             elif int(search_word[1]) == 19 :
-                results = Project.objects.filter(category=19)
+                results = Project.objects.filter(category=5)
             elif int(search_word[1]) == 20 :
-                results = Project.objects.filter(category=20)
-            else :
-                results = Project.objects.all()
-
-        if int(search_word[0]) != 1 and int(search_word[1]) != 14 :
-            results = Project.objects.filter(status=int(search_word[0])).filter(category=int(search_word[1]))
-
+                results = Project.objects.filter(category=6)
+        elif int(search_word[0]) != 1 and int(search_word[1]) != 14 :
+            if int(search_word[0]) == 2 :
+                results = Project.objects.filter(active=1).filter(category=int(search_word[1])-14)
+            else:
+                results = Project.objects.filter(status=int(search_word[0])).filter(category=int(search_word[1])-14)
+        else:
+            results = Project.objects.all()
     else :
         results = Project.objects.all()
 
@@ -938,6 +949,20 @@ def search(request):
             'success': True
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
+def do_search(request):
+    if request.method == 'POST':
+        select = request.POST.get('select','')
+        keyword = request.POST.get('keyword','')
+        print select,type(select)
+        if select == u"找项目":
+            print "xxxxx"
+            results = Project.objects.all()
+            return render_to_response('investor_search.html',{"flag":1,"results":results}, context_instance=RequestContext(request))
+        else:
+            results = User.objects.filter(username=keyword)
+            return render_to_response('investor_search.html',{"results":results}, context_instance=RequestContext(request))
+
+
 
 def search_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
@@ -982,10 +1007,9 @@ def search_zc(request):
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def investor_info(request,objectid):
-    investor=u"%s"%objectid
-    p1 = UserInformation.objects.filter(user=User.objects.filter(username=investor)[0])
-    #print p1[0].realname, p1[0].position, p1[0].industry, p1[0].authentication_class
-    return render_to_response('investor_intro.html',{"investor_info":p1[0]}, context_instance=RequestContext(request))
+    p1 = UserInformation.objects.get(user=User.objects.get(username=objectid))
+    print p1.realname, p1.position, p1.industry, p1.authentication_class
+    return render_to_response('investor_intro.html',{"investor_info":p1}, context_instance=RequestContext(request))
 
 def safety(request, objectid):
     if int(objectid) == 1:

@@ -2,10 +2,6 @@ ul, li {
   list-style: none;
 }
 
-.tg-list-item {
-  margin: 0 2em;
-}
-
 .tgl {
   display: none;
 }

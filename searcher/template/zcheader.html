@@ -4,15 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <title>葡萄藤众筹首页</title>
-<script>
-$(function(){
-	$("#choose").bind('click change',function(){
-		var name=$(this).val();
-		$("#inptext").attr("value",name);
-	});
-	
-});
-</script>
+
 </head>
 <body>
 <div id="container">		
@@ -26,7 +18,7 @@ $(function(){
     		<li>
 				<a href="{% url 'index_zc' %}">首页</a>
 				<a href="{% url 'investor' %}">投资人风采</a>
-				<a href="{% url 'project' %}">项目风采</a>
+				<a href="/project/0">项目风采</a>
     			<a href="{% url 'publish' %}">项目发起</a>
 				<a href="{% url 'bbsindex' %}">众筹社区</a>
 			</li>  		
@@ -39,7 +31,7 @@ $(function(){
                     	<option>找项目</option>
                         <option>领投人</option>
                     </select>
-                	<input id="inptext" type="text" class="seacher-text" style="width:140px;height:17px;" placeholder="找项目,领头人" value="找项目"/>
+                	<input id="inptext" type="text" class="seacher-text" style="width:140px;height:17px;" />
                     <input type="submit" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />				  				
 				</label>
 				{% ifequal user.id None %}
@@ -73,6 +65,8 @@ $(function(){
                 $('ul', this).slideUp(100);
                 $(this).children('a:first').removeClass("hov");
             });
+            var w = $('#choose option:selected') .val();
+
         });
         //已登陆结束
         function T_Logout() {

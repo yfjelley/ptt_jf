@@ -1,31 +1,40 @@
-body{margin:0px;}
-.UserContent{width:1140px;height:900px; background-color:#CCCCCC; margin-left:180px;}
-.ProLeft{width:95px; height:500px;float:left;}
-.UserCenter{width:1000px;height:800px; background-color:#FFFFFF;float:left; position:absolute;z-index:1px; margin-top:30px; margin-left:70px;}
-.Userul{margin-top:60px;margin-left:-50px;}
-.Userul1{margin-top:-320px; margin-left:180px;}
-li.Userli1 label{padding-left:25px;}
-.tg-list{position:absolute;right:135px;top:100px;}
-.tg-list1{position:absolute;right:135px;top:150px;}
-li.Userli2 label{padding-left:10px;}
-li.Userli3 label{padding-left:40px;}
-li.Userli4 label{padding-left:42px;}
-li.Userli5 label{padding-left:10px;}
-li.Userli6 label{padding-left:10px;}
-li.Userli7 label{padding-left:10px;}
-li.Userli8 label{padding-left:42px;}
-li.Userli9 label{padding-left:25px;}
-li.Userli10 label{padding-left:10px;}
-li.Userli11 label{padding-left:42px;}
-li.Userli12 label{padding-left:58px;}
-li.Userli13 label{padding-left:42px;}
+body{margin:0;}
+.UserContent{width:100%;height:900px; background-color:#CCCCCC;min-width:1440px;max-width:1660px;}
+.UserCenter{width:1000px;height:800px; background-color:#FFFFFF;z-index:1;margin:0 auto}
+.Userul{margin-top:80px;margin-left:-50px;}
+.Userul1{margin-top:120px; margin-left:-10px;}
+.Userul1 li{padding:10px 0}
+.user_nick label{padding-left:12px;}
+.user_nick input[type='text']{width:150px;height:20px;}
+.tg-list{position:absolute;margin-top:-35px;margin-left:170px;}
+.tg-list1{position:absolute;margin-top:10px;margin-left:140px;}
+.user_name label{padding-left:10px;}
+.user_name input[type='text']{width:150px;height:20px;}
+.user_sex label{padding-left:40px;}
+.user_birth label{padding-left:42px;}
+.user_birth input[type='text']{width:150px;height:20px;}
+.user_email label{padding-left:10px;}
+.user_email input[type='text']{width:150px;height:20px;}
+.user_city label{padding-left:10px;}
+.user_city input[type='text']{width:150px;height:20px;}
+.user_addre label{padding-left:10px;}
+.user_addre input[type='text']{width:150px;height:20px;}
+.user_edu label{padding-left:42px;}
+.user_income label{padding-left:25px;}
+.user_marry label{padding-left:10px;}
+.user_wx label{padding-left:42px;}
+.user_wx input[type='text']{width:150px;height:20px;}
+.user_qq label{padding-left:58px;}
+.user_qq input[type='text']{width:150px;height:20px;}
+.user_wb label{padding-left:42px;}
+.user_wb input[type='text']{width:150px;height:20px;}
 .birth-select{margin-top:-35px; margin-left:80px;}
 
 <!--tabÇÐ»»°´Å¥-->
 #ProDiv{width:70%;height:700px; margin:0 auto;}
-.ProChange{width:200px; height:700px; float:left}
+.ProChange{width:200px; height:700px; float:left;margin-top:20px}
 .ProChange li{padding:15px 0px;}
-.div_right{ float:left;width:620px;height:800px; margin-top:-34px;}
+.div_right{ float:left;width:700px;height:800px; margin-top:-34px;}
 .display{display:none}
 .touzi_message{width:600px;height:500px;}
 .touzi-class{width:600px;height:50px;}
@@ -101,8 +110,9 @@ ul{list-style:none;}
 .tzrzMessage{margin-top:155px;width:700px;}
 .tzrzMessage li{line-height:50px}
 .ltrmessage{margin-top:60px; margin-left:-80px;}
-.ltrRzmessage{margin-top:-150px;margin-left:50px; line-height:20px;}
-
+.ltrRzmessage{margin-left:50px; line-height:20px;margin-top:-150px;}
+.xmfmessage{margin-top:60px; margin-left:-80px;}
+.xmfRzmessage{margin-left:50px; line-height:20px;}
 .scshuoming{margin-top:-10px;margin-left:-40px;}
 .gtrmessage{margin-top:60px; margin-left:-80px;}
 .gtrRzmessage{margin-top:-150px;margin-left:50px;}

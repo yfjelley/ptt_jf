@@ -211,9 +211,9 @@ $(function(){
 
 
 <!--中间内容-->
+
 <div class="UserContent">
-<div class="ProLeft">
-</div>
+<div style="height:50px;"></div>
 <div class="UserCenter">
 <!--项目的tab按钮:包括基本信息,项目管理,投资认证,安全中心,消息通知,邀请好友-->
 	<div class="ProChange" id="daohang">		
@@ -252,40 +252,40 @@ $(function(){
              {% csrf_token %}
 			<ul style="float:left" class="Userul">
 				<li>
-					<label style="font-size:30px;">基本信息</label>
+					<label style="font-size:30px;margin-left:-15px;">基本信息</label>
 				</li>
 				<li>
 					<img src="{{ user.userinformation.photo_url }}" style="margin-left:-20px; margin-top:20px;"/>
 				</li>
-				<li style="margin-top:12px; margin-left:10px;">
+				<li style="margin-top:12px; margin-left:-10px;">
                 	<a class="button-shangchuan" href="javascript:;">上传头像
 						<input type="file" name="file"/>
                     </a>
 				</li>
-				<li style=" margin-top:12px; margin-left:30px;">
+				<li style=" margin-top:12px; margin-left:3px;">
 					<img src="/static/images/touzi.png" />
 				</li>
 			</ul>
 			<ul class="Userul1" style="float:left;">
-				<li class="Userli1">
-					<label style="padding:0px;">用户名</label>
+				<li class="user_nick">
+					<label>用户名</label>
 					<label>
 						{{ form.nickname }}
 					</label>
 				</li>
-                <li id="checkbox">
+                <li id="checkbox" style="padding:0;">
                 	<ul>
-                        <li class='tg-list'>
+                        <li class='tg-list' style="padding:0;">
                             <ul>
-                                <li class='tg-list-item'>
+                                <li class='tg-list-item' style="padding:0;">
                                     <input class='tgl tgl-light' value="111" name="checkbox1" id='cb1' type='checkbox' >
                                     <label class='tgl-btn' for='cb1'></label>
                                 </li>
                             </ul>
                         </li>
-                        <li class='tg-list1'>
+                        <li class='tg-list1' style="padding:0;">
                             <ul>
-                                <li class='tg-list-item1'>
+                                <li class='tg-list-item1' style="padding:0;">
                                     <input class='tgl1 tgl-light1' name="checkbox1" id='cb2' type='checkbox' >
                                     <label class='tgl-btn1' for='cb2'></label>
                                 </li>
@@ -293,53 +293,52 @@ $(function(){
                         </li>
 					</ul>
 				</li>
-				<li class="Userli2">
-					<label style="padding:0px;">真实姓名</label>
-						{{ form.realname }}
+				<li class="user_name">
+					<label>真实姓名</label>
+					{{ form.realname }}
 				</li>
-             
-				<li class="Userli3">
-						<label style="padding:0px">性别</label>
-                        {{ form.gender }}
+				<li>
+					<label style="padding-left:38px">性别</label>
+                    {{ form.gender }}
 				</li>
-				<li class="Userli4">
-					<label style="padding:0px">生日</label>
-                        {{ form.birthday }}
+				<li class="user_birth">
+					<label>生日</label>
+                    {{ form.birthday }}
 				</li>
-				<li class="Userli5">
-					<label style="padding:0px">邮箱地址</label>
+				<li class="user_email">
+					<label>邮箱地址</label>
                     {{ form.email }}
 				</li>
-				<li class="Userli6">
-					<label style="padding:0px">居住城市</label>
+				<li class="user_city">
+					<label>居住城市</label>
                     {{ form.city }}
 				</li>
-				<li class="Userli7">
-					<label style="padding:0px">居住地址</label>
+				<li class="user_addre">
+					<label>居住地址</label>
                     {{ form.address }}
 				</li>
-				<li class="Userli8">
-					<label style="padding:0px">学历</label>
+				<li class="user_edu">
+					<label>学历</label>
                     {{ form.education }}
 				</li>
-				<li class="Userli9">
-					<label style="padding:0px">月收入</label>
+				<li class="user_income">
+					<label>月收入</label>
                     {{ form.monthly_income }}
 				</li>
-				<li class="Userli10">
-					<label style="padding:0px">婚姻状况</label>
+				<li>
+					<label>婚姻状况</label>
                     {{form.marriage}}
 				</li>
-				<li class="Userli11">
-					<label style="padding:0px">微信</label>
+				<li class="user_wx">
+					<label>微信</label>
 					{{form.wechat_num}}
 				</li>
-				<li class="Userli12">
-					<label style="padding:0px">QQ</label>
+				<li class="user_qq">
+					<label>QQ</label>
                     {{form.qq_num}}
 				</li>
-				<li class="Userli13">
-					<label style="padding:0px">微博</label>
+				<li class="user_wb">
+					<label>微博</label>
                     {{form.weibo_num}}
 				</li>
 				<li>
@@ -400,12 +399,10 @@ $(function(){
                                 <li>
                                     <label style="margin-left:25px;">{{i.name}}</label>
                                 </li>
-                                <li>
-                                    <li style="margin-left:210px;">
-                                        <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                    </li>
-                                </li>
-                            </ul>                           
+								<li style="margin-left:210px;">
+									<div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
+								</li>
+                            </ul>
                         </li>
                         <li>
                         	<ul style="float:left;padding-left:25px;">
@@ -473,10 +470,8 @@ $(function(){
                                 <li>
                                     <label style="margin-left:25px;">魔镜在线</label>
                                 </li>
-                                <li>
-                                    <li style="margin-left:210px;">
-                                        <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                    </li>
+                                <li style="margin-left:210px;">
+                                    <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
                                 </li>
                             </ul>                           
                         </li>
@@ -807,24 +802,25 @@ $(function(){
                 <li  style="font-size:30px;">
                     <label>投资认证</label>
                 </li>
-                <li style="font-size:24px;margin-top:20px;margin-top:20px;color:#4a3c70">
+                <li style="font-size:24px;margin-top:20px;color:#4a3c70">
                     <label>领投人认证</label>
                 </li>
-                <li style="float:left;margin-top:20px;">
+                <li style="margin-top:20px;">
                     <img src="/static/images/number1,2.png" />
                 </li>
-            <ul class="ltrRzmessage" style="float:left">
+            <ul class="ltrRzmessage">
                 <li style="margin-top:10px;">
                     <label style="color:#e1604d">请上传身份证和名片</label>
-                <li style="position:absolute;left:680px;">
-                    <a href="javascript:;" class="idcard-file">上传身份证<input type="file" /></a>
-                    <a href="javascript:;" class="namecard-file">上传名片<input type="file" /></a>
                 </li>
+				<li style="margin-top:8px; font-size:12px;float:left">
+					<label>上传扫描高清图片,帮助我们快速核实您的身份<br />两种证件必须都上传</label>
+				</li>
+				<li style="float:left;margin-top:8px;margin-left:100px">
+                    <a href="javascript:void(0)" class="idcard-file">上传身份证<input type="file" /></a>
+                    <a href="javascript:void(0)" class="namecard-file">上传名片<input type="file" /></a>
                 </li>
-                <li style="margin-top:8px; font-size:12px">
-                    <label>上传扫描高清图片,帮助我们快速核实您的身份<br />两种证件必须都上传</label>        	
-                </li>                
-            <li>
+				<li style="clear:both"></li>
+            <li >
 				<ul class="scshuoming">
                     <li style="margin-top:30px;">
                         <label style="color:#e1604d">上传文件证明</label><br />
@@ -842,7 +838,7 @@ $(function(){
                     </li>
                     <li style="margin-left:-40px;margin-top:-15px; line-height:22px;">
                         <label style="font-weight:bold;font-size:12px">满足条件:</label><br />
-                        <label style="font-size:12px;">有天使投资经验</label><a href="javascript:;" class="upload-file" style="position:absolute;left:770px;">上传<input type="file"/></a><br />
+                        <label style="font-size:12px;">有天使投资经验</label><a href="javascript:;" class="upload-file" style="position:absolute;margin-top:-20px;margin-left:340px;">上传<input type="file"/></a><br />
                         <label style="font-weight:bold;font-size:12px;">证明材料:</label><br />
                         <label style="font-size:12px">1.披露本人真实信息的网址</label><br />
                         <label style="font-size:12px">2.披露本人真实信息的网址</label>
@@ -859,7 +855,7 @@ $(function(){
                     </li>
                     <li style="margin-left:-40px;margin-top:-15px;line-height:22px;">
                     	<label style="font-weight:bold;font-size:12px">满足条件:</label><br />
-                    	<label style="font-size:12px">个人名下货币信息不少于100万</label><a href="javascript:;" class="upload-file" style="position:absolute;left:770px;">上传<input type="file" /></a><br />
+                    	<label style="font-size:12px">个人名下货币信息不少于100万</label><a href="javascript:;" class="upload-file" style="position:absolute;margin-top:-20px;margin-left:260px;">上传<input type="file" /></a><br />
                     	<label style="font-weight:bold;font-size:12px">证明材料</label><br />
                     	<label style="font-size:12px">1.银行六个月的资金流水</label><br />
                     	<label style="font-size:12px">2.股票等期货一系列证明或高清图片</label><br />            
@@ -876,7 +872,7 @@ $(function(){
                     </li>
                     <li style="margin-left:-40px;margin-top:-15px;line-height:22px;">
                         <label style="font-weight:bold;font-size:12px">满足条件:</label><br />            	
-                        <label style="font-size:12px">个人名下货币信息不少于500万</label><a href="javascript:;" class="upload-file" style="position:absolute;left:770px;">上传<input type="file"/></a><br />
+                        <label style="font-size:12px">个人名下货币信息不少于500万</label><a href="javascript:;" class="upload-file" style="position:absolute;margin-top:-20px;margin-left:260px;">上传<input type="file"/></a><br />
                     	<label style="font-weight:bold;font-size:12px">证明材料</label>
                     	<label style="font-size:12px">固定资产等一系列证明或高清图片</label><br />
                     </li>                          
@@ -884,10 +880,10 @@ $(function(){
             </li>
 			<li>
             	<ul>		
-                    <li style="float:left;margin-left:-70px;" data-bb="touzirenzheng">
+                    <li style="float:left;margin-left:-40px;margin-top:20px;" data-bb="touzirenzheng">
                         <input class="xieyi_button" type="button" value="上一页" />                				
                     </li>
-                    <li class="item-2" style="float:left;margin-left:90px;">
+                    <li class="item-2" style="float:left;margin-left:90px;margin-top:20px;">
                         <input class="xieyi_button" type="submit" value="保存" />  
                     </li>
                 </ul>
@@ -985,7 +981,7 @@ $(function(){
  <!--投资认证 项目方认证 -->     
     <div id="prorenzheng" class="display">
         <div id="prorzmessage">
-            <ul class="ltrmessage">
+            <ul class="xmfmessage">
                 <li  style="font-size:30px;">
                     <label>投资认证</label>
                 </li>
@@ -995,17 +991,18 @@ $(function(){
                 <li style="float:left;margin-top:20px;">
                     <img src="/static/images/number1,2.png" />
                 </li>
-                <ul class="ltrRzmessage" style="float:left">
+                <ul class="xmfRzmessage" style="float:left">
                     <li style="margin-top:10px;">
                         <label style="color:#e1604d">请上营业执照,法人身份证</label>
-                        <li style="position:absolute;left:680px;">
-                            <label><input type="button" class="ltr_button" value="上传身份证"/></label>
-                            <label><input type="button" class="ltr_button" value="上传名片"/></label>
-                        </li>
-                    </li>
-                    <li style="margin-top:8px;">
+                     </li>
+                    <li style="margin-top:8px;float:left">
                         <label>上传扫描高清图片,帮助我们快速核实您的身份<br />两种证件必须都上传</label>        	
                     </li>
+					<li style="float:left;margin-top:5px;margin-left:100px">
+						<label><input type="button" class="ltr_button" value="上传身份证"/></label>
+						<label><input type="button" class="ltr_button" value="上传名片"/></label>
+					</li>
+					<li style="clear:both"></li>
                     <li style="margin-top:15px;">
                         <label style="color:#e1604d">上传文件证明</label><br />
                     </li>
@@ -1022,7 +1019,7 @@ $(function(){
                         <label style="font-weight:bold;">满足条件:</label><br />
                         <label>最近3年个人年收入不低入30万元人民币,或家庭年均收入不</label><br />            	
                         <label>低于60万元人民币:</label><br />
-                        <label>有天使投资经验</label><label style="position:absolute;left:770px;"><input type="button" class="ltr_button" value="上传"/></label><br />
+                        <label>有天使投资经验</label><label style="position:absolute;margin-left:400px"><input type="button" class="ltr_button" value="上传"/></label><br />
                         <label>证明材料:</label><br />
                         <label>加盖公司公章的收入证明的扫描件或高清拍照</label><br />
                     </li>
@@ -1034,7 +1031,7 @@ $(function(){
                     </li>          
                     <li style="margin-left:-1px;margin-top:-15px; line-height:22px;">
                         <label style="font-weight:bold;">满足条件:</label><br />
-                        <label>个人名下货币信息不少于100万</label><label style="position:absolute;left:770px;"><input type="button" class="ltr_button" value="上传"/></label><br />
+                        <label>个人名下货币信息不少于100万</label><label style="position:absolute;margin-left:300px"><input type="button" class="ltr_button" value="上传"/></label><br />
                         <label style="font-weight:bold;">证明材料</label><br />
                         <label>1.银行六个月的资金流水</label><br />
                         <label>2.股票等期货一系列证明或高清图片</label><br />            
@@ -1047,14 +1044,14 @@ $(function(){
                     </li>
                     <li style="margin-left:-1px;margin-top:-15px; line-height:22px;">
                         <label style="font-weight:bold;">满足条件:</label><br />
-                        <label>个人名下货币信息不少于500万</label><label style="position:absolute;left:770px;"><input type="button" class="ltr_button" value="上传"/></label><br />
+                        <label>个人名下货币信息不少于500万</label><label style="position:absolute;margin-left:300px"><input type="button" class="ltr_button" value="上传"/></label><br />
                         <label style="font-weight:bold;">证明材料</label>
                         <label>固定资产等一系列证明或高清图片</label><br />            
                     </li>                     
-                     <li style="float:left;margin-left:-70px;" data-jj="touzirenzheng">
+                     <li style="float:left;margin-top:20px;" data-jj="touzirenzheng">
                             <input class="xieyi_button" type="button" value="上一页" />                				
                         </li>
-                        <li style="float:left;margin-left:90px;">
+                        <li style="float:left;margin-left:90px;margin-top:20px;">
                             <input class="xieyi_button" type="submit" value="保存" />  
                         </li>
                 </ul>
@@ -1072,17 +1069,18 @@ $(function(){
                     <li style="margin-top:-20px; margin-left:-60px">
                         <label style="font-size:30px;">安全中心</label>
                     </li>
-                    <li style="margin-top:30px; margin-left:-50px" data-dd="xgmm" style="float:left">
+                    <li style="margin-top:30px; margin-left:-50px;float:left" data-dd="xgmm">
                         <a href="javascript:void(0)">修改密码</a>
                     </li>
-                    <li style="float:left; margin-top:-20px; margin-left:55px;">
+                    <li style="float:left; margin-top:20px; margin-left:5px;">
                     <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
                     </li>
-                    <li style="margin-top:-18px; margin-left:70px" data-dd="ghsj" style="float:left">
-                        <laberl id="change">更换手机</laberl>
+                    <li style="margin-top:30px; margin-left:20px;float:left" data-dd="ghsj">
+                        <a href="javascript:void(0)" id="change">更换手机</a>
                     </li>
-                    <li style="margin-top:20px; margin-left:-55px;">
-                    <div style="width:600px; height:1px; background-color:#D5D5D5;overflow:hidden;"></div>
+					<li style="clear:both"></li>
+                    <li style="margin-top:10px; margin-left:-55px;">
+                    <div style="width:600px; 	height:1px; background-color:#D5D5D5;overflow:hidden;"></div>
                     </li>			
                 </ul>
             </div>

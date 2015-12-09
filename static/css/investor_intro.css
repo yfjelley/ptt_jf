@@ -1,5 +1,3 @@
-
-
 .content{width:100%;height:650px;background-color:#eeeef0; margin-top:-2px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -17,13 +15,13 @@
 .tabul2 a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:2px;}
 .tabul2 a:hover{ border-color:#e1604d;font-weight:bold; cursor:pointer;}
 .div_right{width:600px; height:150px; margin-top:250px; margin-left:-10px;}
-
-
 .content2{width:200px;height:500px;background-color:#FFFFFF;position:absolute;z-index:1;margin-left:1100px; margin-top:50px;}
 .div_right2{width:200px; height:500px;}
 .gzPeople label{margin-left:-100px;}
-.gzPeople li{margin-top:50px; margin-left:220px;}
-.fsPeople li{margin-top:40px}
+.gzPeople{margin-left:-5px}
+.fsPeople img{width:40px;height:40px;}
+.fsPeople{margin-left:-5px}
+.fsPeople li{float:left}
+.gzPeople img{width:40px;height:40px;}
+.gzPeople li{float:left}
 .display{display:none}
-
-

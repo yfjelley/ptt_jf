@@ -104,16 +104,15 @@ def writeagreement(request):
     t=RegistrationAgreement(name="technical_support",agreement=test)
     t.save()
 
-    p1 = About_us(name="上海辞达金融信息服务有限公司", address="上海市闵行区沪闵路7866号莲花广场2号楼908室", hotline="021-34222366",zip_code="211100", email="sys@pttjf.com")
+    p1 = About_us(name="上海辞达金融信息服务有限公司", address="上海市闵行区沪闵路7866号莲花广场2号楼908室",\
+                  zip_code=u"201102",hotline="021-34222366", email="sys@pttjf.com")
     p1.save()
     p2 = About_us.objects.all()
     print p2[0].name
     for i in p2:
         print i.address,i.hotline
+
     """
-
-
-
     name= ['明明','笨笨','芳芳','圆圆','大大','东东']
     position=['中国风险投资公司高级总裁','总裁','总经理']
     username=random.randint(13521448969,13698766400)
@@ -130,37 +129,44 @@ def writeagreement(request):
     new_user = User.objects.create_user(username=username, password=password)
     new_user.save()
 
-    u = UserInformation(user=new_user, photo_url='/static/upload/default.png', \
+    u = UserInformation(user=new_user, photo_url='/static/upload/default.png',\
                         abcdefg=password,realname =realname,position=position,\
-                        cate=random.randint(5,10),authentication_class=random.randint(1,4),\
-                        nickname="tom",gender=u"男", birthday="2014-06-15",cellphone=username,\
-                        email="549636@qq.com",city=u"闵行",address=u"上海",\
-                        fans=10)
+                        cate=random.randint(1,6),authentication_class=random.randint(1,4),\
+                        nickname="tom",gender='M', birthday="2014-06-15",cellphone=username,\
+                        email="549636@qq.com",city=u"闵行",address=u"上海",education_experience=u"1923-1926哈佛博士",\
+                        school=u"哈佛大学",basic_information=u"在腾讯科技(深圳)有限公司任高级执行",\
+                        work_experience=u"在腾讯科技(深圳)有限公司任高级执行副总裁及COO首席运营官，\
+                        负责腾讯公司的市场营销体系部署、战略研究部门以及众多业务产品的支持，\
+                        为腾讯公司的发展做出了卓越的贡献",industry=random.randint(1,6),direction=u"先进制造业、\
+                        现代服务业、消费品制造及零售、文化传媒、IT及高科技等行业的成功企业",\
+                        ideas=u"践行价值投资的理念",investment_case=u"Tap4Fun、慕和网络、陌陌、友盟、\
+                        口袋购物(微店)、美柚、Nic" )
+    u.save()
+    u.fans.add(new_user)
+    u.attention_persion.add(new_user)
     u.save()
 
     user = User.objects.all()
-    #print user
-    user=UserInformation.objects.filter(authentication_class=1)
+
+    user = UserInformation.objects.filter(authentication_class=1)
 
     for i in user:
-        #print i.user
-        #print i.position
-        #print i.user.username
-        #pr=Project(publish=i.user,photo_url="/root/zc/static/images/mojing.jpg",category=u"生活服务",status=status,active=active)
-        pr=Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",\
-                   amount=200,finish=160,photo_url="/static/images/mojing.jpg",category=u"生活服务",\
+
+        pr = Project(publish=i.user,status=status,active=active,name=u"魔镜在线",founder="yang",\
+                   amount=200,finish=160,photo_url="/static/images/mojing.jpg",category=random.randint(1,6),\
                    introduction=u"您的私人购物助理",team=u"小明，小李，小张，小小，小葛",description=u"墨迹在线墨迹在线墨迹在线",\
                    leader_inv_min=100000,inv_min=10000,fund_use=u"购物购物购物",\
                    transfer_equity=10,company=u"辞达金融", url="http://ddbid.com/",patent=u"专利专利专利专利",\
-                   business_plan_url="",Preheat_date="2015-12-22",\
+                   business_plan_url="",Preheat_date="2015-12-22",other=u"与此同时，“互联网+”也走过了纯线上路线，\
+                   开始其与产业的紧密结合。如果说第一代互联网还是停留在纯线上运作阶段，\
+                   产业链短，商业模式过于简单，那么第二代互联网，BAT巨头生态圈已经建立，互联网成为一种平台和工具",\
                    preheat_end_date="2015-12-24",crowd_date="2015-12-25",crowd_end_date="2015-12-28",logo="/static/images/mojing.jpg")
-
-
         pr.save()
         #pr=Project.objects.get(id=)
         pr.leader.add(i.user)
         pr.investor.add(i.user)
         pr.click.add(i.user)
+        pr.collection.add(i.user)
         pr.save()
         f = Project.objects.filter(founder="yang").filter(name__contains="筹")
         print "xxxxx",Project.objects.filter(founder="yang").filter(name__contains="筹").count()

@@ -44,7 +44,7 @@
 <div class="content1">
 	<ul>
 		<li style="float:left;margin-left:-25px;">
-			<img src="/static/images/newsplogo.png"width="187px" height="188px" />
+			<img src="{{investor_info.photo_url}}"width="187px" height="188px" />
 		</li>
 	</ul>
 	<ul class="touziren" style="float:left;">
@@ -65,10 +65,7 @@
 		</li>
 		<li><div style="border-top:1px solid #eeeef0;width:340px;height:1px;"></div></li>
 		<li style="font-size:14px;">
-			<label>现任中国风险投资有限公司合伙人,高级副总裁。</label>
-		</li>
-		<li style="font-size:14px;">
-			<label>经济学学士,具有20多年企业管理经验和投资经验。</label>
+			<label>{{investor_info.position}}</label>
 		</li>
 		<li style="margin-top:-160px; margin-left:440px;">
 			{% ifequal investor_info.authentication_class 1 %}
@@ -108,37 +105,35 @@
 		<div id="jbxx">
 			<ul>
 				<li>
-					毕业于华南理工大学
+					{{investor_info.basic_information}}
 				</li>
-				<li>上海融京城资产有限公司 总经理</li>
 			</ul>
 		</div>
 		<div id="tzfx" class="display">
 			<ul>
 				<li>
-					投资方向
+					{{investor_info.direction}}
 				</li>
-				<li>金融,房地产</li>
 			</ul>
 		</div>
 		<div id="jyjl" class="display">
 			<ul>
 				<li>
-					名牌大学毕业
+					{{investor_info.education_experience}}
 				</li>
 			</ul>
 		</div>
 		<div id="tzln" class="display">
 			<ul>
 				<li>
-					和善,诚信
+					{{investor_info.ideas}}
 				</li>
 			</ul>
 		</div>
 		<div id="tzal" class="display">
 			<ul>
 				<li>
-					天使客,天使街
+					{{investor_info.investment_case}}
 				</li>
 			</ul>
 		</div>
@@ -162,20 +157,29 @@
 	<div class="div_right2">
 		<div id="guanzhu">
 			<ul class="gzPeople">
-				<li>
-					<label>张三</label>
-					<label>李四</label>	
-					<label>王五</label>
+
+					{% for i in investor_info.attention_persion.all %}
+				<li style="padding: 16px 2px">
+					{{i.userinformation.realname}}
 				</li>
+				<li style="padding: 5px 5px">
+					<img src="{{i.userinformation.photo_url}}" />
+				</li>
+					{% endfor %}
+
+
 			</ul>
 		</div>
 		<div id="fensi" class="display">
 			<ul class="fsPeople">
-				<li>
-					<label>kk</label>
-					<label>tt</label>
-					<label>hh</label>
-					<label>mm</label>
+
+					{% for i in investor_info.fans.all %}
+				<li style="padding: 16px 2px">
+				{{i.userinformation.realname}}
+				</li>
+				<li style="padding: 5px 5px">
+					<img src="{{i.userinformation.photo_url}}" />
+					{% endfor %}
 				</li>
 			</ul>
 		</div>

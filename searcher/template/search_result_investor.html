@@ -6,62 +6,48 @@
     {% if results %}
         {% for result in results.object_list %}
         <a href="/investor_info/{{result.user.username}}">
-	    <ul class="Cleft3">
-
-			<li class="PelPic">
-				<img src="{{ result.user.userinformation.photo_url }}" />
-			</li>
-			<li class="DesPel">
-				<ul>
-					<li id ="person" style=" font-weight:bold;font-size:25px;padding:5px 0;color:#000;margin-left:10px;">
+	    <div class="Cleft3">
+			<div class="PelPic"><img src="{{ result.user.userinformation.photo_url }}" />
+			</div>
+			<div class="DesPel">
+				<div id ="person" style=" font-weight:bold;font-size:25px;padding:5px 0;color:#000;">
 						{{result.realname}}
-					</li>
-					<li style="padding-top:2px; padding-bottom:18px;font-size:12px;color:#000;">
-						{{result.position}}
-					</li>
-				
-					<li>
-						<label style="font-weight:bold;font-size:14px;color:#000;margin-left:10px;">
-							领投项目
-						</label>
-						<label style="margin-left:25px;font-weight:bold;color:#000;font-size:14px;">
-							跟投项目
-						</label>
-					</li>
-					<li>
-						<label style="padding:0 22px;font-weight:bold;color:#000;font-size:16px;">
-							{{result.user.manager_set.all.count}}
-						</label>
-						<label style="padding:0 30px;margin-left:20px;color:#000;font-weight:bold;font-size:16px;">
-							{{result.user.manager_set.all.count}}
-						</label>
-					</li>
-					<li style="padding:15px 0;color:#e1604d; font-size:12px;">
-						<label style="margin-left:15px;">
-							关注行业
-						</label>
-					</li>
-					<li style="font-size:12px;color:#000;margin-left:10px;">
-						{{result.industry}}
-					</li>
-                    	<li style=" position:relative;top:-100px;">
-						<div style="border-right:1px solid #eeeef0;width:1px;height:35px;"></div>
-					</li>
-					<li style="position:relative;top:-135px;">
-						<div style="border-right:1px solid #eeeef0;width:1px;height:35px;"></div>
-					</li>
-					<li style="position:relative;top:-170px;">
-						<div style="border-right:1px solid #eeeef0;width:1px;height:35px;"></div>
-					</li>
-				</ul>
-			</li>
+				</div>
+				<div style="padding-top:2px; padding-bottom:18px;font-size:12px;color:#000;">
+					{{result.position}}
+				</div>
+				<div style="width:260px; height:50px;">
+					<div style="border-right:1px solid #999;width:1px;height:45px;float:left;"></div>
+					<div style="float:left;width:100px;height:60px;">
+						<p style="font-weight:bold;font-size:14px;color:#000;margin-left:10px;height: 25px;margin-top: -5px;display: block;">领投项目</p>
+						<p style="padding:0 22px;font-weight:bold;color:#000;font-size:16px;height: 25px;margin-top: -5px;display: block;">
+						 {{result.user.manager_set.all.count}}
+						 </p>						 
+					</div>	 
+					<div style="border-right:1px solid #999;width:1px;height:45px;float:left;"></div>
+					<div style="float:left;width:100px;height:60px;"> 
+						 <p style="margin-left:25px;font-weight:bold;color:#000;font-size:14px;height: 25px;margin-top: -5px;display: block;">跟投项目</p>
+						 <p style="padding:0 30px;margin-left:20px;color:#000;font-weight:bold;font-size:16px;height: 25px;margin-top: -5px;display: block;">
+							  {{result.user.manager_set.all.count}}
+						 </p>
+					</div>
+					<div style="border-right:1px solid #999;width:1px;height:45px;float:left;"></div>
+				</div>  
+									
+					
+				<div style="padding:10px 0;color:#e1604d; font-size:12px;clear:both;">
+					<label style="margin-left:15px;">关注行业</label>
+				</div>
+				<div style="font-size:12px;color:#000;margin-left:10px;">
+					{{result.get_industry_display}}
+				</div>
+			</div>
+			
 			{% ifequal result.authentication_class|safe  "游客" %}
-			<li style="position:relative;left:330px;top:-260px; overflow:hidden; width:77px; height:49px;">
-				<img src="/static/images/touzi.png" />
-			</li>
+			<div><img src="/static/images/touzi.png" /></div>
 			{% endifequal %}
 				 
-		</ul>
+		</div>
 	    </a>
 
         {% endfor %}

@@ -19,6 +19,13 @@
 				$('#'+id).show().siblings().hide();
 		});
 	});
+	$('#focus').click(function(){
+		if($(this).val()=="关注"){
+			$("#focus").attr("value","取消关注");
+		}else{
+			$("#focus").attr("value","关注");
+		}
+	})
 	function attion_pr(){
 	    {% if user.id %}
         $.post("/add_attion/"+{{result.id}}+"/",{},function(data){if(data){document.getElementById('click').innerText=data.attion;};});
@@ -45,21 +52,21 @@
                 			<label class="mongjing">{{result.name}}</label>
                     		<label class="mongjiangimg"><img src="/static/images/redgou.png" /></label>
                     		<label class="zczhong" id="click">{{result.click.all|length}}</label>
-
                 		</li>
                         <li class="pro-writing">
                        		<label>{{result.introduction}}</label>
                         </li>
                 	</ul>
                 </li>
-                <li class="pro-btn" >
-                	<input class="btn-focus" type="button" onclick="attion_pr()" value="关注"/><br>
-                	<input class="btn-remind" style="margin-top:5px;" type="button" value="提醒" /><br>                
-                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" style="margin-top:5px;"  type="button" value="我要领投"/></a><br>
-                    <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" style="margin-top:-150px;margin-left:412px;"  type="button" value="我要跟投" /></a>
+                <li style="float:left;margin-left:180px">
+                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()" value="关注"/><br>
+                	<input class="btn-remind" type="button" value="提醒" /><br>
+                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button" value="我要领投"/></a><br>
+                    <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" type="button" value="我要跟投" /></a>
                 </li>
+				<li style="clear:both"></li>
                 <li style="margin-top:30px;margin-left:-40px;">               
-                    <label><div style="border-top:1px solid #eeeef0;width:800px;height:1px;"></div></label>                 	
+                    <label><div style="border-top:1px solid #eeeef0;width:800px;height:1px;"></div></label>
                 </li>
                 <li> 
                 <div id="pro-daohang">
@@ -134,7 +141,7 @@
                     </div>
                 </div>
                 
-               <div id="shangye" class="display">
+	<div id="shangye" class="display">
                 	<div class="shangye-size">
                 		<ul>
                     		<li>
@@ -142,28 +149,64 @@
                         	</li>
                     	</ul>
                     </div>
-                </div>
-                
-                    <div id="qita" class="display">
+                </div>		<div id="qita" class="display">
                 	<div class="qita-size">
                 		<ul>
-                    		<li>
-
+                    		<li style="position:absolute">
+								<input type="radio" name="zl">营业执照
                         	</li>
+							<li style="clear:both"></li>
+							<li style="float: left;margin-top:20px">
+								<input type="radio" name="zl">尽职调查报告
+							</li>
+							<li style="float: left;margin-left:450px;margin-top:20px">
+								<a href="#">下载</a>
+								<a href="#">预览</a>
+							</li>
+							<li style="clear:both"></li>
+							<li>
+								<input type="radio" name="zl">资产证明
+							</li>
+							<li>
+								<input type="radio" name="zl">信用凭证
+							</li>
+							<li>
+								<input type="radio" name="zl">担保方资料
+							</li>
                     	</ul>
                     </div>
                 </div>
-                
-                    <div id="protaolun" class="display">
+					<div id="protaolun" class="display">
                 	<div class="protaolun-size">
                 		<ul>
-                    		<li>
-
+							<li style="position: absolute">
+								<label>1</label>回复
+								<label>2015-12-06</label>
+							</li>
+                    		<li style="float:left;margin-top:20px;margin-left:-600px">
+								<img src="/static/upload/default.png" width="40" height="40">
                         	</li>
+							<li style="float:left;margin-top:20px;margin-left:-500px">
+								<label>都市人</label><label>于2小时发布</label><label>回复</label>
+							</li>
+							<li style="float:left;margin-top:40px;margin-left:-500px">
+								<label>产品开发的Timeline</label>
+							</li>
+							<li style="clear:both"></li>
+							<li>
+								<div style="background:#EEEEF0;width:740px;height:1px;"></div>
+							</li>
+							<li style="margin-top:20px;margin-left:-15px;">
+								<div>
+									<textarea placeholder="内容" id="content" style="border:1px solid #66757f;width:760px;height:150px;"></textarea>
+								</div>
+							</li>
+							<li>
+								<input type="button" class="reply" value="回复">
+							</li>
                     	</ul>
                     </div>
                 </div>
-                          
                </div>
             	</ul>    		
 		</div>
@@ -196,23 +239,22 @@
                     <label>{{result.amount}}</label>
                 </li>
                 <li>
-    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
                 </li>
                 <li style="float:left;margin-left:-40px;">
                 	<ul>                                        
                         <li>
                             <label>出让股份</label>
-                            
                         </li>
                         <li style="margin-top:-10px;">
                             <label>{{result.transfer_equity}}%</label>
                         </li>
-                        <li style="position:absolute;top:280px;right:470px;">
-                			<label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
-						</li>
                 	</ul>
                 </li>
-              	<li style="float:left;margin-left:-20px;">
+				<li style="float:left;margin-left:5px;margin-top:5px;">
+					<label><div style="border-right:1px solid #eeeef0;width:1px;height:40px;"></div></label>
+				</li>
+              	<li style="float:left;margin-left:-30px;">
                 	<ul>
                          <li>
                             <label>投资人数</label>
@@ -220,11 +262,11 @@
                          <li style="margin-top:-10px;">
                             <label>{{ result.investor.all|add_filter:result.leader.all }}</label>
                         </li>
-                        <li style="position:absolute;top:280px;right:390px;">
-                            <label><div style="border-right:1px solid #F00;width:1px;height:40px;"></div></label>
-                        </li>
 					</ul>
                 </li>
+				<li style="float:left;margin-left:5px;margin-top:5px;">
+					<label><div style="border-right:1px solid #eeeef0;width:1px;height:40px;"></div></label>
+				</li>
                 <li style="float:left;margin-top:-50px;margin-left:120px;">
                   	<ul> 
                          <li>
@@ -238,7 +280,7 @@
                 </li>
                 <li style="clear:both"></li>
                  <li>
-                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
 				</li>
                  <li>
     				<label>预约金额</label>
@@ -249,7 +291,7 @@
 					<div class="input_btt"></div>
 				</li>
                 <li style="margin-top:10px;">
-    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
+    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
                 </li>
                  <li>
 					<label>
@@ -262,8 +304,6 @@
     	</div>
      </div>
 </div>
-
-
 <!--底部-->
 {% include "footer.html" %}
 </body>

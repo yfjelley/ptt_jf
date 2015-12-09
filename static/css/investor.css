@@ -1,11 +1,11 @@
 
-#Icontainer{width:100%; height:100%;background-color:#CCCCCC;min-width: 1440px;max-width: 1660px; }
+#Icontainer{width:100%; height:100%;background: #EEEEF0;min-width: 1440px;max-width: 1660px; }
 .Cleft2{width:980px;margin-top:40px;border-radius:5px;margin:0px auto;padding-top: 20px;}
 .search_list{
 padding: 10px 10px;
 overflow: hidden;
 }
-#seatch_norm{width:980px;height:78px; background:#FFFFFF;position: absolute;}
+#seatch_norm{width:920px;height:78px;margin-left: 30px; background:#FFFFFF;position: absolute;}
 .fl {
 float: left;
 margin: 0px;
@@ -54,15 +54,16 @@ width:600px;
 .Ititle2{position:absolute;top:80px;}
 .Ititle2 li{padding:0 30px;}
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
-.Rlogo img{position: relative;left: 75%;top: -15px;width: 90px;height: 75px;}
-.search_bd{width:1000px;;height:100%;margin-left:-10px;}
-.Cleft3{background-color:#FFFFFF;width:440px;height:250px;float:left;margin:0 10px; margin-top:20px;}
+.Rlogo img{position: relative;left: 85%;top: -92px;width: 90px;height: 75px;}
+.more_content{height:1415px;margin-left:-10px;margin-top: 100px;}
+.Cleft3{background-color:#FFFFFF;width:440px;height:250px;float:left;margin-left: 40px; margin-top:20px;}
 
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
-.PelPic img{margin-left:-20px; margin-top:20px; }
-.DesPel{margin-top:-130px;margin-left:100px; }
-.DesPel li{padding:0 10px;}
+.PelPic img{width:160px;height:250px;float:left;}
+.PelPic img{width:137px;height:137px;padding-top:10px;}
+.DesPel{width:260px;height:250px;float:right;}
+
 .pro-content{margin-top:-120px}
 
 /*��ҳ*/
@@ -75,3 +76,11 @@ li.investPelPic2{margin-top:-150px;margin-left:410px;}
 
 /*��ҳ����*/
 .bbs_hunt input.bbs_search_btn{ width:47px; height:42px; background:url(../images/search.png) no-repeat 0 0; border:none; cursor:pointer;}
+
+.fixed{position: absolute;top: 100px;left: 30px;}
+.side{width: 70px;height: 100px;z-index: 2;float: right;right: 70px;position: absolute;top: 90px;}
+.side ul li{width:70px;height:70px;float:left;position:relative;background: #FFF;}
+.side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#000;font:14px/54px "微软雅黑";overflow:hidden;}
+.side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
+.side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
+.side ul li img{float:left;}

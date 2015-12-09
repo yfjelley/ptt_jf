@@ -9,7 +9,7 @@
 					<img src="/static/images/heart.png" />
 			</li>
              <div style="position:relative;top:-10px;margin-left:10px;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;width:50px;height:18px;">
-            <label style="margin-left:20px;font-weight:bold; color:#FFF;">123</label>
+            <label style="margin-left:20px;font-weight:bold; color:#FFF;float: right;margin-top: -3px;padding-right: 10px;">{{result.click.all|length}}</label>
              </div>
 			{% ifequal result.active 1 %}
 			<li style="position:relative;top:-42px;margin-left:186px;">
@@ -23,7 +23,7 @@
 			<li style="margin-top:-79px;">
                 <img src="{{ result.photo_url }}" />				
 			</li>
-			<li>
+			<li style="margin-top:-5px;">
 				<ul class="Cul1">
 					<li>
 						<b style="color:#000000">{{result.name}}</b>
@@ -47,7 +47,7 @@
 						<label style="float:left"><img src="/static/images/people.png" /></label>
 						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish}}</label>
 						<label style="float:left;margin-left:30px;"><img src="/static/images/tag.png" /></label>
-						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.category}}</label>
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.get_category_display}}</label>
 					</li>
 				</ul>
 			</li>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/> 
+<title>投资人</title>
+
+<link rel="stylesheet" href="/static/css/investor.css" />
+<link rel="stylesheet" href="/static/css/zcheader.css" />
+<link rel="stylesheet" href="/static/css/investor_search.css" />
+<link rel="stylesheet" href="/static/css/owl.carousel.css" />
+<script src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/readMoreA.js"></script>
+
+</head>
+
+<body>
+<!--头部-->
+{% include "zcheader.html" %}
+
+<!--内容-->
+<div id="Icontainer">
+
+	<div class="Cleft2">
+
+		<div class="fixed"><img src="/static/images/sqtzr.png"/></div>	
+		<div class="more_content" id="result_form"></div>		
+		<div class="side">
+			 <ul>
+				 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服</label></div></a></li>
+				 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+				 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
+				 <li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop"><img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+			 </ul>
+		</div>   	
+	</div>
+</div>
+{% include "footer.html" %}
+<script type="text/javascript">    	
+	    //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
+<script type="text/javascript">
+   $(function(){
+       checkparam(1,[1,4]);
+	   $('#seatch_norm').find('a').on("click",function(){
+	           $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+               var a = getElementsByClassName('btn_blue','choiceid');
+               checkparam(1,a);
+       });
+   });
+
+
+   function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+   function takepage(n) {
+        checkparam(n);
+   }
+
+   function checkparam(page,a) {
+        $.get("{% url 'search_investor' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    //alert(a);
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+	 $(document).ready(function () {
+
+            $(".side ul li").hover(function () {
+                $(this).find(".sidebox").stop().animate({"width": "190px"}, 200).css({
+                    "opacity": "1",
+                    "filter": "Alpha(opacity=100)",
+                    "background": "#eeeef0"
+                })
+            }, function () {
+                $(this).find(".sidebox").stop().animate({"width": "70px"}, 200).css({
+                    "opacity": "0.8",
+                    "filter": "Alpha(opacity=80)",
+                    "background": "#eeeef0"
+                })
+            });
+
+        });
+     
+        function pageScroll() {
+            //把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+            window.scrollBy(0, -100);
+            //延时递归调用，模拟滚动向上效果
+            scrolldelay = setTimeout('pageScroll()', 0);
+            //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和	值可以得到网页的真正的scrollTop值
+            var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+            //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+            if (sTop == 0)
+                clearTimeout(scrolldelay);
+        }
+</script>
+</body>
+</html>

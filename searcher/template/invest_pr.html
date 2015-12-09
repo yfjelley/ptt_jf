@@ -53,9 +53,9 @@
                     <div class="lmoney">
                         <div style="float:left;width: 6px;height:6px;border-radius: 60px;background:#f06e57;margin-top: 10px;margin-left:8px;"></div>
                         {% ifequal invest_type 1 %}
-                        <label style="float:left;margin-top: 5px;margin-left:10px">领投金额必须大于{{project.leader_inv_min}}万元</label>
+                        <label style="float:left;margin-top: 5px;margin-left:12px">领投金额必须大于{{project.leader_inv_min}}万元</label>
                         {% else %}
-                        <label style="float:left;margin-top: 5px;margin-left:10px">领投金额必须大于{{project.leader_inv_min}}万元</label>
+                        <label style="float:left;margin-top: 5px;margin-left:12px">跟投金额必须大于{{project.leader_inv_min}}万元</label>
                         {% endifequal %}
                     </div>
                 <div style="clear: both"></div>

@@ -1,163 +1,162 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<link rel="stylesheet" href="/static/css/zcheader.css" />
-<link rel="stylesheet" href="/static/css/readMore.css" />
-<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
-<script type="text/javascript">
-    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-   $(function(){
-       checkparam(1,{{objectid}});
-	   $('#seatch_norm a:eq({{objectid|add:"-1"}})').addClass("btn_blue");
-	   $('#seatch_norm').find('a').on("click",function(){
+    <link rel="stylesheet" href="/static/css/zcheader.css"/>
+    <link rel="stylesheet" href="/static/css/readMore.css"/>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
+	<script type="text/javascript" src="/static/js/readMoreA.js"></script>
+    <script type="text/javascript">
+        //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+        $(function () {
+            checkparam(1,{{objectid}});
+        $('#seatch_norm a:eq({{objectid|add:"-1"}})').addClass("btn_blue");
+     
+        $('#seatch_norm a:eq(14)').addClass("btn_blue");
+        $('#seatch_norm').find('a').on("click", function () {
 
-	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
-       var a = getElementsByClassName('btn_blue','choiceid');
-       checkparam(1,a);
+            $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+            var a = getElementsByClassName('btn_blue', 'choiceid');
+            checkparam(1, a);
 
-       });
-   });
+        });
+        })
+        ;
 
-   function getElementsByClassName(n,m) {
-        var el = [],
-                _el = document.getElementsByTagName('*');
-        for (var i = 0; i < _el.length; i++) {
-            if (_el[i].className == n) {
-                el[el.length] = _el[i].getAttribute(m);
-            }
-        }
-        return el;
-    }
-
-   function takepage(n) {
-        checkparam(n);
-   }
-
-   function checkparam(page,a) {
-        $.get("{% url 'search' %}",
-                {
-                    page: page,
-                    search_word: a,
-                },
-                function (data) {
-                    $('#result_form').html(data.content_html);
+        function getElementsByClassName(n, m) {
+            var el = [],
+                    _el = document.getElementsByTagName('*');
+            for (var i = 0; i < _el.length; i++) {
+                if (_el[i].className == n) {
+                    el[el.length] = _el[i].getAttribute(m);
                 }
-        );
-    }
+            }
+            return el;
+        }
 
-$(document).ready(function(){
+        function takepage(n) {
+            checkparam(n);
+        }
 
-	$(".side ul li").hover(function(){
-		$(this).find(".sidebox").stop().animate({"width":"190px"},200).css({"opacity":"1","filter":"Alpha(opacity=100)","background":"#eeeef0"})	
-	},function(){
-		$(this).find(".sidebox").stop().animate({"width":"70px"},200).css({"opacity":"0.8","filter":"Alpha(opacity=80)","background":"#eeeef0"})	
-	});
-	
-});
+        function checkparam(page, a) {
+            $.get("{% url 'search' %}",
+                    {
+                        page: page,
+                        search_word: a,
+                    },
+                    function (data) {
+                        $('#result_form').html(data.content_html);
+                    }
+            );
+        }
 
-		function pageScroll(){
-		//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
-			window.scrollBy(0,-100);
-			//延时递归调用，模拟滚动向上效果
-			scrolldelay = setTimeout('pageScroll()',0);
-			//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和	值可以得到网页的真正的scrollTop值
-			var sTop=document.documentElement.scrollTop+document.body.scrollTop;
-			//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
-			if(sTop==0) 
-				clearTimeout(scrolldelay);
-		}
+        $(document).ready(function () {
 
-</script>
+            $(".side ul li").hover(function () {
+                $(this).find(".sidebox").stop().animate({"width": "190px"}, 200).css({
+                    "opacity": "1",
+                    "filter": "Alpha(opacity=100)",
+                    "background": "#eeeef0"
+                })
+            }, function () {
+                $(this).find(".sidebox").stop().animate({"width": "70px"}, 200).css({
+                    "opacity": "0.8",
+                    "filter": "Alpha(opacity=80)",
+                    "background": "#eeeef0"
+                })
+            });
 
-<style type="text/css">
+        });
 
-.side{position:fixed;width:70px;right: 75px;top:480px; z-index:2}
-.side ul li{width:70px;height:70px;float:left;position:relative; }
-.side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#000;font:14px/54px "微软雅黑";overflow:hidden;}
-.side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
-.side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
-.side ul li img{float:left;}
-#lt-div{position:fixed;width:105px; height:338px;left: 35px;top: 495px;z-index:2}
+        function pageScroll() {
+            //把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）
+            window.scrollBy(0, -100);
+            //延时递归调用，模拟滚动向上效果
+            scrolldelay = setTimeout('pageScroll()', 0);
+            //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和	值可以得到网页的真正的scrollTop值
+            var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+            //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+            if (sTop == 0)
+                clearTimeout(scrolldelay);
+        }
 
-div.transbox
-{
-  width: 300px;
-  height: 204px;
-  margin:30px;
-  background-color:#372c3a;
-  border: 1px solid black;
-  /* for IE */
-  filter:alpha(opacity=60);
-  /* CSS3 standard */
-  opacity:0.6;
-  position:absolute;
-  top:150px;
-  left:730px;  
-}
-div.transbox p{color:#FFFFFF; margin:10px 20px}
-</style>
+    </script>
 
-<title>查看更多</title>
+    <title>查看更多</title>
 </head>
 <body>
-	{% include "zcheader.html" %}
-	 <div class="asssd">
-		 <div id="seatch_norm" class="dhclass">
-			<div id="search_list" class="search_list">
-				<div class="serch_term">
-				  <label class="choices" id="choices">
-				  <label>投资人类别:</label>
-				  <a href="#" choiceid="1"> 不限</a>
-				  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
-				  <a href="javascript:void(0)"   choiceid="3">预热中</a>
-				  <a href="javascript:void(0)" choiceid="4"> 众筹中</a>
-				  <a href="javascript:void(0)"   choiceid="5">众筹成功</a>
-				  <a href="javascript:void(0)"   choiceid="6">成功案例</a>
-				  </label>
-				</div>
-			</div>
-		 </div>	
-	 </div>
-	<div class="more_content">	
-		<div id="menu">
-			<div class="search_bd" id="result_form">
-				<div id="menu2">
-					<ul style="margin-top:35px;margin-left:90px;">
-						<li>
-							<label style="font-size:25px; color:#000000;">每日精选</label>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
- <div id="lt-div">
-      <img src="/static/images/sqtzr.png" style="background-repeat:no-repeat">
-  </div>
-     <div class="side">
-            <ul>
-                <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服</label></div></a></li>            
-                <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
-                <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
-                <li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop"><img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
-            </ul>
+{% include "zcheader.html" %}
+<div class="asssd">
+    <div class="menus">
+          <div id="seatch_norm" class="dhclass">
+              <div id="search_list" class="search_list">
+                <div class="serch_term">
+                    <label class="choices" id="choices">
+                        <label>投资人类别:</label>
+                        <a href="#" choiceid="1"> 不限</a>
+                        <a href="javascript:void(0)" choiceid="2">每日精选</a>
+                        <a href="javascript:void(0)" choiceid="3">预热中</a>
+                        <a href="javascript:void(0)" choiceid="4"> 众筹中</a>
+                        <a href="javascript:void(0)" choiceid="5">众筹成功</a>
+                        <a href="javascript:void(0)" choiceid="6">成功案例</a>
+                    </label>
+                </div>
+            </div>
+              <div class=" search_list">
+                <div class="serch_term1">
+                    <label class="choices">
+                        <label>行业类别:</label>
+                        <a class="btn_blue" href="javascript:void(0)" choiceid="14"> 不限</a>
+                        <a href="javascript:void(0)" choiceid="15">金融在线</a>
+                        <a href="javascript:void(0)" choiceid="16">电子商务</a>
+                        <a href="javascript:void(0)" choiceid="17"> 医疗</a>
+                        <a href="javascript:void(0)" choiceid="18">互联网</a>
+                        <a href="javascript:void(0)" choiceid="19">社交</a>
+                        <a href="javascript:void(0)" choiceid="20"> 生活服务</a>
+                    </label>
+                </div>
+            </div>
+          </div>
+		  <div class="fixed"><img src="/static/images/sqtzr.png"/></div>
+          <div class="more_content">
+            <div>
+                <div class="search_bd" id="result_form">
+                    <div id="menu2">
+                        <ul style="margin-top:10px;margin-left:5px;">
+                            <li>
+                                <label style="font-size:25px; color:#000000;">每日精选</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+		  <div class="side">
+				 <ul>
+					 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/phone.png" width="70px;" height="70px;" /><label>电话客服</label></div></a></li>
+					 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/qq_1.png" width="70px;" height="70px;" /><label>QQ客服</label></div></a></li>
+					 <li><a href="javascript:void(0)"><div class="sidebox"><img src="/static/images/email.png" width="70px;" height="70px;" /><label>新浪微博</label></div></a></li>
+					 <li style="border:none;"><a onclick="pageScroll()" href="javascript:void(0);"><div class="sidetop"><img src="/static/images/gototop.png" style="margin-left:10px; margin-top:5px;" width="45px;" height="45px;" /></div></a></li>
+				 </ul>
+	   </div>    
+    </div>
+
+</div>
 
 {% include "footer.html" %}
 <script type="text/javascript">
-   $(function(){
-	   $('#seatch_norm').find('a').on("click",function(){
-       investor_info(a);
-       });
-   });
+    $(function () {
+        $('#seatch_norm').find('a').on("click", function () {
+            investor_info(a);
+        });
+    });
 
-   function investor_info(a) {
+    function investor_info(a) {
         $.get("{% url 'investor' %}",
                 {
-                    person: a,
+                    person: a
                 },
                 function (data) {
                 }

@@ -1,5 +1,5 @@
 body{margin:0;padding:0;border:0;}
-.index_content{width:100%;height:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;height: 2680px;}
+.index_content{width:100%;height:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;height:2690px;}
 .Cul1{width: 215px;height:150px; background-color:#FFFFFF;margin: 0px;}
 .Cul1 li{margin-left:-15px; line-height:25px; }
 .input_btt{border:1px solid #FF6600; background:#FF6600;width:200px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
@@ -9,11 +9,11 @@ body{margin:0;padding:0;border:0;}
 li{list-style:none;}
 a{text-decoration:none;}
 	images,div,input{border:0 none;}
-	.box{overflow:hidden;width:100%;height:auto;display:block;height: 400px;overflow:hidden;position:relative;}
+	.box{overflow:hidden;width:100%;display:block;height:400px;}
 	.banner{overflow:hidden;width:100%;height:auto;margin: 0px;padding: 0px;}
 	.box .banner li{width:100%;height:auto;}
 	.box .banner li a{display:none;width:100%;height:auto;}
-    .box .banner li a span{ position:absolute;top:100px;left:600px;width:300px;color:#fff;}
+    .box .banner li a span{ position:absolute;top:100px;left:600px;width:300px;display: block;background: rgb(255, 255, 255) none repeat scroll 0% 0%;opacity: 0.7;}
 	.spaan2,spaan3{display:none;}
 	.box .banner li a img{max-width: 100%;height: 400px;width: auto\9;/* ie8 */}
 	.prev:hover,.next:hover{opacity:1;}
@@ -26,7 +26,12 @@ a{text-decoration:none;}
 	.next{right:5px;}
      .ho{opacity: 0.5;z-index: 999}
 	.ho1{opacity: 0.01;z-index: 999}
-   .zc-content{width: 1150px;height:1500px;zoom:1;margin: 0px auto;}
+   .zc-content{
+   width: 1150px;
+   height: 2280px;
+   margin: 0px auto;
+   position: relative;
+   top: -150px;}
    .xujgstyle{width:1200px;margin:0px auto;margin-top:20px;clear:both;}
 .biaotidiv{width: 1140px;height:50px;margin-top:20px;clear:both;padding-right:20px;}
 .biaotidiv ul li.btstyle{font-size:25px;font-weight:bold; color:#000000;float:left;}
@@ -36,26 +41,18 @@ a{text-decoration:none;}
 .resultpage a{display:block;} 
 .heartimg{width:80px;height:20px;float:left;padding-top: 5px;padding-left: 5px;}
 .heartleft{ position:relative;width:25px;height:30px;}
-.littleimg{position:relative;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;width:50px;height: 25px;}
-.littleimg lable{padding-left:20px;font-weight:bold; color:#FFF;}
+.littleimg{position:relative;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;width:50px;height: 20px;}
+.littleimg span{height:20px;font-weight:bold; color:#FFF;display: block;float: right;padding-right: 10px;}
 .jingxuan{ position:relative;}
 .jingxuan img{float:right;}
 .Cul1 li{color:#000000;font-size:12px;line-height: 30px;}
 .mjzximg img{width:255px;}
-
-.side{position:absolute;width:70px;right: 75px; z-index:2}
-.side ul li{width:70px;height:70px;float:left;position:relative; }
+.fixed{float:left;padding-left:20px;padding-top:20px;}
+.side{width: 70px;height: 100px;z-index: 2;float: right;right: 70px;position: absolute;top: 480px;}
+.side ul li{width:70px;height:70px;float:left;position:relative; background:#FFFFFF;}
 .side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#000;font:14px/54px "微软雅黑";overflow:hidden;}
 .side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
 .side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
 .side ul li img{float:left;}
-
-@charset "gb2312";
-html{background-image:url(about:blank)!important;background-attachment:fixed!important;}
-#main{zoom:1; height:1500px; margin:auto; background:#999; text-align:center; }
-.lineline{ height:20px;}
-/*滚动层*/
-#right_scroll{width:104px;height:345px;top: 510px;left:30px;position:absolute;z-index:9999;}
-.right_scroll_context{width:104px;z-index:9999;overflow:hidden;}
 
  
