@@ -2,31 +2,19 @@ body{margin:0;}
 .UserContent{width:100%;height:900px; background-color:#CCCCCC;min-width:1440px;max-width:1660px;}
 .UserCenter{width:1000px;height:800px; background-color:#FFFFFF;z-index:1;margin:0 auto}
 .Userul{margin-top:80px;margin-left:-50px;}
-.Userul1{margin-top:120px; margin-left:-10px;}
-.Userul1 li{padding:10px 0}
-.user_nick label{padding-left:12px;}
+.Userul1{margin-top:120px; margin-left:30px;}
+.Userul1 td{padding:10px 5px}
+
 .user_nick input[type='text']{width:150px;height:20px;}
-.tg-list{position:absolute;margin-top:-35px;margin-left:170px;}
-.tg-list1{position:absolute;margin-top:10px;margin-left:140px;}
-.user_name label{padding-left:10px;}
+.tg-list{position:absolute;margin-top:-37px;margin-left:250px;}
+.tg-list1{position:absolute;margin-top:10px;margin-left:250px;}
 .user_name input[type='text']{width:150px;height:20px;}
-.user_sex label{padding-left:40px;}
-.user_birth label{padding-left:42px;}
 .user_birth input[type='text']{width:150px;height:20px;}
-.user_email label{padding-left:10px;}
 .user_email input[type='text']{width:150px;height:20px;}
-.user_city label{padding-left:10px;}
 .user_city input[type='text']{width:150px;height:20px;}
-.user_addre label{padding-left:10px;}
 .user_addre input[type='text']{width:150px;height:20px;}
-.user_edu label{padding-left:42px;}
-.user_income label{padding-left:25px;}
-.user_marry label{padding-left:10px;}
-.user_wx label{padding-left:42px;}
 .user_wx input[type='text']{width:150px;height:20px;}
-.user_qq label{padding-left:58px;}
 .user_qq input[type='text']{width:150px;height:20px;}
-.user_wb label{padding-left:42px;}
 .user_wb input[type='text']{width:150px;height:20px;}
 .birth-select{margin-top:-35px; margin-left:80px;}
 
@@ -54,7 +42,7 @@ input.button_jiben{border:1px solid #4a3c70; background:#4a3c70;width:55px; colo
 
 .button-shangchuan{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:100px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px;cursor:pointer}
 .button-shangchuan input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
-input.button_save{border:1px solid #4a3c70;background:#4a3c70;width:85px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:20px;}
+input.button_save{border:1px solid #4a3c70;background:#4a3c70;width:85px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .gupiao-change{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:10px; margin-top:20px;}
 .quxiao-attention{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:-80px; margin-top:30px;}
 .ProRight{width:95px;height:500px;float:left;}
@@ -99,12 +87,17 @@ li.Proli11 label{margin:0px 50px;}
 ul{list-style:none;}
 .xieyi{margin-top:100px; line-height:30px;margin-left:-80px;margin-top:65px;}
 .xieyi_button{border:1px solid #4a3c70;width:100px;height:35px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;}
-.ltr_button{border:1px solid #4a3c70;width:78px;height:35px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;}
+.license-file{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:70px;height:20px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer;}
+.license-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
+.procard-file{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:70px;height:20px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer}
+.procard-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
+.pro-upload{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:40px;height:20px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer;}
+.pro-upload input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
 .idcard-file{border:1px solid #4a3c70;position:relative;display:inline-block;background:#4a3c70; color:#FFFFFF;width:70px;height:20px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;text-decoration:none; overflow:hidden; text-indent:0; line-height:20px;padding:4px 0;font-size:14px;cursor:pointer}
 .idcard-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
-.namecard-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px;cursor:pointer}
+.namecard-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0; text-align:center;font-size:14px;cursor:pointer}
 .namecard-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
-.upload-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px; cursor:pointer}
+.upload-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0; text-align:center;font-size:14px; cursor:pointer}
 .upload-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
 .tzrzrule{margin-top:65px;margin-left:-80px;line-height:25px;}
 .tzrzMessage{margin-top:155px;width:700px;}

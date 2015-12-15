@@ -28,8 +28,9 @@ from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationFo
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal
 from ddbid import conf
+from django.db.models import Q
 
 
 from searcher.models import RegistrationAgreement
@@ -735,69 +736,57 @@ def search_investor(request):
     #web(4：不限，5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)
     #sql(1:注册用户,2：认证资深投资人，3：认证投资人，4: 创业者),字段：authentication_class
     #sql(5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)，字段：cate
+    # ('1', '金融在线'),('2', '电子商务'),('3', '医疗'),('4', '互联网'),('5', '社交'),('6', '生活服务'),
     search_word = request.GET.getlist('search_word[]')
     print search_word
     if search_word == [u'1', u'4']:
         results = UserInformation.objects.all()
     elif search_word == [u'1', u'5']:
-        results = UserInformation.objects.filter(cate=5)
+        results = UserInformation.objects.filter(industry='1')
+        for i in results:
+            print i.cate
+        print results
     elif search_word == [u'1', u'6']:
-        results = UserInformation.objects.filter(cate=6)
+        results = UserInformation.objects.filter(industry='2')
     elif search_word == [u'1', u'7']:
-        results = UserInformation.objects.filter(cate=7)
+        results = UserInformation.objects.filter(industry=3)
     elif search_word == [u'1', u'8']:
-        results = UserInformation.objects.filter(cate=8)
+        results = UserInformation.objects.filter(industry=4)
     elif search_word == [u'1', u'9']:
-        results = UserInformation.objects.filter(cate=9)
+        results = UserInformation.objects.filter(industry=5)
     elif search_word == [u'1', u'10']:
-        results = UserInformation.objects.filter(cate=10)
+        results = UserInformation.objects.filter(industry=6)
     elif search_word == [u'2', u'4']:
         results = UserInformation.objects.filter(authentication_class=2)
     elif search_word == [u'2', u'5']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=5)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=1)
     elif search_word == [u'2', u'6']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=6)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=2)
     elif search_word == [u'2', u'7']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=7)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=3)
     elif search_word == [u'2', u'8']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=8)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=4)
     elif search_word == [u'2', u'9']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=9)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=5)
     elif search_word == [u'2', u'10']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=10)
+        results = UserInformation.objects.filter(authentication_class=2).filter(industry=6)
     elif search_word == [u'3', u'4']:
         results = UserInformation.objects.filter(authentication_class=3)
     elif search_word == [u'3', u'5']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=5)
+        results = UserInformation.objects.filter(authentication_class=3).filter(industry=1)
     elif search_word == [u'3', u'6']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=6)
+        results = UserInformation.objects.filter(authentication_class=3).filter(industry=2)
     elif search_word == [u'3', u'7']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=7)
+        results = UserInformation.objects.filter(authentication_class=3).filter(industry=3)
     elif search_word == [u'3', u'8']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=8)
+        results = UserInformation.objects.filter(authentication_class=3).filter(industry=4)
     elif search_word == [u'3', u'9']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=9)
+        results = UserInformation.objects.filter(authentication_class=3).filter(industry=5)
     elif search_word == [u'3', u'10']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(cate=10)
+       results = UserInformation.objects.filter(authentication_class=3).filter(industry=6)
     else:
         results = UserInformation.objects.all()
-    """
-    for i in results:
-        print "testxxxxx",i.realname,i.position,i.industry,i.user.username
-        print dir(i.user)
-        print "all leadertttttttttttttttttttttttttttt:%s"%i.user.manager_set.all().count()
-        print "all investortttttttttttttttttttttttttttt:%s"%i.user.investor_set.all().count()
-        p1=Project.objects.all()
-        #print p1
-        print dir(p1)
-        print "xxxxxx"
-        print dir(p1.leader)
-        for i in p1:
-             print dir(i)
-             p2 =  p1.leader.filter(username = i.user.username)
-             print "p2:%s"%p2
-        #print "p1.count:%s"%p1.count
-    """
+
     print "ppppp"
     ppp = Paginator(results, 10)
 
@@ -824,8 +813,9 @@ def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
 def prodetails(request,objectid):
-    p = Project.objects.filter(id=objectid)
-    return render_to_response('prodetails.html',{"result":p[0]}, context_instance=RequestContext(request))
+    p = Project.objects.get(id=objectid)
+    forum = project_forum.objects.filter(forum_project=p)
+    return render_to_response('prodetails.html',{"result":p,"project_forum":forum}, context_instance=RequestContext(request))
 
 
 def project(request,objectid):
@@ -839,14 +829,45 @@ def invest_pr(request,objectid):
 
 def add_attion(request,objectid):
     t = Project.objects.get(id=objectid)
-    print len(t.click.all()) ,type(t.click.all())
-    click = len(t.click.all()) + 1
-    print request.user
+    count = len(t.click.all()) + 1
+
     t.click.add(request.user)
     t.save()
     t = Project.objects.get(id=objectid)
-    print len(t.click.all()) ,type(t.click.all())
-    return HttpResponse(json.dumps({'attion': click}), content_type="application/json")
+    count1 = len(t.click.all())
+    if count != count1:
+        comment = u"你已经关注了改用户！"
+    else:
+        comment = u"关注成功！"
+    return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
+
+def add_attion_investor(request):
+    t = UserInformation.objects.get(id=request.POST.get("investor"))
+
+    attention_persion = len(t.attention_persion.all()) + 1
+
+    t.attention_persion.add(request.user)
+    t.save()
+    t = UserInformation.objects.get(id=request.POST.get("investor"))
+    attention_persion_after = len(t.attention_persion.all())
+    if attention_persion != attention_persion_after:
+        comment = u"你已经关注了该用户！"
+    else:
+        comment = u"关注成功！"
+
+    return HttpResponse(json.dumps({'attion': attention_persion_after,"comment":comment}), content_type="application/json")
+
+def sendSMS(request):
+    u = User.objects.get(id=request.POST.get("investor"))
+    content = request.POST.get("content")
+
+    if content:
+        t = Signal.objects.create(type=2,user=request.user,who=u,content=content)
+        t.save()
+        return HttpResponse(json.dumps({"success":1}), content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"success":0}), content_type="application/json")
+
 
 
 def search_project(request):
@@ -949,19 +970,108 @@ def search(request):
             'success': True
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
+def project_reply(request,project_id):
+    if request.method == 'POST':
+        if not request.user.is_authenticated():
+            return HttpResponse(u'只有登录用户才能评论!')
+        _code = request.POST.get('log_code')
+        if not _code:
+            return HttpResponse(u'请输入验证码!')
+        else:
+            ca = Captcha(request)
+            if ca.check(_code):
+                print "dddd"
+                t = project_forum()
+                if request.POST['content']:
+                    t.forum_content = request.POST['content']
+                else:
+                    return HttpResponse(u'输入内容不能为空!')
+                print "rrrr"
+                t.forum_content = t.forum_content.replace("<img>", "<img class = 'bbs_topic_img' src='")
+                t.forum_content = t.forum_content.replace("</img>", "'/>")
+                t.forum_content = t.forum_content.replace("\r\n", "<br/>")
+                print "555"
+                print project_id,Project.objects.filter(id=project_id)[0]
+                t.forum_project = Project.objects.filter(id=project_id)[0]
+                print "yyy"
+                print request.user
+                t.forum_user = request.user
+                t.save()
+                return HttpResponse(1)
+            else:
+                return HttpResponse(u'请输入验证码有误!')
+
+def do_result(request):
+    if request.method == 'POST':
+        select = request.POST.get('select','')
+        keyword = request.POST.get('keyword','')
+        if not keyword:
+            keyword = 0
+        page = request.POST.get('page', '1')
+
+        return render_to_response('investor_search.html',{'select':select,'keyword':keyword,'page':page},context_instance=RequestContext(request))
 def do_search(request):
     if request.method == 'POST':
         select = request.POST.get('select','')
         keyword = request.POST.get('keyword','')
+
         print select,type(select)
         if select == u"找项目":
-            print "xxxxx"
-            results = Project.objects.all()
-            return render_to_response('investor_search.html',{"flag":1,"results":results}, context_instance=RequestContext(request))
-        else:
-            results = User.objects.filter(username=keyword)
-            return render_to_response('investor_search.html',{"results":results}, context_instance=RequestContext(request))
+            if keyword and keyword != u'0':
+                try:
+                    results = Project.objects.filter(Q(publish__username__icontains=keyword)\
+                            |Q(name__icontains=keyword)|Q(category__icontains=keyword))
+                except Exception as e:
+                    results = Project.objects.all()
+                print results
+            else:
+                results = Project.objects.all()
 
+            ppp = Paginator(results, 20)
+            try:
+                    page = int(request.GET.get('page', '1'))
+            except ValueError:
+                    page = 1
+            try:
+                    results = ppp.page(page)
+            except (EmptyPage, InvalidPage):
+                    results = ppp.page(ppp.num_pages)
+            last_page = ppp.page_range[len(ppp.page_range) - 1]
+            page_set = get_pageset(last_page, page)
+            t = get_template('do_search_project.html')
+            content_html = t.render(
+                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+            payload = {
+                    'content_html': content_html,
+                    'success': True
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
+        else:
+            print keyword,type(keyword)
+            if keyword and keyword != u'0':
+                results = User.objects.filter(Q(username__icontains=keyword)|Q(userinformation__realname__icontains=keyword))
+            else:
+                results = User.objects.all()
+            ppp = Paginator(results, 10)
+
+            try:
+                    page = int(request.POST.get('page', '1'))
+            except ValueError:
+                    page = 1
+            try:
+                    results = ppp.page(page)
+            except (EmptyPage, InvalidPage):
+                    results = ppp.page(ppp.num_pages)
+            last_page = ppp.page_range[len(ppp.page_range) - 1]
+            page_set = get_pageset(last_page, page)
+            t = get_template('do_search_investor.html')
+            content_html = t.render(
+                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+            payload = {
+                    'content_html': content_html,
+                    'success': True
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
 def search_zc(request):

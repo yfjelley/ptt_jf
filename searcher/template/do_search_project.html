@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<div style="width:100%;background:#EEEEF0;">
+<div class="Cleft5">   
+    {% if results %}
+        {% for result in results.object_list %}
+	<a href="/prodetails/{{result.id}}">
+	      
+		<ul class="mojing">
+		        
+			{% ifequal result.active 1 %}
+			<li style="position:relative;top:-41px;margin-left:221px;">
+				<img src="/static/images/flag.png" />
+			</li>
+            {% else %}
+            <li style="position:relative;">
+				<div style="border:0 solid red;width:38px;height:38px;"></div>
+			</li>
+			{% endifequal %}
+			<li style="margin-top:-79px;">
+                <img src="{{ result.photo_url }}" width="255px;"/>				
+			</li>
+			<li>
+				<ul class="Cul2">
+					<li style="padding-top:5px;height:20px">
+						<b style="color:#000000">{{result.name}}</b>
+					</li>
+					<li style="padding-top:5px;">
+						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
+					</li>
+					<li>
+						<div class="input_btt"></div>
+					</li>
+					<li style="float:left">
+						<label style="color:#000000;font-size:12px">融资目标</label><span style="color:#000000;;font-size:12px">{{result.amount}}</span>
+					</li>
+					<li style="float:left;margin-left:30px;">
+						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;;font-size:12px">{{result.finish}}</span>
+					</li>
+					<li style="clear:both">
+						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
+					</li>
+					<li>
+						<label style="float:left;padding-top: 5px;"><img src="/static/images/people.png" /></label>
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish}}</label>
+						<label style="float:left;margin-left:30px;padding-top: 5px;"><img src="/static/images/tag.png" /></label>
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.get_category_display}}</label>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		
+	</a>
+     	{% endfor %}
+
+    {% else %}
+
+        <a>无符合查询条件的纪录</a>
+    {% endif %}
+	
+	</div>
+	<div class="pagesg">
+        <a href="javascript:void(0)" class="before"
+           onclick="takepage(1)">《</a>
+        {% if result.has_previous %}
+            <a href="javascript:void(0)"
+               onclick="takepage({{ result.previous_page_number }})">〈</a>
+        {% endif %}
+        {% for page in page_set %}
+            <a href="javascript:void(0)" {% ifequal page result.number %}
+               class="currentpage" {% endifequal %}
+               onclick="takepage({{ page }})">{{ page }} </a>
+        {% endfor %}
+        {% if result.has_next %}
+            <a href="javascript:void(0)"
+               onclick="takepage({{ result.next_page_number }})">〉</a>
+        {% endif %}
+        <a href="javascript:void(0)" class="after"
+           onclick="takepage({{ last_page }})">》</a>
+    </div>
+</div>
+</html>

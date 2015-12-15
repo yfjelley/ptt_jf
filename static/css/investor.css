@@ -1,18 +1,24 @@
 
 #Icontainer{width:100%; height:100%;background: #EEEEF0;min-width: 1440px;max-width: 1660px; }
-.Cleft2{width:980px;margin-top:40px;border-radius:5px;margin:0px auto;padding-top: 20px;}
+.Cleft2{width:100%;border-radius:5px;margin:0 auto;padding-top: 20px;}
+.Cleft5{width: 1150px;
+border-radius: 5px;
+margin: 0px auto;
+margin-top: 40px;
+position: relative;
+left: 20px;
+height:1650px;}
 .search_list{
 padding: 10px 10px;
 overflow: hidden;
 }
-#seatch_norm{width:920px;height:78px;margin-left: 30px; background:#FFFFFF;position: absolute;}
+#seatch_norm{width:920px;height:100px;margin: 0px auto; background:#FFFFFF;}
 .fl {
 float: left;
 margin: 0px;
 padding: 0px;
-color:14;
 font-weight:bold;
-outline:0none;
+outline:0;
 }
 .search_term {
     margin: 0px;
@@ -21,8 +27,8 @@ outline:0none;
 	overflow: hidden;
 }
 .serch_term{
-font-size: 14px;
-width:600px;
+font-size: 16px;
+width:650px;
 }
 .choices a {
     margin-right: 15px;
@@ -44,8 +50,6 @@ width:600px;
 .search dl dd a{color:#000000;}
 .choices a:hover{color:#FF0000;}
 
-
-
 .Ititle li:hover{color:#e1604d; cursor:pointer;}
 .Ititle2 li:hover{color:#e1604d; cursor:pointer;}
 .Ititle li{padding:0 30px;}
@@ -54,25 +58,26 @@ width:600px;
 .Ititle2{position:absolute;top:80px;}
 .Ititle2 li{padding:0 30px;}
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
-.Rlogo img{position: relative;left: 85%;top: -92px;width: 90px;height: 75px;}
-.more_content{height:1415px;margin-left:-10px;margin-top: 100px;}
-.Cleft3{background-color:#FFFFFF;width:440px;height:250px;float:left;margin-left: 40px; margin-top:20px;}
+.Rlogo img{position: relative;left: 85%;top: -97px;width: 90px;height: 75px;}
+.mores_content{height: 1265px;margin-left:-10px;}
+.moress_content{height: 1270px;margin-left:-10px;}
+.Cleft3{background-color:#FFFFFF;width:440px;height:220px;float:left;margin-left: 40px; margin-top:20px;}
 
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
-.PelPic img{width:160px;height:250px;float:left;}
-.PelPic img{width:137px;height:137px;padding-top:10px;}
-.DesPel{width:260px;height:250px;float:right;}
+.PelPic img{width:160px;height:220px;float:left;}
+.PelPic img{width:137px;height:137px;padding-top:20px;padding-left:10px;}
+.DesPel{width:260px;height:220px;float:right;}
 
 .pro-content{margin-top:-120px}
 
 /*��ҳ*/
-.pages{ padding:20px 0 10px 0; text-align:right;clear:both;margin-right:240px;width:100%;}
-.pages a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
-.pages a.before{border-radius:15px 10px 10px 15px;}
-.pages a.after{border-radius:10px 15px 15px 10px;}
-.pages a.active,.pages a:hover{border:1px solid #c50512;color:#c50512;}
-.pages a.currentpage{border:1px solid #c50512;color:#fff; background:#c50512;}
+.pagess{ text-align:right;height:30px;margin-right:260px;}
+.pagess a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
+.pagess a.before{border-radius:15px 10px 10px 15px;}
+.pagess a.after{border-radius:10px 15px 15px 10px;}
+.pagess a.active,.pages a:hover{border:1px solid #c50512;color:#c50512;}
+.pagess a.currentpage{border:1px solid #c50512;color:#fff; background:#c50512;}
 
 /*��ҳ����*/
 .bbs_hunt input.bbs_search_btn{ width:47px; height:42px; background:url(../images/search.png) no-repeat 0 0; border:none; cursor:pointer;}
@@ -84,3 +89,9 @@ li.investPelPic2{margin-top:-150px;margin-left:410px;}
 .side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
 .side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
 .side ul li img{float:left;}
+.pagesg {text-align: right;height: 30px;margin-right:150px;position: relative;top: -40px;}
+.pagesg a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
+.pagesg a.before{border-radius:15px 10px 10px 15px;}
+.pagesg a.after{border-radius:10px 15px 15px 10px;}
+.pagesg a.active,.pages a:hover{border:1px solid #c50512;color:#c50512;}
+.pagesg a.currentpage{border:1px solid #c50512;color:#fff; background:#c50512;}

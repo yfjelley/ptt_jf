@@ -298,6 +298,19 @@ class project_forum(models.Model):
     forum_content = models.CharField(max_length=255, blank=True, null=True)#内容
     time_created = models.DateTimeField(auto_now_add=True)
 
+class Signal(models.Model):
+    type = models.IntegerField(default=0)        # 0,系统公告；1:评论;2:私信;3.关注;4.主题关注
+    obj = models.IntegerField(default=0)         # 对象id
+    user = models.ForeignKey(User,related_name = "signal_user_set", blank=True, null=True)      # 发布者
+    who = models.ForeignKey(User,related_name = "signal_who_set", blank=True, null=True)                   # 接受者
+    title = models.CharField(max_length=200, null=True)        # 标题
+    content = models.CharField(max_length=1000, null=True)        # 内容
+    status = models.IntegerField(default=0)             # 状态，0，未读；1已读，2.删除
+    add_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'user_signal'
+
 class ThirdLogin(models.Model):
     userInfo = models.OneToOneField(UserInformation)
     openId = models.CharField('平台验证', max_length=100, blank=True, null=True)

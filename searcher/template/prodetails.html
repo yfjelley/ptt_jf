@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="/static/css/prodetails.css">
 <title>项目详情</title>
 <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/previewer.js"></script>
 <script>
 	$(function(){
 		$("#pro-daohang>ul>li>a").click(function(){
@@ -19,6 +20,14 @@
 				$('#'+id).show().siblings().hide();
 		});
 	});
+    $('.btn-remind').click(function(){
+    	{% if user.id %}
+
+    	{% else %}
+    	 alert('请先登录!');
+    	{% endif %}
+    })
+
 	$('#focus').click(function(){
 		if($(this).val()=="关注"){
 			$("#focus").attr("value","取消关注");
@@ -28,12 +37,68 @@
 	})
 	function attion_pr(){
 	    {% if user.id %}
-        $.post("/add_attion/"+{{result.id}}+"/",{},function(data){if(data){document.getElementById('click').innerText=data.attion;};});
+        $.post("/add_attion/"+{{result.id}}+"/",
+        	{},
+        	function(data)
+        	{ if(data.comment){alert(data.comment);
+        	if(data.comment=="关注成功"){document.getElementById('click').innerText=data.attion;}};});
         {% else %}
          alert('请先登录!');
         {% endif %}
     }
+
+    $(document).ready(function () {
+        $(".btn-remind").click(function (e) {
+            e.preventDefault();
+            $("#warning_li").toggle();
+            $("#warning_li").toggleClass("active");
+        });
+        $("#warning_li").mouseup(function () {
+            return false;
+        });
+        $(document).mouseup(function (e) {
+            if ($(e.target).parent("a.btn-remind").length == 0) {
+                $(".btn-remind").removeClass("active");
+                $("#warning_li").hide();
+            }
+        });
+    });
 </script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".flip").click(function(){
+				$(".panel").slideToggle("slow");
+			});
+
+			$("#reply").click(function(){
+				$.post("{% url 'project_reply' result.id %}",
+				{
+				   content: $('#content').val(),
+				   log_code: $('#log_code').val(),
+				},
+				function (data) {
+				   if(data==1){location.reload();}else{alert(data);}
+				});
+			});
+
+		});
+	</script>
+	<script>
+		$(function(){
+			$('.down').mouseover(function(){
+				$('.down').attr('title','下载');
+			})
+			$('.down').mouseout(function(){
+				$('.down').attr('title','');
+			})
+			$('.search').mouseover(function(){
+				$('.search').attr('title','浏览');
+			})
+			$('.search').mouseout(function(){
+				$('.search').attr('title','');
+			})
+		})
+	</script>
 </head>
 
 <body>
@@ -59,8 +124,19 @@
                 	</ul>
                 </li>
                 <li style="float:left;margin-left:180px">
-                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()" value="关注"/><br>
-                	<input class="btn-remind" type="button" value="提醒" /><br>
+                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/><br>
+                	<input class="btn-remind" type="button"/><br>
+					<div class="stt_img">
+							<dl id="detail_a">
+								<dd><a class="btn-remind" href="#"></a>
+									<ul id="warning_li">
+										<li><a href="javascript:void(0)" class="rmbutton" rtype="2">满标提醒</a></li>
+										<li><a href="javascript:void(0)" class="rmbutton" rtype="3">还款提醒</a></li>
+										<li><a href="javascript:void(0)" class="rmbutton" rtype="5">可投金额提醒</a></li>
+									</ul>
+								</dd>
+							</dl>
+					</div>
                     <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button" value="我要领投"/></a><br>
                     <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" type="button" value="我要跟投" /></a>
                 </li>
@@ -113,24 +189,24 @@
                 </li>
                 <div class="div-right">
                 	<div id="projianjie">
-                    	<ul style="projianjie-text">
+                    	<ul style="float:left">
                         	<li>
                             {{result.description}}
                             </li>
                         </ul>
                     </div>
-                
-                
+
+
                 <div id="temjianjie" class="display">
                 	<div class="temjianjie-size">
-                		<ul>
+                		<ul style="float:left">
                     		<li>
                         		{{result.team}}
                         	</li>
                     	</ul>
                     </div>
                 </div>
-                
+
                 <div id="touzi" class="display">
                 	<div class="touzi-size">
                 		<ul>
@@ -140,75 +216,105 @@
                     	</ul>
                     </div>
                 </div>
-                
-	<div id="shangye" class="display">
+
+	             <div id="shangye" class="display">
                 	<div class="shangye-size">
-                		<ul>
-                    		<li>
-                        		{{result.business_plan_url}}
-                        	</li>
-                    	</ul>
+						<ul>
+						<li>
+							<p>商业计划书
+							<span style="margin-left:540px"><a href="/static/download/融资居间协议.doc"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+							<a href="/intermediary/1"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a></span>
+							</p>
+						 </li>
+						</ul>
                     </div>
-                </div>		<div id="qita" class="display">
+                </div>
+					<div id="qita" class="display">
                 	<div class="qita-size">
-                		<ul>
-                    		<li style="position:absolute">
-								<input type="radio" name="zl">营业执照
-                        	</li>
-							<li style="clear:both"></li>
-							<li style="float: left;margin-top:20px">
-								<input type="radio" name="zl">尽职调查报告
-							</li>
-							<li style="float: left;margin-left:450px;margin-top:20px">
-								<a href="#">下载</a>
-								<a href="#">预览</a>
-							</li>
-							<li style="clear:both"></li>
-							<li>
-								<input type="radio" name="zl">资产证明
-							</li>
-							<li>
-								<input type="radio" name="zl">信用凭证
-							</li>
-							<li>
-								<input type="radio" name="zl">担保方资料
-							</li>
-                    	</ul>
+						<ul>
+						<li class="qita_buss">
+							<label>营业执照</label>
+							<label>
+								<a href="/static/download/融资居间协议.doc" style="margin-left:553px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+								<a href="/intermediary/1"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</label>
+						 </li>
+						  <li class="qita_report">
+							<label>尽职调查报告</label>
+							<label>
+								<a href="/static/download/有限合伙协议.doc" style="margin-left:520px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+								<a href="/intermediary/2"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</label>
+						 </li>
+						  <li class="qita_prove">
+							<label>资产证明</label>
+							<label>
+								<a href="/static/download/投资协议.doc" style="margin-left:552px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+								<a href="/intermediary/3"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</label>
+						 </li>
+						  <li class="qita_credit">
+							<label>信用凭证</label>
+							<label>
+								<a href="/static/download/股权转让协议.doc" style="margin-left:552px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+								<a href="/intermediary/4"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</label>
+						 </li>
+						 <li class="qita_assure">
+							<label>担保方资料</label>
+							<label>
+								<a href="/static/download/股权转让协议.doc" style="margin-left:538px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+								<a href="/intermediary/4"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</label>
+						 </li>
+						 </ul>
                     </div>
                 </div>
 					<div id="protaolun" class="display">
-                	<div class="protaolun-size">
-                		<ul>
-							<li style="position: absolute">
-								<label>1</label>回复
-								<label>2015-12-06</label>
-							</li>
-                    		<li style="float:left;margin-top:20px;margin-left:-600px">
-								<img src="/static/upload/default.png" width="40" height="40">
-                        	</li>
-							<li style="float:left;margin-top:20px;margin-left:-500px">
-								<label>都市人</label><label>于2小时发布</label><label>回复</label>
-							</li>
-							<li style="float:left;margin-top:40px;margin-left:-500px">
-								<label>产品开发的Timeline</label>
-							</li>
-							<li style="clear:both"></li>
-							<li>
-								<div style="background:#EEEEF0;width:740px;height:1px;"></div>
-							</li>
-							<li style="margin-top:20px;margin-left:-15px;">
-								<div>
-									<textarea placeholder="内容" id="content" style="border:1px solid #66757f;width:760px;height:150px;"></textarea>
-								</div>
-							</li>
-							<li>
-								<input type="button" class="reply" value="回复">
-							</li>
-                    	</ul>
-                    </div>
-                </div>
-               </div>
-            	</ul>    		
+						<div class="protaolun-size">
+							   {% if project_forum %}
+								   {% for i in project_forum %}
+							<dl class="talk_list">
+								<dt><a><img src="{{i.forum_user.userinformation.photo_url}}"></a></dt>
+								<dd>
+									<p>
+										<a>{{ i.forum_user.username }}</a>
+										{{ i.time_created|date:"Y-m-j  H:i:s"  }}
+										<a href="#">回复</a>
+									</p>
+									<div class="talk_con">
+										{{i.forum_content}}
+									</div>
+								</dd>
+							</dl>
+
+								   {% endfor %}
+							   {% endif %}
+						<dl style="clear:both"></dl>
+						<div class="reply_publish reply_box mt10">
+							<div class="bbs_hd"><a href="#" class="bbs_backtop fr">回到顶部</a><h3>快速回复  <a id='addemoji'onclick="show_emoji()"><img src="/static/emoji/img/grinning.png" title="添加表情" style="width: 23px;height: 23px;" /></a></h3></div>
+							{% include 'emoji.html' %}
+							<div class="bbs_bd">
+								<textarea id="content" name="content"></textarea>
+								<li class="yzm" >
+									<div style="padding-top: 5px">
+										<input name="log_code" id="log_code" type="text" placeholder="验证码"
+											   onfocus="$('#code_pic').click();yzmshow()" />
+
+										<a href="javascript:void(0);" id="yzm" style="display: none"><img id="code_pic"
+																										  onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+																										  src="{% url 'verifycode' %}"/></a>
+										<div style="padding-top: 5px">
+											<input type="button" id="reply" class="bbs_post_btn"   value="回复" />
+										</div>
+									</div>
+								</li>
+							</div>
+						</div>
+						</div>
+               				</div>
+					</div>
+            	</ul>
 		</div>
     	<div class="pro-people">
 			<ul>
@@ -217,9 +323,9 @@
                 	<img src="{{result.publish.userinformation.photo_url}}" width="87px;" height="80px;" />
                 </li>
                 <li style="float:left;margin-left:20px;margin-top:5px;">
-                	<label>{{result.publish}}</label>
+                	<label style="font-weight:bold">{{result.publish}}</label>
                 </li>
-                <li style="float:left;margin-top:40px;margin-left:-55px;">
+                <li style="float:left;margin-top:30px;margin-left:-90px;">
                 	 <img src="/static/images/touzi.png" />
                 </li>                
             </ul>
@@ -228,14 +334,14 @@
                 	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>    
                 </li>
                 <li>
-                	<label>项目发起时间 : </label>
+                	<label style="font-weight:bold">项目发起时间 : </label>
                     <label>{{result.add_date|date:"Y - n - j" }}</label>
                 </li>                
                 <li>
     				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
                 </li>
                   <li>
-    				<label>融资计划 : </label>
+    				<label style="font-weight:bold">融资计划 : </label>
                     <label>{{result.amount}}</label>
                 </li>
                 <li>
@@ -244,35 +350,35 @@
                 <li style="float:left;margin-left:-40px;">
                 	<ul>                                        
                         <li>
-                            <label>出让股份</label>
+                            <label style="font-weight:bold">出让股份</label>
                         </li>
-                        <li style="margin-top:-10px;">
+                        <li style="margin-top:-5px;">
                             <label>{{result.transfer_equity}}%</label>
                         </li>
                 	</ul>
                 </li>
 				<li style="float:left;margin-left:5px;margin-top:5px;">
-					<label><div style="border-right:1px solid #eeeef0;width:1px;height:40px;"></div></label>
+					<label><div style="border-right:1px solid #eeeef0;width:1px;height:50px;"></div></label>
 				</li>
               	<li style="float:left;margin-left:-30px;">
                 	<ul>
                          <li>
-                            <label>投资人数</label>
+                            <label style="font-weight:bold">投资人数</label>
                         </li>
-                         <li style="margin-top:-10px;">
+                         <li style="margin-top:-5px;">
                             <label>{{ result.investor.all|add_filter:result.leader.all }}</label>
                         </li>
 					</ul>
                 </li>
 				<li style="float:left;margin-left:5px;margin-top:5px;">
-					<label><div style="border-right:1px solid #eeeef0;width:1px;height:40px;"></div></label>
+					<label><div style="border-right:1px solid #eeeef0;width:1px;height:50px;"></div></label>
 				</li>
                 <li style="float:left;margin-top:-50px;margin-left:120px;">
                   	<ul> 
-                         <li>
-                            <label>最低投资额</label>
+                         <li style="margin-top: -15px;">
+                            <label style="font-weight:bold">最低投资额</label>
                         </li>               
-                         <li style="margin-top:-10px;">
+                         <li style="margin-top:-5px;">
                             <label>{{result.inv_min}}</label>
                         </li>
                         
@@ -283,7 +389,7 @@
                 	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
 				</li>
                  <li>
-    				<label>预约金额</label>
+    				<label style="font-weight:bold">预约金额</label>
                     <label>{{result.finish}}</label>
                     <label>完成率{% widthratio result.finish result.amount 100 %}%</label>
                 </li>
@@ -294,16 +400,26 @@
     				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
                 </li>
                  <li>
-					<label>
-						{% for i in result.investor.all %}
-						        {{i}}
-						{% endfor %}
-					</label>
+					 <ul>
+						 <li class="flip">
+							 <p style="margin-top:8px;margin-left:20px;font-weight:bold">投资人列表</p>
+							 <p id="triangle-down"></p>
+						 </li>
+						 <li class="panel">
+							 <label>
+								 {% for i in result.investor.all %}
+								 {{i}}
+								 {% endfor %}
+							 </label>
+						 </li>
+					 </ul>
+
 				</li>
             </ul>
     	</div>
      </div>
 </div>
+
 <!--底部-->
 {% include "footer.html" %}
 </body>

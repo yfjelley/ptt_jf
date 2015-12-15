@@ -4,8 +4,67 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <title>葡萄藤众筹首页</title>
+    <script>
+        $(function(){
+            $('.dropBtn').bind('click',function(){
+                if($('.dropList').is(':hidden')){
+                    $('.dropList').attr('style','display:block');
+                    $('.dropList').addClass('')
+                }else{
+                    $('.dropList').attr('style','display:none')
+                }
+            })
+            $('#choose').children('li').bind('click', function(){
+                if($(this).html()=='领投人'){
+                    $('.putIn').attr('value','领投人');
+                    $('.dropList').attr('style','display:none');
+                }else{
+                    $('.putIn').attr('value','找项目');
+                    $('.dropList').attr('style','display:none');
+                }
+            });
+        })
+    </script>
+    <style>
+        .putIn{
+            position:relative;
+            z-index: 1;
+            padding:5px 0 0 10px;
+            width:62px;
+            height:24px;
+            border: 0;
+            background: none;
+            font-family:"microsoft yahei";
+            font-size:12px;
+        }
+        .dropBtn{
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:2;
+            margin:0;
+            width:58px;
+            height:24px;
+            cursor:pointer;
+            background: none;
+        }
 
+        .dropDown{
+            position:absolute;padding:0;width:60px;height:35px;line-height:24px;color:#999;border:0;border-left:#d2d2d2 solid 1px;overflow:visible;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;
+            background:#f8f8f8;border-bottom: 1px solid #ddd;-moz-box-shadow:0 0 3px rgb(241,241,241);-webkit-box-shadow:0 0 3px rgb(241,241,241);box-shadow:0 0 3px rgb(241,241,241);;margin-left:-159px;z-index: 999;
+        }
+        .btn-search{
+            /*float: right;*/width:78px;height:36px;line-height:36px;color:#fff;font-size:14px;overflow:hidden;background:#00b7ee;border: 0 none;cursor: pointer;font-family:"microsoft yahei";/*margin-right:251px;margin-top:65px;*/
+        }
+        .ipt-search{float: left;text-indent:35px;width: 200px;height: 32px;line-height: 32px;background:url(/static/images/searchsub.png) no-repeat top left;border:#d2d2d2 solid 1px;border-right:0;font-size:14px;font-family:"microsoft yahei";outline: none;margin-left:-98px;color:black;background-color:rgb(241,241,241)}
+        .dropDown .dropBtn s{position:absolute;top:14px;right:1px;width:8px;height:6px;background:url(/static/images/sprits.png) no-repeat -67px -183px;}
+        .dropDown .dropList{display:none;position:absolute;top:37px;left:-1px;width:59px;border:#69bcf7 solid 1px;background:#fff;list-style-type:none;padding:0}
+        .dropDown .dropList li{padding:0 0 0 10px;height:25px;line-height:25px;cursor:pointer;color:#333; font-family:"microsoft yahei";font-size:12px}
+        .dropDown .dropList li:hover{background:#69bcf7;color:#fff;}
+    </style>
 </head>
+
+
 <body>
 <div id="container">		
 		<ul style="position:absolute;top:-12px;left:5%;">
@@ -18,22 +77,37 @@
     		<li>
 				<a href="{% url 'index_zc' %}">首页</a>
 				<a href="{% url 'investor' %}">投资人风采</a>
-				<a href="/project/0">项目风采</a>
+				<a href="/project/1">项目风采</a>
     			<a href="{% url 'publish' %}">项目发起</a>
-				<a href="{% url 'bbsindex' %}">众筹社区</a>
+			<!--	<a href="{% url 'bbsindex' %}">众筹社区</a>-->
 			</li>  		
 		</ul>
 		
 		<ul class="ul8">
     		<li>
-     			<label>
-                	<select id="choose" class="seacher-sele">
-                    	<option>找项目</option>
-                        <option>领投人</option>
+                <!--<div class="search">-->
+                <div class="dropDown dropDown_zczj">
+                    <input type="text" class="putIn" readonly="readonly" value="领投人">
+                <span class="dropBtn">
+                    <s></s>
+                </span>
+                    <ul id="choose" class="dropList" style="display: none">
+                        <li>领投人</li>
+                        <li>找项目</li>
+                    </ul>
+                </div>
+                    <button id="submit" type="button" class="btn-search">搜索</button>
+                    <input id="inptext" type="text" class="ipt-search">
+         <!--       </div>-->
+
+     			<!--<label>
+                	<select name="choose" id="choose" class="seacher-sele" >
+                    	<option value="找项目" selected>找项目</option>
+                        <option value="领投人">领投人</option>
                     </select>
                 	<input id="inptext" type="text" class="seacher-text" style="width:140px;height:17px;" />
-                    <input type="submit" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />				  				
-				</label>
+                    <input id="submit" type="button" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />
+				</label>-->
 				{% ifequal user.id None %}
 				    <label class="lab3"><a href="{% url 'register' %}">注册</a></label>
 				    <label class="lab4"><a href="{% url 'login' %}">登录</a></label>
@@ -55,8 +129,17 @@
 		</ul>
 </div>
 
-<script type="text/javascript">    	
-	    //已登陆
+<script type="text/javascript">
+
+ 	   {% if select %}
+            {% ifequal select  '找项目' %}
+            $('.putIn').attr('value','找项目');
+            {% else %}
+            $('.putIn').attr('value','领投人');
+            {% endifequal %}
+       {% endif %}
+        
+
         $(document).ready(function () {
             $('#logged li').hover(function () {
                 $('ul', this).slideDown(200);
@@ -65,7 +148,16 @@
                 $('ul', this).slideUp(100);
                 $(this).children('a:first').removeClass("hov");
             });
-            var w = $('#choose option:selected') .val();
+
+            //alert(select);
+            $('#submit').click(function(){
+                   var select = $('.putIn').val();
+                   var keyword = $('#inptext').val();
+				   document.getElementById("select").value= select;
+				   document.getElementById("keyword").value= keyword;
+				   $("#formid").submit();
+
+            })
 
         });
         //已登陆结束
@@ -75,7 +167,13 @@
             WB2.logout(function () {
             //alert('mywblogout');
         });
+
     }
 </script>
+
+<form id="formid" action="/do_result/" method="post">
+    <input id="select" name="select" value="" type="text"  style="display:none;"/>
+    <input id="keyword" name="keyword" value="" type="text"  style="display:none;"/>
+</form>
 </body>
 </html>

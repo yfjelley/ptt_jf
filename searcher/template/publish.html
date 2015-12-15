@@ -49,10 +49,10 @@
 
 <!--内容-->
 <div class="conext">
-<div class="div11">
+    <div class="div11">
 		<div class="div_left" id="daohang">
 			<ul>		   
-				<li style="margin-top:-10px;"> <a href="javascript:void(0);" class="blockColor">&nbsp;&nbsp;创建项目</a></li>
+				<li> <a href="javascript:void(0);" class="blockColor">&nbsp;&nbsp;创建项目</a></li>
 	<!--
     
     			<li data-pp="gyzc"> <a href="javascript:void(0);" class="blockColor">&nbsp;&nbsp;创建项目</a></li>
@@ -72,172 +72,78 @@
 		       <div style="padding-top:40px;" class="table_cjxm">
 				   <form class="publishform" action="{% url 'publish' %}" method="post"  enctype="multipart/form-data" >
 					   {% csrf_token %}
-					   <ul id="u100">
-						   <li style="padding-bottom:45px;margin-top:-12px;">项目标志 &nbsp;&nbsp;</li>
-						   <li class="tpsc"><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a></li>
-						   <li style="position:absolute;left:555px;top:180px;display:none;">64×64px</li>
-                           
-                           <li style="margin-left:-18px;">
-								<ul>
-                                   <li style="float:left">						   
-                                       <a href="javascript:;" class="a-upload" style="font-size:12px;">
+					   <table width="730" align="center" height="600" border="0">
+						   <tr>
+							  <td>项目标志</td>
+							  <td><a href="#"><img src="/static/images/ali.jpg" alt="上传" class="xmbz"/></a></td>
+							  <td> 
+							      <a href="javascript:;" class="a-upload" style="font-size:12px;">
                                          <input type="file" name="logo" id="" >上传标志
-                                       </a>						  						    
-                                   </li>
-                                   <li style="float:left;margin-top:-16px;">
-                                         <span style="width:450px;height:30px;font-size:12px;color:#999999;">
-                                      &nbsp;&nbsp;产品logo而非公司logo。比如手机App的图标。<br/>&nbsp;&nbsp像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</span>
-                                   </li>
-								</ul>
-                           </li>
-					   </ul>
-                       
-					   <ul style="padding-top:60px;"><li></li></ul>
-						
-					<ul class="content">                    
-						<ul id="u120">
-							<li style="margin-top:12px;">
-								<label >项目名称 &nbsp;&nbsp;</label>
-							</li>
-							<label style="margin-left:-6px;">{{ form.project }}</label>
-								
-						</ul>
-				         <ul id="u110"> 
-							<li style="margin-top:12px;">
-								<label>项目简介 &nbsp;&nbsp;</label>
-							</li>
-							<label style="margin-left:-6px;">{{ form.introduction  }}</label>
-						</ul>
-						<ul id="u130">
-							<li style="margin-top:12px;">
-								<label>项目描述 &nbsp;&nbsp;</label>
-							</li>
-								<label style="margin-left:-6px;">{{ form.description }}</label>
-						</ul>
-				
-						<ul id="u140">
-							<li style="margin-top:12px;">
-								<label>行业领域 &nbsp;&nbsp;</label>
-							</li>
-							<label style="margin-left:-6px;">	{{ form.category }}</label>
-						</ul>
-				
-						<ul id="u150">
-							<li style="margin-top:12px;">
-								<label>项目阶段 &nbsp;&nbsp;</label>
-							</li>
-								<label style="margin-left:-6px;">{{ form.status }}</label>
-						</ul>
-				
-						<ul id="u160">
-							<li style="margin-top:12px;">
-								<label>创始人&nbsp;</label>
-							</li>
-								<label style="margin-left:28px;">{{ form.founder }}</label>
-						</ul>
-					</ul>
-						<ul id="u170">
-								<li style="margin-top:-4px;margin-left:32px;"><label>商业计划书&nbsp;</label></li>
-								<li>
-                                    <a href="javascript:;" class="a-upload" style="font-size:12px;">
+                                  </a>	
+							  </td>
+							  <td style="width:430px;">
+							  &nbsp产品logo而非公司logo。比如手机App的图标。像素在512×512px以上的正方形标志。支持Jpg、GIF、Png格式，文件不大于2MB;</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>项目名称</td>
+							  <td colspan="3">{{ form.project }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>项目简介</td>
+							  <td colspan="3">{{ form.introduction  }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>项目描述</td>
+							  <td colspan="3">{{ form.description }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>行业领域</td>
+							  <td style="height:30px;" colspan="3">{{ form.category }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>项目阶段</td>
+							  <td style="height:30px;" colspan="3">{{ form.status }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td>创始人</td>
+							  <td colspan="3">{{ form.founder }}</td>
+						   </tr>
+						   
+						   <tr>
+							  <td  style="width:80px">商业计划书</td>
+							  <td>
+							      <a href="javascript:;" class="a-upload" style="font-size:12px;">
                                     	<input type="file" name="plan" class="jhs">上传计划书
-                                    </a>							
-								</li>
-                                <li style="margin-top:-14px;margin-left:-6px;">
-                                	<span style="width:430px;height:30px;font-size:12px;color:#999999;">
-										&nbsp;&nbsp;请选择PPT、PPTX、PDF文件，文件大小不要超过20M;
-                                    </span>
-                                </li>
-								
-								<li style="clear:both;line-height:30px; margin-left:-5px;float:left">
-                                	<input style="margin-left:130px;" type="checkbox" id="" name=""  value="#"/>								
-								</li>
-                                <li style="float:left;color:#E9948A;font-size:12px;margin-left:5px;margin-top:10px;">
-                                	<a href="#" style="color:#e1604d">提交项目视为同意葡萄藤众筹的《服务条款》</a>
-                                </li>
-								<li style="clear:both">
-								 <a href="javascript:;" class="a-upload1" style="font-size:14px;">
+                                  </a>	
+							  </td>
+							  <td colspan="2">请选择PPT、PPTX、PDF文件，文件大小不要超过20M;</td>
+						   </tr>
+						   
+						   <tr>							  
+							  <td colspan="4"><input  type="checkbox" id="" name=""  value="#"/>
+							  <a href="#" style="color:#e1604d">提交项目视为同意葡萄藤众筹的《服务条款》</a></td>
+						   </tr>
+						   
+							<tr>
+							  
+							  <td colspan="4">
+							     <a href="javascript:;" class="a-upload1" style="font-size:14px;">
     	                         <input type="submit" style="font-size:12px;"  name="application"  value="">提交待审核
                                  </a>
-								</li>
-						</ul>
-					
+							  </td>
+						   </tr>
+					   
+					   </table>
+					                        														
 				   </form>
 				</div>
 		   </div> 
-		<!--   <div id="#" class="display">
-		         
-					 <div class="biaoti">安全保障</div>
-					   <div style="margin-left:100px;margin-top:230px;">
-					 	<div style="width:400px;height:1px;background:#ccc;"></div>
-					 	<div style="width:1px;height:440px;background:#ccc;position:absolute;top:225px;left:850px;"></div>
-				 	</div>
-					
-					<div style="width:180px;height:220px;position: absolute;top:230px;left:650px;">
-						<a href="#"><img src="/static/images/xmfk180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">项目风控</span></a>
-					</div>
-					
-					<div style="width:180px;height:100px;position: absolute;top:230px;left:870px;">
-						<a href="#"><img src="/static/images/zjbz180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">资金保障</span></a>					</div>
-					
-					<div style="width:180px;height:100px;position: absolute;top:460px;left:650px;">
-						<a href="#"><img src="/static/images/cwjg180-180.png" width="180" height="180"/><span style="margin-left:35px;line-height:35px;font-size:18px;">财务监管系统</span></a>					</div>
-					
-					<div style="width:180px;height:100px;position: absolute;top:460px;left:870px;">
-						<a href="#"><img src="/static/images/jsbz180-180.png" width="180" height="180"/><span style="margin-left:55px;line-height:35px;font-size:18px;">技术保障</span></a>					</div>
-					 <div style="height:240px;"></div>
-		   </div> 
-		   <div id="#" class="display" >	   
-				<div>
-					 <div class="biaoti">平台协议</div>
-					 <div style="width:900px; height:30px;position:absolute;top:230px;left:1030px;"><a href="#"><img src="/static/images/xiazai38-32.png" width="20" height="16"/></a>
-					 <a  href="#"><img src="/static/images/liulan38-32.png" width="20" height="16"/></a></div>
-					 <div style="width:150px;height:150px;position: absolute;top:260px;left:650px;">
-						<a href="#"><img src="/static/images/xxx.png" width="150" height="150"/></a></div>
-					
-					<div style="width:150px;height:150px;position: absolute;top:260px;left:860px;">
-						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>
-					
-					<div style="width:150px;height:150px;position: absolute;top:470px;left:650px;">
-						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>
-					
-					<div style="width:150px;height:150px;position: absolute;top:470px;left:860px;">
-						<a href="#"><img src="/static/images/xxx-180.png" width="150" height="150"/></a></div>	
-						 <div style="height:440px;"></div>	 
-			   </div>
-			</div>  
-			<div id="#" class="display" >	   
-				<div>
-					 <div class="biaoti">投资流程</div>
-					 <p><span>上海辞达金融服务有限公司</span></p>
-					 <p>投资网络贷款。。。。。。。。。。。。。。。</p>
-					 <p>凡依据葡萄糖金融。。。。。。。。。。。。。。</p>	
-					 <div style="height:200px;"></div>			 
-			   </div>
-			</div>  
-			<div id="#" class="display" >
-			     <div class="">
-					  <div class="biaoti">帮助中心</div>				  
-					  <ul id="bzzx_content" class="helpcenter">				     
-						  <li> <a href="#">如何进行项目预约？<span>▼</span></a><div class="donline" id="donline"></div>
-						  		<div class="b_span"><p>依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依<p>
-								<div class="donline1"/></div> </div>         
-						  </li>
-						  <li><a href="#">什么是保证金？<span >▼</span> </a><div class="donline" id="donline"></div>
-						  		<div class="b_span"><p>sdfsdfsdfsdfsdfsd凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline1"/></div></div>
-						  </li>
-						  <li><a href="#">保证金的使用规则？<span >▼</span> </a><div class="donline" id="donline"></div>
-						  		<div class="b_span"><p>融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金融<p><div class="donline1"/></div></div>                                
-						  </li>
-						  <li><a href="#">领投人的回报是什么？<span >▼</span> </a><div class="donline" id="donline"></div>
-						  		<div class="b_span"><p>糖金融凡依据葡萄糖金融凡依据葡萄糖金融凡依据葡萄糖金</p><div class="donline1"/></div></div>
-					    </li>
-					 </ul>
-				 </div>
-				 <div style="height:140px;"></div>
-			</div> 
-		   <div id="#" class="display" style="margin-top:60px;background:#FFFFFF;">2222222222222</div> 	
-		   <div id="#" class="display" style="margin-top:60px;background:#FFFFFF;">6666666666666</div>-->
 	    </div>
 	</div>
 </div>
