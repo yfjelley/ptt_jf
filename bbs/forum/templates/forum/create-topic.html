@@ -1,12 +1,13 @@
 {% extends 'base-with-sidebar.html' %}
 {% load i18n %}
 {% block left %}
-<div class="bbs_content bbs_post mt10">
-    <div class="bbs_post_add">
-        <a href="{% url 'bbsindex' %}">{% trans 'home' %}</a>
-        <span><a href="{% url 'node_view' node.id%}">-{{node.title}}</a></span>
-        <span>-创建新话题</span>
+<div class="bbs_contenttt bbs_post mt10">
+    <div style="padding:10px;">
+       <a href="{% url 'bbsindex' %}" style="font-size:20px;color:#CC3333;">{% trans 'home' %}</a>
+        <span><a href="{% url 'node_view' node.id%}" style="font-size:20px;color:#CC3333;">-{{node.title}}</a></span>
     </div>
+	<div style="margin-left:10px;"><span style="font-size:18px; font-weight:bold;">发表主题</span></div>
+	
     <div class="panel-body">
     	{% if messages %}
 		<div class="messages">
@@ -21,32 +22,51 @@
         <form class="form" action="{% url 'create_topic' node.id%}" method="post" id="create_topic">
             {% csrf_token %}
              <div class="bbs_post_con textbox ">
-                <div style="margin-bottom: 6px"><label  for="title">{% trans 'title' %}{{ messages }}</label></div>
-                <input placeholder="{% trans 'title' %}" type="text" class="bbs_post_txt" id="title" name="title" />
-                <div style="margin-bottom: 6px"><label for="content">{% trans 'content' %}</label><a id='addemoji'onclick="show_emoji()" style="padding-left: 5px;"><img src="/static/emoji/img/grinning.png" title="添加表情" style="width: 23px;height: 23px;" /></a></div>
+                <div style="margin-bottom: 6px;float:left;width:80px;"><label  for="title">{% trans '标题' %}{{ messages }}</label></div>
+				<div><input placeholder="{% trans '标题' %}" type="text" class="bbs_post_txt" id="title" name="title" />
+				</div>
+                
+                <div style="margin-bottom: 6px;float:left;width:80px;height:25px;"><p style="line-height:25px;" for="content">{% trans '内容' %}
+				<a id='addemoji'onclick="show_emoji()" style="padding-left: 5px;">
+				<img src="/static/emoji/img/grinning.png" title="添加表情" style="width: 23px;height: 23px;" /></a></p></div>
+				<div> <textarea placeholder="{% trans '内容' %}"  class="bbs_post_textarea" id="content" name="content"  ></textarea></div>
                 {% include "emoji.html" %}
-                <textarea placeholder="{% trans 'content' %}"  class="bbs_post_textarea" id="content" name="content"  ></textarea>
-                <input type="submit" class="bbs_post_btn"  value="发布" />
-                <div style="padding-top: 5px">
+               
+				
+				 <div style="padding-top: 5px">
                 <li class="yzm">
-                   <input name="log_code" id="log_code" type="text" placeholder="验证码"
+                  <span>验证码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <input name="log_code" id="log_code" type="text" 
                           onfocus="$('#code_pic').click();yzmshow()" />
-                   <a href="javascript:void(0);" id="yzm" style="display: none"><img id="code_pic"
+                   <a href="javascript:void(0);" id="yzm"><img id="code_pic" width="90" height="25" 
                      onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
                      src="{% url 'verifycode' %}"/></a>
-                   {% include 'remind.html' %}
+                    
                 </li>
                 </div>
+                <div style="margin-top:20px;height:100px;width:30px;"><input type="submit" class="bbs_post_btn"  value="发帖" /></div>
+               
              </div>
         </form>
         <div class="previewer">
 
         </div>
         {% else %}
-        <div class="alert alert-info">
-            {% trans 'please sign in before post ' %}
-        </div>
-        <a href="{% url 'login' %}" class="btn btn-info">{% trans 'sign in' %}</a>
+          <div class="alert alert-info">
+      
+           <!-- {% trans 'please sign in before post ' %}-->
+		   <div id="bg"></div>
+           <div id="show">
+				<div class="rz_box">
+					<div><h1 style="padding:10px;font-size:18px">温馨提示</h1>
+					<!--<span class="close_gb" onclick="hidediv();">X&nbsp;&nbsp;&nbsp;&nbsp;</span>--></div>
+					<div class="zyns"><h1 align="center" style="padding:20px">必须登录之后才能发帖</h1></div>
+					<div style="padding-top:5%;padding-left:40%;">
+					 <a href="{% url 'login' %}" class="seach_cheekkk">{% trans 'sign in' %}</a>
+					</div>
+				</div>
+				
+		   </div>
+          </div>
         {% endif %}
     </div>
 </div><!--end reply panel-->
@@ -69,4 +89,15 @@
         tc.value = tc.value.substr(0, tc.selectionStart) + str + tc.value.substring(tc.selectionStart, tclen);
     }
 </script>
+ 
+<style type="text/css">
+ #bg{position: absolute; top: 0%; left: 0%; width: 100%; height:1200px; background-color: black; z-index:1001;
+     -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);}
+ #show{position: absolute; top: 25%; left: 30%; width:410px; height:190px;background-color: white; z-index:1002; overflow: auto;}
+ .but_box{width:225px;height:40px;background-image:url(images/qwzc.png);border-left:0px;border-top:0px;border-right:0px;border-bottom:1px;
+          border:1px solid color:#FF6600;color:#FFFFFF;text-align:center;-moz-border-radius:10px;border-radius:10px;font-size:16px;}
+ .seach_cheekkk{ display:block; background:#c50512; color:#fff; text-align:center; line-height:30px; height:30px; font-size:14px; width:80px;}
+.seach_cheekkk:hover{ background:#d23c46; color:#fff;}
+.zyns h1{font-size:20px;}
+</style>
 {% endblock %}

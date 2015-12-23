@@ -20,8 +20,8 @@
 		<form class="form" action="{% url 'add_appendix' topic.id%}" method="post">
 			{% csrf_token %}
 			<div class="bbs_post_con textbox ">
-				<label class="sr-only" for="content">{% trans 'content' %}</label>
-				<textarea placeholder="{% trans 'content' %}"  class="bbs_post_txt" id="content" name="content"></textarea>
+				<p style="float:left;"><label class="sr-only" for="content">{% trans '内容' %}</label></p>
+				<p style="float:left;"><textarea placeholder="{% trans '内容' %}"  class="bbs_post_txt" id="content" name="content"></textarea><p>
 				<input type="submit" class="bbs_post_btn"   value="提交" />
 			</div>
 		</form>

@@ -90,6 +90,7 @@
 </script>
 <script type="text/javascript">
    $(function(){
+       $("#ok").click(function(){alert(1);});
        checkparam(1,[1,4]);
 	   $('#seatch_norm').find('a').on("click",function(){
 	           $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
@@ -110,7 +111,8 @@
         return el;
     }
    function takepage(n) {
-        checkparam(n);
+        var a = getElementsByClassName('btn_blue','choiceid');
+        checkparam(n,a);
    }
 
    function checkparam(page,a) {
@@ -154,6 +156,11 @@
             if (sTop == 0)
                 clearTimeout(scrolldelay);
         }
+
+
+
+
 </script>
+
 </body>
 </html>

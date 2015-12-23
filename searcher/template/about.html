@@ -3,23 +3,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>关于我们</title>
-	
-	<link  rel="stylesheet"  href="/static/css/catalog.css" />
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript">  
+	<script type="text/javascript">
 		$(function(){
-			$('#daohang').find('li').click(function(){
+			$('#daohang').find('a').click(function(){
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
-			});	
-			$('#daohang>ul>li a').click(function(){
-  				$('#daohang li a').css('color','#808080');
-  				$(this).css('color','#000');
 			});
-				
-		});	 		
-  </script>
-  
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('#daohang').children('a').bind('focus',function(){
+				$('#daohang a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('clickTag').siblings().removeClass('clickTag');
+			})
+		})
+	</script>
+	<link  rel="stylesheet"  href="/static/css/catalog.css" />
 <!--引用百度地图API-->
 <style type="text/css">
     html,body{margin:0;padding:0;}
@@ -27,71 +29,27 @@
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
-
-<script type="text/javascript">
-<!--显示和隐藏-->
-$(function (){
-	mouseout();
-});
-
-$(function (){
-	Lmouseout();
-});
-
-
-	function Lmouseover()
-	{
-		$("#img2").show();
-		$("#img3").show();
-		$("#img4").hide();
-		
-	}
-	
-	function Lmouseout()
-	{
-		$("#img2").hide();
-		$("#img3").hide();
-		$("#img4").show();				
-	}
-	
-  function mouseover()
-  { 	
-  	$("#img1").show();
-	$("#img5").hide();
-	$("#img6").show();
-  }
-  function mouseout()
-  {
-  	$("#img1").hide();
-	$("#img5").show();
-	$("#img6").hide();
-  }
-	
-</script>
 </head>
 <body>
 
 <!--头部-->
-<!--头部-->
-{% include "jinfuheader.html" %}
+{% include "zcheader.html" %}
 
 <!--内容-->
 <div class="conext">
    <div class="divvdc">
 	   <div class="div_left" id="daohang">
-		   <ul>
-				<li data-pp="company"><a href="javascript:void(0);" class="blockCo">公司简介</a></li>			
-				<li><div class="downline"></div></li>
-				<li data-pp="chat"><a href="javascript:;" class="grayColor">联系方式</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="clause"><a href="javascript:;" class="grayColor">免责条款</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="partner"><a href="javascript:;" class="grayColor">合作伙伴</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="media"><a href="javascript:;" class="grayColor">媒体报道</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="joinour"><a href="javascript:;" class="grayColor">加入我们</a></li>
-			</ul>
+				<a data-pp="company" href="javascript:void(0);" class="blockCo"><label class="left_label">公司简介</label></a>
+				<div class="downline"></div>
+				<a data-pp="chat" href="javascript:;" class="grayColor"><label class="left_label">联系方式</label></a>
+				<div class="downline"></div>
+				<a data-pp="clause" href="javascript:;" class="grayColor"><label class="left_label">免责条款</label></a>
+				<div class="downline"></div>
+				<a data-pp="partner" href="javascript:;" class="grayColor"><label class="left_label">合作伙伴</label></a>
+				<div class="downline"></div>
+				<a data-pp="media" href="javascript:;" class="grayColor"><label class="left_label">媒体报道</label></a>
+				<div class="downline"></div>
+		  		<a data-pp="joinour" href="javascript:;" class="grayColor"><label class="left_label">加入我们</label></a>
 		</div>	
 		<div class="div_right">
 	   <div id="company" class="con_right">

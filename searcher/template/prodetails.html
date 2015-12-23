@@ -48,28 +48,29 @@
     }
 
     $(document).ready(function () {
-        $(".btn-remind").click(function (e) {
-            e.preventDefault();
+        $(".btn-remind").click(function () {
+        	{% if user.id %}
             $("#warning_li").toggle();
-            $("#warning_li").toggleClass("active");
+            {% else %}
+			alert('请先登录');
+			{% endif %}
         });
-        $("#warning_li").mouseup(function () {
-            return false;
-        });
-        $(document).mouseup(function (e) {
-            if ($(e.target).parent("a.btn-remind").length == 0) {
-                $(".btn-remind").removeClass("active");
-                $("#warning_li").hide();
-            }
+
+        $(".rmbutton").click(function (e) {
+			var type = $(this).attr("rtype");
+				$.post("{% url 'do_reminder' %}",
+						{
+
+						},
+						function (data) {
+							alert(data);
+						}
+				);
         });
     });
 </script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".flip").click(function(){
-				$(".panel").slideToggle("slow");
-			});
-
 			$("#reply").click(function(){
 				$.post("{% url 'project_reply' result.id %}",
 				{
@@ -99,13 +100,14 @@
 			})
 		})
 	</script>
+	<style>
+		html,body{margin:0;padding:0;}
+	</style>
 </head>
 
 <body>
 {% include "zcheader.html" %}
 <div class="pro-content">
-	<div class="pro-contains">
-
 		<div class="pro-details">
     		<ul>
             	<li style="float:left;margin-top:20px;margin-left:-20px">
@@ -123,20 +125,18 @@
                         </li>
                 	</ul>
                 </li>
-                <li style="float:left;margin-left:180px">
+                <li style="float:right;margin-top: -15px;margin-right: 20px;">
                 	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/><br>
-                	<input class="btn-remind" type="button"/><br>
-					<div class="stt_img">
-							<dl id="detail_a">
-								<dd><a class="btn-remind" href="#"></a>
-									<ul id="warning_li">
-										<li><a href="javascript:void(0)" class="rmbutton" rtype="2">满标提醒</a></li>
-										<li><a href="javascript:void(0)" class="rmbutton" rtype="3">还款提醒</a></li>
-										<li><a href="javascript:void(0)" class="rmbutton" rtype="5">可投金额提醒</a></li>
-									</ul>
-								</dd>
-							</dl>
-					</div>
+                	<br>
+
+					<dd><input class="btn-remind" type="button" />
+						<ul id="warning_li" class="remind-text" style="display:none">
+							<li><a href="javascript:void(0)" class="rmbutton" rtype="2">预热提醒</a></li>
+							<li><a href="javascript:void(0)" class="rmbutton" rtype="3">投资提醒</a></li>
+							<li><a href="javascript:void(0)" class="rmbutton" rtype="5">满标提醒</a></li>
+						</ul>
+					</dd>
+
                     <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button" value="我要领投"/></a><br>
                     <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" type="button" value="我要跟投" /></a>
                 </li>
@@ -149,7 +149,7 @@
                                
                 	<ul class="pro-list">
                 		<li data-pp="projianjie" style="float:left">
-                			<a href="javascript:void(0);" style="color:#000;">项目简介</a>
+                			<a href="javascript:void(0);" style="color:#000;">公司简介</a>
 						</li>
                 		<li style="float:left">
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
@@ -161,19 +161,19 @@
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
                 		</li>
                     	<li data-pp="touzi" style="float:left">
-                			<a href="javascript:void(0);" style="color:#808080;">投资预算</a>
+                			<a href="javascript:void(0);" style="color:#808080;">协议内容</a>
 						</li>
                 		<li style="float:left">
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
                 		</li>
                     	<li data-pp="shangye" style="float:left">
-                			<a href="javascript:void(0);" style="color:#808080;">商业企划书</a>
+                			<a href="javascript:void(0);" style="color:#808080;">发展计划书</a>
 						</li>
                 		<li style="float:left">
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
                 		</li>                  
                     	<li data-pp="qita" style="float:left">
-                			<a href="javascript:void(0);" style="color:#808080;">其他资料</a>
+                			<a href="javascript:void(0);" style="color:#808080;">投资人列表</a>
 						</li>
                 		<li style="float:left">
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
@@ -198,7 +198,7 @@
 
 
                 <div id="temjianjie" class="display">
-                	<div class="temjianjie-size">
+                	<div>
                 		<ul style="float:left">
                     		<li>
                         		{{result.team}}
@@ -208,7 +208,7 @@
                 </div>
 
                 <div id="touzi" class="display">
-                	<div class="touzi-size">
+                	<div>
                 		<ul>
                     		<li>
 
@@ -218,7 +218,7 @@
                 </div>
 
 	             <div id="shangye" class="display">
-                	<div class="shangye-size">
+                	<div>
 						<ul>
 						<li>
 							<p>商业计划书
@@ -231,43 +231,51 @@
                 </div>
 					<div id="qita" class="display">
                 	<div class="qita-size">
-						<ul>
-						<li class="qita_buss">
-							<label>营业执照</label>
-							<label>
-								<a href="/static/download/融资居间协议.doc" style="margin-left:553px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-								<a href="/intermediary/1"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</label>
-						 </li>
-						  <li class="qita_report">
-							<label>尽职调查报告</label>
-							<label>
-								<a href="/static/download/有限合伙协议.doc" style="margin-left:520px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-								<a href="/intermediary/2"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</label>
-						 </li>
-						  <li class="qita_prove">
-							<label>资产证明</label>
-							<label>
-								<a href="/static/download/投资协议.doc" style="margin-left:552px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-								<a href="/intermediary/3"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</label>
-						 </li>
-						  <li class="qita_credit">
-							<label>信用凭证</label>
-							<label>
-								<a href="/static/download/股权转让协议.doc" style="margin-left:552px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-								<a href="/intermediary/4"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</label>
-						 </li>
-						 <li class="qita_assure">
-							<label>担保方资料</label>
-							<label>
-								<a href="/static/download/股权转让协议.doc" style="margin-left:538px;"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-								<a href="/intermediary/4"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</label>
-						 </li>
-						 </ul>
+						<table class="tab-content">
+							<tr>
+								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
+							</tr>
+							<tr>
+								<td>投资者1</td>
+								<td>10万份</td>
+							</tr>
+						</table>
+						<table class="tab-content">
+							<tr>
+								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
+							</tr>
+							<tr>
+								<td>投资者1</td>
+								<td>10万份</td>
+							</tr>
+						</table>
+						<table class="tab-content">
+							<tr>
+								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
+							</tr>
+							<tr>
+								<td>投资者1</td>
+								<td>10万份</td>
+							</tr>
+						</table>
+						<table class="tab-content">
+							<tr>
+								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
+							</tr>
+							<tr>
+								<td>投资者1</td>
+								<td>10万份</td>
+							</tr>
+						</table>
+						<table class="tab-content">
+							<tr>
+								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
+							</tr>
+							<tr>
+								<td>投资者1</td>
+								<td>10万份</td>
+							</tr>
+						</table>
                     </div>
                 </div>
 					<div id="protaolun" class="display">
@@ -317,109 +325,64 @@
             	</ul>
 		</div>
     	<div class="pro-people">
-			<ul>
-            	<li style="float:left;margin-left:-20px;">
-
-                	<img src="{{result.publish.userinformation.photo_url}}" width="87px;" height="80px;" />
-                </li>
-                <li style="float:left;margin-left:20px;margin-top:5px;">
-                	<label style="font-weight:bold">{{result.publish}}</label>
-                </li>
-                <li style="float:left;margin-top:30px;margin-left:-90px;">
-                	 <img src="/static/images/touzi.png" />
-                </li>                
-            </ul>
-            <ul class="pro-touziren" style="clear:both">
-            	<li>
-                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>    
-                </li>
-                <li>
-                	<label style="font-weight:bold">项目发起时间 : </label>
-                    <label>{{result.add_date|date:"Y - n - j" }}</label>
-                </li>                
-                <li>
-    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px;"></div></label>
-                </li>
-                  <li>
-    				<label style="font-weight:bold">融资计划 : </label>
-                    <label>{{result.amount}}</label>
-                </li>
-                <li>
-    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
-                </li>
-                <li style="float:left;margin-left:-40px;">
-                	<ul>                                        
-                        <li>
-                            <label style="font-weight:bold">出让股份</label>
-                        </li>
-                        <li style="margin-top:-5px;">
-                            <label>{{result.transfer_equity}}%</label>
-                        </li>
-                	</ul>
-                </li>
-				<li style="float:left;margin-left:5px;margin-top:5px;">
-					<label><div style="border-right:1px solid #eeeef0;width:1px;height:50px;"></div></label>
-				</li>
-              	<li style="float:left;margin-left:-30px;">
-                	<ul>
-                         <li>
-                            <label style="font-weight:bold">投资人数</label>
-                        </li>
-                         <li style="margin-top:-5px;">
-                            <label>{{ result.investor.all|add_filter:result.leader.all }}</label>
-                        </li>
-					</ul>
-                </li>
-				<li style="float:left;margin-left:5px;margin-top:5px;">
-					<label><div style="border-right:1px solid #eeeef0;width:1px;height:50px;"></div></label>
-				</li>
-                <li style="float:left;margin-top:-50px;margin-left:120px;">
-                  	<ul> 
-                         <li style="margin-top: -15px;">
-                            <label style="font-weight:bold">最低投资额</label>
-                        </li>               
-                         <li style="margin-top:-5px;">
-                            <label>{{result.inv_min}}</label>
-                        </li>
-                        
-                     </ul>
-                </li>
-                <li style="clear:both"></li>
-                 <li>
-                	<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
-				</li>
-                 <li>
-    				<label style="font-weight:bold">预约金额</label>
-                    <label>{{result.finish}}</label>
-                    <label>完成率{% widthratio result.finish result.amount 100 %}%</label>
-                </li>
-               	<li>
-					<div class="input_btt"></div>
-				</li>
-                <li style="margin-top:10px;">
-    				<label><div style="border-top:1px solid #eeeef0;width:230px;height:1px"></div></label>
-                </li>
-                 <li>
-					 <ul>
-						 <li class="flip">
-							 <p style="margin-top:8px;margin-left:20px;font-weight:bold">投资人列表</p>
-							 <p id="triangle-down"></p>
-						 </li>
-						 <li class="panel">
-							 <label>
-								 {% for i in result.investor.all %}
-								 {{i}}
-								 {% endfor %}
-							 </label>
-						 </li>
-					 </ul>
-
-				</li>
-            </ul>
+			<table class="proleft_detail" cellspacing="0" cellpadding="0" width=450">
+				<tr>
+					<td><img src="/static/images/web.png"></td>
+					<td><img src="/static/images/web.png"></td>
+					<td><img src="/static/images/web.png"></td>
+				</tr>
+				<tr>
+					<td>每股金额</td>
+					<td>目标份额</td>
+					<td>投资人</td>
+				</tr>
+				<tr>
+					<td>5元</td>
+					<td>100万份</td>
+					<td>11个</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button">
+					</td>
+				</tr>
+				<tr>
+					<td>预约金额:80万元</td>
+					<td>完成率:80%</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+					<td>
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>支付方式:第三方托管</td>
+					<td>剩余时间:77天</td>
+				</tr>
+				<tr>
+					<td>项目发起时间:2015-11-11</td>
+					<td>项目结束时间:2016-02-07</td>
+				</tr>
+			</table>
     	</div>
      </div>
-</div>
-
 <!--底部-->
 {% include "footer.html" %}
 </body>

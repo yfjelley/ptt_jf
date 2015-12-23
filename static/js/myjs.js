@@ -8,13 +8,13 @@ $(document).ready(function(e) {
 		if(s > t - 10){
 			$('.fixed').css('position','fixed');
 			$('.fixed').css('top',0);
-			$('.zc-content').css('top',0);
+
 			if(s + fh > mh){
 				$('.fixed').css('top',mh-s-fh+'px');	
 			}				
 		}else{
 			$('.fixed').css('position','');
-			$('.zc-content').css('top',-150);
+
 		}
 	})
 });

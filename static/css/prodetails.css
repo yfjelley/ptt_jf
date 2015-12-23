@@ -1,14 +1,18 @@
 .protaolun-size {font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif"; }
-.pro-content{width:100%;height:850px;background-color:#eeeef0;min-width:1440px;max-width:1660px}
-.pro-details{width:800px;height:500px;background-color:#FFF;float:left;margin-left:200px;margin-top:30px;}
-.pro-people{width:270px;height:370px;background-color:#FFF;float:left;margin-left:20px;margin-top:30px;}
+.pro-content{width:100%;height:100%;background-color:#eeeef0;min-width:1440px;max-width:1660px;
+    min-height: 700px;}
+.pro-details{width:800px;background-color:#FFF;float:left;margin-left:200px;margin-top:30px;}
+.pro-people{width:450px;background-color:#FFF;float:left;margin-left:20px;margin-top:30px;}
+.proleft_detail{padding:15px;}
+.proleft_detail tr td{padding: 10px 0}
+.proleft_detail tr{border-bottom: 1px solid #a8a8a8;}
 .pro-title{margin-left:-20px;margin-top:15px;}
 .pro-title>.mongjing{font-size:28px;}
 .pro-title>.mongjiangimg{position:absolute;top:135px;}
 .pro-title>.zczhong{margin-left:45px}
 .pro-writing{margin-left:-20px;margin-top:20px;}
 input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.png") no-repeat;width:77px;height:25px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:20px;}
-input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:6px;}
+input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:-10px;}
 input.btn-lingtou{border:1px solid #4a3c70; background:#4a3c70;width:77px; color:#FFFFFF;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
 input.btn-gentou{border:1px solid #4a3c70; background:#4a3c70;width:77px; color:#FFFFFF;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
 input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFFFF;height:30px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:660px; margin-top:5px;}
@@ -16,7 +20,7 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 .pro-list>li>a{text-decoration:none;color:#000;}
 .pro-list>li>a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:2px;}
 .pro-list>li>a:hover{font-weight:bold;cursor:pointer;border-color:#e1604d;}
-.div-right{width:790px;height:200px; margin-left:-35px;}
+.div-right{width:790px;margin-left:-35px;height: 100%}
 .display{display:none;}
 .fr{float:right}
 .mt10{ margin-top:70px;}
@@ -29,14 +33,10 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 .bbs_backtop{background:url(../images/back_top.png) no-repeat right center; padding-right:20px; color:#4c4c4c; text-decoration:none;font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif";}
 .bbs_backtop:hover{color: #FF0000}
 .yzm input[type='text']{width:110px; height:30px;}
-.temjianjie-size{width:790px;height:200px;}
-.touzi-size{width:790px;height:200px;}
-.shangye-size{width:790px;height:200px;}
-.qita-size{width:790px;height:200px;}
-.qita-size li{float:left;width:790px;height:40px;}
-
-.protaolun-size{width:780px;height:530px;background-color:white;margin-left:-5px;overflow:hidden;padding:10px;}
-.talk_list{padding:10px 0;border-bottom:1px solid #ddd}
+.qita-size{display: inline-block}
+.qita-size table{float:left;padding:0 16px}
+.protaolun-size{width:780px;background-color:white;margin-left:-5px;overflow:hidden;height:100%}
+.talk_list{padding:10px 5px;border-bottom:1px solid #ddd}
 .talk_list dd{margin-left:20px;width:400px;}
 .talk_list dt,.talk_list dt a,.talk_list dt a img{width:48px;height:48px;display:inline-block}
 .talk_list dd a{color:#4c4c4c}
@@ -50,11 +50,10 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 img { border:0;}
 
 .talk_con{font-size:14px;line-height:24px;color:#000}
-.input_btt{border:1px solid #FF6600; background:#FF6600;width:220px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
-.pro-touziren{margin-left:-20px;}
-.pro-touziren>li{line-height:35px;}
-
 #triangle-down {width:0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 10px solid black;margin-top:-35px;margin-left:240px;}
-.flip{/*background:#e5eecc;border:solid 1px #c3c3c3;*/width:270px;height:35px;cursor:pointer;margin-left:-60px;}
-.panel{height:56px;display:none;margin-left:-40px;}
 
+.remind-text{text-align: center}
+.remind-text a{color: #000000}
+.remind-text a:hover{
+    background: #b94a48;
+}

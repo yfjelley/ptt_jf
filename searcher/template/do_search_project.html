@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load settingsvalue %}
 <html>
 <div style="width:100%;background:#EEEEF0;">
 <div class="Cleft5">   
@@ -43,7 +44,11 @@
 					</li>
 					<li>
 						<label style="float:left;padding-top: 5px;"><img src="/static/images/people.png" /></label>
-						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish}}</label>
+						{% if result.publish.userinformation.realname  %}
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish.userinformation.realname }}</label>
+						{% else %}
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish|phone_cut}}</label>
+						{% endif %}
 						<label style="float:left;margin-left:30px;padding-top: 5px;"><img src="/static/images/tag.png" /></label>
 						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.get_category_display}}</label>
 					</li>

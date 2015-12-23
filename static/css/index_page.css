@@ -1,5 +1,5 @@
 body{margin:0;padding:0;border:0;}
-.index_content{width:100%;height:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;height:2690px;}
+.index_content{width:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;height:2320px;}
 .Cul1{width: 215px;height:150px; background-color:#FFFFFF;margin: 0px;}
 .Cul1 li{margin-left:-15px; line-height:25px; }
 .input_btt{border:1px solid #FF6600; background:#FF6600;width:200px;height:10px; border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
@@ -28,10 +28,11 @@ a{text-decoration:none;}
 	.ho1{opacity: 0.01;z-index: 999}
    .zc-content{
    width: 1150px;
-   height: 2280px;
-   margin: 0px auto;
-   position: relative;
-   top: -150px;}
+   height: 1900px;
+   margin: 0 auto;
+   position: absolute;
+	   margin-left:200px;margin-top:20px;
+   }
    .xujgstyle{width:1200px;margin:0px auto;margin-top:20px;clear:both;}
 .biaotidiv{width: 1140px;height:50px;margin-top:20px;clear:both;padding-right:20px;}
 .biaotidiv ul li.btstyle{font-size:25px;font-weight:bold; color:#000000;float:left;}

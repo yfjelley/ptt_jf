@@ -12,6 +12,7 @@ from DjangoCaptcha import Captcha
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.core.urlresolvers import reverse
 from PIL import Image
+from django.core.cache import cache
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -26,7 +27,7 @@ from ddbid.settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
 from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPWForm, ModfiyPWForm, PublishForm
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
-    refresh_header
+    refresh_header,send_flow_all,user_get_ip
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
     WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal
 from ddbid import conf
@@ -47,50 +48,59 @@ dict_code = {}
 
 def login(request):
     if request.method == 'POST':
-        print "this is post"
         username = request.REQUEST.get('log_un', None)
         pwd = request.REQUEST.get('log_pwd', None)
+        code = request.REQUEST.get('log_code', None)
         if username is None:
             form = LoginForm(request.POST)
             if form.is_valid():
                 cd = form.clean()
                 username = cd['username']
                 pwd = cd['password']
-                user = auth.authenticate(username=username, password=pwd)
-                print "user is %s" % user
-                if user is None:
-                    form.valiatetype(4)
-                    print form
-                    return render_to_response("login.html", {'form': form}, context_instance=RequestContext(request))
+                code = cd['vcode']
+                i = user_auth(request, username, pwd, code)
+                if i == 1:
+                    a = request.REQUEST.get('next', None)
+                    if a:
+                        return HttpResponseRedirect(a)
+                    else:
+                        user = User.objects.get(username=username)
+                        login_times = user.userinformation.login_times
+                        if login_times:
+                            user.userinformation.login_times = int(login_times) +1
+                        else:
+                            user.userinformation.login_times  = 1
+                        user.userinformation.save()
+                        return HttpResponseRedirect(reverse('index_zc'))
                 else:
-                    auth.login(request, user)
-                    return HttpResponseRedirect(reverse('index_jf'))
-
+                    form.valiatetype(i)
+                    return render_to_response('login.html', {'form': form, },
+                                              context_instance=RequestContext(request))
             else:
                 return render_to_response('login.html', {'form': form, },
                                           context_instance=RequestContext(request))
+
+        return refresh_header(request, user_auth(request, username, pwd, code))
     else:
         form = LoginForm()
-        print "this is get"
-        return render_to_response('login.html', {'form': form},
+        next = request.GET.get('next', None)
+        return render_to_response('login.html', {'form': form, 'next': next},
                                   context_instance=RequestContext(request))
 
 def forgetpw(request):
-    print "xxxxxxxxxxx"
+    print "this views forgetpw"
     if request.method == 'POST':
         form = ForgetPWForm(request.POST)
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
-            _code = dict_code.get('smscode')
+            _code = request.session.get('sms_code')
             smscode = cd['smscode']
             user = User.objects.get(username=username)
             pw = user.userinformation.abcdefg
-            print type(pw), type(smscode), type(_code)
-            print user ,pw
+
 
             if pw is not None and _code == int(smscode):
-                print 'index iiff'
                 user = auth.authenticate(username=username, password=pw)
                 if user is not None and user.is_active:
                     auth.login(request, user)
@@ -121,7 +131,6 @@ def verifycode(request):
     ca.img_height = 28
     return ca.display()
 
-
 def checkvcode(request):
     if_vcode = request.POST.get('name', None)
     _code = request.session.get('_django_captcha_key')
@@ -129,7 +138,7 @@ def checkvcode(request):
         response = HttpResponse()
         response['Content-Type'] = "application/json"
         vcode = request.POST.get('param', None)
-        if _code.lower() == vcode.lower():
+        if _code.lower() == vcode.lower() :
             response.write('{"info": "","status": "y"}')
             return response
         else:
@@ -138,86 +147,100 @@ def checkvcode(request):
 
 def checksmscode(request):
     if_smscode = request.POST.get('name', None)
-    print dict_code
-    _code = dict_code['smscode']
-    print _code
+    _code = request.session.get("sms_code")
     if if_smscode:
         response = HttpResponse()
         response['Content-Type'] = "application/json"
         smscode = request.POST.get('param', None)
-        print "smscode type %s %s"%(type(smscode), smscode)
-        print "_code type %s %s"%(type(_code), _code)
-        if _code  == int(smscode):
+        if _code  == int(smscode) :
             response.write('{"info": "","status": "y"}')
             return response
         else:
             response.write('{"info": "验证码错误","status": "n"}')
             return response
 
+def checkuser(request):
+    response = HttpResponse()
+    print "checkuser"
+    response['Content-Type'] = "text/javascript"
+    u_ajax = request.POST.get('name', None)
+    if u_ajax:
+        response['Content-Type'] = "application/json"
+        r_u = request.POST.get('param', None)
+        u = User.objects.filter(username=r_u)
+        if u.exists():
+            response.write('{"info": "","status": "y"}')
+            return response
+        else:
+            response.write('{"info": "用户不存在","status": "n"}')  # 用户不存在
+            return response
+
 def register(request):
     if request.method == 'POST':
         response = HttpResponse()
         response['Content-Type'] = "text/javascript"
-
         u_ajax = request.POST.get('name', None)
         if u_ajax:
             response['Content-Type'] = "application/json"
-            u = User.objects.filter(username=u_ajax)
+            r_u = request.POST.get('param', None)
+            u = User.objects.filter(username=r_u)
             if u.exists():
-                return HttpResponse(u'用户已存在')
-
+                response.write('{"info": "用户已存在","status": "n"}')  # 用户已存在
+                return response
+            else:
+                response.write('{"info": "用户可以使用","status": "y"}')
+                return response
         form = RegisterForm(request.POST)
 
 
         if form.is_valid():
             cd = form.cleaned_data
             username = cd['username']
-            print "xxxxxxxxxxxxxxxxx"
             pwd1 = cd['password']
             pwd2 = cd['password2']
 
-            code = cd['vcode']
             smscode = cd['smscode']
+            code = cd['vcode']
             ca = Captcha(request)
             flag = 0
             u = User.objects.filter(username=username)
-            print "u %s"% u
             f = ca.check(code)
             if u.exists():
                 form.valiatetype(2)
-                print "flag2"
                 flag = 1
-            elif flag != 1 and pwd1 != pwd2:
+            if pwd1 != pwd2:
                 form.valiatetype(3)
-                print "flag3"
                 flag = 1
-            elif flag != 1 and not f:
+            if not f:
                 form.valiatetype(4)
-                print "flag4"
                 flag = 1
-
-            elif flag != 1 and dict_code.get('smscode') != int(smscode):
-                form.valiatetype(5)
-                flag = 1
-
             if flag == 1:
-                print "yyyyyyyyyyyyyyyyy"
-                return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
+                return render_to_response("reg.html", {'form': form}, context_instance=RequestContext(request))
             elif pwd1 == pwd2 and f:
                 new_user = User.objects.create_user(username=username, password=pwd1)
                 new_user.save()
-
-                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1, authentication_class=u'游客')
+                # initial={'photo_url': '/static/upload/default.png'}
+                u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1,cellphone=username)
                 u.save()
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
-
-                return HttpResponseRedirect(reverse('index_jf'))
+                send_flow_all(username)
+                p = re.compile('^13[4-9][0-9]{8}|^15[0,1,2,7,8,9][0-9]{8}|^18[2,7,8][0-9]{8}|^147[0-9]{8}|^178[0-9]{8}')
+                p1 = re.compile('^18[0,1,9][0-9]{8}|^133[0-9]{8}|^153[0-9]{8}|^177[0-9]{8}')
+                phone = username
+                if p.match(str(phone)):
+                    flag1 = 1
+                elif p1.match(str(phone)):
+                    flag1 = 2
+                else:
+                    flag1 = 3
+                return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
         form = RegisterForm()
         return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
+
 
 @login_required
 def logout(request):
@@ -350,8 +373,13 @@ def userinfo(request):
         publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
         attention_pr = user.userinformation.industry
+        if request.user.is_authenticated():
+            signal =  Signal.objects.filter(who=request.user)
+            print signal
+        else:
+            signal = []
 
-    return render_to_response("userinfo.html", {'form': form,"leader":leader,"invest":invest,"publish_pr":publish_pr,"attention_pr":attention_pr},
+    return render_to_response("userinfo.html", {"signal":signal,'form': form,"leader":leader,"invest":invest,"publish_pr":publish_pr,"attention_pr":attention_pr},
                               context_instance=RequestContext(request))
 
 @login_required
@@ -416,53 +444,31 @@ def phone_infoPage(request):
     return render_to_response('test_phone.html', context_instance=RequestContext(request))
 
 
-import urllib2, urllib, hashlib, random
+import urllib2, urllib, hashlib, random,re
 def send_smscode(request):
-    phoneNum = request.POST.get('phoneNum', '')
-    print phoneNum
-    m = hashlib.md5()
-    m.update('cs20150727')
-    random_code = random.randint(1000, 9999)
-    dict_code['smscode'] = random_code
-    print "the random_code %s" % dict_code
-    content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会"%random_code
-    print content
-    data = """
-              <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
-              <E_Time></E_Time>
-              <Item>
-              <Task>
-              <Recive_Phone_Number>%d</Recive_Phone_Number>
-              <Content><![CDATA[%s]]></Content>
-              <Search_ID>111</Search_ID>
-              </Task>
-              </Item>
-              </Group>
-           """ % ("cs20150727", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
+    if request.user.is_authenticated():
+        key = "limit_visit:" + send_smscode.__name__ +':'+ str(request.user.id)
+    else:
+        key = "limit_visit:" + send_smscode.__name__ +':'+ str(user_get_ip(request))
+    failed_num = cache.get(key,0)
+    print "failed_num",failed_num
+    if failed_num >= 10:
+        return HttpResponse(u"您的短信次数超个10次，请24小时后再试！")
 
-    cookies = urllib2.HTTPCookieProcessor()
-    opener = urllib2.build_opener(cookies)
-    request = urllib2.Request(
-                               url = r'http://userinterface.vcomcn.com/Opration.aspx',
-                               headers= {'Content-Type':'text/xml'},
-                               data = data
-                              )
-    print "send phone"
-    print opener.open(request).read()
+    failed_num += 1
+    cache.set(key, failed_num, 24*60*60)
 
-def send_smscode_modify(request):
     phoneNum = request.POST.get('phoneNum', '')
-    user = User.objects.filter(username=int(phoneNum))
-    print "this send smscode modify"
-    print user
-    if not len(user):
-        print "ceshi"
+    p=re.compile('^1200[0-9]{7}$')
+    a=p.match(phoneNum)
+    if a:
+        return HttpResponse()
+    else:
         m = hashlib.md5()
-        m.update('cs20150727')
-        random_code = random.randint(100000, 999999)
-        dict_code['smscode'] = random_code
-        print "the random_code %s" % dict_code
-        content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会"%random_code
+        m.update('shcdjr2')
+        random_code = random.randint(1000, 9999)
+        request.session["sms_code"] = random_code
+        content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会!"%random_code
         print content
         data = """
                   <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
@@ -475,7 +481,7 @@ def send_smscode_modify(request):
                   </Task>
                   </Item>
                   </Group>
-               """ % ("cs20150727", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
+               """ % ("shcdjr", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
 
         cookies = urllib2.HTTPCookieProcessor()
         opener = urllib2.build_opener(cookies)
@@ -484,10 +490,62 @@ def send_smscode_modify(request):
                                    headers= {'Content-Type':'text/xml'},
                                    data = data
                                   )
-        print "send phone"
         print opener.open(request).read()
+        return HttpResponse()
+
+
+def send_smscode_modify(request):
+    if request.user.is_authenticated():
+        key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(request.user.id)
     else:
-        print "xxxxxxxxxxxxxxxxx"
+        key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(user_get_ip(request))
+    failed_num = cache.get(key,0)
+    if failed_num >= 2:
+        return HttpResponse(u"您修改账号次数超个2次，请30天后再试！")
+
+    failed_num += 1
+    cache.set(key, failed_num, 30*24*60*60)
+
+    phoneNum = request.POST.get('phoneNum', '')
+    p=re.compile('^1200[0-9]{7}$')
+    a = p.match(phoneNum)
+    if a:
+        return HttpResponse()
+    else:
+        user = User.objects.filter(username=int(phoneNum))
+        print user
+        if not len(user):
+            print "ceshi"
+            m = hashlib.md5()
+            m.update('shcdjr2')
+            random_code = random.randint(1000, 9999)
+            request.session["sms_code"] = random_code
+            content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会!"%random_code
+            print content
+            data = """
+                      <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
+                      <E_Time></E_Time>
+                      <Item>
+                      <Task>
+                      <Recive_Phone_Number>%d</Recive_Phone_Number>
+                      <Content><![CDATA[%s]]></Content>
+                      <Search_ID>111</Search_ID>
+                      </Task>
+                      </Item>
+                      </Group>
+                   """ % ("shcdjr", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
+
+            cookies = urllib2.HTTPCookieProcessor()
+            opener = urllib2.build_opener(cookies)
+            request = urllib2.Request(
+                                       url = r'http://userinterface.vcomcn.com/Opration.aspx',
+                                       headers= {'Content-Type':'text/xml'},
+                                       data = data
+                                      )
+        return HttpResponse()
+
+
+
 
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
@@ -641,8 +699,9 @@ def about_us(request):
     return render_to_response('about.html',{"p1":p1[0].agreement,"description":p2[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
+    p = About_us.objects.all()
 
-    return render_to_response('guide.html',{"description":u"关于众筹"}, context_instance=RequestContext(request))
+    return render_to_response('guide.html',{"description":p[0].about_zhongtou}, context_instance=RequestContext(request))
 
 #@login_required
 def publish(request):
@@ -1000,6 +1059,9 @@ def project_reply(request,project_id):
                 return HttpResponse(1)
             else:
                 return HttpResponse(u'请输入验证码有误!')
+def do_reminder(request):
+    user = auth.get_user(request)
+    return HttpResponse("ok")
 
 def do_result(request):
     if request.method == 'POST':
@@ -1011,6 +1073,7 @@ def do_result(request):
 
         return render_to_response('investor_search.html',{'select':select,'keyword':keyword,'page':page},context_instance=RequestContext(request))
 def do_search(request):
+    print request,request.method
     if request.method == 'POST':
         select = request.POST.get('select','')
         keyword = request.POST.get('keyword','')
@@ -1028,8 +1091,9 @@ def do_search(request):
                 results = Project.objects.all()
 
             ppp = Paginator(results, 20)
+
             try:
-                    page = int(request.GET.get('page', '1'))
+                    page = int(request.POST.get('page', '1'))
             except ValueError:
                     page = 1
             try:
@@ -1038,6 +1102,7 @@ def do_search(request):
                     results = ppp.page(ppp.num_pages)
             last_page = ppp.page_range[len(ppp.page_range) - 1]
             page_set = get_pageset(last_page, page)
+            print last_page,page
             t = get_template('do_search_project.html')
             content_html = t.render(
                     RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
@@ -1072,6 +1137,8 @@ def do_search(request):
                     'success': True
                 }
             return HttpResponse(json.dumps(payload), content_type="application/json")
+    else:
+        return HttpResponseRedirect(reverse('do_result'))
 
 
 def search_zc(request):

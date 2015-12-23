@@ -1,4 +1,5 @@
 body{margin:0;}
+input,button{outline: 0}
 .UserContent{width:100%;height:900px; background-color:#CCCCCC;min-width:1440px;max-width:1660px;}
 .UserCenter{width:1000px;height:800px; background-color:#FFFFFF;z-index:1;margin:0 auto}
 .Userul{margin-top:80px;margin-left:-50px;}
@@ -18,7 +19,7 @@ body{margin:0;}
 .user_wb input[type='text']{width:150px;height:20px;}
 .birth-select{margin-top:-35px; margin-left:80px;}
 
-<!--tabÇÐ»»°´Å¥-->
+/*<!--tabÇÐ»»°´Å¥-->*/
 #ProDiv{width:70%;height:700px; margin:0 auto;}
 .ProChange{width:200px; height:700px; float:left;margin-top:20px}
 .ProChange li{padding:15px 0px;}
@@ -31,14 +32,10 @@ body{margin:0;}
 .ProChange a:hover{border-color:#e1604d; font-weight:bold;}
 .Prohr hr{border:none; border-top:1px solid #eeeef0;width:80px;height:1px; margin-left:-10px; margin-top:15px;}
 
-<!--ÌáÐÑÉèÖÃ-->
-*{ list-style-type:none;}
-.remind-contains{width:700px;height:400px;background-color:#FFF;margin-left:200px;margin-top:50px;}
-input.button_jiben{border:1px solid #4a3c70; background:#4a3c70;width:55px; color:#FFFFFF;height:20px; border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;margin-left:80px; margin-top:10px;}
-.remind-content{margin-top:-20px;margin-left:-60px}
-.remind-content>li{margin:10px 5px;}
-.remind-mojing{line-height:25px;}
-.remind-huangbaoche{line-height:25px;}
+/*<!--ÌáÐÑÉèÖÃ-->*/
+
+
+
 
 .button-shangchuan{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:100px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px;cursor:pointer}
 .button-shangchuan input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
@@ -68,7 +65,7 @@ div.ProCenter3 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
 div.ProCenter3{margin-top:80px;}
 .prosonPage1{width:750px; height:350px; margin-top:-80px;}
 .prosonPage2{width:750px; height:350px;}
-.personal-message{margin-left:-90px;margin-top:-50px;}
+
 .personal-message2{margin-left:-90px;margin-top:-30px;}
 ul.pwdpadding li{padding-bottom:10px}
 ul.pwdpadding2 li{padding-bottom:10px}
@@ -102,12 +99,23 @@ ul{list-style:none;}
 .tzrzrule{margin-top:65px;margin-left:-80px;line-height:25px;}
 .tzrzMessage{margin-top:155px;width:700px;}
 .tzrzMessage li{line-height:50px}
-.ltrmessage{margin-top:60px; margin-left:-80px;}
-.ltrRzmessage{margin-left:50px; line-height:20px;margin-top:-150px;}
-.xmfmessage{margin-top:60px; margin-left:-80px;}
-.xmfRzmessage{margin-left:50px; line-height:20px;}
-.scshuoming{margin-top:-10px;margin-left:-40px;}
-.gtrmessage{margin-top:60px; margin-left:-80px;}
-.gtrRzmessage{margin-top:-150px;margin-left:50px;}
-.gtrshuoming{margin-top:48px;margin-left:-40px;}
 .prompt{ height:370px;width:600px;overflow-y:hidden;overflow-y:scroll;arrow-color:#999999;track-color:white;font-size:14px; border:1px;}
+#geren{width:400px;margin-left:90px;}
+#geren tr td{padding:6px 0}
+#jigou tr td{padding:6px 0}
+.real_name input[type='text']{width:160px;height:25px; }
+.icard input[type='text']{width:160px;height:25px;}
+.upload_file label,.upload_file input{ cursor:pointer; outline:none; }
+.upload_file label{
+    width: 130px;
+    height:60px;
+    display:inline-block;
+    transition:background-color .4s;
+    background:#EEEEF0;
+    opacity: 0.6;
+    padding-top: 15px;
+    border:1px solid #999999;
+}
+
+.myfile{ display:none; }
+#jigou{width:440px;margin-left:90px;}

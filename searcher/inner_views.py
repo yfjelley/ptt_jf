@@ -16,13 +16,16 @@ from searcher.models import Bid, UserFilter, DimensionChoice
 __author__ = 'pony'
 
 
-def user_auth(request, username, password):
+def user_auth(request, username, password, code):
     user = auth.authenticate(username=username, password=password)
+    _code = code
     ca = Captcha(request)
     if user is None:
         a = 2
     elif not user.is_active:
         a = 3
+    elif _code is not None and not ca.check(_code):
+        a = 4
     else:
         auth.login(request, user)
         a = 1
@@ -275,3 +278,41 @@ def result_sort(data, sorttype, sortorder):
     if o_string:
         data = data.order_by(o_string)
     return data
+
+import re
+def send_flow_all(phone):
+    p = re.compile('^13[4-9][0-9]{8}|^15[0,1,2,7,8,9][0-9]{8}|^18[2,7,8][0-9]{8}|^147[0-9]{8}|^178[0-9]{8}')
+    if p.match(phone):
+        send_flow(phone, 70)
+        print phone ,'移动'
+    else:
+        send_flow(phone, 50)
+
+
+import urllib2,urllib,hashlib
+def send_flow(phone, package):
+    m = { 'account' : 'shcidajr', 'mobile' : phone,'package' : package,}
+    params = ''
+    for k in sorted(m.keys()):
+        if len(params) > 0:
+            params += "&"
+        params += (k + "=" + str(m[k]))
+    params = params + '&key=' +'fba13724adac4b0b862fab34b7dca288'
+    print params
+
+    m = hashlib.md5()
+    m.update(params)
+    cookies = urllib2.HTTPCookieProcessor()
+    opener = urllib2.build_opener(cookies)
+    url_charge = r'http://www.llt400.com:8080/api.aspx?action=charge&v=1.1&account=shcidajr&mobile=%s&package=%s&sign=%s'%(phone,package,m.hexdigest())
+
+    request = urllib2.Request(
+        url = url_charge,
+        headers= {'Content-Type':'text/xml'},
+        data = ''
+    )
+
+    print opener.open(request).read()
+
+def user_get_ip(request):
+    return "%s" % request.META['REMOTE_ADDR'] or ""

@@ -38,11 +38,11 @@ class LoginForm(forms.Form):
                 'placeholder': u"手机号",
                 'type': 'text',
                 'name': 'name',
-                'class': 'inputxt'
+                'class': 'inputxt',
+                'ajaxurl': '/checkuser/'
             }
         ),
     )
-
     password = forms.CharField(
         required=True,
         label=u"密码",
@@ -52,7 +52,21 @@ class LoginForm(forms.Form):
                 'placeholder': u"密码",
                 'type': 'password',
                 'name': 'userpassword',
+                'class': 'inputxt'
+            }
+        ),
+    )
+    vcode = forms.CharField(
+        required=True,
+        label=u"验证码",
+        error_messages={'required': u'请输入验证码'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"验证码",
+                'type': 'text',
+                'name': 'yzm',
                 'class': 'inputxt',
+                'ajaxurl': '/checkvcode/'
             }
         ),
     )
@@ -66,15 +80,14 @@ class LoginForm(forms.Form):
     def valiatetype(self, a):
         global msg
         if a == 2:
-            msg = u"用户不存在"
+            msg = u"用户名和密码不匹配！"
             self._errors["username"] = self.error_class([msg])
         elif a == 3:
             msg = u"用户被锁定"
             self._errors["username"] = self.error_class([msg])
         elif a == 4:
-            msg = u"用户名或密码错误"
-            print "flase"
-            self._errors["username"] = self.error_class([msg])
+            msg = u"验证码错误"
+            self._errors["vcode"] = self.error_class([msg])
 
 
 class RegisterForm(forms.Form):
@@ -401,6 +414,7 @@ class UserReminderForm(forms.Form):
     checkhk = forms.CheckboxInput(attrs={'class': 'user_checkbox'})
 
 
+
 class ForgetPWForm(forms.Form):
     username = forms.CharField(
         required=True,
@@ -411,7 +425,8 @@ class ForgetPWForm(forms.Form):
                 'placeholder': u"手机号",
                 'type': 'text',
                 'name': 'name',
-                'class': 'inputxt'
+                'class': 'inputxt',
+                'ajaxurl': '/checkuser/'
             }
         ),
     )
@@ -427,6 +442,21 @@ class ForgetPWForm(forms.Form):
                 'name': 'smscode',
                 'class': 'inputxt',
                 'ajaxurl': '/checksmscode/'
+            }
+        ),
+    )
+
+    vcode = forms.CharField(
+        required=True,
+        label=u"验证码",
+        error_messages={'required': u'请输入验证码'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"验证码",
+                'type': 'text',
+                'name': 'yzm',
+                'class': 'inputxt',
+                'ajaxurl': '/checkvcode/'
             }
         ),
     )

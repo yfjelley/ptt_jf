@@ -1,0 +1,84 @@
+{% load i18n %}
+{% load humanize %}
+{% load pagination_tags %}
+{% load settingsvalue %}
+   <div class="bbs_content bbs_post mt10">
+   <div class="bbs_navigation_bar">
+    {% if post_list_title %}
+		    <div style="font-size: 16px;font-weight:bold;padding-left:10px;"><!--{{post_list_title}}-->最近的主题
+                    <a href="{% url 'create_topic' 2 %}"  class="seach_cheek" >发帖</a>
+            </div>
+    {% else %}
+          <div style="font-size: 16px;font-weight:bold;padding-left:10px "><a href="{% url 'bbsindex' %}">{% trans 'home' %}</a><span>-{{node.title}}</span>
+          <a href="{% url 'create_topic' node.id %}" class="seach_cheek">发帖</a>
+        </div>
+		{% endif %}
+    {% if not topics %}
+	<div class="panel-body">
+		<div style="padding-left: 10px;font-size: 14px">
+			{% trans "sorry, but we can't find the topics you need" %}
+		</div>
+	</div>
+	{% endif %}
+   </div>
+
+   </div>
+		{% autopaginate topics 10 %}
+      <div class="bbs_con mt10">
+		{% for t in topics %}
+		<div id="topic-{{t.id}}" >
+          <dl class="bbs_note">
+           {% ifequal user.id None %}
+              {% if t.user.userinformation.realname %}
+                <dt><a href="{% url 'login' %}"><img title="{{t.user.userinformation.realname}}"src="{{t.user.userinformation.photo_url}}" width="42" height="42"></a></dt>
+              {% else %}
+                <dt><a href="{% url 'login' %}"><img title="{{t.user.username|phone_cut}}"src="{{t.user.userinformation.photo_url}}" width="42" height="42"></a></dt>
+              {% endif %}
+           {% else %}
+              {% if t.user.userinformation.realname %}
+                <dt><a href="{% url 'user_info' t.user.id %}"><img title="{{t.user.userinformation.realname}}"src="{{t.user.userinformation.photo_url}}" width="42" height="42"></a></dt>
+              {% else %}
+                <dt><a href="{% url 'user_info' t.user.id %}"><img title="{{t.user.username|phone_cut}}"src="{{t.user.userinformation.photo_url}}" width="42" height="42"></a></dt>
+              {% endif %}
+           {% endifequal %}
+           <dd>
+               <h3><a href="{% url 'topic_view' t.id %}">{{t.title}}</a></h3>
+               <p>
+                   <a href="{% url 'node_view' t.node.id%}">{{t.node.title}}</a> •
+                  {% ifequal user.id None %}s
+                      {% if t.user.userinformation.realname %}
+                        <a href="{% url 'login' %}">{{t.user.userinformation.realname}}</a> •
+                      {% else %}
+                        <a href="{% url 'login' %}">{{t.user.username|phone_cut}}</a> •
+                      {% endif %}
+
+                  {% else %}
+                      {% if t.user.userinformation.realname %}
+                        <a href="{% url 'user_info' t.user.id %}">{{t.user.realname}}</a> •
+                      {% else %}
+                        <a href="{% url 'user_info' t.user.id %}">{{t.user.username|phone_cut}}</a> •
+                      {% endif %}
+                  {% endifequal %}
+                   {{t.click}}浏览 • {{t.time_created | naturaltime}}
+               </p>
+           </dd>
+            <div class="col-xs-9 col-md-10 col-sm-9">
+				<h3 class="list-post-title"></h3>
+				<p class="list-meta">
+					<span class="list-time"></span>
+					<span class="list-username"></span>
+					<span class="list-reply-count-xs visible-xs">{{reply_count}}</span>
+				</p>
+			</div>
+				<div class="col-xs-1 col-sm-1">
+					<span class="badge pull-right list-reply-count hidden-xs">{{t.reply_count}}</span>
+				</div>
+          </dl>
+		
+		</div>
+		  
+		{% endfor %}
+		{% paginate %}
+		
+      </div>
+	  <div style="height:50px;"></div>

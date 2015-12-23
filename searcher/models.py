@@ -247,6 +247,7 @@ class UserInformation(models.Model):
     link = models.URLField('推广链接', max_length=255, blank=True, null=True)
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
+    login_times = models.IntegerField('登录次数', blank=True, null=True)
 
 class Project(models.Model):
     publish = models.ForeignKey(User,related_name = "publish_set", blank=True, null=True)#项目发布者 可以发布多个项目
@@ -432,7 +433,8 @@ class About_us(models.Model):
     zip_code = models.CharField(max_length=255, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     hotline = models.CharField(max_length=255, blank=True, null=True)
-    email = email = models.EmailField( blank=True, null=True)
+    email  = models.EmailField( blank=True, null=True)
+    about_zhongtou = models.CharField(max_length=3000, blank=True, null=True)
 
 
 class Partners(models.Model):

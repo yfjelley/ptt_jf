@@ -10,7 +10,7 @@
 </head>
 <body style="margin:0px; padding:0px;">
 
-{% include "jinfuheader.html" %}
+{% include "zcheader.html" %}
 <div id="content">
 	<div class="zhankeng"></div>
 	<div id="login_content">
@@ -45,6 +45,17 @@
 							<label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
 						</li>
 					</ul>
+					<ul class="log_ucon">
+						<li>
+							<label> 验证码：</label>
+						</li>
+						<li id="user_code">
+							<label style="float:left;z-index:999">{{ form.vcode }}</label>
+							 <label style="float:left;margin-left:5px;"><img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+							 src="{% url 'verifycode' %}"/></label>
+							 <label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
+						</li>
+                	</ul>
 
 					<!--<ul class="log_ucon">
                     <li>

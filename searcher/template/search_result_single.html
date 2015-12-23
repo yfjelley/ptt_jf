@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load settingsvalue %}
 <html>
     {% if results %}
         {% for result in results.object_list %}
@@ -42,7 +43,12 @@
 					</li>
 					<li>
 						<label class="lalLeft"><img src="/static/images/people.png" /></label>
-						<label class="lalright">{{result.publish}}</label>
+						{% if result.publish.userinformation.realname %}
+							<label class="lalright">{{result.publish.userinformation.realname}}</label>
+						{% else %}
+							<label class="lalright">{{result.publish.username|phone_cut}}</label>
+						{% endif %}
+
 						<label class="lalLeft2"><img src="/static/images/tag.png" /></label>
 						<label class="lalright">{{result.get_category_display}}</label>
 					</li>

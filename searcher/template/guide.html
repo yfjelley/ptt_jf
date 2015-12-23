@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>投资指引</title>
 <link  rel="stylesheet"  href="/static/css/zhongchou.css" />
-	<script src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">  
 		$(function(){
-			$('#daohang').find('li').click(function(){
+			$('#daohang').find('a').click(function(){
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
 			});
@@ -23,10 +23,11 @@
 				}
 			});
 
-			$('#daohang>ul>li a').click(function(){
-  				$('#daohang li a').css('color','#808080');
-  				$(this).css('color','#000');
-			});
+			$('#daohang').children('a').bind('focus',function(){
+				$('#daohang a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('clickTag').siblings().removeClass('clickTag');
+			})
 		});
 	
 		
@@ -116,70 +117,24 @@
 	</script>
 	
 </head>
-
 <body>
-
-<script type="text/javascript">
-<!--显示和隐藏-->
-$(function (){
-	mouseout();
-});
-
-$(function (){
-	Lmouseout();
-});
-
-
-	function Lmouseover()
-	{
-		$("#img2").show();
-		$("#img3").show();
-		$("#img4").hide();
-		
-	}
-	
-	function Lmouseout()
-	{
-		$("#img2").hide();
-		$("#img3").hide();
-		$("#img4").show();				
-	}
-	
-  function mouseover()
-  { 	
-  	$("#img1").show();
-	$("#img5").hide();
-	$("#img6").show();
-  }
-  function mouseout()
-  {
-  	$("#img1").hide();
-	$("#img5").show();
-	$("#img6").hide();
-  }
-	
-</script>
-</head>
-<body style="margin:0px;padding:0px;">
 <!--头部-->
-{% include "jinfuheader.html" %}
+{% include "zcheader.html" %}
 
 <!--内容-->
 <div class="conext">
 <div style="height:50px;"></div>
 <div class="div11">
 		<div class="div_left" id="daohang">
-			<ul>		   
-				<li data-pp="gyzc"> <a href="javascript:void(0);" class="blockColor">关于众投</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="tzlc"><a href="javascript:;" class="grayColor">投资流程</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="aqbz"><a href="javascript:;" class="grayColor">安全保障</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="ptxy"><a href="javascript:;" class="grayColor">平台协议</a></li>
-				<li><div class="downline"></div></li>
-				<li data-pp="bzzx"><a href="javascript:;" class="grayColor">帮助中心</a></li>
-			</ul>
+			<a data-pp="gyzc" href="javascript:void(0);" class="blockColor"><label class="left_label">关于众投</label></a>
+			<div class="downline"></div>
+			<a data-pp="tzlc" href="javascript:;" class="grayColor"><label class="left_label">投资流程</label></a>
+			<div class="downline"></div>
+			<a data-pp="aqbz" href="javascript:;" class="grayColor"><label class="left_label">安全保障</label></a>
+			<div class="downline"></div>
+			<a data-pp="ptxy" href="javascript:;" class="grayColor"><label class="left_label">平台协议</label></a>
+			<div class="downline"></div>
+			<a data-pp="bzzx" href="javascript:;" class="grayColor"><label class="left_label">帮助中心</label></a>
 		</div>
 		<div class="div_right">
 		   <div id="gyzc" class="con_right">   
@@ -191,25 +146,25 @@ $(function (){
 		         
 					 <div class="biaoti">安全保障</div>
 					   <div style="margin-left:100px;margin-top:230px;">
-					 	<div style="width:400px;height:1px;background:#ccc;"></div>
-					 	<div style="width:1px;height:440px;background:#ccc;position:absolute;top:225px;left:850px;"></div>
+					 	<div style="width:400px;height:1px;background:#ccc;position:absolute;margin-top:-15px;"></div>
+					 	<div style="width:1px;height:440px;background:#ccc;position:absolute;margin-top:-220px;margin-left:200px;"></div>
 				 	</div>
 					<div id="color" class="change_color">
-					<div style="width:180px;height:220px;position: absolute;top:220px;left:650px;">
-						<a href="/safety/1"><img src="/static/images/xmfk180-180.png" width="180" height="180"/>
-						<span style="margin-left:55px;line-height:35px;font-size:18px;">项目风控</span></a></div>
+					<div style="width:180px;height:220px;position: absolute;margin-top:-210px;margin-left:120px;">
+						<a href="/safety/1"><img src="/static/images/xmfk180-180.png" width="150" height="150"/>
+						<span style="margin-left: 40px;line-height: 45px;font-size:18px;color:#000;font-weight:bold">项目风控</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:220px;left:870px;">
-						<a href="/safety/2"><img src="/static/images/zjbz180-180.png" width="180" height="180"/>
-						<span style="margin-left:55px;line-height:35px;font-size:18px;">资金保障</span></a></div>
+					<div style="width:180px;height:100px;position: absolute;margin-top:-210px;margin-left:330px;">
+						<a href="/safety/2"><img src="/static/images/zjbz180-180.png" width="150" height="150"/>
+						<span style="margin-left: 40px;line-height: 45px;font-size:18px;color:#000;font-weight:bold">资金保障</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:450px;left:650px;">
-						<a href="/safety/3"><img src="/static/images/cwjg180-180.png" width="180" height="180"/>
-						<span style="margin-left:35px;line-height:35px;font-size:18px;">财务监管系统</span></a></div>
+					<div style="width:180px;height:100px;position: absolute;margin-top:-2px;margin-left:120px;">
+						<a href="/safety/3"><img src="/static/images/cwjg180-180.png" width="150" height="150"/>
+						<span style="margin-left:20px;line-height:45px;font-size:18px;color:#000;font-weight:bold">财务监管系统</span></a></div>
 					
-					<div style="width:180px;height:100px;position: absolute;top:450px;left:870px;">
-						<a href="/safety/4"><img src="/static/images/jsbz180-180.png" width="180" height="180"/>
-						<span style="margin-left:55px;line-height:35px;font-size:18px;">技术保障</span></a></div>
+					<div style="width:180px;height:100px;position: absolute;margin-top:-2px;margin-left:330px;">
+						<a href="/safety/4"><img src="/static/images/jsbz180-180.png" width="150" height="150"/>
+						<span style="margin-left:45px;line-height:45px;font-size:18px;color:#000;font-weight:bold">技术保障</span></a></div>
 					 <div style="height:240px;"></div>
 					 </div>
 		   </div> 

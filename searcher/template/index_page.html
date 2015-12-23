@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+{% load settingsvalue %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>葡萄藤众投</title>
@@ -165,8 +166,12 @@
 																<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 															</li>
 															<li style="clear:both">
-															<label style="margin-left:20px;">{{result.publish}}</label>
-															<label style="color:#000000;;font-size:12px;margin-left:45px;">{{result.get_category_display}}</label>
+																{% if result.publish.userinformation.realname %}
+																<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+																{% else %}
+															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
+																{% endif %}
+															<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
 															</li>
 															<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
 															<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
@@ -227,8 +232,12 @@
 												<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 											</li>
 											<li style="clear:both">
-											<label style="margin-left:20px;">{{result.publish}}</label>
-											<label style="color:#000000;;font-size:12px;margin-left:45px;">{{result.get_category_display}}</label>
+											{% if result.publish.userinformation.realname %}
+												<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+												{% else %}
+												<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
+												{% endif %}
+											<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
 											</li>
 											<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
 											<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
@@ -288,8 +297,12 @@
 															<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 														</li>
 														<li style="clear:both">
-														<label style="margin-left:20px;">{{result.publish}}</label>
-														<label style="color:#000000;;font-size:12px;margin-left:45px;">{{result.get_category_display}}</label>
+														{% if result.publish.userinformation.realname %}
+															<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+																{% else %}
+															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
+																{% endif %}
+														<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
 														</li>
 														<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
 														<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
@@ -310,8 +323,8 @@
 		<div class="xujgstyle">
 	        <div class="biaotidiv">
 			    <ul>
-					<li class="btstyle">众投成功</li>
-                    <li class="ckgdstyle"><a href="/project/5">更多众投成功......</a></li>
+					<li class="btstyle">众投案例</li>
+                    <li class="ckgdstyle"><a href="/project/5">更多众投案例......</a></li>
               	</ul>
 			</div>	
 		    <div class="search_bd" id="result_form_manytousucce">
@@ -349,8 +362,12 @@
 																		<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 																	</li>
 																	<li style="clear:both">
-																	<label style="margin-left:20px;">{{result.publish}}</label>
-																	<label style="color:#000000;;font-size:12px;margin-left:45px;">{{result.get_category_display}}</label>
+																	{% if result.publish.userinformation.realname %}
+																<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+																{% else %}
+															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
+																{% endif %}
+																	<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
 																	</li>
 																	<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
 																	<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
@@ -368,67 +385,7 @@
 			</div>
 		</div>	
 			      
-		<div class="xujgstyle">
-	        <div class="biaotidiv">
-			    <ul>
-					<li class="btstyle">众投案例</li>
-                    <li class="ckgdstyle"><a href="/project/6">更多众投案例......</a></li>
-              	</ul>
-			</div>
-		    <div class="search_bd" id="result_form_succeecase">
-												{% if crowdfunded_finsh %}
-									{% for result in crowdfunded_finsh %}
-								<div class="resultpage">
-								  <a href="/prodetails/{{result.id}}">
-									 <div style="width:255px;height:310px">
-										<div style="position:absolute;width:255px;height:80px;">
-											 
-												 <div class="littleimg"> <img src="/static/images/heart.png" />
-												 <label style="padding-right: 18px;font-weight:bold; color:#FFF;height:20px;padding-top:3px;float: right;"> 
-												 {{result.click.all|length}}</label></div>
-											 
-											 <div style="float:right">
-											{% ifequal result.active 1 %}
-											 <div class="jingxuan"> <img src="/static/images/flag.png" /></div>
-											{% else %}
-											 <div style="border:0px solid red;width:38px;height:38px;"></div>
-											{% endifequal %}
-											</div>
-										 </div>
-										<div class="mjzximg"><img src="{{ result.photo_url }}"/></div>
-										<div>
-											<ul class="Cul1">
-												<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
-												<li style="padding-top:5px;">{{result.introduction}}</li>
-												<li><div class="input_btt"></div></li>
-												<li style="float:left">
-													<label>融资目标</label><span>{{result.amount}}</span>
-												</li>
-												<li style="float:left;margin-left:50px;">
-													<label>已完成</label><span>{{result.finish}}</span>
-												</li>
-												<li style="clear:both">
-													<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-												</li>
-												<li style="clear:both">
-												<label style="margin-left:20px;">{{result.publish}}</label>
-												<label style="color:#000000;;font-size:12px;margin-left:45px;">{{result.get_category_display}}</label>
-												</li>
-												<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
-												<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
-											</ul>
-										</div>
-									 </div>
-								  </a>
-								</div>
-									{% endfor %}
-
-								{% else %}
-
-									<a>无符合查询条件的纪录</a>
-								{% endif %}
-			</div>
-		</div>	
+		
 	</div>
 <!----右边悬浮框----------->	
 	<div class="side">

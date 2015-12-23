@@ -2,14 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="/static/css/zcheader.css" />
 <title>葡萄藤众筹首页</title>
     <script>
+        $(function(){
+            $('#top_tag').children('a').bind('focus',function(){
+                $(this).addClass('TopclickTag').siblings().removeClass('TopclickTag');
+            })
+        })
+
         $(function(){
             $('.dropBtn').bind('click',function(){
                 if($('.dropList').is(':hidden')){
                     $('.dropList').attr('style','display:block');
-                    $('.dropList').addClass('')
                 }else{
                     $('.dropList').attr('style','display:none')
                 }
@@ -24,7 +28,10 @@
                 }
             });
         })
+
+
     </script>
+    <link rel="stylesheet" href="/static/css/zcheader.css" />
     <style>
         .putIn{
             position:relative;
@@ -45,7 +52,6 @@
             margin:0;
             width:58px;
             height:24px;
-            cursor:pointer;
             background: none;
         }
 
@@ -56,7 +62,7 @@
         .btn-search{
             /*float: right;*/width:78px;height:36px;line-height:36px;color:#fff;font-size:14px;overflow:hidden;background:#00b7ee;border: 0 none;cursor: pointer;font-family:"microsoft yahei";/*margin-right:251px;margin-top:65px;*/
         }
-        .ipt-search{float: left;text-indent:35px;width: 200px;height: 32px;line-height: 32px;background:url(/static/images/searchsub.png) no-repeat top left;border:#d2d2d2 solid 1px;border-right:0;font-size:14px;font-family:"microsoft yahei";outline: none;margin-left:-98px;color:black;background-color:rgb(241,241,241)}
+        .ipt-search{float: left;text-indent:35px;width: 150px;height: 32px;line-height: 32px;background:url(/static/images/searchsub.png) no-repeat top left;border:#d2d2d2 solid 1px;border-right:0;font-size:14px;font-family:"microsoft yahei";outline: none;margin-left:-98px;color:black;background-color:rgb(241,241,241)}
         .dropDown .dropBtn s{position:absolute;top:14px;right:1px;width:8px;height:6px;background:url(/static/images/sprits.png) no-repeat -67px -183px;}
         .dropDown .dropList{display:none;position:absolute;top:37px;left:-1px;width:59px;border:#69bcf7 solid 1px;background:#fff;list-style-type:none;padding:0}
         .dropDown .dropList li{padding:0 0 0 10px;height:25px;line-height:25px;cursor:pointer;color:#333; font-family:"microsoft yahei";font-size:12px}
@@ -75,30 +81,35 @@
 		
   		<ul class="ul7">
     		<li>
-				<a href="{% url 'index_zc' %}">首页</a>
-				<a href="{% url 'investor' %}">投资人风采</a>
-				<a href="/project/1">项目风采</a>
-    			<a href="{% url 'publish' %}">项目发起</a>
+                <div id="top_tag">
+                    <a href="{% url 'index_zc' %}">首页</a>
+                    <a href="/project/1">项目风采</a>
+                    <a href="{% url 'investor' %}">投资人风采</a>
+                    <a href="{% url 'guide' %}">投资指引</a>
+                    <a href="#">众筹社区</a>
+                    <a href="{% url 'about_us' %}">关于我们</a>
+                </div>
+          <!--      <a href="#">葡萄藤社区</a>-->
+    			<!--<a href="{% url 'publish' %}">项目发起</a>-->
 			<!--	<a href="{% url 'bbsindex' %}">众筹社区</a>-->
-			</li>  		
+			</li>
 		</ul>
 		
 		<ul class="ul8">
     		<li>
-                <!--<div class="search">-->
                 <div class="dropDown dropDown_zczj">
-                    <input type="text" class="putIn" readonly="readonly" value="领投人">
+                    <input type="text" class="putIn" readonly="readonly" value="找项目">
                 <span class="dropBtn">
-                    <s></s>
+                   <!-- <s></s>-->
                 </span>
-                    <ul id="choose" class="dropList" style="display: none">
-                        <li>领投人</li>
-                        <li>找项目</li>
-                    </ul>
+
+                  <!--  <ul id="choose" class="dropList" style="display: none">
+                        &lt;!&ndash;<li>领投人</li>&ndash;&gt;
+                        &lt;!&ndash;<li>找项目</li>&ndash;&gt;
+                    </ul>-->
                 </div>
                     <button id="submit" type="button" class="btn-search">搜索</button>
                     <input id="inptext" type="text" class="ipt-search">
-         <!--       </div>-->
 
      			<!--<label>
                 	<select name="choose" id="choose" class="seacher-sele" >
@@ -130,15 +141,6 @@
 </div>
 
 <script type="text/javascript">
-
- 	   {% if select %}
-            {% ifequal select  '找项目' %}
-            $('.putIn').attr('value','找项目');
-            {% else %}
-            $('.putIn').attr('value','领投人');
-            {% endifequal %}
-       {% endif %}
-        
 
         $(document).ready(function () {
             $('#logged li').hover(function () {

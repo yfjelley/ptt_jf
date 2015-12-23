@@ -11,13 +11,18 @@
         <div class="bbs_ideas mt10">
            <div class="bbs_ideas_left fl">
                <h2>{{topic.title}}</h2>
-               <p>By {{ topic.user.username }} at {{ topic.time_created|date:"Y-m-j  H:i:s"  }}
+               {% if topic.user.userinformation.realname %}
+                   <p>By {{ topic.user.userinformation.realname }} at {{ topic.time_created|date:"Y-m-j  H:i:s"  }}
+               {% else %}
+                   <p>By {{ topic.user.username|phone_cut }} at {{ topic.time_created|date:"Y-m-j  H:i:s"  }}
+               {% endif %}
+
 					{% if request.user == topic.user%}
-					<span class="bbs_operate"><a class="label-success label" href="{% url 'add_appendix' topic.id %}">{% trans 'add appendix' %}</a></span>
+					<span class="bbs_operate"><a class="label-success label" href="{% url 'add_appendix' topic.id %}">{% trans '添加附言' %}</a></span>
 					{% endif %}
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser or topic.user == request.user %}
-                        <span class="bbs_operate"><a class="label-warning label" href="{% url 'edit_topic' topic.id %}">{% trans 'edit' %}</a></span>
+                        <span class="bbs_operate"><a class="label-warning label" href="{% url 'edit_topic' topic.id %}">{% trans '编辑' %}</a></span>
                           {% if request.user.is_superuser %}
                             <span class="bbs_operate"><a class="label-danger label" href="{% url 'delete_topic' topic.id %}">{% trans 'delete' %}</a></span>
                           {% endif %}
@@ -78,18 +83,62 @@
 		{% for r in posts %}
             <dl class="bbs_reply_list">
                {% ifequal user.id None  %}
-                <dt><a href="{% url 'login' %}"><img title="{{r.user.username}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                   {% if r.user.userinformation.realname %}
+                <dt><a href="{% url 'login' %}"><img title="{{r.user.userinformation.realname }}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                   {% else %}
+                   <dt><a href="{% url 'login' %}"><img title="{{r.user.username|phone_cut}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                {% endif %}
                {% else %}
-                <dt><a href="{% url 'user_info' r.user.id %}"><img title="{{r.user.username}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                   {% if r.user.userinformation.realname %}
+                   <dt><a href="{% url 'user_info' r.user.id %}"><img title="{{r.user.userinformation.realname}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                   {% else %}
+                   <dt><a href="{% url 'user_info' r.user.id %}"><img title="{{r.user.username|phone_cut}}" src="{{r.user.userinformation.photo_url}}" /></a></dt>
+                   {% endif %}
                {% endifequal %}
                 <dd>
                  {% ifequal user.id None  %}
-                   <p><span class="bbs_reply_number fr">{{ forloop.counter }}</span><a href="{% url 'login' %}" class="bbs_username">{{r.user.username}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% if r.user.userinformation.realname %}
+                       <p><span class="bbs_reply_number fr">
+                                   {% if pager %}
+                                        {{pager|multiplicative_page|add:forloop.counter}}
+                                   {% else %}
+                                        {{forloop.counter}}
+                                   {% endif %}
+                       </span><a href="{% url 'login' %}" class="bbs_username">{{r.user.userinformation.realname }}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% else %}
+                        <p><span class="bbs_reply_number fr">
+                                   {% if pager %}
+                                        {{pager|multiplicative_page|add:forloop.counter}}
+                                   {% else %}
+                                        {{forloop.counter}}
+                                   {% endif %}
+                        </span><a href="{% url 'login' %}" class="bbs_username">{{r.user.username|phone_cut}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% endif %}
                  {% else %}
-                   <p><span class="bbs_reply_number fr">{{ forloop.counter }}</span><a href="{% url 'user_info' r.user.id %}" class="bbs_username">{{r.user.username}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% if r.user.userinformation.realname %}
+                       <p><span class="bbs_reply_number fr">
+                                   {% if pager %}
+                                        {{pager|multiplicative_page|add:forloop.counter}}
+                                   {% else %}
+                                        {{forloop.counter}}
+                                   {% endif %}
+                        </span><a href="{% url 'user_info' r.user.id %}" class="bbs_username">{{r.user.userinformation.realname}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% else %}
+                        <p><span class="bbs_reply_number fr">
+                                   {% if pager %}
+                                        {{pager|multiplicative_page|add:forloop.counter}}
+                                   {% else %}
+                                        {{forloop.counter}}
+                                   {% endif %}
+                        </span><a href="{% url 'user_info' r.user.id %}" class="bbs_username">{{r.user.username|phone_cut}}</a>{{ r.time_created|date:"Y-m-j  H:i:s" }}
+                    {% endif %}
                  {% endifequal %}
                       {% if request.user.is_authenticated %}
-					     <a href="#create_reply" data-user="{{r.user.username}}" class="label-info label pull-right reply-btn" onclick="{Javascript:send_messige()}" >回复</a>
+                         {% if r.user.userinformation.realname %}
+					     <a href="#create_reply" data-user="{{r.user.userinformation.realname }}" class="label-info label pull-right reply-btn" onclick="{Javascript:send_messige()}" >回复</a>
+                         {% else %}
+                         <a href="#create_reply" data-user="{{r.user.username|phone_cut}}" class="label-info label pull-right reply-btn" onclick="{Javascript:send_messige()}" >回复</a>
+                         {% endif %}
 					  {% endif %}
                    </p>
                    <div class="bbs_reply_con">
@@ -105,7 +154,7 @@
 	{% else %}
 	<div class="panel-body">
 		<div class="alert alert-info">
-			{% trans 'no replies yet' %}
+			{% trans '暂无回复' %}
 		</div>
 	</div>
 	{% endif %}
@@ -127,9 +176,7 @@
 	   {% csrf_token %}
         <div class="bbs_bd">
            <textarea id="content" name="content"></textarea>
-            <div style="padding-top: 5px">
-            <input type="submit" class="bbs_post_btn"   value="回复" />
-            </div>
+           
                 <li class="yzm" >
                    <div style="padding-top: 5px">
                    <input name="log_code" id="log_code" type="text" placeholder="验证码"
@@ -138,9 +185,14 @@
                    <a href="javascript:void(0);" id="yzm" style="display: none"><img id="code_pic"
                      onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
                      src="{% url 'verifycode' %}"/></a>
-                   {% include 'remind.html' %}
+                 
                    </div>
+		
                 </li>
+				 <div style="padding-top:15px">
+            <input type="submit" class="bbs_post_btn"   value="回复" />
+            </div>
+			 {% include 'remind.html' %}
         </div>
     </form>
     {% else %}

@@ -43,14 +43,14 @@ input.input_butt{display:inline-block; border:0}
 #ul11 a:hover{color:#e1640d;}
 #warp{width:100%;height:800px;background:#EEEEF0;}
 #login_content{width:100%;height:620px;background:#EEEEF0;margin-top: -10px;
-min-width: 1024px;max-width:1660px;width:expression(document.body.clientWidth < 1050? "1050px": "auto" );}
+min-width: 1024px;max-width:1660px;font-size:12px;font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif";/*width:expression(document.body.clientWidth < 1050? "1050px": "auto" );*/}
 .log_text li{margin:5px 0;}
 .log_ucon{line-height:25px;margin-left:50px;}
 .login_mid{ padding:20px 0px;height:500px; background-color:#FFF;width:600px; z-index:999;margin: 10px auto;}
 .login_mid ul{padding:10px 0px;}
 /*зЂВс*/
 #signup_content{width:100%;height:800px;background:#EEEEF0;
-    max-width:1660px;min-width: 1024px;width:expression(document.body.clientWidth < 1050? "1050px": "auto" );}
+    max-width:1660px;min-width: 1024px;font-size:12px;font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif";}
 .singup_call{margin-left:50px;line-height:20px;}
 #call_inp input[type="text"]{width:400px;height:40px;}
 .call_lbl span{position:absolute;}
@@ -94,23 +94,23 @@ input.login_butt{display:inline-block;border:0}
 #forger_conent{width:100%;height:620px;background:#EEEEF0;max-width:1660px;min-width: 1024px;width:expression(document.body.clientWidth < 1050? "1050px": "auto" );}
 .login_retrieve{ padding:5px 10px; border:1px solid #ddd; border-radius:5px;}
 .login_retrieve:hover{ background:#f2f2f2; color:#4c4c4c;}
-.get_pwd{ padding:10px 0;height:440px; background-color:#FFF;width:600px; z-index:999;margin: 0px auto;}
+.get_pwd{ padding:10px 0;height:500px; background-color:#FFF;width:600px; z-index:999;margin: 0 auto;font-size:12px;font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif";}
 .get_all{margin-top:40px;}
-#ul3{margin:30px 0;font-size:12px;}
+#ul3{margin:30px 0;}
 #ul3{line-height:45px;}
-#ul3 label{margin-left:160px;}
+#ul3 label{margin-left:120px;}
 #ul5{margin-top:10px; margin-left:50px;}
-
-.elul2 span{position:absolute;left:904px;top:380px;}
-#print_ucon .elul1 input[type="text"]{width:400px;height:40px;margin-left:45px;}
-.elul1 span{position:absolute;left:900px;top:310px;}
-#print_ucon .elul2 input[type="text"]{width:300px; height:40px;}
-#print_ucon .label1{margin-left:45px;}
-#print_ucon .label2{margin-left:-1px;}
+.forget_yzcode span{position:absolute;margin-left:110px;}
+.elul2 span{position:absolute;margin-left:110px;}
+#print_ucon .elul1 input[type="text"]{width:400px;height:40px;margin-left:-75px;}
+.elul1 span{position:absolute;}
+#print_ucon .elul2 input[type="text"]{width:300px; height:40px;margin-left:-120px;}
+#print_ucon .label1{margin-left:-75px;}
+#print_ucon .label2{margin-left:-120px;}
 #print_ucon{margin-left:40px;margin-top:-20px;}
 #print_ucon{line-height:25px}
 #print_ucon .elul2 {margin-left:45px;}
 .zhankeng{height: 50px;background: #EEEEF0 none repeat scroll 0% 0%;width: 100%;
-    max-width:1660px;min-width: 1024px;width:expression(document.body.clientWidth < 1050? "1050px": "auto" );}
+    max-width:1660px;min-width: 1024px;}
 .xjt{position:absolute; top: 519px;left: 788px;}
-
+.forget_yzcode input[type="text"]{width:300px;height:40px;margin-left:-75px;}
