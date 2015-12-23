@@ -1,6 +1,7 @@
 from django.contrib import admin
 from searcher.models import UserFavorite, Bid, FilterDimension, DimensionChoice, \
-    UserFilter, ReminderUnit, UserReminder, CombBidType, WeekHotSpot
+    UserFilter, ReminderUnit, UserReminder, CombBidType, WeekHotSpot,UserInformation,Project,\
+    invest_detail,project_forum,Signal,RegistrationAgreement,About_us,Partners,Frendlink
 
 
 class FilterDimensionAdmin(admin.ModelAdmin):
@@ -21,11 +22,20 @@ class WeekHotSpotAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserFavorite)
-admin.site.register(Bid)
-admin.site.register(FilterDimension, FilterDimensionAdmin)
-admin.site.register(DimensionChoice, DimensionChoiceAdmin)
-admin.site.register(UserFilter, UserFilterAdmin)
-admin.site.register(ReminderUnit)
-admin.site.register(UserReminder)
-admin.site.register(CombBidType)
-admin.site.register(WeekHotSpot, WeekHotSpotAdmin)
+
+#admin.site.register(FilterDimension, FilterDimensionAdmin)
+#admin.site.register(DimensionChoice, DimensionChoiceAdmin)
+#admin.site.register(UserFilter, UserFilterAdmin)
+#admin.site.register(ReminderUnit)
+#admin.site.register(UserReminder)
+admin.site.register(About_us)
+admin.site.register(UserInformation)
+admin.site.register(Project)
+admin.site.register(invest_detail)
+admin.site.register(project_forum)
+admin.site.register(Signal)
+admin.site.register(RegistrationAgreement)
+admin.site.register(Partners)
+admin.site.register(Frendlink)
+
+
