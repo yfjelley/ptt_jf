@@ -81,8 +81,6 @@ label.Proli4 hr{border:none; border-top:1px solid #000000;width:400px; height:1p
 label.Proli5 hr{border:none;border-right:1px solid #000000; width:1px; height:65px; margin-top:-20px;}
 
 li.Proli11 label{margin:0px 50px;}
-ul{list-style:none;}
-.xieyi{margin-top:100px; line-height:30px;margin-left:-80px;margin-top:65px;}
 .xieyi_button{border:1px solid #4a3c70;width:100px;height:35px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;}
 .license-file{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:70px;height:20px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer;}
 .license-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
@@ -119,3 +117,51 @@ ul{list-style:none;}
 
 .myfile{ display:none; }
 #jigou{width:440px;margin-left:90px;}
+
+input[type='checkbox'] + label:before{
+    background: url(/static/images/checked.png);
+    content:' ';
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    left:0;
+}
+input[type='checkbox']{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    position:absolute;
+    left:4px;
+    top:3px;
+}
+.checkbox{
+    padding-left: 24px;
+    position: relative;
+}
+input[type='checkbox']:checked + label:before{
+    background: url(/static/images/uncheck.png);
+}
+input[type='checkbox'][disabled]:checked + label:before{
+    background: url(/static/images/uncheck.png);
+}
+.shows .lbl-text{padding: 0 20px;}
+.write-text input[type='text']{
+    width: 100px;
+    outline: none;
+}
+.btn img {
+    position: relative;
+    filter: alpha(opacity=30);
+    opacity: 0.5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    float: right;
+    padding: 0 5px;
+}
+.btn:hover img{
+    z-index: 999;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    float: right;
+    padding: 0 5px;
+}

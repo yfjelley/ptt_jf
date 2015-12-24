@@ -375,10 +375,10 @@ class MyCustomRenderer(RadioFieldRenderer):
 class UserInformationForm(ModelForm):
     class Meta:
         model = UserInformation
-        fields = ('nickname','realname', 'gender', 'birthday', 'cellphone', 'email', 'city', 'address', 'education',
+        fields = ('cate','realname', 'gender', 'birthday', 'cellphone', 'email', 'city', 'address', 'education',
                   'monthly_income', 'marriage', 'qq_num', 'wechat_num', 'weibo_num')
         widgets = {
-            'nickname': forms.TextInput(attrs={'class': 'user_text'}),
+            'cate': forms.Select(attrs={'class': 'user_select'}),
             'realname': forms.TextInput(attrs={'class': 'user_text'}),
             'gender': forms.RadioSelect(renderer=MyCustomRenderer, attrs={'class': 'user_radio'}),
             'birthday': forms.TextInput(attrs={'class': 'user_text'}),

@@ -694,14 +694,14 @@ def change_phone_number(request):
 
 
 def about_us(request):
-    p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
-    p2 = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
-    return render_to_response('about.html',{"p1":p1[0].agreement,"description":p2[0].description}, context_instance=RequestContext(request))
+    p = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
+    return render_to_response('about.html',{"description":p[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
     p = About_us.objects.all()
+    p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
 
-    return render_to_response('guide.html',{"description":p[0].about_zhongtou}, context_instance=RequestContext(request))
+    return render_to_response('guide.html',{"p1":p1[0].agreement,"description":p[0].about_zhongtou}, context_instance=RequestContext(request))
 
 #@login_required
 def publish(request):

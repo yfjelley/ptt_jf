@@ -124,11 +124,11 @@ def writeagreement(request):
     t.save()
     t=RegistrationAgreement(name="technical_support",agreement=test)
     t.save()
-   """
+
     p1 = About_us(name="上海辞达金融信息服务有限公司", address="上海市闵行区沪闵路7866号莲花广场2号楼908室",\
                   zip_code=u"201102",hotline="021-34222366", email="sys@pttjf.com",description=des,about_zhongtou=about)
     p1.save()
-    """
+
     p2 = About_us.objects.all()
     print p2[0].name
     for i in p2:
@@ -136,7 +136,7 @@ def writeagreement(request):
         i.about_zhongtou = about
         i.save()
 
-
+    """
     name= ['明明','笨笨','芳芳','圆圆','大大','东东']
     position=['中国风险投资公司高级总裁','总裁','总经理']
     username=random.randint(13521448969,13698766400)
@@ -205,7 +205,7 @@ def writeagreement(request):
 
     return render_to_response('test.html',{'user':user}, context_instance=RequestContext(request))
 
-"""
+
 
 
 

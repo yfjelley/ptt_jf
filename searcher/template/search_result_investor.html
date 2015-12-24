@@ -9,28 +9,28 @@
         {% for result in results.object_list %}
 
 	    <div class="Cleft3">
-			<div class="PelPic"><img src="{{ result.photo_url }}" /></div>
+			<div class="PelPic"><img class="person-img" src="{{ result.photo_url }}" />
+				{% ifequal result.authentication_class '3' %}
+					<img style="position: absolute;margin-left:-100px;margin-top:150px" src="/static/images/yerztouzi.png" />
+				{% endifequal %}
+				{% ifequal result.authentication_class '2' %}
+					<img style="position: absolute;margin-left:-100px;margin-top:150px" src="/static/images/touzi.png" />
+				{% endifequal %}
+			</div>
 			<div class="DesPel">
-				<div style="position:relative; float:right;top: 20px;right: 15px;">
-						<img id="focus_{{result.user}}" name="{{result.id}}" src="/static/images/focus.png" />
-					<img id="priletter_{{result.user}}" name="{{result.realname}}" data-id="{{result.id}}" src="/static/images/priletter.png" /></div>
-				<div id ="person" style=" font-weight:bold;font-size:16px;padding:5px 0;color:#000;margin-top:20px;margin-left:-15px;text-align: left">
+				<div style="float:right;margin-top: 10px;margin-right:10px">
+						<img id="focus_{{result.user}}" name="{{result.id}}" src="/static/images/focus.png" style="padding:2px 5px" width="70" /><br>
+					<img id="priletter_{{result.user}}" name="{{result.realname}}" data-id="{{result.id}}" src="/static/images/priletter.png" style="padding:2px 5px" width="70"/></div>
+				<div id ="person" style=" font-weight:bold;font-size:24px;padding:5px 0;color:#000;margin-top:20px;margin-left:-5px;text-align: left">
 					{% if result.realname %}
 						{{result.realname}}
 					{% else %}
 					    {{result.user.username|phone_cut}}
 					{% endif %}
 				</div>
-				{% ifequal result.authentication_class '3' %}
-				<div style="padding-top:5px;margin-left: -20px;">
-					<img src="/static/images/yerztouzi.png" /></div>
-				{% endifequal %}
-				{% ifequal result.authentication_class '2' %}
-				<div style="padding-top:5px;margin-left: -20px;">
-					<img src="/static/images/touzi.png" /></div>
-				{% endifequal %}
 
-				<div style="width:240px; height:50px;margin-top:15px;">
+
+				<div style="width:240px; height:50px;margin-top:30px;">
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
 					<div style="float:left;width:100px;height:60px;text-align: center;">
 						<p style="font-weight:bold;font-size:14px;color:#000;height: 25px;margin-top: -1px;display: block;">投资项目</p>
@@ -39,7 +39,7 @@
 						 </p>						 
 					</div>	 
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
-					<div style="float:left;width:100px;height:60px;text-align: center;"> 
+					<div style="float:left;width:130px;height:60px;text-align: center;">
 						 <p style="font-weight:bold;color:#000;font-size:14px;height: 25px;margin-top: -1px;display: block;">累计投资额</p>
 						 <p style="padding:0 30px;color:#000;font-weight:bold;font-size:16px;height: 25px;margin-top: -5px;display: block;">
 							  {{result.user.manager_set.all.count}}
@@ -47,10 +47,10 @@
 					</div>
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
 				</div>  	
-				<div style="padding:10px 0;color:#e1604d; font-size:12px;clear:both;">
-					<label style="margin-left:15px;">关注行业</label>
+				<div style="padding:10px 0;color:#e1604d; font-size:12px;clear:both;font-weight:bold">
+					<label>关注行业</label>
 				</div>
-				<div style="font-size:12px;color:#000;margin-left:10px;">
+				<div style="font-size:12px;color:#000;">
 					{{result.get_industry_display}}
 				</div>
 				    

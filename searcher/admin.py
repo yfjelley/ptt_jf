@@ -21,7 +21,7 @@ class WeekHotSpotAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'url', 'status', 'add_date', 'modify_date')
 
 
-admin.site.register(UserFavorite)
+#admin.site.register(UserFavorite)
 
 #admin.site.register(FilterDimension, FilterDimensionAdmin)
 #admin.site.register(DimensionChoice, DimensionChoiceAdmin)

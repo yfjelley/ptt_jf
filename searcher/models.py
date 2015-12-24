@@ -248,31 +248,33 @@ class UserInformation(models.Model):
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
     modify_date = models.DateTimeField('编辑时间', auto_now=True)
     login_times = models.IntegerField('登录次数', blank=True, null=True)
+    def __unicode__(self):
+        return u'%s' % self.user
 
 class Project(models.Model):
     publish = models.ForeignKey(User,related_name = "publish_set", blank=True, null=True)#项目发布者 可以发布多个项目
-    founder =models.TextField(blank=True, null=True)#项目可以有多个创始人
-    team = models.TextField(blank=True, null=True)#项目团队一个项目有多个成员
+    founder =models.TextField('项目创始人介绍',blank=True, null=True)#项目可以有多个创始人
+    team = models.TextField('项目团队介绍',blank=True, null=True)#项目团队一个项目有多个成员
     leader = models.ManyToManyField(User, related_name = "manager_set",blank=True, null=True)#只能有一个领投人
     investor = models.ManyToManyField(User, related_name = "investor_set",blank=True, null=True)#跟投人
     click = models.ManyToManyField(User, related_name = "click_set",blank=True, null=True)#关注该项目的人
     collection = models.ManyToManyField(User, related_name = "collection_set",blank=True, null=True)#收藏该项目的人
-    name = models.CharField(max_length=255, blank=True, null=True)#项目名称
-    logo = models.CharField(max_length=255, blank=True, null=True)#项目标志
-    photo_url = models.CharField(max_length=255, blank=True, null=True)#项目宣传图片
-    introduction = models.TextField(blank=True, null=True)#项目简介
-    description = models.TextField(blank=True, null=True)#项目描述
-    category = models.CharField(max_length=1,choices=CATEGORY_CHOICE, blank=True, null=True)#行业类别
-    amount = models.CharField(max_length=255, blank=True, null=True)#融资总额
-    leader_inv_min = models.CharField(max_length=255, blank=True)#领头最低投资额
-    inv_min = models.CharField(max_length=255, blank=True)#跟头最低投资额
-    invest_amount = models.CharField(max_length=255, blank=True, null=True)#投资金额
-    invest_num = models.CharField(max_length=255, blank=True, null=True)#份数
-    finish = models.CharField(max_length=255, blank=True, null=True)#已完成融资金额
-    fund_use = models.TextField(blank=True, null=True)#资金用途
-    transfer_equity = models.CharField(max_length=255, blank=True, null=True)#出让的股权份额
-    company = models.CharField(max_length=255, blank=True, null=True)#注册公司
-    url = models.URLField(max_length=255, blank=True, null=True)#公司链接
+    name = models.CharField('项目名称',max_length=255, blank=True, null=True)#项目名称
+    logo = models.CharField('项目标志',max_length=255, blank=True, null=True)#项目标志
+    photo_url = models.CharField('项目宣传图片',max_length=255, blank=True, null=True)#项目宣传图片
+    introduction = models.TextField('项目简介',blank=True, null=True)#项目简介
+    description = models.TextField('项目描述',blank=True, null=True)#项目描述
+    category = models.CharField('行业类别',max_length=1,choices=CATEGORY_CHOICE, blank=True, null=True)#行业类别
+    amount = models.CharField('融资总额',max_length=255, blank=True, null=True)#融资总额
+    leader_inv_min = models.CharField('领投最低投资金额',max_length=255, blank=True)#领头最低投资额
+    inv_min = models.CharField('跟投最低投资金额',max_length=255, blank=True)#跟头最低投资额
+    invest_amount = models.CharField('每股金额',max_length=255, blank=True, null=True)#投资金额
+    invest_num = models.CharField('股数',max_length=255, blank=True, null=True)#份数
+    finish = models.CharField('已完成融资金额',max_length=255, blank=True, null=True)#已完成融资金额
+    fund_use = models.TextField('资金用途',blank=True, null=True)#资金用途
+    transfer_equity = models.CharField('出让股份',max_length=255, blank=True, null=True)#出让的股权份额
+    company = models.CharField('注册公司',max_length=255, blank=True, null=True)#注册公司
+    url = models.URLField('公司链接',max_length=255, blank=True, null=True)#公司链接
     other = models.CharField('其他信息',max_length=255, blank=True, null=True)#其他信息
     patent = models.TextField('专利',blank=True, null=True)#专利
     business_plan_url = models.CharField('商业计划书',max_length=255, blank=True, null=True)#商业计划书
@@ -287,32 +289,41 @@ class Project(models.Model):
 
     class Meta:
         db_table = 't_project'
+    def __unicode__(self):
+        return u'%s' % self.name
 
 class invest_detail(models.Model):
     invest_user = models.ForeignKey(User,related_name = "invest_user_set", blank=True, null=True)
     invest_project = models.ForeignKey(Project,related_name = "invest_project_set", blank=True, null=True)
-    invest_amount = models.CharField(max_length=255, blank=True, null=True)#投资金额
-    invest_type = models.CharField(max_length=1,choices=INVEST_TYPE_CHOICES, blank=True, null=True)#领投or跟投
+    invest_amount = models.CharField('每股金额',max_length=255, blank=True, null=True)#投资金额
+    invest_num = models.CharField('股数',max_length=255, blank=True, null=True)#投资金额
+    invest_type = models.CharField('领投or跟投',max_length=1,choices=INVEST_TYPE_CHOICES, blank=True, null=True)#领投or跟投
     time_created = models.DateTimeField(auto_now_add=True)
+    def __unicode__(self):
+        return u'%s' % self.invest_user
 
 class project_forum(models.Model):
     forum_user = models.ForeignKey(User,related_name = "forum_user_set", blank=True, null=True)
     forum_project = models.ForeignKey(Project,related_name = "forum_project_set", blank=True, null=True)
     forum_content = models.CharField(max_length=255, blank=True, null=True)#内容
     time_created = models.DateTimeField(auto_now_add=True)
+    def __unicode__(self):
+        return u'%s' % self.forum_user
 
 class Signal(models.Model):
     type = models.IntegerField(default=0)        # 0,系统公告；1:评论;2:私信;3.关注;4.主题关注
     obj = models.IntegerField(default=0)         # 对象id
     user = models.ForeignKey(User,related_name = "signal_user_set", blank=True, null=True)      # 发布者
     who = models.ForeignKey(User,related_name = "signal_who_set", blank=True, null=True)                   # 接受者
-    title = models.CharField(max_length=200, null=True)        # 标题
-    content = models.CharField(max_length=1000, null=True)        # 内容
-    status = models.IntegerField(default=0)             # 状态，0，未读；1已读，2.删除
+    title = models.CharField('标题',max_length=200, null=True)        # 标题
+    content = models.TextField('内容', null=True)        # 内容
+    status = models.IntegerField('状态',default=0)             # 状态，0，未读；1已读，2.删除
     add_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'user_signal'
+    def __unicode__(self):
+        return u'%s' % self.title
 
 class ThirdLogin(models.Model):
     userInfo = models.OneToOneField(UserInformation)
@@ -424,6 +435,8 @@ class RegistrationAgreement(models.Model):
     name = models.CharField(max_length=50)
     agreement = models.TextField()
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
+    def __unicode__(self):
+        return u'%s' % self.name
 
 
 
