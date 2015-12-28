@@ -3,11 +3,11 @@
 {% load settingsvalue %}
 <html>
 <div style="width:100%;background:#EEEEF0;">
-<div class="Cleft5">   
+<div class="Cleft5">
     {% if results %}
         {% for result in results.object_list %}
 	<a href="/prodetails/{{result.id}}">
-	      
+
 		<ul class="mojing">
 		        
 			{% ifequal result.active 1 %}

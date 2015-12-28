@@ -1,6 +1,7 @@
-
-#Icontainer{width:100%; height:100%;background: #EEEEF0;min-width: 1440px;max-width: 1660px;min-height:1400px;}
-.Cleft2{width:100%;border-radius:5px;margin:0 auto;padding-top: 20px;}
+.Icontainer{width:100%; height:100%;background: #EEEEF0;min-width: 1440px;max-width: 1660px;overflow:hidden}
+.invest_content{width:1150px;margin:0 auto;background-color:#eeeef0;}
+#seatch_norm{position:absolute;top:90px;border-radius: 5px;background:#FFFFFF;width:920px;height:100px;margin-top:20px;margin-left:33px;}
+.invest_list{width:1170px;padding-left:15px;padding-top: 200px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box}
 .Cleft5{width: 1150px;
 border-radius: 5px;
 margin: 0px auto;
@@ -12,7 +13,6 @@ height:1650px;}
 padding: 10px 10px;
 overflow: hidden;
 }
-#seatch_norm{width:920px;height:100px;margin: 0px auto; background:#FFFFFF;}
 .fl {
 float: left;
 margin: 0px;
@@ -60,7 +60,6 @@ width:650px;
 .Ititle,.Ititle2{color:#4a3c70;font-size:12px;}
 .Rlogo img{position: relative;left: 85%;top: -97px;width: 90px;height: 75px;}
 .mores_content{height: 1265px;margin-left:-10px;}
-.moress_content{height: 1270px;margin-left:-10px;}
 .Cleft3{background-color:#FFFFFF;width:440px;height:220px;float:left;margin-left: 40px; margin-top:20px;}
 li.investPelPic{position:relative;top:-230px;left:420px;}
 li.investPelPic2{margin-top:-150px;margin-left:410px;}
@@ -70,7 +69,7 @@ li.investPelPic2{margin-top:-150px;margin-left:410px;}
 .pro-content{margin-top:-120px}
 
 /*��ҳ*/
-.pagess{ text-align:right;height:30px;margin-right:335px;margin-top:-200px}
+.pagess{text-align: right;margin-right:25px;position: relative;top: -40px;}
 .pagess a{color: #333;display:inline-block;line-height: 18px;padding: 2px 6px;border: 1px solid #666;border-radius: 10px;margin:0 5px;}
 .pagess a.before{border-radius:15px 10px 10px 15px;}
 .pagess a.after{border-radius:10px 15px 15px 10px;}

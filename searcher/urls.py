@@ -1,10 +1,9 @@
 from django.conf.urls import patterns, url
 
 urlpatterns = patterns('searcher.views',
-    #url(r'^$', 'index', name='index'),
     url(r'^zc$', 'index_zc', name='index_zc'),
     url(r'^search_zc$', 'search_zc', name='search_zc'),
-    #url(r'^$', 'index_jf', name='index_jf'),
+    url(r'^auth_type$', 'auth_type', name='auth_type'),
     url(r'^$', 'index_zc', name='index_jf'),
     url(r'^login/$',  'login', name='login'),
     url(r'sendSMS/$','sendSMS',name='sendSMS'),

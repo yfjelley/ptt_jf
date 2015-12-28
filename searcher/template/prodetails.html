@@ -100,9 +100,7 @@
 			})
 		})
 	</script>
-	<style>
-		html,body{margin:0;padding:0;}
-	</style>
+
 </head>
 
 <body>
@@ -190,7 +188,7 @@
                 	<div id="projianjie">
                     	<ul style="float:left">
                         	<li>
-                            {{result.description}}
+                            {{result.description|safe}}
                             </li>
                         </ul>
                     </div>
@@ -200,7 +198,7 @@
                 	<div>
                 		<ul style="float:left">
                     		<li>
-                        		{{result.team}}
+                        		{{result.team|safe}}
                         	</li>
                     	</ul>
                     </div>

@@ -5,6 +5,7 @@
 <title>项目风采</title>
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <link rel="stylesheet" href="/static/css/promanager.css" />
+	<link rel="stylesheet" href="/static/css/btn-change.css" />
 <link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="/static/js/jquery-1.8.3.min.js"></script>
 <script src="/static/js/birthday.js"></script>
@@ -48,15 +49,6 @@ $(function(){
 
 <!--判断checkbox是否选中-->
 	$(function(){
-		$("#xieyi-next1").click(function(){
-			var flag=$("#fengxingtishi").is(":checked");
-			if(flag==true){
-				return true;
-			}else{
-				return false;	
-			}
-		})
-		
 		$("#agree_fuwu").click(function(){
 			var flag=$("#tiaokuan").is(":checked");
 			if(flag==true){
@@ -128,7 +120,7 @@ $(function () {
 	
 			$('#Prodaohang').find('li').click(function(){
 				var id =$(this).data('qq');
-				alert(id);
+				//alert(id);
 				$('#'+id).show().siblings().hide();
 			});
 			
@@ -142,10 +134,6 @@ $(function () {
 
 			$('#xiaoxitongzhi').find('li').click(function(){
 				var id =$(this).data('aa');
-				$('#'+id).show().siblings().hide();
-			});
-			$('#next_page1').find('li').click(function(){
-				var id=$(this).data('tt');
 				$('#'+id).show().siblings().hide();
 			});
 			$('#lingtouren').find('li').click(function(){
@@ -211,6 +199,10 @@ $(function(){
 			<div class="Prohr"><hr /></div>
 			<li data-pp="messageinfo">
 				<a href="javascript:void(0);" style="color:#808080;">消息通知</a>
+			</li>
+			<div class="Prohr"><hr /></div>
+			<li data-pp="txsz">
+				<a href="javascript:void(0)" style="color:#808080;"> 提醒设置</a>
 			</li>
 			<div class="Prohr"><hr /></div>
 			<li data-pp="invitefriend">
@@ -441,12 +433,12 @@ $(function(){
 			    	{% for i in  attention_pr %}
                		   <ul style="margin-left:-70px;">
                         <li style="float:left;margin-top:10px;">
-                            <img src="/static/images/mojing.jpg" />												
+                            <img src="{{i.logo}}" />
                         </li>
                         <li>
                             <ul style="margin-top:-60px;padding-top:15px;">										
                                 <li>
-                                    <label style="margin-left:25px;">魔镜在线</label>
+                                    <label style="margin-left:25px;">{{i.name}}</label>
                                 </li>
                                 <li>
                                     <li style="margin-left:210px;">
@@ -458,27 +450,22 @@ $(function(){
                         <li>
                         	<ul style="float:left;padding-left:25px;">
                                 <li>
-                                    <label>融资金额</label><b>150.00万</b>									
+                                    <label>总股数</label><b>150.00万</b>
                                 </li>
                                 <li>
-                                    <label>已融资</label><b>0.00万</b>								
+                                    <label>已预约股数</label><b>0.00万</b>
                                 </li>
                                 <li>
-                                    <label>完成率</label><b style="color:#CC6633">100%</b>					
+                                    <label>已完成率</label><b style="color:#CC6633">100%</b>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <ul style="float:left">
                                 <li>
-                                    <label>融资金额</label><b>150.00万</b>		
+                                    <label>每股金额</label><b>150.00万</b>
                                 </li>
-                                <li>
-                                    <label>已融资</label><b>0.00万</b>								
-                                </li>
-                                <li>
-                                    <label>完成率</label><b style="color:#CC6633">100%</b>					
-                                </li>
+
                             </ul>
                         </li>
                         <li style="float:left;margin-top:15px;margin-left:-150px;">
@@ -507,59 +494,9 @@ $(function(){
 			</div>
 		</div>
 <!--项目管理 end-->
-
-<!--投资认证 服务协议-->
+		<!--投资认证 个人信息-->
     <div id="invest" class="display">
-<!--投资认证 服务协议 end-->
-
-<!--投资认证 风险提示-->
-	<div id="fxts">
-    	<div id="next_page1">
-            <ul class="tzrzrule">
-                <li style="font-size:30px;">
-                    <label>投资认证</label>
-                </li>
-                <li style="font-size:24px;margin-top:20px;color:#4a3c70">
-                    <label>风险提示</label>
-                </li>
-                <li style="margin-top:20px;margin-left:-35px;">
-                    <div class="prompt">
-                        <ul>
-                            <li>                
-                                <label>
-                                    1.生死时速，A股上演半月惊魂。半年A股一路高歌猛进，但6月15日至今，A股却上演了急速暴跌的惊魂时刻。在13个交易日内，上证综指、中小板指、创业板指最
-                                    幅度与暴跌周期均已超出07年530。即使对比海外牛市的中期调整也不遑多让。1987年美国股灾，标普500、纳斯达克指数分别征收资本利得税计划大幅下跌，台												                			轮A股创业板和中小板最大跌幅已与87年美国股灾相当，但耗时更短，单个交易日平均跌幅更大。
-                                </label>
-                            </li>
-                            <li style="margin-top:30px;">
-                                <label>
-                                    2.生死时速，A股上演半月惊魂。半年A股一路高歌猛进，但6月15日至今，A股却上演了急速暴跌的惊魂时刻。在13个交易日内，上证综指、中小板指、创业板指最
-                                    幅度与暴跌周期均已超出07年530。即使对比海外牛市的中期调整也不遑多让。1987年美国股灾，标普500、纳斯达克指数分别征收资本利得税计划大幅下跌，台											                			轮A股创业板和中小板最大跌幅已与87年美国股灾相当，但耗时更短，单个交易日平均跌幅更大。
-                                </label>
-                            </li>
-                            <li style="margin-top:30px;">
-                                <label>
-                                    3.生死时速，A股上演半月惊魂。半年A股一路高歌猛进，但6月15日至今，A股却上演了急速暴跌的惊魂时刻。在13个交易日内，上证综指、中小板指、创业板指最
-                                    幅度与暴跌周期均已超出07年530。即使对比海外牛市的中期调整也不遑多让。1987年美国股灾，标普500、纳斯达克指数分别征收资本利得税计划大幅下跌，台												                			轮A股创业板和中小板最大跌幅已与87年美国股灾相当，但耗时更短，单个交易日平均跌幅更大。
-                                </label>
-                            </li>
-                        </ul>
-                    </div>          		                
-                </li>
-                <li style="color:#e1604d;padding-top:10px">
-                    <input type="checkbox" id="fengxingtishi"/>我已阅并同意该服务条款
-                </li>
-                <li style="float:left; margin-left:50px;padding-top:10px" data-tt="touzirenzheng">
-                    <input id="xieyi-next1" class="xieyi_button" type="button" value="下一页" />
-                </li>
-            </ul>
-        </div>
-	</div>
-<!--投资认证 风险提示 end-->
- 
- 
-<!--投资认证 个人信息-->
-	<div id="touzirenzheng" class="display">
+	<div id="touzirenzheng">
             <div id="lingtouren">
                 <ul class="tzrzMessage">
                     <li style="font-size:30px;margin-top:-100px;margin-left:-80px;">
@@ -576,7 +513,7 @@ $(function(){
                         <img id="mperson" src="/static/images/mperson.png" style="margin-left:30px"/>
                     </li>
                 	<li>
-                        <ul>            			
+                        <ul id="authentication_type">
                             <li style="float:left;margin-left:70px;color:#e1604d" >
                               <input id="gerens" checked="checked" type="radio" name="touzi" />我是个人                     
                             </li>
@@ -589,11 +526,11 @@ $(function(){
 					<table id="geren" style="display:block;">
 						<tr>
 							<td width="100">真实姓名:</td>
-							<td class="real_name"><input type="text"></td>
+							<td class="real_name"><input id="real_name" type="text"></td>
 						</tr>
 						<tr>
 							<td>身份证号码:</td>
-							<td class="icard"><input type="text"></td>
+							<td class="icard"><input id = "icard" type="text"></td>
 						</tr>
 						<tr>
 							<td colspan="2">请上传身份证,帮助我们快速核实您的身份</td>
@@ -609,23 +546,23 @@ $(function(){
 						</tr>
 						<tr align="center">
 							<td colspan="2">
-								<input class="button_save" type="button" value="提交">
+								<input id="auth_submit" class="button_save" type="button" value="提交">
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3">
-								提交则视为同意天天搜贷<a href="#"><<服务条款>></a>
+								提交则视为同意天天搜贷<a href="{% url 'agreement' %}"><<服务条款>></a>和<a href="#"><<风险提示>></a>
 							</td>
 						</tr>
 					</table>
 					<table id="jigou" style="display:none">
 						<tr>
 							<td>法人姓名:</td>
-							<td class="real_name"><input type="text"></td>
+							<td class="real_name"><input id ="real_name_p" type="text"></td>
 						</tr>
 						<tr>
 							<td>身份证号码:</td>
-							<td class="icard"><input type="text"></td>
+							<td class="icard"><input id ="icard_p" type="text"></td>
 						</tr>
 						<tr>
 							<td colspan="2">请上传相关证件,帮助我们快速核实您的身份</td>
@@ -651,12 +588,12 @@ $(function(){
 						</tr>
 						<tr align="center">
 							<td colspan="2">
-								<input class="button_save" type="button" value="提交">
+								<input class="button_save" id="submit_p" type="button" value="提交">
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3">
-								提交则视为同意天天搜贷<a href="#"><<服务条款>></a>
+								提交则视为同意天天搜贷<a href="{% url 'agreement' %}"><<服务条款>></a>和<a href="#"><<风险提示>></a>
 							</td>
 						</tr>
 					</table>
@@ -717,9 +654,7 @@ $(function(){
                         <li style="float:left">
                             <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
                         </li>
-                        <li data-aa="txsz" style="float:left;margin-left:320px;">
-                            <a href="javascript:void(0)"> 提醒设置</a>
-                        </li>
+
 
                         </ul>
                         <li style="margin-left:-65px;">
@@ -814,67 +749,6 @@ $(function(){
                         </li>
                     </ul>
 					{% endif %}
-
-                </div>
-                <div id="txsz" class="display">
-					<table class="proleft_detail" width="700" style="padding: 10px 0">
-						<tr>
-							<td width="220" rowspan="6">
-								<img width="200" height="130" src="/static//images/mojing.jpg"></td>
-							<td align="left">魔镜在线</td>
-							<td align="right" colspan="4">
-								<div class="btn">
-									<a href="#"><img src="/static/images/delete.png"></a>
-								</div>
-								<div class="btn">
-									<a href="#"><img src="/static/images/save.png"></a>
-								</div>
-
-							</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-								<div style="border-bottom: 1px solid #a8a8a8"></div>
-							</td>
-						</tr>
-						<tr>
-							<td width="16" class="shows">
-								<div class="checkbox">
-									<input id="example" type="checkbox">
-									<label for="example"></label>
-								</div>
-								<label class="lbl-text">众筹开始</label>
-							</td>
-							<!--<td align="right"><input type="button"></td>-->
-						</tr>
-						<tr>
-							<td class="shows" width="140">
-								<div class="checkbox">
-									<input id="example1" type="checkbox">
-									<label for="example1"></label>
-								</div>
-								<label class="lbl-text">预约金额大于</label></td>
-							<td class="write-text"><input type="text"></td>
-						</tr>
-						<tr>
-							<td class="shows" width="140">
-								<div class="checkbox">
-									<input id="example2" type="checkbox">
-									<label for="example2"></label>
-								</div>
-								<label class="lbl-text">预约率大于</label></td>
-							<td class="write-text"><input type="text"></td>
-						</tr>
-						<tr>
-							<td class="shows" width="140">
-								<div class="checkbox">
-									<input id="example3" type="checkbox">
-									<label for="example3"></label>
-								</div>
-								<label class="lbl-text">预约人数大于</label></td>
-							<td class="write-text"><input type="text"></td>
-						</tr>
-					</table>
                 </div>
 			</div>
 		</div>
@@ -915,6 +789,74 @@ $(function(){
 	</div>
 <!--邀请好友 end-->
 
+<!--提醒设置-->
+		<div id="txsz" class="display">
+			<table class="proleft_detail" width="700" style="padding: 10px 0;margin-top: 70px;">
+				<tr>
+					<td style="font-size:30px">提醒设置</td>
+				</tr>
+				<tr>
+					<td width="220" rowspan="6">
+						<img width="200" height="130" src="/static//images/mojing.jpg"></td>
+					<td align="left">魔镜在线</td>
+					<td align="right" colspan="4">
+						<div class="btn">
+							<a href="#"><img src="/static/images/delete.png"></a>
+						</div>
+						<div class="btn">
+							<a href="#"><img src="/static/images/save.png"></a>
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div style="border-bottom: 1px solid #a8a8a8"></div>
+					</td>
+				</tr>
+				<tr>
+					<td width="16" class="shows">
+						<div class="checkbox">
+							<input id="example" type="checkbox">
+							<label for="example"></label>
+						</div>
+						<label class="lbl-text">众筹开始</label>
+					</td>
+					<td align="left" class='tg-list1' style="padding:0;">
+						<input class='tgl1 tgl-light1' name="checkbox1" id='cb2' type='checkbox' >
+						<label class='tgl-btn1' for='cb2'></label>
+					</td>
+				</tr>
+				<tr>
+					<td class="shows" width="140">
+						<div class="checkbox">
+							<input id="example1" type="checkbox">
+							<label for="example1"></label>
+						</div>
+						<label class="lbl-text">预约金额大于</label></td>
+					<td class="write-text"><input type="text"></td>
+				</tr>
+				<tr>
+					<td class="shows" width="140">
+						<div class="checkbox">
+							<input id="example2" type="checkbox">
+							<label for="example2"></label>
+						</div>
+						<label class="lbl-text">预约率大于</label></td>
+					<td class="write-text"><input type="text"></td>
+				</tr>
+				<tr>
+					<td class="shows" width="140">
+						<div class="checkbox">
+							<input id="example3" type="checkbox">
+							<label for="example3"></label>
+						</div>
+						<label class="lbl-text">预约人数大于</label></td>
+					<td class="write-text"><input type="text"></td>
+				</tr>
+			</table>
+		</div>
+<!---->
 </div>
 	<div class="ProRight">
 	</div>
@@ -928,7 +870,50 @@ $(function(){
 		  document.execCommand("Copy"); // 执行浏览器复制命令
 		  alert("已复制好，可贴粘。");
 	  }
+	  $(document).ready(function(){
+			$("#auth_submit").click(function(){
+				if ($('#gerens').is(":checked")){var type = 0;}else{var type =1;};
+				var real_name = $("#real_name").attr("value");
+				var icard = $("#icard").attr("value");
+				if(!real_name){alert("请输入真实姓名!")}else{
+					var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+					if(!icard||icard.match(reg)==null){alert("请输入正确的身份证!")}
+					else{
+						$.post("{% url 'auth_type' %}",
+						{
+							real_name: real_name,
+							icard: icard,
+							type:type,
+						},
+						function (data) {
+						if(data.success=="1"){alert('认证成功!');}else{alert("认证失败!")}
+						})
+					};
+				}
+			});
+			$("#submit_p").click(function(){
+				if ($('#gerens').is(":checked")){var type = 0;}else{var type =1;};
+				var real_name = $("#real_name_p").attr("value");
+				var icard = $("#icard_p").attr("value");
+				if(!real_name){alert("请输入法人姓名!")}else{
+					var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+					if(!icard||icard.match(reg)==null){alert("请输入正确的身份证!")}
+					else{
+						$.post("{% url 'auth_type' %}",
+						{
+							real_name: real_name,
+							icard: icard,
+							type:type,
+						},
+						function (data) {
+						if(data.success=="1"){alert('认证成功!');}else{alert("认证失败!")}
+						})
+					};
+				}
+			});
+	  })
   </script>
+
 
 
 

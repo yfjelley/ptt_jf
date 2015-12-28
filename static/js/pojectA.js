@@ -8,7 +8,7 @@ $(document).ready(function(e) {
 			$('.fixed').css('position','fixed');
 			$('.fixed').css('top',0);
 			if(s + fh > mh){
-				$('.fixed').css('top',mh-s-fh+'px');	
+				$('.fixed').css('top',mh-s-fh+'px');
 			}				
 		}else{
 			$('.fixed').css('position','');
@@ -26,7 +26,7 @@ $(document).ready(function(e) {
 			$('.side').css('position','fixed');
 			$('.side').css('top',0);
 			if(s + fh > mh){
-				$('.side').css('top',mh-s-fh+'px');	
+				$('.side').css('top',mh-s-fh+'px');
 			}				
 		}else{
 			$('.side').css('position','');

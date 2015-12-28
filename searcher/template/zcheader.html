@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+{% load settingsvalue %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>葡萄藤众筹首页</title>
@@ -32,42 +33,7 @@
 
     </script>
     <link rel="stylesheet" href="/static/css/zcheader.css" />
-    <style>
-        .putIn{
-            position:relative;
-            z-index: 1;
-            padding:5px 0 0 10px;
-            width:62px;
-            height:24px;
-            border: 0;
-            background: none;
-            font-family:"microsoft yahei";
-            font-size:12px;
-        }
-        .dropBtn{
-            position:absolute;
-            top:0;
-            left:0;
-            z-index:2;
-            margin:0;
-            width:58px;
-            height:24px;
-            background: none;
-        }
 
-        .dropDown{
-            position:absolute;padding:0;width:60px;height:35px;line-height:24px;color:#999;border:0;border-left:#d2d2d2 solid 1px;overflow:visible;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;
-            background:#f8f8f8;border-bottom: 1px solid #ddd;-moz-box-shadow:0 0 3px rgb(241,241,241);-webkit-box-shadow:0 0 3px rgb(241,241,241);box-shadow:0 0 3px rgb(241,241,241);;margin-left:-159px;z-index: 999;
-        }
-        .btn-search{
-            /*float: right;*/width:78px;height:36px;line-height:36px;color:#fff;font-size:14px;overflow:hidden;background:#00b7ee;border: 0 none;cursor: pointer;font-family:"microsoft yahei";/*margin-right:251px;margin-top:65px;*/
-        }
-        .ipt-search{float: left;text-indent:35px;width: 150px;height: 32px;line-height: 32px;background:url(/static/images/searchsub.png) no-repeat top left;border:#d2d2d2 solid 1px;border-right:0;font-size:14px;font-family:"microsoft yahei";outline: none;margin-left:-98px;color:black;background-color:rgb(241,241,241)}
-        .dropDown .dropBtn s{position:absolute;top:14px;right:1px;width:8px;height:6px;background:url(/static/images/sprits.png) no-repeat -67px -183px;}
-        .dropDown .dropList{display:none;position:absolute;top:37px;left:-1px;width:59px;border:#69bcf7 solid 1px;background:#fff;list-style-type:none;padding:0}
-        .dropDown .dropList li{padding:0 0 0 10px;height:25px;line-height:25px;cursor:pointer;color:#333; font-family:"microsoft yahei";font-size:12px}
-        .dropDown .dropList li:hover{background:#69bcf7;color:#fff;}
-    </style>
 </head>
 
 
@@ -130,7 +96,7 @@
                               {% if user.userinformation.realname %}
                                 {{ user.userinformation.realname }}
                               {% else %}
-                                {{ user.username }}
+                                {{ user.username |phone_cut }}
                               {% endif %}
 
                              <ul>

@@ -314,6 +314,14 @@ def platform(request):
     # print(pfs)
     return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
+def auth_type(request):
+    print request
+    f = request.FILES.get('file',None)
+    print f
+
+    # print(pfs)
+    return HttpResponse()
+
 
 @login_required
 def userinfo(request):
@@ -366,13 +374,18 @@ def userinfo(request):
         except ObjectDoesNotExist:
             form = UserInformationForm()
         #领投项目
-        leader  = Project.objects.filter(leader=user)
+        print user,request.user
+        print type(user),type(request.user)
+        print dir(user)
+        leader  = Project.objects.filter(leader=request.user)
+        print "leader is **************", leader
         #跟投项目
-        invest = Project.objects.filter(investor=user)
+        invest = Project.objects.filter(investor=request.user)
+        print "invest is ******",invest
         #我发布的项目
         publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
-        attention_pr = user.userinformation.industry
+        attention_pr =   Project.objects.filter(click=user)
         if request.user.is_authenticated():
             signal =  Signal.objects.filter(who=request.user)
             print signal
@@ -555,7 +568,7 @@ def agreement(request):
 
     ag = RegistrationAgreement.objects.filter(name="registration_agreement")
     print "ag is :",ag
-    return render_to_response('agreement.html',{'agreement':ag[2].agreement}, context_instance=RequestContext(request))
+    return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
 
 
 def index_zc(request):

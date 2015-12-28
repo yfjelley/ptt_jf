@@ -94,10 +94,8 @@ li.Proli11 label{margin:0px 50px;}
 .namecard-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
 .upload-file{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:70px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0; text-align:center;font-size:14px; cursor:pointer}
 .upload-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
-.tzrzrule{margin-top:65px;margin-left:-80px;line-height:25px;}
 .tzrzMessage{margin-top:155px;width:700px;}
 .tzrzMessage li{line-height:50px}
-.prompt{ height:370px;width:600px;overflow-y:hidden;overflow-y:scroll;arrow-color:#999999;track-color:white;font-size:14px; border:1px;}
 #geren{width:400px;margin-left:90px;}
 #geren tr td{padding:6px 0}
 #jigou tr td{padding:6px 0}
@@ -118,7 +116,7 @@ li.Proli11 label{margin:0px 50px;}
 .myfile{ display:none; }
 #jigou{width:440px;margin-left:90px;}
 
-input[type='checkbox'] + label:before{
+.proleft_detail input[type='checkbox'] + label:before{
     background: url(/static/images/checked.png);
     content:' ';
     height: 16px;
@@ -126,7 +124,7 @@ input[type='checkbox'] + label:before{
     position: absolute;
     left:0;
 }
-input[type='checkbox']{
+.proleft_detail input[type='checkbox']{
     box-sizing: border-box;
     margin:0;
     padding: 0;
@@ -138,10 +136,10 @@ input[type='checkbox']{
     padding-left: 24px;
     position: relative;
 }
-input[type='checkbox']:checked + label:before{
+.proleft_detail input[type='checkbox']:checked + label:before{
     background: url(/static/images/uncheck.png);
 }
-input[type='checkbox'][disabled]:checked + label:before{
+.proleft_detail input[type='checkbox'][disabled]:checked + label:before{
     background: url(/static/images/uncheck.png);
 }
 .shows .lbl-text{padding: 0 20px;}

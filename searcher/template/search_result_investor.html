@@ -1,10 +1,5 @@
-<!DOCTYPE html>
 {% load staticfiles %}
 {% load settingsvalue %}
-<html>
-
- <div style="width:1000px;margin: 0px auto;height:96.5%;min-height:1430px">
-<a class="search_bd" id="result_form">
     {% if results %}
         {% for result in results.object_list %}
 
@@ -28,8 +23,6 @@
 					    {{result.user.username|phone_cut}}
 					{% endif %}
 				</div>
-
-
 				<div style="width:240px; height:50px;margin-top:30px;">
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
 					<div style="float:left;width:100px;height:60px;text-align: center;">
@@ -51,46 +44,35 @@
 					<label>关注行业</label>
 				</div>
 				<div style="font-size:12px;color:#000;">
-					{{result.get_industry_display}}
+					{{result.get_cate_display}}
 				</div>
-				    
 			  </div>
-
-						
-	
 			{% ifequal result.authentication_class|safe  "游客" %}
-			
 			{% endifequal %}
-				 
 		</div>
-
-
         {% endfor %}
     {% else %}
         <a>无符合查询条件的纪录</a>
     {% endif %}
-    </a>
-</div>
-
-<div class="pagess">
-        <a href="javascript:void(0)" class="before"
-           onclick="takepage(1)">《</a>
-        {% if result.has_previous %}
-            <a href="javascript:void(0)"
-               onclick="takepage({{ result.previous_page_number }})">〈</a>
-        {% endif %}
-        {% for page in page_set %}
-            <a href="javascript:void(0)" {% ifequal page result.number %}
-               class="currentpage" {% endifequal %}
-               onclick="takepage({{ page }})">{{ page }} </a>
-        {% endfor %}
-        {% if result.has_next %}
-            <a href="javascript:void(0)"
-               onclick="takepage({{ result.next_page_number }})">〉</a>
-        {% endif %}
-        <a href="javascript:void(0)" class="after"
-           onclick="takepage({{ last_page }})">》</a>
-    </div>
+	 <div class="pagess">
+		 <a href="javascript:void(0)" class="before"
+			onclick="takepage(1)">《</a>
+		 {% if result.has_previous %}
+		 <a href="javascript:void(0)"
+			onclick="takepage({{ result.previous_page_number }})">〈</a>
+		 {% endif %}
+		 {% for page in page_set %}
+		 <a href="javascript:void(0)" {% ifequal page result.number %}
+			class="currentpage" {% endifequal %}
+			onclick="takepage({{ page }})">{{ page }} </a>
+		 {% endfor %}
+		 {% if result.has_next %}
+		 <a href="javascript:void(0)"
+			onclick="takepage({{ result.next_page_number }})">〉</a>
+		 {% endif %}
+		 <a href="javascript:void(0)" class="after"
+			onclick="takepage({{ last_page }})">》</a>
+	 </div>
 
 <script>
 $(function() {

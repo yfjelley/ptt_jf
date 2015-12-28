@@ -8,6 +8,7 @@
         {% for result in results %}
         <a href="/investor_info/{{result.username}}">
 	    <div class="Cleft3">
+			11111111
 			<div class="PelPic"><img src="{{ result.userinformation.photo_url }}" />
 			</div>
 			<div class="DesPel">
@@ -68,10 +69,10 @@
 </div>
  <div class="pagess">
         <a href="javascript:void(0)" class="before"
-           onclick="takepage(1)">ã€Š</a>
+           onclick="takepage(1)">ã€?</a>
         {% if result.has_previous %}
             <a href="javascript:void(0)"
-               onclick="takepage({{ result.previous_page_number }})">ã€ˆ</a>
+               onclick="takepage({{ result.previous_page_number }})">ã€?</a>
         {% endif %}
         {% for page in page_set %}
             <a href="javascript:void(0)" {% ifequal page result.number %}
@@ -80,10 +81,10 @@
         {% endfor %}
         {% if result.has_next %}
             <a href="javascript:void(0)"
-               onclick="takepage({{ result.next_page_number }})">ã€‰</a>
+               onclick="takepage({{ result.next_page_number }})">ã€?</a>
         {% endif %}
         <a href="javascript:void(0)" class="after"
-           onclick="takepage({{ last_page }})">ã€‹</a>
+           onclick="takepage({{ last_page }})">ã€?</a>
  </div>
 </body>
 
