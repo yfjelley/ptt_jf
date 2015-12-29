@@ -1,6 +1,6 @@
 .protaolun-size {font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif"; }
-.pro-content{background:#EEEEF0;border:1px solid #EEEEF0;min-width:1440px;max-width: 1660px;height:100%;min-height:700px}
-.pro-details{width:800px;background-color:#FFF;float:left;margin-left:200px;margin-top:30px;}
+.pro-content{background:#EEEEF0;border:1px solid #EEEEF0;min-width:1440px;max-width: 1660px;height:100%;min-height:700px;overflow: hidden}
+.pro-details{width:800px;background-color:#FFF;float:left;margin-left:200px;margin-top:30px;margin-bottom:30px;}
 .pro-people{width:450px;background-color:#FFF;float:left;margin-left:20px;margin-top:30px;}
 .proleft_detail{padding:15px;}
 .proleft_detail tr td{padding: 10px 0}

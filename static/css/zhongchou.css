@@ -13,7 +13,7 @@ li{ list-style-type:none;}
 .left_label{position: relative;top:-10px;cursor: pointer}
 
 .downline{width:75px;height:1px;background:#ccc;margin:10px 0 10px 17px}
-.div_right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;}
+.div_right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;overflow:hidden}
 .biaoti{font-size:24px;}
 .con_right{padding-top:42px;background:#FFFFFF;margin-left:40px;}
 .con_right p span{font-size:18px;font-weight:bold;}
@@ -120,7 +120,7 @@ li{ list-style-type:none;}
 .ptxy_div ul li div{clear:both;}
 .ptxy_div ul li p{padding-top:15px;font-size:20px;padding-left:10px;width:540px;}
 .ptxy_div ul li p span{float:right;}
-.ptxy_div ul li p span img{width:26px;height:26px;}
+.ptxy_div ul li p span img{width:20px;height:15px;}
 .ptxy_div ul li{height:50px;}
 
 .change_color a{color:#000;}

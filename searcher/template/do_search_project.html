@@ -1,9 +1,5 @@
-<!DOCTYPE html>
 {% load staticfiles %}
 {% load settingsvalue %}
-<html>
-<div style="width:100%;background:#EEEEF0;">
-<div class="Cleft5">
     {% if results %}
         {% for result in results.object_list %}
 	<a href="/prodetails/{{result.id}}">
@@ -34,10 +30,10 @@
 						<div class="input_btt"></div>
 					</li>
 					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><span style="color:#000000;;font-size:12px">{{result.amount}}</span>
+						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;;font-size:12px">{{result.amount}}份</span>
 					</li>
 					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;;font-size:12px">{{result.finish}}</span>
+						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;;font-size:12px">{{result.finish}}%</span>
 					</li>
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
@@ -63,8 +59,6 @@
 
         <a>无符合查询条件的纪录</a>
     {% endif %}
-	
-	</div>
 	<div class="pagesg">
         <a href="javascript:void(0)" class="before"
            onclick="takepage(1)">《</a>
@@ -84,5 +78,3 @@
         <a href="javascript:void(0)" class="after"
            onclick="takepage({{ last_page }})">》</a>
     </div>
-</div>
-</html>

@@ -3,8 +3,9 @@
 {% load settingsvalue %}
     {% if results %}
         {% for result in results.object_list %}
+		<a href="/prodetails/{{result.id}}">
 		<ul class="mojing">
-			<a href="/prodetails/{{result.id}}">
+
               <div class="littleimg"> <img src="/static/images/heart.png" />
 				 <label style="padding-right: 18px;font-weight:bold; color:#FFF;height:20px;padding-top:3px;float: right;">{{result.click.all|length}}</label>
 			  </div>
@@ -32,10 +33,10 @@
 						<div class="input_btt"></div>
 					</li>
 					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资目标</label><span style="color:#000000;font-size:12px">{{result.amount}}</span>
+						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;font-size:12px">{{result.amount}}份</span>
 					</li>
 					<li style="float:left;margin-left:70px;">
-						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;font-size:12px">{{result.finish}}</span>
+						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;font-size:12px">{{result.finish}}%</span>
 					</li>
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
@@ -53,15 +54,15 @@
 					</li>
 				</ul>
 			</li>
-			
-			</a>
 		</ul>
+		</a>
      	{% endfor %}
 
     {% else %}
 
         <a>无符合查询条件的纪录</a>
     {% endif %}
+
     <div class="pagesgd">
         <a href="javascript:void(0)" class="before"
            onclick="takepage(1)">《</a>

@@ -6,12 +6,6 @@
 <title>葡萄藤众筹首页</title>
     <script>
         $(function(){
-            $('#top_tag').children('a').bind('focus',function(){
-                $(this).addClass('TopclickTag').siblings().removeClass('TopclickTag');
-            })
-        })
-
-        $(function(){
             $('.dropBtn').bind('click',function(){
                 if($('.dropList').is(':hidden')){
                     $('.dropList').attr('style','display:block');
@@ -39,22 +33,29 @@
 
 <body>
 <div id="container">		
-		<ul style="position:absolute;top:-12px;left:5%;">
+		<ul style="position:absolute;top:5px;left:2%;">
 			<li>
-				<img src="/static/images/zhongtoulogo.png" />
+				<img src="/static/images/zclogo.png" />
 			</li>
 		</ul>
 		
   		<ul class="ul7">
     		<li>
-                <div id="top_tag">
-                    <a href="{% url 'index_zc' %}">首页</a>
-                    <a href="/project/1">项目风采</a>
-                    <a href="{% url 'investor' %}">投资人风采</a>
-                    <a href="{% url 'guide' %}">投资指引</a>
-                    <a href="#">众筹社区</a>
-                    <a href="{% url 'about_us' %}">关于我们</a>
-                </div>
+                <a target="_blank" href="{% url 'index_zc' %}">首页</a>
+            </li>
+            <li>
+                <a target="_blank" href="/project/1">项目风采</a>
+            </li>
+            <li>
+                <a target="_blank" href="{% url 'investor' %}">投资人风采</a>
+            </li>
+            <li>
+                <a target="_blank" href="{% url 'guide' %}">投资指引</a>
+            </li>
+            <li>
+                <a target="_blank" href="{% url 'about_us' %}">关于我们</a>
+            </li>
+
           <!--      <a href="#">葡萄藤社区</a>-->
     			<!--<a href="{% url 'publish' %}">项目发起</a>-->
 			<!--	<a href="{% url 'bbsindex' %}">众筹社区</a>-->

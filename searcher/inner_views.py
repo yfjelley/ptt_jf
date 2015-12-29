@@ -283,10 +283,11 @@ import re
 def send_flow_all(phone):
     p = re.compile('^13[4-9][0-9]{8}|^15[0,1,2,7,8,9][0-9]{8}|^18[2,7,8][0-9]{8}|^147[0-9]{8}|^178[0-9]{8}')
     if p.match(phone):
-        send_flow(phone, 70)
+        #send_flow(phone, 70)
         print phone ,'移动'
     else:
-        send_flow(phone, 50)
+        #send_flow(phone, 50)
+        print phone
 
 
 import urllib2,urllib,hashlib

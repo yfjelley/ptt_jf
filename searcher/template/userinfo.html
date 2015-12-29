@@ -5,11 +5,81 @@
 <title>项目风采</title>
 <link rel="stylesheet" href="/static/css/zcheader.css" />
 <link rel="stylesheet" href="/static/css/promanager.css" />
-	<link rel="stylesheet" href="/static/css/btn-change.css" />
+<link rel="stylesheet" href="/static/css/btn-change.css" />
+<link rel="stylesheet" href="/static/css/uploadify.css" />
+
+
 <link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-<script src="/static/js/jquery-1.8.3.min.js"></script>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="/static/js/birthday.js"></script>
 <script src="/static/js/jquery-ui.min.js"></script>
+
+<script src="/static/site_media/jquery.uploadify.js"></script>
+
+	<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#file_upload').uploadify({
+     'successTimeout' : 5,
+    'buttonClass': 'myfile',
+    'fileSizeLimit' : '10000KB',
+    'fileTypeDesc' : 'Image Files',
+    'fileTypeExts' : '*.gif; *.jpg; *.png',
+    'swf'      : '/static/site_media/uploadify.swf',
+    'uploader'  : '/uploadify_script/0/',
+    'onUploadSuccess' : function(file, data, response) {
+            if(response){alert("上传成功！")};
+        }
+  });
+  $('#file_upload_tax').uploadify({
+     'successTimeout' : 5,
+    'buttonClass': 'myfile',
+    'buttonText' : '点击上传税务登记证扫描或高清图片',
+    'fileSizeLimit' : '10000KB',
+    'fileTypeDesc' : 'Image Files',
+    'fileTypeExts' : '*.gif; *.jpg; *.png',
+    'swf'      : '/static/site_media/uploadify.swf',
+    'uploader'  : '/uploadify_script/3/',
+    'onUploadSuccess' : function(file, data, response) {
+            if(response){alert("上传成功！")};
+        }
+  });
+    $('#file_upload_organization_code').uploadify({
+     'successTimeout' : 5,
+    'buttonClass': 'myfile',
+    'buttonText' : '点击上传税务登记证扫描或高清图片',
+    'fileSizeLimit' : '10000KB',
+    'fileTypeDesc' : 'Image Files',
+    'fileTypeExts' : '*.gif; *.jpg; *.png',
+    'swf'      : '/static/site_media/uploadify.swf',
+    'uploader'  : '/uploadify_script/2/',
+    'onUploadSuccess' : function(file, data, response) {
+            if(response){alert("上传成功！")};
+        }
+  });
+    $('#file_upload_business_license').uploadify({
+     'successTimeout' : 5,
+    'buttonClass': 'myfile',
+    'buttonText' : '点击上传税务登记证扫描或高清图片',
+    'fileSizeLimit' : '10000KB',
+    'fileTypeDesc' : 'Image Files',
+    'fileTypeExts' : '*.gif; *.jpg; *.png',
+    'swf'      : '/static/site_media/uploadify.swf',
+    'uploader'  : '/uploadify_script/1/',
+    'onUploadSuccess' : function(file, data, response) {
+            if(response){alert("上传成功！")};
+        }
+  });
+});
+</script>
+
+
+
 <script type="text/javascript">
 $(function(){
 	$("#daohang>ul>li>a").click(function(){
@@ -538,10 +608,15 @@ $(function(){
 						<tr style="height: 80px;">
 							<td>身份证:</td>
 							<td class="upload_file">
+								{% if user.userinformation.id_card %}
+								<img src="{{ user.userinformation.id_card }}" style="margin-left:-20px; margin-top:20px;"/>
+								{% else %}
 								<label>
 									点击上传身份证扫描件或高清图片
-									<input type="file" name="" class="myfile" />
+									<input type="file" name="file_upload"  id="file_upload" />
+
 								</label>
+								{% endif %}
 							</td>
 						</tr>
 						<tr align="center">
@@ -573,18 +648,38 @@ $(function(){
 							<td>税务登记证</td>
 						</tr>
 						<tr style="height: 80px;">
-							<td class="upload_file"><label>
+							<td class="upload_file">
+								{% if user.userinformation.financial_assets %}
+								<img src="{{ user.userinformation.financial_assets }}" style="margin-left:-20px; margin-top:20px;"/>
+								{% else %}
+								<label>
 								点击上传营业执照扫描件或高清图片
-								<input type="file" name="" class="myfile" />
-							</label></td>
-							<td class="upload_file"><label>
+								<input type="file" name=""  id="file_upload_business_license" />
+
+							</label>
+							   {% endif %}
+							</td>
+							<td class="upload_file">
+								{% if user.userinformation.fixed_assets %}
+								<img src="{{ user.userinformation.fixed_assets }}" style="margin-left:-20px; margin-top:20px;"/>
+								{% else %}
+								<label>
 								点击上传组织机构代码证扫描件或高清图片
-								<input type="file" name="" class="myfile" />
-							</label></td>
-							<td class="upload_file"><label>
+								<input type="file" name=""  id="file_upload_organization_code" />
+							</label>
+							    {% endif %}
+							</td>
+
+							<td class="upload_file">
+								{% if user.userinformation.income_assets %}
+								<img src="{{ user.userinformation.income_assets }}" style="margin-left:-20px; margin-top:20px;"/>
+								{% else %}
+								<label>
 								点击上传税务登记证扫描或高清图片
-								<input type="file" name="" class="myfile" />
-							</label></td>
+								<input type="file" name=""  id="file_upload_tax" />
+							    </label>
+								{% endif %}
+							</td>
 						</tr>
 						<tr align="center">
 							<td colspan="2">

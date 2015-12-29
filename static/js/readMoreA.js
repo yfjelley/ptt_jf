@@ -1,6 +1,6 @@
 $(document).ready(function(e) {			
 	t = $('.fixed').offset().top;
-	mh = $('.mores_content').height();
+	mh = $('.Cleft5').height();
 	fh = $('.fixed').height();
 	$(window).scroll(function(e){
 		s = $(document).scrollTop();	
@@ -18,7 +18,7 @@ $(document).ready(function(e) {
 });
 $(document).ready(function(e) {			
 	t = $('.side').offset().top;
-	mh = $('.mores_content').height();
+	mh = $('.Cleft5').height();
 	fh = $('.side').height();
 	$(window).scroll(function(e){
 		s = $(document).scrollTop();	

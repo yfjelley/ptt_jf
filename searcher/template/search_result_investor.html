@@ -28,14 +28,14 @@
 					<div style="float:left;width:100px;height:60px;text-align: center;">
 						<p style="font-weight:bold;font-size:14px;color:#000;height: 25px;margin-top: -1px;display: block;">投资项目</p>
 						<p style="padding:0 22px;font-weight:bold;color:#000;font-size:16px;height: 25px;margin-top: -5px;display: block;">
-						 {{result.user.manager_set.all.count}}
+						 {{result.user.manager_set.all.count}}个
 						 </p>						 
 					</div>	 
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
 					<div style="float:left;width:130px;height:60px;text-align: center;">
 						 <p style="font-weight:bold;color:#000;font-size:14px;height: 25px;margin-top: -1px;display: block;">累计投资额</p>
 						 <p style="padding:0 30px;color:#000;font-weight:bold;font-size:16px;height: 25px;margin-top: -5px;display: block;">
-							  {{result.user.manager_set.all.count}}
+							  {{result.user.manager_set.all.count}}万元
 						 </p>
 					</div>
 					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
@@ -54,6 +54,8 @@
     {% else %}
         <a>无符合查询条件的纪录</a>
     {% endif %}
+<div style="clear:both">
+</div>
 	 <div class="pagess">
 		 <a href="javascript:void(0)" class="before"
 			onclick="takepage(1)">《</a>

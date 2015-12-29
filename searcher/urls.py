@@ -42,6 +42,8 @@ urlpatterns = patterns('searcher.views',
     url(r'^investor_detail/$',  'investor_detail', name='investor_detail'),
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
     url(r'^checksmscode/$',  'checksmscode', name='checksmscode'),
+    url(r'^uploadify_script/(?P<objectid>\d+)/$', 'uploadify_script'),
+    url(r'^delete_uploadfile/$','profile_delte')
 
 )
 

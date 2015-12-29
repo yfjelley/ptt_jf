@@ -32,6 +32,7 @@ from searcher.models import Bid, UserFavorite, Platform, UserInformation, Dimens
     WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal
 from ddbid import conf
 from django.db.models import Q
+import simplejson
 
 
 from searcher.models import RegistrationAgreement
@@ -374,14 +375,12 @@ def userinfo(request):
         except ObjectDoesNotExist:
             form = UserInformationForm()
         #领投项目
-        print user,request.user
-        print type(user),type(request.user)
-        print dir(user)
+
         leader  = Project.objects.filter(leader=request.user)
-        print "leader is **************", leader
+
         #跟投项目
         invest = Project.objects.filter(investor=request.user)
-        print "invest is ******",invest
+
         #我发布的项目
         publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
@@ -1270,3 +1269,58 @@ def get_pageset(last_page, pagenum):
         else:
             page_set.append(i)
     return page_set
+
+
+def uploadify_script(request,objectid):
+    print objectid,type(objectid)
+    ret="0"
+    file = request.FILES.get("Filedata",None)
+    if file:
+        result,new_name=profile_upload(file,request,objectid)
+        if result:
+            ret="1"
+        else:
+            ret="2"
+    json={'ret':ret,'save_name':new_name}
+    return HttpResponse(simplejson.dumps(json,ensure_ascii = False))
+
+
+def profile_upload(file,request,objectid):
+    '''文件上传函数'''
+    if file:
+        u = UserInformation.objects.get(user=request.user)
+        im = Image.open(file)
+        im.thumbnail((120, 120))
+        if int(objectid)== 0:
+            name = 'icard' + storage.get_available_name(str(request.user.id)) +file.name
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+            u.id_card = url
+        elif int(objectid)== 1:
+            name = 'financial_assets' + storage.get_available_name(str(request.user.id)) +file.name
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+            u.financial_assets = url
+        elif int(objectid)== 2:
+            name = 'fixed_assets' + storage.get_available_name(str(request.user.id)) +file.name
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+            u.fixed_assets = url
+        elif int(objectid)== 3:
+            name = 'income_assets' + storage.get_available_name(str(request.user.id)) +file.name
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+            u.income_assets = url
+        print name ,type(objectid),objectid
+        u.save()
+        return (True,name) #change
+
+
+#用户管理-添加用户-删除附件
+
+
+def profile_delte(request):
+    del_file=request.POST.get("delete_file",'')
+    if del_file:
+        path_file=os.path.join(settings.MEDIA_ROOT,'upload',del_file)
+        os.remove(path_file)
