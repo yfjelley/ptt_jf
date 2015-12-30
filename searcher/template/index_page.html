@@ -89,9 +89,9 @@
 		<ul class="banner" >
 			<li ><a style="display:block;"><img src="/static/images/ztbannel.jpg" style="background: no-repeat" width="100%">
 			</a></li>
-			<li ><a style="display:none;"><img src="/static/images/ztbannel.jpg" width="100%">
+			<li ><a style="display:none;"><img src="/static/images/ztbannel-1.jpg" width="100%">
 			</a></li>
-			<li ><a style="display:none;" href="http://ddbid.com/activearea/"><img src="/static/images/ztbannel.jpg" width="100%">
+			<li ><a style="display:none;" href="http://ddbid.com/activearea/"><img src="/static/images/sdbannel.jpg" width="100%">
 			</a></li>
 		</ul>
 		<a class="prev" href="javascript:void(0)"><</a>
@@ -133,19 +133,20 @@
 														<ul class="Cul1">
 															<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 															<li style="padding-top:5px;">{{result.introduction}}</li>
-															<li><div class="input_btt"></div></li>
+															<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
+																<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 															<li style="float:left">
-																<label>融资目标</label><span>{{result.amount}}</span>
+																<label>融资份额</label><span>{{result.amount}}份</span>
 															</li>
 															<li style="float:left;margin-left:50px;">
-																<label>已完成</label><span>{{result.finish}}</span>
+																<label>已完成</label><span>{{result.finish}}%</span>
 															</li>
 															<li style="clear:both">
 																<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 															</li>
 															<li style="clear:both">
-																{% if result.publish.userinformation.realname %}
-																<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+																{% if result.publish.userinformation.nickname %}
+																<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
 																{% else %}
 															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
 																{% endif %}
@@ -199,7 +200,8 @@
 										<ul class="Cul1">
 											<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 											<li style="padding-top:5px;">{{result.introduction}}</li>
-											<li><div class="input_btt"></div></li>
+											<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
+												<em style="width:{{ result.process }}%;border-radius:10px;background:url(../static/images/jindutiao.png) no-repeat;"></em></div></li>
 											<li style="float:left">
 												<label>融资目标</label><span>{{result.amount}}</span>
 											</li>
@@ -210,8 +212,8 @@
 												<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 											</li>
 											<li style="clear:both">
-											{% if result.publish.userinformation.realname %}
-												<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+											{% if result.publish.userinformation.nickname %}
+												<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
 												{% else %}
 												<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
 												{% endif %}
@@ -264,7 +266,8 @@
 													<ul class="Cul1">
 														<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 														<li style="padding-top:5px;">{{result.introduction}}</li>
-														<li><div class="input_btt"></div></li>
+														<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
+															<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 														<li style="float:left">
 															<label>融资目标</label><span>{{result.amount}}</span>
 														</li>
@@ -275,8 +278,8 @@
 															<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 														</li>
 														<li style="clear:both">
-														{% if result.publish.userinformation.realname %}
-															<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+														{% if result.publish.userinformation.nickname %}
+															<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
 																{% else %}
 															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
 																{% endif %}
@@ -329,7 +332,8 @@
 																<ul class="Cul1">
 																	<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 																	<li style="padding-top:5px;">{{result.introduction}}</li>
-																	<li><div class="input_btt"></div></li>
+																	<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
+																		<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 																	<li style="float:left">
 																		<label>融资目标</label><span>{{result.amount}}</span>
 																	</li>
@@ -340,8 +344,8 @@
 																		<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 																	</li>
 																	<li style="clear:both">
-																	{% if result.publish.userinformation.realname %}
-																<label style="margin-left:20px;">{{result.publish.userinformation.realname}}</label>
+																	{% if result.publish.userinformation.nickname %}
+																<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
 																{% else %}
 															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
 																{% endif %}

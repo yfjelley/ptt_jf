@@ -93,16 +93,11 @@
 	   </div> 
 	   <div id="media" class="display">
 				 <div class="biaoti">媒体报道</div>
-				 <p class = link_mt>
-					<a target="_blank" href="http://www.chinairn.com/news/20140412/164813727.shtml">今年我国股权众筹指导意见5月或出台</a></p>
-				 <p class = link_mt>	<a target="_blank" href="http://news.163.com/15/0315/05/AKNLVN7100014AED.html">股权众筹融资,补进政府工作报告</a></p>
-				 <p class = link_mt>	<a target="_blank" href="http://www.financialnews.com.cn/if/201507/t20150727_80892.html">政策落地 股权众筹前景看好</a></p>
-				 <p class = link_mt>	<a target="_blank" href="http://news.china.com/finance/11155042/20141210/19086641.html">国家首提股权众筹融资试点 大家筹广受好评</a>
-					</p>
-					<p class = link_mt>	<a target="_blank" href="http://www.newhua.com/2013/0416/209881.shtml">P2P网贷：前景开阔 监管未明</a>
-					</p>
-					<p class = link_mt>	<a target="_blank" href="https://www.kxloan.com/index.php?newsdongtai/1015">P2P网贷合法吗？国家认可P2P网贷平台吗？</a>
-					</p>
+		         {% if mediareports %}
+		         {% for i in mediareports %}
+		   <p class = link_mt>    <a target="_blank" href="{{i.url}}">{{i.title}}</a><label style="float: right">{{i.add_date|date:"Y-m-j  H:i:s"}}</label>
+                 {% endfor %}
+		         {% endif %}
 				 <div style="height:250px;"></div>
 	   </div>	
 	   <div id="joinour" class="display">

@@ -26,9 +26,8 @@
 					<li style="padding-top:5px;">
 						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
 					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
+					<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-0.5em">
+						<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 					<li style="float:left">
 						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;;font-size:12px">{{result.amount}}份</span>
 					</li>
@@ -40,8 +39,8 @@
 					</li>
 					<li>
 						<label style="float:left;padding-top: 5px;"><img src="/static/images/people.png" /></label>
-						{% if result.publish.userinformation.realname  %}
-						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish.userinformation.realname }}</label>
+						{% if result.publish.userinformation.nickname  %}
+						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish.userinformation.nickname }}</label>
 						{% else %}
 						<label style="float:left;color:#000000;font-size:12px;margin-left:5px;">{{result.publish|phone_cut}}</label>
 						{% endif %}

@@ -135,8 +135,7 @@
 						</ul>
 					</dd>
 
-                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button" value="我要领投"/></a><br>
-                    <a href="/invest_pr/{{result.id}}2/"><input class="btn-gentou" type="button" value="我要跟投" /></a>
+                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button"/></a>
                 </li>
 				<li style="clear:both"></li>
                 <li style="margin-top:30px;margin-left:-40px;">               
@@ -324,9 +323,9 @@
     	<div class="pro-people">
 			<table class="proleft_detail" cellspacing="0" cellpadding="0" width=450">
 				<tr>
-					<td><img src="/static/images/web.png"></td>
-					<td><img src="/static/images/web.png"></td>
-					<td><img src="/static/images/web.png"></td>
+					<td style="width: 140px"><img src="/static/images/mgmoney.png"></td>
+					<td style="width: 140px;text-indent: -5px;position:absolute;margin-top:-18px;"><img src="/static/images/mbmoney.png"></td>
+					<td style="width: 140px"><img src="/static/images/tzpeople.png"></td>
 				</tr>
 				<tr>
 					<td>每股金额</td>
@@ -350,12 +349,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<input type="button">
+					<td colspan="3" class="detail-percent">
+						<div style="width:100%;border:1px solid #868686;border-radius:10px;">
+							<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div>
 					</td>
 				</tr>
 				<tr>
-					<td>预约金额:80万元</td>
+					<td colspan="2">预约金额:80万元</td>
 					<td>完成率:80%</td>
 				</tr>
 				<tr>
@@ -370,12 +370,12 @@
 					</td>
 				</tr>
 				<tr>
-					<td>支付方式:第三方托管</td>
+					<td colspan="2">支付方式:第三方托管</td>
 					<td>剩余时间:77天</td>
 				</tr>
 				<tr>
-					<td>项目发起时间:2015-11-11</td>
-					<td>项目结束时间:2016-02-07</td>
+					<td colspan="2">项目发起时间:2015-11-11</td>
+					<td style="margin-left:-50px;display:block">项目结束时间:2016-02-07</td>
 				</tr>
 			</table>
     	</div>

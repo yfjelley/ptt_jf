@@ -3,7 +3,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('searcher.views',
     url(r'^zc$', 'index_zc', name='index_zc'),
     url(r'^search_zc$', 'search_zc', name='search_zc'),
-    url(r'^auth_type$', 'auth_type', name='auth_type'),
+    url(r'^auth_register$', 'auth_register', name='auth_register'),
     url(r'^$', 'index_zc', name='index_jf'),
     url(r'^login/$',  'login', name='login'),
     url(r'sendSMS/$','sendSMS',name='sendSMS'),

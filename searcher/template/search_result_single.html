@@ -3,9 +3,8 @@
 {% load settingsvalue %}
     {% if results %}
         {% for result in results.object_list %}
-		<a href="/prodetails/{{result.id}}">
 		<ul class="mojing">
-
+			<a href="/prodetails/{{result.id}}">
               <div class="littleimg"> <img src="/static/images/heart.png" />
 				 <label style="padding-right: 18px;font-weight:bold; color:#FFF;height:20px;padding-top:3px;float: right;">{{result.click.all|length}}</label>
 			  </div>
@@ -29,9 +28,8 @@
 					<li style="padding-top:5px;">
 						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
 					</li>
-					<li>
-						<div class="input_btt"></div>
-					</li>
+					<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-0.5em">
+						<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 					<li style="float:left">
 						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;font-size:12px">{{result.amount}}份</span>
 					</li>
@@ -43,8 +41,8 @@
 					</li>
 					<li>
 						<label class="lalLeft"><img src="/static/images/people.png" /></label>
-						{% if result.publish.userinformation.realname %}
-							<label class="lalright">{{result.publish.userinformation.realname}}</label>
+						{% if result.publish.userinformation.nickname %}
+							<label class="lalright">{{result.publish.userinformation.nickname}}</label>
 						{% else %}
 							<label class="lalright">{{result.publish.username|phone_cut}}</label>
 						{% endif %}
@@ -54,15 +52,12 @@
 					</li>
 				</ul>
 			</li>
+			</a>
 		</ul>
-		</a>
      	{% endfor %}
-
     {% else %}
-
-        <a>无符合查询条件的纪录</a>
+        <a style="margin-left: 20px">无符合查询条件的纪录</a>
     {% endif %}
-
     <div class="pagesgd">
         <a href="javascript:void(0)" class="before"
            onclick="takepage(1)">《</a>

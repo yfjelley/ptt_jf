@@ -1,6 +1,6 @@
 .protaolun-size {font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif"; }
 .pro-content{background:#EEEEF0;border:1px solid #EEEEF0;min-width:1440px;max-width: 1660px;height:100%;min-height:700px;overflow: hidden}
-.pro-details{width:800px;background-color:#FFF;float:left;margin-left:200px;margin-top:30px;margin-bottom:30px;}
+.pro-details{width:800px;background-color:#FFF;float:left;margin-left:160px;margin-top:30px;margin-bottom:30px;}
 .pro-people{width:450px;background-color:#FFF;float:left;margin-left:20px;margin-top:30px;}
 .proleft_detail{padding:15px;}
 .proleft_detail tr td{padding: 10px 0}
@@ -12,7 +12,7 @@
 .pro-writing{margin-left:-20px;margin-top:20px;}
 input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.png") no-repeat;width:77px;height:25px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:20px;}
 input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:-10px;}
-input.btn-lingtou{border:1px solid #4a3c70; background:#4a3c70;width:77px; color:#FFFFFF;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
+input.btn-lingtou{border:0 solid #FFFFFF; background:url("/static/images/order.png") no-repeat;width:77px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
 input.btn-gentou{border:1px solid #4a3c70; background:#4a3c70;width:77px; color:#FFFFFF;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
 input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFFFF;height:30px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:660px; margin-top:5px;}
 .pro-list>li{margin:20px 10px;}
@@ -56,3 +56,4 @@ img { border:0;}
 .remind-text a:hover{
     background: #b94a48;
 }
+.detail-percent em{display:block;height:12px;}

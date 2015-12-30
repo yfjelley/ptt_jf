@@ -52,7 +52,7 @@
 		</div>
         {% endfor %}
     {% else %}
-        <a>无符合查询条件的纪录</a>
+        <a style="margin-left:40px;">无符合查询条件的纪录</a>
     {% endif %}
 <div style="clear:both">
 </div>
@@ -101,8 +101,8 @@ $(function() {
 					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
 					'<p>内容:</p>'+
 					'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
-					+'<input type="button" name='+userid+' id="no" value="撤销" />'+
-					'<input type="button" name='+userid+' id="ok" value="发送" /></div>';
+					+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
+					'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
                    $(html).appendTo("body");
 			{% else %}
 				alert('请先登录!');
@@ -138,6 +138,7 @@ $(function() {
 	$("[id^='focus_']").each(function() {
 	    $(this).click(function(){
 		 {% if user.id %}
+		        //alert(11);
 		        $.post("{% url 'add_attion_investor' %}",
                 {
                     investor: $(this).attr('name'),
@@ -154,7 +155,7 @@ $(function() {
 
 </script>
 <style type="text/css">
-#alert {width: 600px;left: 50%;margin-left: -100px;text-align: center;top: 200px;background: #eee;position: absolute;z-index: 10000;}
+#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 700px;background: #eee;position: absolute;z-index: 10000;}
 #mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
 </style>
 </html>

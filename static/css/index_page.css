@@ -8,13 +8,13 @@ body{margin:0;padding:0;border:0;}
 .right_scroll_context{width:104px;position:absolute;top:0;left:0;z-index:9999;overflow:hidden;}
 li{list-style:none;}
 a{text-decoration:none;}
-	images,div,input{border:0 none;}
+	image,div,input{border:0 none;}
 	.box{overflow:hidden;width:100%;display:block;position: relative;top: -1.5px;}
 	.banner{width:100%;height:auto;margin: 0;padding: 0;}
 	.box .banner li{width:100%;height:auto;}
 	.box .banner li a{display:none;width:100%;height:auto;}
     .box .banner li a span{ position:absolute;top:100px;left:600px;width:300px;display: block;background: rgb(255, 255, 255) none repeat scroll 0% 0%;opacity: 0.7;}
-	.spaan2,spaan3{display:none;}
+	.spaan2{display:none;}
 	.box .banner li a img{max-width: 100%;;width: auto\9;/* ie8 */}
 	.prev:hover,.next:hover{opacity:1;}
 	.div{position:relative;width:100%;height:30px;bottom:0;left:0;background:#333;opacity:0.5;z-index:8;}
@@ -27,7 +27,7 @@ a{text-decoration:none;}
      .ho{opacity: 0.5;z-index: 999}
 	.ho1{opacity: 0.01;z-index: 999}
 	.ztmain{
-		width:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;
+		width:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;margin-top: -5px;
 	}
    .zc-content{width: 1150px;margin: 0 auto;margin-left:200px;overflow:hidden;}
    .xujgstyle{width:1200px;margin:0px auto;margin-top:20px;clear:both;}
@@ -46,11 +46,12 @@ a{text-decoration:none;}
 .Cul1 li b{font-size:16px;line-height: 30px; font-weight:bold;}
 .mjzximg img{width:255px;}
 .fixed{float:left;padding-left:20px;padding-top:20px;}
-.side{width: 70px;height: 100px;z-index: 2;float: right;right: 70px;position: absolute;top: 480px;}
+.side{width: 70px;z-index: 2;float: right;right: 70px;position: absolute;top: 630px;}
 .side ul li{width:70px;height:70px;float:left;position:relative; background:#FFFFFF;}
 .side ul li .sidebox{position:absolute;width:70px;height:70px;top:0;right:0;transition:all 0.3s;background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);color:#000;font:14px/54px "微软雅黑";}
 .side ul li .sidetop{width:70px;height:70px;line-height:54px;display:inline-block;background:#eeeef0;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
 .side ul li .sidetop:hover{background:#eeeef0;opacity:0.6;filter:Alpha(opacity=100);}
 .side ul li img{float:left;}
+.index-percent em{display:block;height:12px;}
 
  

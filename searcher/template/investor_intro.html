@@ -64,7 +64,7 @@
 	$(".list_img3").on("click", function() {
 		{% if user.id %}
 		mask();
-		var  html= '<div id="alert" style="hidden"><p>发送给{{investor_info.realname}}</p>' +
+		var  html= '<div id="alert" style="hidden"><p>发送给{{investor_info.nickname}}</p>' +
 		'<p>内容:</p>'+
 		'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
 		+'<input type="button" id="ok" value="发送" /></div>';
@@ -115,7 +115,7 @@
 	</ul>
 	<ul class="touziren" style="float:left;">
 		<li style="font-weight:bold;font-size:25px;">
-			<label>{{investor_info.realname}}</label>
+			<label>{{investor_info.nickname}}</label>
 			<label>关注{{investor_info.attention_persion.all|length}}</label>
 		</li>
 		<li>
@@ -239,7 +239,7 @@
 
 					{% for i in investor_info.attention_persion.all %}
 				<li style="padding: 16px 2px">
-					{{i.userinformation.realname}}
+					{{i.userinformation.nickname}}
 				</li>
 				<li style="padding: 5px 5px">
 					<img src="{{i.userinformation.photo_url}}" />
@@ -254,7 +254,7 @@
 
 					{% for i in investor_info.fans.all %}
 				<li style="padding: 16px 2px">
-				{{i.userinformation.realname}}
+				{{i.userinformation.nickname}}
 				</li>
 				<li style="padding: 5px 5px">
 					<img src="{{i.userinformation.photo_url}}" />

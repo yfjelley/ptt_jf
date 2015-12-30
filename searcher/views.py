@@ -29,7 +29,7 @@ from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationFo
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header,send_flow_all,user_get_ip
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports
 from ddbid import conf
 from django.db.models import Q
 import simplejson
@@ -315,12 +315,13 @@ def platform(request):
     # print(pfs)
     return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
-def auth_type(request):
-    print request
-    f = request.FILES.get('file',None)
-    print f
+def auth_register(request):
+    u = UserInformation.objects.get(user=request.user)
 
-    # print(pfs)
+    u.business_card = request.POST.get('icard')
+    u.realname = request.POST.get('real_name')
+    u.authentication_class = int(request.POST.get('type'))+1
+    u.save()
     return HttpResponse()
 
 
@@ -385,13 +386,18 @@ def userinfo(request):
         publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
         attention_pr =   Project.objects.filter(click=user)
-        if request.user.is_authenticated():
-            signal =  Signal.objects.filter(who=request.user)
-            print signal
-        else:
-            signal = []
+        #我关注的人
+        u = User.objects.get(username=request.user)
 
-    return render_to_response("userinfo.html", {"signal":signal,'form': form,"leader":leader,"invest":invest,"publish_pr":publish_pr,"attention_pr":attention_pr},
+        attention_persion = u.userinformation.attention_persion.all()
+
+        signal =  Signal.objects.filter(who=request.user)
+        notice = Signal.objects.filter(type=0)
+        print signal,notice
+
+
+    return render_to_response("userinfo.html", {"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
+                                                "publish_pr":publish_pr,"attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
 
 @login_required
@@ -707,7 +713,9 @@ def change_phone_number(request):
 
 def about_us(request):
     p = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
-    return render_to_response('about.html',{"description":p[0].description}, context_instance=RequestContext(request))
+    mediareports = MediaReports.objects.filter(status=1)
+    print mediareports,"ggggggggxxxxxxxxxxx"
+    return render_to_response('about.html',{'mediareports':mediareports,"description":p[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
     p = About_us.objects.all()
@@ -813,48 +821,64 @@ def search_investor(request):
     if search_word == [u'1', u'4']:
         results = UserInformation.objects.all()
     elif search_word == [u'1', u'5']:
-        results = UserInformation.objects.filter(industry='1')
-        for i in results:
-            print i.cate
-        print results
+        results = UserInformation.objects.filter(cate=1)
     elif search_word == [u'1', u'6']:
-        results = UserInformation.objects.filter(industry='2')
+        results = UserInformation.objects.filter(cate=2)
     elif search_word == [u'1', u'7']:
-        results = UserInformation.objects.filter(industry=3)
+        results = UserInformation.objects.filter(cate=3)
     elif search_word == [u'1', u'8']:
-        results = UserInformation.objects.filter(industry=4)
+        results = UserInformation.objects.filter(cate=4)
     elif search_word == [u'1', u'9']:
-        results = UserInformation.objects.filter(industry=5)
+        results = UserInformation.objects.filter(cate=5)
     elif search_word == [u'1', u'10']:
-        results = UserInformation.objects.filter(industry=6)
+        results = UserInformation.objects.filter(cate=6)
+    elif search_word == [u'1', u'11']:
+        results = UserInformation.objects.filter(cate=7)
+    elif search_word == [u'1', u'12']:
+        results = UserInformation.objects.filter(cate=8)
+    elif search_word == [u'1', u'13']:
+        results = UserInformation.objects.filter(cate=9)
     elif search_word == [u'2', u'4']:
         results = UserInformation.objects.filter(authentication_class=2)
     elif search_word == [u'2', u'5']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=1)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=1)
     elif search_word == [u'2', u'6']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=2)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=2)
     elif search_word == [u'2', u'7']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=3)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=3)
     elif search_word == [u'2', u'8']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=4)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=4)
     elif search_word == [u'2', u'9']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=5)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=5)
     elif search_word == [u'2', u'10']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(industry=6)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=6)
+    elif search_word == [u'2', u'11']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=7)
+    elif search_word == [u'2', u'12']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=8)
+    elif search_word == [u'2', u'13']:
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=9)
+
     elif search_word == [u'3', u'4']:
         results = UserInformation.objects.filter(authentication_class=3)
     elif search_word == [u'3', u'5']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(industry=1)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=1)
     elif search_word == [u'3', u'6']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(industry=2)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=2)
     elif search_word == [u'3', u'7']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(industry=3)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=3)
     elif search_word == [u'3', u'8']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(industry=4)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=4)
     elif search_word == [u'3', u'9']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(industry=5)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=5)
     elif search_word == [u'3', u'10']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(industry=6)
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=6)
+    elif search_word == [u'3', u'11']:
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=7)
+    elif search_word == [u'3', u'12']:
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=8)
+    elif search_word == [u'3', u'13']:
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=9)
     else:
         results = UserInformation.objects.all()
 
@@ -907,26 +931,26 @@ def add_attion(request,objectid):
     t = Project.objects.get(id=objectid)
     count1 = len(t.click.all())
     if count != count1:
-        comment = u"你已经关注了改用户！"
+        comment = u"你已经关注了该项目！"
     else:
         comment = u"关注成功！"
     return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
 
 def add_attion_investor(request):
-    t = UserInformation.objects.get(id=request.POST.get("investor"))
 
-    attention_persion = len(t.attention_persion.all()) + 1
+    t = User.objects.get(id=request.POST.get("investor"))
+    u = UserInformation.objects.get(user=request.user)
+    count = len(u.attention_persion.all())
+    u.attention_persion.add(t)
+    u.save()
 
-    t.attention_persion.add(request.user)
-    t.save()
-    t = UserInformation.objects.get(id=request.POST.get("investor"))
-    attention_persion_after = len(t.attention_persion.all())
-    if attention_persion != attention_persion_after:
+    count_after = len(u.attention_persion.all())
+    if count == count_after:
         comment = u"你已经关注了该用户！"
     else:
         comment = u"关注成功！"
 
-    return HttpResponse(json.dumps({'attion': attention_persion_after,"comment":comment}), content_type="application/json")
+    return HttpResponse(json.dumps({'attion': count_after,"comment":comment}), content_type="application/json")
 
 def sendSMS(request):
     u = User.objects.get(id=request.POST.get("investor"))
@@ -960,23 +984,12 @@ def search_project(request):
                 results = Project.objects.filter(status=2)
 
         elif int(search_word[0]) == 1 and int(search_word[1]) != 14:
-            if int(search_word[1]) == 15 :
-                results = Project.objects.filter(category=1)
-            elif int(search_word[1]) == 16 :
-                results = Project.objects.filter(category=2)
-            elif int(search_word[1]) == 17 :
-                results = Project.objects.filter(category=3)
-            elif int(search_word[1]) == 18 :
-                results = Project.objects.filter(category=4)
-            elif int(search_word[1]) == 19 :
-                results = Project.objects.filter(category=5)
-            elif int(search_word[1]) == 20 :
-                results = Project.objects.filter(category=6)
+            results = Project.objects.filter(category=int(search_word[1])-14)
         elif int(search_word[0]) != 1 and int(search_word[1]) != 14 :
             if int(search_word[0]) == 2 :
                 results = Project.objects.filter(active=1).filter(category=int(search_word[1])-14)
             else:
-                results = Project.objects.filter(status=int(search_word[0])).filter(category=int(search_word[1])-14)
+                results = Project.objects.filter(status=int(search_word[0])-3).filter(category=int(search_word[1])-14)
         else:
             results = Project.objects.all()
     else :

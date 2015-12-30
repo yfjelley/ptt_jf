@@ -7,6 +7,19 @@ from django.contrib.auth.models import User
 __author__ = 'py'
 from django.db import models, connection
 
+from django import forms
+ACTIVITY_STYLE = (("a", "1"), ("b", "2"), ("c", "3"))
+class HobbiesForm(forms.Form):
+    hobbies = forms.MultipleChoiceField(label=u'活动类型', choices=ACTIVITY_STYLE, widget=forms.CheckboxSelectMultiple())
+
+class XXXForm(forms.Form):
+    def __init__(self, query_set=None, *args, **kwargs):
+        super(XXXForm, self).__init__(*args, **kwargs)
+        roles = forms.ModelMultipleChoiceField(label=u"角色:",
+                                           required=False,
+                                           widget=CheckboxSelectMultiple,
+                                           queryset=query_set)
+        self.fields['roles'] = roles
 
 class Platform(models.Model):
     name = models.CharField(max_length=255, blank=True)
@@ -172,42 +185,50 @@ MARRIAGE_CHOICES = (
     ('3', '保密'),
 )
 AUTH_CLASS_CHOICES = (
-    ('1', '认证投资人'),
-    ('2', '认证资深投资人'),
-    ('3', '认证领投人'),
-    ('4', '认证资深领投人'),
+    ('1', '个人投资者'),
+    ('2', '机构投资者'),
 )
 
 INDUSTRY_CHOICE = (
-    ('1', '金融在线'),
-    ('2', '电子商务'),
-    ('3', '医疗'),
-    ('4', '互联网'),
-    ('5', '社交'),
-    ('6', '生活服务'),
+    ('1', '移动互联'),
+    ('2', '节能环保'),
+    ('3', '文化传媒'),
+    ('4', '新材料'),
+    ('5', '新能源'),
+    ('6', '生物制药'),
+    ('7','消费服务'),
+    ('8','信息技术'),
+    ('9','其他'),
 )
 CAT_CHOICE = (
-    ('1', '金融在线'),
-    ('2', '电子商务'),
-    ('3', '医疗'),
-    ('4', '互联网'),
-    ('5', '社交'),
-    ('6', '生活服务'),
+    ('1', '移动互联'),
+    ('2', '节能环保'),
+    ('3', '文化传媒'),
+    ('4', '新材料'),
+    ('5', '新能源'),
+    ('6', '生物制药'),
+    ('7','消费服务'),
+    ('8','信息技术'),
+    ('9','其他'),
 )
 
 CATEGORY_CHOICE = (
-    ('1', '金融在线'),
-    ('2', '电子商务'),
-    ('3', '医疗'),
-    ('4', '互联网'),
-    ('5', '社交'),
-    ('6', '生活服务'),
+    ('1', '移动互联'),
+    ('2', '节能环保'),
+    ('3', '文化传媒'),
+    ('4', '新材料'),
+    ('5', '新能源'),
+    ('6', '生物制药'),
+    ('7','消费服务'),
+    ('8','信息技术'),
+    ('9','其他'),
 )
 INVEST_TYPE_CHOICES =(
     ('1', '领投'),
     ('2', '跟投'),
 )
 class UserInformation(models.Model):
+    attention_persion = models.ManyToManyField(User, related_name = "attention_persion_set",blank=True, null=True)#关注他的人
     user = models.OneToOneField(User)
     photo_url = models.CharField("照片",max_length=30,blank=True, null=True)
     nickname = models.CharField('昵称', max_length=30, blank=True, null=True)
@@ -233,15 +254,14 @@ class UserInformation(models.Model):
     weibo_num = models.CharField('微博', max_length=30, blank=True, null=True)
     abcdefg = models.CharField(max_length=50, blank=True, null=True)
     authentication_class = models.CharField('认证类别', max_length=1,choices=AUTH_CLASS_CHOICES, blank=True, null=True)
-    id_card = models.CharField('身份证', max_length=255, blank=True, null=True)
-    business_card = models.CharField('名片', max_length=255, blank=True, null=True)
+    id_card = models.CharField('身份证照片', max_length=255, blank=True, null=True)
+    business_card = models.CharField('身份证号码', max_length=255, blank=True, null=True)
     financial_assets = models.CharField('营业执照', max_length=255, blank=True, null=True)
     fixed_assets = models.CharField('组织机构代码', max_length=255, blank=True, null=True)
     income_assets = models.CharField('税务登记证', max_length=255, blank=True, null=True)
     ideas = models.TextField('投资理念',blank=True, null=True)
     direction = models.TextField('投资方向', blank=True, null=True)
     industry = models.CharField('关注的行业', max_length=1,choices=INDUSTRY_CHOICE, blank=True, null=True)
-    attention_persion = models.ManyToManyField(User, related_name = "attention_persion_set",blank=True, null=True)#关注他的人
     fans = models.ManyToManyField(User, related_name = "fans_set",blank=True, null=True)#他的粉丝
     cate = models.CharField('行业类别', max_length=1,choices=CAT_CHOICE,blank=True, null=True)#所在行业
     link = models.URLField('推广链接', max_length=255, blank=True, null=True)
@@ -425,6 +445,13 @@ class CombBidType(models.Model):
 
 
 class WeekHotSpot(models.Model):
+    title = models.CharField(max_length=100)
+    url = models.URLField()
+    status = models.IntegerField()
+    add_date = models.DateTimeField('添加时间', auto_now_add=True)
+    modify_date = models.DateTimeField('编辑时间', auto_now=True)
+
+class MediaReports(models.Model):
     title = models.CharField(max_length=100)
     url = models.URLField()
     status = models.IntegerField()

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from searcher.models import UserFavorite, Bid, FilterDimension, DimensionChoice, \
     UserFilter, ReminderUnit, UserReminder, CombBidType, WeekHotSpot,UserInformation,Project,\
-    invest_detail,project_forum,Signal,RegistrationAgreement,About_us,Partners,Frendlink
+    invest_detail,project_forum,Signal,RegistrationAgreement,About_us,Partners,Frendlink,MediaReports
 
 
 class FilterDimensionAdmin(admin.ModelAdmin):
@@ -37,5 +37,6 @@ admin.site.register(Signal)
 admin.site.register(RegistrationAgreement)
 admin.site.register(Partners)
 admin.site.register(Frendlink)
+admin.site.register(MediaReports)
 
 

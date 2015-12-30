@@ -75,6 +75,7 @@ $(document).ready(function() {
             if(response){alert("上传成功！")};
         }
   });
+
 });
 </script>
 
@@ -167,6 +168,21 @@ $(function(){
 			$("#person").attr("src","/static/images/person2.png");
 			$("#mperson").attr("src","/static/images/tperson.png");
 		});
+		{% ifequal user.userinformation.authentication_class '1' %}
+			$("#gerens").attr("checked","checked");
+			$("#jigous").attr("checked",false);
+			$("#geren").attr("style","display:block");
+			$("#jigou").attr("style","display:none");
+			$("#person").attr("src","/static/images/person.png");
+			$("#mperson").attr("src","/static/images/mperson.png");
+		{% else %}
+			$("#jigous").attr("checked","checked");
+			$("#gerens").attr("checked",false);
+			$("#geren").attr("style","display:none");
+			$("#jigou").attr("style","display:block");
+			$("#person").attr("src","/static/images/person2.png");
+			$("#mperson").attr("src","/static/images/tperson.png");
+		{% endifequal %}
 
 	});
 </script>
@@ -307,7 +323,7 @@ $(function(){
 				 <tr class="user_nick">
 					 <td><label>用户名</label></td>
 					 <td><label>
-						 {{ form.realname }}
+						 {{ form.nickname}}
 					 </label></td>
 				 </tr>
 
@@ -489,11 +505,13 @@ $(function(){
 <!--项目管理:我的项目-->                
                <div id="wdxm" class="display">
 
-               		<ul>
-                    	<li>
-                        	<label style="text-align:center;">我没有创建的项目</label>
-                        </li>
-                    </ul>
+				   {% if attention_persion %}
+				   		{% for i in attention_persion %}
+				   <img width="120" height="120" src="{{i.userinformation.photo_url}}">
+				               {{i.username}}
+				        {% endfor %}
+				   {% endif %}
+
                </div>
 <!--项目管理:我的项目 end-->
 
@@ -596,11 +614,21 @@ $(function(){
 					<table id="geren" style="display:block;">
 						<tr>
 							<td width="100">真实姓名:</td>
+
+							{% ifequal user.userinformation.authentication_class '1' %}
+							<td class="real_name"><input id="real_name" type="text" value="{{user.userinformation.realname}}"></td>
+
+							{% else %}
 							<td class="real_name"><input id="real_name" type="text"></td>
+							{% endifequal %}
 						</tr>
 						<tr>
 							<td>身份证号码:</td>
+							{% ifequal user.userinformation.authentication_class '1' %}
+							<td class="icard"><input id = "icard" type="text" value="{{user.userinformation.business_card}}"></td>
+							{% else %}
 							<td class="icard"><input id = "icard" type="text"></td>
+							{% endifequal %}
 						</tr>
 						<tr>
 							<td colspan="2">请上传身份证,帮助我们快速核实您的身份</td>
@@ -608,15 +636,16 @@ $(function(){
 						<tr style="height: 80px;">
 							<td>身份证:</td>
 							<td class="upload_file">
-								{% if user.userinformation.id_card %}
+								{% if user.userinformation.id_card  %}
+
 								<img src="{{ user.userinformation.id_card }}" style="margin-left:-20px; margin-top:20px;"/>
-								{% else %}
+								{% endif %}
 								<label>
 									点击上传身份证扫描件或高清图片
 									<input type="file" name="file_upload"  id="file_upload" />
+									</label>
 
-								</label>
-								{% endif %}
+
 							</td>
 						</tr>
 						<tr align="center">
@@ -633,11 +662,20 @@ $(function(){
 					<table id="jigou" style="display:none">
 						<tr>
 							<td>法人姓名:</td>
+							{% ifequal user.userinformation.authentication_class '2' %}
+							<td class="real_name"><input id ="real_name_p" type="text" value="{{user.userinformation.realname}}"></td>
+							{% else %}
 							<td class="real_name"><input id ="real_name_p" type="text"></td>
+							{% endifequal %}
+
 						</tr>
 						<tr>
 							<td>身份证号码:</td>
+							{% ifequal user.userinformation.authentication_class '2' %}
+							<td class="icard"><input id ="icard_p" type="text" value="{{user.userinformation.business_card}}"></td>
+							{% else %}
 							<td class="icard"><input id ="icard_p" type="text"></td>
+							{% endifequal %}
 						</tr>
 						<tr>
 							<td colspan="2">请上传相关证件,帮助我们快速核实您的身份</td>
@@ -651,34 +689,37 @@ $(function(){
 							<td class="upload_file">
 								{% if user.userinformation.financial_assets %}
 								<img src="{{ user.userinformation.financial_assets }}" style="margin-left:-20px; margin-top:20px;"/>
-								{% else %}
+
+								{% endif %}
 								<label>
 								点击上传营业执照扫描件或高清图片
 								<input type="file" name=""  id="file_upload_business_license" />
 
 							</label>
-							   {% endif %}
+
 							</td>
 							<td class="upload_file">
 								{% if user.userinformation.fixed_assets %}
 								<img src="{{ user.userinformation.fixed_assets }}" style="margin-left:-20px; margin-top:20px;"/>
-								{% else %}
+
+								{% endif %}
 								<label>
 								点击上传组织机构代码证扫描件或高清图片
 								<input type="file" name=""  id="file_upload_organization_code" />
 							</label>
-							    {% endif %}
+
 							</td>
 
 							<td class="upload_file">
 								{% if user.userinformation.income_assets %}
 								<img src="{{ user.userinformation.income_assets }}" style="margin-left:-20px; margin-top:20px;"/>
-								{% else %}
+
+								{% endif %}
 								<label>
 								点击上传税务登记证扫描或高清图片
 								<input type="file" name=""  id="file_upload_tax" />
 							    </label>
-								{% endif %}
+								
 							</td>
 						</tr>
 						<tr align="center">
@@ -763,7 +804,6 @@ $(function(){
                 <div id="grxx">
 					{% if signal %}
 					{% for i in signal %}
-					{% ifequal i.type "2" %}
                     <ul class="personal-message">
                         <li style="margin-top:30px;">
                         <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
@@ -775,7 +815,7 @@ $(function(){
                             <label>产品开发的Timeline?</label>
                         </li>
                         <li style="margin-left:150px;">
-                            <label style="padding-left:10px;">{{i.user.userinformation.realname}}</label>
+                            <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
                             <label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
                         
                             <label style="padding-left:50px;">都市人</label>
@@ -792,7 +832,7 @@ $(function(){
                             <div style="width:700px; height:1px;background-color:#D5D5D5"></div>
                         </li>
                     </ul>
-					{% endifequal %}
+
 					{% endfor %}
 					{% else %}
 					<ul>
@@ -804,9 +844,9 @@ $(function(){
                    
                 </div>
 				<div id="tz" class="display">
-					{% if signal %}
-					{% for i in signal %}
-					{% ifequal i.type "2" %}
+					{% if notice %}
+					{% for i in notice %}
+
                     <ul class="personal-message">
                         <li style="margin-top:30px;">
                         <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
@@ -814,15 +854,13 @@ $(function(){
                         <li style="margin-left:80px;margin-top:-50px;">
                             <img src="/static/images/news.png"  />
                         </li>
-                        <li style="margin-left:150px;margin-top:-20px;">
-                            <label>产品开发的Timeline?</label>
-                        </li>
+
                         <li style="margin-left:150px;">
                             <label style="padding-left:10px;">{{i.user.userinformation.realname}}</label>
                             <label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
 
                             <label style="padding-left:50px;">都市人</label>
-                            <label>于1小时前回复</label>
+
                         </li>
                         <li style="margin-left:620px; margin-top:-20px;">
                             <input type="button" class="send-btn" value="回复" />
@@ -835,7 +873,7 @@ $(function(){
                             <div style="width:700px; height:1px;background-color:#D5D5D5"></div>
                         </li>
                     </ul>
-					{% endifequal %}
+
 					{% endfor %}
 					{% else %}
 					<ul>
@@ -974,7 +1012,7 @@ $(function(){
 					var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
 					if(!icard||icard.match(reg)==null){alert("请输入正确的身份证!")}
 					else{
-						$.post("{% url 'auth_type' %}",
+						$.post("{% url 'auth_register' %}",
 						{
 							real_name: real_name,
 							icard: icard,
@@ -994,7 +1032,7 @@ $(function(){
 					var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
 					if(!icard||icard.match(reg)==null){alert("请输入正确的身份证!")}
 					else{
-						$.post("{% url 'auth_type' %}",
+						$.post("{% url 'auth_register' %}",
 						{
 							real_name: real_name,
 							icard: icard,
