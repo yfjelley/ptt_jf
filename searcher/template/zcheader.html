@@ -94,7 +94,6 @@
                             {% else %}
                             {{ user.username |phone_cut }}
                             {% endif %}
-
                             <ul>
                                 <li><a href="{% url 'userinfo' %}">我的资料</a></li>
                                 <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
@@ -119,10 +118,10 @@
 
         $(document).ready(function () {
             $('#logged li').hover(function () {
-                $('ul', this).stop(true,false).slideDown(200);
+                $('ul', this).stop(true,false).slideDown(400);
                 $(this).children('a:first').addClass("hov");
             }, function () {
-                $('ul', this).stop(true,false).slideUp(100);
+                $('ul', this).stop(true,false).slideUp(200);
                 $(this).children('a:first').removeClass("hov");
             });
 

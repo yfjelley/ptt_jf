@@ -5,82 +5,72 @@ input,button{outline: 0}
 .Userul{margin-top:80px;margin-left:-50px;}
 .Userul1{margin-top:120px; margin-left:30px;}
 .Userul1 td{padding:10px 5px}
-
 .user_nick input[type='text']{width:150px;height:20px;}
 .tg-list{position:absolute;margin-top:-37px;margin-left:250px;}
 .tg-list1{position:absolute;margin-top:10px;margin-left:250px;}
-.user_name input[type='text']{width:150px;height:20px;}
+.user_income select{width:155px;height:25px;}
+.user_name select{width:155px;height:25px;}
+.user_edu select{width:155px;height:25px;}
 .user_birth input[type='text']{width:150px;height:20px;}
-.user_email input[type='text']{width:150px;height:20px;}
+.user_email input[type='email']{width:150px;height:20px;}
 .user_city input[type='text']{width:150px;height:20px;}
 .user_addre input[type='text']{width:150px;height:20px;}
 .user_wx input[type='text']{width:150px;height:20px;}
 .user_qq input[type='text']{width:150px;height:20px;}
 .user_wb input[type='text']{width:150px;height:20px;}
 .birth-select{margin-top:-35px; margin-left:80px;}
-
 /*<!--tabÇÐ»»°´Å¥-->*/
 #ProDiv{width:70%;height:700px; margin:0 auto;}
 .ProChange{width:200px; height:700px; float:left;margin-top:20px}
 .ProChange li{padding:15px 0px;}
+.ProChange a{margin-left:18px;font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
+.ProChange a:hover{border-color:#e1604d; font-weight:bold;}
 .div_right{ float:left;width:700px;height:800px; margin-top:-34px;}
 .display{display:none}
 .touzi_message{width:600px;height:500px;}
 .touzi-class{width:600px;height:50px;}
-.ProChange a{text-decoration:none;font-size:16px;color:#000000;}
-.ProChange a:link,a:visited{border-left-style:solid;border-width:2px;border-color:transparent;}
-.ProChange a:hover{border-color:#e1604d; font-weight:bold;}
 .Prohr hr{border:none; border-top:1px solid #eeeef0;width:80px;height:1px; margin-left:-10px; margin-top:15px;}
-
 /*<!--ÌáÐÑÉèÖÃ-->*/
-
-
-
-
-.button-shangchuan{border:1px solid #4a3c70;position:relative; display:inline-block;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#4a3c70;color:#fff;width:100px;height:20px;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; text-align:center;font-size:14px;cursor:pointer}
+.button-shangchuan{border:1px solid #4a3c70;position:relative; display:inline-block;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; cursor:pointer}
 .button-shangchuan input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
 input.button_save{border:1px solid #4a3c70;background:#4a3c70;width:85px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .gupiao-change{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:10px; margin-top:20px;}
 .quxiao-attention{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:-80px; margin-top:30px;}
 .ProRight{width:95px;height:500px;float:left;}
 .ProCenter{width:750px; height:150px;}
-div.ProCenter a{text-decoration:none; color:#000000; margin:0px 20px;}
-div.ProCenter a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
-div.ProCenter a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-div.ProCenter{margin-top:110px;}
+.ProCenter a{text-decoration:none; color:#000000; margin:0px 20px;}
+.ProCenter a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
+.ProCenter a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
+.ProCenter{margin-top:110px;}
 .ProCenter1{width:750px; height:150px;}
-div.ProCenter1 a{text-decoration:none; color:#000000; margin:0px 20px;}
-div.ProCenter1 a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
-div.ProCenter1 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-div.ProCenter1{margin-top:80px;}
+.ProCenter1 a{text-decoration:none; color:#000000; margin:0px 20px;}
+.ProCenter1 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
+.ProCenter1{margin-top:80px;}
 .ProCenter2{width:750px; height:150px;}
-div.ProCenter2 a{text-decoration:none; color:#000000; margin:0px 20px;}
-div.ProCenter2 a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
-div.ProCenter2 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-div.ProCenter2{margin-top:80px;}
+.ProCenter2 a{text-decoration:none; color:#000000; margin:0px 20px;}
+.ProCenter2 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
+.ProCenter2{margin-top:80px;}
 .ProCenter3{width:750px; height:150px;}
-div.ProCenter3 a{text-decoration:none; color:#000000; margin:0px 20px;}
-div.ProCenter3 a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
-div.ProCenter3 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-div.ProCenter3{margin-top:80px;}
+.ProCenter3 a{text-decoration:none; color:#000000; margin:0px 20px;}
+.ProCenter3 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
+.ProCenter3{margin-top:80px;}
 .prosonPage1{width:750px; height:350px; margin-top:-80px;}
 .prosonPage2{width:750px; height:350px;}
-
 .personal-message2{margin-left:-90px;margin-top:-30px;}
-ul.pwdpadding li{padding-bottom:10px}
-ul.pwdpadding2 li{padding-bottom:10px}
+.pwdpadding li{padding-bottom:10px}
+.pwdpadding2 li{padding-bottom:10px}
 .resetpwd-btn{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:40px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .send-btn{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .prosonPage3{width:750px; height:350px; margin-top:-50px; margin-left:-90px;}
 .prosonPage4{width:750px; height:350px;}
 .giftpadding li{padding:15px 0px}
 input.input_butt{border:1px solid #4a3c70; background-color:#4a3c70;width:100px; height:30px;color:#FFFFFF; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
-li.Proli2 hr{border:none;border-right:1px solid #000000; width:1px; height:45px; margin-top:15px;}
-li.Proli3 hr{border:none; border-top:1px solid #000000;width:700px; height:1px; margin-left:-50px; margin-top:15px;}
-label.Proli4 hr{border:none; border-top:1px solid #000000;width:400px; height:1px;}
-label.Proli5 hr{border:none;border-right:1px solid #000000; width:1px; height:65px; margin-top:-20px;}
+.Proli2 hr{border:none;border-right:1px solid #000000; width:1px; height:45px; margin-top:15px;}
+.Proli3 hr{border:none; border-top:1px solid #000000;width:700px; height:1px; margin-left:-50px; margin-top:15px;}
+.Proli4 hr{border:none; border-top:1px solid #000000;width:400px; height:1px;}
+.Proli5 hr{border:none;border-right:1px solid #000000; width:1px; height:65px; margin-top:-20px;}
 
-li.Proli11 label{margin:0px 50px;}
+.Proli11 label{margin:0px 50px;}
 .xieyi_button{border:1px solid #4a3c70;width:100px;height:35px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;}
 .license-file{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:70px;height:20px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer;}
 .license-file input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
@@ -163,3 +153,4 @@ li.Proli11 label{margin:0px 50px;}
     float: right;
     padding: 0 5px;
 }
+.focus-pro li{padding:15px 10px}

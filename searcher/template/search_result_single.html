@@ -9,12 +9,12 @@
 				 <label style="padding-right: 18px;font-weight:bold; color:#FFF;height:20px;padding-top:3px;float: right;">{{result.click.all|length}}</label>
 			  </div>
 			{% ifequal result.active 1 %}
-			<li style="position:relative;top:-40px;margin-left:221px;">
-				<img src="/static/images/flag.png" />
+			<li>
+				<img style="position:relative;top:-7px;left:144px;" src="/static/images/flag.png" />
 			</li>
             {% else %}
-            <li style="position:relative;">
-				<div style="border:0 solid red;width:38px;height:38px;"></div>
+            <li>
+				<img style="position:relative;top:-7px;left:144px;" src="/static/images/rflag.png" >
 			</li>
 			{% endifequal %}
 			<li class="mongjingImg">
@@ -29,9 +29,9 @@
 						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
 					</li>
 					<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-0.5em">
-						<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
+						<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 					<li style="float:left">
-						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;font-size:12px">{{result.amount}}份</span>
+						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;font-size:12px">{{result.invest_num}}份</span>
 					</li>
 					<li style="float:left;margin-left:70px;">
 						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;font-size:12px">{{result.finish}}%</span>

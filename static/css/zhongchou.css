@@ -10,7 +10,7 @@ li{ list-style-type:none;}
 .clickTag{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
 .div_left a{margin-left:18px;font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
 .div_left a:hover{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
-.left_label{position: relative;top:-10px;cursor: pointer}
+.left_label{position: relative;top:-11px;cursor: pointer}
 
 .downline{width:75px;height:1px;background:#ccc;margin:10px 0 10px 17px}
 .div_right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;overflow:hidden}

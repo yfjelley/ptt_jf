@@ -1,7 +1,9 @@
+# coding=utf-8
 __author__ = 'TianShuo'
 from django import template
 from ddbid import settings
 from ddbid import conf
+import  datetime
 
 register = template.Library()
 
@@ -42,4 +44,15 @@ register.filter(title_cut)
 @register.filter(is_safe=False)
 def add_filter(value, arg):
     return len(value) + len(arg)
+
+
+def remain_time(t):
+    n= datetime.datetime.now()
+    delta = t-n
+    if int(delta.days) >=0:
+        return u"%s天"%(int(delta.days))
+    else:
+        return u"0天"
+register.filter(remain_time)
+
 

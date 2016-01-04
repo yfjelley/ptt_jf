@@ -14,6 +14,8 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="/static/js/birthday.js"></script>
 <script src="/static/js/jquery-ui.min.js"></script>
+	    <script type="text/javascript" src="/static/js/timeplus.js"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
 
 <script src="/static/site_media/jquery.uploadify.js"></script>
 
@@ -247,7 +249,7 @@ $(function () {
 <script type="text/javascript">
 $(function(){
     $('#selfcenterclick').click(function(){
-             $.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});
+             $.get("/change_phone_number/",function(data){ $('#safe_center').html(data.content_html);});
 			});
 	});
 </script>
@@ -311,8 +313,8 @@ $(function(){
 					<img src="{{ user.userinformation.photo_url }}" style="margin-left:-20px; margin-top:20px;"/>
 				</li>
 				<li style="margin-top:12px; margin-left:-10px;">
-                	<a class="button-shangchuan" href="javascript:;">上传头像
-						<input type="file" name="file"/>
+                	<a class="button-shangchuan" href="javascript:;" style="background: url('/static/images/uploadimg.png') no-repeat;border: 0 none;width:105px;height: 35px;">
+						<input type="file" name="file" />
                     </a>
 				</li>
 				<li style=" margin-top:12px; margin-left:3px;">
@@ -390,7 +392,7 @@ $(function(){
 					 </td>
 					 <td align="left">
 						 <label>
-							 <input id="save_success" class="button_save" type="submit" value="保存"/>
+							 <input id="save_success"  type="submit" value=" " style="background: url('/static/images/saveimg.png') no-repeat;border: 0 none;width:105px;height: 35px;"/>
 						 </label>
 					 </td>
 				 </tr>
@@ -503,15 +505,18 @@ $(function(){
 <!--项目管理:领投项目 end-->
 
 <!--项目管理:我的项目-->                
-               <div id="wdxm" class="display">
-
-				   {% if attention_persion %}
-				   		{% for i in attention_persion %}
-				   <img width="120" height="120" src="{{i.userinformation.photo_url}}">
-				               {{i.username}}
-				        {% endfor %}
-				   {% endif %}
-
+               <div id="wdxm" class="display" style="margin-left:-40px;">
+					   {% if attention_persion %}
+					   {% for i in attention_persion %}
+				   <div style="float: left;padding-right: 60px;">
+					   <img width="90" height="90" src="{{i.userinformation.photo_url}}">
+					   <div style="margin-top:5px;">
+						   {{i.username}}
+					   </div>
+					   <label style="height:20px;width: 100%;display: block"></label>
+				   </div>
+					   {% endfor %}
+					   {% endif %}
                </div>
 <!--项目管理:我的项目 end-->
 
@@ -519,57 +524,29 @@ $(function(){
                <div id="gzxm" class="display">
 				   	{% if  attention_pr %}
 			    	{% for i in  attention_pr %}
-               		   <ul style="margin-left:-70px;">
+				   <ul class="focus-pro" style="margin-left:-70px;">
                         <li style="float:left;margin-top:10px;">
                             <img src="{{i.logo}}" />
                         </li>
-                        <li>
-                            <ul style="margin-top:-60px;padding-top:15px;">										
-                                <li>
-                                    <label style="margin-left:25px;">{{i.name}}</label>
-                                </li>
-                                <li>
-                                    <li style="margin-left:210px;">
-                                        <div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-                                    </li>
-                                </li>
-                            </ul>                           
-                        </li>
-                        <li>
-                        	<ul style="float:left;padding-left:25px;">
-                                <li>
-                                    <label>总股数</label><b>150.00万</b>
-                                </li>
-                                <li>
-                                    <label>已预约股数</label><b>0.00万</b>
-                                </li>
-                                <li>
-                                    <label>已完成率</label><b style="color:#CC6633">100%</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul style="float:left">
-                                <li>
-                                    <label>每股金额</label><b>150.00万</b>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li style="float:left;margin-top:15px;margin-left:-150px;">
-                         <div style="border-right:1px solid #eeeef0;width:1px; height:65px;"></div>
-                        </li>
+				   		<li style="float:left;width: 200px;margin-top:10px;">
+							<label>{{i.name}}</label>
+							<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
+			   			</li>
+					   <li style="float:right">
+						   <label>
+							   <input id="focus-pro1" class="quxiao-attention" type="button" value="取消关注"/>
+						   </label>
+					   </li>
                         <li style="float:left;">
-                        	<label style="margin-top:60px;"><img src="/static/images/redgou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
-                         </li>
-                         <li>
-							<label>
-								<input id="focus-pro1" class="quxiao-attention" type="button" value="取消关注"/>
-							</label>
-						</li>
+							<label>融资金额</label><b>150.00万</b>
+							<label>已融资</label><b>0.00万</b>
+							<label>预约率</label><b style="color:#CC6633">100%</b>
+                        </li>
+                        <li style="float:left">
+							<label>我已领投</label><b>150.00万</b>
+							<label>我已跟投</label><b>0.00万</b>
+							<label>认筹人数</label><b style="color:#CC6633">0人</b>
+                        </li>
                     </ul>
                     <ul style="clear:both"></ul>
 				{% endfor %}
@@ -644,13 +621,11 @@ $(function(){
 									点击上传身份证扫描件或高清图片
 									<input type="file" name="file_upload"  id="file_upload" />
 									</label>
-
-
 							</td>
 						</tr>
 						<tr align="center">
 							<td colspan="2">
-								<input id="auth_submit" class="button_save" type="button" value="提交">
+								<input id="auth_submit" class="button_save" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;margin-left:-80px">
 							</td>
 						</tr>
 						<tr>
@@ -678,7 +653,7 @@ $(function(){
 							{% endifequal %}
 						</tr>
 						<tr>
-							<td colspan="2">请上传相关证件,帮助我们快速核实您的身份</td>
+							<td colspan="3">请上传相关证件,帮助我们快速核实您的身份</td>
 						</tr>
 						<tr>
 							<td>营业执照</td>
@@ -689,16 +664,13 @@ $(function(){
 							<td class="upload_file">
 								{% if user.userinformation.financial_assets %}
 								<img src="{{ user.userinformation.financial_assets }}" style="margin-left:-20px; margin-top:20px;"/>
-
 								{% endif %}
 								<label>
 								点击上传营业执照扫描件或高清图片
 								<input type="file" name=""  id="file_upload_business_license" />
-
 							</label>
-
 							</td>
-							<td class="upload_file">
+							<td class="upload_file" style="text-align: center">
 								{% if user.userinformation.fixed_assets %}
 								<img src="{{ user.userinformation.fixed_assets }}" style="margin-left:-20px; margin-top:20px;"/>
 
@@ -707,24 +679,20 @@ $(function(){
 								点击上传组织机构代码证扫描件或高清图片
 								<input type="file" name=""  id="file_upload_organization_code" />
 							</label>
-
 							</td>
-
 							<td class="upload_file">
 								{% if user.userinformation.income_assets %}
 								<img src="{{ user.userinformation.income_assets }}" style="margin-left:-20px; margin-top:20px;"/>
-
 								{% endif %}
 								<label>
 								点击上传税务登记证扫描或高清图片
 								<input type="file" name=""  id="file_upload_tax" />
 							    </label>
-								
 							</td>
 						</tr>
 						<tr align="center">
-							<td colspan="2">
-								<input class="button_save" id="submit_p" type="button" value="提交">
+							<td colspan="3">
+								<input class="button_save" id="submit_p" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;">
 							</td>
 						</tr>
 						<tr>
@@ -749,14 +717,14 @@ $(function(){
                     <li style="margin-top:-20px; margin-left:-60px">
                         <label style="font-size:30px;">安全中心</label>
                     </li>
-                    <li style="margin-top:30px; margin-left:-50px;float:left" data-dd="xgmm">
-                        <a href="javascript:void(0)">修改密码</a>
+                    <li style="margin-top:30px; margin-left:-50px;float:left" data-dd="ghsj">
+                        <a href="javascript:void(0)">更换手机</a>
                     </li>
                     <li style="float:left; margin-top:20px; margin-left:5px;">
                     <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
                     </li>
-                    <li style="margin-top:30px; margin-left:20px;float:left" data-dd="ghsj">
-                        <a href="javascript:void(0)" id="change">更换手机</a>
+                    <li style="margin-top:30px; margin-left:20px;float:left" data-dd="xgmm">
+                        <a href="javascript:void(0)" id="change">修改密码</a>
                     </li>
 					<li style="clear:both"></li>
                     <li style="margin-top:10px; margin-left:-55px;">
@@ -790,8 +758,6 @@ $(function(){
                         <li style="float:left">
                             <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
                         </li>
-
-
                         </ul>
                         <li style="margin-left:-65px;">
                             <div style="width:700px;height:1px;background-color:#D5D5D5;overflow:hidden"></div>
@@ -799,40 +765,39 @@ $(function(){
                     </ul>
                 </div>
 			<div class="prosonPage2">
-
-
-                <div id="grxx">
+                <div id="grxx" style="margin-left: -60px;margin-top:-35px;">
 					{% if signal %}
 					{% for i in signal %}
-                    <ul class="personal-message">
-                        <li style="margin-top:30px;">
+					<ul class="personal-message">
+                        <li style="float:left">
                         <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
                         </li>
-                        <li style="margin-left:80px;margin-top:-50px;">
-                            <img src="/static/images/news.png"  />								
-                        </li>
-                        <li style="margin-left:150px;margin-top:-20px;">
+                        <li style="margin-left:60px;float:left">
                             <label>产品开发的Timeline?</label>
                         </li>
-                        <li style="margin-left:150px;">
+						<li style="float: left">
+							<img src="/static/images/news.png"  />
+						</li>
+                        <li style="margin-left:50px;float:left;margin-top:15px;">
                             <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
                             <label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
                         
                             <label style="padding-left:50px;">都市人</label>
                             <label>于1小时前回复</label>
                         </li>
-                        <li style="margin-left:620px; margin-top:-20px;">
-                            <input type="button" class="send-btn" value="回复" />
+                        <li style="margin-left:620px; margin-top:-30px;float:left">
+                            <input type="button" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
                         </li>
                     </ul>
-
-
-                    <ul style="padding:15px 0px;">
-                        <li style="margin-left:-30px; margin-top:20px;">
-                            <div style="width:700px; height:1px;background-color:#D5D5D5"></div>
-                        </li>
-                    </ul>
-
+					<ul>
+						<li style="clear: both">
+						</li>
+					</ul>
+					<ul>
+						<li style="margin-left:-5px;padding:20px 0">
+							<div style="width:700px; height:1px;background-color:#D5D5D5"></div>
+						</li>
+					</ul>
 					{% endfor %}
 					{% else %}
 					<ul>
@@ -841,38 +806,32 @@ $(function(){
                         </li>
                     </ul>
 					{% endif %}
-                   
                 </div>
-				<div id="tz" class="display">
+				<div id="tz" class="display" style="margin-left: -60px;margin-top:-35px;">
 					{% if notice %}
 					{% for i in notice %}
-
-                    <ul class="personal-message">
-                        <li style="margin-top:30px;">
+					<ul class="personal-message">
+                        <li style="float: left">
                         <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
                         </li>
-                        <li style="margin-left:80px;margin-top:-50px;">
-                            <img src="/static/images/news.png"  />
-                        </li>
-
-                        <li style="margin-left:150px;">
+                        <li style="float: left">
                             <label style="padding-left:10px;">{{i.user.userinformation.realname}}</label>
                             <label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
-
                             <label style="padding-left:50px;">都市人</label>
-
                         </li>
-                        <li style="margin-left:620px; margin-top:-20px;">
-                            <input type="button" class="send-btn" value="回复" />
-                        </li>
+						<li style="float: left">
+							<img src="/static/images/news.png"  />
+						</li>
                     </ul>
-
-
-                    <ul style="padding:15px 0px;">
-                        <li style="margin-left:-30px; margin-top:20px;">
-                            <div style="width:700px; height:1px;background-color:#D5D5D5"></div>
-                        </li>
-                    </ul>
+					<ul>
+						<li style="clear: both">
+						</li>
+					</ul>
+					<ul>
+						<li style="margin-left:-5px;padding:20px 0">
+							<div style="width:700px; height:1px;background-color:#D5D5D5"></div>
+						</li>
+					</ul>
 
 					{% endfor %}
 					{% else %}

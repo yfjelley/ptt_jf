@@ -413,7 +413,61 @@ class UserReminderForm(forms.Form):
     checkmb = forms.CheckboxInput(attrs={'class': 'user_checkbox'})
     checkhk = forms.CheckboxInput(attrs={'class': 'user_checkbox'})
 
+class ModfiyPForm(forms.Form):
+    username = forms.CharField(
+        required=True,
+        label=u"手机号",
+        error_messages={'required': '请输入手机号'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"手机号",
+                'type': 'text',
+                'name': 'name',
+                'class': 'inputxt',
+                'ajaxurl': '/checkuser_phone/'
+            }
+        ),
+    )
 
+    smscode = forms.CharField(
+        required=True,
+        label=u"短信验证码",
+        error_messages={'required': u'请输入短信验证码'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"短信验证码",
+                'type': 'text',
+                'name': 'smscode',
+                'class': 'inputxt',
+                'ajaxurl': '/checksmscode/'
+            }
+        ),
+    )
+    vcode = forms.CharField(
+        required=True,
+        label=u"验证码",
+        error_messages={'required': u'请输入验证码'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"验证码",
+                'type': 'text',
+                'name': 'yzm',
+                'class': 'inputxt',
+                'ajaxurl': '/checkvcode/'
+            }
+        ),
+    )
+
+    def valiatetype(self, a):
+        global msg
+        if a == 2:
+            msg = u"验证码错误!"
+            self._errors["smscode"] = self.error_class([msg])
+    def valiatetype(self, a):
+        global msg
+        if a == 10:
+            msg = u"修改密码成功!"
+            self._errors["username"] = self.error_class([msg])
 
 class ForgetPWForm(forms.Form):
     username = forms.CharField(

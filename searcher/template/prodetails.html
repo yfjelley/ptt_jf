@@ -123,10 +123,8 @@
                         </li>
                 	</ul>
                 </li>
-                <li style="float:right;margin-top: -15px;margin-right: 20px;">
-                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/><br>
-                	<br>
-
+                <li style="float:right;margin-top: -4px;margin-right: 20px;">
+                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/>
 					<dd><input class="btn-remind" type="button" />
 						<ul id="warning_li" class="remind-text" style="display:none">
 							<li><a href="javascript:void(0)" class="rmbutton" rtype="2">预热提醒</a></li>
@@ -218,8 +216,8 @@
 						<ul>
 						<li>
 							<p>商业计划书
-							<span style="margin-left:540px"><a href="/static/download/融资居间协议.doc"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
-							<a href="/intermediary/1"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a></span>
+							<span style="margin-left:540px"><a href="/static/download/山东锦程商业计划书.pdf"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+							</span>
 							</p>
 						 </li>
 						</ul>
@@ -227,51 +225,26 @@
                 </div>
 					<div id="qita" class="display">
                 	<div class="qita-size">
+
+						{% if invest_detail %}
+						{% for i in invest_detail %}
 						<table class="tab-content">
 							<tr>
-								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
-							</tr>
-							<tr>
-								<td>投资者1</td>
-								<td>10万份</td>
-							</tr>
-						</table>
-						<table class="tab-content">
-							<tr>
-								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
-							</tr>
-							<tr>
-								<td>投资者1</td>
-								<td>10万份</td>
+								<td colspan="2"><img width="120" height="120" src="{{i.invest_user.userinformation.photo_url}}"></td>
+
+								{% if i.invest_user.userinformation.nickname %}
+								<td>{{i.invest_user.userinformation.nickname}}</td>
+								{% else %}
+								<td>{{i.invest_user.username|phone_cut}}</td>
+								{% endif %}
+								<td>在{{i.time_created|date:"Y-m-j  H:i:s"}}</td>
+								<td>预约投资{{i.invest_num}}股</td>
 							</tr>
 						</table>
-						<table class="tab-content">
-							<tr>
-								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
-							</tr>
-							<tr>
-								<td>投资者1</td>
-								<td>10万份</td>
-							</tr>
-						</table>
-						<table class="tab-content">
-							<tr>
-								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
-							</tr>
-							<tr>
-								<td>投资者1</td>
-								<td>10万份</td>
-							</tr>
-						</table>
-						<table class="tab-content">
-							<tr>
-								<td colspan="2"><img width="120" height="120" src="/static/images/newsplogo.png"></td>
-							</tr>
-							<tr>
-								<td>投资者1</td>
-								<td>10万份</td>
-							</tr>
-						</table>
+						{% endfor %}
+						{% endif %}
+
+
                     </div>
                 </div>
 					<div id="protaolun" class="display">
@@ -282,7 +255,12 @@
 								<dt><a><img src="{{i.forum_user.userinformation.photo_url}}"></a></dt>
 								<dd>
 									<p>
-										<a>{{ i.forum_user.username }}</a>
+										{% if i.forum_user.userinformation.nickname %}
+										<a>{{i.forum_user.userinformation.nickname}}</a>
+										{% else %}
+										<a>{{ i.forum_user.username|phone_cut }}</a>
+										{% endif %}
+
 										{{ i.time_created|date:"Y-m-j  H:i:s"  }}
 										<a href="#">回复</a>
 									</p>
@@ -333,9 +311,9 @@
 					<td>投资人</td>
 				</tr>
 				<tr>
-					<td>5元</td>
-					<td>100万份</td>
-					<td>11个</td>
+					<td>{{result.invest_amount}}</td>
+					<td>{{result.invest_num}}份</td>
+					<td>{{result.investor.all|length}}</td>
 				</tr>
 				<tr>
 					<td>
@@ -351,12 +329,12 @@
 				<tr>
 					<td colspan="3" class="detail-percent">
 						<div style="width:100%;border:1px solid #868686;border-radius:10px;">
-							<em style="width:{{ result.process }}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div>
+							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">预约金额:80万元</td>
-					<td>完成率:80%</td>
+					<td colspan="2">已预约份数:{{result.finish}}</td>
+					<td>完成率:{% widthratio result.finish result.invest_num 100 %}%</td>
 				</tr>
 				<tr>
 					<td>
@@ -371,11 +349,12 @@
 				</tr>
 				<tr>
 					<td colspan="2">支付方式:第三方托管</td>
-					<td>剩余时间:77天</td>
+					
+					<td>剩余时间:{{ result.preheat_end_date |remain_time}}</td>
 				</tr>
 				<tr>
-					<td colspan="2">项目发起时间:2015-11-11</td>
-					<td style="margin-left:-50px;display:block">项目结束时间:2016-02-07</td>
+					<td colspan="2">项目发起时间:{{result.Preheat_date|date:"Y-m-j  " }}</td>
+					<td style="margin-left:-50px;display:block">项目结束时间:{{result.preheat_end_date|date:"Y-m-j  "  }}</td>
 				</tr>
 			</table>
     	</div>

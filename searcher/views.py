@@ -25,11 +25,11 @@ from django.template.loader import get_template
 from django.core.files.storage import FileSystemStorage
 from ddbid.settings import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
-from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPWForm, ModfiyPWForm, PublishForm
+from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationForm, RegisterForm, ForgetPWForm, ModfiyPWForm, PublishForm,ModfiyPForm
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header,send_flow_all,user_get_ip
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports,invest_detail
 from ddbid import conf
 from django.db.models import Q
 import simplejson
@@ -175,6 +175,22 @@ def checkuser(request):
         else:
             response.write('{"info": "用户不存在","status": "n"}')  # 用户不存在
             return response
+def checkuser_phone(request):
+        response = HttpResponse()
+        response['Content-Type'] = "text/javascript"
+        u_ajax = request.POST.get('name', None)
+        if u_ajax:
+            response['Content-Type'] = "application/json"
+            r_u = request.POST.get('param', None)
+            u = User.objects.filter(username=r_u)
+            print "xxxxxxxxxxx"
+            if u.exists():
+                response.write('{"info": "用户已存在","status": "n"}')  # 用户已存在
+                return response
+            else:
+                print "ddddddddd"
+                response.write('{"info": "","status": "y"}')
+                return response
 
 def register(request):
     if request.method == 'POST':
@@ -350,10 +366,11 @@ def userinfo(request):
 
             im = Image.open(f)
             im.thumbnail((120, 120))
-            name = 'photo_user' + storage.get_available_name(str(user.id)) + '.png'
+            name = 'p_user' + storage.get_available_name(str(user.id)) + '.png'
             print name
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
+            print url
         if form.is_valid():
             try:
                 u_i = UserInformation.objects.get(user=user)
@@ -513,25 +530,27 @@ def send_smscode(request):
 
 
 def send_smscode_modify(request):
+
     if request.user.is_authenticated():
         key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(request.user.id)
     else:
         key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(user_get_ip(request))
     failed_num = cache.get(key,0)
-    if failed_num >= 2:
+    if failed_num >= 200:
         return HttpResponse(u"您修改账号次数超个2次，请30天后再试！")
 
     failed_num += 1
     cache.set(key, failed_num, 30*24*60*60)
 
     phoneNum = request.POST.get('phoneNum', '')
+
     p=re.compile('^1200[0-9]{7}$')
     a = p.match(phoneNum)
     if a:
         return HttpResponse()
     else:
         user = User.objects.filter(username=int(phoneNum))
-        print user
+        print user,"ddddddddddddddddddddd"
         if not len(user):
             print "ceshi"
             m = hashlib.md5()
@@ -560,6 +579,8 @@ def send_smscode_modify(request):
                                        headers= {'Content-Type':'text/xml'},
                                        data = data
                                       )
+        else:
+            return HttpResponse("号码已存在！")
         return HttpResponse()
 
 
@@ -597,6 +618,8 @@ def index_jf(request):
 
     return render_to_response('home.html',{}, context_instance=RequestContext(request))
 
+
+
 def safecenter(request):
     #print "safecenter:", request
     if request.method =="POST":
@@ -613,7 +636,7 @@ def safecenter(request):
             cd = form.cleaned_data
             password = cd['password']
             password2 = cd['password2']
-
+            print "xxxxxxxxxxxxxxxx"
             if int(password) == int(password2) :
                 user = auth.authenticate(username=username, password=pw)
                 if user is not None and user.is_active:
@@ -658,6 +681,7 @@ def safecenter(request):
             return HttpResponse(json.dumps(payload), content_type="application/json")
 
     else:
+        print "safecenter"
         form = ModfiyPWForm()
         t = get_template('safecenter.html')
         content_html = t.render(
@@ -670,35 +694,55 @@ def safecenter(request):
         return HttpResponse(json.dumps(payload), content_type="application/json")
 
 
-
 def change_phone_number(request):
     if request.method == "POST":
-        form = ForgetPWForm(request.POST)
+        form = ModfiyPForm(request.POST)
+        print dir(form)
+        print form.errors
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
-            _code = dict_code.get('smscode')
+            _code = request.session.get('sms_code')
             smscode = cd['smscode']
 
             print _code ,smscode
 
             if  _code == int(smscode) :
-                print "11111"
                 user = auth.get_user(request)
                 user.username = username
                 user.save()
-                form.valiatetype(10)
-                return render_to_response('userinfo.html',{"form":form},
-                                      context_instance=RequestContext(request))
+                t = get_template('success.html')
+                content_html = t.render(
+                        RequestContext(request,{'form':form,'status':u'手机号修改成功！'}))
+
+                payload = {
+                        'content_html': content_html,
+                        'success': True,
+                    }
+                return HttpResponse(json.dumps(payload), content_type="application/json")
             else:
-                form.valiatetype(2)
-                return render_to_response('userinfo.html',{"form":form},
-                                      context_instance=RequestContext(request))
+                t = get_template('success.html')
+                content_html = t.render(
+                        RequestContext(request,{'form':form,'status':u'验证码错误！'}))
+
+                payload = {
+                        'content_html': content_html,
+                        'success': True,
+                    }
+                return HttpResponse(json.dumps(payload), content_type="application/json")
 
         else:
-            return render_to_response('userinfo.html', {'form': form}, context_instance=RequestContext(request))
+            t = get_template('success.html')
+            content_html = t.render(
+                    RequestContext(request,{'form':form,'status':u'非法输入！'}))
+
+            payload = {
+                    'content_html': content_html,
+                    'success': True,
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
     else:
-        form = ForgetPWForm()
+        form = ModfiyPForm()
         t = get_template('changephone.html')
         content_html = t.render(
                 RequestContext(request,{'form':form}))
@@ -708,8 +752,6 @@ def change_phone_number(request):
                 'success': True,
             }
         return HttpResponse(json.dumps(payload), content_type="application/json")
-
-
 
 def about_us(request):
     p = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
@@ -809,7 +851,24 @@ def publish(request):
 
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
-
+def invested(request):
+    print request
+    inv = request.POST.get('inv')
+    print "xxxxxxxxxxxxxxxx"
+    id = request.POST.get('project')
+    per = request.POST.get('per')
+    print type(inv),inv,id,type(id),per
+    if inv and id:
+        print "gggggggggggggggg"
+        invest_project=Project.objects.get(id=id)
+        print type(invest_project),invest_project
+        print request.user,type(request.user)
+        i = invest_detail(invest_user=request.user,invest_project=Project.objects.get(id=id),\
+                          invest_num=inv,invest_type=1,invest_amount=per)
+        i.save()
+        print "yyyyyyyyyyyyyyyyyyyyyyyy"
+        return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
+    return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
     #web(1:不限，2：认证资深投资人，3：认证投资人，)
     #web(4：不限，5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)
@@ -910,7 +969,8 @@ def investor(request):
 def prodetails(request,objectid):
     p = Project.objects.get(id=objectid)
     forum = project_forum.objects.filter(forum_project=p)
-    return render_to_response('prodetails.html',{"result":p,"project_forum":forum}, context_instance=RequestContext(request))
+    invest_de = invest_detail.objects.filter(invest_project=p)
+    return render_to_response('prodetails.html',{"result":p,"project_forum":forum,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
 
 def project(request,objectid):

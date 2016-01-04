@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	    <script type="text/javascript" src="/static/js/timeplus.js"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
+<title>安全中心</title>
+<!--安全中心-->
+    <form name="formPW" class="modifyPWform" action="{% url 'change_phone_number' %}" method="post" >
+    <ul class="pwdpadding">
+        <li>
+            <label>新手机号</label>
+            <label style="margin-left:15px;">{{form.username}}</label>
+        </li>
+        <li class="self_code">
+            <label style="float:left;line-height:30px;font-size:14px;font-weight:bold;margin-left:27px;">验证码:</label>
+            <label style="float:left;margin-left:20px;" class="new_call">{{ form.vcode }}</label>
+            <label style="float:left;margin-left:5px;"><img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                                       src="{% url 'verifycode' %}"/></label>
+        </li>
+        <li style="float:left">
+            <label>短信验证</label>
+            <label>{{form.smscode}}</label>
+        </li>
+        <li  style="float:left; margin-left:20px;">
+            <label ><input type="button" id ="rulesubmit"  class="send-btn" value="发送验证码"/></label>
+        </li>
+        <li style="margin-left:70px; clear:both">
+            <label><input id="submit_modify" type="button" class="resetpwd-btn" value="确认修改"/></label>
+        </li>
+    </ul>
+        </form>
+
+<!---安全中心 end-->
+
+<script type="text/javascript">
+    var count =0;
+    $("#submit_modify").click(function(){
+          if(count <1){
+              var username = $("input[name=username]").val();
+              var vcode = $("input[name=vcode]").val();
+              var smscode = $("input[name=smscode]").val();
+              if($('#id_username').hasClass('inputxt Validform_error') || !username ){
+                alert("请输入手机号！");
+              }
+              else if($('#id_vcode').hasClass('inputxt Validform_error') || !vcode){
+                alert("请输入正确的验证码！");
+              }
+              else if($('#id_smscode').hasClass('Validform_checktip Validform_wrong') || !smscode){
+                alert("请输入正确的短信验证码！");
+              }
+              else{
+                 var formdata = $("#formPH").serialize();
+                 $.post("{% url 'change_phone_number' %}",
+                         formdata,
+                         function(data){}
+                         );
+                 count = count + 1;
+              }
+          }
+          else{location.reload()};
+
+    });
+ $(function(){
+    var demo = $(".modifyPWform").Validform({
+        tiptype: 3,
+        label: ".label",
+        showAllError: true,
+        datatype: {
+            "zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+        },
+        ajaxPost: false,
+        callback:function(data){
+            str = "success";
+        }
+    });
+
+    demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+    demo.addRule([
+        {
+            ele: "#id_username",
+            datatype: "m"
+        },
+        {
+            ele: "#id_smscode",
+            datatype: "n4"
+        },
+        {
+            ele: "#id_vcode",
+            datatype: "n4"
+        }
+    ]);
+
+});
+</script>
+
+</html>

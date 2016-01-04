@@ -228,7 +228,7 @@ INVEST_TYPE_CHOICES =(
     ('2', '跟投'),
 )
 class UserInformation(models.Model):
-    attention_persion = models.ManyToManyField(User, related_name = "attention_persion_set",blank=True, null=True)#关注他的人
+
     user = models.OneToOneField(User)
     photo_url = models.CharField("照片",max_length=30,blank=True, null=True)
     nickname = models.CharField('昵称', max_length=30, blank=True, null=True)
@@ -262,6 +262,7 @@ class UserInformation(models.Model):
     ideas = models.TextField('投资理念',blank=True, null=True)
     direction = models.TextField('投资方向', blank=True, null=True)
     industry = models.CharField('关注的行业', max_length=1,choices=INDUSTRY_CHOICE, blank=True, null=True)
+    attention_persion = models.ManyToManyField(User, related_name = "attention_persion_set",blank=True, null=True)#关注他的人
     fans = models.ManyToManyField(User, related_name = "fans_set",blank=True, null=True)#他的粉丝
     cate = models.CharField('行业类别', max_length=1,choices=CAT_CHOICE,blank=True, null=True)#所在行业
     link = models.URLField('推广链接', max_length=255, blank=True, null=True)
@@ -286,11 +287,11 @@ class Project(models.Model):
     description = models.TextField('项目描述',blank=True, null=True)#项目描述
     category = models.CharField('行业类别',max_length=1,choices=CATEGORY_CHOICE, blank=True, null=True)#行业类别
     amount = models.CharField('融资总额',max_length=255, blank=True, null=True)#融资总额
-    leader_inv_min = models.CharField('领投最低投资金额',max_length=255, blank=True)#领头最低投资额
-    inv_min = models.CharField('跟投最低投资金额',max_length=255, blank=True)#跟头最低投资额
+    leader_inv_min = models.CharField('领投最低投资股数',max_length=255, blank=True)#领头最低投资额
+    inv_min = models.CharField('跟投最低投资股数',max_length=255, blank=True)#跟头最低投资额
     invest_amount = models.CharField('每股金额',max_length=255, blank=True, null=True)#投资金额
     invest_num = models.CharField('股数',max_length=255, blank=True, null=True)#份数
-    finish = models.CharField('已完成融资金额',max_length=255, blank=True, null=True)#已完成融资金额
+    finish = models.CharField('已完成融资股数',max_length=255, blank=True, null=True)#已完成融资金额
     fund_use = models.TextField('资金用途',blank=True, null=True)#资金用途
     transfer_equity = models.CharField('出让股份',max_length=255, blank=True, null=True)#出让的股权份额
     company = models.CharField('注册公司',max_length=255, blank=True, null=True)#注册公司
@@ -320,7 +321,7 @@ class invest_detail(models.Model):
     invest_type = models.CharField('领投or跟投',max_length=1,choices=INVEST_TYPE_CHOICES, blank=True, null=True)#领投or跟投
     time_created = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
-        return u'%s' % self.invest_user
+        return u'%s' % self.invest_project
 
 class project_forum(models.Model):
     forum_user = models.ForeignKey(User,related_name = "forum_user_set", blank=True, null=True)

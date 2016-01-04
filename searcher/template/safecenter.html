@@ -2,21 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/static/css/safecenter.css" />
 <title>安全中心</title>
 <!--安全中心-->
 
     <form id="formPW" class="modifyPWform" action="" method="post"  enctype="multipart/form-data" >
-    <ul class="pwdpadding">
-        <li>
+    <ul class="pwdcter">
+        <li class="newpwd-text">
             <label>新密码</label>
             <label style="margin-left:15px;">{{form.password}}</label>
         </li>
-        <li>
+        <li class="verify-text">
             <label>确认密码</label>
             <label>{{form.password2}}</label>
         </li>
-        <li style="margin-left:70px;">
-            <label><input id ="submit_password" type="button" class="resetpwd-btn" value="确认修改"/></label>
+        <li class="save-btn">
+            <label><input id ="submit_password" type="button" value=" " style="background: url('/static/images/verifyupdate.png') no-repeat;border: 0 none;width:105px;height: 35px;"/></label>
         </li>
     </ul>
         </form>
@@ -25,11 +26,18 @@
 <script type="text/javascript">
 $(function(){
     $('#submit_password').click(function(){
-             var formdata = $("#formPW").serialize();
-             $.post("{% url 'safecenter' %}",
-                     formdata,
-                     function(data){ $('#safe_center').html(data.content_html);}
-                     );
+             var password = $("input[name=password]").val();
+             var password2 = $("input[name=password2]").val();
+             if(password.length >5){
+                 if(password == password2){
+                     var formdata = $("#formPW").serialize();
+                     $.post("{% url 'safecenter' %}",
+                             formdata,
+                             function(data){
+                               $('#safe_center').html(data.content_html);}
+                             );
+                 }else{alert("两次输入的密码不一致！");};
+             }else{alert("密码至少6位");};
 	});
 });
 </script>

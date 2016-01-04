@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">  
 		$(function(){
+			$('#daohang a:eq(0)').addClass('clickTag');
 			$('#daohang').find('a').click(function(){
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
@@ -192,26 +193,10 @@
 						 <ul>
 						
 						 <li>
-							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr3.png" class="ptxy_img"/></a>
-							<p>&nbsp;&nbsp;融资居间协议
-							<span><a href="/static/download/融资居间协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
-							<a href="/intermediary/1"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
-							</p>
-							<div></div>
-						 </li>
-						  <li>
 							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr1.png" class="ptxy_img"/></a>
 							<p>&nbsp;&nbsp;有限合伙协议
 							<span><a href="/static/download/有限合伙协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
-							<a href="/intermediary/2"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
-							</p>
-							<div></div>
-						 </li>
-						  <li>
-							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr4.png" class="ptxy_img"/></a>
-							<p>&nbsp;&nbsp;投资协议
-							<span><a href="/static/download/投资协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
-							<a href="/intermediary/3"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
+							<a href="/intermediary/1"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
 							</p>
 							<div></div>
 						 </li>
@@ -219,14 +204,46 @@
 							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr2.png" class="ptxy_img"/></a>
 							<p>&nbsp;&nbsp;股权转让协议
 							<span><a href="/static/download/股权转让协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
+							<a href="/intermediary/2"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
+							</p>
+							<div></div>
+						 </li>
+						  <li>
+							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr3.png" class="ptxy_img"/></a>
+							<p>&nbsp;&nbsp;融资居间协议
+							<span><a href="/static/download/融资居间协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
+							<a href="/intermediary/3"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
+							</p>
+							<div></div>
+						 </li>
+						  <li>
+							<a href="#" class="ptxy_a"><img src="/static/images/zyxhhr4.png" class="ptxy_img"/></a>
+							<p>&nbsp;&nbsp;投资协议
+							<span><a href="/static/download/投资协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
 							<a href="/intermediary/4"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
 							</p>
 							<div></div>
 						 </li>
 							 <li>
-								 <a href="#" class="ptxy_a"><img src="/static/images/rgyx.png" class="ptxy_img"/></a>
-								 <p>&nbsp;&nbsp;认购意向书
-							<span><a href="/static/download/股权转让协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
+								 <a href="#" class="ptxy_a"><img src="/static/images/zyxhhr5.png" class="ptxy_img"/></a>
+								 <p>&nbsp;&nbsp;认购意向书协议
+							<span><a href="/static/download/认购意向书协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
+							<a href="/intermediary/4"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
+								 </p>
+								 <div></div>
+							 </li>
+							 <li>
+								 <a href="#" class="ptxy_a"><img src="/static/images/zyxhhr6.png" class="ptxy_img"/></a>
+								 <p>&nbsp;&nbsp;注册协议
+							<span><a href="/static/download/注册协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
+							<a href="/intermediary/4"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
+								 </p>
+								 <div></div>
+							 </li>
+							 <li>
+								 <a href="#" class="ptxy_a"><img src="/static/images/zyxhhr7.png" class="ptxy_img"/></a>
+								 <p>&nbsp;&nbsp;服务协议
+							<span><a href="/static/download/服务协议.doc"><img class="down" src="/static/images/xiazai38-32.png"/></a>&nbsp;&nbsp;
 							<a href="/intermediary/4"><img class="search" src="/static/images/liulan38-32.png"/></a></span>
 								 </p>
 								 <div></div>
@@ -264,19 +281,27 @@
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 <p style="margin-left:-40px;">众投，通俗地讲，就是对于前景看好的项目（企业），汇聚大众的力量一起来投资，众人拾柴火焰高，在成就企业发展的同时，也成就了投资人。
-											 <br>
-											 什么是新三板？<br>
-											 “新三板”市场原指中关村科技园区非上市股份有限公司进入代办股份系统进行转让试点，因为挂牌企业均为高科技企业而不同于原转让系统内的退市企业及原STAQ、NET系统挂牌公司，故形象地称为“新三板”。新三板的意义主要是针对公司的，会给该企业／公司带来很大的好处。目前，新三板不再局限于中关村科技园区非上市股份有限公司，也不局限于天津滨海、武汉东湖以及上海张江等试点地的非上市股份有限公司，而是全国性的非上市股份有限公司股权交易平台，主要针对的是中小微型企业。10月8日消息，证监会全面支持新三板市场发展的文件即将公布，将包括分层等制度安排。
-											 截止2015年12月25日挂牌企业家数已达5016家。
-
 										 </p>
 										 <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 </li>
 									 </ul>
-									 
 								</li>
-								<li><a href="#Menu=ChildMenu2" onclick="DoMenu('ChildMenu2')">如何成为认证投资人?<span>▼</span></a>
-									 <ul id="ChildMenu2" class="collapsed">
+								<li><a href="#Menu=ChildMenu2"  onclick="DoMenu('ChildMenu2')">什么是新三板？<span>▼</span></a>
+									<ul id="ChildMenu2" class="collapsed">
+										<li>
+											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<p style="margin-left:-40px;">
+												“新三板”市场原指中关村科技园区非上市股份有限公司进入代办股份系统进行转让试点，因为挂牌企业均为高科技企业而不同于原转让系统内的退市企业及原STAQ、NET系统挂牌公司，故形象地称为“新三板”。新三板的意义主要是针对公司的，会给该企业／公司带来很大的好处。目前，新三板不再局限于中关村科技园区非上市股份有限公司，也不局限于天津滨海、武汉东湖以及上海张江等试点地的非上市股份有限公司，而是全国性的非上市股份有限公司股权交易平台，主要针对的是中小微型企业。10月8日消息，证监会全面支持新三板市场发展的文件即将公布，将包括分层等制度安排。
+												截止2015年12月25日挂牌企业家数已达5016家。
+
+											</p>
+											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+										</li>
+									</ul>
+
+								</li>
+								<li><a href="#Menu=ChildMenu3" onclick="DoMenu('ChildMenu3')">如何成为认证投资人?<span>▼</span></a>
+									 <ul id="ChildMenu3" class="collapsed">
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 <p style="margin-left:-40px;" >第一步:注册，葡萄藤众投网站注册<br>
@@ -289,7 +314,7 @@
 									 </ul>
 									
 								</li>
-								<li><a href="#Menu=ChildMenu3" onclick="DoMenu('ChildMenu3')">如何参与项目众投？<span>▼</span></a>
+								<li><a href="#Menu=ChildMenu4" onclick="DoMenu('ChildMenu4')">如何参与项目众投？<span>▼</span></a>
 									 <ul id="ChildMenu3" class="collapsed">
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
@@ -310,8 +335,8 @@
 									 </ul>
 									 
 								</li>
-								<li><a href="#Menu=ChildMenu4" onclick="DoMenu('ChildMenu4')">投资人何时开始打款？<span>▼</span></a>
-									 <ul id="ChildMenu4" class="collapsed">
+								<li><a href="#Menu=ChildMenu5" onclick="DoMenu('ChildMenu5')">投资人何时开始打款？<span>▼</span></a>
+									 <ul id="ChildMenu5" class="collapsed">
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 <p style="margin-left:-40px;" >目前我们平台的规则为认筹资金到达100%投资人就可以开始打款，邮件或短信也会进行通知。假设A项目募集资金100万元，那么认筹到达120万元的时候可以开始打款，而打款实际到账资金接近100万元的时候，我们以官网或者邮件的形式通知投资人暂停打款，并且会关闭认筹渠道。当然，我们平台和融资方有权选择投资人以及拒绝一些投机或者目的不明的投资人。
@@ -320,8 +345,8 @@
 										 </li>
 									 </ul>
 								</li>
-								<li><a href="#Menu=ChildMenu5" onclick="DoMenu('ChildMenu5')">投资人如何打款？<span>▼</span></a>
-									<ul id="ChildMenu5" class="collapsed">
+								<li><a href="#Menu=ChildMenu6" onclick="DoMenu('ChildMenu6')">投资人如何打款？<span>▼</span></a>
+									<ul id="ChildMenu6" class="collapsed">
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 											<p style="margin-left:-40px;" >投资人在签署完有限合伙协议就可以打款了，具体收款账号信息会在有限合伙协议里注明。
@@ -332,8 +357,8 @@
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu6" onclick="DoMenu('ChildMenu6')">项目融资不足与超募解决方案是什么？<span>▼</span></a>
-									<ul id="ChildMenu6" class="collapsed">
+								<li><a href="#Menu=ChildMenu7" onclick="DoMenu('ChildMenu7')">项目融资不足与超募解决方案是什么？<span>▼</span></a>
+									<ul id="ChildMenu7" class="collapsed">
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 											<p style="margin-left:-40px;" >1.若在约定的挂牌时间内，没有认购到项目总体融资额度的100%，则视项目融资失败。投资人可以和融资方协商，就是否可以按现有的投资和相应的股权比例，签订投资协议。<br>
@@ -343,8 +368,8 @@
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu7" onclick="DoMenu('ChildMenu7')">为什么需要设立有限合伙企业？<span>▼</span></a>
-									<ul id="ChildMenu7" class="collapsed">
+								<li><a href="#Menu=ChildMenu8" onclick="DoMenu('ChildMenu8')">为什么需要设立有限合伙企业？<span>▼</span></a>
+									<ul id="ChildMenu8" class="collapsed">
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 											<p style="margin-left:-40px;" >设立有限合伙企业主要从决策程序和税务两方面考虑。<br>
@@ -357,8 +382,8 @@
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu8" onclick="DoMenu('ChildMenu8')">投资人投资后如何退出？<span>▼</span></a>
-									<ul id="ChildMenu8" class="collapsed">
+								<li><a href="#Menu=ChildMenu9" onclick="DoMenu('ChildMenu9')">投资人投资后如何退出？<span>▼</span></a>
+									<ul id="ChildMenu9" class="collapsed">
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 											<p style="margin-left:-40px;" >由于有限合伙企业的投资人是由多名个人投资人组成，在投资一定时间之后，如何退出以及何时退出，管理合伙人代表合伙企业决定是否退出，具有最终决定权。

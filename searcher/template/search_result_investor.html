@@ -17,8 +17,8 @@
 						<img id="focus_{{result.user}}" name="{{result.id}}" src="/static/images/focus.png" style="padding:2px 5px" width="70" /><br>
 					<img id="priletter_{{result.user}}" name="{{result.realname}}" data-id="{{result.id}}" src="/static/images/priletter.png" style="padding:2px 5px" width="70"/></div>
 				<div id ="person" style=" font-weight:bold;font-size:24px;padding:5px 0;color:#000;margin-top:20px;margin-left:-5px;text-align: left">
-					{% if result.realname %}
-						{{result.realname}}
+					{% if result.nickname %}
+						{{result.nickname}}
 					{% else %}
 					    {{result.user.username|phone_cut}}
 					{% endif %}

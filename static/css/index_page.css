@@ -36,12 +36,18 @@ a{text-decoration:none;}
 .biaotidiv ul li.ckgdstyle{float:right}
 .biaotidiv ul li a{font-size:12px; color:#000000;}
 .resultpage{width:255px;height:330px;margin-left:30px;float:left;}
-.resultpage a{display:block;} 
+.resultpage a{display:block;}
+.resultpage a:hover {
+	-o-box-shadow:0 0 3px 0 #0e90d2,0 1px 6px 0 #888;
+	box-shadow:0 0 3px 0 #0e90d2,0 1px 6px 0 #888;
+	transform:translateY(-3px);
+	height:302px;
+}
 .heartimg{width:80px;height:20px;float:left;padding-top: 5px;padding-left: 5px;}
 .littleimg{width:50px;height: 20px;float:left;top: 5px;left: 5px;position:relative;background-color:#CCC;border:1px solid #CCC;border-radius:10px;-moz-border-radius:10px;-moz-border-radius:10px;filter:alpha(opacity=80);opacity:0.8;font-size: 14px;}
 .littleimg span{height:20px;font-weight:bold; color:#FFF;display: block;float: right;padding-right: 10px;}
 .jingxuan{ position:relative;}
-.jingxuan img{float:right;}
+.jingxuan img{float:right;margin-top: -8px;margin-right: -5px}
 .Cul1 li{color:#000000;font-size:12px;line-height: 30px;}
 .Cul1 li b{font-size:16px;line-height: 30px; font-weight:bold;}
 .mjzximg img{width:255px;}

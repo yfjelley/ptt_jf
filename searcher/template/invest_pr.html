@@ -19,7 +19,14 @@
             }
             else{
                 if(check==true){
-                    alert('投资成功')
+                        $.post("/invested/",
+                        {project:{{project.id}},
+                         inv:input_invest,
+                         per:{{project.invest_amount}}
+                        },
+                        function(data)
+                        { if(data.t=='1'){alert("预约投资成功!");
+                        };});
                 }else{
                     alert('你还没有同意葡萄藤众筹的投资须知以及条款呢');
                 }
@@ -46,25 +53,29 @@
             <div>
                 <p>
                     <span style="font-size:18px;font-weight:bold;">本轮融资</span>
-                    <span style="font-size:22px;font-weight:bold;">{{project.amount}}</span>
-                    <span style="font-size:14px;">万元</span>
+                    <span style="font-size:22px;font-weight:bold;">{{project.invest_num}}</span>
+                    <span style="font-size:14px;">股</span>
+                    <span style="font-size:18px;font-weight:bold;">每股</span>
+                    <span style="font-size:22px;font-weight:bold;">{{project.invest_amount}}</span>
+                    <span style="font-size:14px;">元</span>
+
                 <p>
                 <div class="donline1">
                     <div class="lmoney">
                         <div style="float:left;width: 6px;height:6px;border-radius: 60px;background:#f06e57;margin-top: 10px;margin-left:8px;"></div>
                         {% ifequal invest_type 1 %}
-                        <label style="float:left;margin-top: 5px;margin-left:12px">领投金额必须大于{{project.leader_inv_min}}万元</label>
+                        <label style="float:left;margin-top: 5px;margin-left:12px">领投金额必须大于{{project.leader_inv_min}}股</label>
                         {% else %}
-                        <label style="float:left;margin-top: 5px;margin-left:12px">跟投金额必须大于{{project.leader_inv_min}}万元</label>
+                        <label style="float:left;margin-top: 5px;margin-left:12px">跟投金额必须大于{{project.leader_inv_min}}股</label>
                         {% endifequal %}
                     </div>
                 <div style="clear: both"></div>
                     <div class="smoney">
                         <div style="float:left;width: 6px;height:6px;border-radius: 60px;background:#f06e57;margin-top: -10px;margin-left:8px;"></div>
                          {% ifequal invest_type 2 %}
-                        <label style="float:left;margin-top: -15px;margin-left:25px">启动金额必须大于{{project.inv_min}}万元</label>
+                        <label style="float:left;margin-top: -15px;margin-left:25px">启动金额必须大于{{project.inv_min}}股</label>
                         {% else %}
-                        <label style="float:left;margin-top: -15px;margin-left:25px">启动金额必须大于{{project.inv_min}}万元</label>
+                        <label style="float:left;margin-top: -15px;margin-left:25px">启动金额必须大于{{project.inv_min}}股</label>
                         {% endifequal %}
                     </div>
                 </div>
@@ -72,9 +83,9 @@
             <div>
                 <div style="font-size:18px;font-weight:bold;margin-top:25px;margin-bottom:5px;margin-left:14px;">投资金额</div>
                 {% ifequal invest_type 1 %}
-                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.leader_inv_min}}"/><span style="position: relative;left:-50px;">万元</span></div>
+                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.leader_inv_min}}"/><span style="position: relative;left:-50px;">股</span></div>
                 {% else %}
-                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.inv_min}}"/><span style="position: relative;left:-50px;">万元</span></div>
+                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.inv_min}}"/><span style="position: relative;left:-50px;">股</span></div>
                 {% endifequal %}
                 <div style="margin-top:10px;margin-bottom:15px;margin-left:15px;">
                     <input type="checkbox" value=""><a href="javascript:void(0)" style="color:#FF6600;font-size:14px;">同意葡萄藤众筹的投资须知以及条款</a>
