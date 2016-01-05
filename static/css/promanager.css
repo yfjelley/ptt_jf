@@ -21,15 +21,15 @@ input,button{outline: 0}
 .birth-select{margin-top:-35px; margin-left:80px;}
 /*<!--tabÇÐ»»°´Å¥-->*/
 #ProDiv{width:70%;height:700px; margin:0 auto;}
-.ProChange{width:200px; height:700px; float:left;margin-top:20px}
-.ProChange li{padding:15px 0px;}
-.ProChange a{margin-left:18px;font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
-.ProChange a:hover{border-color:#e1604d; font-weight:bold;}
+.ProChange{width:140px; height:700px; float:left;padding:15px;margin-top: 20px;margin-left:18px;}
+.ProChange li{padding:5px 0;}
+.ProChange a{font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
+.ProChange a:hover{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
 .div_right{ float:left;width:700px;height:800px; margin-top:-34px;}
 .display{display:none}
 .touzi_message{width:600px;height:500px;}
 .touzi-class{width:600px;height:50px;}
-.Prohr hr{border:none; border-top:1px solid #eeeef0;width:80px;height:1px; margin-left:-10px; margin-top:15px;}
+.Prohr hr{border:none; border-top:1px solid #eeeef0;width:80px;height:1px; margin-left:1px; margin-top:15px;}
 /*<!--ÌáÐÑÉèÖÃ-->*/
 .button-shangchuan{border:1px solid #4a3c70;position:relative; display:inline-block;text-decoration:none;overflow:hidden; text-indent:0; line-height:20px;padding:4px 0px; cursor:pointer}
 .button-shangchuan input{position:absolute;right:0;top:0; opacity:0;cursor:pointer}
@@ -37,39 +37,34 @@ input.button_save{border:1px solid #4a3c70;background:#4a3c70;width:85px;color:#
 .gupiao-change{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:10px; margin-top:20px;}
 .quxiao-attention{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:-80px; margin-top:30px;}
 .ProRight{width:95px;height:500px;float:left;}
-.ProCenter{width:750px; height:150px;}
-.ProCenter a{text-decoration:none; color:#000000; margin:0px 20px;}
-.ProCenter a:link,a:visited{ border-bottom-style:solid; border-color:transparent; border-width:3px;}
-.ProCenter a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-.ProCenter{margin-top:110px;}
-.ProCenter1{width:750px; height:150px;}
-.ProCenter1 a{text-decoration:none; color:#000000; margin:0px 20px;}
-.ProCenter1 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-.ProCenter1{margin-top:80px;}
-.ProCenter2{width:750px; height:150px;}
-.ProCenter2 a{text-decoration:none; color:#000000; margin:0px 20px;}
-.ProCenter2 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
-.ProCenter2{margin-top:80px;}
+.ProCenter{width:750px; height:150px;margin-top:110px;}
+.ProCenter a{text-decoration:none; color:#000000; margin:0px 20px;font-size:18px;display:block;height:15px;line-height:30px;}
+.ProCenter a:hover{ border-bottom:2px solid red;padding-top:1px;display:inline-block;height:15px;line-height:30px;}
+.ProCenter1{width:750px; height:100px;margin-top:80px;}
+.ProCenter1 a{text-decoration:none; color:#000000; margin:0px 20px;font-size:18px;display:block;height:15px;line-height:30px;}
+.ProCenter1 a:hover{ border-bottom:2px solid red;padding-top:1px;display:inline-block;height:15px;line-height:30px;}
+.ProCenter2{width:750px; height:100px;margin-top:80px;}
+.ProCenter2 a{text-decoration:none; color:#000000; margin:0px 20px;font-size:18px;display:block;height:15px;line-height:30px;}
+.ProCenter2 a:hover{ border-bottom:2px solid red;padding-top:1px;display:inline-block;height:15px;line-height:30px;}
 .ProCenter3{width:750px; height:150px;}
 .ProCenter3 a{text-decoration:none; color:#000000; margin:0px 20px;}
 .ProCenter3 a:hover{border-color:#e1604d;font-weight:bold; cursor:pointer}
 .ProCenter3{margin-top:80px;}
 .prosonPage1{width:750px; height:350px; margin-top:-80px;}
-.prosonPage2{width:750px; height:350px;}
+.prosonPage2{width:750px; height:350px;margin-left:-55px}
 .personal-message2{margin-left:-90px;margin-top:-30px;}
 .pwdpadding li{padding-bottom:10px}
 .pwdpadding2 li{padding-bottom:10px}
 .resetpwd-btn{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:40px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .send-btn{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:30px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
-.prosonPage3{width:750px; height:350px; margin-top:-50px; margin-left:-90px;}
+.prosonPage3{width:750px; height:350px;}
 .prosonPage4{width:750px; height:350px;}
 .giftpadding li{padding:15px 0px}
-input.input_butt{border:1px solid #4a3c70; background-color:#4a3c70;width:100px; height:30px;color:#FFFFFF; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
+.input_butt{border:1px solid #4a3c70; background-color:#4a3c70;width:100px; height:30px;color:#FFFFFF; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
 .Proli2 hr{border:none;border-right:1px solid #000000; width:1px; height:45px; margin-top:15px;}
 .Proli3 hr{border:none; border-top:1px solid #000000;width:700px; height:1px; margin-left:-50px; margin-top:15px;}
 .Proli4 hr{border:none; border-top:1px solid #000000;width:400px; height:1px;}
 .Proli5 hr{border:none;border-right:1px solid #000000; width:1px; height:65px; margin-top:-20px;}
-
 .Proli11 label{margin:0px 50px;}
 .xieyi_button{border:1px solid #4a3c70;width:100px;height:35px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;}
 .license-file{border:1px solid #4a3c70;position:relative;display:inline-block;font-size:14px;text-align:center;width:70px;height:20px; border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px; background:#4a3c70; color:#FFFFFF;padding:4px 0;cursor:pointer;}
@@ -102,10 +97,9 @@ input.input_butt{border:1px solid #4a3c70; background-color:#4a3c70;width:100px;
     padding-top: 15px;
     border:1px solid #999999;
 }
-
+.upload_file img{width: 80px;height: 80px;}
 .myfile{ display:none; }
 #jigou{width:440px;margin-left:90px;}
-
 .proleft_detail input[type='checkbox'] + label:before{
     background: url(/static/images/checked.png);
     content:' ';
@@ -154,3 +148,10 @@ input.input_butt{border:1px solid #4a3c70; background-color:#4a3c70;width:100px;
     padding: 0 5px;
 }
 .focus-pro li{padding:15px 10px}
+.yitou-pro li{padding:15px 10px}
+.left_label{position: relative;top:-11px;cursor: pointer}
+.clickTag{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
+.click-bottom-Tag{border-bottom:2px solid red;padding-top:1px;display:inline-block;height:15px;line-height:30px;}
+.pro-label{position: relative;top:-11px;cursor: pointer}
+.self-label{position: relative;top:-11px;cursor: pointer}
+.message-label{position: relative;top:-11px;cursor: pointer}

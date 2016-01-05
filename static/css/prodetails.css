@@ -5,10 +5,11 @@
 .proleft_detail{padding:15px;}
 .proleft_detail tr td{padding: 10px 0}
 .proleft_detail tr{border-bottom: 1px solid #a8a8a8;}
-.pro-title{margin-left:-20px;margin-top:15px;}
+.pro-title{margin-left:-20px;margin-top:15px;float: left}
 .pro-title>.mongjing{font-size:28px;}
 .pro-title>.mongjiangimg{position:absolute;top:135px;}
 .pro-title>.zczhong{margin-left:45px}
+.pro-status{float: left;padding:15px 0 0 10px}
 .pro-writing{margin-left:-20px;margin-top:20px;}
 input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.png") no-repeat;width:77px;height:25px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:20px;}
 input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:6px;}

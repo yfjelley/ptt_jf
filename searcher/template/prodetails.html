@@ -114,10 +114,20 @@
                 <li style="float:left">
                 	<ul>
                 		<li class="pro-title">
-                			<label class="mongjing">{{result.name}}</label>
-                    		<label class="mongjiangimg"><img src="/static/images/redgou.png" /></label>
-                    		<label class="zczhong" id="click">{{result.click.all|length}}</label>
+                			<label class="mongjing">{{result.name}}</label></li>
+                        <li class="pro-status">
+							{% ifequal result.status 0 %}
+							<label class="mongjiangimg"><img src="/static/images/yrzhong.png" ></label>
+							{% endifequal %}
+							{% ifequal result.status 1 %}
+							<label class="mongjiangimg"><img src="/static/images/ztzhong.png" ></label>
+							{% endifequal %}
+							{% ifequal result.status 2 %}
+							<label class="mongjiangimg"><img src="/static/images/zcfinish.png" ></label>
+							{% endifequal %}
+                    		<label class="zczhong" id="click"></label>
                 		</li>
+						<li style="clear: both;"></li>
                         <li class="pro-writing">
                        		<label>{{result.introduction}}</label>
                         </li>
@@ -182,15 +192,13 @@
                 	<label><div style="border-top:1px solid #eeeef0;width:700px;height:1px;"></div></label> 
                 </li>
                 <div class="div-right">
-                	<div id="projianjie">
+					<div id="projianjie">
                     	<ul style="float:left">
                         	<li>
                             {{result.description|safe}}
                             </li>
                         </ul>
                     </div>
-
-
                 <div id="temjianjie" class="display">
                 	<div>
                 		<ul style="float:left">
@@ -269,7 +277,6 @@
 									</div>
 								</dd>
 							</dl>
-
 								   {% endfor %}
 							   {% endif %}
 						<dl style="clear:both"></dl>
@@ -311,9 +318,9 @@
 					<td>投资人</td>
 				</tr>
 				<tr>
-					<td>{{result.invest_amount}}</td>
-					<td>{{result.invest_num}}份</td>
-					<td>{{result.investor.all|length}}</td>
+					<td>{{result.invest_amount}}元</td>
+					<td>{{result.invest_num}}万份</td>
+					<td>{{result.investor.all|length}}个人</td>
 				</tr>
 				<tr>
 					<td>
@@ -329,11 +336,11 @@
 				<tr>
 					<td colspan="3" class="detail-percent">
 						<div style="width:100%;border:1px solid #868686;border-radius:10px;">
-							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div>
+							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.JPG) no-repeat;"></em></div>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">已预约份数:{{result.finish}}</td>
+					<td colspan="2">已预约份数:{{result.finish}}万份</td>
 					<td>完成率:{% widthratio result.finish result.invest_num 100 %}%</td>
 				</tr>
 				<tr>

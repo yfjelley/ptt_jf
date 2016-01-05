@@ -201,18 +201,18 @@ $(function () {
 </script> 
 <script type="text/javascript">
 	$(function(){
-			$('#daohang').find('li').click(function(){
+			$('#daohang').find('a').click(function(){
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
 			});
 	
-			$('#Prodaohang').find('li').click(function(){
+			$('#Prodaohang').find('a').click(function(){
 				var id =$(this).data('qq');
 				//alert(id);
 				$('#'+id).show().siblings().hide();
 			});
 			
-			$('#anquanzhongxin').find('li').click(function(){
+			$('#anquanzhongxin').find('a').click(function(){
 				var id =$(this).data('dd');
 				if (id =='xgmm' )
 				{$.get("/safecenter/",function(data){ $('#safe_center').html(data.content_html);});}
@@ -220,7 +220,7 @@ $(function () {
 				{$.get("/change_phone_number/",function(data){ $('#safe_center').html(data.content_html);});};
 			});
 
-			$('#xiaoxitongzhi').find('li').click(function(){
+			$('#xiaoxitongzhi').find('a').click(function(){
 				var id =$(this).data('aa');
 				$('#'+id).show().siblings().hide();
 			});
@@ -243,9 +243,40 @@ $(function () {
 			$('#prorzmessage').find('li').click(function(){
 				var id=$(this).data('jj');
 				$('#'+id).show().siblings().hide();
-			});						
+			});
 	});
 </script>
+	<script type="text/javascript">
+		$(function(){
+			$('#daohang a:eq(0)').addClass('clickTag');
+			$('#daohang').children('a').bind('focus',function(){
+				$('#daohang a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('clickTag').siblings().removeClass('clickTag');
+			})
+
+			$('#Prodaohang a:eq(0)').addClass('click-bottom-Tag');
+			$('#Prodaohang').children('a').bind('focus',function(){
+				$('#Prodaohang a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('click-bottom-Tag').siblings().removeClass('click-bottom-Tag');
+			})
+
+			$('#anquanzhongxin a:eq(0)').addClass('click-bottom-Tag');
+			$('#anquanzhongxin').children('a').bind('focus',function(){
+				$('#anquanzhongxin a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('click-bottom-Tag').siblings().removeClass('click-bottom-Tag');
+			})
+
+			$('#xiaoxitongzhi a:eq(0)').addClass('click-bottom-Tag');
+			$('#xiaoxitongzhi').children('a').bind('focus',function(){
+				$('#xiaoxitongzhi a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('click-bottom-Tag').siblings().removeClass('click-bottom-Tag');
+			})
+		})
+	</script>
 <script type="text/javascript">
 $(function(){
     $('#selfcenterclick').click(function(){
@@ -267,36 +298,20 @@ $(function(){
 <div style="height:50px;"></div>
 <div class="UserCenter">
 <!--项目的tab按钮:包括基本信息,项目管理,投资认证,安全中心,消息通知,邀请好友-->
-	<div class="ProChange" id="daohang">		
-		<ul>
-			<li data-pp="basicmessage">
-				<a href="javascript:void(0);" style="color:#000;">基本信息</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="promanager">
-				<a href="javascript:void(0);" style="color:#808080;">项目管理</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="invest">
-				<a href="javascript:void(0);" style="color:#808080;">投资认证</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="selfcenter" id="selfcenterclick">
-				<a href="javascript:void(0);" style="color:#808080;">安全中心</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="messageinfo">
-				<a href="javascript:void(0);" style="color:#808080;">消息通知</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="txsz">
-				<a href="javascript:void(0)" style="color:#808080;"> 提醒设置</a>
-			</li>
-			<div class="Prohr"><hr /></div>
-			<li data-pp="invitefriend">
-				<a href="javascript:void(0);" style="color:#808080;">邀请好友</a>
-			</li>
-		</ul>
+	<div class="ProChange" id="daohang">
+		<a data-pp="basicmessage" href="javascript:void(0);" style="color:#000;"><label class="left_label">基本信息</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="promanager" href="javascript:void(0);" style="color:#808080;"><label class="left_label">项目管理</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="invest" href="javascript:void(0);" style="color:#808080;"><label class="left_label">投资认证</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="selfcenter" id="selfcenterclick" href="javascript:void(0);" style="color:#808080;"><label class="left_label">安全中心</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="messageinfo" href="javascript:void(0);" style="color:#808080;"><label class="left_label">消息通知</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="txsz" href="javascript:void(0)" style="color:#808080;"><label class="left_label">提醒设置</label></a>
+		<div class="Prohr"><hr /></div>
+		<a data-pp="invitefriend" href="javascript:void(0);" style="color:#808080;"><label class="left_label">邀请好友</label></a>
 	</div>
 <!--项目的tab按钮 end-->
 
@@ -317,7 +332,7 @@ $(function(){
 						<input type="file" name="file" />
                     </a>
 				</li>
-				<li style=" margin-top:12px; margin-left:3px;">
+				<li style=" margin-top:12px; margin-left:-10px;">
 					<img src="/static/images/touzi.png" />
 				</li>
 			</ul>
@@ -405,31 +420,14 @@ $(function(){
 <!--项目管理-->
 		<div id="promanager" class="display">
 			<div class="ProCenter" id="Prodaohang">
-                <ul style="margin-left:-80px;">
-                    <label style="font-size:30px;float:left; margin-top:-50px; padding-top:2px;">项目管理</label>		
-                    <li data-qq="ltxm" style="float:left;padding-top:30px;">
-                        <a href="javascript:void(0)">已投项目</a>
-                    </li>
-                    <li data-qq="gzxm" style="float:left;padding-top:30px;">
-                        <a href="javascript:">关注的项目</a>
-                    </li>
-					<li data-qq="wdxm" style="float:left;padding-top:30px;">
-						<a href="javascript:;">关注的人</a>
-					</li>
-					<li style=" float:left; margin-left:-310px;">
-                        <div style="border-right:1px solid #eeeef0;width:1px; height:55px;"></div>								
-                    </li>					
-                    <li style=" float:left; margin-left:-210px;">
-                        <div style="border-right:1px solid #eeeef0;width:1px; height:55px;"></div>					
-                    </li>
-                    <li style=" float:left; margin-left:-100px;">
-                        <div style="border-right:1px solid #eeeef0;width:1px; height:55px;"></div>					
-                    </li>
-                    <li style="clear:both"></li>
-                    <li>
-                       <div style="border-top:1px solid #eeeef0;width:700px; height:1px;"></div>
-                    </li>		
-                </ul>
+                    <label style="font-size:30px;float:left; margin-top:-50px; padding-top:2px;">项目管理</label>
+                        <a data-qq="ltxm" style="float:left;padding-top:20px;" href="javascript:void(0)"><label class="pro-label">已投项目</label></a>
+                        <a data-qq="gzxm" style="float:left;padding-top:20px;" href="javascript:"><label class="pro-label">关注的项目</label></a>
+						<a data-qq="wdxm" style="float:left;padding-top:20px;" href="javascript:;"><label class="pro-label">关注的人</label></a>
+						<div style="float:left; margin-left:-245px;border-right:1px solid #eeeef0;width:1px; height:35px;margin-top: 5px;"></div>
+                        <div style="border-right:1px solid #eeeef0;width:1px; height:35px;float:left; margin-left:-110px;margin-top: 5px;"></div>
+                    	<div style="clear:both"></div>
+                       <div style="border-top:1px solid #eeeef0;width:700px; height:1px;margin-top: 5px;"></div>
 			</div>
 <!--项目管理:领投项目-->
 			<div class="prosonPage1"><!--定义内容的宽度,高度--->
@@ -437,63 +435,31 @@ $(function(){
                 <div id="ltxm">
 				{% if leader %}
 			    {% for i in leader %}
-                    <ul style="margin-left:-70px;">
-                        <li style="float:left;margin-top:10px;">
-                            <img src="{{ i.logo }}" />
-                        </li>
-                        <li>
-                            <ul style="margin-top:-60px;padding-top:15px;">										
-                                <li>
-                                    <label style="margin-left:25px;">{{i.name}}</label>
-                                </li>
-								<li style="margin-left:210px;">
-									<div style="border-top:1px solid #eeeef0;width:500px; height:1px;"></div>
-								</li>
-                            </ul>
-                        </li>
-                        <li>
-                        	<ul style="float:left;padding-left:25px;">
-                                <li>
-                                    <label>融资金额</label><b>{{i.amount}}</b>
-                                </li>
-                                <li>
-                                    <label>已融资</label><b>{{i.finish}}</b>
-                                </li>
-                                <li>
-                                    <label>完成率</label><b style="color:#CC6633">{%  widthratio i.finish i.amount 100 %}%</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul style="float:left">
-                                <li>
-                                    <label>我已领投</label><b>150.00万</b>
-                                </li>
-                                <li>
-                                    <label>我已跟投</label><b>0.00万</b>
-                                </li>
-                                <li>
-                                    <label>认筹人数</label><b style="color:#CC6633">100%</b>
-                                </li>
-                            </ul>
-                        </li>
-                        <li style="float:left;margin-top:15px;margin-left:-150px;">
-                         <div style="border-right:1px solid #eeeef0;width:1px; height:65px;"></div>
-                        </li>
-                        <li style="float:left;">
-                        	<label style="margin-top:60px;"><img src="/static/images/redgou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">众投完成</label>
-                         </li>
-                         <li style="float:left;">
-                            <label><img src="/static/images/bluegou.png" /></label>
-                         </li>
-                         <li style="float:left;margin-top:4px;">
-                            <label style="color:#C30;font-size:14px; font-weight:bold">已付款</label>
-                        </li>
-                    </ul>
-                    <ul style="clear:both"></ul>
+					<ul class="yitou-pro" style="margin-left:-48px;">
+						<li style="float:left;margin-top:10px;">
+							<img src="/static/images/jc/project_pic.jpg" />
+						</li>
+						<li style="float:left;width: 200px;margin-top:10px;">
+							<label>锦程新能源车</label>
+							<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
+						</li>
+						<li style="float:right">
+							<label>
+								<input id="focus-pro1" class="quxiao-attention" type="button" value="取消关注"/>
+							</label>
+						</li>
+						<li style="float:left;">
+							<label>融资金额</label><b>150.00万</b>
+							<label>已融资</label><b>0.00万</b>
+							<label>完成率</label><b style="color:#CC6633">0%</b>
+						</li>
+						<li style="float:left">
+							<label>我已领投</label><b>150.00万</b>
+							<label>我已跟投</label><b>0.00万</b>
+							<label>认筹人数</label><b style="color:#CC6633">0人</b>
+						</li>
+					</ul>
+					<ul style="clear:both"></ul>
 				{% endfor %}
 				{% else %}
 				     你没有领投项目！
@@ -505,7 +471,7 @@ $(function(){
 <!--项目管理:领投项目 end-->
 
 <!--项目管理:我的项目-->                
-               <div id="wdxm" class="display" style="margin-left:-40px;">
+               <div id="wdxm" class="display">
 					   {% if attention_persion %}
 					   {% for i in attention_persion %}
 				   <div style="float: left;padding-right: 60px;">
@@ -524,7 +490,7 @@ $(function(){
                <div id="gzxm" class="display">
 				   	{% if  attention_pr %}
 			    	{% for i in  attention_pr %}
-				   <ul class="focus-pro" style="margin-left:-70px;">
+				   <ul class="focus-pro" style="margin-left:-48px;">
                         <li style="float:left;margin-top:10px;">
                             <img src="{{i.logo}}" />
                         </li>
@@ -713,26 +679,16 @@ $(function(){
 <!--安全中心-->			
         <div id="selfcenter" class="display">
             <div class="ProCenter1"  id="anquanzhongxin">
-                <ul>
-                    <li style="margin-top:-20px; margin-left:-60px">
-                        <label style="font-size:30px;">安全中心</label>
-                    </li>
-                    <li style="margin-top:30px; margin-left:-50px;float:left" data-dd="ghsj">
-                        <a href="javascript:void(0)">更换手机</a>
-                    </li>
-                    <li style="float:left; margin-top:20px; margin-left:5px;">
-                    <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
-                    </li>
-                    <li style="margin-top:30px; margin-left:20px;float:left" data-dd="xgmm">
-                        <a href="javascript:void(0)" id="change">修改密码</a>
-                    </li>
-					<li style="clear:both"></li>
-                    <li style="margin-top:10px; margin-left:-55px;">
-                    <div style="width:600px; 	height:1px; background-color:#D5D5D5;overflow:hidden;"></div>
-                    </li>			
-                </ul>
+				<div style="margin-left:-30px;margin-top: -8px;">
+					<label style="font-size:30px;">安全中心</label>
+				</div>
+				<a style="margin-top:30px; margin-left:-20px;float:left" data-dd="ghsj" href="javascript:void(0)"><label class="self-label">更换手机</label></a>
+				<div style="float:left; margin-top:20px; margin-left:5px;width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
+				<a style="margin-top:30px; margin-left:20px;float:left" data-dd="xgmm" href="javascript:void(0)" id="change"><label class="self-label">修改密码</label></a>
+				<div style="clear:both"></div>
+				<div style="width:600px;height:1px; background-color:#D5D5D5;overflow:hidden;margin-top:10px; margin-left:-20px;"></div>
             </div>
-            <div  style="margin-top:-45px; margin-left:-55px" class="prosonPage2">
+            <div class="prosonPage2">
                 <div id = "safe_center"></div>
             </div>
         </div>
@@ -741,31 +697,16 @@ $(function(){
 <!--消息通知-->
 		<div id="messageinfo" class="display">
                 <div class="ProCenter2" id="xiaoxitongzhi">
-                    <ul>
-                        <li style="margin-left:-80px; margin-top:-20px;">
+					<div style="margin-left:-40px;">
                             <label style="font-size:30px;">消息通知</label>
-                        </li>
-                        <ul style="margin-top:30px; margin-left:-120px">
-                        <li data-aa="grxx" style="float:left">
-                            <a href="javascript:void(0)">个人信息</a>
-                        </li>
-                        <li style="float:left">
-                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
-                        </li>
-                        <li data-aa="tz" style="float:left">
-                            <a href="javascript:void(0)"> 通知</a>
-                        </li>
-                        <li style="float:left">
-                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden"></div>
-                        </li>
-                        </ul>
-                        <li style="margin-left:-65px;">
-                            <div style="width:700px;height:1px;background-color:#D5D5D5;overflow:hidden"></div>
-                        </li>
-                    </ul>
+                        </div>
+                            <a data-aa="grxx" style="margin-top:30px; margin-left:-30px;float:left" href="javascript:void(0)"><label class="message-label">个人信息</label></a>
+                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;float:left;margin-top:16px;"></div>
+                            <a data-aa="tz" style="margin-top:30px;float:left" href="javascript:void(0)"><label class="message-label">通知</label></a>
+					<div style="margin-left:20px;width:720px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;margin-left: -30px;"></div>
                 </div>
-			<div class="prosonPage2">
-                <div id="grxx" style="margin-left: -60px;margin-top:-35px;">
+			<div class="prosonPage3">
+                <div id="grxx" style="margin-left: -60px;margin-top:25px;">
 					{% if signal %}
 					{% for i in signal %}
 					<ul class="personal-message">
@@ -775,7 +716,7 @@ $(function(){
                         <li style="margin-left:60px;float:left">
                             <label>产品开发的Timeline?</label>
                         </li>
-						<li style="float: left">
+						<li style="float: left;width: 100px">
 							<img src="/static/images/news.png"  />
 						</li>
                         <li style="margin-left:50px;float:left;margin-top:15px;">
@@ -807,22 +748,30 @@ $(function(){
                     </ul>
 					{% endif %}
                 </div>
-				<div id="tz" class="display" style="margin-left: -60px;margin-top:-35px;">
+				<div id="tz" class="display" style="margin-left: -60px;margin-top:25px;">
 					{% if notice %}
 					{% for i in notice %}
 					<ul class="personal-message">
-                        <li style="float: left">
-                        <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
-                        </li>
-                        <li style="float: left">
-                            <label style="padding-left:10px;">{{i.user.userinformation.realname}}</label>
-                            <label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
-                            <label style="padding-left:50px;">都市人</label>
-                        </li>
-						<li style="float: left">
+						<li style="float:left">
+							<img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
+						</li>
+						<li style="margin-left:60px;float:left">
+							<label>产品开发的Timeline?</label>
+						</li>
+						<li style="float: left;width: 100px">
 							<img src="/static/images/news.png"  />
 						</li>
-                    </ul>
+						<li style="margin-left:50px;float:left;margin-top:15px;">
+							<label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
+							<label>{{i.add_date|date:"Y-m-j  H:i:s" }}</label>
+
+							<label style="padding-left:50px;">都市人</label>
+							<label>于1小时前回复</label>
+						</li>
+						<li style="margin-left:620px; margin-top:-30px;float:left">
+							<input type="button" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+						</li>
+					</ul>
 					<ul>
 						<li style="clear: both">
 						</li>
@@ -832,7 +781,6 @@ $(function(){
 							<div style="width:700px; height:1px;background-color:#D5D5D5"></div>
 						</li>
 					</ul>
-
 					{% endfor %}
 					{% else %}
 					<ul>

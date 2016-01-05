@@ -25,12 +25,12 @@
 						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
 					</li>
 					<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-0.5em">
-						<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
+						<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(/static/images/jindutiao.png) no-repeat;"></em></div></li>
 					<li style="float:left">
 						<label style="color:#000000;font-size:12px">融资份额</label><span style="color:#000000;;font-size:12px">{{result.invest_num}}份</span>
 					</li>
 					<li style="float:left;margin-left:30px;">
-						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;;font-size:12px">{{result.finish}}%</span>
+						<label style="color:#000000;font-size:12px">已完成</label><span style="color:#000000;;font-size:12px">{% widthratio result.finish result.invest_num 100 %}%</span>
 					</li>
 					<li style="clear:both">
 						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>

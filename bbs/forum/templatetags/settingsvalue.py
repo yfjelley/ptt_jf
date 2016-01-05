@@ -55,4 +55,11 @@ def remain_time(t):
         return u"0天"
 register.filter(remain_time)
 
+@register.filter(is_safe=False)
+def add_with(value, arg):
+    if int(arg) >= int(value):
+        return int(100)
+    else:
+        return int((float(arg)/float(value))*100)
+
 

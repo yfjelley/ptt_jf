@@ -133,10 +133,11 @@
 														<ul class="Cul1">
 															<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 															<li style="padding-top:5px;">{{result.introduction}}</li>
-															<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
-																<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
+															<li id = 'progress_bar'class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
+																<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
+
 															<li style="float:left">
-																<label>融资份额</label><span>{{result.invest_num}}份</span>
+																<label>融资份额</label><span>{{result.invest_num}}万份</span>
 															</li>
 															<li style="float:left;margin-left:50px;">
 																<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
@@ -201,9 +202,9 @@
 											<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 											<li style="padding-top:5px;">{{result.introduction}}</li>
 											<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
-												<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
+												<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 											<li style="float:left">
-												<label>融资目标</label><span>{{result.invest_num}}</span>
+												<label>融资目标</label><span>{{result.invest_num}}万份</span>
 											</li>
 											<li style="float:left;margin-left:50px;">
 												<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
@@ -267,9 +268,9 @@
 														<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 														<li style="padding-top:5px;">{{result.introduction}}</li>
 														<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
-															<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
+															<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 														<li style="float:left">
-															<label>融资目标</label><span>{{result.invest_num}}</span>
+															<label>融资目标</label><span>{{result.invest_num}}万份</span>
 														</li>
 														<li style="float:left;margin-left:50px;">
 															<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
@@ -333,9 +334,9 @@
 																	<li style="padding-top:5px;height:20px"><b>{{result.name}}</b></li>
 																	<li style="padding-top:5px;">{{result.introduction}}</li>
 																	<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
-																		<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
+																		<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 																	<li style="float:left">
-																		<label>融资目标</label><span>{{result.invest_num}}</span>
+																		<label>融资目标</label><span>{{result.invest_num}}万份</span>
 																	</li>
 																	<li style="float:left;margin-left:50px;">
 																		<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
@@ -397,6 +398,7 @@ $(document).ready(function(){
 	
 });
 </script>
+
 
 
 <script>

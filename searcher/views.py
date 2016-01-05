@@ -394,7 +394,7 @@ def userinfo(request):
             form = UserInformationForm()
         #领投项目
 
-        leader  = Project.objects.filter(leader=request.user)
+        leader  = invest_detail.objects.filter(invest_user=request.user)
 
         #跟投项目
         invest = Project.objects.filter(investor=request.user)
@@ -941,7 +941,10 @@ def search_investor(request):
     else:
         results = UserInformation.objects.all()
 
-    print "ppppp"
+    print  "xxxxxxxxxxxxxxxxxxxxx",results
+    for i in results:
+        print i.user.invest_user_set.all()
+
     ppp = Paginator(results, 10)
 
     try:
