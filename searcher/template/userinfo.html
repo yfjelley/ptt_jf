@@ -457,7 +457,7 @@ $(function(){
 			    {% for i in leader %}
 					<ul class="yitou-pro" style="margin-left:-48px;">
 						<li class="img-size" style="float:left;margin-top:10px;">
-							<img src="{{i.invest_project.logo}}" />
+							<a href="/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" /></a>
 						</li>
 						<li style="float:left;width: 300px;margin-top:10px;">
 							<label>{{i.invest_project.name}}</label>
@@ -514,7 +514,7 @@ $(function(){
 			    	{% for i in  attention_pr %}
 				   <ul class="focus-pro" style="margin-left:-48px;">
                         <li class="img-size" style="float:left;margin-top:10px;">
-                            <img src="{{i.logo}}" />
+                            <a href="/prodetails/{{i.id}}"><img src="{{i.logo}}" /></a>
                         </li>
 				   		<li style="float:left;width: 300px;margin-top:10px;">
 							<label>{{i.name}}</label>
@@ -742,25 +742,29 @@ $(function(){
 			<div class="prosonPage3">
                 <div id="grxx" style="margin-left: -60px;margin-top:25px;">
 					{% if signal %}
-					{% for i in signal %}
+					{% for i in signal reversed %}
 					<ul class="personal-message">
-                        <li style="float:left">
+                        <li style="float:left;height: 80px;width: 60px">
                         <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
                         </li>
-                        <li style="margin-left:60px;float:left">
+                        <li style="margin-left:60px;float:left;width: 460px">
                             <label>{{i.content}}</label>
                         </li>
 						<li style="float: left;width: 100px">
 							<img src="/static/images/news.png"  />
 						</li>
-						<li style="clear: both;"></li>
-                        <li style="margin-left:110px;margin-top:-20px;">
+                        <li style="float:left;margin-left:52px;">
                             <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
                             <label>于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
                         </li>
-                        <li style="margin-left:620px; margin-top:-30px;float:left">
-                            <input type="button" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
-                        </li>
+                        <li style="margin-left:620px; margin-top:-50px;float:left">
+							{% if i.user.userinformation.nickname %}
+                            <input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name ="{{i.user.userinformation.nickname}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+                            {% else %}
+							<input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name="{{i.user.username}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+                            {% endif %}
+
+						</li>
                     </ul>
 					<ul>
 						<li style="clear: both">
@@ -782,12 +786,12 @@ $(function(){
                 </div>
 				<div id="tz" class="display" style="margin-left: -60px;margin-top:25px;">
 					{% if notice %}
-					{% for i in notice %}
+					{% for i in notice  reversed %}
 					<ul class="personal-message">
-						<li style="float:left">
+						<li style="float:left;height: 80px;width: 60px">
 							<img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
 						</li>
-						<li style="margin-left:60px;float:left">
+						<li style="margin-left:60px;float:left;width: 460px;">
 							<label>{{i.content}}</label>
 						</li>
 						<li style="float: left;width: 100px">
@@ -842,10 +846,10 @@ $(function(){
 				</li>
 				<ul class="giftpadding" style="margin-top:-240px;margin-left:300px;">
 					<li>
-						<label><textarea cols="40" rows="2" id="biao1">http://42.96.131.5:8001/</textarea></label>
+						<label><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/</textarea></label>
 					</li>
 					<li>
-						<input type="button" style="background: url('/static/images/on-clickcopy.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+						<input onclick="copyUrl()" type="button" style="background: url('/static/images/on-clickcopy.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
 					</li>
 				</ul>
 			</ul>
@@ -975,6 +979,70 @@ $(function(){
 			});
 	  })
   </script>
+<script>
+$(function() {
+	// 在页面添加 mask
+	var mask = function() {
+			$('<div id="mask" style="width: ' + $(window).width() + 'px; '
+			+ 'height: ' + $(window).height() + 'px;"></div>').appendTo("body");};
+
+	$(window).on("resize", function() {
+		if($("#mask").length) {
+				$("#mask").css({
+						width: $(window).width(),
+						height: $(window).height(),
+						opacity: 0});
+				}
+	});
+
+	$("[id^='reply_']").each(function() {
+	    $(this).click(function(){
+
+	    	var name = $(this).attr('name');
+	    	var userid = $(this).data('id');
+
+			{% if user.id %}
+					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
+					'<p>内容:</p>'+
+					'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
+					+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
+					'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
+                   $(html).appendTo("body");
+
+			{% else %}
+				alert('请先登录!');
+			{% endif %}
+		});
+	});
+
+	        		// 只有点击 alert 中的按钮 mask 才会被移除
+
+// 只有点击 alert 中的按钮 mask 才会被移除
+	$(document).on("click", "#ok", function() {
+		 {% if user.id %}
+		 	    var content = $("#content").val();
+                if(content.length >50){alert("发送内容请不要超过50个字!")}else{
+		        $.post("{% url 'sendSMS' %}",
+                {
+                    investor: $("#ok").attr('name'),
+                    content: content,
+                },
+                function (data) {
+                if(data.success=="1"){alert('发送成功!');}else{alert("发送内容不能为空!")}
+                })}
+         {% else %}
+         	alert('请先登录!');
+         {% endif %}
+		$("#mask, #alert").remove();
+	});
+// 只有点击 alert 中的按钮 mask 才会被移除
+	$(document).on("click", "#no", function() {
+		$("#mask, #alert").remove();
+	});
+
+});
+</script>
+
 
 
 
@@ -982,4 +1050,8 @@ $(function(){
 <!--底部-->
 {% include "footer.html" %}
 </body>
+<style type="text/css">
+#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
+#mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
+</style>
 </html>

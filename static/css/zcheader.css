@@ -2,8 +2,8 @@ body,ul{margin:0}
 a{text-decoration: none}
 .ul7{margin-left:17%;}
 .ul7 a{text-decoration:none;color:#FFFFFF;font-size:18px;}
-.ul7 a:hover{color:#e1604d;cursor:pointer;border-bottom: 2px solid #e1604d;padding:6px 0}
-.ul7 li.active{background: #cc282a}
+.ul7 a:hover{color:#e1604d;cursor:pointer;}
+/*.ul7 li.active{background: #cc282a}border-bottom: 2px solid #e1604d;padding:6px 0*/
 .ul7 li{list-style:none;float:left;padding:0 20px;text-align: center}
 
 .ul8 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
@@ -31,8 +31,6 @@ background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right
 .seacher-btn{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;position:relative;top:1px;}
 .seacher-text{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;margin-left:-10px;}
 .seacher-sele{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px; height:21px; padding:0px;margin-right: 10px;}
-
-
 /*头部搜索按钮样式*/
 .putIn{
     position:relative;
@@ -70,8 +68,4 @@ background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right
 .dropDown .dropList{display:none;position:absolute;top:37px;left:-1px;width:59px;border:#69bcf7 solid 1px;background:#fff;list-style-type:none;padding:0}
 .dropDown .dropList li{padding:0 0 0 10px;height:25px;line-height:25px;cursor:pointer;color:#333; font-family:"microsoft yahei";font-size:12px}
 .dropDown .dropList li:hover{background:#69bcf7;color:#fff;}
-
-
-
-
 

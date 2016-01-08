@@ -91,13 +91,13 @@ body,p{margin:0;padding:0;border:0;}
 #right_float a.fanhui{
   background: url(/static/images/gototop.png) no-repeat ;
 }
-#right_float a.weibo{
-  background: url(/static/images/email.png) no-repeat ;
+#right_float a.address{
+  background: url(/static/images/address.jpg) no-repeat ;
 }
 #right_float .l_r6 {
   width: 0px;
   height: 57px;
-  line-height: 57px;
+  line-height: 30px;
   background: rgb(213, 94, 75);
   position: absolute;
   right: 30px;
@@ -118,8 +118,8 @@ body,p{margin:0;padding:0;border:0;}
   text-align: center;
   font-family: 微软雅黑;
 }
-#right_float a.qq{
-  background: url(/static/images/qq_1.png) no-repeat;
+#right_float a.emails{
+  background: url(/static/images/emails.jpg) no-repeat;
 }
 #right_float .l_r5 {
   width: 0px;

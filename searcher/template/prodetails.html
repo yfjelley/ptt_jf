@@ -340,7 +340,7 @@
 				<tr>
 					<td colspan="3" class="detail-percent">
 						<div style="width:100%;border:1px solid #868686;border-radius:10px;">
-							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/detail-jindu.PNG) no-repeat;"></em></div>
+							<em style="width:{{result.invest_num|add_with:amount}}%;border-radius:10px;background:url(/static/images/detail-jindu.PNG) no-repeat;"></em></div>
 					</td>
 				</tr>
 				<tr>

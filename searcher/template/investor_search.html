@@ -35,15 +35,15 @@
             </p>
             <p class="yidong">
                 <a class="callphone" href="####"></a>
-                <a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:021-8888888</a>
+                <a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:400-709-1818</a>
             </p>
             <p class="yidong">
-                <a class="qq" href="####"></a>
-                <a class="l_r5 l_rw2" href="####" style="width: 0px;">QQ客服:888888888</a>
+                <a class="emails" href="####"></a>
+                <a class="l_r5 l_rw5" href="####" style="width: 0px;">公司邮箱:service@ddbid.com</a>
             </p>
             <p class="yidong">
-                <a class="weibo" href="####"></a>
-                <a class="l_r6 l_rw2" href="####" style="width: 0px;">新浪微博:8888@sign</a>
+                <a class="address" href="####"></a>
+                <a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场2号楼908室</a>
             </p>
             <p class="yidong">
                 <a class="fanhui" href="#"></a>
@@ -93,7 +93,7 @@
     $(document).ready(function(){
         $('#right_float .yidong').hover(function(){
             $(this).find('.l_rw2').stop().animate({
-                'width':'150px'
+                'width':'170px'
             },400);
         },function(){
             $(this).find('.l_rw2').stop().animate({
@@ -108,6 +108,28 @@
             },400);
         },function(){
             $(this).find('.l_rw4').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw5').stop().animate({
+                'width':'200px'
+            },400);
+        },function(){
+            $(this).find('.l_rw5').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw6').stop().animate({
+                'width':'250px'
+            },400);
+        },function(){
+            $(this).find('.l_rw6').stop().animate({
                 'width':'0px'
             },400);
         });

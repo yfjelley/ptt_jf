@@ -124,6 +124,7 @@ $(function() {
 		 {% if user.id %}
 		 	    var content = $("#content").val();
 	    		//alert(content);
+	    		if(content.length >50){alert("发送内容请不要超过50个字!")}else{
 		        $.post("{% url 'sendSMS' %}",
                 {
                     investor: $("#ok").attr('name'),
@@ -131,7 +132,7 @@ $(function() {
                 },
                 function (data) {
                 if(data.success=="1"){alert('发送成功!');}else{alert("发送内容不能为空!")}
-                })
+                })}
          {% else %}
          	alert('请先登录!');
          {% endif %}

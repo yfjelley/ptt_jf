@@ -343,7 +343,7 @@ def auth_register(request):
 
 
 @login_required
-def userinfo(request):
+def userinfo(request,objectid=None):
     url = None
     user = auth.get_user(request)
     flag = 1
@@ -409,8 +409,8 @@ def userinfo(request):
 
         attention_persion = u.userinformation.attention_persion.all()
 
-        signal =  Signal.objects.filter(who=request.user).order_by("add_date")
-        notice = Signal.objects.filter(type=0).order_by("add_date")
+        signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
+        notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
         print signal,notice
 
 
@@ -984,6 +984,7 @@ def search_investor(request):
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
+@login_required
 def investor(request):
     return render_to_response('investor.html',{}, context_instance=RequestContext(request))
 
