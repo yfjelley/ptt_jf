@@ -409,8 +409,8 @@ def userinfo(request):
 
         attention_persion = u.userinformation.attention_persion.all()
 
-        signal =  Signal.objects.filter(who=request.user)
-        notice = Signal.objects.filter(type=0)
+        signal =  Signal.objects.filter(who=request.user).order_by("add_date")
+        notice = Signal.objects.filter(type=0).order_by("add_date")
         print signal,notice
 
 
@@ -991,7 +991,10 @@ def prodetails(request,objectid):
     p = Project.objects.get(id=objectid)
     forum = project_forum.objects.filter(forum_project=p)
     invest_de = invest_detail.objects.filter(invest_project=p)
-    return render_to_response('prodetails.html',{"result":p,"project_forum":forum,'invest_detail':invest_de}, context_instance=RequestContext(request))
+    amount = 0
+    for i in invest_de:
+        amount += int(i.invest_num)
+    return render_to_response('prodetails.html',{"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
 
 def project(request,objectid):

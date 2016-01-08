@@ -737,7 +737,7 @@ $(function(){
                             <a data-aa="grxx" style="margin-top:30px; margin-left:-30px;float:left" href="javascript:void(0)"><label class="message-label">个人信息</label></a>
                             <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;float:left;margin-top:16px;"></div>
                             <a data-aa="tz" style="margin-top:30px;float:left" href="javascript:void(0)"><label class="message-label">通知</label></a>
-					<div style="margin-left:20px;width:720px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;margin-left: -30px;"></div>
+					<div style="width:740px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;margin-left: -30px;"></div>
                 </div>
 			<div class="prosonPage3">
                 <div id="grxx" style="margin-left: -60px;margin-top:25px;">
@@ -753,7 +753,8 @@ $(function(){
 						<li style="float: left;width: 100px">
 							<img src="/static/images/news.png"  />
 						</li>
-                        <li style="margin-left:50px;float:left;margin-top:15px;">
+						<li style="clear: both;"></li>
+                        <li style="margin-left:110px;margin-top:-20px;">
                             <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
                             <label>于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
                         </li>
@@ -767,7 +768,7 @@ $(function(){
 					</ul>
 					<ul>
 						<li style="margin-left:-5px;padding:20px 0">
-							<div style="width:700px; height:1px;background-color:#D5D5D5"></div>
+							<div style="width:740px; height:1px;background-color:#D5D5D5"></div>
 						</li>
 					</ul>
 					{% endfor %}
@@ -967,7 +968,7 @@ $(function(){
 							type:type,
 						},
 						function (data) {
-						if(data.success=="1"){alert('认证成功!');}else{alert("认证失败!")}
+						alert('认证成功!');
 						})
 					};
 				}

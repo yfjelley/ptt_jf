@@ -133,15 +133,15 @@
                         </li>
                 	</ul>
                 </li>
-                <li style="float:right;margin-top: -4px;margin-right: 20px;">
+                <li>
                 	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/>
-					<dd><input class="btn-remind" type="button" />
+						<!--<dd><input class="btn-remind" type="button" />
 						<ul id="warning_li" class="remind-text" style="display:none">
-							<li><a href="javascript:void(0)" class="rmbutton" rtype="2">预热提醒</a></li>
-							<li><a href="javascript:void(0)" class="rmbutton" rtype="3">投资提醒</a></li>
+							<li><a href="javascript:void(0)" class="rmbutton" rtype="2">11预热提醒</a></li>
+						<li><a href="javascript:void(0)" class="rmbutton" rtype="3">投资提醒</a></li>
 							<li><a href="javascript:void(0)" class="rmbutton" rtype="5">满标提醒</a></li>
 						</ul>
-					</dd>
+					</dd>-->
 
                     <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button"/></a>
                 </li>
@@ -344,8 +344,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">已预约份数:{{result.finish}}万份</td>
-					<td>完成率:{% widthratio result.finish result.invest_num 100 %}%</td>
+					<td colspan="2">已预约份数:{{amount}}万份</td>
+					<td>完成率:{% widthratio amount result.invest_num 100 %}%</td>
 				</tr>
 				<tr>
 					<td>
