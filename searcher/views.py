@@ -72,7 +72,7 @@ def login(request):
                         else:
                             user.userinformation.login_times  = 1
                         user.userinformation.save()
-                        return HttpResponseRedirect(reverse('index_zc'))
+                        return HttpResponseRedirect(reverse('index_jf'))
                 else:
                     form.valiatetype(i)
                     return render_to_response('login.html', {'form': form, },
@@ -650,11 +650,6 @@ def index_zc(request):
     return render_to_response('index_page.html',{"daily_selection":daily_selection,"preheating":preheating, \
                               "crowdfunded":crowdfunded,"crowdfunded_success":crowdfunded_success,\
                                          "crowdfunded_finsh":crowdfunded_finsh},context_instance=RequestContext(request))
-
-def index_jf(request):
-
-    return render_to_response('home.html',{}, context_instance=RequestContext(request))
-
 
 
 def safecenter(request):
