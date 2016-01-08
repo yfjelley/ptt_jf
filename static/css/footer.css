@@ -1,7 +1,7 @@
 
 #footer{ width:100%; clear:both;text-algin:center;margin:0px;padding:0px;background-color:#372C3A;
     max-width:1660px;min-width: 1440px;width:expression(document.body.clientWidth < 1400? "1400px": "auto" );}
-.footer_box dl{width: 370px;margin-left: -45px;}
+.footer_box dl{width: 370px;margin: 0 0 0 -45px;}
 .footer_top{width:100%;background-color:#372C3A;height:180px;clear:both;overflow:hidden;}
 .footer_top ul{ text-align:center;}
 .footer_top a:hover{color:#ff0000}

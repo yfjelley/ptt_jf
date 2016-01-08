@@ -111,10 +111,10 @@
             	<li style="float:left;margin-top:20px;margin-left:-20px">
                 	<img src="{{result.logo}}" />
                 </li>
-                <li style="float:left">
+                <li style="float:left;width: 340px">
                 	<ul>
                 		<li class="pro-title">
-                			<label class="mongjing">{{result.name}}</label></li>
+                			<label>{{result.name}}</label></li>
                         <li class="pro-status">
 							{% ifequal result.status 0 %}
 							<label class="mongjiangimg"><img src="/static/images/yrzhong.png" ></label>
@@ -212,8 +212,10 @@
                 <div id="touzi" class="display">
                 	<div>
                 		<ul>
-                    		<li>
-
+                    		<li><p>协议内容
+								<span style="margin-left:540px"><a href="{{result.other}}"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
+							</span>
+                               </p>
                         	</li>
                     	</ul>
                     </div>
@@ -223,8 +225,8 @@
                 	<div>
 						<ul>
 						<li>
-							<p>商业计划书
-							<span style="margin-left:540px"><a href="/static/download/山东锦程商业计划书.pdf"><img alt="下载" class="down" src="/static/images/xiazai38-32.png" width="20" height="15"/></a>
+							<p>发展计划书
+							<span style="margin-left:540px"><a href="{{result.business_plan_url}}"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
 							</span>
 							</p>
 						 </li>
@@ -238,15 +240,15 @@
 						{% for i in invest_detail %}
 						<table class="tab-content">
 							<tr>
-								<td colspan="2"><img width="120" height="120" src="{{i.invest_user.userinformation.photo_url}}"></td>
-
+								<td colspan="2"><img width="100" height="100" src="{{i.invest_user.userinformation.photo_url}}"></td>
+							</tr>
+							<tr>
 								{% if i.invest_user.userinformation.nickname %}
-								<td>{{i.invest_user.userinformation.nickname}}</td>
+								<td align="left">{{i.invest_user.userinformation.nickname}}</td>
 								{% else %}
-								<td>{{i.invest_user.username|phone_cut}}</td>
+								<td align="left">{{i.invest_user.username|phone_cut}}</td>
 								{% endif %}
-								<td>在{{i.time_created|date:"Y-m-j  H:i:s"}}</td>
-								<td>预约投资{{i.invest_num}}股</td>
+								<td align="right">预约投资{{i.invest_num}}万股</td>
 							</tr>
 						</table>
 						{% endfor %}
@@ -294,7 +296,7 @@
 																										  onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
 																										  src="{% url 'verifycode' %}"/></a>
 										<div style="padding-top: 5px">
-											<input type="button" id="reply" class="bbs_post_btn"   value="回复" />
+											<input type="button" id="reply" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" ">
 										</div>
 									</div>
 								</li>
@@ -320,7 +322,9 @@
 				<tr>
 					<td>{{result.invest_amount}}元</td>
 					<td>{{result.invest_num}}万份</td>
-					<td>{{result.investor.all|length}}个人</td>
+
+
+					<td>{{invest_detail|length}}个人</td>
 				</tr>
 				<tr>
 					<td>
@@ -336,7 +340,7 @@
 				<tr>
 					<td colspan="3" class="detail-percent">
 						<div style="width:100%;border:1px solid #868686;border-radius:10px;">
-							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/jindutiao.JPG) no-repeat;"></em></div>
+							<em style="width:{% widthratio result.finish result.invest_num 100 %}%;border-radius:10px;background:url(/static/images/detail-jindu.PNG) no-repeat;"></em></div>
 					</td>
 				</tr>
 				<tr>

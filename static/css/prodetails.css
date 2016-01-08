@@ -6,10 +6,9 @@
 .proleft_detail tr td{padding: 10px 0}
 .proleft_detail tr{border-bottom: 1px solid #a8a8a8;}
 .pro-title{margin-left:-20px;margin-top:15px;float: left}
-.pro-title>.mongjing{font-size:28px;}
 .pro-title>.mongjiangimg{position:absolute;top:135px;}
 .pro-title>.zczhong{margin-left:45px}
-.pro-status{float: left;padding:15px 0 0 10px}
+.pro-status{float: left;padding:8px 0 0 10px}
 .pro-writing{margin-left:-20px;margin-top:20px;}
 input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.png") no-repeat;width:77px;height:25px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:20px;}
 input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:6px;}
@@ -26,7 +25,6 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 .mt10{ margin-top:70px;}
 .bbs_hd h3{font-size:12px;font-style:normal;margin:0}
 .reply_publish .bbs_bd textarea{width:98%;height:100px;padding:5px;border:1px solid #ddd}
-.bbs_post_btn{border-radius:5px;-moz-border-radius: 5px; width:110px; height:40px; line-height:40px; text-align:center; color:#fff; border:none; background:#715C83; font-size:14px; font-weight:bold;}
 .bbs_bd{padding:10px;}
 .bbs_box{border-radius:5px; -moz-border-radius: 5px;-webkit-border-radius:5px;padding:10px; background:#fff;}
 .bbs_hd{padding:0 10px;}
@@ -34,7 +32,7 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 .bbs_backtop:hover{color: #FF0000}
 .yzm input[type='text']{width:110px; height:30px;}
 .qita-size{display: inline-block}
-.qita-size table{float:left;padding:0 16px}
+.qita-size table{float:left;padding:0 10px;font-size: 14px;margin-left: 30px;}
 .protaolun-size{width:780px;background-color:white;margin-left:-5px;overflow:hidden;height:100%}
 .talk_list{padding:10px 5px;border-bottom:1px solid #ddd}
 .talk_list dd{margin-left:20px;width:400px;}

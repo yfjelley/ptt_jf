@@ -1,3 +1,4 @@
+body,p{margin:0;padding:0;border:0;}
 .Icontainer {
     background: #EEEEF0;
     min-width: 1440px;
@@ -248,49 +249,101 @@ li.investPelPic2 {
     position: absolute;
     top: 90px;
 }
-
-.side ul li {
-    width: 70px;
-    height: 70px;
-    float: left;
-    position: relative;
-    background: #FFF;
+.side a{font-size: 14px;color: #FFFFFF}
+#right_float{
+    height: 350px;
+    width: 57px;
 }
-
-.side ul li .sidebox {
+#right_float .down{
     position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 0;
-    right: 0;
-    transition: all 0.3s;
-    background: #eeeef0;
-    opacity: 0.6;
-    filter: Alpha(opacity=100);
-    color: #000;
-    font: 14px/54px "微软雅黑";
+
+}
+#right_float p{
+    position: relative;
+}
+#right_float p{
+    width:35px;
+}
+#right_float a.erwei{
+    background: url(/static/images/weixin_1.png) no-repeat;
+}
+#right_float p a{
+    width: 57px;
+    height: 57px;
+    display: block;
+    margin: 5px;
+    /*padding: 3px;*/
     overflow: hidden;
+    margin-left: 7px;
 }
-
-.side ul li .sidetop {
-    width: 70px;
-    height: 70px;
-    line-height: 54px;
-    display: inline-block;
-    background: #eeeef0;
-    opacity: 0.8;
-    filter: Alpha(opacity=80);
-    transition: all 0.3s;
+#right_float .l_r3{
+    /*display: none;*/
+    width: 0px;
+    height: 154px;
+    position: absolute;
+    right: 34px;
+    top: -20px;
+    margin: 0;
 }
-
-.side ul li .sidetop:hover {
-    background: #eeeef0;
-    opacity: 0.6;
-    filter: Alpha(opacity=100);
+#right_float a.callphone{
+    background: url(/static/images/phone.png) no-repeat;
 }
-
-.side ul li img {
-    float: left;
+#right_float .l_r4 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
+}
+#right_float a.fanhui{
+    background: url(/static/images/gototop.png) no-repeat ;
+}
+#right_float a.weibo{
+    background: url(/static/images/email.png) no-repeat ;
+}
+#right_float .l_r6 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
+}
+#right_float .l_r7 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
+}
+#right_float a.qq{
+    background: url(/static/images/qq_1.png) no-repeat;
+}
+#right_float .l_r5 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
 }
 
 .pagesg {

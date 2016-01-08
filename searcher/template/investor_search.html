@@ -27,21 +27,30 @@
     </div>
 </div>
 <div class="side">
-    <ul>
-        <li><a href="javascript:void(0)">
-            <div class="sidebox"><img src="/static/images/phone.png"/><label>电话客服</label></div>
-        </a></li>
-        <li><a href="javascript:void(0)">
-            <div class="sidebox"><img src="/static/images/qq_1.png"/><label>QQ客服</label></div>
-        </a></li>
-        <li><a href="javascript:void(0)">
-            <div class="sidebox"><img src="/static/images/email.png"/><label>新浪微博</label></div>
-        </a></li>
-        <li class="goback"><a onclick="pageScroll()" href="javascript:void(0);">
-            <div class="sidetop"><img src="/static/images/gototop.png"
-                                      style="width:45px; height:45px;padding-left: 13px;padding-top:10px;"></div>
-        </a></li>
-    </ul>
+    <div id="right_float">
+        <div class="down">
+            <p class="yidong">
+                <a class="erwei" href="####"></a>
+                <a class="l_r3 l_rw3" href="####" style="width: 0px;"><img src="/static/images/wxcode.png"></a>
+            </p>
+            <p class="yidong">
+                <a class="callphone" href="####"></a>
+                <a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:021-8888888</a>
+            </p>
+            <p class="yidong">
+                <a class="qq" href="####"></a>
+                <a class="l_r5 l_rw2" href="####" style="width: 0px;">QQ客服:888888888</a>
+            </p>
+            <p class="yidong">
+                <a class="weibo" href="####"></a>
+                <a class="l_r6 l_rw2" href="####" style="width: 0px;">新浪微博:8888@sign</a>
+            </p>
+            <p class="yidong">
+                <a class="fanhui" href="#"></a>
+                <a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+            </p>
+        </div>
+    </div>
 </div>
 {% include "footer.html" %}
 
@@ -69,22 +78,39 @@
 
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
 
-        $(".side ul li").hover(function () {
-            $(this).find(".sidebox").stop().animate({"width": "190px"}, 200).css({
-                "opacity": "1",
-                "filter": "Alpha(opacity=100)",
-                "background": "#eeeef0"
-            })
-        }, function () {
-            $(this).find(".sidebox").stop().animate({"width": "70px"}, 200).css({
-                "opacity": "0.8",
-                "filter": "Alpha(opacity=80)",
-                "background": "#eeeef0"
-            })
+            $(this).find('.l_rw3').stop().animate({
+                'width':'135px'
+            },400);
+        },function(){
+            $(this).find('.l_rw3').stop().animate({
+                'width':'0px'
+            },400);
         });
-
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw2').stop().animate({
+                'width':'150px'
+            },400);
+        },function(){
+            $(this).find('.l_rw2').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw4').stop().animate({
+                'width':'70px'
+            },400);
+        },function(){
+            $(this).find('.l_rw4').stop().animate({
+                'width':'0px'
+            },400);
+        });
     });
 </script>
 </html>

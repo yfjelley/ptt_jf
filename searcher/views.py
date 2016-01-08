@@ -337,6 +337,7 @@ def auth_register(request):
     u.business_card = request.POST.get('icard')
     u.realname = request.POST.get('real_name')
     u.authentication_class = int(request.POST.get('type'))+1
+    u.invest_class = 2
     u.save()
     return HttpResponse()
 
@@ -530,27 +531,25 @@ def send_smscode(request):
 
 
 def send_smscode_modify(request):
-
     if request.user.is_authenticated():
         key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(request.user.id)
     else:
         key = "limit_visit:" + send_smscode_modify.__name__ +':'+ str(user_get_ip(request))
     failed_num = cache.get(key,0)
-    if failed_num >= 200:
+    if failed_num >= 2:
         return HttpResponse(u"您修改账号次数超个2次，请30天后再试！")
 
     failed_num += 1
     cache.set(key, failed_num, 30*24*60*60)
 
     phoneNum = request.POST.get('phoneNum', '')
-
     p=re.compile('^1200[0-9]{7}$')
     a = p.match(phoneNum)
     if a:
         return HttpResponse()
     else:
         user = User.objects.filter(username=int(phoneNum))
-        print user,"ddddddddddddddddddddd"
+        print user
         if not len(user):
             print "ceshi"
             m = hashlib.md5()
@@ -571,20 +570,18 @@ def send_smscode_modify(request):
                       </Item>
                       </Group>
                    """ % ("shcdjr", m.hexdigest().upper(), int(phoneNum), content.decode("utf-8").encode("GBK"))
-
+            print "1"
             cookies = urllib2.HTTPCookieProcessor()
             opener = urllib2.build_opener(cookies)
+            print "3"
             request = urllib2.Request(
                                        url = r'http://userinterface.vcomcn.com/Opration.aspx',
                                        headers= {'Content-Type':'text/xml'},
                                        data = data
                                       )
-        else:
-            return HttpResponse("号码已存在！")
+            print "4"
+            print opener.open(request).read()
         return HttpResponse()
-
-
-
 
 def index(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
@@ -852,21 +849,29 @@ def publish(request):
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
 def invested(request):
-    print request
+
     inv = request.POST.get('inv')
     print "xxxxxxxxxxxxxxxx"
     id = request.POST.get('project')
     per = request.POST.get('per')
     print type(inv),inv,id,type(id),per
     if inv and id:
-        print "gggggggggggggggg"
-        invest_project=Project.objects.get(id=id)
-        print type(invest_project),invest_project
-        print request.user,type(request.user)
-        i = invest_detail(invest_user=request.user,invest_project=Project.objects.get(id=id),\
+        try:
+            i = invest_detail.objects.get(invest_user=request.user,invest_project=Project.objects.get(id=id))
+            i.invest_num = int(i.invest_num) + int(inv)
+        except:
+            i = invest_detail(invest_user=request.user,invest_project=Project.objects.get(id=id),\
                           invest_num=inv,invest_type=1,invest_amount=per)
         i.save()
-        print "yyyyyyyyyyyyyyyyyyyyyyyy"
+        #计算总共投资了多少份
+        f = invest_detail.objects.filter(invest_project=Project.objects.get(id=id))
+        m = 0
+        for i in f:
+            m += int(i.invest_num)
+        u = Project.objects.get(id=id)
+        u.finish = m
+        u.save()
+
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
@@ -878,88 +883,101 @@ def search_investor(request):
     search_word = request.GET.getlist('search_word[]')
     print search_word
     if search_word == [u'1', u'4']:
-        results = UserInformation.objects.all()
+        results = UserInformation.objects.all().order_by("-invest_class")
     elif search_word == [u'1', u'5']:
-        results = UserInformation.objects.filter(cate=1)
+        results = UserInformation.objects.filter(cate=1).order_by("-invest_class")
     elif search_word == [u'1', u'6']:
-        results = UserInformation.objects.filter(cate=2)
+        results = UserInformation.objects.filter(cate=2).order_by("-invest_class")
     elif search_word == [u'1', u'7']:
-        results = UserInformation.objects.filter(cate=3)
+        results = UserInformation.objects.filter(cate=3).order_by("-invest_class")
     elif search_word == [u'1', u'8']:
-        results = UserInformation.objects.filter(cate=4)
+        results = UserInformation.objects.filter(cate=4).order_by("-invest_class")
     elif search_word == [u'1', u'9']:
-        results = UserInformation.objects.filter(cate=5)
+        results = UserInformation.objects.filter(cate=5).order_by("-invest_class")
     elif search_word == [u'1', u'10']:
-        results = UserInformation.objects.filter(cate=6)
+        results = UserInformation.objects.filter(cate=6).order_by("-invest_class")
     elif search_word == [u'1', u'11']:
-        results = UserInformation.objects.filter(cate=7)
+        results = UserInformation.objects.filter(cate=7).order_by("-invest_class")
     elif search_word == [u'1', u'12']:
-        results = UserInformation.objects.filter(cate=8)
+        results = UserInformation.objects.filter(cate=8).order_by("-invest_class")
     elif search_word == [u'1', u'13']:
-        results = UserInformation.objects.filter(cate=9)
+        results = UserInformation.objects.filter(cate=9).order_by("-invest_class")
     elif search_word == [u'2', u'4']:
-        results = UserInformation.objects.filter(authentication_class=2)
+        results = UserInformation.objects.filter(authentication_class=2).order_by("-invest_class")
     elif search_word == [u'2', u'5']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=1)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=1).order_by("-invest_class")
     elif search_word == [u'2', u'6']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=2)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=2).order_by("-invest_class")
     elif search_word == [u'2', u'7']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=3)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=3).order_by("-invest_class")
     elif search_word == [u'2', u'8']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=4)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=4).order_by("-invest_class")
     elif search_word == [u'2', u'9']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=5)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=5).order_by("-invest_class")
     elif search_word == [u'2', u'10']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=6)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=6).order_by("-invest_class")
     elif search_word == [u'2', u'11']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=7)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=7).order_by("-invest_class")
     elif search_word == [u'2', u'12']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=8)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=8).order_by("-invest_class")
     elif search_word == [u'2', u'13']:
-        results = UserInformation.objects.filter(authentication_class=2).filter(cate=9)
+        results = UserInformation.objects.filter(authentication_class=2).filter(cate=9).order_by("-invest_class")
 
     elif search_word == [u'3', u'4']:
-        results = UserInformation.objects.filter(authentication_class=3)
+        results = UserInformation.objects.filter(authentication_class=3).order_by("-invest_class")
     elif search_word == [u'3', u'5']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=1)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=1).order_by("-invest_class")
     elif search_word == [u'3', u'6']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=2)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=2).order_by("-invest_class")
     elif search_word == [u'3', u'7']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=3)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=3).order_by("-invest_class")
     elif search_word == [u'3', u'8']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=4)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=4).order_by("-invest_class")
     elif search_word == [u'3', u'9']:
-        results = UserInformation.objects.filter(authentication_class=3).filter(cate=5)
+        results = UserInformation.objects.filter(authentication_class=3).filter(cate=5).order_by("-invest_class")
     elif search_word == [u'3', u'10']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(cate=6)
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=6).order_by("-invest_class")
     elif search_word == [u'3', u'11']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(cate=7)
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=7).order_by("-invest_class")
     elif search_word == [u'3', u'12']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(cate=8)
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=8).order_by("-invest_class")
     elif search_word == [u'3', u'13']:
-       results = UserInformation.objects.filter(authentication_class=3).filter(cate=9)
+       results = UserInformation.objects.filter(authentication_class=3).filter(cate=9).order_by("-invest_class")
     else:
-        results = UserInformation.objects.all()
+        results = UserInformation.objects.all().order_by("-invest_class")
+        print "dddddddddddddddddddddd"
+    print  "88888888888888888888xxxxxxx"
+    a = []
+    for  i in results:
+        b=0
+        r = invest_detail.objects.filter(invest_user=i.user)
+        if r:
+            for j in r:
+                b+=int(j.invest_amount)*int(j.invest_num)
+        a.append(b)
 
-    print  "xxxxxxxxxxxxxxxxxxxxx",results
-    for i in results:
-        print i.user.invest_user_set.all()
 
     ppp = Paginator(results, 10)
-
+    ppp1 = Paginator(a,10)
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:
             page = 1
     try:
             results = ppp.page(page)
+            a= ppp1.page(page)
+
     except (EmptyPage, InvalidPage):
             results = ppp.page(ppp.num_pages)
+            a= ppp1.page(ppp.num_pages)
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')
+
+
+    c = {'results': results, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
     content_html = t.render(
-            RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+            RequestContext(request,c ))
     payload = {
             'content_html': content_html,
             'success': True
@@ -999,6 +1017,14 @@ def add_attion(request,objectid):
         comment = u"关注成功！"
     return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
 
+def cancel_attion(request,objectid):
+    print request,objectid
+    t = Project.objects.get(id=objectid)
+    t.click.remove(request.user)
+    t.save()
+
+    return HttpResponse(json.dumps({"comment":1}), content_type="application/json")
+
 def add_attion_investor(request):
 
     t = User.objects.get(id=request.POST.get("investor"))
@@ -1016,8 +1042,10 @@ def add_attion_investor(request):
     return HttpResponse(json.dumps({'attion': count_after,"comment":comment}), content_type="application/json")
 
 def sendSMS(request):
-    u = User.objects.get(id=request.POST.get("investor"))
+    print "xxxx",request.POST.get("investor")
+    u = User.objects.get(username=request.POST.get("investor"))
     content = request.POST.get("content")
+    print request.user, u,content
 
     if content:
         t = Signal.objects.create(type=2,user=request.user,who=u,content=content)

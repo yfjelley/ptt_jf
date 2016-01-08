@@ -31,7 +31,7 @@
 .newpwd-text input[type="password"]{width:200px; height:30px;}
 .verify-text input[type="password"]{width:200px; height:30px;}
 .save-btn input[type="button"]{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:40px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:72px;}
-.message-text span{position:absolute;margin-left: 85px}
+.message-text span{position:absolute;margin-left: 118px}
 .aggree-text input[type="button"]{border:1px solid #4a3c70;background:#4a3c70;width:120px;color:#FFFFFF;height:40px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:72px;}
 .Validform_error{background-color: #ffe7e7;border: 1px solid #ccc;}
 .Validform_checktip{color: #999;font-size: 12px; height: 20px;line-height: 20px;}

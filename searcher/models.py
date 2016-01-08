@@ -228,7 +228,6 @@ INVEST_TYPE_CHOICES =(
     ('2', '跟投'),
 )
 class UserInformation(models.Model):
-
     user = models.OneToOneField(User)
     photo_url = models.CharField("照片",max_length=30,blank=True, null=True)
     nickname = models.CharField('昵称', max_length=30, blank=True, null=True)
@@ -254,6 +253,7 @@ class UserInformation(models.Model):
     weibo_num = models.CharField('微博', max_length=30, blank=True, null=True)
     abcdefg = models.CharField(max_length=50, blank=True, null=True)
     authentication_class = models.CharField('认证类别', max_length=1,choices=AUTH_CLASS_CHOICES, blank=True, null=True)
+    invest_class = models.IntegerField('投资级别', max_length=30,default=1)#1 认证投资人，2 资深投资人
     id_card = models.CharField('身份证照片', max_length=255, blank=True, null=True)
     business_card = models.CharField('身份证号码', max_length=255, blank=True, null=True)
     financial_assets = models.CharField('营业执照', max_length=255, blank=True, null=True)
@@ -296,7 +296,7 @@ class Project(models.Model):
     transfer_equity = models.CharField('出让股份',max_length=255, blank=True, null=True)#出让的股权份额
     company = models.CharField('注册公司',max_length=255, blank=True, null=True)#注册公司
     url = models.URLField('公司链接',max_length=255, blank=True, null=True)#公司链接
-    other = models.CharField('其他信息',max_length=255, blank=True, null=True)#其他信息
+    other = models.CharField('协议链接',max_length=255, blank=True, null=True)#其他信息
     patent = models.TextField('专利',blank=True, null=True)#专利
     business_plan_url = models.CharField('商业计划书',max_length=255, blank=True, null=True)#商业计划书
     active = models.IntegerField('是否是精选',blank=True, null=True)#是否是精选

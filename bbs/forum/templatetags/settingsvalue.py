@@ -63,3 +63,10 @@ def add_with(value, arg):
         return int((float(arg)/float(value))*100)
 
 
+@register.filter(is_safe=False)
+def add_all(value, arg):
+    print value,arg
+    print arg[int(value)]
+    return arg[int(value)]
+
+

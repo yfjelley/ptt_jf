@@ -94,7 +94,7 @@
                             {% else %}
                             {{ user.username |phone_cut }}
                             {% endif %}
-                            <ul>
+                            <ul class="loggedy">
                                 <li><a href="{% url 'userinfo' %}">我的资料</a></li>
                                 <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
                             </ul>
@@ -118,15 +118,13 @@
 
         $(document).ready(function () {
             $('#logged li').hover(function () {
-                $('ul', this).stop(true,false).slideDown(400);
-                $(this).children('a:first').addClass("hov");
+                $(this).find(".loggedy").stop().slideDown('slow');
             }, function () {
-                $('ul', this).stop(true,false).slideUp(200);
-                $(this).children('a:first').removeClass("hov");
+                $(this).find(".loggedy").stop().slideUp('slow');
             });
 
             //alert(select);
-            $('#submit').click(function(){
+            $('#submit').click(function() {
                    var select = $('.putIn').val();
                    var keyword = $('#inptext').val();
 				   document.getElementById("select").value= select;
