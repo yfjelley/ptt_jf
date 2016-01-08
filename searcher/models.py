@@ -297,7 +297,7 @@ class Project(models.Model):
     company = models.CharField('注册公司',max_length=255, blank=True, null=True)#注册公司
     url = models.URLField('公司链接',max_length=255, blank=True, null=True)#公司链接
     other = models.CharField('协议链接',max_length=255, blank=True, null=True)#其他信息
-    patent = models.TextField('专利',blank=True, null=True)#专利
+    patent = models.TextField('项目亮点',blank=True, null=True)#专利
     business_plan_url = models.CharField('商业计划书',max_length=255, blank=True, null=True)#商业计划书
     active = models.IntegerField('是否是精选',blank=True, null=True)#是否是精选
     status = models.IntegerField('进行到什么程度',blank=True, null=True)#进行到什么程度

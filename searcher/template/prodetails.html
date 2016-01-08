@@ -165,7 +165,7 @@
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
                 		</li>
                     	<li data-pp="touzi" style="float:left">
-                			<a href="javascript:void(0);" style="color:#808080;">协议内容</a>
+                			<a href="javascript:void(0);" style="color:#808080;">项目亮点</a>
 						</li>
                 		<li style="float:left">
                 			<div style="border-right:1px solid #eeeef0;width:1px;height:40px;margin-top:-10px;"></div>
@@ -211,13 +211,9 @@
 
                 <div id="touzi" class="display">
                 	<div>
-                		<ul>
-                    		<li><p>协议内容
-								<span style="margin-left:540px"><a href="{{result.other}}"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a>
-							</span>
-                               </p>
-                        	</li>
-                    	</ul>
+                		<p>{{result}}
+                           {{result.patent|safe}}
+                    	</p>
                     </div>
                 </div>
 
