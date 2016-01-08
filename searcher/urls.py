@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('searcher.views',
     url(r'^zc$', 'index_zc', name='index_zc'),
+    url(r'^my$', 'index_zc', name='index_zc'),
     url(r'^search_zc$', 'search_zc', name='search_zc'),
     url(r'^auth_register$', 'auth_register', name='auth_register'),
     url(r'^$', 'index_zc', name='index_jf'),

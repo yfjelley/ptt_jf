@@ -598,14 +598,54 @@ def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
 
     daily_selection = Project.objects.filter(active=1).distinct()[0:4]
+    for i in daily_selection:
+        f = invest_detail.objects.filter(invest_project=i)
+        m = 0
+        for j in f:
+            m += int(j.invest_num)
+
+        i.finish = m
+        i.save()
 
     preheating = Project.objects.filter(status=0).distinct()[0:8]
+    for i in preheating:
+        f = invest_detail.objects.filter(invest_project=i)
+        m = 0
+        for j in f:
+            m += int(j.invest_num)
+
+        i.finish = m
+        i.save()
 
     crowdfunded = Project.objects.filter(status=1).distinct()[0:4]
+    for i in crowdfunded:
+        f = invest_detail.objects.filter(invest_project=i)
+        m = 0
+        for j in f:
+            m += int(j.invest_num)
+
+        i.finish = m
+        i.save()
 
     crowdfunded_success = Project.objects.filter(status=2).distinct()[0:4]
+    for i in crowdfunded_success:
+        f = invest_detail.objects.filter(invest_project=i)
+        m = 0
+        for j in f:
+            m += int(j.invest_num)
+
+        i.finish = m
+        i.save()
 
     crowdfunded_finsh= Project.objects.filter(status=2).distinct()[0:4]
+    for i in crowdfunded_finsh:
+        f = invest_detail.objects.filter(invest_project=i)
+        m = 0
+        for j in f:
+            m += int(j.invest_num)
+
+        i.finish = m
+        i.save()
 
     return render_to_response('index_page.html',{"daily_selection":daily_selection,"preheating":preheating, \
                               "crowdfunded":crowdfunded,"crowdfunded_success":crowdfunded_success,\
@@ -1326,13 +1366,19 @@ def safety(request, objectid):
 def intermediary(request, objectid):
     print objectid,type(objectid)
     if int(objectid) == 1:
-        file_name = '/root/zc/static/download/融资居间协议.htm'
-    elif int(objectid) == 2:
         file_name = '/root/zc/static/download/有限合伙协议.htm'
-    elif int(objectid) == 3:
-        file_name = '/root/zc/static/download/投资协议.htm'
-    elif int(objectid) == 4:
+    elif int(objectid) == 2:
         file_name = '/root/zc/static/download/股权转让协议.htm'
+    elif int(objectid) == 3:
+        file_name = '/root/zc/static/download/融资居间协议.htm'
+    elif int(objectid) == 4:
+        file_name = '/root/zc/static/download/投资协议.htm'
+    elif int(objectid) == 5:
+        file_name = '/root/zc/static/download/认购意向书协议.htm'
+    elif int(objectid) == 6:
+        file_name = '/root/zc/static/download/注册协议.htm'
+    elif int(objectid) == 7:
+        file_name = '/root/zc/static/download/服务协议.htm'
 
     response = HttpResponse(readFile(file_name))
     return response
