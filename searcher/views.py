@@ -698,10 +698,7 @@ def safecenter(request):
                     }
                 return HttpResponse(json.dumps(payload), content_type="application/json")
         else:
-            print "form error",form.errors
-            print "form is not valid kkkkkk"
 
-            print "xxxxxxxxxxxxxxxx"
             t = get_template('success.html')
             content_html = t.render(
                     RequestContext(request,{'form':form,'status':u'输入非法！'}))
@@ -729,15 +726,15 @@ def safecenter(request):
 def change_phone_number(request):
     if request.method == "POST":
         form = ModfiyPForm(request.POST)
-        print dir(form)
-        print form.errors
+
+
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
             _code = request.session.get('sms_code')
             smscode = cd['smscode']
 
-            print _code ,smscode
+
 
             if  _code == int(smscode) :
                 user = auth.get_user(request)
@@ -788,7 +785,7 @@ def change_phone_number(request):
 def about_us(request):
     p = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
     mediareports = MediaReports.objects.filter(status=1)
-    print mediareports,"ggggggggxxxxxxxxxxx"
+
     return render_to_response('about.html',{'mediareports':mediareports,"description":p[0].description}, context_instance=RequestContext(request))
 
 def guide(request):
@@ -829,7 +826,7 @@ def publish(request):
         f = request.FILES.get('plan', None)
         if f:
             extension = os.path.splitext(f.name)[-1]
-            print extension
+
             msg = None
             if f.size > 10485760:
                 msg = u"文件大小不能超过20MB"
@@ -889,7 +886,7 @@ def invested(request):
     print "xxxxxxxxxxxxxxxx"
     id = request.POST.get('project')
     per = request.POST.get('per')
-    print type(inv),inv,id,type(id),per
+
     if inv and id:
         try:
             i = invest_detail.objects.get(invest_user=request.user,invest_project=Project.objects.get(id=id))
@@ -980,8 +977,7 @@ def search_investor(request):
        results = UserInformation.objects.filter(authentication_class=3).filter(cate=9).order_by("-invest_class")
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
-        print "dddddddddddddddddddddd"
-    print  "88888888888888888888xxxxxxx"
+
     a = []
     for  i in results:
         b=0
@@ -1039,7 +1035,7 @@ def project(request,objectid):
 
 def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
-    print objectid[-1],type(objectid[-1])
+
     return render_to_response('invest_pr.html',{"invest_type":int(objectid[-1]),"project":p}, context_instance=RequestContext(request))
 
 def add_attion(request,objectid):
@@ -1057,7 +1053,7 @@ def add_attion(request,objectid):
     return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
 
 def cancel_attion(request,objectid):
-    print request,objectid
+
     t = Project.objects.get(id=objectid)
     t.click.remove(request.user)
     t.save()
@@ -1081,10 +1077,10 @@ def add_attion_investor(request):
     return HttpResponse(json.dumps({'attion': count_after,"comment":comment}), content_type="application/json")
 
 def sendSMS(request):
-    print "xxxx",request.POST.get("investor")
+
     u = User.objects.get(username=request.POST.get("investor"))
     content = request.POST.get("content")
-    print request.user, u,content
+
 
     if content:
         t = Signal.objects.create(type=2,user=request.user,who=u,content=content)
@@ -1194,7 +1190,7 @@ def project_reply(request,project_id):
         else:
             ca = Captcha(request)
             if ca.check(_code):
-                print "dddd"
+
                 t = project_forum()
                 if request.POST['content']:
                     t.forum_content = request.POST['content']
@@ -1228,7 +1224,7 @@ def do_result(request):
 
         return render_to_response('investor_search.html',{'select':select,'keyword':keyword,'page':page},context_instance=RequestContext(request))
 def do_search(request):
-    print request,request.method
+
     if request.method == 'POST':
         select = request.POST.get('select','')
         keyword = request.POST.get('keyword','')
@@ -1257,7 +1253,7 @@ def do_search(request):
                     results = ppp.page(ppp.num_pages)
             last_page = ppp.page_range[len(ppp.page_range) - 1]
             page_set = get_pageset(last_page, page)
-            print last_page,page
+
             t = get_template('do_search_project.html')
             content_html = t.render(
                     RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
@@ -1267,7 +1263,7 @@ def do_search(request):
                 }
             return HttpResponse(json.dumps(payload), content_type="application/json")
         else:
-            print keyword,type(keyword)
+
             if keyword and keyword != u'0':
                 results = User.objects.filter(Q(username__icontains=keyword)|Q(userinformation__realname__icontains=keyword))
             else:
@@ -1340,7 +1336,7 @@ def search_zc(request):
 
 def investor_info(request,objectid):
     p1 = UserInformation.objects.get(user=User.objects.get(username=objectid))
-    print p1.realname, p1.position, p1.industry, p1.authentication_class
+
     return render_to_response('investor_intro.html',{"investor_info":p1}, context_instance=RequestContext(request))
 
 def safety(request, objectid):
@@ -1359,7 +1355,7 @@ def safety(request, objectid):
     return render_to_response('safety.html',{"name":name, "agreement":ag[0].agreement}, context_instance=RequestContext(request))
 
 def intermediary(request, objectid):
-    print objectid,type(objectid)
+
     if int(objectid) == 1:
         file_name = '/root/zc/static/download/有限合伙协议.htm'
     elif int(objectid) == 2:
@@ -1380,7 +1376,7 @@ def intermediary(request, objectid):
 
 
 def readFile(fn, buf_size=262144):
-    print fn
+
     f = open(fn, "rb")
     while True:
         c = f.read(buf_size)
@@ -1421,7 +1417,7 @@ def get_pageset(last_page, pagenum):
 
 
 def uploadify_script(request,objectid):
-    print objectid,type(objectid)
+
     ret="0"
     file = request.FILES.get("Filedata",None)
     if file:
@@ -1460,7 +1456,7 @@ def profile_upload(file,request,objectid):
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.income_assets = url
-        print name ,type(objectid),objectid
+
         u.save()
         return (True,name) #change
 

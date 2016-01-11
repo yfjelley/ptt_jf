@@ -137,24 +137,20 @@
 																<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 
 															<li style="float:left">
-																<label>融资份额</label><span>{{result.invest_num}}万份</span>
+																<label>融资总额:</label><span>{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
 															</li>
-															<li style="float:left;margin-left:50px;">
-																<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
+															<li style="float:right;margin-right:40px;">
+																<label>已完成:</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
 															</li>
 															<li style="clear:both">
 																<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 															</li>
-															<li style="clear:both">
-																{% if result.publish.userinformation.nickname %}
-																<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
-																{% else %}
-															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
-																{% endif %}
-															<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
+															<li style="float:left;">
+																<label>已预约融资:</label><span>{% widthratio result.invest_amount 1 result.finish  %}万元</span>
 															</li>
-															<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
-															<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
+															<li style="float:right;margin-right:20px">
+																<label>行业:</label><span>{{result.get_category_display}}</span>
+															</li>
 														</ul>
 													</div>
 												 </div>
@@ -204,24 +200,20 @@
 											<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
 												<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 											<li style="float:left">
-												<label>融资目标</label><span>{{result.invest_num}}万份</span>
+												<label>融资总额:</label><span>{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
 											</li>
-											<li style="float:left;margin-left:50px;">
-												<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
+											<li style="float:right;margin-right:40px;">
+												<label>已完成:</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
 											</li>
 											<li style="clear:both">
 												<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 											</li>
-											<li style="clear:both">
-											{% if result.publish.userinformation.nickname %}
-												<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
-												{% else %}
-												<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
-												{% endif %}
-											<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
+											<li style="float:left;">
+												<label>已预约融资:</label><span>{% widthratio result.invest_amount 1 result.finish  %}万元</span>
 											</li>
-											<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
-											<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
+											<li style="float:right;margin-right:20px">
+												<label>行业:</label><span>{{result.get_category_display}}</span>
+											</li>
 										</ul>
 									</div>
 								 </div>
@@ -270,24 +262,20 @@
 														<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
 															<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 														<li style="float:left">
-															<label>融资目标</label><span>{{result.invest_num}}万份</span>
+															<label>融资总额:</label><span>{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
 														</li>
-														<li style="float:left;margin-left:50px;">
-															<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
+														<li style="float:right;margin-right:40px;">
+															<label>已完成:</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
 														</li>
 														<li style="clear:both">
 															<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 														</li>
-														<li style="clear:both">
-														{% if result.publish.userinformation.nickname %}
-															<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
-																{% else %}
-															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
-																{% endif %}
-														<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
+														<li style="float:left;">
+															<label>已预约融资:</label><span>{% widthratio result.invest_amount 1 result.finish  %}万元</span>
 														</li>
-														<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
-														<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
+														<li style="float:right;margin-right:20px">
+															<label>行业:</label><span>{{result.get_category_display}}</span>
+														</li>
 													</ul>
 												</div>
 											 </div>
@@ -336,7 +324,7 @@
 																	<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-1em">
 																		<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
 																	<li style="float:left">
-																		<label>融资目标</label><span>{{result.invest_num}}万份</span>
+																		<label>融资总额</label><span>{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
 																	</li>
 																	<li style="float:left;margin-left:50px;">
 																		<label>已完成</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
@@ -344,16 +332,12 @@
 																	<li style="clear:both">
 																		<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
 																	</li>
-																	<li style="clear:both">
-																	{% if result.publish.userinformation.nickname %}
-																<label style="margin-left:20px;">{{result.publish.userinformation.nickname}}</label>
-																{% else %}
-															<label style="margin-left:20px;">{{result.publish.username|phone_cut}}</label>
-																{% endif %}
-																	<label style="color:#000000;;font-size:12px;margin-left:90px;">{{result.get_category_display}}</label>
+																	<li style="float:left;">
+																		<label>已预约融资:</label><span>{% widthratio result.invest_amount 1 result.finish  %}万元</span>
 																	</li>
-																	<li style=" position:relative;top:-25px"><img src="/static/images/people.png" /></li>
-																	<li style=" position:relative;top: -55px;left: 100px;padding-left: 20px;width:100px;"><img src="/static/images/tag.png" /></li>
+																	<li style="float:right;margin-right:20px">
+																		<label>行业:</label><span>{{result.get_category_display}}</span>
+																	</li>
 																</ul>
 															</div>
 														 </div>
