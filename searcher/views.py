@@ -1,5 +1,5 @@
 # coding=utf-8
-
+from __future__ import unicode_literals
 import MySQLdb
 import datetime
 from itertools import chain
@@ -1223,8 +1223,9 @@ def do_result(request):
         page = request.POST.get('page', '1')
 
         return render_to_response('investor_search.html',{'select':select,'keyword':keyword,'page':page},context_instance=RequestContext(request))
-def do_search(request):
 
+
+def do_search(request):
     if request.method == 'POST':
         select = request.POST.get('select','')
         keyword = request.POST.get('keyword','')

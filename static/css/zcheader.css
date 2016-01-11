@@ -15,7 +15,7 @@ a{text-decoration: none}
     box-sizing: border-box;}
 .TopclickTag{color:#e1604d;cursor:pointer;border-bottom: 2px solid #e1604d;padding:6px 0}
 li{list-style:none;}
-.logreg_name{margin-left:120px;position:absolute}
+.logreg_name{margin-left:120px;position:absolute;width: 152px}
 .logreg_name a{color:#FFFFFF;}
 .logreg_name a:hover{color:#e1604d;cursor:pointer;}
 #top_r li{ float:left; position:relative; margin:0 5px;height: 50px;}

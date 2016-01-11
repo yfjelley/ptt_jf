@@ -30,9 +30,9 @@ $(document).ready(function(e) {
 		if(s > t - 10){
 			$('.side').css('position','fixed');
 			$('.side').css('top',0);
-		/*	if(s + fh > mh){
+			/*if(s + fh > mh){
 				$('.side').css('top',mh-s-fh+'px');	
-			}	*/			
+			}*/
 		}else{
 			$('.side').css('position','');
 			$('.side').css('top',630);
