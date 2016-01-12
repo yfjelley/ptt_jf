@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>投资指引</title>
 <link  rel="stylesheet"  href="/static/css/zhongchou.css" />
-	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/guide.js"></script>
 	<script type="text/javascript">  
 		$(function(){
 			$('#daohang a:eq(0)').addClass('clickTag');
@@ -140,6 +141,8 @@
 <!--内容-->
 <div class="conext">
 <div style="height:50px;"></div>
+	<!----左边浮动图片------->
+	<a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
 <div class="div11">
 		<div class="div_left" id="daohang">
 			<a data-pp="gyzc" href="javascript:void(0);" class="blockColor"><label class="left_label">关于众投</label></a>
@@ -400,6 +403,35 @@
 		   <div id="right_joinour" class="display" style="margin-top:60px;background:#FFFFFF;">6666666666666</div>
 	    </div>
 	</div>
+
+
+	<!----右边悬浮框----------->
+	<div class="side">
+		<div id="right_float">
+			<div class="down">
+				<p class="yidong">
+					<a class="erwei" href="####"></a>
+					<a class="l_r3 l_rw3" href="####" style="width: 0px;"><img src="/static/images/wxcode.png"></a>
+				</p>
+				<p class="yidong">
+					<a class="callphone" href="####"></a>
+					<a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:400-709-1818</a>
+				</p>
+				<p class="yidong">
+					<a class="emails" href="####"></a>
+					<a class="l_r5 l_rw5" href="####" style="width: 0px;">公司邮箱:service@ddbid.com</a>
+				</p>
+				<p class="yidong">
+					<a class="address" href="####"></a>
+					<a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场<br>2号楼908室</a>
+				</p>
+				<p class="yidong">
+					<a class="fanhui" href="#"></a>
+					<a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--结尾-->
@@ -423,6 +455,62 @@
             //alert('mywblogout');
         });
     }
+		$(document).ready(function(){
+			$('#right_float .yidong').hover(function(){
+
+				$(this).find('.l_rw3').stop().animate({
+					'width':'135px'
+				},400);
+			},function(){
+				$(this).find('.l_rw3').stop().animate({
+					'width':'0px'
+				},400);
+			});
+		});
+		$(document).ready(function(){
+			$('#right_float .yidong').hover(function(){
+				$(this).find('.l_rw2').stop().animate({
+					'width':'170px'
+				},400);
+			},function(){
+				$(this).find('.l_rw2').stop().animate({
+					'width':'0px'
+				},400);
+			});
+		});
+		$(document).ready(function(){
+			$('#right_float .yidong').hover(function(){
+				$(this).find('.l_rw4').stop().animate({
+					'width':'70px'
+				},400);
+			},function(){
+				$(this).find('.l_rw4').stop().animate({
+					'width':'0px'
+				},400);
+			});
+		});
+		$(document).ready(function(){
+			$('#right_float .yidong').hover(function(){
+				$(this).find('.l_rw5').stop().animate({
+					'width':'200px'
+				},400);
+			},function(){
+				$(this).find('.l_rw5').stop().animate({
+					'width':'0px'
+				},400);
+			});
+		});
+		$(document).ready(function(){
+			$('#right_float .yidong').hover(function(){
+				$(this).find('.l_rw6').stop().animate({
+					'width':'250px'
+				},400);
+			},function(){
+				$(this).find('.l_rw6').stop().animate({
+					'width':'0px'
+				},400);
+			});
+		});
 </script>
 </body>
 </html>

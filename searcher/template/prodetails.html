@@ -27,21 +27,26 @@
     	 alert('请先登录!');
     	{% endif %}
     })
+    $(function(){
+    {% if flag %}
+    $("#focus").attr("checked",'true');
+    {% endif %}
+    })
 
-	$('#focus').click(function(){
-		if($(this).val()=="关注"){
-			$("#focus").attr("value","取消关注");
-		}else{
-			$("#focus").attr("value","关注");
-		}
-	})
 	function attion_pr(){
 	    {% if user.id %}
-        $.post("/add_attion/"+{{result.id}}+"/",
-        	{},
-        	function(data)
-        	{ if(data.comment){alert(data.comment);
-        	if(data.comment=="关注成功"){document.getElementById('click').innerText=data.attion;}};});
+	         if($("#focus").is(':checked')){
+			     $.post("/add_attion/"+{{result.id}}+"/",
+				{},
+				function(data)
+				{ if(data.comment){alert(data.comment);
+				if(data.comment=="关注成功"){$("#focus").attr("checked",'true');}};});}else{
+					$.post("/cancel_attion/"+{{result.id}}+"/",
+					{},
+					function(data)
+					{});
+				}
+
         {% else %}
          alert('请先登录!');
         {% endif %}
@@ -134,7 +139,10 @@
                 	</ul>
                 </li>
                 <li>
-                	<input class="btn-focus" id="focus" type="button" onclick="attion_pr()"/>
+					<div class="checkbox">
+						<input class="btn-focus" id="focus" value=" " type="checkbox" onclick="attion_pr()"/>
+						<label for="focus"></label>
+					</div>
 						<!--<dd><input class="btn-remind" type="button" />
 						<ul id="warning_li" class="remind-text" style="display:none">
 							<li><a href="javascript:void(0)" class="rmbutton" rtype="2">11预热提醒</a></li>

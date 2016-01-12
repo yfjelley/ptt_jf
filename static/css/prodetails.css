@@ -10,9 +10,35 @@
 .pro-title>.zczhong{margin-left:45px}
 .pro-status{float: left;padding:8px 0 0 10px}
 .pro-writing{margin-left:-20px;margin-top:20px;}
-input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.png") no-repeat;width:77px;height:25px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:10px;}
-input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:77px;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:6px;}
-input.btn-lingtou{border:0 solid #FFFFFF; background:url("/static/images/order.png") no-repeat;width:77px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:5px;}
+/*input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.jpg") no-repeat;width:80px;height:28px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:10px;}*/
+ input[type='checkbox'] + label:before{
+    background: url('/static/images/focus.jpg');
+    content:' ';
+    height: 28px;
+    width: 80px;
+    position: absolute;
+    left:0;
+}
+ input[type='checkbox']{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    position:absolute;
+    left:4px;
+    top:3px;
+}
+ input[type='checkbox']:checked + label:before{
+    background: url('/static/images/refocus.jpg');
+}
+.checkbox{
+    min-height:24px;
+    padding-left: 24px;
+    position: relative;
+    left: 630px;
+    top: 10px;
+}
+input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:80px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:6px;}
+input.btn-lingtou{border:0 solid #FFFFFF; background:url("/static/images/order.jpg") no-repeat;width:80px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:20px;}
 input.btn-gentou{border:1px solid #4a3c70; background:#4a3c70;width:77px; color:#FFFFFF;height:25px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:80px; margin-top:5px;}
 input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFFFF;height:30px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:660px; margin-top:5px;}
 .pro-list>li{margin:20px 10px;}

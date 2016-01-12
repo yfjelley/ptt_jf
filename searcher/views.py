@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 import MySQLdb
 import datetime
 from itertools import chain
@@ -251,7 +251,8 @@ def register(request):
                     flag1 = 2
                 else:
                     flag1 = 3
-                return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
+                return HttpResponseRedirect(reverse('index_jf'))
+                #return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
@@ -1024,9 +1025,15 @@ def prodetails(request,objectid):
     forum = project_forum.objects.filter(forum_project=p)
     invest_de = invest_detail.objects.filter(invest_project=p)
     amount = 0
+    attention_pr =   Project.objects.filter(click=request.user,)
+    print attention_pr,"attention_pr"
+    if p in attention_pr:
+        flag = 1
+    else:
+        flag = 0
     for i in invest_de:
         amount += int(i.invest_num)
-    return render_to_response('prodetails.html',{"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
+    return render_to_response('prodetails.html',{"flag":flag,"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
 
 def project(request,objectid):
@@ -1037,6 +1044,8 @@ def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
 
     return render_to_response('invest_pr.html',{"invest_type":int(objectid[-1]),"project":p}, context_instance=RequestContext(request))
+    t = Project.objects.get(id=objectid)
+
 
 def add_attion(request,objectid):
     t = Project.objects.get(id=objectid)

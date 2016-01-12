@@ -14,12 +14,14 @@
 			</div>
 			<div class="DesPel">
 				<div style="float:right;margin-top: 10px;margin-right:10px">
-
-						<img id="focus_{{result.user}}" name="{{result.id}}" src="/static/images/focus.png" style="padding:2px 5px" width="70" /><br>
+					<div class="checkbox">
+						<input class="focus" id="focus_{{result.user}}" name="{{result.id}}" value=" " type="checkbox" />
+						<label for="focus_{{result.user}}"></label>
+					</div>
 					{% if result.nickname %}
-					<img id="priletter_{{result.user}}" name="{{result.nickname}}" data-id="{{result.user.username}}" src="/static/images/priletter.png" style="padding:2px 5px" width="70"/></div>
+					<img id="priletter_{{result.user}}" name="{{result.nickname}}" data-id="{{result.user.username}}" src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
 				    {% else %}
-				    <img id="priletter_{{result.user}}" name="{{result.user.username|phone_cut}}" data-id="{{result.user.username}}" src="/static/images/priletter.png" style="padding:2px 5px" width="70"/></div>
+				    <img id="priletter_{{result.user}}" name="{{result.user.username|phone_cut}}" data-id="{{result.user.username}}" src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
 				    {% endif %}
 				<div id ="person" style=" font-weight:bold;font-size:24px;padding:5px 0;color:#000;margin-top:20px;margin-left:-5px;text-align: left">
 					{% if result.nickname %}
@@ -159,6 +161,12 @@ $(function() {
          {% endif %}
 		});
 	});
+
+			$(".focus").click(function(){
+				if($(".focus").is(':checked')){
+				}else{
+				}
+			})
 });
 
 </script>

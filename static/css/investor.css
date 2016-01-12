@@ -182,6 +182,32 @@ li.investPelPic2 {
     height: 220px;
     float: right;
 }
+input[type='checkbox'] + label:before{
+    background: url('/static/images/focus.jpg');
+    content:' ';
+    height: 28px;
+    width: 80px;
+    position: absolute;
+    left:0;
+}
+input[type='checkbox']{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    position:absolute;
+    left:4px;
+    top:3px;
+}
+input[type='checkbox']:checked + label:before{
+    background: url('/static/images/refocus.jpg');
+}
+.checkbox{
+    min-height:24px;
+    padding-left: 24px;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
 
 .pro-content {
     margin-top: -120px
