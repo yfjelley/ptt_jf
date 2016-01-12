@@ -36,12 +36,6 @@ li{ list-style-type:none;}
 .side{width: 70px;z-index: 2;right: 70px;position: absolute;top: 120px;}
 .side a{font-size: 14px;color: #FFFFFF}
 .side p{margin:0;padding:0;border:0;}
-@media screen and(min-width: 1152px) and (max-width: 1440px){
- .side{
-  right: -180px;
- }
-}
-
 #right_float{
  height: 350px;
  width: 57px;
@@ -138,6 +132,11 @@ li{ list-style-type:none;}
  font-family: 微软雅黑;
 }
 
+@media screen and (max-width: 1440px) {
+  .side{
+   right: -50px;
+  }
+}
 
 
 #nav111{

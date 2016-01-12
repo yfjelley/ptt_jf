@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>关于我们</title>
 	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/static/js/about.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('#daohang').find('a').click(function(){
@@ -38,6 +39,8 @@
 
 <!--内容-->
 <div class="conext">
+	<!----左边浮动图片------->
+	<a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
    <div class="divvdc">
 	   <div class="div_left" id="daohang">
 				<a data-pp="company" href="javascript:void(0);" class="blockCo"><label class="left_label">公司简介</label></a>
@@ -50,7 +53,7 @@
 				<div class="downline"></div>
 		  		<a data-pp="joinour" href="javascript:;" class="grayColor"><label class="left_label">加入我们</label></a>
 		</div>	
-		<div class="div_right">
+	   <div class="div_right">
 	   <div id="company" class="con_right">
 			 <div >
 				 <div class="biaoti">公司简介</div>
@@ -144,8 +147,34 @@
 				 <div style="height:30px;"></div>
 	   </div>
 	</div>
-
   </div>
+	<!----右边悬浮框----------->
+	<div class="side">
+		<div id="right_float">
+			<div class="down">
+				<p class="yidong">
+					<a class="erwei" href="####"></a>
+					<a class="l_r3 l_rw3" href="####" style="width: 0px;"><img src="/static/images/wxcode.png"></a>
+				</p>
+				<p class="yidong">
+					<a class="callphone" href="####"></a>
+					<a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:400-709-1818</a>
+				</p>
+				<p class="yidong">
+					<a class="emails" href="####"></a>
+					<a class="l_r5 l_rw5" href="####" style="width: 0px;">公司邮箱:service@ddbid.com</a>
+				</p>
+				<p class="yidong">
+					<a class="address" href="####"></a>
+					<a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场<br>2号楼908室</a>
+				</p>
+				<p class="yidong">
+					<a class="fanhui" href="#"></a>
+					<a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--结尾-->
@@ -267,6 +296,63 @@
     }
     
     initMap();//创建和初始化地图
+
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+
+			$(this).find('.l_rw3').stop().animate({
+				'width':'135px'
+			},400);
+		},function(){
+			$(this).find('.l_rw3').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw2').stop().animate({
+				'width':'170px'
+			},400);
+		},function(){
+			$(this).find('.l_rw2').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw4').stop().animate({
+				'width':'70px'
+			},400);
+		},function(){
+			$(this).find('.l_rw4').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw5').stop().animate({
+				'width':'200px'
+			},400);
+		},function(){
+			$(this).find('.l_rw5').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw6').stop().animate({
+				'width':'250px'
+			},400);
+		},function(){
+			$(this).find('.l_rw6').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
 </script>
 
 </html>

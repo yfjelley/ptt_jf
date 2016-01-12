@@ -20,7 +20,7 @@
 {% include "zcheader.html" %}
 <!--内容-->
 <div id="Icontainer">
-    <a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
+    <div class="fixed"><img src="/static/images/sqtzr.png"/></div>
     <div style="width:100%;background:#EEEEF0;">
         <div id="result" class="Cleft5">
         </div>
@@ -68,7 +68,7 @@
                 {
                     page: page,
                     keyword: '{{keyword}}',
-                    select: '{{select}}',
+                    //select: '{{select}}',
                 },
                 function (data) {
                     $('#result').html(data.content_html);

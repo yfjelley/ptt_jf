@@ -123,11 +123,9 @@
                 $(this).find(".loggedy").stop().slideUp('slow');
             });
 
-            //alert(select);
+         
             $('#submit').click(function() {
-                   var select = $('.putIn').val();
                    var keyword = $('#inptext').val();
-				   document.getElementById("select").value= select;
 				   document.getElementById("keyword").value= keyword;
 				   $("#formid").submit();
 
@@ -146,7 +144,6 @@
 </script>
 
 <form id="formid" action="/do_result/" method="post">
-    <input id="select" name="select" value="" type="text"  style="display:none;"/>
     <input id="keyword" name="keyword" value="" type="text"  style="display:none;"/>
 </form>
 </body>

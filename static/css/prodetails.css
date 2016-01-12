@@ -30,12 +30,13 @@
  input[type='checkbox']:checked + label:before{
     background: url('/static/images/refocus.jpg');
 }
+
 .checkbox{
     min-height:24px;
-    padding-left: 24px;
     position: relative;
-    left: 630px;
+    float: right;
     top: 10px;
+    margin-right: 95px;
 }
 input.btn-remind{border:0 solid #FFFFFF;background:url("/static/images/remind.png") no-repeat;width:80px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:40px; margin-top:6px;}
 input.btn-lingtou{border:0 solid #FFFFFF; background:url("/static/images/order.jpg") no-repeat;width:80px;height:28px; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:20px;}
