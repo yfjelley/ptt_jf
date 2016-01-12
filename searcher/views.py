@@ -1025,11 +1025,11 @@ def prodetails(request,objectid):
     forum = project_forum.objects.filter(forum_project=p)
     invest_de = invest_detail.objects.filter(invest_project=p)
     amount = 0
-    attention_pr =   Project.objects.filter(click=request.user,)
-    print attention_pr,"attention_pr"
-    if p in attention_pr:
-        flag = 1
-    else:
+    try:
+        attention_pr =   Project.objects.filter(click=request.user)
+        if p in attention_pr:
+            flag = 1
+    except:
         flag = 0
     for i in invest_de:
         amount += int(i.invest_num)
