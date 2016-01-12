@@ -24,4 +24,103 @@ a{ text-decoration:none;color:#333}
 .partner ul li{float:left;list-style-type:none;margin-left:5px;}
 .partner ul li a{text-decoration:none;color:#000000;}
 .partner ul li a img{width:200px;height:50px;padding:15px;}
+/*×óÓÒÁ½±ßÐü¸¡*/
+.fixed{float:left;padding-left:80px;padding-top:20px;}
+.side{width: 70px;z-index: 2;right: 70px;position: absolute;top: 120px;}
+.side a{font-size: 14px;color: #FFFFFF}
+.side p{margin:0;padding:0;border:0;}
+#right_float{
+    height: 350px;
+    width: 57px;
+}
+#right_float .down{
+    position: absolute;
 
+}
+#right_float p{
+    position: relative;
+}
+#right_float p{
+    width:35px;
+}
+#right_float a.erwei{
+    background: url(/static/images/weixin_1.png) no-repeat;
+}
+#right_float p a{
+    width: 57px;
+    height: 57px;
+    display: block;
+    margin: 5px;
+    /*padding: 3px;*/
+    overflow: hidden;
+    margin-left: 7px;
+}
+#right_float .l_r3{
+    /*display: none;*/
+    width: 0px;
+    height: 154px;
+    position: absolute;
+    right: 34px;
+    top: 10px;
+    margin: 0;
+}
+#right_float a.callphone{
+    background: url(/static/images/phone.png) no-repeat;
+}
+#right_float .l_r4 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: Î¢ÈíÑÅºÚ;
+}
+#right_float a.fanhui{
+    background: url(/static/images/gototop.png) no-repeat ;
+}
+#right_float a.address{
+    background: url(/static/images/address.jpg) no-repeat ;
+}
+#right_float .l_r6 {
+    width: 0px;
+    height: 57px;
+    line-height: 30px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: Î¢ÈíÑÅºÚ;
+}
+#right_float .l_r7 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: Î¢ÈíÑÅºÚ;
+}
+#right_float a.emails{
+    background: url(/static/images/emails.jpg) no-repeat;
+}
+#right_float .l_r5 {
+    width: 0px;
+    height: 57px;
+    line-height: 57px;
+    background: rgb(213, 94, 75);
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: Î¢ÈíÑÅºÚ;
+}

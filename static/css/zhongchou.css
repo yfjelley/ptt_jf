@@ -33,9 +33,15 @@ li{ list-style-type:none;}
 .bzzx{display:none;padding-top:42px;background:#FFFFFF;}
 .xx{diplay:none;}
 .fixed{float:left;padding-left:80px;padding-top:20px;}
-.side{width: 70px;z-index: 2;float: right;right: 70px;position: absolute;top: 120px;}
+.side{width: 70px;z-index: 2;right: 70px;position: absolute;top: 120px;}
 .side a{font-size: 14px;color: #FFFFFF}
 .side p{margin:0;padding:0;border:0;}
+@media screen and(min-width: 1152px) and (max-width: 1440px){
+ .side{
+  right: -180px;
+ }
+}
+
 #right_float{
  height: 350px;
  width: 57px;

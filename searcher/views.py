@@ -1234,72 +1234,7 @@ def do_result(request):
         return render_to_response('investor_search.html',{'select':select,'keyword':keyword,'page':page},context_instance=RequestContext(request))
 
 
-def do_search(request):
-    if request.method == 'POST':
-        select = request.POST.get('select','')
-        keyword = request.POST.get('keyword','')
 
-        print select,type(select)
-        if select == u"找项目":
-            if keyword and keyword != u'0':
-                try:
-                    results = Project.objects.filter(Q(publish__username__icontains=keyword)\
-                            |Q(name__icontains=keyword)|Q(category__icontains=keyword))
-                except Exception as e:
-                    results = Project.objects.all()
-                print results
-            else:
-                results = Project.objects.all()
-
-            ppp = Paginator(results, 20)
-
-            try:
-                    page = int(request.POST.get('page', '1'))
-            except ValueError:
-                    page = 1
-            try:
-                    results = ppp.page(page)
-            except (EmptyPage, InvalidPage):
-                    results = ppp.page(ppp.num_pages)
-            last_page = ppp.page_range[len(ppp.page_range) - 1]
-            page_set = get_pageset(last_page, page)
-
-            t = get_template('do_search_project.html')
-            content_html = t.render(
-                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
-            payload = {
-                    'content_html': content_html,
-                    'success': True
-                }
-            return HttpResponse(json.dumps(payload), content_type="application/json")
-        else:
-
-            if keyword and keyword != u'0':
-                results = User.objects.filter(Q(username__icontains=keyword)|Q(userinformation__realname__icontains=keyword))
-            else:
-                results = User.objects.all()
-            ppp = Paginator(results, 10)
-
-            try:
-                    page = int(request.POST.get('page', '1'))
-            except ValueError:
-                    page = 1
-            try:
-                    results = ppp.page(page)
-            except (EmptyPage, InvalidPage):
-                    results = ppp.page(ppp.num_pages)
-            last_page = ppp.page_range[len(ppp.page_range) - 1]
-            page_set = get_pageset(last_page, page)
-            t = get_template('do_search_investor.html')
-            content_html = t.render(
-                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
-            payload = {
-                    'content_html': content_html,
-                    'success': True
-                }
-            return HttpResponse(json.dumps(payload), content_type="application/json")
-    else:
-        return HttpResponseRedirect(reverse('do_result'))
 
 
 def search_zc(request):
@@ -1479,3 +1414,71 @@ def profile_delte(request):
     if del_file:
         path_file=os.path.join(settings.MEDIA_ROOT,'upload',del_file)
         os.remove(path_file)
+
+from __future__ import unicode_literals
+def do_search(request):
+    if request.method == 'POST':
+        select = request.POST.get('select','')
+        keyword = request.POST.get('keyword','')
+
+        print select,type(select)
+        if select == u"找项目":
+            if keyword and keyword != u'0':
+                try:
+                    results = Project.objects.filter(Q(publish__username__icontains=keyword)\
+                            |Q(name__icontains=keyword)|Q(category__icontains=keyword))
+                except Exception as e:
+                    results = Project.objects.all()
+                print results
+            else:
+                results = Project.objects.all()
+
+            ppp = Paginator(results, 20)
+
+            try:
+                    page = int(request.POST.get('page', '1'))
+            except ValueError:
+                    page = 1
+            try:
+                    results = ppp.page(page)
+            except (EmptyPage, InvalidPage):
+                    results = ppp.page(ppp.num_pages)
+            last_page = ppp.page_range[len(ppp.page_range) - 1]
+            page_set = get_pageset(last_page, page)
+
+            t = get_template('do_search_project.html')
+            content_html = t.render(
+                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+            payload = {
+                    'content_html': content_html,
+                    'success': True
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
+        else:
+
+            if keyword and keyword != u'0':
+                results = User.objects.filter(Q(username__icontains=keyword)|Q(userinformation__realname__icontains=keyword))
+            else:
+                results = User.objects.all()
+            ppp = Paginator(results, 10)
+
+            try:
+                    page = int(request.POST.get('page', '1'))
+            except ValueError:
+                    page = 1
+            try:
+                    results = ppp.page(page)
+            except (EmptyPage, InvalidPage):
+                    results = ppp.page(ppp.num_pages)
+            last_page = ppp.page_range[len(ppp.page_range) - 1]
+            page_set = get_pageset(last_page, page)
+            t = get_template('do_search_investor.html')
+            content_html = t.render(
+                    RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+            payload = {
+                    'content_html': content_html,
+                    'success': True
+                }
+            return HttpResponse(json.dumps(payload), content_type="application/json")
+    else:
+        return HttpResponseRedirect(reverse('do_result'))
