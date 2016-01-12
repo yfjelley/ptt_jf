@@ -132,13 +132,6 @@ li{ list-style-type:none;}
  font-family: 微软雅黑;
 }
 
-@media screen and (max-width: 1440px) {
-  .side{
-   right: -50px;
-  }
-}
-
-
 #nav111{
  width:570px;
  list-style-type: none;

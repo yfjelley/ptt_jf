@@ -16,8 +16,13 @@
 		});
 	
 		$('#pro-daohang').find('li').click(function(){
+		      {% if user.id %}
 				var id =$(this).data('pp');
 				$('#'+id).show().siblings().hide();
+			  {% else %}
+			  	alert('请先登录!');
+			  {% endif %}
+
 		});
 	});
     $('.btn-remind').click(function(){
@@ -29,29 +34,34 @@
     })
     $(function(){
     {% if flag %}
+
     $("#focus").attr("checked",'true');
     {% endif %}
     })
 
+$(function(){
+		{% if not user.id %}
+			$('#focus').attr("disabled",true);
+			{% endif %}
+})
+
 	function attion_pr(){
+
 	    {% if user.id %}
+			$('#focus').attr("disabled",false);
 	         if($("#focus").is(':checked')){
 			     $.post("/add_attion/"+{{result.id}}+"/",
 				{},
 				function(data)
 				{ if(data.comment){alert(data.comment);
-				if(data.comment=="关注成功"){$("#focus").attr("checked",'true');}};});}else{
+				if(data.comment=="关注成功"){}};});}else{
 					$.post("/cancel_attion/"+{{result.id}}+"/",
 					{},
 					function(data)
 					{});
 				}
-
-        {% else %}
-         alert('请先登录!');
-        {% endif %}
+		{% endif %}
     }
-
     $(document).ready(function () {
         $(".btn-remind").click(function () {
         	{% if user.id %}
@@ -140,7 +150,7 @@
                 </li>
                 <li>
 					<div class="checkbox">
-						<input class="btn-focus" id="focus" value=" " type="checkbox" onclick="attion_pr()"/>
+						<input class="btn-focus" id="focus" value=" " type="checkbox"   onclick="attion_pr()"/>
 						<label for="focus"></label>
 					</div>
 						<!--<dd><input class="btn-remind" type="button" />
