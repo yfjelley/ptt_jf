@@ -969,13 +969,13 @@ def search_investor(request):
     elif search_word == [u'3', u'9']:
         results = UserInformation.objects.filter(invest_class=3).filter(cate=5).order_by("-invest_class")
     elif search_word == [u'3', u'10']:
-       results = UserInformation.objects.filter(invest_class=3).filter(cate=6).order_by("-invest_class")
+        results = UserInformation.objects.filter(invest_class=3).filter(cate=6).order_by("-invest_class")
     elif search_word == [u'3', u'11']:
-       results = UserInformation.objects.filter(invest_class=3).filter(cate=7).order_by("-invest_class")
+        results = UserInformation.objects.filter(invest_class=3).filter(cate=7).order_by("-invest_class")
     elif search_word == [u'3', u'12']:
-       results = UserInformation.objects.filter(invest_class=3).filter(cate=8).order_by("-invest_class")
+        results = UserInformation.objects.filter(invest_class=3).filter(cate=8).order_by("-invest_class")
     elif search_word == [u'3', u'13']:
-       results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
+        results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
 
@@ -987,7 +987,6 @@ def search_investor(request):
             for j in r:
                 b+=int(j.invest_amount)*int(j.invest_num)
         a.append(b)
-
 
     ppp = Paginator(results, 10)
     ppp1 = Paginator(a,10)

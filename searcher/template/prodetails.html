@@ -41,10 +41,11 @@
 
 $(function(){
 		{% if not user.id %}
+		//alert('请先登录!');
 			$('#focus').attr("disabled",true);
 			{% endif %}
 })
-
+    function remaid(){alert('请先登录!');}
 	function attion_pr(){
 
 	    {% if user.id %}
@@ -60,6 +61,8 @@ $(function(){
 					function(data)
 					{});
 				}
+		{% else %}
+		alert('请先登录');
 		{% endif %}
     }
     $(document).ready(function () {
@@ -160,8 +163,12 @@ $(function(){
 							<li><a href="javascript:void(0)" class="rmbutton" rtype="5">满标提醒</a></li>
 						</ul>
 					</dd>-->
-
+                    {% if user.id %}
                     <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button"/></a>
+					{% else %}
+					<a href=""><input  onclick="remaid()" class="btn-lingtou" type="button"/></a>
+
+					{% endif %}
                 </li>
 				<li style="clear:both"></li>
                 <li style="margin-top:30px;margin-left:-40px;">               
