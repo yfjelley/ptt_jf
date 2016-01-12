@@ -1029,6 +1029,8 @@ def prodetails(request,objectid):
         attention_pr =   Project.objects.filter(click=request.user)
         if p in attention_pr:
             flag = 1
+        else:
+            flag = 0
     except:
         flag = 0
     for i in invest_de:
