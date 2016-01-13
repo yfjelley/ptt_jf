@@ -884,7 +884,7 @@ def investor_detail(request):
 def invested(request):
 
     inv = request.POST.get('inv')
-    print "xxxxxxxxxxxxxxxx"
+
     id = request.POST.get('project')
     per = request.POST.get('per')
 
@@ -905,6 +905,16 @@ def invested(request):
         u.finish = m
         u.save()
 
+        p = Project.objects.get(id=id)
+        print p.name
+        print request.user,type(request.user)
+        print per
+        send_mail(
+            u"葡萄藤预约投资通知",
+            u"用户%s预约投资项目%s%s万份"%(request.user.username,p.name,inv),
+            'yangfeng@ddbid.com',
+            ['yangfeng@ddbid.com','fred.he@ddbid.com','james.lee@ddbid.com','amy.gu@ddbid.com','roger.wang@ddbid.com'],
+        )
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
@@ -988,8 +998,17 @@ def search_investor(request):
                 b+=int(j.invest_amount)*int(j.invest_num)
         a.append(b)
 
+    s = []
+    u = UserInformation.objects.get(user=request.user)
+    for i in results:
+        if i.user in u.attention_persion.all():
+            s.append(1)
+        else:
+            s.append(0)
+
     ppp = Paginator(results, 10)
     ppp1 = Paginator(a,10)
+    ppp2 = Paginator(s,10)
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -997,16 +1016,18 @@ def search_investor(request):
     try:
             results = ppp.page(page)
             a= ppp1.page(page)
+            s = ppp2.page(page)
 
     except (EmptyPage, InvalidPage):
             results = ppp.page(ppp.num_pages)
             a= ppp1.page(ppp.num_pages)
+            s = ppp2.page(ppp.num_pages)
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')
 
 
-    c = {'results': results, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
+    c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
     content_html = t.render(
             RequestContext(request,c ))
     payload = {
@@ -1045,7 +1066,7 @@ def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
 
     return render_to_response('invest_pr.html',{"invest_type":int(objectid[-1]),"project":p}, context_instance=RequestContext(request))
-    t = Project.objects.get(id=objectid)
+
 
 
 def add_attion(request,objectid):
@@ -1071,30 +1092,34 @@ def cancel_attion(request,objectid):
     return HttpResponse(json.dumps({"comment":1}), content_type="application/json")
 
 def add_attion_investor(request):
-
-    t = User.objects.get(id=request.POST.get("investor"))
+    t =User.objects.get(username=request.POST.get("investor"))
     u = UserInformation.objects.get(user=request.user)
-    count = len(u.attention_persion.all())
-    u.attention_persion.add(t)
-    u.save()
-
-    count_after = len(u.attention_persion.all())
-    if count == count_after:
-        comment = u"你已经关注了该用户！"
-    else:
-        comment = u"关注成功！"
-
-    return HttpResponse(json.dumps({'attion': count_after,"comment":comment}), content_type="application/json")
+    if t not in u.attention_persion.all():
+        u.attention_persion.add(t)
+        u.save()
+    return HttpResponse(json.dumps({'attion': 56,"comment":1}), content_type="application/json")
 
 def cancel_attion_investor(request):
 
-    t = User.objects.get(id=request.POST.get("investor"))
+    t = User.objects.get(username=request.POST.get("investor"))
     u = UserInformation.objects.get(user=request.user)
 
     u.attention_persion.remove(t)
     u.save()
 
     return HttpResponse(json.dumps({}), content_type="application/json")
+
+def get_status(request):
+    t = User.objects.get(id=request.POST.get("investor"))
+    u = UserInformation.objects.get(user=request.user)
+    if t in u.attention_persion.all():
+        flag = 1
+    else:
+        flag = 0
+
+    return HttpResponse(json.dumps({"flag":flag}), content_type="application/json")
+
+
 
 def sendSMS(request):
 

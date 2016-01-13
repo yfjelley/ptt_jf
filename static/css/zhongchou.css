@@ -32,8 +32,8 @@ li{ list-style-type:none;}
 .donline{width:530px;height:1px;background:#EEEEF0;}
 .bzzx{display:none;padding-top:42px;background:#FFFFFF;}
 .xx{diplay:none;}
-.fixed{float:left;padding-left:80px;padding-top:20px;}
-.side{width: 70px;z-index: 2;right: 70px;position: absolute;top: 120px;}
+.fixed{position:fixed;bottom: 60px;left: 10px;}
+.side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
 .side a{font-size: 14px;color: #FFFFFF}
 .side p{margin:0;padding:0;border:0;}
 #right_float{

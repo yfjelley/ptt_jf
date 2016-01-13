@@ -14,10 +14,18 @@
 			</div>
 			<div class="DesPel">
 				<div style="float:right;margin-top: 10px;margin-right:10px">
+					{% if forloop.counter0|add_all:s %}
 					<div class="checkbox">
-						<input class="focus" id="focus_{{result.user}}" name="{{result.id}}" value=" " type="checkbox" />
+						<input class="focus" id="focus_{{result.user}}" name="{{result.user}}" value=" " checked="checked" type="checkbox" />
 						<label for="focus_{{result.user}}"></label>
 					</div>
+					{% else %}
+					<div class="checkbox">
+						<input class="focus" id="focus_{{result.user}}" name="{{result.user}}" value=" "  type="checkbox" />
+						<label for="focus_{{result.user}}"></label>
+					</div>
+					{% endif %}
+
 					{% if result.nickname %}
 					<img id="priletter_{{result.user}}" name="{{result.nickname}}" data-id="{{result.user.username}}" src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
 				    {% else %}
@@ -145,31 +153,43 @@ $(function() {
 		$("#mask, #alert").remove();
 	});
 
-$(function(){
-		{% if not user.id %}
-			$('.focus').attr("disabled",true);
-			{% endif %}
-})
+		/* $(function(){
+				{% if  user.id %}
+					$("[id^='focus_']").each(function(){
+						$.post("{% url 'get_status' %}",
+						{investor: $(this).attr('name'),},
+						function (data) {if(data.flag==1){$(this).prop('checked',true)}else{$(this).prop('checked',false)};
+						var isCheck = $(this).attr('checked');
+						alert(isCheck);
+						})
+					})
+				{% endif %}
+		})
+		*/
 	$("[id^='focus_']").each(function() {
 	    $(this).click(function(){
-		 {% if user.id %}
-		        //alert(11);
+
+		 if($(this).is(':checked')){
+
 		        $.post("{% url 'add_attion_investor' %}",
                 {
                     investor: $(this).attr('name'),
                 },
                 function (data) {
-                    if(data.comment){alert(data.comment);if(data.comment=="关注成功！"){location.reload();};};
+
                 })
-         {% else %}
+         }else{
          		$.post("{% url 'cancel_attion_investor' %}",
                 {
                     investor: $(this).attr('name'),
                 },
                 function (data) {
-                    if(data.comment){};
+
                 })
-         {% endif %}
+
+
+
+         }
 		});
 	});
 

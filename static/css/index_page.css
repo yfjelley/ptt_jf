@@ -29,7 +29,7 @@ a{text-decoration:none;}
 	.ztmain{
 		width:100%;background-color:#eeeef0;min-width: 1440px;max-width:1660px;margin-top: -5px;
 	}
-   .zc-content{width: 1150px;margin: 0 auto;margin-left:200px;overflow:hidden;}
+   .zc-content{width: 1150px;margin: 0 auto;overflow:hidden;}
    .xujgstyle{width:1200px;margin:0px auto;margin-top:20px;clear:both;}
 .biaotidiv{width: 1140px;height:50px;margin-top:20px;clear:both;padding-right:20px;}
 .biaotidiv ul li.btstyle{font-size:25px;font-weight:bold; color:#000000;float:left;}
@@ -51,8 +51,8 @@ a{text-decoration:none;}
 .Cul1 li{color:#000000;font-size:12px;line-height: 30px;}
 .Cul1 li b{font-size:16px;line-height: 30px; font-weight:bold;}
 .mjzximg img{width:255px;}
-.fixed{float:left;padding-left:20px;padding-top:20px;}
-.side{width: 70px;z-index: 2;float: right;right: 70px;position: absolute;top: 630px;}
+.fixed{position:fixed;bottom: 60px;left: 10px;}
+.side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
 .side a{font-size: 14px;color: #FFFFFF}
 .index-percent em{display:block;height:12px;}
 

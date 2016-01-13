@@ -35,8 +35,7 @@ body,p{margin:0;padding:0;border:0;}
 .search dl dd{float:left;}
 .search dl dd a{color:#000000;}
 .choices a:hover{color:#FF0000;}
-
-.side{width: 70px;height: 100px;z-index: 2;float: right;right: 70px;position: absolute;top: 90px;}
+.side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
 .side a{font-size: 14px;color: #FFFFFF}
 #right_float{
   height: 350px;
@@ -140,7 +139,7 @@ body,p{margin:0;padding:0;border:0;}
 .mongjingImg{margin-top:-69px;}
 .mongjingImg img{margin-left:-52px;}
 #Icontainer{background:#EEEEF0;min-width: 1440px;max-width: 1660px;}
-.fixed{position: absolute;top: 100px;left: 30px;}
+.fixed{position:fixed;bottom: 60px;left: 10px;}
 .mojing{width: 255px;height:300px;display: inline-block;margin-left:30px;padding:0;margin-bottom: 20px}
 .mojing a{display:block}
 .mojing a:hover {

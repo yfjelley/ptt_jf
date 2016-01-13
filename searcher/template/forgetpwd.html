@@ -12,9 +12,10 @@
 {% include "zcheader.html" %}
 
 <div id="forger_conent">
-	<div style="height:50px;"></div>
+	<div class="bglogo" style="width: 100%;">
+		<img src="/static/images/bglogo.jpg" width="100%" >
+	</div>
 	<div class="get_pwd">
-
 		{% if message %}
 		<a style="font-size: 14px">{{ message }}</a>
 		{% else %}
@@ -74,7 +75,7 @@
 				</ul>
 				<ul id="ul5">
 					<li>
-						<input type="submit" class="input_butt" alt=" " value=" " style="width:512px; height:59px;background:url(/static/images/open.png);background-repeat:no-repeat;margin-top:20px;margin-left:-80px;" />
+						<input type="submit" class="input_butt" alt=" " value=" " style="width:413px; height:43px;background:url(/static/images/login.jpg);background-repeat:no-repeat;margin:20px 0 10px -45px;" />
 					</li>
 				</ul>
 			</ul>
@@ -87,12 +88,6 @@
 
 
 <script type="text/javascript">
-$("#rulesubmit").click(function(){
-  var username = $("input[name=username]").val();
-  if(username){
-  $.post("/send_smscode/", {"phoneNum":username}, function(){});}
-  else{alert("请输入手机号！");}
-});
 
 $(function(){
         {% if form.smscode.errors %}

@@ -207,6 +207,31 @@ input[type='checkbox']:checked + label:before{
     position: relative;
     left: 5px;
     top: -5px;
+}input[type='checkbox'] + label:before{
+    background: url('/static/images/focus.jpg');
+    content:' ';
+    height: 28px;
+    width: 80px;
+    position: absolute;
+    left:0;
+}
+input[type='checkbox']{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    position:absolute;
+    left:4px;
+    top:3px;
+}
+input[type='checkbox']:checked + label:before{
+    background: url('/static/images/refocus.jpg');
+}
+.checkbox{
+    min-height:24px;
+    padding-left: 24px;
+    position: relative;
+    left: 5px;
+    top: -5px;
 }
 
 .pro-content {
@@ -259,22 +284,9 @@ input[type='checkbox']:checked + label:before{
     border: none;
     cursor: pointer;
 }
-
-.fixed {
-    position: absolute;
-    top: 100px;
-    left: 30px;
-}
-
-.side {
-    width: 70px;
-    height: 100px;
-    z-index: 2;
-    float: right;
-    right: 70px;
-    position: absolute;
-    top: 90px;
-}
+.fixed{position:fixed;bottom: 60px;left: 10px;}
+.side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
+.side a{font-size: 14px;color: #FFFFFF}
 .side a{font-size: 14px;color: #FFFFFF}
 #right_float{
     height: 350px;

@@ -127,8 +127,8 @@ MAX_UPLOAD_SIZE = "524288"
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'pony.yu@ddbid.com'
-EMAIL_HOST_PASSWORD = '123456a'
+EMAIL_HOST_USER = 'yangfeng@ddbid.com'
+EMAIL_HOST_PASSWORD = 'Ecma1000'
 EMAIL_USE_TLS = False
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

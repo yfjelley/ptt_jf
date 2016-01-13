@@ -25,8 +25,8 @@ a{ text-decoration:none;color:#333}
 .partner ul li a{text-decoration:none;color:#000000;}
 .partner ul li a img{width:200px;height:50px;padding:15px;}
 /*×óÓÒÁ½±ßÐü¸¡*/
-.fixed{float:left;padding-left:80px;padding-top:20px;}
-.side{width: 70px;z-index: 2;right: 70px;position: absolute;top: 120px;}
+.fixed{position:fixed;bottom: 60px;left: 10px;}
+.side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
 .side a{font-size: 14px;color: #FFFFFF}
 .side p{margin:0;padding:0;border:0;}
 #right_float{
