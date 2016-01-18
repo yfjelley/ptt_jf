@@ -912,7 +912,7 @@ def invested(request):
         send_mail(
             u"葡萄藤预约投资通知",
             u"用户%s预约投资项目%s%s万份"%(request.user.username,p.name,inv),
-            'yangfeng@ddbid.com',
+            'admin@ddbid.com',
             ['yangfeng@ddbid.com','fred.he@ddbid.com','james.lee@ddbid.com','amy.gu@ddbid.com','roger.wang@ddbid.com'],
         )
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
@@ -988,16 +988,19 @@ def search_investor(request):
         results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
-
+    print "dddd",results
     a = []
-    for  i in results:
-        b=0
+    for i in results:
+        b=0.0
         r = invest_detail.objects.filter(invest_user=i.user)
         if r:
             for j in r:
-                b+=int(j.invest_amount)*int(j.invest_num)
+                print j.invest_amount,j.invest_num,"66666666666"
+                b+=float(j.invest_amount)*float(j.invest_num)
+                print "sssss",b
+            print b,"ggggggggggggggg"
         a.append(b)
-
+    print a
     s = []
     u = UserInformation.objects.get(user=request.user)
     for i in results:

@@ -32,22 +32,16 @@
     	 alert('请先登录!');
     	{% endif %}
     })
-    $(function(){
+ $(function(){
     {% if flag %}
 
     $("#focus").attr("checked",'true');
     {% endif %}
-    })
+ })
 
-$(function(){
-		{% if not user.id %}
-		//alert('请先登录!');
-			$('#focus').attr("disabled",true);
-			{% endif %}
-})
+
     function remaid(){alert('请先登录!');}
 	function attion_pr(){
-
 	    {% if user.id %}
 			$('#focus').attr("disabled",false);
 	         if($("#focus").is(':checked')){
@@ -62,6 +56,8 @@ $(function(){
 					{});
 				}
 		{% else %}
+		$('#focus').attr("checked",false).prop('checked',false);
+		//$('#focus').attr("disabled",true);
 		alert('请先登录');
 		{% endif %}
     }
