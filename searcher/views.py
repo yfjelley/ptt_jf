@@ -6,7 +6,7 @@ from itertools import chain
 import json
 import os
 import random
-
+from searcher.task import sendmail
 from django.core.serializers.json import DjangoJSONEncoder
 from DjangoCaptcha import Captcha
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
@@ -598,8 +598,8 @@ def agreement(request):
 def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
 
-    daily_selection = Project.objects.filter(active=1).distinct()[0:4]
-    for i in daily_selection:
+    pr = Project.objects.all().distinct()[0:1]
+    for i in pr:
         f = invest_detail.objects.filter(invest_project=i)
         m = 0
         for j in f:
@@ -608,49 +608,8 @@ def index_zc(request):
         i.finish = m
         i.save()
 
-    preheating = Project.objects.filter(status=0).distinct()[0:8]
-    for i in preheating:
-        f = invest_detail.objects.filter(invest_project=i)
-        m = 0
-        for j in f:
-            m += int(j.invest_num)
+    return render_to_response('newindex_page.html',{"project":pr},context_instance=RequestContext(request))
 
-        i.finish = m
-        i.save()
-
-    crowdfunded = Project.objects.filter(status=1).distinct()[0:4]
-    for i in crowdfunded:
-        f = invest_detail.objects.filter(invest_project=i)
-        m = 0
-        for j in f:
-            m += int(j.invest_num)
-
-        i.finish = m
-        i.save()
-
-    crowdfunded_success = Project.objects.filter(status=2).distinct()[0:4]
-    for i in crowdfunded_success:
-        f = invest_detail.objects.filter(invest_project=i)
-        m = 0
-        for j in f:
-            m += int(j.invest_num)
-
-        i.finish = m
-        i.save()
-
-    crowdfunded_finsh= Project.objects.filter(status=2).distinct()[0:4]
-    for i in crowdfunded_finsh:
-        f = invest_detail.objects.filter(invest_project=i)
-        m = 0
-        for j in f:
-            m += int(j.invest_num)
-
-        i.finish = m
-        i.save()
-
-    return render_to_response('index_page.html',{"daily_selection":daily_selection,"preheating":preheating, \
-                              "crowdfunded":crowdfunded,"crowdfunded_success":crowdfunded_success,\
-                                         "crowdfunded_finsh":crowdfunded_finsh},context_instance=RequestContext(request))
 
 
 def safecenter(request):
@@ -906,15 +865,9 @@ def invested(request):
         u.save()
 
         p = Project.objects.get(id=id)
-        print p.name
-        print request.user,type(request.user)
-        print per
-        send_mail(
-            u"葡萄藤预约投资通知",
-            u"用户%s预约投资项目%s%s万份"%(request.user.username,p.name,inv),
-            'admin@ddbid.com',
-            ['yangfeng@ddbid.com','fred.he@ddbid.com','james.lee@ddbid.com','amy.gu@ddbid.com','roger.wang@ddbid.com'],
-        )
+        print "xxxx"
+        sendmail.delay(request.user.username,p.name,inv)
+        print "dddd"
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
@@ -1137,7 +1090,12 @@ def sendSMS(request):
     else:
         return HttpResponse(json.dumps({"success":0}), content_type="application/json")
 
+def delete_signal(request):
 
+    signal = Signal.objects.get(id=request.POST.get('id'))
+    signal.delete()
+
+    return HttpResponse(json.dumps({"success":0}), content_type="application/json")
 
 def search_project(request):
     #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
