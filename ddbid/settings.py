@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 import logging
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import djcelery
+djcelery.setup_loader()
 
+BROKER_URL = 'django://'
+CELERY_IMPORTS = ('searcher.task',)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -45,6 +49,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap_toolkit',
     'emoji',
+    'djcelery',
+    'kombu.transport.django',
     # 'south',
 )
 
@@ -127,8 +133,8 @@ MAX_UPLOAD_SIZE = "524288"
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'yangfeng@ddbid.com'
-EMAIL_HOST_PASSWORD = 'Ecma1000'
+EMAIL_HOST_USER = 'service@ddbid.com'
+EMAIL_HOST_PASSWORD = '1qa2ws3eD'
 EMAIL_USE_TLS = False
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
@@ -143,4 +149,9 @@ logging.basicConfig(level=logging.INFO,
                 datefmt='%a, %d %b %Y %H:%M:%S',
                 filename='/root/zc/ddbid.log',
                 filemode='w')
+
+
+
+
+
 
