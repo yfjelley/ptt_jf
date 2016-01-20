@@ -32,14 +32,14 @@ em{font-style:normal;font-weight:normal}
 .lf_rw2 em{display:block;height:12px;}
 .lf_rw2 div{width:100%;border:1px solid #868686;border-radius:10px;float:left;}
 .tit{font-size: 24px;font-weight: bold;color:#2980b9}
-.lf_rw3{float: left;width: 100px;text-align: center}
-.rt_rw3{float: right;width: 60px}
-.lt_line{float: left;margin-top:-55px;width: 150px;margin-left:110px}
-.rt_line{float: right;margin-right:-70px;margin-top: -55px;width: 150px}
+.lf_rw3{float: left;width: 90px;text-align: center;}
+.rt_rw3{float: right;width: 90px;text-align: center;}
+.lt_line{float: left;margin-top:-55px;width: 150px;margin-left:100px}
+.rt_line{float: right;margin-right:-60px;margin-top: -55px;width: 150px}
 .lt_line div{border-right: 2px solid #EEEEF0;width: 1px;height:40px}
 .rt_line div{border-right: 2px solid #EEEEF0;width: 1px;height:40px}
 .rw{ color: #999;line-height: 40px}
-.lw{line-height: 40px}
+.lw{line-height: 39px}
 .lw em{font-size: 18px;font-family: Arial;color: #666;}
 .ct_round{height: 140px}
 .ct_round .p1 img{margin-top:-30px;margin-left:25%}
@@ -98,7 +98,7 @@ em{font-style:normal;font-weight:normal}
     width: 0px;
     height: 57px;
     line-height: 57px;
-    background: rgb(213, 94, 75);
+    background: #5ca9d3;
     position: absolute;
     right: 30px;
     top: 0px;
@@ -116,7 +116,7 @@ em{font-style:normal;font-weight:normal}
     width: 0px;
     height: 57px;
     line-height: 30px;
-    background: rgb(213, 94, 75);
+    background: #5ca9d3;
     position: absolute;
     right: 30px;
     top: 0px;
@@ -124,11 +124,12 @@ em{font-style:normal;font-weight:normal}
     text-align: center;
     font-family: Î¢ÈíÑÅºÚ;
 }
+
 #right_float .l_r7 {
     width: 0px;
     height: 57px;
     line-height: 57px;
-    background: rgb(213, 94, 75);
+    background: #5ca9d3;
     position: absolute;
     right: 30px;
     top: 0px;
@@ -143,7 +144,7 @@ em{font-style:normal;font-weight:normal}
     width: 0px;
     height: 57px;
     line-height: 57px;
-    background: rgb(213, 94, 75);
+    background: #5ca9d3;
     position: absolute;
     right: 30px;
     top: 0px;
