@@ -24,10 +24,11 @@
 		 $(".banner li a").eq(a).show();
 		});
 		function sroll(){
-			if(a<2){
+			if(a<3){
 			a++;
 			$("#sp2").show();
 			$("#sp3").show();
+				$("#sp4").show();
 			}else{
 			a=0;
 			}
@@ -43,18 +44,22 @@
 			if(a>0){
 				a--;
 				$("#sp2").show();
-			}else{
+			}else if(a>1){
 				a=2;
 				$("#sp3").show();
-				}
+				}else{
+				a=3;
+				$("#sp4").show();
+			}
 			on();
 			
 		})
 		$(".next").click(function(){
-			if(a<2){
+			if(a<3){
 			a++;
 			$("#sp2").show();
 			$("#sp3").show();
+				$("#sp4").show();
 			}else {
 				a=0;
 		
@@ -87,11 +92,13 @@
 <!----图片轮番切换----->
 	<div class="box">
 		<ul class="banner" >
-			<li ><a style="display:block;"><img src="/static/images/ztbannel.jpg" style="background: no-repeat" width="100%">
+			<li ><a style="display:block;"><img src="/static/images/ztsuccess.jpg" width="100%">
+			</a></li>
+			<li ><a style="display:none;"><img src="/static/images/ztbannel.jpg" style="background: no-repeat" width="100%">
 			</a></li>
 			<li ><a style="display:none;"><img src="/static/images/ztbannel-1.jpg" width="100%">
 			</a></li>
-			<li ><a style="display:none;" href="http://ddbid.com/"><img src="/static/images/sdbannel.jpg" width="100%">
+			<li ><a style="display:none;" href="http://ddbid.com/activearea/"><img src="/static/images/sdbannel.jpg" width="100%">
 			</a></li>
 		</ul>
 		<a class="prev" href="javascript:void(0)"><</a>

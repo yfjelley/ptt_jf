@@ -57,16 +57,15 @@ register.filter(remain_time)
 
 @register.filter(is_safe=False)
 def add_with(value, arg):
-    if int(arg) >= int(value):
+    if float(arg) >= float(value):
         return int(100)
     else:
         return int((float(arg)/float(value))*100)
 
-
 @register.filter(is_safe=False)
 def add_all(value, arg):
-    print value,arg
-    print arg[int(value)]
     return arg[int(value)]
+
+
 
 

@@ -19,6 +19,7 @@ urlpatterns = patterns('searcher.views',
     url(r'^do_reminder/$',  'do_reminder', name='do_reminder'),
     url(r'^register/$',  'register', name='register'),
     url(r'^userinfo/$',  'userinfo', name='userinfo'),
+    url(r'^delete_signal/$',  'delete_signal', name='delete_signal'),
     url(r'getverifycode/$', 'verifycode', name='verifycode'),
     url(r'forgetpw/$', 'forgetpw', name='forgetpw'),
 

@@ -283,6 +283,7 @@ class Project(models.Model):
     name = models.CharField('项目名称',max_length=255, blank=True, null=True)#项目名称
     logo = models.CharField('项目标志',max_length=255, blank=True, null=True)#项目标志
     photo_url = models.CharField('项目宣传图片',max_length=255, blank=True, null=True)#项目宣传图片
+    index_url = models.CharField('项目首页图片',max_length=255, blank=True, null=True)#项目宣传图片
     introduction = models.TextField('项目简介',blank=True, null=True)#项目简介
     description = models.TextField('项目描述',blank=True, null=True)#项目描述
     category = models.CharField('行业类别',max_length=1,choices=CATEGORY_CHOICE, blank=True, null=True)#行业类别

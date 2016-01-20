@@ -8,7 +8,7 @@
 .pro-title{margin-left:-20px;margin-top:15px;float: left}
 .pro-title>.mongjiangimg{position:absolute;top:135px;}
 .pro-title>.zczhong{margin-left:45px}
-.pro-status{float: left;padding:8px 0 0 10px}
+.pro-status{float: left;padding:12px 0 0 20px}
 .pro-writing{margin-left:-20px;margin-top:20px;}
 /*input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.jpg") no-repeat;width:80px;height:28px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:10px;}*/
  input[type='checkbox'] + label:before{

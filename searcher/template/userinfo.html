@@ -477,7 +477,7 @@ $(function(){
 						</li>
 						<li style="float:left">
 							<label>我已预约份额</label><b>{{i.invest_num}}万份</b>
-							<label style="margin-left: 70px;">完成率</label><b style="color:#CC6633">{{i.invest_project.invest_num|add_with:i.invest_project.finish}}%</b>
+							<label style="margin-left: 70px;">完成率</label><b style="color:#CC6633">{% widthratio i.invest_project.finish i.invest_project.invest_num 100 %}%</b>
 						</li>
 					</ul>
 					<ul style="clear:both"></ul>
@@ -536,7 +536,7 @@ $(function(){
                         <li style="float:left;">
 							<label>融资份额</label><b>{{i.invest_num}}万份</b>
 							<label>已融份额</label><b>{{i.finish}}万份</b>
-							<label>预约率</label><b style="color:#CC6633">{{i.invest_num|add_with:i.finish}}%</b>
+							<label>预约率</label><b style="color:#CC6633">{% widthratio  i.finish i.invest_num 100 %}%</b>
                         </li>
 
                     </ul>
@@ -757,13 +757,17 @@ $(function(){
                             <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
                             <label>于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
                         </li>
-                        <li style="margin-left:620px; margin-top:-50px;float:left">
+                        <li style="margin-left:620px; margin-top:-80px;float:left">
 							{% if i.user.userinformation.nickname %}
                             <input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name ="{{i.user.userinformation.nickname}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
                             {% else %}
 							<input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name="{{i.user.username}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
                             {% endif %}
 
+						</li>
+						<li style="margin-left:620px; margin-top:-40px;float:left">
+
+                            <input type="button" data-id="{{i.id}}" id ="delete_{{i.id}}" name ="" style="background: url('/static/images/del.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
 						</li>
                     </ul>
 					<ul>
@@ -997,10 +1001,8 @@ $(function() {
 
 	$("[id^='reply_']").each(function() {
 	    $(this).click(function(){
-
 	    	var name = $(this).attr('name');
 	    	var userid = $(this).data('id');
-
 			{% if user.id %}
 					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
 					'<p>内容:</p>'+
@@ -1015,7 +1017,17 @@ $(function() {
 		});
 	});
 
-	        		// 只有点击 alert 中的按钮 mask 才会被移除
+	$("[id^='delete_']").each(function() {
+	    $(this).click(function(){
+	    	var signalid = $(this).data('id');
+            $.post("{% url 'delete_signal' %}",
+            {id:signalid},
+            function (data){location.reload();}
+            )
+		});
+	});
+
+// 只有点击 alert 中的按钮 mask 才会被移除
 
 // 只有点击 alert 中的按钮 mask 才会被移除
 	$(document).on("click", "#ok", function() {

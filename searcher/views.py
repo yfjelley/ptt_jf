@@ -597,15 +597,13 @@ def agreement(request):
 
 def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-
-    pr = Project.objects.all().distinct()[0:1]
+    pr = Project.objects.all().distinct()
     for i in pr:
         f = invest_detail.objects.filter(invest_project=i)
         m = 0
         for j in f:
-            m += int(j.invest_num)
-
-        i.finish = m
+            m += float(j.invest_num)
+        i.finish = int(m)
         i.save()
 
     return render_to_response('newindex_page.html',{"project":pr},context_instance=RequestContext(request))
@@ -687,14 +685,11 @@ def change_phone_number(request):
     if request.method == "POST":
         form = ModfiyPForm(request.POST)
 
-
         if form.is_valid():
             cd = form.clean()
             username = cd['username']
             _code = request.session.get('sms_code')
             smscode = cd['smscode']
-
-
 
             if  _code == int(smscode) :
                 user = auth.get_user(request)
