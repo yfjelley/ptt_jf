@@ -40,7 +40,9 @@
  })
 
 
-    function remaid(){alert('请先登录!');}
+   function remaid(){alert('请先登录!');}
+   function booking(){alert("众投已完成!");}
+
 	function attion_pr(){
 	    {% if user.id %}
 			$('#focus').attr("disabled",false);
@@ -160,7 +162,11 @@
 						</ul>
 					</dd>-->
                     {% if user.id %}
-                    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button"/></a>
+						{% ifequal result.status 2 %}
+						<a href="#" onclick="booking()"><input class="btn-lingtou" type="button"/></a>
+						{% else %}
+					    <a href="/invest_pr/{{result.id}}1/"><input class="btn-lingtou" type="button"/></a>
+					    {% endifequal %}
 					{% else %}
 					<a href=""><input  onclick="remaid()" class="btn-lingtou" type="button"/></a>
 

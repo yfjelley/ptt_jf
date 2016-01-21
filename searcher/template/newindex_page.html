@@ -125,8 +125,8 @@
                         </div>
                         <div class="pro-box">
                             <ul>
-                                <li style="padding-top:5px"><b class="tit">{{result.name}}</b></li>
-                                <li class="lw"><em>{{result.introduction}}</em></li>
+                                <li class="tit"><em>{{result.name}}</em></li>
+                                <li class="ts" style="line-height: 1.6"><em>{{result.introduction}}</em></li>
                                 <li>
                                     <div class="ct_round">
                                         <p class="p2">
@@ -150,32 +150,32 @@
                                     </div>
                                 </li>
                                 <li class="lf_rw1">
-                                    <label class="rw">所属行业:</label><span class="lw"><em style="padding-left:5px">{{result.get_category_display}}</em></span>
+                                    <label class="cs">所属行业:</label><span class="ts"><em style="padding-left:5px">{{result.get_category_display}}</em></span>
                                 </li>
                                 <li class="rt_rw1">
                                     <img src="/static/images/heart.png" />
-                                    <label class="rw">关注:</label><span class="lw"><em style="padding-left:5px">{{result.click.all|length}}</em></span>
+                                    <label class="cs">关注:</label><span class="ts"><em style="padding-left:5px">{{result.click.all|length}}</em></span>
                                 </li>
                                 <li class="lf_rw2" id= 'progress_bar' >
                                     <div>
                                         <em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
                                 <li class="lf_rw3">
-                                    <label class="rw">融资总额</label>
+                                    <label class="cs">融资总额</label>
                                 </li>
                                 <li class="lf_rw3">
-                                    <label class="rw">已预约</label>
+                                    <label class="cs">已预约</label>
                                 </li>
                                 <li class="rt_rw3">
-                                    <label class="rw">剩余时间</label>
+                                    <label class="cs">剩余时间</label>
                                 </li>
                                 <li class="lf_rw3">
-                                    <span class="lw"><em>{% widthratio result.invest_amount 1 result.invest_num  %}万元</em></span>
+                                    <span class="bs"><em>{% widthratio result.invest_amount 1 result.invest_num  %}万元</em></span>
                                 </li>
                                 <li class="lf_rw3">
-                                    <span class="lw"><em>{% widthratio result.invest_amount 1 result.finish  %}万元</em></span>
+                                    <span class="bs"><em>{% widthratio result.invest_amount 1 result.finish  %}万元</em></span>
                                 </li>
                                 <li class="rt_rw3">
-                                    <span class="lw"><em>{{ result.preheat_end_date |remain_time}}</em></span>
+                                    <span class="bs"><em>{{ result.preheat_end_date |remain_time}}</em></span>
                                 </li>
                                 <li class="lt_line">
                                     <div></div>
