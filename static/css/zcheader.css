@@ -24,7 +24,7 @@ li{list-style:none;}
 #top_r ul{ display:none; width:200px;  padding:10px; box-shadow: 0px 0px 2px #DDD;
 background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right:-30px; top:48px;}
 #top_r ul li{ width:190px; height:30px; line-height:30px;}
-.top_name{margin-top:20px;margin-left:100px;position:absolute;width: 160px}
+.top_name{margin-top:20px;margin-left:100px;position:absolute;width: 165px}
 .top_name li{ height:30px; line-height:30px; color:#ccc;}
 .top_name li img{ margin-top:3px; float:left; margin-left:15px; width:24px; height:24px;}
 .top_name ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; }
