@@ -861,7 +861,10 @@ def invested(request):
 
         p = Project.objects.get(id=id)
         print "xxxx"
-        sendmail.delay(request.user.username,p.name,inv)
+        try:
+            sendmail.delay(request.user.username,p.name,inv)
+        except:
+            pass
         print "dddd"
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
