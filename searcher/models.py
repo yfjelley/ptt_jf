@@ -332,6 +332,14 @@ class project_forum(models.Model):
     def __unicode__(self):
         return u'%s' % self.forum_user
 
+class Extend(models.Model):
+    regist_code = models.CharField('注册邀请码',max_length=255, blank=True, null=True) #注册时的邀请码
+    extend_code = models.CharField('推广邀请码',max_length=255, blank=True, null=True) #推广的邀请码
+    extend_user = models.ForeignKey(User,related_name = "extend_user_set", blank=True, null=True)
+    first_profix = models.IntegerField('1级分润',default=0)
+    second_profix = models.IntegerField('2级分润',default=0)
+
+
 class Signal(models.Model):
     type = models.IntegerField(default=0)        # 0,系统公告；1:评论;2:私信;3.关注;4.主题关注
     obj = models.IntegerField(default=0)         # 对象id
@@ -505,6 +513,7 @@ class AuthLogin(models.Model):
     http_referer = models.CharField('http_host', max_length=30, blank=True, null=True)
     remote_addr = models.CharField('remote_addr', max_length=30, blank=True, null=True)
     add_date = models.DateTimeField('添加时间', auto_now_add=True)
+
 
 
 

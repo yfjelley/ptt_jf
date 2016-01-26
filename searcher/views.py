@@ -193,6 +193,7 @@ def checkuser_phone(request):
                 return response
 
 def register(request):
+    print request
     if request.method == 'POST':
         response = HttpResponse()
         response['Content-Type'] = "text/javascript"

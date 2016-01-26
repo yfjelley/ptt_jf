@@ -51,17 +51,17 @@ input.reply{border:1px solid #4a3c70; background:#4a3c70;width:85px; color:#FFFF
 .fr{float:right}
 .mt10{ margin-top:70px;}
 .bbs_hd h3{font-size:12px;font-style:normal;margin:0}
-.reply_publish .bbs_bd textarea{width:98%;height:100px;padding:5px;border:1px solid #ddd}
+.reply_publish .bbs_bd textarea{width:90%;height:100px;padding:5px;border:1px solid #ddd;margin-left: 30px}
 .bbs_bd{padding:10px;}
 .bbs_box{border-radius:5px; -moz-border-radius: 5px;-webkit-border-radius:5px;padding:10px; background:#fff;}
-.bbs_hd{padding:0 10px;}
+.bbs_hd{padding:0 40px;}
 .bbs_backtop{background:url(../images/back_top.png) no-repeat right center; padding-right:20px; color:#4c4c4c; text-decoration:none;font-size:12px; font-family:"Microsoft YaHei","simsun","Helvetica Neue","Arial", "Helvetica", "sans-serif";}
 .bbs_backtop:hover{color: #FF0000}
 .yzm input[type='text']{width:110px; height:30px;}
 .qita-size{display: inline-block}
-.qita-size table{float:left;padding:0 10px;font-size: 14px;margin-left: 30px;}
+.qita-size table{float:left;padding:0 0 0 65px;font-size: 14px;width: 260px;}
 .protaolun-size{width:780px;background-color:white;margin-left:-5px;overflow:hidden;height:100%}
-.talk_list{padding:10px 5px;border-bottom:1px solid #ddd}
+.talk_list{padding:10px 40px;}
 .talk_list dd{margin-left:20px;width:400px;}
 .talk_list dt,.talk_list dt a,.talk_list dt a img{width:48px;height:48px;display:inline-block}
 .talk_list dd a{color:#4c4c4c}

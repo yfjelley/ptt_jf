@@ -272,7 +272,7 @@
 								{% else %}
 								<td align="left">{{i.invest_user.username|phone_cut}}</td>
 								{% endif %}
-								<td align="right">预约投资{{i.invest_num}}万股</td>
+								<td>预约投资{{i.invest_num}}万股</td>
 							</tr>
 						</table>
 						{% endfor %}
@@ -303,6 +303,7 @@
 									</div>
 								</dd>
 							</dl>
+							<dl style="width: 700px;border-top:1px solid #eeeef0;height: 1px;margin-left: 40px"></dl>
 								   {% endfor %}
 							   {% endif %}
 						<dl style="clear:both"></dl>
@@ -312,7 +313,7 @@
 							<div class="bbs_bd">
 								<textarea id="content" name="content"></textarea>
 								<li class="yzm" >
-									<div style="padding-top: 5px">
+									<div style="padding-top: 5px;margin-left: 30px">
 										<input name="log_code" id="log_code" type="text" placeholder="验证码"
 											   onfocus="$('#code_pic').click();yzmshow()" />
 
