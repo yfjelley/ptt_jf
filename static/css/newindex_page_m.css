@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 防止点击闪烁 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 缩放网页，文字大小不变 */
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family:sans-serif;
+}
+
+/*去掉移动端a标签点击的时候两边出现点状*/
+a{
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:none;
+    outline:none;
+}
+
+a:focus{
+    text-decoration:none;
+    outline:none;
+}
+
+:focus{
+    outline:0;
+}
+
+html,body{font-family: sans-serif}
+html,body{margin: 0;padding: 0}
+html, body {
+    height: 100%
+}
+
+a {
+    text-decoration: none
+}
+
+
+li {
+    list-style-type: none;
+}
+.grid-wrap {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-top: 0.4rem;
+}
+
+.touchweb_page-index {
+
+}
+.grid{
+    width: 100%;
+    height: 100%;
+}
+
+[data-dpr="2"] .touchweb_page-index {
+    font-size: 24px;
+}
+
+
+.touchweb-com_header .i-logo,.lar span{
+    padding: 0.2rem;
+}
+.touchweb-com_header .i-logo{
+    float: left;
+}
+.touchweb-com_header .lar span{
+    float: right;
+    color: #ffffff;
+    font-size: 16px;
+    margin:0.4rem 0;
+}
+
+
+.slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+}
+
+.slide ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* 解决js阻塞页面显示首屏 */
+.slide li:first-child {
+    z-index: 1
+}
+
+.slide li img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.slide .dot {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    z-index: 5;
+    width: 100%;
+    text-align: center;
+}
+
+.slide .dot span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.slide .dot .cur {
+    background-color: #fff;
+}
+
+.touchweb-search_list {
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.touchweb-search_list {
+    text-align: center;
+}
+
+.touchweb-search_list .item {
+    float: left;
+    width: 25%;
+    height: 2rem;
+    padding-top: 0.2rem;
+    text-align: center;
+}
+
+.touchweb-search_list .item .icon_box {
+    position: relative;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.touchweb-search_list .item img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.touchweb-search_list .item .title {
+    display: block;
+}
+
+.touchweb-project_list {
+    overflow: hidden;
+
+}
+
+.touchweb-project_list li {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+}
+.touchweb-project_list .middle {
+    text-align: center;
+}
+.touchweb-project_list .item {
+    box-sizing: content-box;
+}
+.touchweb-project_list .item .pro-content{
+}
+.cols-1,.line-1{
+    float: left;
+    text-align: center;
+}
+[data-dpr="1"] .touchweb-project_list .item .pro-content .cols-1 .text{
+    font-size: 16px;
+    color: #a8a8a8;
+    font-weight: 100;
+}
+[data-dpr="1"] .touchweb-project_list .item .pro-content .cols-1 .number{
+    font-size: 18px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="1"] .touchweb-search_list .item .title{
+    font-size: 10px;
+    color: rgb(102, 102, 102);
+}
+[data-dpr="1"] .touchweb-project_list .middle h3{
+    font-size: 16px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="1"] .touchweb-project_list .item .pro-content .cols-3{
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+}
+[data-dpr="1"] .touchweb-com_header .i-logo img{
+    width: 3.8rem;
+    height: 1.4rem;
+}
+[data-dpr="2"] .touchweb-com_header .lar span{
+    float: right;
+    color: #ffffff;
+    font-size: 32px;
+}
+
+[data-dpr="2"] .touchweb-com_header .i-logo img{
+    width: 3.8rem;
+    height: 1.4rem;
+}
+[data-dpr="2"] .touchweb-project_list .item .pro-content .cols-1 .text{
+    font-size: 28px;
+    color: #a8a8a8;
+    font-weight: 100;
+}
+[data-dpr="2"] .touchweb-project_list .middle h3{
+    font-size: 32px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="2"] .touchweb-project_list .item .pro-content .cols-1 .number{
+    font-size: 32px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="2"] .touchweb-search_list .item .title{
+    font-size: 24px;
+    color: rgb(102, 102, 102);
+}
+[data-dpr="2"] .touchweb-project_list .item .pro-content .cols-3{
+    font-size: 24px;
+    color: rgb(102, 102, 102);
+}
+
+
+[data-dpr="3"] .touchweb-com_header .lar span{
+    float: right;
+    color: #ffffff;
+    font-size: 42px;
+}
+
+[data-dpr="3"] .touchweb-com_header .i-logo img{
+    width: 3.8rem;
+    height: 1.4rem;
+}
+[data-dpr="3"] .touchweb-project_list .item .pro-content .cols-1 .text{
+    font-size: 36px;
+    color: #a8a8a8;
+    font-weight: 100;
+}
+[data-dpr="3"] .touchweb-project_list .middle h3{
+    font-size: 42px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="3"] .touchweb-project_list .item .pro-content .cols-1 .number{
+    font-size: 48px;
+    color: #161616;
+    font-weight: 500;
+}
+[data-dpr="3"] .touchweb-search_list .item .title{
+    font-size: 36px;
+    color: rgb(102, 102, 102);
+}
+[data-dpr="3"] .touchweb-project_list .item .pro-content .cols-3{
+    font-size: 32px;
+    color: rgb(102, 102, 102);
+}
+.cols-1{
+    width: 32%;
+}
+
+.cols-1 div,.line-1 div{
+    padding: 0.2rem 0;
+}
+.cols-2{
+    width: 90%;
+    border: 1px solid #868686;
+    border-radius: 10px;
+    margin:0.2rem 0 0.2rem 0.5rem;
+}
+.cols-2 em{
+    display: block;
+    height: 15px;
+}
+.cols-3 div{
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 0.2rem 0;
+}

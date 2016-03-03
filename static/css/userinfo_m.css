@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 防止点击闪烁 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 缩放网页，文字大小不变 */
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background-color: #EEEEF0;
+}
+html{
+    background: none;
+}
+h1 {
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+
+.main{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%
+}
+.head {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.head p {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    margin: auto 0;
+}
+.wrap .head img{
+    width: 2rem;
+    height:2rem;
+}
+.wrap{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch
+
+}
+#tabs{
+    overflow:hidden;
+}
+.tabs-nav{
+    overflow:hidden;
+}
+.tabs-nav li{
+    width:25%;
+    height:1.2rem;
+    line-height:1.2rem;
+    background:#959290;
+    float:left;
+    text-align:center;
+    color:#fff;
+    list-style-type:none;
+    cursor: pointer;
+}
+.tabs-nav li.current{
+    background:#FE4902;
+}
+.tabs-cont{
+    display: none;
+}
+
+.tabs-cont .start-pro{
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 0.4rem 0;
+}
+.tabs-cont .start-pro .number{
+    font-weight: bold;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.tabs-cont .start-pro li{
+    float: left;
+    padding: 0.4rem 0.1rem;
+}
+.tabs-cont .focus-pro{
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 0.4rem 0;
+}
+.tabs-cont .focus-pro .number{
+    font-weight: bold;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.tabs-cont .focus-pro li{
+    float: left;
+    padding: 0.4rem 0.1rem;
+}
+
+.tabs-cont.current{display: block;}
+.wrap .tabs-cont .user-input input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .focus-indus select {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .birth input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .email-address input[type="email"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .live-city input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .live-address input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .education select {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .moth-income select {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .marr-state select {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .weixin input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .qq input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .weibo input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont td {
+    padding: 0.2rem 0.5rem;
+}
+
+.wrap .tabs-cont .new-call input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .code input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .message-code input[type="text"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+
+.wrap .tabs-cont .send-code input[type="button"] {
+    width: 2rem;
+    height: 0.6rem;
+}
+.wrap .tabs-cont .new-pwd input[type="password"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+.wrap .tabs-cont .con-pwd input[type="password"] {
+    width: 4rem;
+    height: 0.6rem;
+}
+.wrap .user-con .user-submit input[type="submit"] {
+    width: 2.4rem;
+    height: 0.6rem;
+    border: 0 none;
+    background-color: #660000;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wrap .tabs-cont .tab-self {
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+.wrap .tabs-cont .tab-self input[type="button"]{
+    width: 2.4rem;
+    height: 0.6rem;
+    border: 0 none;
+    background-color: #660000;
+    color: #fff;
+}
+
+h2 {
+    cursor: pointer;
+    font-weight: 400;
+    border: 1px solid;
+    height: 30px;
+    line-height: 30px;
+    padding: 0.2rem;
+    background: #ced3d7;
+    border-color: #fff #e9edf2;
+}
+.wrap .tabs-cont .invest-friend div{padding: 0.2rem}
+    [data-dpr="2"] h2{
+    font-size: 36px;
+}
+[data-dpr="2"] .wrap .tabs-cont .focus-indus select option{
+    font-size: 14px;
+}
+[data-dpr="2"] .wrap .tabs-cont .education select option{
+    font-size: 14px;
+}
+[data-dpr="2"] .wrap .tabs-cont .moth-income select option{
+    font-size: 14px;
+}
+[data-dpr="2"] .wrap .tabs-cont .code-img img{
+    width: 1.4rem;
+}
+.wrap .tabs-cont .txt{
+    font-size: 32px;
+    line-height: 1.43;
+    font-weight: bold;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+[data-dpr="1"] .wrap .tabs-cont .txt{
+    font-size: 16px;
+    line-height: 1.43;
+    font-weight: bold;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+[data-dpr="3"] .wrap .tabs-cont .txt{
+    font-size: 36px;
+    line-height: 1.43;
+    font-weight: bold;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+[data-dpr="3"] h2{
+    font-size: 32px;
+}
+[data-dpr="3"] .wrap .tabs-cont .focus-indus select option {
+    font-size: 8px;
+}
+[data-dpr="3"] .wrap .tabs-cont .education select option {
+    font-size: 8px;
+}
+[data-dpr="3"] .wrap .tabs-cont .moth-income select option {
+    font-size: 8px;
+}

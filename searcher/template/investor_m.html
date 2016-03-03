@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/>
+    <title>投资人</title>
+
+    <link rel="stylesheet" href="/static/css/investor.css"/>
+    <link rel="stylesheet" href="/static/css/zcheader.css"/>
+    <link rel="stylesheet" href="/static/css/investor_search.css"/>
+    <link rel="stylesheet" href="/static/css/owl.carousel.css"/>
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/readMoreB.js"></script>
+
+</head>
+
+<body>
+<!--头部-->
+{% include "zcheader_m.html" %}
+
+<!--内容-->
+<div class="Icontainer">
+    <a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
+    <div class="invest_content">
+        <div id="seatch_norm" class="dhclass">
+        <div style="width:800px;height:85px;float:left;padding-top: 10px;">
+            <div id="search_list" class="search_list">
+                <div class="serch_term">
+                    <label class="choices" id="choices">
+                        <label>投资人类别:</label>
+                        <a class="btn_blue" href="#" choiceid="1"> 不限</a>
+                        <a href="javascript:void(0)" choiceid="2">认证投资人</a>
+                        <a href="javascript:void(0)" choiceid="3">资深投资人</a>
+                    </label>
+                </div>
+            </div>
+            <div style="width:800px;height:1px; background:#EEEEF0;"></div>
+            <div id="search_list" class=" search_list">
+                <div class="serch_term">
+                    <label class="choices" id="choices">
+                        <label>行业类别&nbsp;:</label>
+                        <a class="btn_blue" href="javascript:void(0)" choiceid="4"> 不限</a>
+                        <a href="javascript:void(0)"   choiceid="5">移动互联</a>
+                      <a href="javascript:void(0)"   choiceid="6">节能环保</a>
+                      <a href="javascript:void(0)" choiceid="7"> 文化传媒</a>
+                      <a href="javascript:void(0)"   choiceid="8">新材料</a>
+                      <a href="javascript:void(0)"   choiceid="9">新能源</a>
+                      <a href="javascript:void(0)" choiceid="10"> 生物制药</a>
+                      <label style="height:5px;width: 100%;display: block"></label>
+                      <a style="margin-left:95px;" href="javascript:void(0)"   choiceid="11">消费服务</a>
+                      <a href="javascript:void(0)" choiceid="12">信息技术</a>
+                      <a href="javascript:void(0)" choiceid="13">其他</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div style="float:right;padding-right:20px;padding-top: 10px;"><img src="/static/images/Rlogo.png"/></div>
+    </div>
+        <div class="invest_list" id="result_form"></div>
+    </div>
+    <div class="side">
+        <div id="right_float">
+        <div class="down">
+            <p class="yidong">
+                <a class="erwei" href="####"></a>
+                <a class="l_r3 l_rw3" href="####" style="width: 0px;"><img src="/static/images/wxcode.png"></a>
+            </p>
+            <p class="yidong">
+                <a class="callphone" href="####"></a>
+                <a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:400-709-1818</a>
+            </p>
+            <p class="yidong">
+                <a class="emails" href="####"></a>
+                <a class="l_r5 l_rw5" href="####" style="width: 0px;">公司邮箱:service@ddbid.com</a>
+            </p>
+            <p class="yidong">
+                <a class="address" href="####"></a>
+                <a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场2号楼908室</a>
+            </p>
+            <p class="yidong">
+                <a class="fanhui" href="#"></a>
+                <a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+            </p>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+{% include "footer.html" %}
+<script type="text/javascript">
+    //已登陆
+    $(document).ready(function () {
+        $('#logged li').hover(function () {
+            $('ul', this).slideDown(200);
+            $(this).children('a:first').addClass("hov");
+        }, function () {
+            $('ul', this).slideUp(100);
+            $(this).children('a:first').removeClass("hov");
+        });
+    });
+    //已登陆结束
+    function T_Logout() {
+        //alert("logout");
+        QC.Login.signOut();
+        WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#ok").click(function () {
+            alert(1);
+        });
+        checkparam(1, [1, 4]);
+        $('#seatch_norm').find('a').on("click", function () {
+            $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+            var a = getElementsByClassName('btn_blue', 'choiceid');
+            checkparam(1, a);
+        });
+    });
+
+
+    function getElementsByClassName(n, m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+    function takepage(n) {
+        var a = getElementsByClassName('btn_blue', 'choiceid');
+        checkparam(n, a);
+    }
+
+    function checkparam(page, a) {
+        $.get("{% url 'search_investor' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    //alert(a);
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+
+            $(this).find('.l_rw3').stop().animate({
+                'width':'135px'
+            },400);
+        },function(){
+            $(this).find('.l_rw3').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw2').stop().animate({
+                'width':'170px'
+            },400);
+        },function(){
+            $(this).find('.l_rw2').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw4').stop().animate({
+                'width':'70px'
+            },400);
+        },function(){
+            $(this).find('.l_rw4').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw5').stop().animate({
+                'width':'200px'
+            },400);
+        },function(){
+            $(this).find('.l_rw5').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+    $(document).ready(function(){
+        $('#right_float .yidong').hover(function(){
+            $(this).find('.l_rw6').stop().animate({
+                'width':'250px'
+            },400);
+        },function(){
+            $(this).find('.l_rw6').stop().animate({
+                'width':'0px'
+            },400);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/static/css/zcheader.css" />
+<link rel="stylesheet" href="/static/css/readMore.css" />
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.floatDiv.js"></script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/pojectA.js"></script>
+<script type="text/javascript">
+    //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+   $(function(){
+       var objectid = {{objectid}};
+       checkparam(1,objectid);
+       $('.serch_term a:eq('+ parseInt(objectid[0]-1)+')').addClass("btn_blue").siblings("a").removeClass("btn_blue");
+
+	   //$('#seatch_norm a:eq(14)').addClass("btn_blue");
+	   $('#seatch_norm').find('a').on("click",function(){
+
+	   $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+       var a = getElementsByClassName('btn_blue','choiceid');
+       checkparam(1,a);
+
+       });
+   });
+
+   function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+
+   function takepage(n) {
+        var a = getElementsByClassName('btn_blue','choiceid');
+        checkparam(n,a);
+   }
+
+   function checkparam(page,a) {
+        $.get("{% url 'search_project' %}",
+                {
+                    page: page,
+                    search_word: a,
+                },
+                function (data) {
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+
+			$(this).find('.l_rw3').stop().animate({
+				'width':'135px'
+			},400);
+		},function(){
+			$(this).find('.l_rw3').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw2').stop().animate({
+				'width':'170px'
+			},400);
+		},function(){
+			$(this).find('.l_rw2').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw4').stop().animate({
+				'width':'70px'
+			},400);
+		},function(){
+			$(this).find('.l_rw4').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw5').stop().animate({
+				'width':'200px'
+			},400);
+		},function(){
+			$(this).find('.l_rw5').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+	$(document).ready(function(){
+		$('#right_float .yidong').hover(function(){
+			$(this).find('.l_rw6').stop().animate({
+				'width':'250px'
+			},400);
+		},function(){
+			$(this).find('.l_rw6').stop().animate({
+				'width':'0px'
+			},400);
+		});
+	});
+</script>
+
+<title>查看更多</title>
+</head>
+<body>
+	{% include "zcheader_m.html" %}
+	  <div class="asssd1">
+		  <div class="fixed"><img src="/static/images/sqtzr.png"/></div>
+			<div id="menu" class="mdcx">
+				<div id="seatch_norm" class="dhclass1">
+				   <div class="topleftdiv">
+						<div id="search_list" class="search_list">
+							<div class="serch_term">
+							  <label class="choices" id="choices">
+							  <label >项目类别:</label>
+							  <a href="#" choiceid="1"> 不限</a>
+							  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
+							  <a href="javascript:void(0)"   choiceid="3">预热中</a>
+							  <a href="javascript:void(0)" choiceid="4"> 众投中</a>
+							  <a href="javascript:void(0)"   choiceid="5">众投案例</a>
+							  </label>
+							</div>
+						</div>					
+						<div style="width:800px;height:1px; background:#EEEEF0;"></div>					
+						<div id="search_list" class=" search_list">
+							<div class="serch_term1">
+							  <label class="choices" id="choices">
+							  <label >行业类别:</label>
+							  <a class="btn_blue" href="javascript:void(0)" choiceid="14"> 不限</a>
+							  <a href="javascript:void(0)"   choiceid="15">移动互联</a>
+							  <a href="javascript:void(0)"   choiceid="16">节能环保</a>
+							  <a href="javascript:void(0)" choiceid="17"> 文化传媒</a>
+							  <a href="javascript:void(0)"   choiceid="18">新材料</a>
+							  <a href="javascript:void(0)"   choiceid="19">新能源</a>
+							  <a href="javascript:void(0)" choiceid="20"> 生物制药</a>
+							  <a href="javascript:void(0)"   choiceid="21">消费服务</a>
+							  <a href="javascript:void(0)" choiceid="22">信息技术</a>
+							  <a href="javascript:void(0)" choiceid="23">其他</a>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<div class="toprightdiv"><img src="/static/images/Rlogo.png" /></div>
+				 </div>	    
+				<div class="search_bd" id="result_form">
+				</div>			
+			</div>
+		  <!----右边悬浮框----------->
+		  <div class="side">
+			  <div id="right_float">
+				  <div class="down">
+					  <p class="yidong">
+						  <a class="erwei" href="####"></a>
+						  <a class="l_r3 l_rw3" href="####" style="width: 0px;"><img src="/static/images/wxcode.png"></a>
+					  </p>
+					  <p class="yidong">
+						  <a class="callphone" href="####"></a>
+						  <a class="l_r4 l_rw2" href="####" style="width: 0px;">电话客服:400-709-1818</a>
+					  </p>
+					  <p class="yidong">
+						  <a class="emails" href="####"></a>
+						  <a class="l_r5 l_rw5" href="####" style="width: 0px;">公司邮箱:service@ddbid.com</a>
+					  </p>
+					  <p class="yidong">
+						  <a class="address" href="####"></a>
+						  <a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场<br>2号楼908室</a>
+					  </p>
+					  <p class="yidong">
+						  <a class="fanhui" href="#"></a>
+						  <a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+					  </p>
+				  </div>
+			  </div>
+		  </div>
+
+	  </div>
+{% include "footer.html" %}
+
+</body>
+
+</html>

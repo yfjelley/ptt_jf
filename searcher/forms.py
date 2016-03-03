@@ -161,6 +161,20 @@ class RegisterForm(forms.Form):
             }
         ),
     )
+    extend = forms.CharField(
+        required=False,
+        label=u"邀请码",
+        error_messages={'required': u'请输入邀请码'},
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': u"没有可以不填",
+                'type': 'text',
+                'name': 'extend',
+                'class': 'inputxt',
+                #'ajaxurl': ''
+            }
+        ),
+    )
 
     def valiatetype(self, a):
         global msg

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于我们</title>
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#daohang').find('a').click(function(){
+				var id =$(this).data('pp');
+				$('#'+id).show().siblings().hide();
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('#daohang a:eq(0)').addClass('clickTag');
+			$('#daohang').children('a').bind('focus',function(){
+				$('#daohang a').css('color','#808080');
+				$(this).css('color','#000');
+				$(this).addClass('clickTag').siblings().removeClass('clickTag');
+			})
+		})
+	</script>
+	<link  rel="stylesheet"  href="/static/css/catalog.css" />
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+
+<!--头部-->
+{% include "zcheader_m.html" %}
+
+<!--内容-->
+<div class="conext">
+   <div class="divvdc">
+	   <div class="div_left" id="daohang">
+				<a data-pp="company" href="javascript:void(0);" class="blockCo"><label class="left_label">公司简介</label></a>
+				<div class="downline"></div>
+				<a data-pp="chat" href="javascript:;" class="grayColor"><label class="left_label">联系方式</label></a>
+		 		<div class="downline"></div>
+				<a data-pp="partner" href="javascript:;" class="grayColor"><label class="left_label">合作伙伴</label></a>
+				<div class="downline"></div>
+				<a data-pp="media" href="javascript:;" class="grayColor"><label class="left_label">媒体报道</label></a>
+				<div class="downline"></div>
+		  		<a data-pp="joinour" href="javascript:;" class="grayColor"><label class="left_label">加入我们</label></a>
+		</div>	
+		<div class="div_right">
+	   <div id="company" class="con_right">
+			 <div >
+				 <div class="biaoti">公司简介</div>
+				 <p style="width:570px;">{{description|safe}}</p>
+				 <div style="height:30px;"></div>
+			 </div>
+	   </div> 
+	   <div id="chat" class="display">
+			 <div style="width:600px; height:100%;border:1px solid #FFFFFF;overflow:hidden;line-height:30px;">
+				 <div class="biaoti">联系方式</div>
+				 <p>上海辞达金融信息服务有限公司</p>
+				 <p>公司地址：上海市闵行区沪闵路7866号莲花国际广场2号楼908室</p>
+				 <p>服务热线：4007091818</p>
+				 <p>邮政编码：201100</p>
+				 <p>邮箱地址：sys@pttjf.com</p>
+				 <div style="width:500px;height:1px;background:#ccc;"></div>
+				 <p><img src="/static/images/subway.png" alt="subway" style="width:30px;height:30px;float:left"/>
+				 地铁一号线（莲花路站下）<br/>公交路线986、3645、126、452莲花路站下</p>
+				 <div style="width:500px;height:1px;background:#ccc;"></div>
+				 <p>地图位置</p>
+				  <!--百度地图容器-->
+			
+				  <div style="width:500px;height:350px;border:#ccc solid 1px;margin-bottom:15px;" id="dituContent" ></div>
+				 
+			 </div>
+	   </div> 
+
+	   <div id="partner" class="display" >
+			 <div class="partner">
+				  <div class="biaoti">合作伙伴</div>
+				  <ul>
+					  <li><a target="_blank" href="http://www.neeq.cc/"><img src="/static/images/zhuanranglogo.jpg"/></a></li>
+					  <li><a target="_blank" href="http://www.sanban18.com/"><img src="/static/images/sanbanlogo.png"/></a></li>
+					  <li><a target="_blank" href="http://www.dyly.com/"><img style="background: #323436" src="/static/images/dylylogo.png"/></a></li>
+					  <li><a target="_blank" href="http://www.wabei.cn/"><img src="/static/images/wabeilogo.png"/></a></li>
+					  <li><a target="_blank" href="http://www.xsbdzw.com/"><img src="/static/images/xsblogo.png"/></a></li>
+					  <li><a target="_blank" href="http://www.zhongguocaifu.com.cn/"><img src="/static/images/cflogo.png"/></a></li>
+				  </ul>
+				  <div style="height:355px;"></div>
+			</div>
+	   </div> 
+	   <div id="media" class="display">
+				 <div class="biaoti">媒体报道</div>
+		         {% if mediareports %}
+		         {% for i in mediareports %}
+		   <p class = link_mt>    <a target="_blank" href="{{i.url}}">{{i.title}}</a><label style="float: right">{{i.add_date|date:"Y-m-j  H:i:s"}}</label>
+                 {% endfor %}
+		         {% endif %}
+				 <div style="height:250px;"></div>
+	   </div>	
+	   <div id="joinour" class="display">
+				 <div class="biaoti">加入我们</div>
+				 <p style="font-weight:bold">募资总监</p>
+				 <p>&nbsp;&nbsp;&nbsp;&nbsp;岗位职责：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 对募资经理进行管理、指导</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-制定月度及季度募资计划</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-LP引入及现有LP关系维护；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-基金业务客户渠道开发及维护，包括合作模式洽谈、合作计划制定及实施；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-基金LP日常投资业务沟通；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-协调各部门完成相关的各类会议、路演的策划、组织；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-基金设立及清算相关业务。</br>
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;职位要求：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-对国内外金融市场及VC/PE基金业务有深入的理解，熟悉私募股权基金操作流程；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-具有出色的人际沟通能力；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-5年以上金融机构营销工作经验；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-硕士学历，国内外知名大学金融、财会或其他经济类专业毕业优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;-认真细致, 富有进取心和团队合作精神, 能在压力下工作。</p>
+	   <p style="font-weight:bold">创投经理</p>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;岗位职责：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 项目评估，需要对项目整体质量进行把控；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 项目约谈，对创业者就商业模式和融资技巧进行辅导；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 项目跟进，与创业者保持充分沟通，持续跟踪项目融资进程；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 投资人维护，持续为高质量的投资人输出高质量的项目。</br>
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;职位要求：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 熟悉 TMT 领域（尤其创业项目）；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 了解股权投资（特别是早期投资），有天使投资经验优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 对人对事有很强的感受力、筛选力、判断力；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 产品经理背景优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 科技媒体编辑记者优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 文字能力强，能够发掘提炼产品亮点。</p>
+	   <p style="font-weight:bold">Java工程师</p>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;- 掌握JAVA语言，熟悉MySql数据库变成、Sql语言、存储过程、函数编写；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 具有Web开发经验，掌握HTML（DIV+CSS）、Html5、JavaScript/AJAX、Jquery、python等技术，有Html5开发经验者优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 有一年以上网站实际开发经验，能在此基础上根据实际需要开发各种功能，有优秀的面向对象编程逻辑，具有基于ajax应用开发经验优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 了解微信公众平台API接口以及腾讯开放平台API接口；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 能独立承担商业动态网站/行业门户网站后台程序的开发工作；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 能兼顾简单的前端开发者优先；</br>
+&nbsp;&nbsp;&nbsp;&nbsp;- 有良好的团队合作能力，善于沟通、热爱开发、思维清晰有条理、工作热情敬业有耐心。</p>
+				 <div style="height:30px;"></div>
+	   </div>
+	</div>
+
+  </div>
+</div>
+
+<!--结尾-->
+{% include "footer.html" %}
+<script type="text/javascript">
+        //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+        function T_Logout() {
+            //alert("logout");
+            QC.Login.signOut();
+            WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+</script>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(121.405708,31.142025);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"我的位置",content:"我的备注",point:"121.408978|31.138749",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+
+</html>

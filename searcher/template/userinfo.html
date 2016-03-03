@@ -850,12 +850,20 @@ $(function(){
 					<label><div style="width:1px;height:222px; border-right:1px solid #eeeef0;"></div></label>				
 				</li>
 				<ul class="giftpadding" style="margin-top:-240px;margin-left:300px;">
+					{% if extend %}
+
 					<li>
-						<label><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/</textarea></label>
+						您的邀请码是:{{extend.extend_code}}
+						<label><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/register/?code={{extend.extend_code}}</textarea></label>
 					</li>
 					<li>
 						<input onclick="copyUrl()" type="button" style="background: url('/static/images/on-clickcopy.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
 					</li>
+					{% else %}
+					<li>
+						<input onclick="generate()" type="button"  value="获取推广邀请码 " />
+					</li>
+					{%  endif  %}
 				</ul>
 			</ul>
 		</div>
@@ -940,6 +948,11 @@ $(function(){
 		  Url.select(); // 选择对象
 		  document.execCommand("Copy"); // 执行浏览器复制命令
 		  alert("已复制好，可贴粘。");
+	  }
+	  function generate()
+	  {
+	  $.post("{% url 'generate' %}",{},function(){ window.location.reload();});
+
 	  }
 	  $(document).ready(function(){
 			$("#auth_submit").click(function(){
@@ -1061,7 +1074,7 @@ $(function() {
 		render	: "canvas",
 		width   :  256,
 		height  :  256,
-		text	: "http://www.pttjf.com/"
+		text	: "http://www.pttjf.com/register/?code={{extend.extend_code}}"
 	});
 </script>
 

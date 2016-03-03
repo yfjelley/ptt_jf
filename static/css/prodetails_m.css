@@ -1,0 +1,343 @@
+/*
+.checkbox input[type='checkbox'] + label:before{
+    background: url('/static/images/focus_m_ardiod.jpg') no-repeat;
+    content:' ';
+    width: 1.6rem;
+    height: .6rem;
+    position: absolute;
+    right:10px;
+}
+.checkbox input[type='checkbox']{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    position:absolute;
+    right: 10px;
+    top: 20px;
+}
+.checkbox input[type='checkbox']:checked + label:before{
+    background: url('/static/images/refocus_m_ardiod.jpg') no-repeat;
+    width: 1.6rem;
+    height: .6rem;
+}
+
+[data-dpr="2"] .checkbox input[type='checkbox'] + label:before{
+        background: url('/static/images/focus_m_iphoe.jpg') no-repeat;
+        content:' ';
+        width: 1.6rem;
+        height: .6rem;
+        position: absolute;
+        right:4px;
+    }
+ [data-dpr="2"] .checkbox input[type='checkbox']{
+     box-sizing: border-box;
+     margin:0;
+     padding: 0;
+     position:absolute;
+     right: 10px;
+     top: 20px;
+ }
+[data-dpr="2"].checkbox input[type='checkbox']:checked + label:before{
+    background: url('/static/images/refocus_m_iphoe.jpg') no-repeat;
+    width: 1.6rem;
+    height: .6rem;
+}
+*/
+
+
+.touchweb_page-index{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%
+}
+.checkbox{
+    position: relative;
+}
+.checkbox .btn-focus{
+    width: 1.6rem;
+    height: .6rem;
+}
+.content{
+    position: relative;
+    overflow: hidden;
+    background-color: #EEEEF0;
+}
+.content{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+
+.flag{
+    display: table;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 0.1rem;
+}
+.flag .flag-icon{
+    width: 3.8rem;
+    height: 3rem;
+    vertical-align: top;
+    padding: .2rem 0;
+}
+.flag .finalcaption{
+    width: 133.33rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+.flag .flag-item{
+    display: table-cell;
+    padding: .16rem 0;
+    vertical-align: top;
+}
+.flag-item p{
+    float: left;
+}
+.flag-item .flag-title{
+    font-size: 15px;
+    font-weight: bold;
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+.flag-item .flag-zt{
+    padding: 0 0.1rem;
+}
+.flag-item .flag-zt img{
+    width: 1.4rem;
+    height: .6rem;
+}
+.flag-item .flag-focus{
+
+}
+.flag-item .flag-focus img{
+    width: 1.2rem;
+    height: .6rem;
+}
+.wrap-number{
+    float: left;
+    width: 33.33333333%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.2rem 0;
+}
+.wrap-prog{
+    width: 90%;
+    border: 1px solid #868686;
+    border-radius: 10px;
+    margin: 0.4rem auto;
+}
+.wrap-prog em{
+    display: block;
+    height: 15px;
+}
+.wrap-txt{
+    font-size: 15px;
+    font-weight: bold;
+}
+.wrap-txt div{
+    float: left;
+    width: 50%;
+    padding: .2rem 0;
+    text-align: center;
+}
+.wrap-way{
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 0.2rem;
+}
+.wrap-way div{
+    float: left;
+    width: 50%;
+    padding: .2rem 0;
+    text-align: center;
+}
+.wrap-time{
+    font-size: 12px;
+    font-weight: bold;
+}
+.wrap-time div{
+    float: left;
+    width: 50%;
+    padding: .2rem 0;
+    text-align: center;
+}
+.touchweb_page-index h2{
+    cursor:pointer;font-weight:400;border:1px solid;height:0.8rem;line-height:0.8rem;padding:0.2rem;background:#ced3d7 ;border-color:#fff #e9edf2;
+}
+#contents .dev-books span{
+    margin: 0.2rem 0.4rem;
+    display: block;
+}
+#contents .inves-icon{
+    float: left;
+    padding: 0.2rem 0;
+    margin-left: 0.9rem;
+}
+#contents .inves-icon div p{
+    width: 1.2rem;
+    padding: 0 0.4rem;
+}
+#contents .inves-icon img{
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0.2rem 0.4rem;
+}
+#contents .inves-icon img{
+    width: 2.5rem;
+    height: 2rem;
+}
+#contents .order-money .financing p{
+    font-size: 22px;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: bold;
+    margin: 0.2rem;
+}
+#contents .order-money .order-rule p{
+    font-size: 14px;
+}
+#contents .order-money .invest p{
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: bold;
+    margin: 0.2rem;
+}
+#contents .order-money .order-number input{
+    margin: 0.2rem 0.3rem;
+}
+#contents .order-money .agree-fund{
+     margin: 0.2rem 0.3rem;
+ }
+#contents .order-money .agree-fund label{
+   float: left;
+}
+#contents .order-money .agree-fund input[type="checkbox"]{
+    zoom: 140%;
+}
+#contents .order-money .order-btn input{
+    width: 90%;
+    margin: 0.2rem 0.3rem;
+    font-size: 14px;
+    height: 0.8rem;
+    background: #FF6633;
+    color: #fff;
+    border:none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+[data-dpr="2"] .touchweb_page-index .content  .product_dec span{
+    font-size: 12px;
+}
+[data-dpr="2"] #contents .order-money .agree-fund input[type="checkbox"]{
+    zoom: 200%;
+}
+[data-dpr="2"] #contents .order-money .order-btn input{
+    font-size: 32px;
+}
+[data-dpr="2"] #contents .order-money .order-number span{
+    font-size: 24px;
+}
+[data-dpr="2"] #contents .order-money .order-rule p{
+    font-size: 24px;
+}
+
+[data-dpr="2"] #contents .order-money .financing p{
+    font-size: 36px;
+    color: #000000;
+    padding: 0.2rem;
+    margin: 0;
+}
+[data-dpr="2"] #contents .order-money .invest p{
+    font-size: 28px;
+    color: #000000;
+    padding: 0.2rem;
+    margin: 0;
+}
+/*[data-dpr="2"] #contents ul li span{
+    font-size: 12px;
+}*/
+[data-dpr="2"] #contents .dev-books span{
+    font-size: 30px;
+    font-weight: 500;
+}
+[data-dpr="2"] .flag-title{
+    font-size: 30px;
+    font-weight: bold;
+}
+[data-dpr="2"] .wrap .wrap-number p{
+    font-size: 34px;
+    font-weight: bold;
+}
+[data-dpr="2"] .wrap-txt{
+    font-size: 30px;
+    font-weight: bold;
+}
+[data-dpr="2"] .wrap-time{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+[data-dpr="3"] #contents .order-money .agree-fund input[type="checkbox"]{
+    zoom: 250%;
+}
+[data-dpr="3"] #contents .order-money .order-btn input{
+    font-size: 36px;
+}
+[data-dpr="3"] #contents .order-money .order-rule p{
+    font-size: 32px;
+}
+[data-dpr="3"] #contents .order-money .order-number span{
+    font-size: 30px;
+}
+[data-dpr="3"] #contents .order-money .financing p{
+    font-size: 46px;
+    color: #000000;
+    margin: 0;
+}
+[data-dpr="3"] #contents .order-money .invest p{
+    font-size: 32px;
+    color: #000000;
+    margin: 0;
+}
+[data-dpr="3"] #contents  .order-money p{
+    font-size: 38px;
+    color: #000000;
+    padding: 0.2rem;
+}
+/*[data-dpr="3"] #contents ul li span{
+    font-size: 13px;
+}*/
+[data-dpr="3"] #contents .dev-books span{
+    font-size: 38px;
+    font-weight: 500;
+}
+[data-dpr="3"] .flag-title{
+    font-size: 42px;
+    font-weight: bold;
+}
+[data-dpr="3"] .wrap .wrap-number p{
+    font-size: 46px;
+    font-weight: bold;
+}
+
+[data-dpr="3"] .wrap-txt{
+    font-size: 40px;
+    font-weight: bold;
+}
+[data-dpr="3"] .wrap-time{
+    font-size: 36px;
+    font-weight: bold;
+}

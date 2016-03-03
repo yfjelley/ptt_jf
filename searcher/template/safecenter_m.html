@@ -1,0 +1,49 @@
+<!--安全中心-->
+    <form id="formPW" class="modifyPWform" action="" method="post"  enctype="multipart/form-data" >
+        <table class="tab-self">
+            <tr>
+                <td>
+                    <label>新密码</label>
+                </td>
+                <td class="new-pwd" style="padding: 0.2rem 0.1rem">
+                    <label>{{form.password}}</label>
+                </td>
+                <td style="padding: 0.2rem 0.1rem;width: 2rem;height: 0.6rem">
+                    <label></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>确认密码</label>
+                </td>
+                <td class="con-pwd" style="padding: 0.2rem 0.1rem">
+                    <label>{{form.password2}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="padding: 0.2rem 0.1rem"><input type="button" id ="submit_password" value="确认修改"></td>
+            </tr>
+        </table>
+        </form>
+
+<!---安全中心 end-->
+<script src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#submit_password').click(function(){
+             var password = $("input[name=password]").val();
+             var password2 = $("input[name=password2]").val();
+             if(password.length >5){
+                 if(password == password2){
+                     var formdata = $("#formPW").serialize();
+                     $.post("{% url 'safecenter' %}",
+                             formdata,
+                             function(data){
+                               $('#safe_center').html(data.content_html);}
+                             );
+                 }else{alert("两次输入的密码不一致！");};
+             }else{alert("密码至少6位");};
+	});
+});
+</script>

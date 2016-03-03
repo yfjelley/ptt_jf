@@ -15,8 +15,8 @@
 {% include "zcheader.html" %}
 
 <div id="signup_content">
-	<div class="bglogos" style="width: 100%;">
-		<img src="/static/images/bglogo1.PNG" width="100%" >
+	<div style="width:100%">
+		<img src="/static/images/bglogo1.PNG" width="100%" style="min-height: 870px;">
 	</div>
 	<div class="signup_mid">
 		<form class="registerform" action="{% url 'register' %}" method="post" name="form1">
@@ -61,6 +61,15 @@
 					</li>
 					<li style="clear:both"></li>
 				</ul>
+				<ul class="signup_yqcode">
+					<li>
+						<label>邀请码：</label>
+					</li>
+					<li id="yaoqing_inp">
+						<label style="float:left;">{{ form.extend }}</label>
+					</li>
+					<li style="clear:both"></li>
+				</ul>
 				<ul class="signup_yzcode">
 					<li>
 						<label class="label">验证码：</label>
@@ -98,7 +107,7 @@
 						<hr />
 					</li>
 					<li>
-						<input type="submit" class="login_butt" id="login" value=" " class="border:0 none;" style="background:url(/static/images/zhuce.jpg);width: 413px;height: 43px;margin-left:50px" />
+						<input type="submit" class="login_butt" id="login" value=" " class="border:0 none;" style="background:url(/static/images/zhuce.png);background-repeat:no-repeat;color:white;margin-top:10px; margin-left:10px;width:512px; height:59px" />
 					</li>
 					<li style="width:520px;height:40px;postion:absolute;">
 						<div style="float:left;padding-left:330px;">  <img src="/static/images/smalllogo.png" /></div>
@@ -143,6 +152,12 @@
                 $('ul', this).slideUp(100);
                 $(this).children('a:first').removeClass("hov");
             });
+        });
+        $(function(){
+        {% if code %}
+        	document.getElementById("id_extend").value= '{{code}}';
+
+        {% endif %}
         });
         //已登陆结束
         function T_Logout() {

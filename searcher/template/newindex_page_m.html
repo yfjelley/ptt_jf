@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load settingsvalue %}
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="telephone=no,email=no" name="format-detection"/>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="/static/css/newindex_page_m.css">
+    <link rel="stylesheet" href="/static/css/public_m.css">
+    <title>首页</title>
+</head>
+<body>
+
+
+    <div class="touchweb_page-index">
+
+        <!--header(头部)-->
+        {% include "zcheader_m.html" %}
+
+        <!--swipe img(图片滑动)-->
+        <div class="grid">
+        <div class="slide" id="slide3">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="/static/images/monkeyYear_m.JPG"
+                             alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/static/images/ztsuccess_m.JPG"
+                             alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/static/images/ztbannel_m.jpg"
+                             alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/static/images/ztbannel-1_m.JPG"
+                             alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="dot">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="grid-wrap">
+            <div class="touchweb-search_list">
+                <a class="item" data-dd="1">
+                        <span class="icon_box">
+                            <img src="/static/images/all_m.png">
+                        </span>
+                    <span class="title">全部</span>
+                </a>
+                <a class="item" data-dd="2">
+                        <span class="icon_box">
+                            <img src="/static/images/all_m.png">
+                        </span>
+                    <span class="title">已完成</span>
+                </a>
+                <a class="item" data-dd="4">
+                        <span class="icon_box">
+                            <img src="/static/images/all_m.png">
+                        </span>
+                    <span class="title">预热中</span>
+                </a>
+                <a class="item" data-dd="3">
+                        <span class="icon_box">
+                            <img src="/static/images/all_m.png">
+                        </span>
+                    <span class="title">众投中</span>
+                </a>
+
+            </div>
+            <div id="content"></div>
+
+        </div>
+        </div>
+
+    </div>
+<script src="/static/js/zepto.min.js"></script>
+<script src="/static/js/swipeSlide.min.js"></script>
+<script>
+    $(function () {
+        $('#slide3').swipeSlide({
+            continuousScroll: true,
+            speed: 3000,
+            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            firstCallback: function (i, sum, me) {
+                me.find('.dot').children().first().addClass('cur');
+            },
+            callback: function (i, sum, me) {
+                me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+            }
+        });
+    })
+
+</script>
+<script type="text/javascript">
+        function T_Logout() {
+            QC.Login.signOut(); }
+	$(function(){
+	        $.post("/mobile/process/",{objectid:1,},function(data){ $('#content').html(data.content_html);});
+			$('.touchweb-search_list').find('a').click(function(){
+				var v =$(this).data('dd');
+				$.post("/mobile/process/",{objectid:v,},function(data){ $('#content').html(data.content_html);});
+			});
+			})
+</script>
+</body>
+</html>

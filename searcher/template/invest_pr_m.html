@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>项目详情</title>
+    <link rel="stylesheet" href="/static/css/zcheader.css"/>
+    <link rel="stylesheet" href="/static/css/touzi.css"/>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+        var input_invest_before = $("#input_invest").val();
+        $('#btn_sub').click(function(){
+            var check=$("input[type='checkbox']").is(':checked');
+            var input_invest = $("#input_invest").val();
+            if(input_invest<input_invest_before)
+            {
+                alert('投资金额必须大于'+input_invest_before+',请重新输入!');
+            }
+            else{
+                if(check==true){
+                        $.post("/invested/",
+                        {project:{{project.id}},
+                         inv:input_invest,
+                         per:{{project.invest_amount}}
+                        },
+                        function(data)
+                        { if(data.t=='1'){alert("预约投资成功!");location.reload();
+                        };});
+                }else{
+                    alert('你还没有同意葡萄藤众筹的投资须知以及条款呢');
+                }
+            }
+        })
+        })
+    </script>
+</head>
+
+<body>
+
+{% include "zcheader.html" %}
+<div class="conext">
+    <div class="div11">
+        <div class="div_left" id="daohang">
+            <div class="pic">
+                <a href="#" class="blockColor"><img src="{{project.logo}}" width="220" height="132"></a>
+            </div>
+        </div>
+        <div class="div_right">
+            <div style="height:22px;"></div>
+            <div class="biaoti">{{project.name}}</div>
+            <div class="online"></div>
+            <div>
+                <p>
+                    <span style="font-size:18px;font-weight:bold;">本轮融资份额</span>
+                    <span style="font-size:22px;font-weight:bold;">{{project.invest_num}}</span>
+                    <span style="font-size:14px;">万份</span>
+                    <span style="font-size:18px;font-weight:bold;">每份</span>
+                    <span style="font-size:22px;font-weight:bold;">{{project.invest_amount}}</span>
+                    <span style="font-size:14px;">元</span>
+
+                <p>
+                <div class="donline1">
+                <div class="lmoney">
+                        <div style="float:left;width: 6px;height:6px;border-radius: 60px;background:#f06e57;margin-top: 20px;margin-left:8px;"></div>
+                        <label style="float:left;margin-top: 14px;margin-left:12px">预约份额必须大于{{project.leader_inv_min}}万股</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="font-size:18px;font-weight:bold;margin-top:25px;margin-bottom:5px;margin-left:14px;">投资份额</div>
+                {% ifequal invest_type 1 %}
+                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.leader_inv_min}}"/><span style="position: relative;left:-50px;">万股</span></div>
+                {% else %}
+                <div style="margin-left:18px;"><input type="text" class="border1" id="input_invest" value="{{project.inv_min}}"/><span style="position: relative;left:-50px;">万股</span></div>
+                {% endifequal %}
+                <div style="margin-top:10px;margin-bottom:15px;margin-left:15px;">
+                    <input type="checkbox" value=""><a href="javascript:void(0)" style="color:#FF0000;font-size:14px;">同意葡萄藤众投的投资须知以及条款</a>
+                </div>
+                <div style="margin-left:20px;"><input id="btn_sub" type="button" value="确认预约" class="entr"/></div>
+                <div style="height:15px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

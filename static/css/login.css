@@ -68,15 +68,20 @@ input.input_butt{display:inline-block; border:0}
 .singup_smscode{margin-left:50px;line-height:20px;}
 .singup_smscode span{position:absolute;margin-left: 102px;}
 .singup_smscode li{padding:1px 0;}
+#yaoqing_inp input[type="text"]{width:400px;height:40px;}
 #sms_inp input[type="text"]{width:300px;height:40px;}
 #sms_inp img{width:94px;height:50px;}
+
+.signup_yqcode{margin-left:50px;line-height:20px;}
+.signup_yqcode span{position:absolute;margin-left: 102px;}
+.signup_yqcode li{padding:1px 0;}
 
 .signup_yzcode{margin-left:50px;line-height:20px;}
 .signup_yzcode span{position:absolute;margin-left: 102px;}
 .signup_yzcode li{padding:1px 0;}
 #yzcode_inp input[type="text"]{width:300px;height:40px;}
 
-.signup_mid{background-color:#FFF;width:610px; z-index:999;position: absolute;top: 70px;right: 470px;}
+.signup_mid{background-color:#FFF;width:610px; z-index:999;position: absolute;top: 40px;right: 470px;}
 .signup_mid ul{padding:5px 0px;}
 @media screen and (max-width: 1440px){
     .signup_mid{

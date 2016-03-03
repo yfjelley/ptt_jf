@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+{% load settingsvalue %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>项目详情</title>
+    <link rel="stylesheet" href="/static/css/prodetails_m.css">
+    <link rel="stylesheet" href="/static/css/public_m.css">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#contents h2").click(function(){
+                {% if user.id %}
+                    var oUl= $(this).next();
+                    if(oUl.css("display") == "none"){
+                        $(this).siblings("ul").css("display","none");
+                        oUl.css('display','block');
+                    }else{
+                        $(this).siblings("ul").css("display","none");
+                        oUl.css('display','none');
+                    }
+                    {% else %}
+                    alert('请先登录!');
+                    {% endif %}
+                })
+        })
+			$(function(){
+				{% if flag %}
+					$("#focus").attr("value",'取消关注');
+					{% endif %}
+				})
+
+				function remaid(){alert('请先登录!');}
+				function booking(){alert("该项目已众筹完成，感谢你的关注。欢迎选择其它项目！");}
+
+		function attion_pr(){
+		        {% if user.id %}
+					if($("#focus").attr('value')=="关注"){
+							$.post("/add_attion/"+{{result.id}}+"/",
+					{},
+					function(data){ if(data.comment){alert(data.comment);
+							if(data.comment=="关注成功！"){$("#focus").attr('value','取消关注')}};});}
+					else{
+						$.post("/cancel_attion/"+{{result.id}}+"/",{},function(data){$("#focus").attr('value','关注')});
+				}
+				{% else %}
+				alert('请先登录');
+				{% endif %}
+			}
+					/*预约js*/
+			$(function(){
+				var input_invest_before = $("#input_invest").val();
+				$('#btn_sub').click(function(){
+					var check=$("input[type='checkbox']").is(':checked');
+					var input_invest = $("#input_invest").val();
+					if(input_invest<input_invest_before)
+					{
+						alert('投资金额必须大于'+input_invest_before+',请重新输入!');
+					}
+					else{
+						if(check==true){
+							$.post("/invested/",
+									{project:{{result.id}},
+						inv:input_invest,
+								per:{{result.invest_amount}}
+					},
+					function(data)
+					{ if(data.t=='1'){alert("预约投资成功!");location.reload();
+					};});
+				}else{
+					alert('你还没有同意葡萄藤众筹的投资须知以及条款呢');
+				}
+			}
+		})
+		})
+    </script>
+
+</head>
+<body>
+    <div class="touchweb_page-index">
+        <!--header(头部)-->
+        {% include "zcheader_m.html" %}
+        <div class="content">
+        <ul>
+            <li class="flag">
+                <img class="flag-icon" src="{{result.logo}}">
+                <div class="finalcaption flag-item">
+                    <p class="flag-title">{{result.name}}</p>
+					<p class="flag-zt">
+						{% ifequal result.status 0 %}
+						<img src="/static/images/yrzhong_m.png" >
+						{% endifequal %}
+						{% ifequal result.status 1 %}
+						<img src="/static/images/ztzhong_m.png" >
+						{% endifequal %}
+						{% ifequal result.status 2 %}
+						<img src="/static/images/zcfinish_m.png" >
+						{% endifequal %}
+					</p>
+					<div class="checkbox">
+						<!--<input class="btn-focus" id="focus" value=" " type="checkbox"   onclick="attion_pr()"/>
+						<label for="focus"></label>-->
+                        <input class="btn-focus" id="focus" value="关注" type="button"   onclick="attion_pr()"/>
+					</div>
+					<p style="clear: both"></p>
+                    <p class="flag-desc">
+						{{result.introduction}}
+                    </p>
+                </div>
+            </li>
+            <li class="wrap">
+                <div class="wrap-number">
+                    <div>
+                        <img style="width: 2rem;height: 1.5rem" src="/static/images/mgmoney_m.jpg" >
+                    </div>
+                    <div>
+                        <p>每股金额{{result.invest_amount}}元</p>
+                    </div>
+                </div>
+                <div class="wrap-number">
+                    <div>
+                        <img style="width: 2rem;height: 1.5rem" src="/static/images/mbmoney_m.jpg">
+                    </div>
+                    <div>
+                        <p>目标{{result.invest_num}}万份</p>
+                    </div>
+                </div>
+                <div class="wrap-number">
+                    <div>
+                        <img style="width: 2rem;height: 1.5rem" src="/static/images/tzpeople_m.jpg">
+                    </div>
+                    <div>
+                        <p>投资人{{invest_detail|length}}位</p>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+
+                <div class="wrap-prog"> <em style="width:{{result.invest_num|add_with:amount}}%;border-radius:10px;background:url(/static/images/jindutiao_m.jpg) no-repeat;"></em></div>
+                <div class="wrap-txt">
+                    <div>
+                        <label>预约份额:</label><label>{{amount}}万份</label>
+                    </div>
+                    <div>
+                        <label>完成率:</label><label>{% widthratio amount result.invest_num 100 %}%</label>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+
+                <div class="wrap-way">
+                    <div>
+                        <label>支付方式:</label><label>第三方托管</label>
+                    </div>
+                    <div>
+                        <label>剩余时间</label><label>{{ result.preheat_end_date |remain_time}}</label>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="wrap-time">
+                    <div>
+                        <label>项目发起时间:</label><label>{{result.Preheat_date|date:"Y-m-j  " }}</label>
+                    </div>
+                    <div>
+                        <label>项目结束时间:</label><label>{{result.preheat_end_date|date:"Y-m-j  "  }}</label>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            </li>
+        </ul>
+        <div id="contents">
+            <h2>公司简介</h2>
+            <ul class="product_dec" style="display: none;">
+                <li>
+                    <span>{{result.description|safe}}</span>
+                </li>
+            </ul>
+            <h2>团队介绍</h2>
+            <ul class="product_dec" style="display: none;">
+                <li><span>{{result.team|safe}}</span></li>
+            </ul>
+            <h2>项目亮点</h2>
+            <ul class="product_dec" style="display: none;">
+                <li><span>
+                    {{result.patent|safe}}
+                </span></li>
+            </ul>
+            <h2>发展计划书</h2>
+            <ul style="display: none;">
+                <li class="dev-books"><span style="float: left">发展计划书</span>
+					<span style="float: right"><a href="{{result.business_plan_url}}"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a></span></li>
+                <li style="clear: both"></li>
+            </ul>
+
+            <h2>投资人列表</h2>
+            <ul style="display: none;">
+				{% if invest_detail %}
+				{% for i in invest_detail %}
+                <li class="inves-icon">
+                    <div>
+                        <div><img src="{{i.invest_user.userinformation.photo_url}}"></div>
+						{% if i.invest_user.userinformation.nickname %}
+
+							<p style="float: left">{{i.invest_user.userinformation.nickname}}</p>
+						{% else %}
+							<p style="float: left">{{i.invest_user.username|phone_cut}}</p>
+						{% endif %}
+                        <p style="float: right">{{i.invest_num}}万股</p>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endif %}
+                <li style="clear: both"></li>
+            </ul>
+
+            <h2>预约</h2>
+            <ul style="display: none;">
+                <li class="order-money">
+                    <div class="financing">
+                        <p>本轮融资份额{{result.invest_num}}万份</p>
+                        <p>每份{{result.invest_amount}}元</p>
+                    </div>
+                    <div class="order-rule" style="background-color: #ffffff;margin: 0.2rem;width: 80%;padding: 0.2rem 0">
+                        <p>预约份额必须大于{{result.leader_inv_min}}万股,且是1万的整数倍</p>
+                    </div>
+                    <div class="invest"><p>投资份额</p></div>
+                    <div class="order-number">
+						{% ifequal invest_type 1 %}
+                        <input type="text" style="width: 80%;height: 1.2rem;margin: 0 0.3rem" id="input_invest" value="{{result.leader_inv_min}}">
+                        <span style="position: relative;left: -1.2rem">万股</span>
+						{% else %}
+						<input type="text" style="width: 80%;height: 1.2rem;margin: 0 0.3rem" id="input_invest" value="{{result.inv_min}}">
+						<span style="position: relative;left: -1.2rem">万股</span>
+						{% endifequal %}
+                    </div>
+                    <div class="agree-fund"><p><label><input type="checkbox"></label><label>同意葡萄藤众投的投资须知以及条款</label></p></div>
+                    <div class="order-btn">
+                        <input id="btn_sub" type="button" value="预约投资">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

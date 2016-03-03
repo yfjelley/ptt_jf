@@ -29,7 +29,7 @@ from searcher.forms import ContactForm, SearchForm, LoginForm, UserInformationFo
 from searcher.inner_views import index_loading, data_filter, result_sort, get_pageset, get_user_filter, user_auth, \
     refresh_header,send_flow_all,user_get_ip
 from searcher.models import Bid, UserFavorite, Platform, UserInformation, DimensionChoice, UserFilter, UserReminder, \
-    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports,invest_detail
+    WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports,invest_detail,Extend
 from ddbid import conf
 from django.db.models import Q
 import simplejson
@@ -89,7 +89,6 @@ def login(request):
                                   context_instance=RequestContext(request))
 
 def forgetpw(request):
-    print "this views forgetpw"
     if request.method == 'POST':
         form = ForgetPWForm(request.POST)
         if form.is_valid():
@@ -162,7 +161,6 @@ def checksmscode(request):
 
 def checkuser(request):
     response = HttpResponse()
-    print "checkuser"
     response['Content-Type'] = "text/javascript"
     u_ajax = request.POST.get('name', None)
     if u_ajax:
@@ -183,12 +181,12 @@ def checkuser_phone(request):
             response['Content-Type'] = "application/json"
             r_u = request.POST.get('param', None)
             u = User.objects.filter(username=r_u)
-            print "xxxxxxxxxxx"
+
             if u.exists():
                 response.write('{"info": "用户已存在","status": "n"}')  # 用户已存在
                 return response
             else:
-                print "ddddddddd"
+
                 response.write('{"info": "","status": "y"}')
                 return response
 
@@ -219,6 +217,7 @@ def register(request):
 
             smscode = cd['smscode']
             code = cd['vcode']
+            registration_invitation_code = cd['extend']
             ca = Captcha(request)
             flag = 0
             u = User.objects.filter(username=username)
@@ -240,6 +239,15 @@ def register(request):
                 # initial={'photo_url': '/static/upload/default.png'}
                 u = UserInformation(user=new_user, photo_url='/static/upload/default.png', abcdefg=pwd1,cellphone=username)
                 u.save()
+
+                for i in range(1,10):
+                    code = ''.join(map(lambda xx:(hex(ord(xx))[2:]),os.urandom(6)))
+                    exist = Extend.objects.filter(extend_code=code)
+                    if not exist:
+                        e = Extend(extend_code=code,extend_user=new_user, regist_code=registration_invitation_code)
+                        e.save()
+                        break
+
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
                 send_flow_all(username)
@@ -257,8 +265,10 @@ def register(request):
         else:
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
+        code = request.GET.get('code',None)
+        print code
         form = RegisterForm()
-        return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
+        return render_to_response("signup.html", {'form': form,'code':code}, context_instance=RequestContext(request))
 
 
 @login_required
@@ -270,45 +280,6 @@ def logout(request):
     """
     auth.logout(request)
     return HttpResponseRedirect(reverse('index_jf'))
-
-
-@login_required
-def add_favoritebid(request, objectid):
-    user_id = auth.get_user(request).id
-    user = User.objects.get(id=user_id)
-    ftype = 1
-    u = UserFavorite.objects.filter(user_id=user_id, favorite_type=ftype, favorite_id=objectid)
-    if u.exists():
-        return HttpResponse(u'已经收藏过了')
-
-    u1 = UserFavorite(user_id=user_id, favorite_type=ftype, favorite_id=objectid)
-    u1.save()
-    return HttpResponse(u'收藏成功')
-
-
-@login_required
-def add_favoriteplatform(request, objectid):
-    user_id = auth.get_user(request).id
-    user = User.objects.get(id=user_id)
-    ftype = 2
-    u = UserFavorite.objects.filter(user_id=user_id, favorite_type=ftype, favorite_id=objectid)
-    if u.exists():
-        return HttpResponse(u'已经收藏过了')
-    u1 = UserFavorite(user_id=user_id, favorite_type=ftype, favorite_id=objectid)
-    u1.save()
-    return HttpResponse(u'收藏成功')
-
-
-@login_required
-def add_reminder(request, objectid):
-    user = auth.get_user(request)
-    try:
-        u_r = UserReminder.objects.get(user=user, bid=objectid)
-        return HttpResponse(u'已存在')
-    except ObjectDoesNotExist:
-        u_r = UserReminder(user=user, bid=objectid, reminder=1, value=1, status=1)
-        u_r.save()
-        return HttpResponse(u'已添加')
 
 @login_required
 def myfavorite(request, tid):
@@ -328,10 +299,6 @@ def myfavorite(request, tid):
                               {'favorites': favorites, 'flag': flag}, context_instance=RequestContext(request))
 
 
-def platform(request):
-    pfs = Platform.objects.all()
-    # print(pfs)
-    return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
 def auth_register(request):
     u = UserInformation.objects.get(user=request.user)
@@ -413,67 +380,27 @@ def userinfo(request,objectid=None):
 
         signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
         notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
-        print signal,notice
 
+        extend = Extend.objects.filter(extend_user=request.user)
+        if extend:
+            extend = extend[0]
+        print extend
 
-    return render_to_response("userinfo.html", {"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
+    return render_to_response("userinfo.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
                                                 "publish_pr":publish_pr,"attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
-
-@login_required
-def userinformation(request):
-    url = None
-    user = auth.get_user(request)
-    flag = 1
-    if request.method == 'POST':
-        form = UserInformationForm(request.POST)
-        f = request.FILES.get('file', None)
-        if f:
-            extension = os.path.splitext(f.name)[-1]
-            msg = None
-            if f.size > 1048576:
-                msg = u"图片大小不能超过1MB"
-            if (extension not in ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF']) or ('image' not in f.content_type):
-                msg = u"图片格式必须为jpg，png，gif"
-            if msg:
-                return render_to_response("user_information.html", {'form': form, 'flag': flag, 'error': msg},
-                                          context_instance=RequestContext(request))
-
-            im = Image.open(f)
-            im.thumbnail((120, 120))
-            name = 'photo' + storage.get_available_name(str(user.id)) + '.png'
-            im.save('%s/%s' % (storage.location, name), 'PNG')
-            url = storage.url(name)
-            # print(url)
-
-        if form.is_valid():
-            try:
-                u_i = UserInformation.objects.get(user=user)
-                form1 = UserInformationForm(request.POST, instance=u_i)
-                u_i = form1.save(commit=False)
-                if url:
-                    u_i.photo_url = url
-            except ObjectDoesNotExist:
-                u_i = form.save(commit=False)
-                u_i.user = user
-                u_i.photo_url = url
-            u_i.save()
-        else:
-            return render_to_response("user_information.html", {'form': form, 'flag': flag},
-                                      context_instance=RequestContext(request))
-        return HttpResponseRedirect(reverse('userinformation'))
-    else:
-        try:
-            form = UserInformationForm(instance=user.userinformation)
-        except ObjectDoesNotExist:
-            form = UserInformationForm()
-            # print(form)
-    return render_to_response("user_information.html", {'form': form, 'flag': flag},
-                              context_instance=RequestContext(request))
+def generate(request):
+    for i in range(1,10):
+        code = ''.join(map(lambda xx:(hex(ord(xx))[2:]),os.urandom(6)))
+        exist = Extend.objects.filter(extend_code=code)
+        if not exist:
+            e = Extend(extend_code=code,extend_user=request.user)
+            e.save()
+            break
+    return HttpResponse()
 
 def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))
-
 
 def disclaimer(request):
     return render_to_response('disclaimer.html', context_instance=RequestContext(request))
@@ -584,15 +511,8 @@ def send_smscode_modify(request):
             print "4"
             print opener.open(request).read()
         return HttpResponse()
-
-def index(request):
-    return render_to_response('index.html',{}, context_instance=RequestContext(request))
-
-
 def agreement(request):
-
     ag = RegistrationAgreement.objects.filter(name="registration_agreement")
-    print "ag is :",ag
     return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
 
 
@@ -747,8 +667,11 @@ def about_us(request):
 def guide(request):
     p = About_us.objects.all()
     p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
-
     return render_to_response('guide.html',{"p1":p1[0].agreement,"description":p[0].about_zhongtou}, context_instance=RequestContext(request))
+
+def do_reminder(request):
+    user = auth.get_user(request)
+    return HttpResponse("ok")
 
 #@login_required
 def publish(request):
@@ -940,23 +863,19 @@ def search_investor(request):
         results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
-    print "dddd",results
     a = []
+    s = []
+    u = UserInformation.objects.get(user=request.user).attention_persion.all()
     for i in results:
         b=0.0
         r = invest_detail.objects.filter(invest_user=i.user)
+        #r=i.user.invest_user_set
         if r:
             for j in r:
-                print j.invest_amount,j.invest_num,"66666666666"
                 b+=float(j.invest_amount)*float(j.invest_num)
-                print "sssss",b
-            print b,"ggggggggggggggg"
         a.append(b)
-    print a
-    s = []
-    u = UserInformation.objects.get(user=request.user)
-    for i in results:
-        if i.user in u.attention_persion.all():
+
+        if i.user in u:
             s.append(1)
         else:
             s.append(0)
@@ -972,7 +891,6 @@ def search_investor(request):
             results = ppp.page(page)
             a= ppp1.page(page)
             s = ppp2.page(page)
-
     except (EmptyPage, InvalidPage):
             results = ppp.page(ppp.num_pages)
             a= ppp1.page(ppp.num_pages)
@@ -980,7 +898,6 @@ def search_investor(request):
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')
-
 
     c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
     content_html = t.render(
@@ -1055,13 +972,10 @@ def add_attion_investor(request):
     return HttpResponse(json.dumps({'attion': 56,"comment":1}), content_type="application/json")
 
 def cancel_attion_investor(request):
-
     t = User.objects.get(username=request.POST.get("investor"))
     u = UserInformation.objects.get(user=request.user)
-
     u.attention_persion.remove(t)
     u.save()
-
     return HttpResponse(json.dumps({}), content_type="application/json")
 
 def get_status(request):
@@ -1071,17 +985,11 @@ def get_status(request):
         flag = 1
     else:
         flag = 0
-
     return HttpResponse(json.dumps({"flag":flag}), content_type="application/json")
 
-
-
 def sendSMS(request):
-
     u = User.objects.get(username=request.POST.get("investor"))
     content = request.POST.get("content")
-
-
     if content:
         t = Signal.objects.create(type=2,user=request.user,who=u,content=content)
         t.save()
@@ -1090,10 +998,8 @@ def sendSMS(request):
         return HttpResponse(json.dumps({"success":0}), content_type="application/json")
 
 def delete_signal(request):
-
     signal = Signal.objects.get(id=request.POST.get('id'))
     signal.delete()
-
     return HttpResponse(json.dumps({"success":0}), content_type="application/json")
 
 def search_project(request):
@@ -1215,12 +1121,6 @@ def project_reply(request,project_id):
                 return HttpResponse(1)
             else:
                 return HttpResponse(u'请输入验证码有误!')
-def do_reminder(request):
-    user = auth.get_user(request)
-    return HttpResponse("ok")
-
-
-
 
 
 def search_zc(request):
@@ -1286,7 +1186,6 @@ def safety(request, objectid):
     return render_to_response('safety.html',{"name":name, "agreement":ag[0].agreement}, context_instance=RequestContext(request))
 
 def intermediary(request, objectid):
-
     if int(objectid) == 1:
         file_name = '/root/zc/static/download/有限合伙协议.htm'
     elif int(objectid) == 2:
@@ -1307,7 +1206,6 @@ def intermediary(request, objectid):
 
 
 def readFile(fn, buf_size=262144):
-
     f = open(fn, "rb")
     while True:
         c = f.read(buf_size)
@@ -1348,7 +1246,6 @@ def get_pageset(last_page, pagenum):
 
 
 def uploadify_script(request,objectid):
-
     ret="0"
     file = request.FILES.get("Filedata",None)
     if file:
@@ -1359,7 +1256,6 @@ def uploadify_script(request,objectid):
             ret="2"
     json={'ret':ret,'save_name':new_name}
     return HttpResponse(simplejson.dumps(json,ensure_ascii = False))
-
 
 def profile_upload(file,request,objectid):
     '''文件上传函数'''
@@ -1387,13 +1283,8 @@ def profile_upload(file,request,objectid):
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.income_assets = url
-
         u.save()
         return (True,name) #change
-
-
-#用户管理-添加用户-删除附件
-
 
 def profile_delte(request):
     del_file=request.POST.get("delete_file",'')
@@ -1401,24 +1292,17 @@ def profile_delte(request):
         path_file=os.path.join(settings.MEDIA_ROOT,'upload',del_file)
         os.remove(path_file)
 
-
 def do_search(request):
     print request
     if request.method == 'POST':
-        print "dddddddddddddd"
         keyword = request.POST.get('keyword',u'0')
-        print keyword,type(keyword)
-
         if keyword and keyword != u'0':
-            print "66666666666"
             try:
                 results = Project.objects.filter(Q(publish__username__icontains=keyword)\
                         |Q(name__icontains=keyword)|Q(category__icontains=keyword))
             except Exception as e:
                 results = Project.objects.all()
-            print results
         else:
-            print "88888888888888"
             results = Project.objects.all()
 
         ppp = Paginator(results, 20)
@@ -1444,12 +1328,10 @@ def do_search(request):
         return HttpResponse(json.dumps(payload), content_type="application/json")
 
     else:
-        print "ggggggggggggggggg"
         return HttpResponseRedirect(reverse('do_result'))
 def do_result(request):
     if request.method == 'POST':
         keyword = request.POST.get('keyword','')
-        print "key",keyword
         if not keyword:
             keyword = 0
         page = request.POST.get('page', '1')

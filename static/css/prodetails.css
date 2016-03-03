@@ -12,7 +12,7 @@
 .pro-writing{margin-left:-20px;margin-top:20px;}
 /*input.btn-focus{border:0px solid #FFFFFF;background:url("/static/images/focus.jpg") no-repeat;width:80px;height:28px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin-left:90px; margin-top:10px;}*/
  input[type='checkbox'] + label:before{
-    background: url('/static/images/focus.jpg');
+    background: url('/static/images/focus_m.jpg');
     content:' ';
     height: 28px;
     width: 80px;
@@ -28,7 +28,7 @@
     top:3px;
 }
  input[type='checkbox']:checked + label:before{
-    background: url('/static/images/refocus.jpg');
+    background: url('/static/images/refocus_m.jpg');
 }
 
 .checkbox{

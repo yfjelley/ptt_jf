@@ -1,0 +1,29 @@
+{% load settingsvalue %}
+<div class="touchweb-com_header index">
+    <div>
+        <p class="i-logo">
+            <a href="/mobile"><img src="/static/images/zclogo_m.PNG"></a>
+        </p>
+        {% ifequal user.id None %}
+        <p class="lar">
+            <a href="/mobile/login/"><span>登录</span></a>
+            <span>/</span>
+            <a href="/mobile/register/"><span>注册</span></a>
+        </p>
+        {% else %}
+        <p class="lar">
+            <span>
+            <a href="/mobile/userinfo"><img src="{{ user.userinformation.photo_url }}"/>
+            {% if user.userinformation.nickname %}
+            {{ user.userinformation.nickname }}
+            {% else %}
+            {{ user.username |phone_cut }}
+            {% endif %}
+            </a>
+            </span>
+        </p>
+        <p style="clear: both"></p>
+        {% endifequal %}
+    </div>
+</div>
+<div style="height: 2rem;overflow: hidden"></div>
