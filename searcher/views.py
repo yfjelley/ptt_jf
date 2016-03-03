@@ -866,6 +866,20 @@ def search_investor(request):
     a = []
     s = []
     u = UserInformation.objects.get(user=request.user).attention_persion.all()
+
+
+    ppp = Paginator(results, 10)
+
+    try:
+            page = int(request.GET.get('page', '1'))
+    except ValueError:
+            page = 1
+    try:
+            results = ppp.page(page)
+
+    except (EmptyPage, InvalidPage):
+            results = ppp.page(ppp.num_pages)
+
     for i in results:
         b=0.0
         r = invest_detail.objects.filter(invest_user=i.user)
@@ -880,21 +894,6 @@ def search_investor(request):
         else:
             s.append(0)
 
-    ppp = Paginator(results, 10)
-    ppp1 = Paginator(a,10)
-    ppp2 = Paginator(s,10)
-    try:
-            page = int(request.GET.get('page', '1'))
-    except ValueError:
-            page = 1
-    try:
-            results = ppp.page(page)
-            a= ppp1.page(page)
-            s = ppp2.page(page)
-    except (EmptyPage, InvalidPage):
-            results = ppp.page(ppp.num_pages)
-            a= ppp1.page(ppp.num_pages)
-            s = ppp2.page(ppp.num_pages)
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')

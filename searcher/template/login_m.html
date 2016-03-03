@@ -9,6 +9,7 @@
     <meta name="tp_page" content="5123.0">
     <link rel="stylesheet" href="/static/css/login_m.css">
 	<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/static/js/yz_m.js" charset="gbk" type="text/javascript"></script>
 </head>
 <body>
 <div class="box">
@@ -33,7 +34,7 @@
             </div>
 			<div class="form_item">
 				<label class="icon-cd" for="touchweb_form-username">验证码</label>
-				<div class="input_box">
+				<div class="input_boxcode">
 					{{ form.vcode }}
 					<img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
 						 src="{% url 'verifycode' %}"/>
@@ -105,6 +106,7 @@
 									}
 								]);
 							});
+
 </script>
 </body>
 </html>

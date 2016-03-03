@@ -17576,3 +17576,1175 @@ META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
 [03/Mar/2016 13:35:44] "GET /static/css/login_m.css HTTP/1.1" 200 3125
 [03/Mar/2016 13:35:44] "GET /getverifycode/ HTTP/1.1" 200 2135
 [03/Mar/2016 13:35:45] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:37:51] "GET /login/ HTTP/1.1" 200 12706
+[03/Mar/2016 13:37:51] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 13:37:51] "GET /getverifycode/ HTTP/1.1" 200 2668
+[03/Mar/2016 13:37:53] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:38:22] "GET /mobile/userinfo HTTP/1.1" 301 0
+[03/Mar/2016 13:38:22] "GET /mobile/userinfo/ HTTP/1.1" 500 56107
+[03/Mar/2016 13:38:25] "GET /mobile/prodetails/12/ HTTP/1.1" 200 11592
+[03/Mar/2016 13:38:25] "GET /static/css/prodetails_m.css HTTP/1.1" 200 7260
+[03/Mar/2016 13:38:25] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 13:38:25] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 13:38:26] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[03/Mar/2016 13:38:27] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[03/Mar/2016 13:38:27] "GET /static/images/ztzhong_m.png HTTP/1.1" 200 2710
+[03/Mar/2016 13:38:27] "GET /static/images/mgmoney_m.jpg HTTP/1.1" 200 2690
+[03/Mar/2016 13:38:28] "GET /static/images/mbmoney_m.jpg HTTP/1.1" 200 3852
+[03/Mar/2016 13:38:28] "GET /static/images/tzpeople_m.jpg HTTP/1.1" 200 3226
+[03/Mar/2016 13:38:28] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[03/Mar/2016 13:38:29] "GET /static/upload/p_user1.png HTTP/1.1" 200 9000
+[03/Mar/2016 13:38:30] "GET /static/upload/p_user23.png HTTP/1.1" 200 18795
+[03/Mar/2016 13:38:31] "GET /static/upload/p_user18.png HTTP/1.1" 200 25298
+[03/Mar/2016 13:38:32] "GET /mobile/prodetails/12/ HTTP/1.1" 200 11592
+[03/Mar/2016 13:38:32] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 13:38:32] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 13:38:32] "GET /static/css/prodetails_m.css HTTP/1.1" 200 7260
+[03/Mar/2016 13:38:34] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[03/Mar/2016 13:38:34] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[03/Mar/2016 13:38:37] "GET /static/images/ztzhong_m.png HTTP/1.1" 200 2710
+[03/Mar/2016 13:38:37] "GET /mobile HTTP/1.1" 301 0
+[03/Mar/2016 13:38:37] "GET /static/images/mgmoney_m.jpg HTTP/1.1" 200 2690
+[03/Mar/2016 13:38:37] "GET /static/images/mbmoney_m.jpg HTTP/1.1" 200 3852
+[03/Mar/2016 13:38:37] "GET /mobile/ HTTP/1.1" 200 4574
+[03/Mar/2016 13:38:38] "GET /static/images/tzpeople_m.jpg HTTP/1.1" 200 3226
+[03/Mar/2016 13:38:38] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[03/Mar/2016 13:38:38] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[03/Mar/2016 13:38:38] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 13:38:38] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 13:38:39] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 13:38:39] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 13:38:40] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[03/Mar/2016 13:38:41] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 13:38:41] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[03/Mar/2016 13:38:43] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[03/Mar/2016 13:38:43] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[03/Mar/2016 13:38:44] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 13:38:44] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[03/Mar/2016 13:38:45] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[03/Mar/2016 13:38:48] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[03/Mar/2016 13:38:48] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[03/Mar/2016 13:38:49] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[03/Mar/2016 13:38:50] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[03/Mar/2016 13:38:56] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[03/Mar/2016 13:38:57] "GET /mobile/login/ HTTP/1.1" 200 3172
+[03/Mar/2016 13:38:57] "GET /static/css/login_m.css HTTP/1.1" 200 3125
+[03/Mar/2016 13:38:57] "GET /getverifycode/ HTTP/1.1" 200 2641
+[03/Mar/2016 13:38:57] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:39:06] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 13:39:06] "GET /static/css/signup_m.css HTTP/1.1" 200 4604
+[03/Mar/2016 13:39:06] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 13:39:06] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:39:06] "GET /getverifycode/ HTTP/1.1" 200 2671
+[03/Mar/2016 13:39:09] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:43:04] "POST /mobile/login/ HTTP/1.1" 200 3260
+[03/Mar/2016 13:43:05] "GET /static/css/login_m.css HTTP/1.1" 200 3546
+[03/Mar/2016 13:43:05] "GET /getverifycode/ HTTP/1.1" 200 2597
+[03/Mar/2016 13:43:07] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:43:46] "POST /mobile/login/ HTTP/1.1" 200 3260
+[03/Mar/2016 13:43:47] "GET /static/css/login_m.css HTTP/1.1" 200 3542
+[03/Mar/2016 13:43:47] "GET /getverifycode/ HTTP/1.1" 200 2674
+[03/Mar/2016 13:43:55] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:44:27] "POST /mobile/login/ HTTP/1.1" 200 3260
+[03/Mar/2016 13:44:27] "GET /static/css/login_m.css HTTP/1.1" 200 3783
+[03/Mar/2016 13:44:27] "GET /getverifycode/ HTTP/1.1" 200 2643
+[03/Mar/2016 13:44:29] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:45:46] "POST /mobile/login/ HTTP/1.1" 200 3260
+[03/Mar/2016 13:45:46] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:45:46] "GET /getverifycode/ HTTP/1.1" 200 2153
+[03/Mar/2016 13:45:51] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:46:17] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:46:18] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:46:18] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:46:18] "GET /getverifycode/ HTTP/1.1" 200 2662
+[03/Mar/2016 13:46:26] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:46:31] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:46:31] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:46:31] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:46:51] "POST /checkuser/ HTTP/1.1" 200 41
+[03/Mar/2016 13:47:32] "GET / HTTP/1.1" 200 36843
+[03/Mar/2016 13:47:32] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/heart.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/css/footer.css HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/phone.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:47:32] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[03/Mar/2016 13:47:50] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:47:50] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:47:50] "GET /getverifycode/ HTTP/1.1" 200 2641
+[03/Mar/2016 13:47:50] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:47:50] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:47:59] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:47:59] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:47:59] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:49:23] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:49:23] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:49:23] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:49:23] "GET /getverifycode/ HTTP/1.1" 200 2655
+[03/Mar/2016 13:49:27] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:49:34] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:49:34] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:49:36] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:49:44] "GET /getverifycode/?nocache=0.09834515722468495 HTTP/1.1" 200 2677
+[03/Mar/2016 13:49:46] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 13:49:46] "GET /static/css/signup_m.css HTTP/1.1" 200 4604
+[03/Mar/2016 13:49:46] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 13:49:46] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:49:46] "GET /getverifycode/ HTTP/1.1" 200 2659
+[03/Mar/2016 13:49:47] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:49:48] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:49:49] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:49:49] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:49:49] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:49:49] "GET /getverifycode/ HTTP/1.1" 200 2678
+[03/Mar/2016 13:49:51] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:49:55] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 13:49:55] "GET /static/css/signup_m.css HTTP/1.1" 200 4604
+[03/Mar/2016 13:49:55] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 13:49:55] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:49:55] "GET /getverifycode/ HTTP/1.1" 200 2663
+[03/Mar/2016 13:49:56] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:49:58] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:49:58] "GET /static/css/login_m.css HTTP/1.1" 200 4195
+[03/Mar/2016 13:49:58] "GET /getverifycode/ HTTP/1.1" 200 2677
+[03/Mar/2016 13:49:58] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:49:58] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:50:09] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:50:09] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:50:09] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:52:46] "GET / HTTP/1.1" 200 36843
+[03/Mar/2016 13:52:46] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[03/Mar/2016 13:52:46] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:46] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[03/Mar/2016 13:52:46] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/heart.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/css/footer.css HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/phone.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:47] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[03/Mar/2016 13:52:49] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[03/Mar/2016 13:52:49] "GET /project/1 HTTP/1.1" 301 0
+[03/Mar/2016 13:52:49] "GET /project/1/ HTTP/1.1" 200 14433
+[03/Mar/2016 13:52:53] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[03/Mar/2016 13:54:18] "GET /mobile HTTP/1.1" 301 0
+[03/Mar/2016 13:54:18] "GET /mobile/ HTTP/1.1" 200 4643
+[03/Mar/2016 13:54:18] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[03/Mar/2016 13:54:18] "GET /static/css/newindex_page_m.css HTTP/1.1" 304 0
+[03/Mar/2016 13:54:18] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 13:56:33] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:56:33] "GET /static/css/login_m.css HTTP/1.1" 200 4225
+[03/Mar/2016 13:56:33] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:56:33] "GET /getverifycode/ HTTP/1.1" 200 2553
+[03/Mar/2016 13:56:34] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:56:36] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:56:36] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:56:36] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:57:02] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:57:02] "GET /static/css/login_m.css HTTP/1.1" 200 4225
+[03/Mar/2016 13:57:02] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:57:02] "GET /getverifycode/ HTTP/1.1" 200 2681
+[03/Mar/2016 13:57:04] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:57:06] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:57:06] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:57:06] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:57:10] "POST /mobile/login/ HTTP/1.1" 200 3342
+[03/Mar/2016 13:57:10] "GET /static/css/login_m.css HTTP/1.1" 200 4225
+[03/Mar/2016 13:57:10] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 13:57:10] "GET /getverifycode/ HTTP/1.1" 200 2680
+[03/Mar/2016 13:57:10] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 13:57:15] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 13:57:15] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 13:57:15] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 13:57:37] "GET / HTTP/1.1" 200 36843
+[03/Mar/2016 13:57:37] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+[03/Mar/2016 13:57:39] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 13:57:39] "GET /static/css/login.css HTTP/1.1" 304 0
+[03/Mar/2016 13:57:39] "GET /static/js/yz.js HTTP/1.1" 304 0
+[03/Mar/2016 13:57:39] "GET /getverifycode/ HTTP/1.1" 200 2360
+[03/Mar/2016 13:59:21] "GET / HTTP/1.1" 200 36843
+[03/Mar/2016 13:59:21] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+TTP_REFERER': 'http://42.96.131.5:8001/about_us/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9af2fd8d0>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+1 <type 'int'>
+1 <type 'int'>
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456983472',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en;q=0.6',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456983472; sessionid=bx60pgzkvi6p56fc82lk0agqjznha247',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9af2fde50>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456984763',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en[03/Mar/2016 13:59:23] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 13:59:24] "GET /getverifycode/ HTTP/1.1" 200 2681
+[03/Mar/2016 13:59:33] "GET /mobile?nsukey=%2B2KQzF7L9T0IAqQb3%2ByoO9pnH6f2CES4oOCgd0plFIG2tl7pkPQQsovNpozx64ZxsAFvZ7ZqeIVEkAqd%2BNCI7w%3D%3D HTTP/1.1" 301 0
+[03/Mar/2016 13:59:33] "GET /mobile/?nsukey=%2B2KQzF7L9T0IAqQb3%2ByoO9pnH6f2CES4oOCgd0plFIG2tl7pkPQQsovNpozx64ZxsAFvZ7ZqeIVEkAqd%2BNCI7w%3D%3D HTTP/1.1" 200 4574
+[03/Mar/2016 13:59:33] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[03/Mar/2016 13:59:33] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 13:59:33] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 13:59:33] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 13:59:34] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 13:59:34] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 62260
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:34] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:34] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 59614
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:34] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:34] "GET /mobile/?nsukey=%2B2KQzF7L9T0IAqQb3%2ByoO9pnH6f2CES4oOCgd0plFIG2tl7pkPQQsovNpozx64ZxsAFvZ7ZqeIVEkAqd%2BNCI7w%3D%3D HTTP/1.1" 200 4574
+[03/Mar/2016 13:59:36] "GET /mobile/?nsukey=csU%2FvkckFBHev6sw%2FAeMczf%2Bd3o%2FJ24caI9vr32hYwVvMsWv09yBenPekD0Ms7tj9%2BjUIZrxh1QzfYHBvRThHg%3D%3D HTTP/1.1" 200 4574
+[03/Mar/2016 13:59:36] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 13:59:36] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 13:59:36] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 13:59:37] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[03/Mar/2016 13:59:37] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 13:59:37] "GET / HTTP/1.1" 200 36843
+[03/Mar/2016 13:59:38] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[03/Mar/2016 13:59:38] "GET /login/ HTTP/1.1" 200 12706
+[03/Mar/2016 13:59:39] "GET /getverifycode/ HTTP/1.1" 200 2668
+[03/Mar/2016 13:59:40] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[03/Mar/2016 13:59:41] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[03/Mar/2016 13:59:41] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[03/Mar/2016 13:59:43] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[03/Mar/2016 13:59:43] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[03/Mar/2016 13:59:43] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[03/Mar/2016 13:59:44] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 13:59:46] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 143183
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:46] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:46] "GET /static/images/car.jpg HTTP/1.1" 200 89072
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:46] "GET /static/images/car.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:46] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 178325
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 13:59:46] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+;q=0.6',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'sessionid=bx60pgzkvi6p56fc82lk0agqjznha247; Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456984763',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9af2fd8d0>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 56256)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 56288)
+----------------------------------------
+1 <type 'int'>
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 64320)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 59904)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 62432)
+----------------------------------------
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456984779',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en;q=0.6',
+ 'HTTP_CACHE_CONTROL': 'no-cache',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456984779; sessionid=bx60pgzkvi6p56fc82lk0agqjznha247',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_PRAGMA': 'no-cache',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+[03/Mar/2016 14:01:18] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 14:01:19] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[03/Mar/2016 14:01:19] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 14:01:19] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 14:01:19] "GET /static/js/yz.js HTTP/1.1" 200 41463
+[03/Mar/2016 14:01:19] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[03/Mar/2016 14:01:19] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[03/Mar/2016 14:01:20] "GET /static/images/bglogo1.PNG HTTP/1.1" 200 113681
+[03/Mar/2016 14:01:21] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 14:01:23] "GET /static/images/smalllogo.png HTTP/1.1" 200 3318
+[03/Mar/2016 14:01:23] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[03/Mar/2016 14:01:23] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[03/Mar/2016 14:01:23] "GET /getverifycode/ HTTP/1.1" 200 2447
+[03/Mar/2016 14:01:23] "GET /static/images/login.jpg HTTP/1.1" 200 1995
+[03/Mar/2016 14:02:07] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 14:06:24] "POST /mobile/process/ HTTP/1.1" 200 14151
+[03/Mar/2016 14:06:26] "POST /mobile/process/ HTTP/1.1" 200 14151
+[03/Mar/2016 14:06:26] "POST /mobile/process/ HTTP/1.1" 200 14151
+[03/Mar/2016 14:06:27] "POST /mobile/process/ HTTP/1.1" 200 3594
+[03/Mar/2016 14:06:29] "POST /mobile/process/ HTTP/1.1" 200 3594
+[03/Mar/2016 14:06:31] "POST /mobile/process/ HTTP/1.1" 200 14151
+[03/Mar/2016 14:06:38] "GET /mobile/ HTTP/1.1" 200 4643
+[03/Mar/2016 14:06:38] "GET /static/css/newindex_page_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/js/zepto.min.js HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/js/swipeSlide.min.js HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 304 0
+[03/Mar/2016 14:06:38] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[03/Mar/2016 14:06:39] "GET /static/images/all_m.png HTTP/1.1" 304 0
+[03/Mar/2016 14:06:43] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:08:01] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 14:08:02] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 14:08:02] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 14:08:02] "GET /static/js/yz.js HTTP/1.1" 200 41463
+[03/Mar/2016 14:08:02] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[03/Mar/2016 14:08:02] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[03/Mar/2016 14:08:02] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[03/Mar/2016 14:08:05] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 14:08:06] "GET /static/images/smalllogo.png HTTP/1.1" 200 3318
+[03/Mar/2016 14:08:06] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[03/Mar/2016 14:08:06] "GET /getverifycode/ HTTP/1.1" 200 2674
+[03/Mar/2016 14:08:06] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[03/Mar/2016 14:08:06] "GET /static/images/login.jpg HTTP/1.1" 200 1995
+[03/Mar/2016 14:08:07] "GET /static/images/bglogo1.PNG HTTP/1.1" 200 113681
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9af2f74d0>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+3 <type 'int'>
+3 <type 'int'>
+3 <type 'int'>
+4 <type 'int'>
+4 <type 'int'>
+3 <type 'int'>
+1 <type 'int'>
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456984883',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en;q=0.6',
+ 'HTTP_CACHE_CONTROL': 'no-cache',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456984883; sessionid=bx60pgzkvi6p56fc82lk0agqjznha247',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_PRAGMA': 'no-cache',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9afb9e250>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456985286',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en;q=0.6',
+ 'HTTP_CACHE_CONTROL': 'no-cache',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456985286; sessionid=bx60pgzkvi6p56fc82lk0agqjznha247',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_PRAGMA': 'no-cache',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',[03/Mar/2016 14:08:24] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 14:08:24] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 14:08:24] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[03/Mar/2016 14:08:24] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[03/Mar/2016 14:08:24] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 14:08:24] "GET /static/js/yz.js HTTP/1.1" 200 41463
+[03/Mar/2016 14:08:24] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[03/Mar/2016 14:08:26] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 14:08:28] "GET /static/images/bglogo1.PNG HTTP/1.1" 200 113681
+[03/Mar/2016 14:08:28] "GET /static/images/smalllogo.png HTTP/1.1" 200 3318
+[03/Mar/2016 14:08:28] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[03/Mar/2016 14:08:28] "GET /getverifycode/ HTTP/1.1" 200 2475
+[03/Mar/2016 14:08:28] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[03/Mar/2016 14:08:28] "GET /static/images/login.jpg HTTP/1.1" 200 1995
+[03/Mar/2016 14:08:54] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 14:08:55] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 14:08:55] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[03/Mar/2016 14:08:55] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[03/Mar/2016 14:08:55] "GET /static/js/sendtime.js HTTP/1.1" 200 1721
+[03/Mar/2016 14:08:55] "GET /static/js/yz.js HTTP/1.1" 200 41463
+[03/Mar/2016 14:08:55] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[03/Mar/2016 14:08:57] "GET /static/images/bglogo1.PNG HTTP/1.1" 200 113681
+[03/Mar/2016 14:08:57] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 14:08:59] "GET /getverifycode/ HTTP/1.1" 200 2488
+[03/Mar/2016 14:08:59] "GET /static/images/smalllogo.png HTTP/1.1" 200 3318
+[03/Mar/2016 14:08:59] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[03/Mar/2016 14:09:00] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[03/Mar/2016 14:09:00] "GET /static/images/login.jpg HTTP/1.1" 304 0
+[03/Mar/2016 14:09:02] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 14:09:02] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 14:13:03] "GET / HTTP/1.1" 200 36843
+
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9bf05bc50>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456985309',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456975088',
+ 'sessionid': 'bx60pgzkvi6p56fc82lk0agqjznha247'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8,en;q=0.6',
+ 'HTTP_CACHE_CONTROL': 'no-cache',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'sessionid=bx60pgzkvi6p56fc82lk0agqjznha247; Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456975088; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1456985309',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_PRAGMA': 'no-cache',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9afb9e350>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+<WSGIRequest
+path:/register/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1456984373',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1456798666,1456883707,1456890307,1456969162',
+ 'csrftoken': 'fP9Io8iqOASk11PjQUw2Jg3g0KD4YKHD',
+ 'sessionid': 'tqnmf738yrst7pm27e7orzx1y29hvl4u'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'csrftoken=fP9Io8iqOASk11PjQUw2Jg3g0KD4YKHD; sessionid=tqnmf738yrst7pm27e7orzx1y29hvl4u; Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1456798666,1456883707,1456890307,1456969162; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=14569843[03/Mar/2016 14:13:05] "GET /register/ HTTP/1.1" 200 15080
+[03/Mar/2016 14:13:05] "GET /static/css/login.css HTTP/1.1" 200 6611
+[03/Mar/2016 14:13:09] "GET /getverifycode/ HTTP/1.1" 200 2668
+[03/Mar/2016 14:13:13] "GET /mobile HTTP/1.1" 301 0
+[03/Mar/2016 14:13:13] "GET /mobile/ HTTP/1.1" 200 4574
+[03/Mar/2016 14:13:13] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:13:13] "GET /static/css/newindex_page_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:13:13] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:13:16] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 14:13:16] "GET /static/css/signup_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:13:16] "GET /static/js/yz_m.js HTTP/1.1" 304 0
+[03/Mar/2016 14:13:16] "GET /getverifycode/ HTTP/1.1" 200 2493
+[03/Mar/2016 14:15:03] "GET /mobile/ HTTP/1.1" 200 4574
+[03/Mar/2016 14:15:04] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 14:15:04] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 14:15:04] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[03/Mar/2016 14:15:04] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 14:15:04] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 14:15:05] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[03/Mar/2016 14:15:05] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:15:06] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[03/Mar/2016 14:15:07] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[03/Mar/2016 14:15:07] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[03/Mar/2016 14:15:08] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[03/Mar/2016 14:15:09] "GET /mobile/prodetails/12 HTTP/1.1" 301 0
+[03/Mar/2016 14:15:09] "GET /mobile/prodetails/12/ HTTP/1.1" 200 11592
+[03/Mar/2016 14:15:09] "GET /static/css/prodetails_m.css HTTP/1.1" 200 7260
+[03/Mar/2016 14:15:09] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 14:15:09] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 14:15:10] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[03/Mar/2016 14:15:10] "GET /static/images/car.jpg HTTP/1.1" 200 112297
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:15:10] "GET /static/images/car.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:15:11] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[03/Mar/2016 14:15:12] "GET /static/images/ztzhong_m.png HTTP/1.1" 200 2710
+[03/Mar/2016 14:15:12] "GET /static/images/mgmoney_m.jpg HTTP/1.1" 200 2690
+[03/Mar/2016 14:15:12] "GET /static/images/mbmoney_m.jpg HTTP/1.1" 200 3852
+[03/Mar/2016 14:15:12] "GET /static/images/tzpeople_m.jpg HTTP/1.1" 200 3226
+[03/Mar/2016 14:15:13] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[03/Mar/2016 14:15:13] "GET /static/upload/p_user1.png HTTP/1.1" 200 9000
+[03/Mar/2016 14:15:13] "GET /static/upload/p_user23.png HTTP/1.1" 200 18795
+[03/Mar/2016 14:15:13] "GET /static/upload/p_user18.png HTTP/1.1" 200 25298
+[03/Mar/2016 14:15:15] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 14:15:35] "GET /mobile/ HTTP/1.1" 200 4574
+[03/Mar/2016 14:15:35] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 14:15:35] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 14:15:35] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 14:15:35] "GET /static/css/public_m.css HTTP/1.1" 200 1774
+[03/Mar/2016 14:15:35] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[03/Mar/2016 14:15:36] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[03/Mar/2016 14:15:37] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:15:37] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[03/Mar/2016 14:15:38] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[03/Mar/2016 14:15:38] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[03/Mar/2016 14:15:39] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 14:15:41] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[03/Mar/2016 14:15:41] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[03/Mar/2016 14:15:42] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[03/Mar/2016 14:15:43] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[03/Mar/2016 14:15:44] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[03/Mar/2016 14:15:45] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[03/Mar/2016 14:15:48] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[03/Mar/2016 14:18:46] "GET /mobile/ HTTP/1.1" 200 4574
+[03/Mar/2016 14:18:46] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[03/Mar/2016 14:18:46] "GET /static/css/public_m.css HTTP/1.1" 200 1819
+[03/Mar/2016 14:18:46] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[03/Mar/2016 14:18:46] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[03/Mar/2016 14:18:46] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 14:18:48] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[03/Mar/2016 14:18:49] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[03/Mar/2016 14:18:49] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:18:50] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[03/Mar/2016 14:18:50] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[03/Mar/2016 14:18:51] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 14:18:51] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[03/Mar/2016 14:18:54] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[03/Mar/2016 14:18:54] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[03/Mar/2016 14:18:55] "GET /mobile/prodetails/12 HTTP/1.1" 301 0
+[03/Mar/2016 14:18:55] "GET /mobile/prodetails/12/ HTTP/1.1" 200 11592
+[03/Mar/2016 14:18:55] "GET /static/css/prodetails_m.css HTTP/1.1" 200 7260
+[03/Mar/2016 14:18:55] "GET /static/css/public_m.css HTTP/1.1" 200 1819
+[03/Mar/2016 14:18:55] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[03/Mar/2016 14:18:55] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:18:55] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:18:56] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[03/Mar/2016 14:18:56] "GET /static/images/ztzhong_m.png HTTP/1.1" 200 2710
+[03/Mar/2016 14:18:56] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[03/Mar/2016 14:18:56] "GET /static/images/mgmoney_m.jpg HTTP/1.1" 200 2690
+[03/Mar/2016 14:18:56] "GET /static/images/mbmoney_m.jpg HTTP/1.1" 200 3852
+[03/Mar/2016 14:18:57] "GET /static/images/tzpeople_m.jpg HTTP/1.1" 200 3226
+[03/Mar/2016 14:18:57] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[03/Mar/2016 14:18:57] "GET /static/upload/p_user1.png HTTP/1.1" 200 9000
+[03/Mar/2016 14:18:57] "GET /static/upload/p_user23.png HTTP/1.1" 200 18795
+[03/Mar/2016 14:18:57] "GET /static/upload/p_user18.png HTTP/1.1" 200 25298
+[03/Mar/2016 14:18:57] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[03/Mar/2016 14:18:57] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 101011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:18:57] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[03/Mar/2016 14:19:08] "GET /mobile/login/ HTTP/1.1" 200 3258
+[03/Mar/2016 14:19:09] "GET /static/css/login_m.css HTTP/1.1" 200 4225
+[03/Mar/2016 14:19:09] "GET /static/js/yz_m.js HTTP/1.1" 200 40286
+[03/Mar/2016 14:19:09] "GET /getverifycode/ HTTP/1.1" 200 2682
+[03/Mar/2016 14:19:09] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[03/Mar/2016 14:19:15] "POST /checkuser/ HTTP/1.1" 200 26
+[03/Mar/2016 14:19:15] "GET /static/images/right.png HTTP/1.1" 200 725
+[03/Mar/2016 14:19:22] "GET /static/images/error.png HTTP/1.1" 200 734
+[03/Mar/2016 14:20:36] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 14:20:36] "GET /static/css/signup_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:20:36] "GET /static/js/yz_m.js HTTP/1.1" 304 0
+[03/Mar/2016 14:20:36] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[03/Mar/2016 14:20:36] "GET /static/js/sendtime.js HTTP/1.1" 304 0
+[03/Mar/2016 14:20:36] "GET /getverifycode/ HTTP/1.1" 200 2674
+[03/Mar/2016 14:20:38] "POST /mobile/process/ HTTP/1.1" 200 21199
+[03/Mar/2016 14:20:44] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 14:20:44] "GET /getverifycode/ HTTP/1.1" 200 2646
+73',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/',
+ 'HTTP_UPGRADE_INSECURE_REQUESTS': '1',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/register/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7fc9c4d8f1e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7fc9c121c600>,
+ 'wsgi.input': <socket._fileobject object at 0x7fc9af2fd950>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+None
+1 <type 'int'>
+1 <type 'int'>
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 22721)
+----------------------------------------
+1 <type 'int'>
+1 <type 'int'>
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 37921)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 38592)
+----------------------------------------
+1 <type 'int'>
+[03/Mar/2016 14:25:46] "GET /mobile/register/ HTTP/1.1" 200 5111
+[03/Mar/2016 14:25:46] "GET /static/js/sendtime.js HTTP/1.1" 304 0
+[03/Mar/2016 14:25:46] "GET /static/js/yz_m.js HTTP/1.1" 304 0
+[03/Mar/2016 14:25:46] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[03/Mar/2016 14:25:46] "GET /static/css/signup_m.css HTTP/1.1" 304 0
+[03/Mar/2016 14:25:47] "GET /getverifycode/ HTTP/1.1" 200 2682
+[03/Mar/2016 14:26:14] "POST /register/ HTTP/1.1" 200 44
+[03/Mar/2016 14:26:24] "POST /checkvcode/ HTTP/1.1" 200 26
+[03/Mar/2016 14:26:24] "POST /send_smscode/ HTTP/1.1" 200 0

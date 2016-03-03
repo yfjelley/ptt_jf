@@ -259,8 +259,8 @@ def register(request):
                     flag1 = 2
                 else:
                     flag1 = 3
-                return HttpResponseRedirect(reverse('index_m'))
-                #return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
+                #return HttpResponseRedirect(reverse('index_m'))
+                return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup_m.html", {'form': form}, context_instance=RequestContext(request))
     else:
@@ -820,6 +820,7 @@ def invested(request):
         print "dddd"
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
+
 def search_investor(request):
     #web(1:不限，3：认证资深投资人，2：认证投资人，)
     #web(4：不限，5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)
@@ -891,47 +892,40 @@ def search_investor(request):
         results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
-    print "dddd",results
     a = []
-    for i in results:
-        b=0.0
-        r = invest_detail.objects.filter(invest_user=i.user)
-        if r:
-            for j in r:
-                print j.invest_amount,j.invest_num,"66666666666"
-                b+=float(j.invest_amount)*float(j.invest_num)
-                print "sssss",b
-            print b,"ggggggggggggggg"
-        a.append(b)
-    print a
     s = []
-    u = UserInformation.objects.get(user=request.user)
-    for i in results:
-        if i.user in u.attention_persion.all():
-            s.append(1)
-        else:
-            s.append(0)
+    u = UserInformation.objects.get(user=request.user).attention_persion.all()
+
 
     ppp = Paginator(results, 10)
-    ppp1 = Paginator(a,10)
-    ppp2 = Paginator(s,10)
+
     try:
             page = int(request.GET.get('page', '1'))
     except ValueError:
             page = 1
     try:
             results = ppp.page(page)
-            a= ppp1.page(page)
-            s = ppp2.page(page)
 
     except (EmptyPage, InvalidPage):
             results = ppp.page(ppp.num_pages)
-            a= ppp1.page(ppp.num_pages)
-            s = ppp2.page(ppp.num_pages)
+
+    for i in results:
+        b=0.0
+        r = invest_detail.objects.filter(invest_user=i.user)
+        #r=i.user.invest_user_set
+        if r:
+            for j in r:
+                b+=float(j.invest_amount)*float(j.invest_num)
+        a.append(b)
+
+        if i.user in u:
+            s.append(1)
+        else:
+            s.append(0)
+
     last_page = ppp.page_range[len(ppp.page_range) - 1]
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')
-
 
     c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
     content_html = t.render(

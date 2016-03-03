@@ -1,4 +1,16 @@
 /*头部样式*/
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
 img {
     vertical-align: top;
     border: none;
@@ -14,6 +26,7 @@ img {
     border-bottom: .01rem solid #e5e5e5;
     margin: 0 auto;
 }
+
 .touchweb-com_header .i-logo,.lar span{
     padding: 0.2rem;
 }
@@ -31,6 +44,8 @@ img {
 .touchweb-com_header .lar span{
     float: right;
     margin:0.4rem 0;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .touchweb-com_header .i-logo img{
