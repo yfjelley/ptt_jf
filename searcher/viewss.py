@@ -259,8 +259,12 @@ def register(request):
                     flag1 = 2
                 else:
                     flag1 = 3
+
+                extend = Extend.objects.filter(extend_user=user)
+                if extend:
+                    extend = extend[0]
                 #return HttpResponseRedirect(reverse('index_m'))
-                return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
+                return  render_to_response("reg_success_m.html", {'flag1':flag1}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup_m.html", {'form': form}, context_instance=RequestContext(request))
     else:
@@ -339,6 +343,12 @@ def platform(request):
     # print(pfs)
     return render_to_response("platform.html", {'platforms': pfs}, context_instance=RequestContext(request))
 
+def success(request):
+    user = User.objects.filter(username=15721448969)
+    extend = Extend.objects.filter(extend_user=user)
+    if extend:
+        extend = extend[0]
+    return render_to_response("reg_success_m.html", {'flag1':1,"extend":extend}, context_instance=RequestContext(request))
 def auth_register(request):
     u = UserInformation.objects.get(user=request.user)
 

@@ -140,6 +140,11 @@
             }
         ]);
     });
+    $(function(){
+        {% if code %}
+        	document.getElementById("id_extend").value= '{{code}}';
+        {% endif %}
+    });
 </script>
 </body>
 </html>
