@@ -13,6 +13,7 @@
     <title>用户中心</title>
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script src="/static/js/tab-jquery.js"></script>
+    <script src="/static/js/jquery.qrcode.min.js"></script>
 	<script>
 		$(function(){
 			$("#save_success").click(function(){alert("保存成功！");});
@@ -91,21 +92,9 @@
 <div class="main">
     <!--header(头部)-->
     {% include "zcheader_m.html" %}
-    <div class="wrap">
-<div class="head">
-    <p style="padding: 0.2rem 0.4rem;"><img src="{{ user.userinformation.photo_url }}"></p>
-    <p style="padding: 0.9rem 0">
-        {% if user.userinformation.nickname %}
-        {{ user.userinformation.nickname }}
-        {% else %}
-        {{ user.username |phone_cut }}
-        {% endif %}
-    </p>
-<!--    <p><img style="width: 2rem;height: 0.8rem;" src="/static/images/p_user23.png"></p>-->
-    <p style="padding: 0.8rem 0"><a href="/mobile/logout/"><input style="background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" type="button" value="退出"></a></p>
-</div>
     <div id="tabs">
-		{% csrf_token %}
+
+        <div class="wrap">
         <div class="tabs-nav">
             <ul>
                 <li class="current">基本信息</li>
@@ -117,7 +106,23 @@
         </div>
         <div class="user-con">
         <div class="tabs-cont current">
+            <form class="userinfoform" action="{% url 'userinfo_m' %}" method="post"  enctype="multipart/form-data" >
+                {% csrf_token %}
             <ul>
+                <li>
+                    <div class="head">
+                        <p style="padding: 0.2rem 0.4rem;"><img src="{{ user.userinformation.photo_url }}"></p>
+                        <p style="padding: 0.8rem 0"><a href="javascript:;" class="file">选择文件<input type="file" name="file"></a></p>
+                        <p style="padding: 0.9rem 0">
+                            {% if user.userinformation.nickname %}
+                            {{ user.userinformation.nickname }}
+                            {% else %}
+                            {{ user.username |phone_cut }}
+                            {% endif %}
+                        </p>
+                        <p style="padding: 0.8rem 0"><a href="/mobile/logout/"><input style="background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" type="button" value="退出"></a></p>
+                    </div>
+                </li>
                 <li>
                     <table style="width:100%;margin:0 auto 0.4rem;background: #ffffff">
                         <tr>
@@ -233,11 +238,12 @@
                     </table>
                 </li>
             </ul>
+                </form>
         </div>
         <div class="tabs-cont">
 
 			<h2>已投项目</h2>
-            <div style="display: none">
+            <div style="display: block">
                 {% if leader %}
                 {% for i in leader %}
             <ul class="start-pro">
@@ -316,6 +322,10 @@
                         <p class="invest_inp"><label><input type="text" id="biao1" value="http://www.pttjf.com/register/?code={{extend.extend_code}}"></label><label><input type="button" style="width: 2rem;background-color: #336666;border: none;color: #fff;height: 0.6rem;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" onclick="copyUrl()" value="复制"></label></p>
                    <p>使用专用邀请好友或好友注册时填写邀请人注册的手机号</p>
                     <p>最终解释权归葡萄藤众投所有</p>
+                        <p>
+                            <div id="qrcodeTable">
+                            </div>
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -328,6 +338,15 @@
     $(function(){
         $('#tabs').tab({'type':'mo'});
     })
+
+</script>
+<script>
+    jQuery('#qrcodeTable').qrcode({
+        render	: "canvas",
+        width   :  256,
+        height  :  256,
+        text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
+    });
 </script>
 </body>
 </html>

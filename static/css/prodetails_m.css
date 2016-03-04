@@ -63,6 +63,12 @@
 .checkbox .btn-focus{
     width: 1.6rem;
     height: .6rem;
+    background-color: #999999;
+    color: #fff;
+    border: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 .content{
     position: relative;

@@ -42,7 +42,7 @@ h2 {
     display: -ms-flexbox;
     display: flex;
     text-align: center;
-
+    background-color: #fff;
 }
 
 .head p {
@@ -54,6 +54,22 @@ h2 {
 .wrap .head img {
     width: 2rem;
     height: 2rem;
+}
+
+.wrap .head .file {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 0;
+    line-height: 0.8rem;
+    background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
+}
+.wrap .head .file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
 }
 
 #tabs {
@@ -181,7 +197,10 @@ h2 {
     width: 4rem;
     height: 0.6rem;
 }
-
+.wrap .tabs-cont .code-img img {
+    width: 2.4rem;
+    height: 0.6rem;
+}
 .wrap .tabs-cont td {
     padding: 0.2rem 0.5rem;
 }
@@ -277,9 +296,7 @@ h2 {
     font-size: 14px;
 }
 
-[data-dpr="2"] .wrap .tabs-cont .code-img img {
-    width: 1.4rem;
-}
+
 
 .wrap .tabs-cont .txt {
     font-size: 32px;

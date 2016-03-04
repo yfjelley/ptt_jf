@@ -33,6 +33,7 @@ from searcher.models import Bid, UserFavorite, Platform, UserInformation, Dimens
 from ddbid import conf
 from django.db.models import Q
 import simplejson
+import logging
 
 
 from searcher.models import RegistrationAgreement
@@ -561,6 +562,7 @@ def agreement(request):
 
 def index(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
+    logging.debug('This is debug messagexxxxxxxxxxxxxxxxxx')
     pr = Project.objects.all().distinct()
     for i in pr:
         f = invest_detail.objects.filter(invest_project=i)
