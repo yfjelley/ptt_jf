@@ -46,10 +46,9 @@ h2 {
 }
 
 .head p {
-    display: block;
-    -webkit-box-flex: 1;
     flex: 1;
-    margin: auto 0;
+    -webkit-box-flex: 1;
+
 }
 
 .wrap .head img {

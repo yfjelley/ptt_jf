@@ -93,8 +93,8 @@
     {% include "zcheader_m.html" %}
     <div class="wrap">
 <div class="head">
-    <p style="padding: 0.2rem 0.4rem;"><img src="/static/upload/default.png"></p>
-    <p>
+    <p style="padding: 0.2rem 0.4rem;"><img src="{{ user.userinformation.photo_url }}"></p>
+    <p style="padding: 0.9rem 0">
         {% if user.userinformation.nickname %}
         {{ user.userinformation.nickname }}
         {% else %}
@@ -102,7 +102,7 @@
         {% endif %}
     </p>
 <!--    <p><img style="width: 2rem;height: 0.8rem;" src="/static/images/p_user23.png"></p>-->
-    <p><a href="/mobile/logout/"><input style="background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" type="button" value="退出"></a></p>
+    <p style="padding: 0.8rem 0"><a href="/mobile/logout/"><input style="background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" type="button" value="退出"></a></p>
 </div>
     <div id="tabs">
 		{% csrf_token %}

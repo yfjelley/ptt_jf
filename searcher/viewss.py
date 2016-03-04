@@ -264,12 +264,14 @@ def register(request):
                 if extend:
                     extend = extend[0]
                 #return HttpResponseRedirect(reverse('index_m'))
-                return  render_to_response("reg_success_m.html", {'flag1':flag1}, context_instance=RequestContext(request))
+                return  render_to_response("reg_success_m.html", {'flag1':flag1,'extend':extend}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup_m.html", {'form': form}, context_instance=RequestContext(request))
     else:
+        code = request.GET.get('code',None)
+        print code ,"xxx"
         form = RegisterForm()
-        return render_to_response("signup_m.html", {'form': form}, context_instance=RequestContext(request))
+        return render_to_response("signup_m.html", {'form': form,'code':code}, context_instance=RequestContext(request))
 
 
 @login_required
