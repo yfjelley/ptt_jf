@@ -19160,3 +19160,141 @@ Exception happened during processing of request from ('211.95.56.242', 10816)
 [07/Mar/2016 09:53:06] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
 [07/Mar/2016 09:53:06] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
 [07/Mar/2016 09:53:06] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:01:39] "GET /mobile/success/ HTTP/1.1" 200 2149
+[07/Mar/2016 10:01:39] "GET /static/css/reg_success.css HTTP/1.1" 304 0
+[07/Mar/2016 10:01:43] "GET /mobile/success/ HTTP/1.1" 200 2149
+[07/Mar/2016 10:01:44] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 200 13995
+[07/Mar/2016 10:01:44] "GET /static/css/reg_success.css HTTP/1.1" 200 339
+[07/Mar/2016 10:01:44] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+[07/Mar/2016 10:07:18] "GET /mobile/userinfo/ HTTP/1.1" 200 18073
+[07/Mar/2016 10:07:18] "GET /static/css/userinfo_m.css HTTP/1.1" 200 6507
+[07/Mar/2016 10:07:18] "GET /static/css/public_m.css HTTP/1.1" 200 1987
+[07/Mar/2016 10:07:18] "GET /static/js/tab-jquery.js HTTP/1.1" 200 1288
+[07/Mar/2016 10:07:18] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 200 13995
+[07/Mar/2016 10:07:18] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[07/Mar/2016 10:07:19] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[07/Mar/2016 10:07:19] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[07/Mar/2016 10:07:19] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[07/Mar/2016 10:07:20] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 200 56568
+[07/Mar/2016 10:07:20] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 200 55009
+[07/Mar/2016 10:07:20] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+Validating models...
+
+0 errors found
+March 07, 2016 - 09:51:43
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[07/Mar/2016 10:18:57] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 10:18:57] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:18:57] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:19:01] "GET /mobile/success HTTP/1.1" 301 0
+[07/Mar/2016 10:19:01] "GET /mobile/success/ HTTP/1.1" 200 2149
+[07/Mar/2016 10:19:01] "GET /static/css/reg_success.css HTTP/1.1" 304 0
+[07/Mar/2016 10:19:03] "GET /mobile/share HTTP/1.1" 301 0
+[07/Mar/2016 10:19:03] "GET /mobile/share/ HTTP/1.1" 200 3467
+[07/Mar/2016 10:19:08] "GET /mobile/share/ HTTP/1.1" 200 3467
+[07/Mar/2016 10:20:14] "GET /mobile/share/ HTTP/1.1" 200 3364
+[07/Mar/2016 10:20:15] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:20:15] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:20:15] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:20:15] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:20:15] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:20:15] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+Validating models...
+
+0 errors found
+March 07, 2016 - 10:18:43
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[07/Mar/2016 10:26:12] "GET /mobile/share/ HTTP/1.1" 200 3375
+[07/Mar/2016 10:26:12] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:26:12] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:26:12] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:26:12] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:26:12] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:26:12] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /mobile/share/ HTTP/1.1" 200 3639
+[07/Mar/2016 10:29:35] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:29:35] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /mobile/share/ HTTP/1.1" 200 3639
+[07/Mar/2016 10:29:37] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:29:37] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /mobile/share/ HTTP/1.1" 200 3617
+[07/Mar/2016 10:30:07] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:30:07] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /mobile/share/ HTTP/1.1" 200 3617
+[07/Mar/2016 10:34:48] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:34:48] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:35:22] "GET /mobile/share/ HTTP/1.1" 200 3677
+[07/Mar/2016 10:35:22] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:35:22] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:35:22] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:35:22] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:35:23] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:35:23] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:35:23] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /mobile/share/ HTTP/1.1" 200 3677
+[07/Mar/2016 10:40:22] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:40:22] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /mobile/share/ HTTP/1.1" 200 3686
+[07/Mar/2016 10:45:14] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:45:14] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /mobile/share/ HTTP/1.1" 200 3686
+[07/Mar/2016 10:46:26] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:46:26] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /mobile/share/ HTTP/1.1" 200 3733
+[07/Mar/2016 10:48:31] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 10:48:31] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 10:48:36] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 10:48:38] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 10:48:40] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 10:48:43] "GET /mobile/logout/ HTTP/1.1" 302 0
+[07/Mar/2016 10:48:43] "GET /mobile/ HTTP/1.1" 200 4574
+[07/Mar/2016 10:48:43] "POST /mobile/process/ HTTP/1.1" 200 21236
+[07/Mar/2016 10:48:49] "GET /mobile/success HTTP/1.1" 301 0
+[07/Mar/2016 10:48:49] "GET /mobile/success/ HTTP/1.1" 200 2149
+[07/Mar/2016 10:48:50] "GET /mobile/share HTTP/1.1" 301 0
+[07/Mar/2016 10:48:50] "GET /mobile/share/ HTTP/1.1" 500 109384

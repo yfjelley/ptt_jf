@@ -435,10 +435,14 @@ def userinfo(request,objectid=None):
         extend = Extend.objects.filter(extend_user=request.user)
         if extend:
             extend = extend[0]
-       
+
     return render_to_response("userinfo_m.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
                                                 "publish_pr":publish_pr,"attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
+
+def share(request):
+    extend = request.GET.get('code',None)
+    return render_to_response('share.html',{'extend':extend}, context_instance=RequestContext(request))
 
 def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))
