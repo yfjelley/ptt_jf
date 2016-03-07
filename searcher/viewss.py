@@ -270,7 +270,6 @@ def register(request):
             return render_to_response("signup_m.html", {'form': form}, context_instance=RequestContext(request))
     else:
         code = request.GET.get('code',None)
-        print code ,"xxx"
         form = RegisterForm()
         return render_to_response("signup_m.html", {'form': form,'code':code}, context_instance=RequestContext(request))
 
@@ -462,7 +461,6 @@ def send_smscode(request):
     else:
         key = "limit_visit:" + send_smscode.__name__ +':'+ str(user_get_ip(request))
     failed_num = cache.get(key,0)
-    print "failed_num",failed_num
     if failed_num >= 10:
         return HttpResponse(u"您的短信次数超个10次，请24小时后再试！")
 
@@ -480,7 +478,7 @@ def send_smscode(request):
         random_code = random.randint(1000, 9999)
         request.session["sms_code"] = random_code
         content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会!"%random_code
-        print content
+        logging.info("%s"%content)
         data = """
                   <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
                   <E_Time></E_Time>

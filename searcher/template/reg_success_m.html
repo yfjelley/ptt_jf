@@ -44,9 +44,9 @@
 	 </div>
 	 <div class="inv_right">
 		 <div>
-			 <p>分享给好友还可以赚钱哦！</p>
+			 <p>扫描二维码参与龙抬头的抽奖!</p>
 		 </div>
-		 <div id="qrcodeTable">
+		 <div id="qrcodeTable1">
 		 </div>
 	 </div>
 	 <div class="clear-fix"></div>
@@ -66,5 +66,12 @@
 		text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
 	});
 </script>
+<script>
+	jQuery('#qrcodeTable1').qrcode({
 
+		width   :  256,
+		height  :  256,
+		text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
+	});
+</script>
 </html>
