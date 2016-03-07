@@ -1,3 +1,23 @@
-body,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,button{ margin:0; padding:0; -webkit-tap-highlight-color:rgba(255,255,255,0); }
-html {  width: 100%; font-family: 'Heiti SC', 'Microsoft YaHei'; font-size: 100px; outline: 0; -webkit-text-size-adjust:none;}
-body {  width:100%; margin: 0; -webkit-user-select: none; position: relative; background-color:#fff;}
+body{font-family:Helvetica;text-align: center}
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
+.content .sign_succ{
+    font-size: 22px;
+    color: #FF0033;
+}
+.content p{padding: 0.2rem}
+.content .inv_left canvas{width: 4.5rem;padding: 0.2rem;}
+.content .inv_right canvas{width: 4.5rem;padding: 0.2rem;}
+.content .inv_left{float: left}
+.content .inv_right{float: right}
+.content .clear-fix{ *overflow: hidden; *zoom: 1; }
+.clear-fix:after { display: table; content: ""; width: 0; clear: both; }
+[data-dpr="2"] .content .sign_succ{
+    font-size: 42px;
+}
+[data-dpr="3"] .content .sign_succ{
+    font-size: 56px;
+}
+

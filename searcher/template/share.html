@@ -56,7 +56,7 @@
             <ul>
                 <li class="invest-friend">
                     <h2>邀请好友送现金</h2>
-                     <div id="qrcodeTable"></div>
+                     <div id="qrcodeTable" onclick="register()"></div>
                     </div>
                 </li>
             </ul>
@@ -74,6 +74,9 @@
         height  :  256,
         text	: "http://www.pttjf.com/mobile/register/?code={{extend}}"
     });
+    function register(){
+    location.href="http://www.pttjf.com/mobile/register/?code={{extend}}"
+    }
 </script>
 </body>
 </html>
