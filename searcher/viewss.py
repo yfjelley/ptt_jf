@@ -432,10 +432,11 @@ def userinfo(request,objectid=None):
 
         signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
         notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
-        print signal,notice
-
-
-    return render_to_response("userinfo_m.html", {"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
+        extend = Extend.objects.filter(extend_user=request.user)
+        if extend:
+            extend = extend[0]
+       
+    return render_to_response("userinfo_m.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
                                                 "publish_pr":publish_pr,"attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
 
@@ -562,7 +563,7 @@ def agreement(request):
 
 def index(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-    logging.debug('This is debug messagexxxxxxxxxxxxxxxxxx')
+    logging.info('This is debug messagexxxxxxxxxxxxxxxxxx')
     pr = Project.objects.all().distinct()
     for i in pr:
         f = invest_detail.objects.filter(invest_project=i)

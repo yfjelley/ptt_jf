@@ -18748,3 +18748,415 @@ Exception happened during processing of request from ('211.95.56.242', 38592)
 [03/Mar/2016 14:26:14] "POST /register/ HTTP/1.1" 200 44
 [03/Mar/2016 14:26:24] "POST /checkvcode/ HTTP/1.1" 200 26
 [03/Mar/2016 14:26:24] "POST /send_smscode/ HTTP/1.1" 200 0
+[06/Mar/2016 08:03:10] code 400, message Bad request syntax ('\x01\x00\x00\x00n\x00\x00\x00\x00\xf4\x01\x00\x002\x00\x00\x00\xe8\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\xc0\xa8\x00e\xc0\xa8\x00e\xc0\xa8\x00e\xc0\xa8\x00e\xc0\xa8\x00e\xff\xff\x01\x00\x00\x00\x00\x00pojie:\x00\x04\x00\x00\x00\x9e')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 10-11: illegal multibyte sequence
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[06/Mar/2016 10:06:51] "GET / HTTP/1.0" 200 36839
+[06/Mar/2016 10:06:53] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 404 15265
+[06/Mar/2016 10:06:55] "OPTIONS / HTTP/1.0" 200 36839
+[06/Mar/2016 10:06:55] code 400, message Bad request version ('RTSP/1.0')
+[06/Mar/2016 10:06:55] "OPTIONS / RTSP/1.0" 400 -
+[06/Mar/2016 10:07:00] code 400, message Bad request syntax ('\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 1-2: illegal multibyte sequence
+[06/Mar/2016 10:07:05] code 400, message Bad request syntax ('\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03')
+[06/Mar/2016 10:07:05] "          versionbind   " 400 -
+[06/Mar/2016 10:07:10] code 400, message Bad HTTP/0.9 request type ('\x00')
+[06/Mar/2016 10:07:10] "            " 400 -
+[06/Mar/2016 10:07:10] code 400, message Bad request syntax ('HELP')
+[06/Mar/2016 10:07:10] "HELP" 400 -
+[06/Mar/2016 10:07:10] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 16-17: illegal multibyte sequence
+[06/Mar/2016 10:07:15] code 400, message Bad request syntax ('\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[06/Mar/2016 10:07:20] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[06/Mar/2016 10:07:20] "l          " 400 -
+[06/Mar/2016 10:07:20] code 400, message Bad request syntax ('\x01default')
+[06/Mar/2016 10:07:20] "default" 400 -
+[06/Mar/2016 10:07:25] code 400, message Bad HTTP/0.9 request type ('0')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 13-14: illegal multibyte sequence
+[06/Mar/2016 10:07:30] code 400, message Bad request syntax ('TNMP\x04\x00\x00\x00TNME\x00\x00\x04\x00')
+[06/Mar/2016 10:07:30] "TNMP   TNME   " 400 -
+[06/Mar/2016 10:07:35] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 6-7: illegal multibyte sequence
+[06/Mar/2016 10:07:40] code 400, message Bad request syntax ('DmdT\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x00\x11\x11\x00\xff\x01\xff\x13')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 20-21: illegal multibyte sequence
+[06/Mar/2016 10:07:45] code 400, message Bad request syntax (':\x00\x00\x00/\x00\x00\x00\x02\x00\x00@\x02\x0f\x00\x01\x00=\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x1f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[06/Mar/2016 10:07:45] ":   /     @  =            /         @                 " 400 -
+[06/Mar/2016 10:07:45] code 400, message Bad request version ('>')
+[06/Mar/2016 10:07:45] "< NTP/1.0 >" 400 -
+[06/Mar/2016 10:07:50] code 400, message Bad request syntax ('\x01\x00\x00\xfd\xce\xfa\x0b\xb0\xa0\x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00\xf0\xf0\xf0\xf0\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00\xe0m\xdf_')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[06/Mar/2016 10:07:55] code 400, message Bad HTTP/0.9 request type ('\x00Z\x00\x00\x01\x00\x00\x00\x016\x01,\x00\x00\x08\x00\x7f\xff\x7f\x08\x00\x00\x00\x01\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 18-19: illegal multibyte sequence
+[07/Mar/2016 09:41:18] "GET /mobile/ HTTP/1.1" 200 4649
+[07/Mar/2016 09:41:18] "GET /static/css/newindex_page_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/js/swipeSlide.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/js/zepto.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "POST /mobile/process/ HTTP/1.1" 200 21236
+[07/Mar/2016 09:41:18] "GET /static/images/all_m.png HTTP/1.1" 304 0
+[07/Mar/2016 09:41:18] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[07/Mar/2016 09:41:20] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 132486
+[07/Mar/2016 09:41:20] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[07/Mar/2016 09:41:20] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[07/Mar/2016 09:41:21] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[07/Mar/2016 09:41:21] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[07/Mar/2016 09:41:22] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[07/Mar/2016 09:41:22] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[07/Mar/2016 09:41:24] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[07/Mar/2016 09:41:25] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[07/Mar/2016 09:41:29] "GET /mobile/ HTTP/1.1" 200 4649
+[07/Mar/2016 09:41:29] "GET /static/css/newindex_page_m.css HTTP/1.1" 200 5626
+[07/Mar/2016 09:41:29] "GET /static/css/public_m.css HTTP/1.1" 200 1987
+[07/Mar/2016 09:41:29] "GET /static/js/swipeSlide.min.js HTTP/1.1" 200 5264
+[07/Mar/2016 09:41:29] "GET /static/js/zepto.min.js HTTP/1.1" 200 25011
+[07/Mar/2016 09:41:29] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[07/Mar/2016 09:41:29] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[07/Mar/2016 09:41:29] "POST /mobile/process/ HTTP/1.1" 200 21236
+[07/Mar/2016 09:41:30] "GET /static/images/all_m.png HTTP/1.1" 200 4117
+[07/Mar/2016 09:41:30] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 200 36546
+[07/Mar/2016 09:41:31] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[07/Mar/2016 09:41:31] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 200 119460
+[07/Mar/2016 09:41:32] "GET /mobile/userinfo HTTP/1.1" 301 0
+[07/Mar/2016 09:41:32] "GET /mobile/userinfo/ HTTP/1.1" 200 18051
+[07/Mar/2016 09:41:32] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 200 132617
+[07/Mar/2016 09:41:32] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 200 115737
+[07/Mar/2016 09:41:32] "GET /static/css/userinfo_m.css HTTP/1.1" 200 6507
+[07/Mar/2016 09:41:32] "GET /static/css/public_m.css HTTP/1.1" 200 1987
+[07/Mar/2016 09:41:32] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 200 13995
+[07/Mar/2016 09:41:32] "GET /static/js/tab-jquery.js HTTP/1.1" 200 1288
+[07/Mar/2016 09:41:32] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[07/Mar/2016 09:41:33] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 200 130181
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[07/Mar/2016 09:41:33] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[07/Mar/2016 09:41:33] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[07/Mar/2016 09:41:33] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[07/Mar/2016 09:41:33] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[07/Mar/2016 09:41:34] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[07/Mar/2016 09:41:34] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 200 56568
+[07/Mar/2016 09:41:35] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 200 55009
+[07/Mar/2016 09:41:48] "GET /mobile/userinfo/ HTTP/1.1" 200 18051
+[07/Mar/2016 09:41:48] "GET /static/css/userinfo_m.css HTTP/1.1" 200 6507
+[07/Mar/2016 09:41:48] "GET /static/css/public_m.css HTTP/1.1" 200 1987
+[07/Mar/2016 09:41:48] "GET /static/js/tab-jquery.js HTTP/1.1" 200 1288
+[07/Mar/2016 09:41:48] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 200 13995
+[07/Mar/2016 09:41:48] "GET /static/images/zclogo_m.PNG HTTP/1.1" 200 16875
+[07/Mar/2016 09:41:49] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[07/Mar/2016 09:41:49] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[07/Mar/2016 09:41:49] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[07/Mar/2016 09:41:50] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[07/Mar/2016 09:41:50] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 200 55009
+[07/Mar/2016 09:41:50] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 200 56568
+[07/Mar/2016 09:49:17] "GET /mobile HTTP/1.1" 301 0
+[07/Mar/2016 09:49:17] "GET /mobile/ HTTP/1.1" 200 4650
+[07/Mar/2016 09:49:17] "GET /static/css/newindex_page_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/monkeyYear_m.JPG HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/ztsuccess_m.JPG HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/ztbannel_m.jpg HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/ztbannel-1_m.JPG HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/js/zepto.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/images/all_m.png HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "GET /static/js/swipeSlide.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:49:17] "POST /mobile/process/ HTTP/1.1" 200 21236
+[07/Mar/2016 09:49:18] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[07/Mar/2016 09:49:18] "GET /static/images/jindutiao_m.jpg HTTP/1.1" 304 0
+[07/Mar/2016 09:49:21] "GET /mobile/userinfo HTTP/1.1" 301 0
+[07/Mar/2016 09:49:21] "GET /mobile/userinfo/ HTTP/1.1" 200 14933
+[07/Mar/2016 09:49:21] "GET /static/css/userinfo_m.css HTTP/1.1" 200 6507
+[07/Mar/2016 09:49:21] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+Validating models...
+
+0 errors found
+March 04, 2016 - 17:35:21
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('114.55.32.199', 62069)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.161', 26632)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.27', 8392)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.146', 52475)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.146', 52483)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.26', 9573)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.64', 48014)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.64', 49134)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.4', 37887)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.145', 55479)
+----------------------------------------
+1 <type 'int'>
+1 <type 'int'>
+[<Signal: None>, <Signal: None>] []
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 10816)
+----------------------------------------
+[<Signal: None>, <Signal: None>] []
+1 <type 'int'>
+[] []
+[07/Mar/2016 09:51:44] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 09:51:44] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 09:51:44] "GET /static/upload/p_user267.png HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /mobile/userinfo/ HTTP/1.1" 200 14955
+[07/Mar/2016 09:53:06] "GET /static/css/userinfo_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/css/public_m.css HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/js/tab-jquery.js HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/images/zclogo_m.PNG HTTP/1.1" 304 0
+[07/Mar/2016 09:53:06] "GET /static/upload/p_user267.png HTTP/1.1" 304 0

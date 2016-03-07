@@ -62,8 +62,16 @@ h2 {
     overflow: hidden;
     text-indent: 0;
     line-height: 0.8rem;
-    background:#999999;width: 2rem;height: 0.8rem;color: #fff;border: none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
+    background: #999999;
+    width: 2rem;
+    height: 0.8rem;
+    color: #fff;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
+
 .wrap .head .file input {
     position: absolute;
     font-size: 100px;
@@ -98,6 +106,11 @@ h2 {
 
 .tabs-cont {
     display: none;
+}
+
+.wrap .tabs-cont .invest-friend canvas {
+    width: 4rem;
+    padding: 0.2rem;
 }
 
 .tabs-cont .start-pro {
@@ -197,10 +210,12 @@ h2 {
     width: 4rem;
     height: 0.6rem;
 }
+
 .wrap .tabs-cont .code-img img {
     width: 2.4rem;
     height: 0.6rem;
 }
+
 .wrap .tabs-cont td {
     padding: 0.2rem 0.5rem;
 }
@@ -295,8 +310,6 @@ h2 {
 [data-dpr="2"] .wrap .tabs-cont .moth-income select option {
     font-size: 14px;
 }
-
-
 
 .wrap .tabs-cont .txt {
     font-size: 32px;
