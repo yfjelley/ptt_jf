@@ -29,27 +29,18 @@
 			<p><span class="sign_succ">恭喜您注册成功!</span><br>获得移动流量<span class="sign_succ">70M</span>,流量已充值到你的手机,请查收！</p>
 			{% endifequal %}
 			{% ifequal  flag1 3 %}
-				<p><span class="sign_succ">恭喜您注册成功！</span><br>获得联通流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
+				<p><span class="sign_succ">恭喜您注册成功！</span><br>获得联通流量<span class="sign_succ">50M</span>,流量已充值到您的手机,请查收！</p>
 			{% endifequal %}
 			{% ifequal  flag1 2 %}
-				<p><span class="sign_succ">恭喜您注册成功！</span><br>获得电信流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
+				<p><span class="sign_succ">恭喜您注册成功！</span><br>获得电信流量<span class="sign_succ">50M</span>,流量已充值到您的手机,请查收！</p>
 			{% endifequal %}
+		 <p><a><span class="sign_succ">点击</span>参加龙抬头送现金活动(每人只限参与一次)</a></p>
     </div>
-	 <div class="inv_left">
 		 <div>
-			 <p>分享给好友还可以赚钱哦！</p>
+			 <p>分享给好友还可以赚钱哦!</p>
 		 </div>
-		 <div id="qrcodeTable">
+	 <div id="qrcodeTable">
 		 </div>
-	 </div>
-	 <div class="inv_right">
-		 <div>
-			 <p>扫描二维码参与龙抬头的抽奖!</p>
-		 </div>
-		 <div id="qrcodeTable1">
-		 </div>
-	 </div>
-	 <div class="clear-fix"></div>
 	 <div>
 		 <p>您的邀请码是:<span class="sign_succ">{{extend.extend_code}}</span></p>
 		 <p><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}</textarea></p>
@@ -66,12 +57,5 @@
 		text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
 	});
 </script>
-<script>
-	jQuery('#qrcodeTable1').qrcode({
 
-		width   :  256,
-		height  :  256,
-		text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
-	});
-</script>
 </html>

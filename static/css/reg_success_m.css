@@ -1,4 +1,13 @@
 body{font-family:Helvetica;text-align: center}
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
 .content{
     width: 100%;
     margin: 0 auto;
@@ -8,12 +17,7 @@ body{font-family:Helvetica;text-align: center}
     color: #FF0033;
 }
 .content p{padding: 0.2rem}
-.content .inv_left canvas{width: 4.5rem;padding: 0.2rem;}
-.content .inv_right canvas{width: 4.5rem;padding: 0.2rem;}
-.content .inv_left{float: left}
-.content .inv_right{float: right}
-.content .clear-fix{ *overflow: hidden; *zoom: 1; }
-.clear-fix:after { display: table; content: ""; width: 0; clear: both; }
+.content .inv_left canvas{width: 4rem;padding: 0.2rem;}
 [data-dpr="2"] .content .sign_succ{
     font-size: 42px;
 }
