@@ -250,7 +250,7 @@ def register(request):
 
                 user = auth.authenticate(username=username, password=pwd1)
                 auth.login(request, user)
-                #send_flow_all(username)
+                send_flow_all(username)
                 p = re.compile('^13[4-9][0-9]{8}|^15[0,1,2,7,8,9][0-9]{8}|^18[2,7,8][0-9]{8}|^147[0-9]{8}|^178[0-9]{8}')
                 p1 = re.compile('^18[0,1,9][0-9]{8}|^133[0-9]{8}|^153[0-9]{8}|^177[0-9]{8}')
                 phone = username
@@ -260,8 +260,8 @@ def register(request):
                     flag1 = 2
                 else:
                     flag1 = 3
-                return HttpResponseRedirect(reverse('index_jf'))
-                #return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
+                #return HttpResponseRedirect(reverse('index_jf'))
+                return  render_to_response("reg_success.html", {'flag1':flag1}, context_instance=RequestContext(request))
         else:
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
