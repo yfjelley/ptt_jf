@@ -32,7 +32,7 @@ from searcher.models import Bid, UserFavorite, Platform, UserInformation, Dimens
     WeekHotSpot, BidHis, ReminderUnit, About_us, Partners, Frendlink, Project,project_forum,Signal,MediaReports,invest_detail,Extend
 from ddbid import conf
 from django.db.models import Q
-import simplejson
+import simplejson,logging
 
 
 from searcher.models import RegistrationAgreement
@@ -191,7 +191,7 @@ def checkuser_phone(request):
                 return response
 
 def register(request):
-    print request
+
     if request.method == 'POST':
         response = HttpResponse()
         response['Content-Type'] = "text/javascript"
@@ -266,7 +266,7 @@ def register(request):
             return render_to_response("signup.html", {'form': form}, context_instance=RequestContext(request))
     else:
         code = request.GET.get('code',None)
-        print code
+
         form = RegisterForm()
         return render_to_response("signup.html", {'form': form,'code':code}, context_instance=RequestContext(request))
 
@@ -434,7 +434,7 @@ def send_smscode(request):
         random_code = random.randint(1000, 9999)
         request.session["sms_code"] = random_code
         content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会!"%random_code
-        print content
+        logging.info("%s"%content)
         data = """
                   <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">
                   <E_Time></E_Time>
