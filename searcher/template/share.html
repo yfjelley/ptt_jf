@@ -8,73 +8,67 @@
     <meta content="telephone=no,email=no" name="format-detection">
     <meta content="telephone=no,email=no" name="format-detection"/>
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
-    <link rel="stylesheet" href="/static/css/userinfo_m.css">
-    <link rel="stylesheet" href="/static/css/public_m.css">
     <title>分享给朋友</title>
     <script src="/static/js/jquery-1.8.3.min.js"></script>
-    <script src="/static/js/tab-jquery.js"></script>
     <script src="/static/js/jquery.qrcode.min.js"></script>
-	<script>
+    <style>
+        .content{
+            overflow: hidden;
+        }
+        .content .invest-friend p{
+            width: 9rem;
+            margin: 0.6rem auto;
+        }
+        .content .invest-friend img {
+            width: 9rem;
+            height: 13.6rem;
+        }
 
-		function copyUrl()
-		{
-			var Url=document.getElementById("biao1");
-			Url.select(); // 选择对象
-			document.execCommand("Copy"); // 执行浏览器复制命令
-			alert("已复制好，可贴粘。");
-		}
-		function generate()
-		{
-			$.post("{% url 'generate' %}",{},function(){ window.location.reload();});
-
-		}
-
+        .content .invest-friend canvas {
+            width: 4rem;
+            position: relative;
+            top: -5rem;
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+    <script>
+        function copyUrl() {
+            var Url = document.getElementById("biao1");
+            Url.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
+        }
+        function generate() {
+            $.post("{% url 'generate' %}", {}, function () {
+                window.location.reload();
+            });
+        }
     </script>
-	<script>
-		$(function(){
-			$("h2").click(function(){
-				var oUl= $(this).next();
-				if(oUl.css("display") == "none"){
-					$(this).siblings("div").css("display","none");
-					oUl.css('display','block');
-				}else{
-					$(this).siblings("div").css("display","none");
-					oUl.css('display','none');
-				}
-			})
-		})
-	</script>
-
 </head>
 <body>
-<div class="main">
+<div class="content">
     <!--header(头部)-->
     <div id="tabs">
-
-        <div >
-            <ul>
-                <li class="invest-friend">
-                    
-                     <div id="qrcodeTable" onclick="register()"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li class="invest-friend">
+                <p>
+                    <img src="/static/images/invest_friend.JPG">
+                </p>
+                <div class="canvas" id="qrcodeTable" onclick="register()"></div>
+            </li>
+        </ul>
     </div>
-    </div>
+</div>
 <script>
-    $(function(){
-        $('#tabs').tab({'type':'mo'});
-    })
-
     jQuery('#qrcodeTable').qrcode({
-        render	: "canvas",
-        width   :  256,
-        height  :  256,
-        text	: "http://www.pttjf.com/mobile/register/?code={{extend}}"
+        render: "canvas",
+        width: 256,
+        height: 256,
+        text: "http://www.pttjf.com/mobile/register/?code={{extend}}"
     });
-    function register(){
-    location.href="http://www.pttjf.com/mobile/register/?code={{extend}}"
+    function register() {
+        location.href = "http://www.pttjf.com/mobile/register/?code={{extend}}"
     }
 </script>
 </body>

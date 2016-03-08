@@ -289,7 +289,13 @@ h2 {
 .wrap .tabs-cont .invest-friend p {
     padding: 0.2rem;
 }
-
+.wrap .tabs-cont .invest-friend p input[type="button"] {
+    width: 4rem;
+    height: 0.6rem;
+    background-color: #660000;
+    color: #fff;
+    border: 0 none;
+}
 .invest_inp input[type="text"] {
     width: 7rem;
     height: 0.6rem;

@@ -1,7 +1,12 @@
-body{font-family:Helvetica;text-align: center}
+.success_back{background-color: rgb(245,45,55);min-width: 1440px;max-width:1660px;position: relative;}
 .content{
-    width: 100%;
+    width: 30%;
     margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    font-family:Helvetica;
+    text-align: center;
+    min-height: 532px;
 }
 .content .sign_succ{
     font-size: 22px;
@@ -9,9 +14,9 @@ body{font-family:Helvetica;text-align: center}
 }
 .content p{padding: 0.2rem}
 .content canvas{padding: 0.2rem}
-[data-dpr="2"] .content .sign_succ{
-    font-size: 42px;
+.success_back .content .inv_top{
+    margin-top: 50px;
 }
-[data-dpr="3"] .content .sign_succ{
-    font-size: 56px;
+.success_back .content .inv_bottom{
+    margin-top: 50px;
 }

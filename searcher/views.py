@@ -408,6 +408,11 @@ def disclaimer(request):
 def phone_infoPage(request):
     return render_to_response('test_phone.html', context_instance=RequestContext(request))
 
+def success(request):
+    return render_to_response('reg_success.html',{'flag1':1}, context_instance=RequestContext(request))
+
+def user(request):
+    return render_to_response('user_information.html',{'flag1':1}, context_instance=RequestContext(request))
 
 import urllib2, urllib, hashlib, random,re
 def send_smscode(request):
@@ -434,6 +439,7 @@ def send_smscode(request):
         random_code = random.randint(1000, 9999)
         request.session["sms_code"] = random_code
         content = "您的验证码是：%s，有效期为五分钟。如非本人操作，可以不用理会!"%random_code
+        print content
         logging.info("%s"%content)
         data = """
                   <Group Login_Name ="%s" Login_Pwd="%s" OpKind="0" InterFaceID="" SerType="xxxx">

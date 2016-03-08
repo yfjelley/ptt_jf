@@ -112,7 +112,7 @@
                 <li>
                     <div class="head">
                         <p style="padding: 0.2rem 0.4rem;"><img src="{{ user.userinformation.photo_url }}"></p>
-                        <p style="padding: 0.8rem 0"><a href="javascript:;" class="file">选择文件<input type="file" name="file"></a></p>
+                        <p style="padding: 0.8rem 0"><a href="javascript:;" class="file">上传头像<input type="file" name="file"></a></p>
                         <p style="padding: 0.9rem 0">
                             {% if user.userinformation.nickname %}
                             {{ user.userinformation.nickname }}
@@ -313,13 +313,14 @@
                 <li class="invest-friend">
                     <h2>邀请好友</h2>
                     <div><p>返现规则:</p>
-                        <p>
+                    <p>
                         1、认证投资人：普通会员权益＋被邀请好友的投资额的5‰的现金奖励<br>
                     2、资深投资人：普通会员权益＋被邀请好友的投资额的1%的现金奖励＋被邀请好友的被邀请好友的投资额的5‰的现金奖励。<br>
                     3、所有奖励的发放都以最终投资额为准
-                </p>
+                    </p>
+                    <p>
                         <input type="button" value="点击生成推广页面" onclick="extend()">
-                            </div>
+                    </p>
                     </div>
                 </li>
             </ul>
