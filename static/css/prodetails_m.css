@@ -58,9 +58,11 @@
     height: 100%
 }
 .touchweb_page-index .content .img1{
-    width: 0.6rem;
-    height: 0.6rem;
-    line-height: 0.6rem;
+   /* width: 1.6rem;
+    height: 0.6rem;*/
+    width: 1.4rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
     display: block;
     text-align: justify;
     float: right;
