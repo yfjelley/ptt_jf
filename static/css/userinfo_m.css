@@ -21,8 +21,23 @@ h1 {
 
 h2 {
     font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    border: 1px solid #fff;
+    line-height: 0.6rem;
+    padding: 0.2rem;
+    background: #ced3d7;
+    overflow: hidden;
 }
+.tabs-cont .img1{
+    width: 0.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    display: block;
+    text-align: justify;
+    float: right;
 
+}
 .main {
     display: -webkit-box;
     display: -webkit-flex;
@@ -273,17 +288,6 @@ h2 {
     border: 0 none;
     background-color: #660000;
     color: #fff;
-}
-
-h2 {
-    cursor: pointer;
-    font-weight: 400;
-    border: 1px solid;
-    height: 30px;
-    line-height: 30px;
-    padding: 0.2rem;
-    background: #ced3d7;
-    border-color: #fff #e9edf2;
 }
 
 .wrap .tabs-cont .invest-friend p {

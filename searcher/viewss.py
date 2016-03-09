@@ -440,13 +440,12 @@ def userinfo(request,objectid=None):
                               context_instance=RequestContext(request))
 
 def share(request):
-    user = User.objects.get(id=request.GET.get('id',None))
-    extend= user.extend_user_set.all()[0].extend_code
-    if user.userinformation.nickname:
-        name = user.userinformation.nickname
+    extend_user = Extend.objects.get(extend_user=request.GET.get('id',None))
+    if extend_user.extend_user.userinformation.nickname:
+        name = extend_user.extend_user.userinformation.nickname
     else:
-        name = ''.join([user.username[0:3],'****',user.username[-4:]]).strip()
-    return render_to_response('share.html',{'extend':extend,'name':name}, context_instance=RequestContext(request))
+        name = ''.join([extend_user.extend_user.username[0:3],'****',extend_user.extend_user.username[-4:]]).strip()
+    return render_to_response('share.html',{'extend':extend_user.extend_code,'name':name}, context_instance=RequestContext(request))
 
 def contact_us(request):
     return render_to_response('contact_us.html', context_instance=RequestContext(request))

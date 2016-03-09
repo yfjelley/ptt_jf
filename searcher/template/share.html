@@ -18,10 +18,18 @@
         .content .invest-friend{
             position: relative;
         }
-        .content .invest-friend canvas {
+        .content .invest-friend .code {
             width: 4rem;
             position: absolute;
             top: 10rem;
+            left: 3rem;
+            color: #fff;
+            text-align: center;
+        }
+        .content .invest-friend canvas {
+            width: 4rem;
+            position: absolute;
+            top: 10.5rem;
             left: 3rem;
         }
         .content .invest-friend img {
@@ -52,11 +60,12 @@
                 <p>
                     <img src="/static/images/invest_friend1.JPG">
                 </p>
+                <div class="code">{{name}}的邀请二维码:</div>
                 <div class="canvas" id="qrcodeTable" onclick="register()"></div>
             </li>
         </ul>
     </div>
-    <div>{{name}}的邀请二维码是:</div>
+
 </div>
 
 <script>

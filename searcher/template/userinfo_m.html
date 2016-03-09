@@ -68,10 +68,13 @@
 				var oUl= $(this).next();
 				if(oUl.css("display") == "none"){
 					$(this).siblings("div").css("display","none");
+                    $('.img1').attr("src","/static/images/arrows_top.png");
 					oUl.css('display','block');
+
 				}else{
 					$(this).siblings("div").css("display","none");
-					oUl.css('display','none');
+                    $('.img1').attr("src","/static/images/arrows_bottom.png");
+                    oUl.css('display','none');
 				}
 			})
 		})
@@ -242,7 +245,7 @@
         </div>
         <div class="tabs-cont">
 
-			<h2>已投项目</h2>
+			<h2>已投项目<img class="img1" src="/static/images/arrows_top.png"></h2>
             <div style="display: block">
                 {% if leader %}
                 {% for i in leader %}
@@ -269,7 +272,7 @@
                 {% endif %}
             </div>
 
-			<h2>关注项目</h2>
+			<h2>关注项目<img class="img1" src="/static/images/arrows_top.png"></h2>
             <div style="display: none">
                 {% if  attention_pr %}
                 {% for i in  attention_pr %}
@@ -298,20 +301,20 @@
             </div>
         </div>
         <div class="tabs-cont" id = "anquanzhongxin">
-            <h2 data-dd="xgmm">修改密码</h2>
+            <h2 data-dd="xgmm">修改密码<img class="img1" src="/static/images/arrows_top.png"></h2>
             <div style="display:none">
-                <div id="safe_center"></div>
+                <ul id="safe_center"></ul>
             </div>
 
-                <h2 data-dd="ghsj">更换手机</h2>
+            <h2 data-dd="ghsj">更换手机<img class="img1" src="/static/images/arrows_top.png"></h2>
             <div  style="display: none">
-                <div id="change_phone"></div>
+                <ul id="change_phone"></ul>
             </div>
          </div>
         <div class="tabs-cont">
             <ul>
                 <li class="invest-friend">
-                    <h2>邀请好友</h2>
+                    <h2>邀请好友<img class="img1" src="/static/images/arrows_top.png"></h2>
                     <div><p>返现规则:</p>
                     <p>
                         1、认证投资人：普通会员权益＋被邀请好友的投资额的5‰的现金奖励<br>
@@ -324,7 +327,7 @@
                     </div>
                 </li>
             </ul>
-            
+
         </div>
     </div>
     </div>
@@ -335,7 +338,7 @@
         $('#tabs').tab({'type':'mo'});
     })
     function extend() {
-        location.href="http://42.96.131.5:8001/mobile/share/?id={{user.id}}"
+        location.href="http://www.pttjf.com/mobile/share/?id={{user.id}}"
     }
 </script>
 <script>
