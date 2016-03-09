@@ -250,7 +250,7 @@
                 {% for i in leader %}
             <ul class="start-pro">
 
-                    <li><a href="/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" style="width: 4rem;height: 3.5rem"/></a></li>
+                    <li><a href="/mobile/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" style="width: 4rem;height: 3.5rem"/></a></li>
                     <li><span>{{i.invest_project.name}}</span>
                         {% ifequal i.invest_project.status 0 %}
                         <span style="color: #C30">预热中</span>
@@ -276,7 +276,7 @@
                 {% if  attention_pr %}
                 {% for i in  attention_pr %}
             <ul class="focus-pro">
-                <li><a href="/prodetails/{{i.id}}"><img src="{{i.logo}}" style="width: 4rem;height: 3.5rem"/></a></li>
+                <li><a href="/mobile/prodetails/{{i.id}}"><img src="{{i.logo}}" style="width: 4rem;height: 3.5rem"/></a></li>
                 <li><span>{{i.name}}</span>
                     {% ifequal i.status 0 %}
                     <span style="color: #C30">预热中</span>
