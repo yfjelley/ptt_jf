@@ -17,18 +17,21 @@
     </script>
 </head>
 <body>
-{% include "zcheader.html" %}
 <div class="success_back">
+    <div style="height: 40px"></div>
     <div class="content">
         <div id="show" class="inv_top">
             {% ifequal flag1 1 %}
-            <p><span class="sign_succ">恭喜您注册成功!</span><br>获得移动流量<span class="sign_succ">70M</span>,流量已充值到你的手机,请查收！</p>
+            <p><span class="sign_succ">恭喜您注册成功!</span></p>
+            <p>获得移动流量<span class="sign_succ">70M</span>,流量已充值到你的手机,请查收！</p>
             {% endifequal %}
             {% ifequal flag1 3 %}
-            <p><span class="sign_succ">恭喜您注册成功！</span><br>获得联通流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
+            <p><span class="sign_succ">恭喜您注册成功！</span></p>
+            <p>获得联通流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
             {% endifequal %}
             {% ifequal flag1 2 %}
-            <p><span class="sign_succ">恭喜您注册成功！</span><br>获得电信流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
+            <p><span class="sign_succ">恭喜您注册成功！</span></p>
+            <p>获得电信流量<span>50M</span>,流量已充值到您的手机,请查收！</p>
             {% endifequal %}
         </div>
         <div class="inv_bottom">
@@ -37,10 +40,13 @@
             </div>
             <div id="qrcodeTable">
             </div>
+            <div>
+                <p><a href="#">点击返回首页</a></p>
+            </div>
         </div>
     </div>
+    <div style="height: 40px"></div>
 </div>
-{% include "footer.html" %}
 </body>
 <script>
     jQuery('#qrcodeTable').qrcode({

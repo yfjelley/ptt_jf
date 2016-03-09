@@ -2,8 +2,12 @@
 <html>
 <head>
 <style>
+body {position: relative;}
+#test {background-color:red;width:30%;min-height:50%;text-align: center;margin-right:auto;
+margin-left:auto;}
 ul
 {
+    width:30%;
 list-style-type:none;
 margin:0;
 padding:0;
@@ -15,7 +19,7 @@ font-weight:bold;
 color:#FFFFFF;
 background-color:#bebebe;
 width:120px;
-text-align:center;
+
 padding:4px;
 text-decoration:none;
 text-transform:uppercase;
@@ -24,16 +28,21 @@ a:hover,a:active
 {
 background-color:#cc0000;
 }
+#right {float:left;}
 </style>
 </head>
 
 <body>
+<div id="test">
+    <div>
 <ul>
 <li><a href="/guide/">Home</a></li>
 <li><a href="/user/">News</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#about">About</a></li>
-</ul>
-<div>xxxx</div>
+</ul></div>
+    <div id="right"><p>xoooooo oooooo</p></div>
+    </div>
+
 </body>
 </html>
