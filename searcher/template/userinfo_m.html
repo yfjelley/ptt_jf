@@ -68,13 +68,12 @@
 				var oUl= $(this).next();
 				if(oUl.css("display") == "none"){
 					$(this).siblings("div").css("display","none");
-                    $('.img1').attr("src","/static/images/arrows_top.png");
 					oUl.css('display','block');
-
+                    $(this).find("img").attr("src","/static/images/arrows_bottom.png");
 				}else{
 					$(this).siblings("div").css("display","none");
-                    $('.img1').attr("src","/static/images/arrows_bottom.png");
                     oUl.css('display','none');
+                    $(this).find("img").attr("src","/static/images/arrows_top.png");
 				}
 			})
 		})
@@ -314,7 +313,6 @@
         <div class="tabs-cont">
             <ul>
                 <li class="invest-friend">
-                    <h2>邀请好友<img class="img1" src="/static/images/arrows_top.png"></h2>
                     <div><p>返现规则:</p>
                     <p>
                         1、认证投资人：普通会员权益＋被邀请好友的投资额的5‰的现金奖励<br>

@@ -34,16 +34,17 @@
 			{% ifequal  flag1 2 %}
 				<p><span class="sign_succ">恭喜您注册成功！</span><br>获得电信流量<span class="sign_succ">50M</span>,流量已充值到您的手机,请查收！</p>
 			{% endifequal %}
-		 <p><a><span class="sign_succ">点击</span>参加龙抬头送现金活动(每人只限参与一次)</a></p>
+		 <p><a href="http://p.70c.com/w/CSYQWGC-CCZYWQS?rpt=f4da83eef392140e9e5e888b6379753c&from=singlemessage&isappinstalled=0"><span class="sign_succ">点击</span>参加龙抬头送现金活动(每人只限参与一次)</a></p>
     </div>
 		 <div>
 			 <p>分享给好友还可以赚钱哦!</p>
 		 </div>
-	 <div id="qrcodeTable">
+
+	 <div id="qrcodeTable" onclick="extend()">
 		 </div>
 	 <div>
-		 <p>您的邀请码是:<span class="sign_succ">{{extend.extend_code}}</span></p>
-		 <p><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}</textarea></p>
+		 <p>您的邀请码:<span class="sign_succ">{{extend.extend_code}}</span></p>
+		 <p>您的邀请链接：<textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}</textarea></p>
 		 <p><input type="button" value="一键复制" style="width: 2rem;background-color: #336666;border: none;color: #fff;height: 0.6rem;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" onclick="copyUrl()"></p>
 	 </div>
  </div>
@@ -56,6 +57,9 @@
 		height  :  256,
 		text	: "http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
 	});
+	function extend() {
+        location.href="http://www.pttjf.com/mobile/register/?code={{extend.extend_code}}"
+    }
 </script>
 
 </html>

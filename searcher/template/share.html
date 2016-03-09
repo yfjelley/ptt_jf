@@ -13,7 +13,12 @@
     <script src="/static/js/jquery.qrcode.min.js"></script>
     <style>
         .content{
-            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('/static/images/invest_friend1.JPG') no-repeat;
         }
         .content .invest-friend{
             position: relative;
@@ -21,7 +26,7 @@
         .content .invest-friend .code {
             width: 4rem;
             position: absolute;
-            top: 10rem;
+            top: 9.7rem;
             left: 3rem;
             color: #fff;
             text-align: center;
@@ -32,9 +37,15 @@
             top: 10.5rem;
             left: 3rem;
         }
-        .content .invest-friend img {
-            width: 100%;
-            height: 100%;
+
+        .content .invest-friend .code .name_size{
+            font-size: 22px;
+        }
+        [data-dpr="2"] .content .invest-friend .code .name_size{
+            font-size: 42px;
+        }
+        [data-dpr="3"] .content .invest-friend .code .name_size{
+            font-size: 56px;
         }
     </style>
     <script>
@@ -57,10 +68,7 @@
     <div id="tabs">
         <ul>
             <li class="invest-friend">
-                <p>
-                    <img src="/static/images/invest_friend1.JPG">
-                </p>
-                <div class="code">{{name}}的邀请二维码:</div>
+                <div class="code"><span class="name_size">{{name}}</span>的邀请二维码:</div>
                 <div class="canvas" id="qrcodeTable" onclick="register()"></div>
             </li>
         </ul>

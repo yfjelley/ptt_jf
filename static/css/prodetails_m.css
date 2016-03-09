@@ -57,6 +57,14 @@
     flex-direction: column;
     height: 100%
 }
+.touchweb_page-index .content .img1{
+    width: 0.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    display: block;
+    text-align: justify;
+    float: right;
+}
 .checkbox{
     position: relative;
 }
@@ -181,7 +189,7 @@
     text-align: center;
 }
 .touchweb_page-index h2{
-    cursor:pointer;font-weight:400;border:1px solid;height:0.8rem;line-height:0.8rem;padding:0.2rem;background:#ced3d7 ;border-color:#fff #e9edf2;
+    cursor:pointer;font-weight:400;border:1px solid;line-height:0.6rem;padding:0.2rem;background:#ced3d7 ;border-color:#fff #e9edf2;
 }
 #contents .dev-books span{
     margin: 0.2rem 0.4rem;

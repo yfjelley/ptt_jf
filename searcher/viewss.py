@@ -582,7 +582,6 @@ def index(request):
     return render_to_response('newindex_page_m.html',{"project":pr},context_instance=RequestContext(request))
 
 
-
 def safecenter(request):
     #print "safecenter:", request
     if request.method =="POST":
@@ -652,6 +651,7 @@ def safecenter(request):
                 'success': True,
             }
         return HttpResponse(json.dumps(payload), content_type="application/json")
+
 
 
 def change_phone_number(request):

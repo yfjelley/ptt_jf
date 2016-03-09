@@ -17,9 +17,11 @@
                     if(oUl.css("display") == "none"){
                         $(this).siblings("ul").css("display","none");
                         oUl.css('display','block');
+                        $(this).find("img").attr("src","/static/images/arrows_bottom.png");
                     }else{
                         $(this).siblings("ul").css("display","none");
                         oUl.css('display','none');
+                        $(this).find("img").attr("src","/static/images/arrows_top.png");
                     }
                     {% else %}
                     alert('请先登录!');
@@ -169,30 +171,30 @@
             </li>
         </ul>
         <div id="contents">
-            <h2>公司简介</h2>
+            <h2>公司简介<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul class="product_dec" style="display: none;">
                 <li>
                     <span>{{result.description|safe}}</span>
                 </li>
             </ul>
-            <h2>团队介绍</h2>
+            <h2>团队介绍<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul class="product_dec" style="display: none;">
                 <li><span>{{result.team|safe}}</span></li>
             </ul>
-            <h2>项目亮点</h2>
+            <h2>项目亮点<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul class="product_dec" style="display: none;">
                 <li><span>
                     {{result.patent|safe}}
                 </span></li>
             </ul>
-            <h2>发展计划书</h2>
+            <h2>发展计划书<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul style="display: none;">
                 <li class="dev-books"><span style="float: left">发展计划书</span>
 					<span style="float: right"><a href="{{result.business_plan_url}}"><img alt="浏览" class="search" src="/static/images/liulan38-32.png" width="20" height="15"/></a></span></li>
                 <li style="clear: both"></li>
             </ul>
 
-            <h2>投资人列表</h2>
+            <h2>投资人列表<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul style="display: none;">
 				{% if invest_detail %}
 				{% for i in invest_detail %}
@@ -213,7 +215,7 @@
                 <li style="clear: both"></li>
             </ul>
 
-            <h2>预约</h2>
+            <h2>预约<img class="img1" src="/static/images/arrows_top.png"></h2>
             <ul style="display: none;">
                 <li class="order-money">
                     <div class="financing">
