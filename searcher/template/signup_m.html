@@ -54,7 +54,7 @@
                     <label for="register_form_verification" class="icon-main">验证码</label>
                     <div class="input_code">
 						{{ form.vcode }}
-						<img style="width: 70px" onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+						<img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
 							 src="{% url 'verifycode' %}"/>
                     </div>
                 </div>

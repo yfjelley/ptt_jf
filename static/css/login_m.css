@@ -6,7 +6,7 @@ a{text-decoration: none}
 li{list-style-type: none}
 img{margin:0;padding: 0}
 input:-webkit-autofill{background-color: rgb(255,255,255);}
-input[type="text"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], input[type="email"], input[type="url"], textarea{-webkit-appearance:none;border-radius:0;}
+input[type="text"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], input[type="email"], input[type="url"],input[type="submit"], textarea{cursor:pointer;-webkit-appearance:none;border-radius:0;}
 input:focus, select:focus, textarea:focus, button:focus{outline: none}
 .touchweb-com_header{position: relative;height: 44px;background-color: #fff;border-bottom: 1px solid #e5e5e5}
 .touchweb-com_header h1{height:44px;line-height:44px;font-size:2rem;text-align:center;font-weight:normal;color:#000;padding:0 25%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
@@ -17,16 +17,16 @@ input:focus, select:focus, textarea:focus, button:focus{outline: none}
 .touchweb_page-login .login_box .form_item:last-child .input_box{border:none}
 .touchweb_page-login .login_box .form_item .input_box{position: relative;flex: 1;-webkit-box-flex: 1;width: auto;height: 43px;border-bottom: 1px solid #e5e5e5;}
 .touchweb_page-login .login_box .form_item .input_box input{
-    height: 43px;line-height: 20px;padding: 12px 20px 11px 0;border:none;font-size: 1.4rem;
+    height: 43px;padding: 12px 20px 11px 0;border:none;font-size: 1.4rem;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 .touchweb_page-login .login_box .form_item .input_boxcode{
-    position: relative;flex: 1;-webkit-box-flex: 1;width: auto;height: 43px;border-bottom: 1px solid #e5e5e5;
+    position: relative;flex: 1;-webkit-box-flex: 1;width: auto;height: 43px;
 }
 .touchweb_page-login .login_box .form_item .input_boxcode input{
-    height: 43px;line-height: 20px;padding: 12px 20px 11px 0;border:none;font-size: 1.4rem;
+    height: 43px;padding: 12px 20px 11px 0;border:none;font-size: 1.4rem;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

@@ -25,7 +25,7 @@
         <div class="slide" id="slide3">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#" onclick="extend()">
                         <img src="/static/images/activity_m.JPG"
                              alt="">
                     </a>
@@ -118,6 +118,14 @@
 				$.post("/mobile/process/",{objectid:v,},function(data){ $('#content').html(data.content_html);});
 			});
 			})
+
+    function extend() {
+        {% if user.id %}
+        location.href="http://www.pttjf.com/mobile/share/?id={{user.id}}"
+        {% else %}
+        alert("请先登录！")
+        {% endif %}
+    }
 </script>
 </body>
 </html>

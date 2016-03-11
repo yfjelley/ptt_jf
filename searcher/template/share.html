@@ -3,59 +3,59 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta content="yes" name="apple-mobile-web-app-capable"/>
-    <meta content="yes" name="apple-touch-fullscreen"/>
-    <meta content="telephone=no,email=no" name="format-detection">
-    <meta content="telephone=no,email=no" name="format-detection"/>
-    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
-    <title>分享给朋友</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="generator" content="bd-mobcard">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>砸金蛋活动</title>
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script src="/static/js/jquery.qrcode.min.js"></script>
     <style>
-        html{min-height: 100%;background: url("/static/images/invest_friend1.JPG") no-repeat 0 0; background-size: cover;}
-        body {
-
-            /*position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        * {margin:0; padding:0; font-family:Arial, "微软雅黑", sans-serif;white-space:normal;}
+        html {-webkit-text-size-adjust: none;}
+        *:focus {outline: none;}
+        ul,li {list-style:none;}
+        img {border:none;}
+        a {text-decoration:none;}
+        body {font-size:12px; background:#383838;}
+        .content{
+            position: absolute;
             top: 0;
-            left: 0;*/
-
+            left: 0;
+            width: 100%;
         }
-
-        .content .invest-friend {
+        .content .invest-friend{
             position: relative;
         }
-        .content .invest-friend .code {
-            position: absolute;
-            top: 9.5rem;
-            left: 3rem;
-            color: #fff;
+        .content .top_box{
+            width: auto;
+            height: auto;
         }
-        .content .invest-friend canvas {
-            width: 4rem;
-            position: absolute;
-            top: 10.5rem;
-            left: 3rem;
+        .content .top_box img{
+            width: 100%;
+        }
+        .content .invest-friend .code {
+            width: 302px;
+            color: #fff;
+            margin:  0 auto;
+
+            text-align: center;
+
         }
 
-        .content .invest-friend .code .name_size{
+        .content .invest-friend .canvas{
+            width: 300px;
+            margin:  0 auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .content .invest-friend .canvas canvas{
+            width: 150px;
+        }
+
+        .content .invest-friend .code .name_size {
             font-size: 22px;
-        }
-        [data-dpr="2"] .content .invest-friend .code .name_size{
-            font-size: 42px;
-        }
-        [data-dpr="3"] .content .invest-friend .code .name_size{
-            font-size: 56px;
-        }
-        @media screen and (min-width: 320px){
-            .content .invest-friend .code{
-                top: 11rem;
-            }
-            .content .invest-friend canvas{
-                top: 12rem;
-            }
         }
     </style>
     <script>
@@ -73,15 +73,15 @@
     </script>
 </head>
 <body>
+<div style="position:absolute;width: 1px;height: 1px overflow:hidden; top:-1000px; left:0"><img src="/static/images/share_logo.jpg" /></div>
 <div class="content">
     <!--header(头部)-->
     <div id="tabs">
         <ul>
             <li>
-              <!--  <p><img src="" height="100%" width="100%"></p>-->
-                <!--style="position: fixed"-->
-    <!--           <p><img src="/static/images/invest_friend1.JPG" height="100%" width="100%"></p>-->
+                <div><img style="position: fixed"  src="/static/images/invest_friend1.JPG" height="100%" width="100%"></div>
                 <div class="invest-friend">
+                    <p class="top_box"><img src="/static/images/opacity.png"></p>
                     <p class="code"><span class="name_size">{{name}}</span>的邀请二维码:</p>
                     <p class="canvas" id="qrcodeTable" onclick="register()"></p>
                 </div>
@@ -102,5 +102,6 @@
         location.href = "http://www.pttjf.com/mobile/register/?code={{extend}}"
     }
 </script>
+
 </body>
 </html>

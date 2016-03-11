@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<style>
-body {position: relative;}
-#test {background-color:red;width:30%;min-height:50%;text-align: center;margin-right:auto;
-margin-left:auto;}
-ul
-{
-    width:30%;
-list-style-type:none;
-margin:0;
-padding:0;
-}
-a:link,a:visited
-{
-display:block;
-font-weight:bold;
-color:#FFFFFF;
-background-color:#bebebe;
-width:120px;
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>haorooms不固定高度div写法</title>
 
-padding:4px;
-text-decoration:none;
-text-transform:uppercase;
+    <style>
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #000;
+  width:50%;
+  height: 50%;
+-webkit-transform: translateX(-50%) translateY(-50%);
 }
-a:hover,a:active
-{
-background-color:#cc0000;
-}
-#right {float:left;}
-</style>
+
+
+    </style>
 </head>
-
 <body>
-<div id="test">
-    <div>
-<ul>
-<li><a href="/guide/">Home</a></li>
-<li><a href="/user/">News</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="#about">About</a></li>
-</ul></div>
-    <div id="right"><p>xoooooo oooooo</p></div>
-    </div>
-
+    <div class="center"></div>
 </body>
 </html>
