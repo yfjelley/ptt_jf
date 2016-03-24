@@ -16,11 +16,11 @@ li{ list-style-type:none;}
 .div_right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;overflow:hidden}
 .biaoti{font-size:24px;}
 .con_right{padding-top:42px;background:#FFFFFF;margin-left:40px;}
-.con_right p span{font-size:18px;font-weight:bold;}
-.con_right p{font-size:16px;width:570px;}
+.con_right p span{font-size:18px;letter-spacing: 3px;}
+.con_right p{font-size:16px;line-height: 30px}
 .display{display:none;padding-top:42px;background:#FFFFFF;margin-left:40px;}
-.display p span{font-size:18px;font-weight:bold;}
-.display p{font-size:16px;width:570px;}
+.display p span{font-size:18px;letter-spacing: 3px;}
+.display p{font-size:16px;width:570px;line-height: 30px;}
 .b_span{display:none;}
 .b_span p{font-size:16px;}
 .helpcenter li{margin-top:20px;}
@@ -31,7 +31,8 @@ li{ list-style-type:none;}
 .helpcenter li a:hover{color:#FF0000;}
 .donline{width:530px;height:1px;background:#EEEEF0;}
 .bzzx{display:none;padding-top:42px;background:#FFFFFF;}
-.xx{diplay:none;}
+.bzzx span{letter-spacing: 3px;}
+.xx{display:none;}
 .fixed{position:fixed;bottom: 60px;left: 10px;}
 .side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
 .side a{font-size: 14px;color: #FFFFFF}
@@ -154,12 +155,12 @@ li{ list-style-type:none;}
  /*float：left,本不应该设置，但由于在Firefox不能正常显示
  继承nav111的width,限制宽度，li自动向下延伸*/
 }
-#nav111 li a:hover{
+#nav111 a:hover{
  background:#FFFFFF; /*一级目录onMouseOver显示的背景色*/
 }
-#nav111 li a span{
+#nav111 a img{
  float:right;
- color:#FF0000;
+ padding: 5px 0;
 }
 #nav111 a:link  {
  color:#000000; text-decoration:none;
@@ -183,6 +184,7 @@ li{ list-style-type:none;}
  font-size:14px;
  width:530px;
  height:100%;
+ line-height: 30px;
  /* padding-left二级目录中文字向右移动，但Width必须重新设置=(总宽度-padding-left)*/
 }
 /*下面是二级目录的链接样式*/
@@ -194,7 +196,7 @@ li{ list-style-type:none;}
 }
 
  /* 二级onmouseover的字体颜色、背景色*/
-}
+
 /*==============================*/
 #nav111 li:hover ul {
  left: auto;
@@ -205,9 +207,7 @@ li{ list-style-type:none;}
 #content {
  clear: left; 
 }
-#nav111 ul.collapsed {
- display: none;
-}
+
 
 #PARENT{
  width:570px;

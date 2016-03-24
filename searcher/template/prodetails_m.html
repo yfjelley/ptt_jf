@@ -17,11 +17,11 @@
                     if(oUl.css("display") == "none"){
                         $(this).siblings("ul").css("display","none");
                         oUl.css('display','block');
-                        $(this).find("img").attr("src","/static/images/arrows_bottom.png");
+                        $(this).find("img").attr("src","/static/images/arrows_bottom.png").end().siblings().find("img").attr("src","/static/images/arrows_top.png");
                     }else{
                         $(this).siblings("ul").css("display","none");
                         oUl.css('display','none');
-                        $(this).find("img").attr("src","/static/images/arrows_top.png");
+                        $(this).find("img").attr("src","/static/images/arrows_top.png").end().siblings().find("img").attr("src","/static/images/arrows_top.png");
                     }
                     {% else %}
                     alert('请先登录!');

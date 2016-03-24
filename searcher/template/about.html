@@ -98,9 +98,10 @@
 				 <div class="biaoti">媒体报道</div>
 		         {% if mediareports %}
 		         {% for i in mediareports %}
-		   <p class = link_mt>    <a target="_blank" href="{{i.url}}">{{i.title}}</a><label style="float: right">{{i.add_date|date:"Y-m-j  H:i:s"}}</label>
+		   <p style="letter-spacing: 0" class = link_mt><a target="_blank" href="{{i.url}}">{{i.title}}</a><label style="float: right">{{i.add_date|date:"Y-m-j  H:i:s"}}</label>
                  {% endfor %}
 		         {% endif %}
+		   </p>
 				 <div style="height:250px;"></div>
 	   </div>	
 	   <div id="joinour" class="display">

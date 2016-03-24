@@ -13,11 +13,12 @@ a{ text-decoration:none;color:#333}
 .div_left a:hover{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
 .left_label{position: relative;top:-11px;cursor: pointer}
 .display{display:none;padding-top:43px;background:#FFFFFF;}
-.display p{font-size:16px;width:570px}
+.display p{font-size:16px;width:570px;letter-spacing: 3px;line-height: 30px;}
+.display .link_mt{font-size:16px;}
 .downline{width:75px;height:1px;background:#ccc;margin:10px 0 10px 17px;}
 .biaoti{font-size:20px;}
 .con_right{padding-top:43px;background:#FFFFFF;}
-.con_right p{font-size:16px;}
+.con_right p{font-size:16px;letter-spacing: 3px;line-height: 30px;}
 .div_left ul{margin-top:40px;}
 .div_left ul li{list-style-type:none;}
 .partner ul{margin-right:5px;}

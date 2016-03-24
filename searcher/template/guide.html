@@ -13,8 +13,7 @@
 				$('#'+id).show().siblings().hide();
 			});
 			
-			$('#bzzx_content').find('li').click(function(){
-			
+			/*$('#bzzx_content').find('li').click(function(){
 			 $(this).find('#donline').show();
 				var this_div = $(this).find('div');
 				if(this_div.is(':hidden')){
@@ -22,7 +21,7 @@
 				}else{
 					this_div.hide();
 				}
-			});
+			});*/
 
 			$('#daohang').children('a').bind('focus',function(){
 				$('#daohang a').css('color','#808080');
@@ -33,88 +32,21 @@
 	
 		
     </script>  
-	<script type=text/javascript>
-	var LastLeftID = "";
-	function menuFix() {
-	 var obj = document.getElementById("nav").getElementsByTagName("li");
-	
-	 for (var i=0; i<obj.length; i++) {
-	  obj[i].onmouseover=function() {
-	   this.className+=(this.className.length>0? " ": "") + "sfhover";
-	  }
-	  obj[i].onMouseDown=function() {
-	   this.className+=(this.className.length>0? " ": "") + "sfhover";
-	  }
-	  obj[i].onMouseUp=function() {
-	   this.className+=(this.className.length>0? " ": "") + "sfhover";
-	  }
-	  obj[i].onmouseout=function() {
-	   this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
-	  }
-	 }
-	}
-	function DoMenu(emid)
-	{
-	 var obj = document.getElementById(emid); 
-	 obj.className = (obj.className.toLowerCase() == "expanded"?"collapsed":"expanded");
-	 if((LastLeftID!="")&&(emid!=LastLeftID)) //关闭上一个Menu
-	 {
-	  document.getElementById(LastLeftID).className = "collapsed";
-	 }
-	 LastLeftID = emid;
-	}
-	function GetMenuID()
-	{
-	 var MenuID="";
-	 var _paramStr = new String(window.location.href);
-	 var _sharpPos = _paramStr.indexOf("#");
-	 
-	 if (_sharpPos >= 0 && _sharpPos < _paramStr.length - 1)
-	 {
-	  _paramStr = _paramStr.substring(_sharpPos + 1, _paramStr.length);
-	 }
-	 else
-	 {
-	  _paramStr = "";
-	 }
-	 
-	 if (_paramStr.length > 0)
-	 {
-	  var _paramArr = _paramStr.split("&");
-	  if (_paramArr.length>0)
-	  {
-	   var _paramKeyVal = _paramArr[0].split("=");
-	   if (_paramKeyVal.length>0)
-	   {
-		MenuID = _paramKeyVal[1];
-	   }
-	  }
-	  /*
-	  if (_paramArr.length>0)
-	  {
-	   var _arr = new Array(_paramArr.length);
-	  }
-	  
-	  //取所有#后面的，菜单只需用到Menu
-	  //for (var i = 0; i < _paramArr.length; i++)
-	  {
-	   var _paramKeyVal = _paramArr[i].split('=');
-	   
-	   if (_paramKeyVal.length>0)
-	   {
-		_arr[_paramKeyVal[0]] = _paramKeyVal[1];
-	   }  
-	  }
-	  */
-	 }
-	 
-	 if(MenuID!="")
-	 {
-	  DoMenu(MenuID)
-	 }
-	}
-	GetMenuID(); //*这两个function的顺序要注意一下，不然在Firefox里GetMenuID()不起效果
-	menuFix();
+	<script type="text/javascript">
+		$(function(){
+			$("#nav111 a").click(function(){
+				var oLi=$(this).next();
+				if(oLi.css("display") == "none"){
+					$(this).siblings("li").css("display","none");
+					oLi.css('display','block');
+					$(this).find("img").attr("src","/static/images/arrows-bottom.png").end().siblings().find("img").attr("src","/static/images/arrows-top.png");
+				}else{
+					$(this).siblings("li").css("display","none");
+					oLi.css('display','none');
+					$(this).find("img").attr("src","/static/images/arrows-top.png").end().siblings().find("img").attr("src","/static/images/arrows-top.png");
+				}
+			})
+		})
 	</script>
 	<script type="text/javascript">
 		$(function(){
@@ -159,7 +91,7 @@
 		<div class="div_right">
 		   <div id="gyzc" class="con_right">   
 				 <div class="biaoti">关于众投</div>
-				 <p style="width:570px;">{{description|safe}}</p>
+				 <p style="width:570px;"><span>{{description|safe}}</span></p>
 				 <div style="height:78px;"></div>
 		   </div> 
 		   <div id="aqbz" class="display">
@@ -275,52 +207,57 @@
 			</div>
 			<div id="bzzx" class="bzzx" >
 			
-					  <div style="margin-left:40px;font-size:24px;">帮助中心</div>		
+					  <div style="margin-left:40px;font-size:24px;">帮助中心</div>
 					    <div id="PARENT">
 							<ul id="nav111">
-								<li><a href="#Menu=ChildMenu1"  onclick="DoMenu('ChildMenu1')">什么是众投？<span>▼</span></a>
-									 <ul id="ChildMenu1" class="collapsed">
+								<a href="javascript:void(0)">什么是众投？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									 <ul>
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;">众投，通俗地讲，就是对于前景看好的项目（企业），汇聚大众的力量一起来投资，众人拾柴火焰高，在成就企业发展的同时，也成就了投资人。
+										 <p style="margin-left:-40px;"><span>众投，通俗地讲，就是对于前景看好的项目（企业），汇聚大众的力量一起来投资，众人拾柴火焰高，在成就企业发展的同时，也成就了投资人。</span>
 										 </p>
 										 <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 								</li>
-								<li><a href="#Menu=ChildMenu2"  onclick="DoMenu('ChildMenu2')">什么是新三板？<span>▼</span></a>
-									<ul id="ChildMenu2" class="collapsed">
+								<a href="javascript:void(0)">什么是新三板？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									<ul>
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 											<p style="margin-left:-40px;">
-												“新三板”市场原指中关村科技园区非上市股份有限公司进入代办股份系统进行转让试点，因为挂牌企业均为高科技企业而不同于原转让系统内的退市企业及原STAQ、NET系统挂牌公司，故形象地称为“新三板”。新三板的意义主要是针对公司的，会给该企业／公司带来很大的好处。目前，新三板不再局限于中关村科技园区非上市股份有限公司，也不局限于天津滨海、武汉东湖以及上海张江等试点地的非上市股份有限公司，而是全国性的非上市股份有限公司股权交易平台，主要针对的是中小微型企业。10月8日消息，证监会全面支持新三板市场发展的文件即将公布，将包括分层等制度安排。
-												截止2015年12月25日挂牌企业家数已达5016家。
+												<span>“新三板”市场原指中关村科技园区非上市股份有限公司进入代办股份系统进行转让试点，因为挂牌企业均为高科技企业而不同于原转让系统内的退市企业及原STAQ、NET系统挂牌公司，故形象地称为“新三板”。新三板的意义主要是针对公司的，会给该企业／公司带来很大的好处。目前，新三板不再局限于中关村科技园区非上市股份有限公司，也不局限于天津滨海、武汉东湖以及上海张江等试点地的非上市股份有限公司，而是全国性的非上市股份有限公司股权交易平台，主要针对的是中小微型企业。10月8日消息，证监会全面支持新三板市场发展的文件即将公布，将包括分层等制度安排。
+												截止2015年12月25日挂牌企业家数已达5016家。</span>
 
 											</p>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 										</li>
 									</ul>
-
 								</li>
-								<li><a href="#Menu=ChildMenu3" onclick="DoMenu('ChildMenu3')">如何成为认证投资人?<span>▼</span></a>
-									 <ul id="ChildMenu3" class="collapsed">
+								<a href="javascript:void(0)">如何成为认证投资人?<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									 <ul>
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" >第一步:注册，葡萄藤众投网站注册<br>
+										 <p style="margin-left:-40px;" >
+											 <span>第一步:注册，葡萄藤众投网站注册<br>
 											 第二步:提交申请，在"我的账户"中点击“认证投资人”,填写完整资料并提交<br>
 											 第三步:审核，葡萄藤众投对“认证投资人”申请进行审核,通过审核即可成为认证投资人,即可在众投项目中预约投资
-
+											 </span>
 										 </p>
 										 <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 									
 								</li>
-								<li><a href="#Menu=ChildMenu4" onclick="DoMenu('ChildMenu4')">如何参与项目众投？<span>▼</span></a>
-									 <ul id="ChildMenu4" class="collapsed">
+								<a href="javascript:void(0)">如何参与项目众投？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									 <ul>
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" >第一步：注册并认证成为认证投资人<br>
+										 <p style="margin-left:-40px;" >
+											 <span>第一步：注册并认证成为认证投资人<br>
 											 第二步:选定待投项目，提交预约投资<br>
 											 第三步:待葡萄藤众投审核<br>
 											 第四步:签署投资确认书<br>
@@ -330,65 +267,74 @@
 											 第八步:由管理合伙人代表投资主体与项目方企业签署投资协议，办理相关工商法律事宜<br>
 											 第九步:进入投后管理阶段，平台定期披露被投企业信息<br>
 											 第十步:投资退出，按协议分配收益
-
+												 </span>
 										 </p>
 											 <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 									 
 								</li>
-								<li><a href="#Menu=ChildMenu5" onclick="DoMenu('ChildMenu5')">投资人何时开始打款？<span>▼</span></a>
-									 <ul id="ChildMenu5" class="collapsed">
+								<a href="javascript:void(0)">投资人何时开始打款？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									 <ul>
 										 <li>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" >目前我们平台的规则为认筹资金到达100%投资人就可以开始打款，邮件或短信也会进行通知。假设A项目募集资金100万元，那么认筹到达120万元的时候可以开始打款，而打款实际到账资金接近100万元的时候，我们以官网或者邮件的形式通知投资人暂停打款，并且会关闭认筹渠道。当然，我们平台和融资方有权选择投资人以及拒绝一些投机或者目的不明的投资人。
+										 <p style="margin-left:-40px;" ><span>目前我们平台的规则为认筹资金到达100%投资人就可以开始打款，邮件或短信也会进行通知。假设A项目募集资金100万元，那么认筹到达120万元的时候可以开始打款，而打款实际到账资金接近100万元的时候，我们以官网或者邮件的形式通知投资人暂停打款，并且会关闭认筹渠道。当然，我们平台和融资方有权选择投资人以及拒绝一些投机或者目的不明的投资人。</span>
 										</p>
 										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 								</li>
-								<li><a href="#Menu=ChildMenu6" onclick="DoMenu('ChildMenu6')">投资人如何打款？<span>▼</span></a>
-									<ul id="ChildMenu6" class="collapsed">
+								<a href="javascript:void(0)">投资人如何打款？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									<ul>
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >投资人在签署完有限合伙协议就可以打款了，具体收款账号信息会在有限合伙协议里注明。
+											<p style="margin-left:-40px;" ><span>投资人在签署完有限合伙协议就可以打款了，具体收款账号信息会在有限合伙协议里注明。
 												投资人打款完毕后，冷静期为一天，逾期将不接受申请退款
-
+												</span>
 											</p>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu7" onclick="DoMenu('ChildMenu7')">项目融资不足与超募解决方案是什么？<span>▼</span></a>
-									<ul id="ChildMenu7" class="collapsed">
+								<a href="javascript:void(0)">项目融资不足与超募解决方案是什么？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									<ul>
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >1.若在约定的挂牌时间内，没有认购到项目总体融资额度的100%，则视项目融资失败。投资人可以和融资方协商，就是否可以按现有的投资和相应的股权比例，签订投资协议。<br>
-												2.若在约定的挂牌时间内，预约额度超过了项目的融资额度，融资方有权选择对自己发展更有利的投资人，创业者也可以和投资人进行商定其它解决方案，如约定统一时间打款，投资人先到先得；或者在投资人接受的条件下，可以有意向的投资人都按照比例少投资一定的金额，而保证所有有意向的投资人都来参与到项目的投资。
+											<p style="margin-left:-40px;" >
+												<span>1.若在约定的挂牌时间内，没有认购到项目总体融资额度的100%，则视项目融资失败。投资人可以和融资方协商，就是否可以按现有的投资和相应的股权比例，签订投资协议。<br>
+												2.若在约定的挂牌时间内，预约额度超过了项目的融资额度，融资方有权选择对自己发展更有利的投资人，创业者也可以和投资人进行商定其它解决方案，如约定统一时间打款，投资人先到先得；或者在投资人接受的条件下，可以有意向的投资人都按照比例少投资一定的金额，而保证所有有意向的投资人都来参与到项目的投资。</span>
 											</p>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu8" onclick="DoMenu('ChildMenu8')">为什么需要设立有限合伙企业？<span>▼</span></a>
-									<ul id="ChildMenu8" class="collapsed">
+								<a href="javascript:void(0)">为什么需要设立有限合伙企业？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									<ul>
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >设立有限合伙企业主要从决策程序和税务两方面考虑。<br>
+											<p style="margin-left:-40px;" >
+												<span>
+												设立有限合伙企业主要从决策程序和税务两方面考虑。<br>
 												第一，有限责任公司股东会决议需要每个股东签字，决策程序繁琐。有限合伙企业由管理合伙人负责，有限合伙人不参与日常管理。在股权融资里，管理合伙人执行重大决议签字，决策还是由所有投资人共同投票决定。<br>
 												第二，有限合伙企业转让股权所得无需纳税，分配收益时由投资人缴纳个人所得税（分档）。有限责任公司是严格意义的“公司”，凡是涉及公司的税种都需缴纳：营业税、增值税、企业所得税等。
 												值得注意的是，无论是有限合伙企业还是有限责任公司，分红、股权转让收益都需缴纳20%的个人所得税。
-
+													</span>
 											</p>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
-								<li><a href="#Menu=ChildMenu9" onclick="DoMenu('ChildMenu9')">投资人投资后如何退出？<span>▼</span></a>
-									<ul id="ChildMenu9" class="collapsed">
+								<a href="javascript:void(0)">投资人投资后如何退出？<img src="/static/images/arrows-top.png"></a>
+								<li style="display: none">
+									<ul>
 										<li>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >由于有限合伙企业的投资人是由多名个人投资人组成，在投资一定时间之后，如何退出以及何时退出，管理合伙人代表合伙企业决定是否退出，具有最终决定权。
+											<p style="margin-left:-40px;" >
+												<span>由于有限合伙企业的投资人是由多名个人投资人组成，在投资一定时间之后，如何退出以及何时退出，管理合伙人代表合伙企业决定是否退出，具有最终决定权。</span>
 											</p>
 											<div style="margin-left:-40px;" class="donline" id="donline"></div>
 										</li>

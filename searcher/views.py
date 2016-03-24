@@ -805,7 +805,6 @@ def search_investor(request):
     #sql(5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)，字段：cate
     # ('1', '金融在线'),('2', '电子商务'),('3', '医疗'),('4', '互联网'),('5', '社交'),('6', '生活服务'),
     search_word = request.GET.getlist('search_word[]')
-    print search_word
     if search_word == [u'1', u'4']:
         results = UserInformation.objects.all().order_by("-invest_class")
     elif search_word == [u'1', u'5']:
@@ -888,8 +887,7 @@ def search_investor(request):
 
     for i in results:
         b=0.0
-        r = invest_detail.objects.filter(invest_user=i.user)
-        #r=i.user.invest_user_set
+        r = i.user.invest_user_set.all()
         if r:
             for j in r:
                 b+=float(j.invest_amount)*float(j.invest_num)

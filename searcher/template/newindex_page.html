@@ -86,7 +86,18 @@
                 $(".banner li a").eq(a).show();
             }
         })
-
+        /*返回顶部jquery*/
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $(".fanhui").css("right", "10px");
+            } else {
+                $(".fanhui").css("right", "-80px");
+            }
+        })
+        $(".top").click(function () {
+            $("html", "body").animate({scrollTop: 0}, 500);
+            return false;
+        })
     </script>
 </head>
 <body>
@@ -95,7 +106,7 @@
     <!----图片轮番切换----->
     <div class="box">
         <ul class="banner" >
-            <li ><a style="display:block;"><img src="/static/images/activity.jpg" width="100%">
+            <li ><a style="display:block;"><img src="/static/images/monkeyYear.JPG" width="100%">
             </a></li>
             <li ><a style="display:none;"><img src="/static/images/ztsuccess.jpg" width="100%">
             </a></li>
@@ -224,8 +235,7 @@
                     <a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场<br>2号楼908室</a>
                 </p>
                 <p class="yidong">
-                    <a class="fanhui" href="#"></a>
-                    <a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+                    <a class="fanhui" href="#">返回顶部</a>
                 </p>
             </div>
         </div>
