@@ -28,7 +28,7 @@ a{ text-decoration:none;color:#333}
 /*×óÓÒÁ½±ßÐü¸¡*/
 .fixed{position:fixed;bottom: 60px;left: 10px;}
 .side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
-.side a{font-size: 14px;color: #FFFFFF}
+.side a{font-size: 13px;color: #FFFFFF}
 .side p{margin:0;padding:0;border:0;}
 #right_float{
     height: 350px;
@@ -81,7 +81,22 @@ a{ text-decoration:none;color:#333}
     font-family: Î¢ÈíÑÅºÚ;
 }
 #right_float a.fanhui{
-    background: url(/static/images/gototop.png) no-repeat ;
+    position: fixed;
+    display: inline-block;
+    width: 57px;
+    height: 57px;
+    line-height: 57px;
+    text-decoration: none;
+    text-align: center;
+    background-color:rgb(201,202,202);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    visibility: hidden;
+
+}
+#right_float a.fanhui:hover{
+    background-color:#5ca9d3;
 }
 #right_float a.address{
     background: url(/static/images/address.jpg) no-repeat ;

@@ -11,8 +11,25 @@
     <link rel="stylesheet" href="/static/css/zcheader.css"/>
     <link rel="stylesheet" href="/static/css/investor_search.css"/>
     <link rel="stylesheet" href="/static/css/owl.carousel.css"/>
-    <script src="/static/js/jquery-1.8.3.min.js"></script>
-
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        /*返回顶部jquery*/
+        (function($){
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 100) {
+                    jQuery(".fanhui").css("right", "10px");
+                    jQuery(".fanhui").css("visibility","visible");
+                } else {
+                    jQuery(".fanhui").css("right", "-80px");
+                    jQuery(".fanhui").css("visibility","hidden");
+                }
+            })
+            jQuery(".top").click(function () {
+                jQuery("html", "body").animate({scrollTop: 0}, 500);
+                return false;
+            })
+        })(jQuery);
+    </script>
 </head>
 
 <body>
@@ -79,8 +96,7 @@
                 <a class="l_r6 l_rw6" href="####" style="width: 0px;">公司地址:上海市沪闵路7866号莲花广场2号楼908室</a>
             </p>
             <p class="yidong">
-                <a class="fanhui" href="#"></a>
-                <a class="l_r7 l_rw4" href="#" style="width: 0px;">返回顶部</a>
+                <a class="fanhui" href="#">返回顶部</a>
             </p>
         </div>
     </div>

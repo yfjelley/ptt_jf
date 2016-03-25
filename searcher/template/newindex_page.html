@@ -86,18 +86,25 @@
                 $(".banner li a").eq(a).show();
             }
         })
+
+    </script>
+    <script>
         /*返回顶部jquery*/
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $(".fanhui").css("right", "10px");
-            } else {
-                $(".fanhui").css("right", "-80px");
-            }
-        })
-        $(".top").click(function () {
-            $("html", "body").animate({scrollTop: 0}, 500);
-            return false;
-        })
+        (function($){
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 100) {
+                    jQuery(".fanhui").css("right", "10px");
+                    jQuery(".fanhui").css("visibility","visible");
+                } else {
+                    jQuery(".fanhui").css("right", "-80px");
+                    jQuery(".fanhui").css("visibility","hidden");
+                }
+            })
+            jQuery(".top").click(function () {
+                jQuery("html", "body").animate({scrollTop: 0}, 500);
+                return false;
+            })
+        })(jQuery);
     </script>
 </head>
 <body>

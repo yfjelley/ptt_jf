@@ -364,30 +364,26 @@ def userinfo(request,objectid=None):
             form = UserInformationForm()
         #领投项目
 
-        leader  = invest_detail.objects.filter(invest_user=request.user)
+        leader  = request.user.invest_user_set.all()
 
         #跟投项目
-        invest = Project.objects.filter(investor=request.user)
+        invest = request.user.investor_set.all()
 
-        #我发布的项目
-        publish_pr = Project.objects.filter(publish=user)
         #我关注的项目
         attention_pr =   Project.objects.filter(click=user)
         #我关注的人
-        u = User.objects.get(username=request.user)
-
-        attention_persion = u.userinformation.attention_persion.all()
+        attention_persion = request.user.userinformation.attention_persion.all()
 
         signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
         notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
 
-        extend = Extend.objects.filter(extend_user=request.user)
+        extend = request.user.extend_user_set.all()
         if extend:
             extend = extend[0]
         print extend
 
     return render_to_response("userinfo.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
-                                                "publish_pr":publish_pr,"attention_pr":attention_pr,"attention_persion":attention_persion},
+                                                "attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
 def generate(request):
     for i in range(1,10):
@@ -526,7 +522,7 @@ def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     pr = Project.objects.all().distinct()
     for i in pr:
-        f = invest_detail.objects.filter(invest_project=i)
+        f = i.invest_project_set.all()
         m = 0
         for j in f:
             m += float(j.invest_num)
@@ -766,36 +762,31 @@ def publish(request):
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
 def invested(request):
-
     inv = request.POST.get('inv')
-
     id = request.POST.get('project')
     per = request.POST.get('per')
 
     if inv and id:
+        u = Project.objects.get(id=id)
         try:
-            i = invest_detail.objects.get(invest_user=request.user,invest_project=Project.objects.get(id=id))
+            i = invest_detail.objects.get(invest_user=request.user,invest_project=u)
             i.invest_num = int(i.invest_num) + int(inv)
         except:
-            i = invest_detail(invest_user=request.user,invest_project=Project.objects.get(id=id),\
+            i = invest_detail(invest_user=request.user,invest_project=u,\
                           invest_num=inv,invest_type=1,invest_amount=per)
         i.save()
         #计算总共投资了多少份
-        f = invest_detail.objects.filter(invest_project=Project.objects.get(id=id))
         m = 0
-        for i in f:
+        for i in u.invest_project_set.all():
             m += int(i.invest_num)
-        u = Project.objects.get(id=id)
         u.finish = m
         u.save()
 
-        p = Project.objects.get(id=id)
-        print "xxxx"
         try:
-            sendmail.delay(request.user.username,p.name,inv)
+            sendmail.delay(request.user.username,u.name,inv)
         except:
             pass
-        print "dddd"
+
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
@@ -870,9 +861,7 @@ def search_investor(request):
         results = UserInformation.objects.all().order_by("-invest_class")
     a = []
     s = []
-    u = UserInformation.objects.get(user=request.user).attention_persion.all()
-
-
+    u = request.user.userinformation.attention_persion.all()
     ppp = Paginator(results, 10)
 
     try:
@@ -902,7 +891,7 @@ def search_investor(request):
     page_set = get_pageset(last_page, page)
     t = get_template('search_result_investor.html')
 
-    c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set} #make a name
+    c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set}
     content_html = t.render(
             RequestContext(request,c ))
     payload = {
@@ -917,11 +906,11 @@ def investor(request):
 
 def prodetails(request,objectid):
     p = Project.objects.get(id=objectid)
-    forum = project_forum.objects.filter(forum_project=p)
-    invest_de = invest_detail.objects.filter(invest_project=p)
+    forum = p.forum_project_set.all()
+    invest_de = p.invest_project_set.all()
     amount = 0
     try:
-        attention_pr =   Project.objects.filter(click=request.user)
+        attention_pr =   request.user.click_set.all()
         if p in attention_pr:
             flag = 1
         else:
@@ -946,15 +935,11 @@ def invest_pr(request,objectid):
 
 def add_attion(request,objectid):
     t = Project.objects.get(id=objectid)
-    count = len(t.click.all()) + 1
-
-    t.click.add(request.user)
-    t.save()
-    t = Project.objects.get(id=objectid)
-    count1 = len(t.click.all())
-    if count != count1:
+    if request.user in t.click.all():
         comment = u"你已经关注了该项目！"
     else:
+        t.click.add(request.user)
+        t.save()
         comment = u"关注成功！"
     return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
 
@@ -968,22 +953,22 @@ def cancel_attion(request,objectid):
 
 def add_attion_investor(request):
     t =User.objects.get(username=request.POST.get("investor"))
-    u = UserInformation.objects.get(user=request.user)
+    u = request.user.userinformation
     if t not in u.attention_persion.all():
         u.attention_persion.add(t)
         u.save()
-    return HttpResponse(json.dumps({'attion': 56,"comment":1}), content_type="application/json")
+    return HttpResponse(json.dumps({"comment":1}), content_type="application/json")
 
 def cancel_attion_investor(request):
     t = User.objects.get(username=request.POST.get("investor"))
-    u = UserInformation.objects.get(user=request.user)
+    u = request.user.userinformation
     u.attention_persion.remove(t)
     u.save()
     return HttpResponse(json.dumps({}), content_type="application/json")
 
 def get_status(request):
     t = User.objects.get(id=request.POST.get("investor"))
-    u = UserInformation.objects.get(user=request.user)
+    u = request.user.userinformation
     if t in u.attention_persion.all():
         flag = 1
     else:
@@ -1110,15 +1095,13 @@ def project_reply(request,project_id):
                     t.forum_content = request.POST['content']
                 else:
                     return HttpResponse(u'输入内容不能为空!')
-                print "rrrr"
+
                 t.forum_content = t.forum_content.replace("<img>", "<img class = 'bbs_topic_img' src='")
                 t.forum_content = t.forum_content.replace("</img>", "'/>")
                 t.forum_content = t.forum_content.replace("\r\n", "<br/>")
-                print "555"
-                print project_id,Project.objects.filter(id=project_id)[0]
+
                 t.forum_project = Project.objects.filter(id=project_id)[0]
-                print "yyy"
-                print request.user
+
                 t.forum_user = request.user
                 t.save()
                 return HttpResponse(1)
@@ -1169,24 +1152,23 @@ def search_zc(request):
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def investor_info(request,objectid):
-    p1 = UserInformation.objects.get(user=User.objects.get(username=objectid))
-
+    p1 = User.objects.get(username=objectid).userinformation
     return render_to_response('investor_intro.html',{"investor_info":p1}, context_instance=RequestContext(request))
 
 def safety(request, objectid):
     if int(objectid) == 1:
         name = u"项目风控"
-        ag = RegistrationAgreement.objects.filter(name="wind_control")
+        ag = RegistrationAgreement.objects.get(name="wind_control")
     elif int(objectid) == 2:
         name = u"资金保障"
-        ag = RegistrationAgreement.objects.filter(name="fund_security")
+        ag = RegistrationAgreement.objects.get(name="fund_security")
     elif int(objectid) == 3:
         name = u"财务监管系统"
-        ag = RegistrationAgreement.objects.filter(name="financial_supervision")
+        ag = RegistrationAgreement.objects.get(name="financial_supervision")
     elif int(objectid) == 4:
         name = u"技术保障"
-        ag = RegistrationAgreement.objects.filter(name="technical_support")
-    return render_to_response('safety.html',{"name":name, "agreement":ag[0].agreement}, context_instance=RequestContext(request))
+        ag = RegistrationAgreement.objects.get(name="technical_support")
+    return render_to_response('safety.html',{"name":name, "agreement":ag.agreement}, context_instance=RequestContext(request))
 
 def intermediary(request, objectid):
     if int(objectid) == 1:
@@ -1263,7 +1245,7 @@ def uploadify_script(request,objectid):
 def profile_upload(file,request,objectid):
     '''文件上传函数'''
     if file:
-        u = UserInformation.objects.get(user=request.user)
+        u = request.user.userinformation
         im = Image.open(file)
         im.thumbnail((120, 120))
         if int(objectid)== 0:

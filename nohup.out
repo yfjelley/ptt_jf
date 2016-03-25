@@ -31916,3 +31916,2700 @@ TypeError: 'NoneType' object is not callable
 [24/Mar/2016 17:01:53] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 500 8675
 [24/Mar/2016 17:01:54] "GET /investor/ HTTP/1.1" 200 16393
 [24/Mar/2016 17:01:54] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 500 8675
+[24/Mar/2016 17:37:26] "GET / HTTP/1.1" 200 37578
+[24/Mar/2016 17:37:26] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:37:26] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:37:26] "GET /static/css/newindex_page.css HTTP/1.1" 200 5195
+[24/Mar/2016 17:37:26] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:26] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:27] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:29] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+[24/Mar/2016 17:37:30] "GET /project/1 HTTP/1.1" 301 0
+[24/Mar/2016 17:37:30] "GET /project/1/ HTTP/1.1" 200 14851
+[24/Mar/2016 17:37:30] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 120592
+[24/Mar/2016 17:37:30] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 230136
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/ztbannel.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 193680
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/monkeyYear.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 221424
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /static/images/ztsuccess.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 17:37:30] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[24/Mar/2016 17:37:35] "GET /prodetails/14 HTTP/1.1" 301 0
+[24/Mar/2016 17:37:35] "GET /prodetails/14/ HTTP/1.1" 200 35203
+[24/Mar/2016 17:37:35] "GET /static/project/xxlx/team.jpg HTTP/1.1" 200 42818
+[24/Mar/2016 17:37:35] "GET /static/images/refocus_m.jpg HTTP/1.1" 200 20329
+[24/Mar/2016 17:37:35] "GET /getverifycode/ HTTP/1.1" 200 2678
+[24/Mar/2016 17:37:44] "GET /project/1/ HTTP/1.1" 200 14851
+[24/Mar/2016 17:37:45] "GET /prodetails/16 HTTP/1.1" 301 0
+[24/Mar/2016 17:37:45] "GET /prodetails/16/ HTTP/1.1" 200 35675
+[24/Mar/2016 17:37:46] "GET /static/project/wz/3.jpg HTTP/1.1" 200 11601
+[24/Mar/2016 17:37:46] "GET /static/project/wz/1.jpg HTTP/1.1" 200 27275
+[24/Mar/2016 17:37:46] "GET /static/project/wz/4.jpg HTTP/1.1" 200 13799
+[24/Mar/2016 17:37:46] "GET /static/project/wz/2.jpg HTTP/1.1" 200 77989
+[24/Mar/2016 17:37:46] "GET /getverifycode/ HTTP/1.1" 200 2672
+[24/Mar/2016 17:37:52] "GET /prodetails/16/ HTTP/1.1" 200 35675
+[24/Mar/2016 17:37:53] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/css/prodetails.css HTTP/1.1" 200 4739
+[24/Mar/2016 17:37:53] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/js/previewer.js HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/js/emoji.js HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/project/wz/1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/project/wz/2.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/project/wz/3.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/images/mgmoney.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/images/mbmoney.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/project/wz/4.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/images/detail-jindu.PNG HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/grinning.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/cat.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/%2B1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/-1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/8ball.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/100.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/airplane.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/ambulance.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/alien.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/angel.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/anger.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/angry.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/anguished.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/astonished.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/baby.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/blush.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/bowtie.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/confounded.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/confused.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/cry.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/disappointed.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/expressionless.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/fearful.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/frowning.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/flushed.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/grimacing.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/grin.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/hushed.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/imp.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/innocent.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/joy.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/kissing.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/laughing.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/mask.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/pensive.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/persevere.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/relaxed.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/relieved.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/scream.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/sleeping.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/smirk.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/sleepy.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/sob.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/tired_face.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/triumph.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/yum.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/bear.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/worried.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/dog.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/monkey.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/beer.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/bento.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:53] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/congratulations.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/clap.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/dancers.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/fist.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/icecream.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/key.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/metal.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/kiss.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/microphone.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/muscle.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/musical_note.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/new.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/no_good.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/open_hands.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/pig.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/point_down.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/point_left.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/point_right.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/point_up.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/pray.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/rocket.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/smoking.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/sos.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/emoji/img/snowman.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /getverifycode/ HTTP/1.1" 200 2669
+[24/Mar/2016 17:37:54] "GET /static/images/order.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/images/focus_m.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/images/tzpeople.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/images/ztzhong.png HTTP/1.1" 304 0
+[24/Mar/2016 17:37:54] "GET /static/images/refocus_m.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:38:02] "GET /project/1/ HTTP/1.1" 200 14851
+[24/Mar/2016 17:38:04] "GET /prodetails/15 HTTP/1.1" 301 0
+[24/Mar/2016 17:38:04] "GET /prodetails/15/ HTTP/1.1" 200 37731
+[24/Mar/2016 17:38:04] "GET /static/project/gdnk/team.jpg HTTP/1.1" 200 33300
+[24/Mar/2016 17:38:04] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:38:04] "GET /getverifycode/ HTTP/1.1" 200 2654
+[24/Mar/2016 17:38:15] "GET /static/images/back_top.png HTTP/1.1" 200 961
+[24/Mar/2016 17:38:15] "GET /static/images/reply.png HTTP/1.1" 200 2344
+[24/Mar/2016 17:38:21] "GET /investor/ HTTP/1.1" 200 16384
+[24/Mar/2016 17:38:21] "GET /static/css/investor.css HTTP/1.1" 200 7624
+[24/Mar/2016 17:38:21] "GET /static/css/investor_search.css HTTP/1.1" 200 636
+[24/Mar/2016 17:38:21] "GET /static/css/owl.carousel.css HTTP/1.1" 200 1476
+[24/Mar/2016 17:38:21] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[24/Mar/2016 17:38:21] "GET /static/upload/default.png HTTP/1.1" 200 3493
+[24/Mar/2016 17:38:21] "GET /static/images/priletter.jpg HTTP/1.1" 200 19907
+[24/Mar/2016 17:38:21] "GET /static/images/yerztouzi.png HTTP/1.1" 200 2119
+[24/Mar/2016 17:38:21] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:38:21] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:38:21] "GET /static/images/focus.jpg HTTP/1.1" 200 19778
+[24/Mar/2016 17:38:21] "GET /static/images/refocus.jpg HTTP/1.1" 200 20329
+[24/Mar/2016 17:38:22] "GET /guide/ HTTP/1.1" 200 37199
+[24/Mar/2016 17:38:22] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[24/Mar/2016 17:38:27] "GET /static/images/arrows-bottom.png HTTP/1.1" 200 284
+[24/Mar/2016 17:38:29] "GET /guide/ HTTP/1.1" 200 37199
+[24/Mar/2016 17:38:30] "GET /about_us/ HTTP/1.1" 200 28215
+[24/Mar/2016 17:38:31] "GET /static/css/catalog.css HTTP/1.1" 200 3890
+[24/Mar/2016 17:39:04] "GET / HTTP/1.1" 200 37588
+[24/Mar/2016 17:39:04] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:39:04] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:39:06] "GET /investor/ HTTP/1.1" 200 16394
+[24/Mar/2016 17:39:06] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[24/Mar/2016 17:39:06] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:39:06] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:39:06] "GET /project/1 HTTP/1.1" 301 0
+[24/Mar/2016 17:39:06] "GET /project/1/ HTTP/1.1" 200 14861
+[24/Mar/2016 17:39:07] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[24/Mar/2016 17:39:07] "GET /static/project/wz/wz.jpg HTTP/1.1" 200 51376
+[24/Mar/2016 17:39:07] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 200 33901
+[24/Mar/2016 17:39:07] "GET /prodetails/12 HTTP/1.1" 301 0
+[24/Mar/2016 17:39:07] "GET /prodetails/12/ HTTP/1.1" 200 37727
+[24/Mar/2016 17:39:07] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[24/Mar/2016 17:39:08] "GET /getverifycode/ HTTP/1.1" 200 1855
+[24/Mar/2016 17:39:17] "GET /project/1/ HTTP/1.1" 200 14861
+[24/Mar/2016 17:39:18] "GET /prodetails/13 HTTP/1.1" 301 0
+[24/Mar/2016 17:39:18] "GET /prodetails/13/ HTTP/1.1" 200 40570
+[24/Mar/2016 17:39:18] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 17:39:18] "GET /getverifycode/ HTTP/1.1" 200 2687
+[24/Mar/2016 17:39:29] "GET / HTTP/1.1" 200 37588
+[24/Mar/2016 17:57:05] "GET / HTTP/1.1" 200 37838
+[24/Mar/2016 17:57:05] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:05] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:06] "GET / HTTP/1.1" 200 37838
+[24/Mar/2016 17:57:07] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET / HTTP/1.1" 200 37838
+[24/Mar/2016 17:57:07] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[24/Mar/2016 17:57:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[24/Mar/2016 17:57:07] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:07] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:08] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:08] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:08] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:28] "GET / HTTP/1.1" 200 37838
+[24/Mar/2016 17:57:29] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/css/newindex_page.css HTTP/1.1" 200 5219
+[24/Mar/2016 17:57:29] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 17:57:29] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 17:58:02] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 17:58:49] "GET / HTTP/1.1" 200 37837
+[24/Mar/2016 17:58:49] "GET /static/css/newindex_page.css HTTP/1.1" 200 5219
+[24/Mar/2016 17:58:49] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[24/Mar/2016 17:58:49] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[24/Mar/2016 17:58:49] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[24/Mar/2016 17:58:49] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[24/Mar/2016 17:58:49] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[24/Mar/2016 17:58:50] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[24/Mar/2016 17:58:52] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[24/Mar/2016 17:58:52] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[24/Mar/2016 17:58:52] "GET /static/images/phone.png HTTP/1.1" 200 958
+[24/Mar/2016 17:58:52] "GET /static/images/jindutiao.JPG HTTP/1.1" 200 15090
+[24/Mar/2016 17:58:52] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+[24/Mar/2016 17:58:52] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[24/Mar/2016 17:58:54] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[24/Mar/2016 17:58:55] "GET /static/images/heart.png HTTP/1.1" 200 2981
+[24/Mar/2016 17:58:56] "GET /static/images/roundzt.png HTTP/1.1" 200 2969
+[24/Mar/2016 17:58:56] "GET /static/images/roundwc.png HTTP/1.1" 200 3406
+[24/Mar/2016 17:58:56] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[24/Mar/2016 17:58:57] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[24/Mar/2016 17:58:58] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 290160
+[24/Mar/2016 17:58:59] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 350919
+[24/Mar/2016 17:59:00] "GET /static/images/roundyr.png HTTP/1.1" 200 2876
+[24/Mar/2016 17:59:01] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[24/Mar/2016 17:59:01] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[24/Mar/2016 17:59:02] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[24/Mar/2016 17:59:02] "GET /static/images/searmore.png HTTP/1.1" 200 2308
+[24/Mar/2016 17:59:02] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[24/Mar/2016 17:59:02] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[24/Mar/2016 17:59:02] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 315592
+[24/Mar/2016 17:59:03] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[24/Mar/2016 17:59:05] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[24/Mar/2016 18:00:14] "GET / HTTP/1.1" 200 37865
+[24/Mar/2016 18:00:14] "GET /static/css/newindex_page.css HTTP/1.1" 200 5219
+[24/Mar/2016 18:00:14] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[24/Mar/2016 18:00:14] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[24/Mar/2016 18:00:14] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[24/Mar/2016 18:00:15] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[24/Mar/2016 18:00:15] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[24/Mar/2016 18:00:15] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[24/Mar/2016 18:00:17] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[24/Mar/2016 18:00:17] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[24/Mar/2016 18:00:17] "GET /static/images/phone.png HTTP/1.1" 200 958
+[24/Mar/2016 18:00:17] "GET /static/images/heart.png HTTP/1.1" 200 2981
+[24/Mar/2016 18:00:17] "GET /static/images/jindutiao.JPG HTTP/1.1" 200 15090
+[24/Mar/2016 18:00:18] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+[24/Mar/2016 18:00:18] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[24/Mar/2016 18:00:18] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[24/Mar/2016 18:00:19] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[24/Mar/2016 18:00:19] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[24/Mar/2016 18:00:20] "GET /static/images/searmore.png HTTP/1.1" 200 2308
+[24/Mar/2016 18:00:20] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[24/Mar/2016 18:00:21] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[24/Mar/2016 18:00:22] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 315592
+[24/Mar/2016 18:00:22] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 290160
+[24/Mar/2016 18:00:24] "GET /static/images/roundyr.png HTTP/1.1" 200 2876
+[24/Mar/2016 18:00:24] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[24/Mar/2016 18:00:26] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[24/Mar/2016 18:00:26] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[24/Mar/2016 18:00:26] "GET /static/images/roundzt.png HTTP/1.1" 200 2969
+[24/Mar/2016 18:00:26] "GET /static/images/roundwc.png HTTP/1.1" 200 3406
+[24/Mar/2016 18:00:27] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 350919
+[24/Mar/2016 18:00:28] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[24/Mar/2016 18:00:28] "GET /project/1 HTTP/1.1" 301 0
+[24/Mar/2016 18:00:28] "GET /project/1/ HTTP/1.1" 200 14861
+[24/Mar/2016 18:00:29] "GET /static/images/car.jpg HTTP/1.1" 200 150388
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 18:00:29] "GET /static/images/car.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Mar/2016 18:00:29] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[24/Mar/2016 18:00:30] "GET /prodetails/13 HTTP/1.1" 301 0
+[24/Mar/2016 18:00:30] "GET /prodetails/13/ HTTP/1.1" 200 40570
+[24/Mar/2016 18:00:30] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[24/Mar/2016 18:00:30] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 18:00:31] "GET /getverifycode/ HTTP/1.1" 200 2644
+[24/Mar/2016 18:01:49] "GET /prodetails/13/ HTTP/1.1" 200 40570
+[24/Mar/2016 18:01:49] "GET /static/css/prodetails.css HTTP/1.1" 200 4790
+[24/Mar/2016 18:01:49] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[24/Mar/2016 18:01:49] "GET /static/js/previewer.js HTTP/1.1" 200 1593
+[24/Mar/2016 18:01:49] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[24/Mar/2016 18:01:49] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[24/Mar/2016 18:01:49] "GET /static/js/emoji.js HTTP/1.1" 200 560
+[24/Mar/2016 18:01:49] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[24/Mar/2016 18:01:49] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[24/Mar/2016 18:01:49] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[24/Mar/2016 18:01:49] "GET /static/images/zcfinish.png HTTP/1.1" 200 2148
+[24/Mar/2016 18:01:49] "GET /static/images/YK/yk.jpg HTTP/1.1" 200 19390
+[24/Mar/2016 18:01:49] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[24/Mar/2016 18:01:49] "GET /static/upload/p_user16.png HTTP/1.1" 200 24817
+[24/Mar/2016 18:01:49] "GET /static/upload/p_user14.png HTTP/1.1" 200 5171
+[24/Mar/2016 18:01:49] "GET /static/images/detail-jindu.PNG HTTP/1.1" 200 11347
+[24/Mar/2016 18:01:50] "GET /static/upload/p_user15.png HTTP/1.1" 200 24823
+[24/Mar/2016 18:01:50] "GET /static/upload/p_user1.png HTTP/1.1" 200 20389
+[24/Mar/2016 18:01:50] "GET /static/upload/p_user26.png HTTP/1.1" 200 10437
+[24/Mar/2016 18:01:50] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[24/Mar/2016 18:01:50] "GET /static/emoji/img/grinning.png HTTP/1.1" 200 8098
+[24/Mar/2016 18:01:50] "GET /static/emoji/img/cat.png HTTP/1.1" 200 5987
+[24/Mar/2016 18:01:50] "GET /static/emoji/img/%2B1.png HTTP/1.1" 200 5135
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/-1.png HTTP/1.1" 200 5129
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/8ball.png HTTP/1.1" 200 4141
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/100.png HTTP/1.1" 200 3302
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/airplane.png HTTP/1.1" 200 4740
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/ambulance.png HTTP/1.1" 200 3708
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 200 3024
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 200 3053
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 200 3360
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 200 3351
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 200 3034
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 200 3093
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 200 3240
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 200 3249
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/alien.png HTTP/1.1" 200 5478
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/angel.png HTTP/1.1" 200 6672
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/anger.png HTTP/1.1" 200 3079
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/angry.png HTTP/1.1" 200 5088
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/anguished.png HTTP/1.1" 200 7902
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/astonished.png HTTP/1.1" 200 6043
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/baby.png HTTP/1.1" 200 5921
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/blush.png HTTP/1.1" 200 5284
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/bowtie.png HTTP/1.1" 200 6478
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 200 5972
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/confounded.png HTTP/1.1" 200 5881
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/confused.png HTTP/1.1" 200 7306
+[24/Mar/2016 18:01:51] "GET /static/emoji/img/cry.png HTTP/1.1" 200 5699
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/disappointed.png HTTP/1.1" 200 4764
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 200 5648
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 200 6278
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/expressionless.png HTTP/1.1" 200 6669
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/fearful.png HTTP/1.1" 200 5600
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/flushed.png HTTP/1.1" 200 5866
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/frowning.png HTTP/1.1" 200 7361
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 200 7224
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/grimacing.png HTTP/1.1" 200 7928
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/grin.png HTTP/1.1" 200 5721
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 200 5758
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/hushed.png HTTP/1.1" 200 7760
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/innocent.png HTTP/1.1" 200 7000
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/imp.png HTTP/1.1" 200 6652
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/joy.png HTTP/1.1" 200 6339
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/kissing.png HTTP/1.1" 200 7431
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 200 5563
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 200 5767
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/laughing.png HTTP/1.1" 200 6347
+[24/Mar/2016 18:01:52] "GET /static/emoji/img/mask.png HTTP/1.1" 200 5235
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 200 4732
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 200 7121
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/pensive.png HTTP/1.1" 200 5119
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/persevere.png HTTP/1.1" 200 5540
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/relaxed.png HTTP/1.1" 200 5455
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/relieved.png HTTP/1.1" 200 5440
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/scream.png HTTP/1.1" 200 6503
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/sleeping.png HTTP/1.1" 200 8084
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/sleepy.png HTTP/1.1" 200 5837
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/smirk.png HTTP/1.1" 200 5307
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/sob.png HTTP/1.1" 200 5730
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 200 5749
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 200 5785
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/tired_face.png HTTP/1.1" 200 6178
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/triumph.png HTTP/1.1" 200 6164
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/yum.png HTTP/1.1" 200 5886
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/worried.png HTTP/1.1" 200 8022
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/bear.png HTTP/1.1" 200 5561
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/dog.png HTTP/1.1" 200 5945
+[24/Mar/2016 18:01:53] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 200 6550
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 200 5348
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/monkey.png HTTP/1.1" 200 4973
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 200 6828
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 200 5977
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/beer.png HTTP/1.1" 200 6097
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/bento.png HTTP/1.1" 200 5732
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 200 3842
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/clap.png HTTP/1.1" 200 7110
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/dancers.png HTTP/1.1" 200 7918
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/congratulations.png HTTP/1.1" 200 4883
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/fist.png HTTP/1.1" 200 5880
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/heart.png HTTP/1.1" 200 3302
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/icecream.png HTTP/1.1" 200 4603
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/key.png HTTP/1.1" 200 3452
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/kiss.png HTTP/1.1" 200 6295
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/metal.png HTTP/1.1" 200 3098
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/microphone.png HTTP/1.1" 200 3741
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/muscle.png HTTP/1.1" 200 4672
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/musical_note.png HTTP/1.1" 200 3188
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/new.png HTTP/1.1" 200 3927
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/no_good.png HTTP/1.1" 200 7034
+[24/Mar/2016 18:01:54] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 200 4696
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/open_hands.png HTTP/1.1" 200 4951
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/pig.png HTTP/1.1" 200 5996
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/point_down.png HTTP/1.1" 200 3225
+[24/Mar/2016 18:01:55] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[24/Mar/2016 18:01:55] "GET /static/images/order.jpg HTTP/1.1" 200 19893
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/point_left.png HTTP/1.1" 200 3113
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/point_right.png HTTP/1.1" 200 3122
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/point_up.png HTTP/1.1" 200 3431
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 200 3207
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/pray.png HTTP/1.1" 200 6203
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 200 6177
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/rocket.png HTTP/1.1" 200 5388
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/smoking.png HTTP/1.1" 200 2875
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/snowman.png HTTP/1.1" 200 4658
+[24/Mar/2016 18:01:55] "GET /static/emoji/img/sos.png HTTP/1.1" 200 4262
+[24/Mar/2016 18:01:55] "GET /getverifycode/ HTTP/1.1" 200 2662
+[24/Mar/2016 18:01:55] "GET /static/images/focus_m.jpg HTTP/1.1" 200 19778
+[24/Mar/2016 18:01:55] "GET /static/images/mgmoney.png HTTP/1.1" 200 6238
+[24/Mar/2016 18:01:55] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[24/Mar/2016 18:01:56] "GET /static/images/tzpeople.png HTTP/1.1" 200 6236
+[24/Mar/2016 18:01:56] "GET /static/images/mbmoney.png HTTP/1.1" 200 14182
+[24/Mar/2016 18:02:09] "GET / HTTP/1.1" 200 37865
+[24/Mar/2016 18:02:09] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 18:02:10] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[24/Mar/2016 18:02:10] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[24/Mar/2016 19:09:58] "GET / HTTP/1.1" 200 37865
+[24/Mar/2016 19:09:58] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/css/newindex_page.css HTTP/1.1" 200 5279
+[24/Mar/2016 19:09:58] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 19:09:58] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET / HTTP/1.1" 200 37853
+[24/Mar/2016 19:10:23] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/gototop.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:10:23] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET / HTTP/1.1" 200 37865
+[24/Mar/2016 19:11:02] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/css/newindex_page.css HTTP/1.1" 200 5220
+[24/Mar/2016 19:11:02] "GET /static/css/footer.css HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/phone.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/heart.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:11:02] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[24/Mar/2016 19:13:11] "GET /userinfo/ HTTP/1.1" 200 49989
+[24/Mar/2016 19:13:11] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[24/Mar/2016 19:13:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458817991244 HTTP/1.1" 200 12767
+[24/Mar/2016 19:13:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458817991242 HTTP/1.1" 200 12767
+[24/Mar/2016 19:13:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458817991245 HTTP/1.1" 200 12767
+[24/Mar/2016 19:13:16] "GET /userinfo/ HTTP/1.1" 200 49989
+[24/Mar/2016 19:13:16] "GET /userinfo/ HTTP/1.1" 200 49989
+[24/Mar/2016 19:13:16] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[24/Mar/2016 19:13:16] "GET /userinfo/ HTTP/1.1" 200 49989
+[24/Mar/2016 19:13:16] "GET /static/js/timeplus.js?_=1458817996160 HTTP/1.1" 200 1893
+[24/Mar/2016 19:13:16] "GET /static/js/yz.js?_=1458817996233 HTTP/1.1" 200 41463
+[24/Mar/2016 19:13:16] "GET /getverifycode/ HTTP/1.1" 200 2652
+[24/Mar/2016 19:13:28] "GET / HTTP/1.1" 200 37865
+[24/Mar/2016 19:13:28] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 09:43:02] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 09:43:02] "GET /static/css/newindex_page.css HTTP/1.1" 200 5220
+[25/Mar/2016 09:43:02] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 09:43:02] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 09:43:02] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 09:45:08] "GET /about_us/ HTTP/1.1" 200 28215
+[25/Mar/2016 09:45:09] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/subway.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/sanbanlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/dylylogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/wabeilogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/xsblogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/cflogo.png HTTP/1.1" 304 0
+[25/Mar/2016 09:45:09] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 09:56:13] "GET /investor/ HTTP/1.1" 200 16393
+[25/Mar/2016 09:56:13] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 09:56:14] "GET /static/images/focus.jpg HTTP/1.1" 304 0
+[25/Mar/2016 09:56:14] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 09:56:14] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:01:04] "GET / HTTP/1.1" 200 37865
+[25/Mar/2016 10:01:04] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 10:01:24] "GET / HTTP/1.1" 200 37865
+[25/Mar/2016 10:01:44] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:01:45] "GET /project/1/ HTTP/1.1" 200 14861
+[25/Mar/2016 10:01:45] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:04:07] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:04:07] "GET /project/1/ HTTP/1.1" 200 14860
+[25/Mar/2016 10:04:07] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:04:07] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:04:07] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:06:43] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 10:06:43] "GET /static/css/newindex_page.css HTTP/1.1" 200 5220
+[25/Mar/2016 10:06:43] "GET /static/images/roundzt.png HTTP/1.1" 200 2969
+[25/Mar/2016 10:06:44] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[25/Mar/2016 10:06:44] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[25/Mar/2016 10:06:46] "GET /static/images/roundwc.png HTTP/1.1" 200 3406
+[25/Mar/2016 10:06:47] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[25/Mar/2016 10:06:47] "GET /static/images/roundyr.png HTTP/1.1" 200 2876
+[25/Mar/2016 10:06:49] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[25/Mar/2016 10:06:50] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[25/Mar/2016 10:06:51] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[25/Mar/2016 10:06:52] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 350919
+[25/Mar/2016 10:06:53] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 315592
+[25/Mar/2016 10:06:54] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 290160
+[25/Mar/2016 10:06:58] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[25/Mar/2016 10:07:41] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 10:07:52] "GET / HTTP/1.1" 200 37437
+[25/Mar/2016 10:07:52] "GET / HTTP/1.1" 200 37437
+[25/Mar/2016 10:07:53] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:08:18] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:08:18] "GET /project/1/ HTTP/1.1" 200 14851
+[25/Mar/2016 10:08:18] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:08:21] "GET /investor/ HTTP/1.1" 200 16384
+[25/Mar/2016 10:08:21] "GET /static/css/owl.carousel.css HTTP/1.1" 200 1476
+[25/Mar/2016 10:08:21] "GET /static/css/investor_search.css HTTP/1.1" 200 636
+[25/Mar/2016 10:08:21] "GET /static/css/investor.css HTTP/1.1" 200 7624
+[25/Mar/2016 10:08:21] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 10:08:22] "GET /static/images/refocus.jpg HTTP/1.1" 200 20329
+[25/Mar/2016 10:08:22] "GET /static/images/yerztouzi.png HTTP/1.1" 200 2119
+[25/Mar/2016 10:08:22] "GET /static/images/focus.jpg HTTP/1.1" 200 19778
+[25/Mar/2016 10:08:22] "GET /static/images/priletter.jpg HTTP/1.1" 200 19907
+[25/Mar/2016 10:08:22] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:08:22] "GET /static/upload/default.png HTTP/1.1" 200 3493
+[25/Mar/2016 10:08:22] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:23:00] "GET / HTTP/1.1" 200 37865
+[25/Mar/2016 10:23:00] "GET /static/css/newindex_page.css HTTP/1.1" 200 5220
+[25/Mar/2016 10:23:00] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:23:00] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:23:00] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:23:00] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:23:00] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:23:00] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:23:01] "GET /static/images/sdbannel.jpg HTTP/1.1" 200 94946
+[25/Mar/2016 10:23:02] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[25/Mar/2016 10:23:02] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:23:03] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:23:03] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:23:03] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:23:03] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:23:03] "GET /project/1/ HTTP/1.1" 200 14861
+[25/Mar/2016 10:23:03] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:23:03] "GET /static/css/readMore.css HTTP/1.1" 200 7101
+[25/Mar/2016 10:23:03] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 200 4411
+[25/Mar/2016 10:23:03] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:23:03] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 168098
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:03] "GET /static/images/ztbannel.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:04] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:23:04] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:23:04] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:23:04] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 115186
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:04] "GET /static/images/monkeyYear.JPG HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:04] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:23:04] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 73051
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:04] "GET /static/images/ztsuccess.jpg HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[25/Mar/2016 10:23:04] "GET /static/images/Rlogo.png HTTP/1.1" 200 10186
+[25/Mar/2016 10:23:04] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:23:04] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:23:05] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:23:05] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:23:05] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:23:05] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:23:05] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:23:05] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:23:05] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:23:05] "GET /static/images/gototop.png HTTP/1.1" 200 470
+[25/Mar/2016 10:23:05] "GET /static/images/jindutiao.JPG HTTP/1.1" 200 15090
+[25/Mar/2016 10:23:05] "GET /static/images/heart.png HTTP/1.1" 200 2981
+[25/Mar/2016 10:23:05] "GET /static/images/flag.png HTTP/1.1" 200 7872
+[25/Mar/2016 10:23:05] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[25/Mar/2016 10:23:05] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[25/Mar/2016 10:23:06] "GET /static/images/rflag.png HTTP/1.1" 200 8057
+[25/Mar/2016 10:23:06] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 200 56568
+[25/Mar/2016 10:23:06] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 200 55009
+[25/Mar/2016 10:23:07] "GET /static/project/wz/wz.jpg HTTP/1.1" 200 51376
+[25/Mar/2016 10:23:07] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 200 33901
+[25/Mar/2016 10:33:17] "GET /project/1/ HTTP/1.1" 200 15330
+[25/Mar/2016 10:33:17] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/css/readMore.css HTTP/1.1" 200 7306
+[25/Mar/2016 10:33:17] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:33:17] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/phone.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/flag.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/rflag.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:17] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /project/1/ HTTP/1.1" 200 15330
+[25/Mar/2016 10:33:56] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/css/readMore.css HTTP/1.1" 200 7368
+[25/Mar/2016 10:33:56] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:33:56] "GET /static/images/phone.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/flag.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/rflag.png HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:33:56] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:34:03] "GET / HTTP/1.1" 200 37865
+[25/Mar/2016 10:34:04] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[25/Mar/2016 10:34:09] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 315592
+[25/Mar/2016 10:34:09] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 290160
+[25/Mar/2016 10:34:10] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 350919
+[25/Mar/2016 10:34:32] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:34:32] "GET /project/1/ HTTP/1.1" 200 15330
+[25/Mar/2016 10:34:33] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:34:33] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:34:33] "GET /static/css/readMore.css HTTP/1.1" 200 7368
+[25/Mar/2016 10:34:33] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 200 4411
+[25/Mar/2016 10:34:33] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:34:33] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:34:33] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:34:33] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:34:33] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:34:34] "GET /static/images/Rlogo.png HTTP/1.1" 200 10186
+[25/Mar/2016 10:34:34] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:34:34] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:34:34] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:34:34] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:34:34] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:34:34] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:34:34] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:34:34] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:34:34] "GET /project/1/ HTTP/1.1" 200 15330
+[25/Mar/2016 10:34:34] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:34:34] "GET /static/css/readMore.css HTTP/1.1" 200 7368
+[25/Mar/2016 10:34:34] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:34:34] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 200 4411
+[25/Mar/2016 10:34:34] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:34:35] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:34:35] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:34:35] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:34:35] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:34:36] "GET /static/images/Rlogo.png HTTP/1.1" 200 10186
+[25/Mar/2016 10:34:36] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:34:36] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:34:36] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:34:36] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:34:36] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:34:36] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:34:36] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:34:36] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:34:37] "GET /static/images/rflag.png HTTP/1.1" 200 8057
+[25/Mar/2016 10:34:37] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[25/Mar/2016 10:34:37] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 200 55009
+[25/Mar/2016 10:34:37] "GET /static/images/heart.png HTTP/1.1" 200 2981
+[25/Mar/2016 10:34:37] "GET /static/images/flag.png HTTP/1.1" 200 7872
+[25/Mar/2016 10:34:37] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 200 15725
+[25/Mar/2016 10:34:37] "GET /static/images/jindutiao.JPG HTTP/1.1" 200 15090
+[25/Mar/2016 10:34:37] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 200 56568
+[25/Mar/2016 10:34:37] "GET /static/project/wz/wz.jpg HTTP/1.1" 200 51376
+[25/Mar/2016 10:34:37] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 200 33901
+[25/Mar/2016 10:34:53] "GET /prodetails/13 HTTP/1.1" 301 0
+[25/Mar/2016 10:34:54] "GET /prodetails/13/ HTTP/1.1" 200 40570
+[25/Mar/2016 10:34:54] "GET /static/css/prodetails.css HTTP/1.1" 200 4790
+[25/Mar/2016 10:34:54] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:34:54] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:34:54] "GET /static/js/previewer.js HTTP/1.1" 200 1593
+[25/Mar/2016 10:34:54] "GET /static/js/emoji.js HTTP/1.1" 200 560
+[25/Mar/2016 10:34:54] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:34:54] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:34:54] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:34:54] "GET /static/images/YK/project_02.jpg HTTP/1.1" 200 60993
+[25/Mar/2016 10:34:54] "GET /static/images/zcfinish.png HTTP/1.1" 200 2148
+[25/Mar/2016 10:34:54] "GET /static/images/YK/yk.jpg HTTP/1.1" 200 19390
+[25/Mar/2016 10:34:54] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[25/Mar/2016 10:34:54] "GET /static/upload/p_user16.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:34:54] "GET /static/images/detail-jindu.PNG HTTP/1.1" 200 11347
+[25/Mar/2016 10:34:54] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:34:54] "GET /static/images/focus_m.jpg HTTP/1.1" 200 19778
+[25/Mar/2016 10:34:55] "GET /static/images/order.jpg HTTP/1.1" 200 19893
+[25/Mar/2016 10:34:55] "GET /static/images/mbmoney.png HTTP/1.1" 200 14182
+[25/Mar/2016 10:34:55] "GET /static/images/tzpeople.png HTTP/1.1" 200 6236
+[25/Mar/2016 10:34:55] "GET /static/images/mgmoney.png HTTP/1.1" 200 6238
+[25/Mar/2016 10:34:55] "GET /static/upload/p_user14.png HTTP/1.1" 200 5171
+[25/Mar/2016 10:34:55] "GET /static/upload/p_user15.png HTTP/1.1" 200 24823
+[25/Mar/2016 10:34:55] "GET /static/upload/p_user1.png HTTP/1.1" 200 20389
+[25/Mar/2016 10:34:55] "GET /static/upload/p_user26.png HTTP/1.1" 200 10437
+[25/Mar/2016 10:34:56] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/grinning.png HTTP/1.1" 200 8098
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/cat.png HTTP/1.1" 200 5987
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/%2B1.png HTTP/1.1" 200 5135
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/-1.png HTTP/1.1" 200 5129
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/8ball.png HTTP/1.1" 200 4141
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/100.png HTTP/1.1" 200 3302
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/airplane.png HTTP/1.1" 200 4740
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/ambulance.png HTTP/1.1" 200 3708
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 200 3053
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 200 3360
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 200 3351
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 200 3034
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 200 3093
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 200 3240
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 200 3249
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/alien.png HTTP/1.1" 200 5478
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/angel.png HTTP/1.1" 200 6672
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/anger.png HTTP/1.1" 200 3079
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/angry.png HTTP/1.1" 200 5088
+[25/Mar/2016 10:34:56] "GET /static/emoji/img/anguished.png HTTP/1.1" 200 7902
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/astonished.png HTTP/1.1" 200 6043
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/baby.png HTTP/1.1" 200 5921
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/blush.png HTTP/1.1" 200 5284
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/bowtie.png HTTP/1.1" 200 6478
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 200 5972
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/confounded.png HTTP/1.1" 200 5881
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/confused.png HTTP/1.1" 200 7306
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/cry.png HTTP/1.1" 200 5699
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/disappointed.png HTTP/1.1" 200 4764
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 200 5648
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 200 6278
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/expressionless.png HTTP/1.1" 200 6669
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/fearful.png HTTP/1.1" 200 5600
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/flushed.png HTTP/1.1" 200 5866
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/frowning.png HTTP/1.1" 200 7361
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 200 7224
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/grimacing.png HTTP/1.1" 200 7928
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/grin.png HTTP/1.1" 200 5721
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 200 5758
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/hushed.png HTTP/1.1" 200 7760
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/innocent.png HTTP/1.1" 200 7000
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/imp.png HTTP/1.1" 200 6652
+[25/Mar/2016 10:34:57] "GET /static/emoji/img/joy.png HTTP/1.1" 200 6339
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/kissing.png HTTP/1.1" 200 7431
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 200 5563
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 200 5767
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/laughing.png HTTP/1.1" 200 6347
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/mask.png HTTP/1.1" 200 5235
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 200 4732
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 200 7121
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/pensive.png HTTP/1.1" 200 5119
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/persevere.png HTTP/1.1" 200 5540
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/relaxed.png HTTP/1.1" 200 5455
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/relieved.png HTTP/1.1" 200 5440
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/scream.png HTTP/1.1" 200 6503
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/sleeping.png HTTP/1.1" 200 8084
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/sleepy.png HTTP/1.1" 200 5837
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/smirk.png HTTP/1.1" 200 5307
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/sob.png HTTP/1.1" 200 5730
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 200 5749
+[25/Mar/2016 10:34:58] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 200 5785
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/tired_face.png HTTP/1.1" 200 6178
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/triumph.png HTTP/1.1" 200 6164
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/yum.png HTTP/1.1" 200 5886
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/worried.png HTTP/1.1" 200 8022
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/bear.png HTTP/1.1" 200 5561
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/dog.png HTTP/1.1" 200 5945
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 200 6550
+[25/Mar/2016 10:34:59] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 200 5348
+[25/Mar/2016 10:34:59] "GET /investor/ HTTP/1.1" 200 16394
+[25/Mar/2016 10:34:59] "GET /static/css/investor.css HTTP/1.1" 200 7624
+[25/Mar/2016 10:34:59] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:34:59] "GET /static/css/owl.carousel.css HTTP/1.1" 200 1476
+[25/Mar/2016 10:34:59] "GET /static/css/investor_search.css HTTP/1.1" 200 636
+[25/Mar/2016 10:34:59] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:34:59] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:34:59] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:35:00] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:35:00] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:35:00] "GET /static/images/Rlogo.png HTTP/1.1" 200 10186
+[25/Mar/2016 10:35:00] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:35:00] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:35:00] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:35:00] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:35:00] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:35:00] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:35:01] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:35:01] "GET /static/images/gototop.png HTTP/1.1" 200 470
+[25/Mar/2016 10:35:01] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user14.png HTTP/1.1" 200 5171
+[25/Mar/2016 10:35:01] "GET /static/images/yerztouzi.png HTTP/1.1" 200 2119
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user15.png HTTP/1.1" 200 24823
+[25/Mar/2016 10:35:01] "GET /static/images/focus.jpg HTTP/1.1" 200 19778
+[25/Mar/2016 10:35:01] "GET /static/images/priletter.jpg HTTP/1.1" 200 19907
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user1.png HTTP/1.1" 200 20389
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user16.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:35:01] "GET /static/upload/p_user26.png HTTP/1.1" 200 10437
+[25/Mar/2016 10:35:02] "GET /static/upload/default.png HTTP/1.1" 200 3493
+[25/Mar/2016 10:35:02] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:38:28] "GET /investor/ HTTP/1.1" 200 17058
+[25/Mar/2016 10:38:28] "GET /static/css/investor.css HTTP/1.1" 200 7874
+[25/Mar/2016 10:38:28] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:38:28] "GET /static/css/investor_search.css HTTP/1.1" 200 636
+[25/Mar/2016 10:38:28] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:38:28] "GET /static/css/owl.carousel.css HTTP/1.1" 200 1476
+[25/Mar/2016 10:38:28] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:38:28] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:38:28] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:38:28] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:38:28] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:38:28] "GET /static/images/Rlogo.png HTTP/1.1" 200 10186
+[25/Mar/2016 10:38:28] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:38:28] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:38:28] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:38:28] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:38:28] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:38:28] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:38:28] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user15.png HTTP/1.1" 200 24823
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user14.png HTTP/1.1" 200 5171
+[25/Mar/2016 10:38:29] "GET /static/images/yerztouzi.png HTTP/1.1" 200 2119
+[25/Mar/2016 10:38:29] "GET /static/images/priletter.jpg HTTP/1.1" 200 19907
+[25/Mar/2016 10:38:29] "GET /static/images/focus.jpg HTTP/1.1" 200 19778
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user1.png HTTP/1.1" 200 20389
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user16.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user26.png HTTP/1.1" 200 10437
+[25/Mar/2016 10:38:29] "GET /static/upload/default.png HTTP/1.1" 200 3493
+[25/Mar/2016 10:38:29] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:38:35] "GET /guide/ HTTP/1.1" 200 37209
+[25/Mar/2016 10:38:35] "GET /static/css/zhongchou.css HTTP/1.1" 200 6070
+[25/Mar/2016 10:38:35] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:38:35] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:38:36] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:38:37] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:38:38] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:38:38] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:38:38] "GET /static/images/xmfk180-180.png HTTP/1.1" 200 8758
+[25/Mar/2016 10:38:38] "GET /static/images/zjbz180-180.png HTTP/1.1" 200 10960
+[25/Mar/2016 10:38:39] "GET /static/images/cwjg180-180.png HTTP/1.1" 200 8418
+[25/Mar/2016 10:38:39] "GET /static/images/jsbz180-180.png HTTP/1.1" 200 9707
+[25/Mar/2016 10:38:39] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr1.png HTTP/1.1" 200 2007
+[25/Mar/2016 10:38:39] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr2.png HTTP/1.1" 200 2136
+[25/Mar/2016 10:38:39] "GET /static/images/xiazai38-32.png HTTP/1.1" 200 3175
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr3.png HTTP/1.1" 200 2039
+[25/Mar/2016 10:38:39] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:38:39] "GET /static/images/gototop.png HTTP/1.1" 200 470
+[25/Mar/2016 10:38:39] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:38:39] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr4.png HTTP/1.1" 200 2275
+[25/Mar/2016 10:38:39] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:38:39] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr5.png HTTP/1.1" 200 2038
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr7.png HTTP/1.1" 200 2243
+[25/Mar/2016 10:38:39] "GET /static/images/zyxhhr6.png HTTP/1.1" 200 2157
+[25/Mar/2016 10:38:39] "GET /static/images/arrows-top.png HTTP/1.1" 200 280
+[25/Mar/2016 10:38:39] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:38:41] "GET /static/images/flowimg.jpg HTTP/1.1" 200 356274
+[25/Mar/2016 10:43:14] "GET /guide/ HTTP/1.1" 200 37674
+[25/Mar/2016 10:43:14] "GET /static/css/zhongchou.css HTTP/1.1" 200 6327
+[25/Mar/2016 10:43:14] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:43:14] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:43:14] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:43:14] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:43:14] "GET /static/js/jquery.js HTTP/1.1" 200 93435
+[25/Mar/2016 10:43:14] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:43:15] "GET /static/images/xmfk180-180.png HTTP/1.1" 200 8758
+[25/Mar/2016 10:43:15] "GET /static/images/zjbz180-180.png HTTP/1.1" 200 10960
+[25/Mar/2016 10:43:15] "GET /static/images/cwjg180-180.png HTTP/1.1" 200 8418
+[25/Mar/2016 10:43:15] "GET /static/images/jsbz180-180.png HTTP/1.1" 200 9707
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr1.png HTTP/1.1" 200 2007
+[25/Mar/2016 10:43:15] "GET /static/images/xiazai38-32.png HTTP/1.1" 200 3175
+[25/Mar/2016 10:43:15] "GET /static/images/liulan38-32.png HTTP/1.1" 200 3510
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr2.png HTTP/1.1" 200 2136
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr3.png HTTP/1.1" 200 2039
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr4.png HTTP/1.1" 200 2275
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr5.png HTTP/1.1" 200 2038
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr6.png HTTP/1.1" 200 2157
+[25/Mar/2016 10:43:15] "GET /static/images/zyxhhr7.png HTTP/1.1" 200 2243
+[25/Mar/2016 10:43:15] "GET /static/images/arrows-top.png HTTP/1.1" 200 280
+[25/Mar/2016 10:43:15] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:43:15] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:43:15] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:43:15] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:43:15] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:43:15] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:43:15] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:43:18] "GET /static/images/flowimg.jpg HTTP/1.1" 200 356274
+[25/Mar/2016 10:43:39] "GET /about_us/ HTTP/1.1" 200 28225
+[25/Mar/2016 10:43:39] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[25/Mar/2016 10:46:55] "GET /about_us/ HTTP/1.1" 200 28439
+[25/Mar/2016 10:46:55] "GET /static/css/catalog.css HTTP/1.1" 200 3943
+[25/Mar/2016 10:46:55] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:46:55] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:46:55] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:46:55] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:46:55] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:46:55] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:46:55] "GET /static/images/subway.png HTTP/1.1" 200 526
+[25/Mar/2016 10:46:55] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 200 11146
+[25/Mar/2016 10:46:55] "GET /static/images/sanbanlogo.png HTTP/1.1" 200 3772
+[25/Mar/2016 10:46:55] "GET /static/images/dylylogo.png HTTP/1.1" 200 4544
+[25/Mar/2016 10:46:55] "GET /static/images/wabeilogo.png HTTP/1.1" 200 5670
+[25/Mar/2016 10:46:55] "GET /static/images/xsblogo.png HTTP/1.1" 200 4825
+[25/Mar/2016 10:46:55] "GET /static/images/cflogo.png HTTP/1.1" 200 8567
+[25/Mar/2016 10:46:56] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:46:56] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:46:56] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:46:56] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:46:56] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:46:56] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:46:56] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:46:56] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:46:57] "GET /about_us/ HTTP/1.1" 200 28439
+[25/Mar/2016 10:46:57] "GET /static/css/catalog.css HTTP/1.1" 200 3943
+[25/Mar/2016 10:46:57] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:46:57] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:46:57] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:46:57] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:46:58] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:46:58] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:46:58] "GET /static/images/subway.png HTTP/1.1" 200 526
+[25/Mar/2016 10:46:58] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 200 11146
+[25/Mar/2016 10:46:58] "GET /static/images/sanbanlogo.png HTTP/1.1" 200 3772
+[25/Mar/2016 10:46:58] "GET /static/images/dylylogo.png HTTP/1.1" 200 4544
+[25/Mar/2016 10:46:58] "GET /static/images/wabeilogo.png HTTP/1.1" 200 5670
+[25/Mar/2016 10:46:58] "GET /static/images/xsblogo.png HTTP/1.1" 200 4825
+[25/Mar/2016 10:46:58] "GET /static/images/cflogo.png HTTP/1.1" 200 8567
+[25/Mar/2016 10:46:58] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:46:58] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:46:58] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:46:58] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:46:58] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:46:58] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:46:58] "GET /static/images/address.jpg HTTP/1.1" 200 734
+Validating models...
+
+0 errors found
+March 24, 2016 - 17:34:32
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 21376)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 21344)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 21024)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 21312)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 10880)
+----------------------------------------
+Extend object
+Extend object
+Extend object
+Extend object
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 43040)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 42977)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('211.95.56.242', 43009)
+----------------------------------------
+[25/Mar/2016 10:48:26] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:48:26] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:26] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:27] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:28] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:48:29] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:48:29] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:48:36] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:48:36] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:36] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:37] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[25/Mar/2016 10:48:37] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:48:38] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:48:38] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 10:48:38] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:48:42] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 10:48:42] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:48:42] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:48:42] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:48:43] "GET /guide/ HTTP/1.1" 200 37673
+[25/Mar/2016 10:48:43] "GET /static/css/zhongchou.css HTTP/1.1" 200 6327
+[25/Mar/2016 10:48:43] "GET /static/images/flowimg.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:48:43] "GET /static/images/arrows-top.png HTTP/1.1" 200 280
+[25/Mar/2016 10:48:44] "GET /about_us/ HTTP/1.1" 200 28438
+[25/Mar/2016 10:48:45] "GET /guide/ HTTP/1.1" 200 37673
+[25/Mar/2016 10:48:53] "GET /about_us/ HTTP/1.1" 200 28438
+[25/Mar/2016 10:48:54] "GET /guide/ HTTP/1.1" 200 37673
+[25/Mar/2016 10:48:55] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 10:48:55] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:48:55] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:48:55] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:48:56] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:48:56] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 10:48:56] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:48:58] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:49:06] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:49:06] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:06] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:49:06] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:06] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:06] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:07] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:17] "GET /about_us/ HTTP/1.1" 200 28699
+[25/Mar/2016 10:49:17] "GET /static/css/catalog.css HTTP/1.1" 200 4183
+[25/Mar/2016 10:49:17] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[25/Mar/2016 10:49:17] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[25/Mar/2016 10:49:17] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[25/Mar/2016 10:49:17] "GET /static/upload/p_user23.png HTTP/1.1" 200 24817
+[25/Mar/2016 10:49:17] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 200 93639
+[25/Mar/2016 10:49:17] "GET /static/images/sqtzr.png HTTP/1.1" 200 11708
+[25/Mar/2016 10:49:18] "GET /static/images/subway.png HTTP/1.1" 200 526
+[25/Mar/2016 10:49:18] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 200 11146
+[25/Mar/2016 10:49:18] "GET /static/images/sanbanlogo.png HTTP/1.1" 200 3772
+[25/Mar/2016 10:49:18] "GET /static/images/dylylogo.png HTTP/1.1" 200 4544
+[25/Mar/2016 10:49:18] "GET /static/images/wabeilogo.png HTTP/1.1" 200 5670
+[25/Mar/2016 10:49:18] "GET /static/images/xsblogo.png HTTP/1.1" 200 4825
+[25/Mar/2016 10:49:18] "GET /static/images/cflogo.png HTTP/1.1" 200 8567
+[25/Mar/2016 10:49:18] "GET /static/images/wxcode.png HTTP/1.1" 200 8450
+[25/Mar/2016 10:49:18] "GET /static/images/8cm.jpg HTTP/1.1" 200 27077
+[25/Mar/2016 10:49:18] "GET /static/images/searchsub.png HTTP/1.1" 200 3024
+[25/Mar/2016 10:49:18] "GET /static/images/weixin_1.png HTTP/1.1" 200 898
+[25/Mar/2016 10:49:18] "GET /static/images/emails.jpg HTTP/1.1" 200 758
+[25/Mar/2016 10:49:18] "GET /static/images/phone.png HTTP/1.1" 200 958
+[25/Mar/2016 10:49:18] "GET /static/images/address.jpg HTTP/1.1" 200 734
+[25/Mar/2016 10:49:31] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:49:31] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:31] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:31] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 10:49:31] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:31] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:31] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[25/Mar/2016 10:49:32] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 10:49:47] "GET / HTTP/1.1" 200 37865
+[25/Mar/2016 10:49:55] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:49:55] "GET /project/1/ HTTP/1.1" 200 15330
+[25/Mar/2016 10:49:55] "GET /static/css/readMore.css HTTP/1.1" 304 0
+[25/Mar/2016 10:49:55] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:49:59] "GET /investor/ HTTP/1.1" 200 17058
+[25/Mar/2016 10:49:59] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 10:50:00] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:50:00] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:50:00] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:50:05] "GET /guide/ HTTP/1.1" 200 37674
+[25/Mar/2016 10:50:06] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[25/Mar/2016 10:54:28] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 10:54:28] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 10:54:28] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:54:28] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 10:54:29] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 10:54:29] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 10:54:30] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 10:54:31] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 10:54:32] "GET /guide/ HTTP/1.1" 200 37673
+[25/Mar/2016 10:54:32] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[25/Mar/2016 10:54:33] "GET /about_us/ HTTP/1.1" 200 28698
+[25/Mar/2016 10:54:36] "GET /userinfo/ HTTP/1.1" 200 42118
+[25/Mar/2016 10:54:36] "GET /static/upload/financial_assets21Jellyfish.jpg HTTP/1.1" 200 15874
+[25/Mar/2016 10:54:36] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[25/Mar/2016 10:54:38] "GET / HTTP/1.1" 200 37864
+Validating models...
+
+0 errors found
+March 25, 2016 - 10:48:21
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+[25/Mar/2016 11:12:38] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 11:12:38] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 11:12:38] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:12:38] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:12:39] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 11:12:39] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 11:12:39] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 11:12:41] "GET /prodetails/13 HTTP/1.1" 301 0
+[25/Mar/2016 11:12:41] "GET /prodetails/13/ HTTP/1.1" 200 40569
+[25/Mar/2016 11:12:41] "GET /static/css/prodetails.css HTTP/1.1" 200 4790
+[25/Mar/2016 11:12:41] "GET /static/js/previewer.js HTTP/1.1" 200 1593
+[25/Mar/2016 11:12:41] "GET /static/js/emoji.js HTTP/1.1" 200 560
+[25/Mar/2016 11:12:41] "GET /static/images/zcfinish.png HTTP/1.1" 200 2148
+[25/Mar/2016 11:12:41] "GET /static/images/YK/yk.jpg HTTP/1.1" 200 19390
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/grinning.png HTTP/1.1" 200 8098
+[25/Mar/2016 11:12:41] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/cat.png HTTP/1.1" 200 5987
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/%2B1.png HTTP/1.1" 200 5135
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/-1.png HTTP/1.1" 200 5129
+[25/Mar/2016 11:12:41] "GET /static/images/detail-jindu.PNG HTTP/1.1" 200 11347
+[25/Mar/2016 11:12:41] "GET /static/images/focus_m.jpg HTTP/1.1" 200 19778
+[25/Mar/2016 11:12:41] "GET /static/images/order.jpg HTTP/1.1" 200 19893
+[25/Mar/2016 11:12:41] "GET /static/images/mgmoney.png HTTP/1.1" 304 0
+[25/Mar/2016 11:12:41] "GET /static/images/mbmoney.png HTTP/1.1" 304 0
+[25/Mar/2016 11:12:41] "GET /static/images/tzpeople.png HTTP/1.1" 304 0
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/8ball.png HTTP/1.1" 200 4141
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/100.png HTTP/1.1" 200 3302
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/airplane.png HTTP/1.1" 200 4740
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/ambulance.png HTTP/1.1" 200 3708
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 200 3024
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 200 3053
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 200 3360
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 200 3351
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 200 3034
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 200 3093
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 200 3240
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 200 3249
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/alien.png HTTP/1.1" 200 5478
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/angel.png HTTP/1.1" 200 6672
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/anger.png HTTP/1.1" 200 3079
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/angry.png HTTP/1.1" 200 5088
+[25/Mar/2016 11:12:41] "GET /static/emoji/img/anguished.png HTTP/1.1" 200 7902
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/astonished.png HTTP/1.1" 200 6043
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/baby.png HTTP/1.1" 200 5921
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/blush.png HTTP/1.1" 200 5284
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/bowtie.png HTTP/1.1" 200 6478
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 200 5972
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/confounded.png HTTP/1.1" 200 5881
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/cry.png HTTP/1.1" 200 5699
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/confused.png HTTP/1.1" 200 7306
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/disappointed.png HTTP/1.1" 200 4764
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 200 5648
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 200 6278
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/expressionless.png HTTP/1.1" 200 6669
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/fearful.png HTTP/1.1" 200 5600
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/flushed.png HTTP/1.1" 200 5866
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/frowning.png HTTP/1.1" 200 7361
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 200 7224
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/grimacing.png HTTP/1.1" 200 7928
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/grin.png HTTP/1.1" 200 5721
+[25/Mar/2016 11:12:42] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 200 5758
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/hushed.png HTTP/1.1" 200 7760
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/innocent.png HTTP/1.1" 200 7000
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/joy.png HTTP/1.1" 200 6339
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/kissing.png HTTP/1.1" 200 7431
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 200 5563
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 200 5767
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/laughing.png HTTP/1.1" 200 6347
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/mask.png HTTP/1.1" 200 5235
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 200 4732
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 200 7121
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/pensive.png HTTP/1.1" 200 5119
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/persevere.png HTTP/1.1" 200 5540
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/relaxed.png HTTP/1.1" 200 5455
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/relieved.png HTTP/1.1" 200 5440
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/scream.png HTTP/1.1" 200 6503
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/sleeping.png HTTP/1.1" 200 8084
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/sleepy.png HTTP/1.1" 200 5837
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/smirk.png HTTP/1.1" 200 5307
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/sob.png HTTP/1.1" 200 5730
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 200 5749
+[25/Mar/2016 11:12:43] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 200 5785
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/tired_face.png HTTP/1.1" 200 6178
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/triumph.png HTTP/1.1" 200 6164
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/yum.png HTTP/1.1" 200 5886
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/worried.png HTTP/1.1" 200 8022
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/bear.png HTTP/1.1" 200 5561
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/dog.png HTTP/1.1" 200 5945
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 200 6550
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 200 5348
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/monkey.png HTTP/1.1" 200 4973
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 200 6828
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 200 5977
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/beer.png HTTP/1.1" 200 6097
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/bento.png HTTP/1.1" 200 5732
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 200 3842
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/clap.png HTTP/1.1" 200 7110
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/congratulations.png HTTP/1.1" 200 4883
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/dancers.png HTTP/1.1" 200 7918
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/fist.png HTTP/1.1" 200 5880
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/heart.png HTTP/1.1" 200 3302
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/icecream.png HTTP/1.1" 200 4603
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/key.png HTTP/1.1" 200 3452
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/kiss.png HTTP/1.1" 200 6295
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/metal.png HTTP/1.1" 200 3098
+[25/Mar/2016 11:12:44] "GET /static/emoji/img/microphone.png HTTP/1.1" 200 3741
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/muscle.png HTTP/1.1" 200 4672
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/musical_note.png HTTP/1.1" 200 3188
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/new.png HTTP/1.1" 200 3927
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/no_good.png HTTP/1.1" 200 7034
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 200 4696
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/open_hands.png HTTP/1.1" 200 4951
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/pig.png HTTP/1.1" 200 5996
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/point_down.png HTTP/1.1" 200 3225
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/point_left.png HTTP/1.1" 200 3113
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/point_right.png HTTP/1.1" 200 3122
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/point_up.png HTTP/1.1" 200 3431
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 200 3207
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/pray.png HTTP/1.1" 200 6203
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 200 6177
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/smoking.png HTTP/1.1" 200 2875
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/rocket.png HTTP/1.1" 200 5388
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/snowman.png HTTP/1.1" 200 4658
+[25/Mar/2016 11:12:45] "GET /static/emoji/img/sos.png HTTP/1.1" 200 4262
+[25/Mar/2016 11:12:45] "GET /getverifycode/ HTTP/1.1" 200 2678
+[25/Mar/2016 11:12:46] "GET /static/emoji/img/imp.png HTTP/1.1" 200 6652
+[25/Mar/2016 11:12:51] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 11:12:51] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 11:12:51] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 11:12:53] "GET /prodetails/14 HTTP/1.1" 301 0
+[25/Mar/2016 11:12:53] "GET /prodetails/14/ HTTP/1.1" 200 35163
+[25/Mar/2016 11:12:53] "GET /static/images/ztzhong.png HTTP/1.1" 200 1606
+[25/Mar/2016 11:12:53] "GET /static/project/xxlx/team.jpg HTTP/1.1" 200 42818
+[25/Mar/2016 11:12:53] "GET /getverifycode/ HTTP/1.1" 200 2561
+[25/Mar/2016 11:12:54] "GET /invest_pr/141/ HTTP/1.1" 200 12279
+[25/Mar/2016 11:12:55] "GET /static/css/touzi.css HTTP/1.1" 200 984
+[25/Mar/2016 11:13:07] "POST /invested/ HTTP/1.1" 200 8
+[25/Mar/2016 11:13:09] "GET /invest_pr/141/ HTTP/1.1" 200 12279
+[25/Mar/2016 11:13:09] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/css/touzi.css HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 11:13:09] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+Validating models...
+
+0 errors found
+March 25, 2016 - 10:58:34
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+xxxx
+dddd
+[25/Mar/2016 11:14:01] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 11:14:01] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 11:14:01] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:14:01] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:14:02] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 11:14:02] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 11:14:02] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 11:14:07] "GET /prodetails/13 HTTP/1.1" 301 0
+[25/Mar/2016 11:14:07] "GET /prodetails/13/ HTTP/1.1" 200 40569
+[25/Mar/2016 11:14:07] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:14:07] "GET /getverifycode/ HTTP/1.1" 200 2638
+[25/Mar/2016 11:25:39] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 11:25:39] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 11:25:40] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 11:25:43] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 11:25:43] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 11:25:43] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:25:43] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:32:27] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 11:32:27] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/css/investor.css HTTP/1.1" 200 7874
+[25/Mar/2016 11:32:27] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/phone.png HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 11:32:27] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[25/Mar/2016 11:32:27] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:32:27] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:34:16] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 11:34:16] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 11:34:16] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 11:34:16] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 11:34:16] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 13:27:03] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 13:27:03] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 13:27:03] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 13:27:03] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 13:27:03] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 13:27:03] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/images/priletter.jpg HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 13:27:04] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 13:51:26] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 13:51:26] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/css/investor.css HTTP/1.1" 200 7874
+[25/Mar/2016 13:51:26] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/phone.png HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[25/Mar/2016 13:51:26] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 13:51:26] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 13:51:26] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:04:48] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 14:04:48] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 14:04:48] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 14:04:48] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:04:48] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:05:02] "GET /static/images/reset.png HTTP/1.1" 200 1807
+[25/Mar/2016 14:05:02] "GET /static/images/send.png HTTP/1.1" 200 1844
+[25/Mar/2016 14:05:06] "GET /static/images/refocus.jpg HTTP/1.1" 304 0
+[25/Mar/2016 14:05:06] "POST /add_attion_investor/ HTTP/1.1" 200 28
+[25/Mar/2016 14:05:07] "POST /cancel_attion_investor/ HTTP/1.1" 200 2
+[25/Mar/2016 14:05:38] "GET /userinfo/ HTTP/1.1" 200 42969
+[25/Mar/2016 14:05:38] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[25/Mar/2016 14:05:40] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 14:05:40] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 14:05:40] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:05:40] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:05:41] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 14:05:41] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 14:05:42] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 14:13:46] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 14:13:46] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 14:13:46] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:13:46] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:14:11] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 14:14:12] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 14:14:12] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 14:14:12] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 14:14:12] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+Validating models...
+
+0 errors found
+March 25, 2016 - 11:13:58
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+[25/Mar/2016 15:01:34] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 15:01:34] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/upload/default.png HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:01:34] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 15:01:34] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:01:34] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:01:38] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:01:38] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 15:01:38] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:01:39] "GET /investor/ HTTP/1.1" 200 17057
+[25/Mar/2016 15:01:40] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 31947
+[25/Mar/2016 15:01:40] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:01:40] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:01:41] "GET /guide/ HTTP/1.1" 200 37673
+[25/Mar/2016 15:01:41] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:42] "GET /about_us/ HTTP/1.1" 200 28698
+[25/Mar/2016 15:01:44] "GET / HTTP/1.1" 200 37864
+[25/Mar/2016 15:01:44] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 15:01:46] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:01:46] "GET /project/1/ HTTP/1.1" 200 15329
+[25/Mar/2016 15:01:46] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:03:39] "GET /logout/ HTTP/1.1" 302 0
+[25/Mar/2016 15:03:39] "GET / HTTP/1.1" 200 37437
+[25/Mar/2016 15:03:41] "GET /login/ HTTP/1.1" 200 12706
+[25/Mar/2016 15:03:41] "GET /static/css/login.css HTTP/1.1" 304 0
+[25/Mar/2016 15:03:41] "GET /static/images/bglogo.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:03:41] "GET /static/images/smalllogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:03:41] "GET /getverifycode/ HTTP/1.1" 200 2664
+[25/Mar/2016 15:03:41] "GET /static/images/login.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:03:48] "POST /checkuser/ HTTP/1.1" 200 26
+[25/Mar/2016 15:03:48] "GET /static/images/right.png HTTP/1.1" 304 0
+[25/Mar/2016 15:03:55] "POST /checkvcode/ HTTP/1.1" 200 26
+[25/Mar/2016 15:03:56] "POST /login/ HTTP/1.1" 302 0
+[25/Mar/2016 15:03:56] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 15:03:59] "GET /userinfo/ HTTP/1.1" 200 51987
+[25/Mar/2016 15:04:00] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 15:04:00] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 15:04:00] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:04:00] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:04:00] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:04:00] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:04:00] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:01:25
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+[25/Mar/2016 15:14:00] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:14:00] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:14:00] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:14:00] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:14:02] "POST /cancel_attion_investor/ HTTP/1.1" 200 2
+[25/Mar/2016 15:14:04] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:14:04] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:04] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32004
+[25/Mar/2016 15:14:04] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:14:04] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:14:05] "POST /add_attion_investor/ HTTP/1.1" 200 28
+[25/Mar/2016 15:14:07] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:14:07] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/css/investor_search.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/css/owl.carousel.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:14:07] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:14:07] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:14:07] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:17:49] "GET / HTTP/1.1" 200 37855
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:05:28
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[25/Mar/2016 15:27:38] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 15:27:38] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 15:27:38] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:38] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:27:38] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/monkeyYear.JPG HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/roundyr.png HTTP/1.1" 304 0
+[25/Mar/2016 15:27:39] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:27:46] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:27:46] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 15:27:46] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:27:47] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:27:47] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:27:47] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:27:47] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:27:48] "GET /guide/ HTTP/1.1" 200 37664
+[25/Mar/2016 15:27:48] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[25/Mar/2016 15:27:49] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 15:27:50] "GET /guide/ HTTP/1.1" 200 37664
+[25/Mar/2016 15:27:51] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:27:51] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:27:51] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:27:51] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:27:51] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:27:51] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 15:27:51] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:27:53] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 15:27:59] "GET /guide/ HTTP/1.1" 200 37664
+[25/Mar/2016 15:28:00] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:28:00] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:28:00] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:00] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:01] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:28:01] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 15:28:01] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:28:02] "GET /prodetails/12 HTTP/1.1" 301 0
+[25/Mar/2016 15:28:03] "GET /prodetails/12/ HTTP/1.1" 200 37668
+[25/Mar/2016 15:28:03] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[25/Mar/2016 15:28:03] "GET /getverifycode/ HTTP/1.1" 200 2643
+[25/Mar/2016 15:28:05] "GET /static/images/refocus_m.jpg HTTP/1.1" 200 20329
+[25/Mar/2016 15:28:05] "POST /add_attion/12/ HTTP/1.1" 500 8657
+[25/Mar/2016 15:28:08] "GET /prodetails/12/ HTTP/1.1" 200 37717
+[25/Mar/2016 15:28:09] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/js/previewer.js HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/js/emoji.js HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/mbmoney.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/tzpeople.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/mgmoney.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/ztzhong.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/images/detail-jindu.PNG HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/cat.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/grinning.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/%2B1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/-1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/8ball.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/100.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/airplane.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/ambulance.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/angel.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/alien.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/angry.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/anger.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/anguished.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/astonished.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/baby.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/blush.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/bowtie.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/confounded.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/confused.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/cry.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/disappointed.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/expressionless.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/fearful.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/flushed.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/frowning.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/grimacing.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/grin.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/hushed.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/innocent.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/joy.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/kissing.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/laughing.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/mask.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/persevere.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/pensive.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/relaxed.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/relieved.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/scream.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/sleeping.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/smirk.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/sleepy.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/sob.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/tired_face.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/triumph.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/yum.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/worried.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/bear.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/dog.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/monkey.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/beer.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/bento.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/clap.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/congratulations.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/fist.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/dancers.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/icecream.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/heart.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/key.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/kiss.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:09] "GET /static/emoji/img/metal.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/microphone.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/muscle.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/musical_note.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/new.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/no_good.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/open_hands.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/pig.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/point_down.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/point_left.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/point_right.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/point_up.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/pray.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/rocket.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/smoking.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/snowman.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /static/emoji/img/sos.png HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /getverifycode/ HTTP/1.1" 200 2672
+[25/Mar/2016 15:28:10] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:28:10] "GET /invest_pr/121/ HTTP/1.1" 200 12276
+[25/Mar/2016 15:28:12] "GET /prodetails/12/ HTTP/1.1" 200 37717
+[25/Mar/2016 15:28:21] "GET /static/images/back_top.png HTTP/1.1" 200 961
+[25/Mar/2016 15:28:27] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:28:27] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:28:27] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:27] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:29] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:28:29] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 15:28:29] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:28:34] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 15:28:34] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:34] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[25/Mar/2016 15:28:35] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 15:28:36] "POST /do_result/ HTTP/1.1" 200 12992
+[25/Mar/2016 15:28:36] "POST /do_search/ HTTP/1.1" 200 11567
+[25/Mar/2016 15:28:38] "GET /prodetails/13 HTTP/1.1" 301 0
+[25/Mar/2016 15:28:38] "GET /prodetails/13/ HTTP/1.1" 200 40560
+[25/Mar/2016 15:28:38] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:28:38] "GET /getverifycode/ HTTP/1.1" 200 2552
+[25/Mar/2016 15:29:25] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 15:29:26] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 15:29:26] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 15:29:26] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 15:29:27] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 15:29:27] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 15:29:27] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:29:27] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:29:27] "GET /guide/ HTTP/1.1" 200 37664
+[25/Mar/2016 15:29:28] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 15:37:38] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 15:37:38] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[25/Mar/2016 15:37:38] "GET /static/images/roundzt.png HTTP/1.1" 200 2969
+[25/Mar/2016 15:37:39] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 200 130699
+[25/Mar/2016 15:37:40] "GET /static/images/roundwc.png HTTP/1.1" 200 3406
+[25/Mar/2016 15:37:41] "GET /static/images/car.jpg HTTP/1.1" 200 155868
+[25/Mar/2016 15:37:42] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 200 82764
+[25/Mar/2016 15:37:42] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 200 100930
+[25/Mar/2016 15:37:43] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 200 57602
+[25/Mar/2016 15:37:45] "GET /static/images/monkeyYear.JPG HTTP/1.1" 200 350919
+[25/Mar/2016 15:37:47] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 200 185486
+[25/Mar/2016 15:37:47] "GET /static/images/roundyr.png HTTP/1.1" 200 2876
+[25/Mar/2016 15:37:48] "GET /static/images/ztsuccess.jpg HTTP/1.1" 200 315592
+[25/Mar/2016 15:37:49] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 200 177391
+[25/Mar/2016 15:37:50] "GET /static/images/ztbannel.jpg HTTP/1.1" 200 290160
+[25/Mar/2016 15:48:51] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 15:48:52] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 15:48:55] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 15:48:55] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:48:55] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[25/Mar/2016 15:53:46] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892132385 HTTP/1.1" 200 12767
+[25/Mar/2016 15:53:46] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892132388 HTTP/1.1" 200 12767
+[25/Mar/2016 15:53:46] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892132386 HTTP/1.1" 200 12767
+[25/Mar/2016 15:53:46] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 15:53:47] "GET /userinfo/ HTTP/1.1" 200 53028
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:18:22
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+<WSGIRequest
+path:/do_search/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {u'page': [u'1'], u'keyword': [u'0']}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1458890912',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1458529843,1458697847,1458810105,1458870179',
+ 'csrftoken': 'fP9Io8iqOASk11PjQUw2Jg3g0KD4YKHD',
+ 'pgv_pvid': '6535870372',
+ 'sessionid': 'q6n0u1tfjwutzm4ioey8cf8p0ydclsgk'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '16',
+ 'CONTENT_TYPE': 'application/x-www-form-urlencoded; charset=UTF-8',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': '*/*',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'csrftoken=fP9Io8iqOASk11PjQUw2Jg3g0KD4YKHD; pgv_pvid=6535870372; sessionid=q6n0u1tfjwutzm4ioey8cf8p0ydclsgk; Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1458529843,1458697847,1458810105,1458870179; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1458890912',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_ORIGIN': 'http://42.96.131.5:8001',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/do_result/',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36',
+ 'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/do_search/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'POST',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7f55b3a831e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7f55aff10600>,
+ 'wsgi.input': <socket._fileobject object at 0x7f559e8df550>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+Extend object
+Extend object
+Extend object
+[25/Mar/2016 15:54:39] "GET /userinfo/ HTTP/1.1" 500 67438
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:54:36
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[25/Mar/2016 15:55:07] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 15:55:07] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:07] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:55:08] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 15:55:08] "GET /static/images/tperson.png HTTP/1.1" 304 0
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:55:05
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+[25/Mar/2016 15:56:42] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 15:56:43] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:56:43] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:43] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 15:56:44] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 15:56:44] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892601558 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892601560 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:15] "GET /static/site_media/uploadify.swf?preventswfcaching=1458892601559 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:16] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:16] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:16] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:17] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[25/Mar/2016 16:04:17] "GET /static/js/timeplus.js?_=1458893054410 HTTP/1.1" 200 1893
+[25/Mar/2016 16:04:17] "GET /static/js/yz.js?_=1458893054492 HTTP/1.1" 200 41463
+[25/Mar/2016 16:04:17] "GET /getverifycode/ HTTP/1.1" 200 2650
+[25/Mar/2016 16:04:25] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:25] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:26] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:26] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[25/Mar/2016 16:04:26] "GET /static/js/timeplus.js?_=1458893063432 HTTP/1.1" 200 1893
+[25/Mar/2016 16:04:26] "GET /static/js/yz.js?_=1458893063493 HTTP/1.1" 200 41463
+Validating models...
+
+0 errors found
+March 25, 2016 - 15:56:40
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+[25/Mar/2016 16:04:49] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:49] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:49] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:04:50] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:04:50] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:50] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:04:52] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893087708 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:52] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893087710 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:52] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893087709 HTTP/1.1" 200 12767
+[25/Mar/2016 16:04:52] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:52] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:52] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:04:53] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[25/Mar/2016 16:04:53] "GET /static/js/timeplus.js?_=1458893090468 HTTP/1.1" 200 1893
+[25/Mar/2016 16:04:53] "GET /getverifycode/ HTTP/1.1" 200 2691
+[25/Mar/2016 16:04:53] "GET /static/js/yz.js?_=1458893090524 HTTP/1.1" 200 41463
+[25/Mar/2016 16:05:06] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:05:06] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:06] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:05:07] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:05:07] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:07] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:05:44] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893104990 HTTP/1.1" 200 12767
+[25/Mar/2016 16:05:44] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893104992 HTTP/1.1" 200 12767
+[25/Mar/2016 16:05:44] "GET /static/site_media/uploadify.swf?preventswfcaching=1458893104991 HTTP/1.1" 200 12767
+[25/Mar/2016 16:05:44] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:05:44] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:05:44] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:05:45] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[25/Mar/2016 16:05:45] "GET /static/js/timeplus.js?_=1458893142240 HTTP/1.1" 200 1893
+[25/Mar/2016 16:05:45] "GET /getverifycode/ HTTP/1.1" 200 2672
+[25/Mar/2016 16:05:45] "GET /static/js/yz.js?_=1458893142294 HTTP/1.1" 200 41463
+Validating models...
+
+0 errors found
+March 25, 2016 - 16:04:47
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+Extend object
+[25/Mar/2016 16:06:52] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:06:52] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:06:52] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:06:53] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 16:06:53] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /userinfo/ HTTP/1.1" 200 53028
+[25/Mar/2016 16:07:15] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/css/footer.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/js/yz.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[25/Mar/2016 16:07:15] "GET /static/images/yerztouzi.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/images/jc/project_pic.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user18.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:07:16] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/images/person.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/icard1ui_investor.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/financial_assets1Tulips.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:16] "GET /static/upload/fixed_assets120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/upload/tax120151221_141242.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:07:17] "GET /static/images/person2.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:17] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[25/Mar/2016 16:07:18] "GET /guide/ HTTP/1.1" 200 37664
+[25/Mar/2016 16:07:18] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:21] "GET /about_us/ HTTP/1.1" 200 28689
+[25/Mar/2016 16:07:27] "GET /investor/ HTTP/1.1" 200 17048
+[25/Mar/2016 16:07:27] "GET /static/css/investor.css HTTP/1.1" 304 0
+[25/Mar/2016 16:07:28] "GET /search_investor/?page=1&search_word%5B%5D=1&search_word%5B%5D=4 HTTP/1.1" 200 32023
+[25/Mar/2016 16:07:28] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:07:28] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[25/Mar/2016 16:07:28] "GET /project/1 HTTP/1.1" 301 0
+[25/Mar/2016 16:07:28] "GET /project/1/ HTTP/1.1" 200 15320
+[25/Mar/2016 16:07:28] "GET /search_project/?page=1&search_word%5B%5D=1&search_word%5B%5D=14 HTTP/1.1" 200 12974
+[25/Mar/2016 16:07:30] "GET / HTTP/1.1" 200 37855
+[25/Mar/2016 16:07:32] "GET /prodetails/12 HTTP/1.1" 301 0
+[25/Mar/2016 16:07:33] "GET /prodetails/12/ HTTP/1.1" 200 37717
+[25/Mar/2016 16:07:33] "GET /getverifycode/ HTTP/1.1" 200 2003

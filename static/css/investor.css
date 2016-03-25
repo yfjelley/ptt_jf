@@ -286,8 +286,7 @@ input[type='checkbox']:checked + label:before{
 }
 .fixed{position:fixed;bottom: 60px;left: 10px;}
 .side{width: 70px;z-index: 2;right: 10px;position: fixed;bottom: 20px}
-.side a{font-size: 14px;color: #FFFFFF}
-.side a{font-size: 14px;color: #FFFFFF}
+.side a{font-size: 13px;color: #FFFFFF}
 #right_float{
     height: 350px;
     width: 57px;
@@ -339,7 +338,21 @@ input[type='checkbox']:checked + label:before{
     font-family: 微软雅黑;
 }
 #right_float a.fanhui{
-    background: url(/static/images/gototop.png) no-repeat ;
+    position: fixed;
+    display: inline-block;
+    width: 57px;
+    height: 57px;
+    line-height: 57px;
+    text-decoration: none;
+    text-align: center;
+    background-color:rgb(201,202,202);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    visibility: hidden;
+}
+#right_float a.fanhui:hover{
+    background-color:#5ca9d3;
 }
 #right_float a.address{
     background: url(/static/images/address.jpg) no-repeat ;
