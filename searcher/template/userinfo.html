@@ -491,8 +491,9 @@ $(function(){
 
 <!--项目管理:我的项目-->                
                <div id="wdxm" class="display" style="padding-top:20px">
-					   {% if attention_persion %}
-					   {% for i in attention_persion %}
+					   {% if user %}
+					   {% for i in user.userinformation.attention_persion.all %}
+				   {% if i.userinformation.photo_url %}
 				   <div style="float: left;padding-right: 60px;">
 					   <img width="90" height="90" src="{{i.userinformation.photo_url}}">
 					   <div style="margin-top:5px;">
@@ -504,6 +505,7 @@ $(function(){
 					   </div>
 					   <label style="height:20px;width: 100%;display: block"></label>
 				   </div>
+				    {% endif %}
 					   {% endfor %}
 					   {% endif %}
                </div>
