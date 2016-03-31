@@ -1,7 +1,11 @@
 {% load settingsvalue %}
 {% if project %}
             {% for result in project %}
+            {% ifequal result.status 4 %}
+            <a href="/mobile/notice/">
+            {% else %}
             <a href="/mobile/prodetails/{{result.id}}">
+            {% endifequal %}
             <div class="touchweb-project_list">
                 <ul>
                     <li>
@@ -15,23 +19,35 @@
                     </li>
                     <li class="item">
                             <div class="pro-content">
+                                {% ifequal result.status 4 %}
+                                 <img style="background-repeat: no-repeat;width: 100%;height: 100%" src="/static/images/car-timeout.JPG">
+                                {% else %}
                                 <img style="background-repeat: no-repeat;width: 100%;height: 100%" src="{{result.index_url}}">
+                                {% endifequal %}
                                 <div class="cols-1">
                                     <div>
                                         <span class="text">融资总额</span>
                                     </div>
                                     <div>
+                                        {% ifequal result.status 4 %}
+                                        <span class="number">----万元</span>
+                                        {% else %}
                                         <span class="number">{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
+                                        {% endifequal %}
                                     </div>
                                 </div>
                                 <div class="line-1">
                                     <div>
-                                        <div style="border-right: 2px solid #EEEEF0;width: 0.1rem;height: 0.8rem;"></div>
+                                        <div style="border-right: 2px solid #EEEEF0;width: 0.1rem;height: 1rem;"></div>
                                     </div>
                                 </div>
                                 <div class="cols-1">
                                     <div><span class="text">已预约</span></div>
+                                    {% ifequal result.status 4 %}
+                                    <div><span class="number">----万元</span></div>
+                                    {% else %}
                                     <div><span class="number">{% widthratio result.invest_amount 1 result.finish  %}万元</span></div>
+                                    {% endifequal %}
                                 </div>
                                 <div class="line-1">
                                     <div>
@@ -40,7 +56,11 @@
                                 </div>
                                 <div class="cols-1">
                                     <div><span class="text">完成率</span></div>
+                                    {% ifequal result.status 4 %}
+                                    <div><span class="number">----</span></div>
+                                    {% else %}
                                     <div><span class="number">{% widthratio result.finish result.invest_num 100 %}%</span></div>
+                                    {% endifequal %}
                                 </div>
                                 <div style="clear: both"></div>
                                 <div class="cols-2">
@@ -48,7 +68,11 @@
                                 </div>
                                 <div class="cols-3">
                                     <div><span>所属行业:</span><span>{{result.get_category_display}}</span></div>
+                                    {% ifequal result.status 4 %}
+                                    <div><span>剩余天数:</span><span>----</span></div>
+                                    {% else %}
                                     <div><span>剩余天数:</span><span>{{result.preheat_end_date |remain_time}}</span></div>
+                                    {% endifequal %}
                                 </div>
                             </div>
                     </li>

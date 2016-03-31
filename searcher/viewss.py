@@ -569,8 +569,7 @@ def agreement(request):
 
 def index(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-    logging.info('This is debug messagexxxxxxxxxxxxxxxxxx')
-    pr = Project.objects.all().distinct()
+    pr = Project.objects.all().distinct().order_by('status')
     for i in pr:
         f = invest_detail.objects.filter(invest_project=i)
         m = 0
@@ -1206,7 +1205,8 @@ def process(request):
         }
     return HttpResponse(json.dumps(payload), content_type="application/json")
 
-
+def notice(request):
+    return render_to_response('notice_m.html',context_instance=RequestContext(request))
 
 
 
