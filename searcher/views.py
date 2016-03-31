@@ -519,7 +519,7 @@ def agreement(request):
 
 def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
-    pr = Project.objects.all().distinct()
+    pr = Project.objects.all().distinct().order_by('status')
     for i in pr:
         f = i.invest_project_set.all()
         m = 0
