@@ -2,6 +2,7 @@
 {% load settingsvalue %}
     {% if results %}
         {% for result in results.object_list %}
+        {% ifnotequal result.status 4 %}
 		<ul class="search-mojing">
 			<a href="/prodetails/{{result.id}}">
 			{% ifequal result.active 1 %}
@@ -46,6 +47,7 @@
 			</li>
 			</a>
 		</ul>
+        {% endifnotequal %}
      	{% endfor %}
 
     {% else %}

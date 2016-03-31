@@ -3,6 +3,7 @@
 {% load settingsvalue %}
     {% if results %}
         {% for result in results.object_list %}
+        {% ifnotequal result.status 4 %}
 		<ul class="mojing">
 			<a href="/prodetails/{{result.id}}">
               <div class="littleimg"> <img src="/static/images/heart.png" />
@@ -49,6 +50,7 @@
 			</li>
 			</a>
 		</ul>
+        {% endifnotequal %}
      	{% endfor %}
     {% else %}
         <a style="margin-left: 20px">无符合查询条件的纪录</a>
