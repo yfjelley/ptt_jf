@@ -380,7 +380,6 @@ def userinfo(request,objectid=None):
         extend = request.user.extend_user_set.all()
         if extend:
             extend = extend[0]
-        print extend
 
     return render_to_response("userinfo.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
                                                 "attention_pr":attention_pr,"attention_persion":attention_persion},
@@ -919,6 +918,9 @@ def prodetails(request,objectid):
         flag = 0
     for i in invest_de:
         amount += int(i.invest_num)
+    process = p.project_process_set.all().order_by("-created")
+    if int(p.status) ==4:
+        return render_to_response('notice.html',{"p":p}, context_instance=RequestContext(request))
     return render_to_response('prodetails.html',{"flag":flag,"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
 

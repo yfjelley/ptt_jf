@@ -314,6 +314,15 @@ class Project(models.Model):
     def __unicode__(self):
         return u'%s' % self.name
 
+class project_process(models.Model):
+    project = models.ForeignKey(Project,related_name="project_process_set",blank=True,null=True)
+    price = models.DecimalField('每股价格',max_digits=8, decimal_places=2, blank=True, null=True)
+    process = models.IntegerField('停售标志位',default=0)
+    amount = models.DecimalField('总股数',max_digits=8,decimal_places=2,blank=True,null=True)#单位万
+    created = models.DateTimeField(auto_now_add=True)
+    def __unicode__(self):
+        return u'%s' % self.project
+
 class invest_detail(models.Model):
     invest_user = models.ForeignKey(User,related_name = "invest_user_set", blank=True, null=True)
     invest_project = models.ForeignKey(Project,related_name = "invest_project_set", blank=True, null=True)

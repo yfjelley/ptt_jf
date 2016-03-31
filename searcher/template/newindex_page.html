@@ -113,7 +113,7 @@
     <!----图片轮番切换----->
     <div class="box">
         <ul class="banner" >
-            <li ><a style="display:block;"><img src="/static/images/monkeyYear.JPG" width="100%">
+            <li ><a style="display:block;"><img src="/static/images/notice.JPG" width="100%">
             </a></li>
             <li ><a style="display:none;"><img src="/static/images/ztsuccess.jpg" width="100%">
             </a></li>
@@ -155,7 +155,16 @@
                                 <li>
                                     <div class="ct_round">
                                         <p class="p2">
+                                            {% ifnotequal result.status 4 %}
                                             <span class="tp rd_orange">{% widthratio result.finish result.invest_num 100 %}%</span>
+                                            {% else %}
+                                            <span class="tp rd_orange" style="opacity: -0.2;filter:Alpha(opacity=-50)">1</span>
+                                            {% endifnotequal %}
+                                            {% ifequal result.status 4 %}
+                                            <p class="p1">
+                                                <img src="/static/images/round-timeout.png">
+                                            </p>
+                                            {% endifequal %}
                                             {% ifequal result.status 2 %}
                                             <p class="p1">
                                                 <img src="/static/images/roundwc.png">
@@ -194,13 +203,25 @@
                                     <label class="cs">剩余时间</label>
                                 </li>
                                 <li class="lf_rw3">
+                                    {% ifequal result.status 4 %}
+                                    <span class="bs"><em>----万元</em></span>
+                                    {% else %}
                                     <span class="bs"><em>{% widthratio result.invest_amount 1 result.invest_num  %}万元</em></span>
+                                    {% endifequal %}
                                 </li>
                                 <li class="lf_rw3">
+                                    {% ifequal result.status 4 %}
+                                    <span class="bs"><em>----万元</em></span>
+                                    {% else %}
                                     <span class="bs"><em>{% widthratio result.invest_amount 1 result.finish  %}万元</em></span>
+                                    {% endifequal %}
                                 </li>
                                 <li class="rt_rw3">
+                                    {% ifequal result.status 4 %}
+                                    <span class="bs"><em>----</em></span>
+                                    {% else %}
                                     <span class="bs"><em>{{ result.preheat_end_date |remain_time}}</em></span>
+                                    {% endifequal %}
                                 </li>
                                 <li class="lt_line">
                                     <div></div>

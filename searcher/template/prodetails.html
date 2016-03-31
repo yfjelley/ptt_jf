@@ -34,11 +34,40 @@
     })
  $(function(){
     {% if flag %}
-
     $("#focus").attr("checked",'true');
     {% endif %}
- })
 
+ })
+$(function() {
+	// 在页面添加 mask
+	var mask = function() {
+			$('<div id="mask" style="width: ' + $(window).width() + 'px; '
+			+ 'height: ' + $(window).height() + 'px;"></div>').appendTo("body");};
+
+	$(window).on("resize", function() {
+		if($("#mask").length) {
+				$("#mask").css({
+						width: $(window).width(),
+						height: $(window).height(),
+						opacity: 0});
+				}
+	});
+
+	{% if before_price %}
+		var  html= '<div id="alert"  style="hidden"><p>价格为{{before_price}}的已经停止销售！</p>'+'<br><br>'+
+		'<input type="button" id="ok" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/></div>';
+	   $(html).appendTo("body");
+	{% endif %}
+
+
+// 只有点击 alert 中的按钮 mask 才会被移除
+
+// 只有点击 alert 中的按钮 mask 才会被移除
+	$("#ok").click(function() {
+		$("#mask, #alert").remove();
+	});
+
+});
 
    function remaid(){alert('请先登录!');}
    function booking(){alert("该项目已众筹完成，感谢你的关注。欢迎选择其它项目！");}
@@ -397,5 +426,10 @@
      </div>
 <!--底部-->
 {% include "footer.html" %}
+<style type="text/css">
+#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
+#mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
+</style>
 </body>
+
 </html>
