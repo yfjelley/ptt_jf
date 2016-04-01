@@ -1187,15 +1187,15 @@ def do_reminder(request):
 
 def process(request):
     objectid=int(request.POST.get('objectid'))
-    print objectid,type(objectid)
+
     if objectid == 1: #所有的
-        results = Project.objects.all().distinct()
+        results = Project.objects.all().distinct().order_by('status')
     elif objectid == 2: #已完成
-        results = Project.objects.filter(status=2).distinct()
+        results = Project.objects.filter(status=2).distinct().order_by('status')
     elif objectid == 3: #众筹中
-        results =  Project.objects.filter(status=1).distinct()
+        results =  Project.objects.filter(status=1).distinct().order_by('status')
     elif objectid == 4:
-        results = Project.objects.filter(status=0).distinct()
+        results = Project.objects.filter(status=0).distinct().order_by('status')
     t = get_template('search_result_single_m.html')
     content_html = t.render(
             RequestContext(request, {'project': results,}))
