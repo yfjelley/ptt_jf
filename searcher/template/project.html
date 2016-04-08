@@ -10,10 +10,6 @@
 <script type="text/javascript">
     //1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
    $(function(){
-       var objectid = {{objectid}};
-       checkparam(1,objectid);
-       $('.serch_term a:eq('+ parseInt(objectid[0]-1)+')').addClass("btn_blue").siblings("a").removeClass("btn_blue");
-
 	   //$('#seatch_norm a:eq(14)').addClass("btn_blue");
 	   $('#seatch_norm').find('a').on("click",function(){
 
@@ -41,7 +37,7 @@
    }
 
    function checkparam(page,a) {
-        $.get("{% url 'search_project' %}",
+        $.get("{% url 'project' %}",
                 {
                     page: page,
                     search_word: a,
@@ -169,7 +165,7 @@
 					</div>
 					<div class="toprightdiv"><img src="/static/images/Rlogo.png" /></div>
 				 </div>	    
-				<div class="search_bd" id="result_form">
+				<div class="search_bd" id="result_form">{% include 'search_result_single.html'%}
 				</div>			
 			</div>
 		  <!----右边悬浮框----------->

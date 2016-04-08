@@ -788,8 +788,7 @@ def invested(request):
 
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
-def search_investor(request):
-     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
+
 
 @login_required
 def investor(request):
@@ -798,10 +797,10 @@ def investor(request):
     #sql(1:注册用户,2：认证资深投资人，3：认证投资人，4: 创业者),字段：authentication_class
     #sql(5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)，字段：cate
     # ('1', '金融在线'),('2', '电子商务'),('3', '医疗'),('4', '互联网'),('5', '社交'),('6', '生活服务'),
-    print request
+
     if request.GET.get('search_word[]', None) is not None:
         search_word = request.GET.getlist('search_word[]')
-        print search_word
+
         if search_word == [u'1', u'4']:
             results = UserInformation.objects.all().order_by("-invest_class")
         elif search_word == [u'1', u'5']:
@@ -874,7 +873,7 @@ def investor(request):
                 page = int(request.GET.get('page', '1'))
         except ValueError:
                 page = 1
-        print "gggggggggggggggggg",page
+
         try:
                 results = ppp.page(page)
 
@@ -905,7 +904,7 @@ def investor(request):
                 'content_html': content_html,
                 'success': True
             }
-        print "tttttttttttttttttttttttt"
+
         return HttpResponse(json.dumps(payload), content_type="application/json")
 
     else:
@@ -964,9 +963,70 @@ def prodetails(request,objectid):
     return render_to_response('prodetails.html',{"flag":flag,"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
 
-def project(request,objectid):
+def project(request):
+    #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
+    #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
+    #sql(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
+    print request
+    search_word = request.GET.getlist('search_word[]',None)
+    print search_word
+    if  search_word:
+        if int(search_word[1]) == 14 and int(search_word[0]) != 1 :
+            if int(search_word[0]) == 2 :
+                results = Project.objects.filter(active=1)
+            elif int(search_word[0]) == 3 :
+                results = Project.objects.filter(status=0)
+            elif int(search_word[0]) == 4 :
+                results = Project.objects.filter(status=1)
+            elif int(search_word[0]) == 5 :
+                results = Project.objects.filter(status=2)
+            elif int(search_word[0]) == 6 :
+                results = Project.objects.filter(status=2)
 
-    return render_to_response('project.html',{"objectid":[int(objectid),14]}, context_instance=RequestContext(request))
+        elif int(search_word[0]) == 1 and int(search_word[1]) != 14:
+            results = Project.objects.filter(category=int(search_word[1])-14)
+        elif int(search_word[0]) != 1 and int(search_word[1]) != 14 :
+            if int(search_word[0]) == 2 :
+                results = Project.objects.filter(active=1).filter(category=int(search_word[1])-14)
+            else:
+                results = Project.objects.filter(status=int(search_word[0])-3).filter(category=int(search_word[1])-14)
+        else:
+            results = Project.objects.all()
+
+        ppp = Paginator(results, 20)
+        try:
+                page = int(request.GET.get('page', '1'))
+        except ValueError:
+                page = 1
+        try:
+                results = ppp.page(page)
+        except (EmptyPage, InvalidPage):
+                results = ppp.page(ppp.num_pages)
+        last_page = ppp.page_range[len(ppp.page_range) - 1]
+        page_set = get_pageset(last_page, page)
+        t = get_template('search_result_single.html')
+        content_html = t.render(
+                RequestContext(request, {'results': results, 'last_page': last_page, 'page_set': page_set}))
+        payload = {
+                'content_html': content_html,
+                'success': True
+            }
+        return HttpResponse(json.dumps(payload), content_type="application/json")
+    else :
+        results = Project.objects.all()
+        ppp = Paginator(results, 20)
+        try:
+                page = int(request.GET.get('page', '1'))
+        except ValueError:
+                page = 1
+        try:
+                results = ppp.page(page)
+        except (EmptyPage, InvalidPage):
+                results = ppp.page(ppp.num_pages)
+        last_page = ppp.page_range[len(ppp.page_range) - 1]
+        page_set = get_pageset(last_page, page)
+
+    return render_to_response('project.html',{'results': results, 'last_page': last_page, 'page_set': page_set}, context_instance=RequestContext(request))
 
 def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
