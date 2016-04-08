@@ -789,119 +789,159 @@ def invested(request):
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 def search_investor(request):
+     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
+
+@login_required
+def investor(request):
     #web(1:不限，3：认证资深投资人，2：认证投资人，)
     #web(4：不限，5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)
     #sql(1:注册用户,2：认证资深投资人，3：认证投资人，4: 创业者),字段：authentication_class
     #sql(5：金融在线，6：电子商务, 7: 医疗, 8: 互联网, 9: 社交，10：生活服务)，字段：cate
     # ('1', '金融在线'),('2', '电子商务'),('3', '医疗'),('4', '互联网'),('5', '社交'),('6', '生活服务'),
-    search_word = request.GET.getlist('search_word[]')
-    if search_word == [u'1', u'4']:
-        results = UserInformation.objects.all().order_by("-invest_class")
-    elif search_word == [u'1', u'5']:
-        results = UserInformation.objects.filter(cate=1).order_by("-invest_class")
-    elif search_word == [u'1', u'6']:
-        results = UserInformation.objects.filter(cate=2).order_by("-invest_class")
-    elif search_word == [u'1', u'7']:
-        results = UserInformation.objects.filter(cate=3).order_by("-invest_class")
-    elif search_word == [u'1', u'8']:
-        results = UserInformation.objects.filter(cate=4).order_by("-invest_class")
-    elif search_word == [u'1', u'9']:
-        results = UserInformation.objects.filter(cate=5).order_by("-invest_class")
-    elif search_word == [u'1', u'10']:
-        results = UserInformation.objects.filter(cate=6).order_by("-invest_class")
-    elif search_word == [u'1', u'11']:
-        results = UserInformation.objects.filter(cate=7).order_by("-invest_class")
-    elif search_word == [u'1', u'12']:
-        results = UserInformation.objects.filter(cate=8).order_by("-invest_class")
-    elif search_word == [u'1', u'13']:
-        results = UserInformation.objects.filter(cate=9).order_by("-invest_class")
-    elif search_word == [u'2', u'4']:
-        results = UserInformation.objects.filter(invest_class=2).order_by("-invest_class")
-    elif search_word == [u'2', u'5']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=1).order_by("-invest_class")
-    elif search_word == [u'2', u'6']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=2).order_by("-invest_class")
-    elif search_word == [u'2', u'7']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=3).order_by("-invest_class")
-    elif search_word == [u'2', u'8']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=4).order_by("-invest_class")
-    elif search_word == [u'2', u'9']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=5).order_by("-invest_class")
-    elif search_word == [u'2', u'10']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=6).order_by("-invest_class")
-    elif search_word == [u'2', u'11']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=7).order_by("-invest_class")
-    elif search_word == [u'2', u'12']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=8).order_by("-invest_class")
-    elif search_word == [u'2', u'13']:
-        results = UserInformation.objects.filter(invest_class=2).filter(cate=9).order_by("-invest_class")
+    print request
+    if request.GET.get('search_word[]', None) is not None:
+        search_word = request.GET.getlist('search_word[]')
+        print search_word
+        if search_word == [u'1', u'4']:
+            results = UserInformation.objects.all().order_by("-invest_class")
+        elif search_word == [u'1', u'5']:
+            results = UserInformation.objects.filter(cate=1).order_by("-invest_class")
+        elif search_word == [u'1', u'6']:
+            results = UserInformation.objects.filter(cate=2).order_by("-invest_class")
+        elif search_word == [u'1', u'7']:
+            results = UserInformation.objects.filter(cate=3).order_by("-invest_class")
+        elif search_word == [u'1', u'8']:
+            results = UserInformation.objects.filter(cate=4).order_by("-invest_class")
+        elif search_word == [u'1', u'9']:
+            results = UserInformation.objects.filter(cate=5).order_by("-invest_class")
+        elif search_word == [u'1', u'10']:
+            results = UserInformation.objects.filter(cate=6).order_by("-invest_class")
+        elif search_word == [u'1', u'11']:
+            results = UserInformation.objects.filter(cate=7).order_by("-invest_class")
+        elif search_word == [u'1', u'12']:
+            results = UserInformation.objects.filter(cate=8).order_by("-invest_class")
+        elif search_word == [u'1', u'13']:
+            results = UserInformation.objects.filter(cate=9).order_by("-invest_class")
+        elif search_word == [u'2', u'4']:
+            results = UserInformation.objects.filter(invest_class=2).order_by("-invest_class")
+        elif search_word == [u'2', u'5']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=1).order_by("-invest_class")
+        elif search_word == [u'2', u'6']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=2).order_by("-invest_class")
+        elif search_word == [u'2', u'7']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=3).order_by("-invest_class")
+        elif search_word == [u'2', u'8']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=4).order_by("-invest_class")
+        elif search_word == [u'2', u'9']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=5).order_by("-invest_class")
+        elif search_word == [u'2', u'10']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=6).order_by("-invest_class")
+        elif search_word == [u'2', u'11']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=7).order_by("-invest_class")
+        elif search_word == [u'2', u'12']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=8).order_by("-invest_class")
+        elif search_word == [u'2', u'13']:
+            results = UserInformation.objects.filter(invest_class=2).filter(cate=9).order_by("-invest_class")
 
-    elif search_word == [u'3', u'4']:
-        results = UserInformation.objects.filter(invest_class=3).order_by("-invest_class")
-    elif search_word == [u'3', u'5']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=1).order_by("-invest_class")
-    elif search_word == [u'3', u'6']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=2).order_by("-invest_class")
-    elif search_word == [u'3', u'7']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=3).order_by("-invest_class")
-    elif search_word == [u'3', u'8']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=4).order_by("-invest_class")
-    elif search_word == [u'3', u'9']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=5).order_by("-invest_class")
-    elif search_word == [u'3', u'10']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=6).order_by("-invest_class")
-    elif search_word == [u'3', u'11']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=7).order_by("-invest_class")
-    elif search_word == [u'3', u'12']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=8).order_by("-invest_class")
-    elif search_word == [u'3', u'13']:
-        results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
+        elif search_word == [u'3', u'4']:
+            results = UserInformation.objects.filter(invest_class=3).order_by("-invest_class")
+        elif search_word == [u'3', u'5']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=1).order_by("-invest_class")
+        elif search_word == [u'3', u'6']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=2).order_by("-invest_class")
+        elif search_word == [u'3', u'7']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=3).order_by("-invest_class")
+        elif search_word == [u'3', u'8']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=4).order_by("-invest_class")
+        elif search_word == [u'3', u'9']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=5).order_by("-invest_class")
+        elif search_word == [u'3', u'10']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=6).order_by("-invest_class")
+        elif search_word == [u'3', u'11']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=7).order_by("-invest_class")
+        elif search_word == [u'3', u'12']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=8).order_by("-invest_class")
+        elif search_word == [u'3', u'13']:
+            results = UserInformation.objects.filter(invest_class=3).filter(cate=9).order_by("-invest_class")
+        else:
+            results = UserInformation.objects.all().order_by("-invest_class")
+        a = []
+        s = []
+        u = request.user.userinformation.attention_persion.all()
+        ppp = Paginator(results, 10)
+
+        try:
+                page = int(request.GET.get('page', '1'))
+        except ValueError:
+                page = 1
+        print "gggggggggggggggggg",page
+        try:
+                results = ppp.page(page)
+
+        except (EmptyPage, InvalidPage):
+                results = ppp.page(ppp.num_pages)
+
+        for i in results:
+            b=0.0
+            r = i.user.invest_user_set.all()
+            if r:
+                for j in r:
+                    b+=float(j.invest_amount)*float(j.invest_num)
+            a.append(b)
+
+            if i.user in u:
+                s.append(1)
+            else:
+                s.append(0)
+
+        last_page = ppp.page_range[len(ppp.page_range) - 1]
+        page_set = get_pageset(last_page, page)
+        t = get_template('search_result_investor.html')
+
+        c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set}
+        content_html = t.render(
+                RequestContext(request,c ))
+        payload = {
+                'content_html': content_html,
+                'success': True
+            }
+        print "tttttttttttttttttttttttt"
+        return HttpResponse(json.dumps(payload), content_type="application/json")
+
     else:
         results = UserInformation.objects.all().order_by("-invest_class")
-    a = []
-    s = []
-    u = request.user.userinformation.attention_persion.all()
-    ppp = Paginator(results, 10)
+        a = []
+        s = []
+        u = request.user.userinformation.attention_persion.all()
+        ppp = Paginator(results, 10)
 
-    try:
-            page = int(request.GET.get('page', '1'))
-    except ValueError:
-            page = 1
-    try:
-            results = ppp.page(page)
+        try:
+                page = int(request.GET.get('page', '1'))
+        except ValueError:
+                page = 1
+        try:
+                results = ppp.page(page)
 
-    except (EmptyPage, InvalidPage):
-            results = ppp.page(ppp.num_pages)
+        except (EmptyPage, InvalidPage):
+                results = ppp.page(ppp.num_pages)
 
-    for i in results:
-        b=0.0
-        r = i.user.invest_user_set.all()
-        if r:
-            for j in r:
-                b+=float(j.invest_amount)*float(j.invest_num)
-        a.append(b)
+        for i in results:
+            b=0.0
+            r = i.user.invest_user_set.all()
+            if r:
+                for j in r:
+                    b+=float(j.invest_amount)*float(j.invest_num)
+            a.append(b)
 
-        if i.user in u:
-            s.append(1)
-        else:
-            s.append(0)
+            if i.user in u:
+                s.append(1)
+            else:
+                s.append(0)
 
-    last_page = ppp.page_range[len(ppp.page_range) - 1]
-    page_set = get_pageset(last_page, page)
-    t = get_template('search_result_investor.html')
+        last_page = ppp.page_range[len(ppp.page_range) - 1]
+        page_set = get_pageset(last_page, page)
 
-    c = {'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set}
-    content_html = t.render(
-            RequestContext(request,c ))
-    payload = {
-            'content_html': content_html,
-            'success': True
-        }
-    return HttpResponse(json.dumps(payload), content_type="application/json")
-
-@login_required
-def investor(request):
-    return render_to_response('investor.html',{}, context_instance=RequestContext(request))
+    return render_to_response('investor.html',{'results': results, "s":s, "amount":a,'last_page': last_page, 'page_set': page_set}, context_instance=RequestContext(request))
 
 def prodetails(request,objectid):
     p = Project.objects.get(id=objectid)
