@@ -126,8 +126,13 @@
     }
 </script>
 <script type="text/javascript">
-
-
+$(function () {
+        $('#seatch_norm').find('a').on("click", function () {
+            $(this).addClass("btn_blue").siblings("a").removeClass("btn_blue");
+            var a = getElementsByClassName('btn_blue', 'choiceid');
+            checkparam(1, a);
+        });
+    });
 
     function getElementsByClassName(n, m) {
         var el = [],
@@ -140,7 +145,6 @@
         return el;
     }
     function takepage(n) {
-
         var a = getElementsByClassName('btn_blue', 'choiceid');
         checkparam(n, a);
     }
@@ -152,7 +156,6 @@
                     search_word: a,
                 },
                 function (data) {
-
                     $('#result_form').html(data.content_html);
                 }
         );
