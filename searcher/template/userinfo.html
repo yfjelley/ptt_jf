@@ -101,40 +101,7 @@ $(function(){
 });
 </script>
 <script>
-<!--取消和关注的切换-->
 
-
-	$(function(){
-		$("[id^='focus_']").each(function() {
-			  $(this).click(function(){
-					var id = $(this).attr('name');
-					
-						if($(this).val()=="取消关注"){
-								$.post("/cancel_attion/"+id+"/",
-								{},
-								function(data)
-								{});
-								$(this).attr("value","关注");
-
-						}else{
-								$.post("/add_attion/"+id+"/",
-								{},
-								function(data)
-								{ if(data.comment){alert(data.comment);
-								if(data.comment=="关注成功"){document.getElementById('click').innerText=data.attion;}};});
-									$(this).attr("value","取消关注");
-						}
-			  });
-		});
-		
-		$('#focus-pro2').click(function(){
-			if($(this).val()=="取消关注"){
-				$("#focus-pro2").attr("value","关注");			
-			}else{
-				$("#focus-pro2").attr("value","取消关注");	
-			}		
-		});
-	});
 
 <!--判断checkbox是否选中-->
 	$(function(){
@@ -513,42 +480,7 @@ $(function(){
 
 <!--项目管理:关注项目-->                
                <div id="gzxm" class="display">
-				   	{% if  attention_pr %}
-			    	{% for i in  attention_pr %}
-				   <ul class="focus-pro" style="margin-left:-48px;">
-                        <li class="img-size" style="float:left;margin-top:10px;">
-                            <a href="/prodetails/{{i.id}}"><img src="{{i.logo}}" /></a>
-                        </li>
-				   		<li style="float:left;width: 300px;margin-top:10px;">
-							<label>{{i.name}}</label>
-							{% ifequal i.status 0 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
-							{% endifequal %}
-							{% ifequal i.status 1 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">众投中</label>
-							{% endifequal %}
-							{% ifequal i.status 2 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">众投成功</label>
-							{% endifequal %}
-			   			</li>
-					   <li style="float:right">
-						   <label>
-							   <input id="focus_{{result.user}}" name="{{i.id}}" class="quxiao-attention" type="button" value="取消关注"/>
-						   </label>
-					   </li>
-                        <li style="float:left;">
-							<label>融资份额</label><b>{{i.invest_num}}万份</b>
-							<label>已融份额</label><b>{{i.finish}}万份</b>
-							<label>预约率</label><b style="color:#CC6633">{% widthratio  i.finish i.invest_num 100 %}%</b>
-                        </li>
-
-                    </ul>
-                    <ul style="clear:both"></ul>
-				{% endfor %}
-				{% else %}
-				     你还没有跟投项目！
-				{% endif %}
-
+				   {% include 'focus.html' %}
                </div>
 <!--项目管理:关注项目 end-->       
 			</div>

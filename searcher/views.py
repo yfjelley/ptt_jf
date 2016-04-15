@@ -317,13 +317,13 @@ def userinfo(request,objectid=None):
     user = auth.get_user(request)
     flag = 1
     if request.method == 'POST':
-        print "xxxx"
+
         form  = UserInformationForm(request.POST)
-        print form
+
         f = request.FILES.get('file',None)
-        print f
+
         if f:
-            print "xwwwwx"
+
             extension = os.path.splitext(f.name)[-1]
             msg = None
             if f.size > 1048576:
@@ -337,10 +337,10 @@ def userinfo(request,objectid=None):
             im = Image.open(f)
             im.thumbnail((120, 120))
             name = 'p_user' + storage.get_available_name(str(user.id)) + '.png'
-            print name
+
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
-            print url
+
         if form.is_valid():
             try:
                 u_i = UserInformation.objects.get(user=user)
@@ -967,9 +967,9 @@ def project(request):
     #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
     #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
     #sql(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
-    print request
+
     search_word = request.GET.getlist('search_word[]',None)
-    print search_word
+
     if  search_word:
         if int(search_word[1]) == 14 and int(search_word[0]) != 1 :
             if int(search_word[0]) == 2 :
@@ -1046,12 +1046,19 @@ def add_attion(request,objectid):
     return HttpResponse(json.dumps({'attion': count1,"comment":comment}), content_type="application/json")
 
 def cancel_attion(request,objectid):
-
     t = Project.objects.get(id=objectid)
     t.click.remove(request.user)
     t.save()
+    focus = request.user.click_set.all()
+    t = get_template('focus.html')
+    content_html = t.render(
+            RequestContext(request, {'attention_pr':focus}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
 
-    return HttpResponse(json.dumps({"comment":1}), content_type="application/json")
 
 def add_attion_investor(request):
     t =User.objects.get(username=request.POST.get("investor"))

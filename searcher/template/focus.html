@@ -1,0 +1,44 @@
+    {% if  attention_pr %}
+    {% for i in  attention_pr %}
+   <ul class="focus-pro" style="margin-left:-48px;">
+        <li class="img-size" style="float:left;margin-top:10px;">
+            <a href="/prodetails/{{i.id}}"><img src="{{i.logo}}" /></a>
+        </li>
+        <li style="float:left;width: 300px;margin-top:10px;">
+            <label>{{i.name}}</label>
+            {% ifequal i.status 0 %}
+            <label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
+            {% endifequal %}
+            {% ifequal i.status 1 %}
+            <label style="color:#C30;font-size:14px; font-weight:bold">众投中</label>
+            {% endifequal %}
+            {% ifequal i.status 2 %}
+            <label style="color:#C30;font-size:14px; font-weight:bold">众投成功</label>
+            {% endifequal %}
+        </li>
+       <li style="float:right">
+           <label>
+               <input id="focus_{{i.id}}" name="{{i.id}}" onclick="addFocus({{i.id}})" class="quxiao-attention" type="button" value="取消关注"/>
+           </label>
+       </li>
+        <li style="float:left;">
+            <label>融资份额</label><b>{{i.invest_num}}万份</b>
+            <label>已融份额</label><b>{{i.finish}}万份</b>
+            <label>预约率</label><b style="color:#CC6633">{% widthratio  i.finish i.invest_num 100 %}%</b>
+        </li>
+
+    </ul>
+    <ul style="clear:both"></ul>
+{% endfor %}
+{% else %}
+     你还没有关注项目！
+{% endif %}
+<script>
+<!--取消和关注的切换-->
+function addFocus(id){
+            $.get("/cancel_attion/"+id+"/",
+            {},
+            function(data)
+            {if(data.success){$("#gzxm").html(data.content_html)};});
+}
+</script>
