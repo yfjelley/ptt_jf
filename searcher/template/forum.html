@@ -1,0 +1,24 @@
+{% load settingsvalue %}
+{% if project_forum %}
+   {% for i in project_forum %}
+		<dl class="talk_list">
+			<dt><a><img src="{{i.forum_user.userinformation.photo_url}}"></a></dt>
+			<dd>
+				<p>
+					{% if i.forum_user.userinformation.nickname %}
+					<a>{{i.forum_user.userinformation.nickname}}</a>
+					{% else %}
+					<a>{{ i.forum_user.username|phone_cut }}</a>
+					{% endif %}
+
+					{{ i.time_created|date:"Y-m-j  H:i:s"  }}
+					<a href="#">回复</a>
+				</p>
+				<div class="talk_con">
+					{{i.forum_content}}
+				</div>
+			</dd>
+		</dl>
+		<dl style="width: 700px;border-top:1px solid #eeeef0;height: 1px;margin-left: 40px"></dl>
+   {% endfor %}
+{% endif %}

@@ -1193,9 +1193,12 @@ def project_reply(request,project_id):
             if ca.check(_code):
 
                 t = project_forum()
+
                 if request.POST['content']:
+
                     t.forum_content = request.POST['content']
                 else:
+
                     return HttpResponse(u'输入内容不能为空!')
 
                 t.forum_content = t.forum_content.replace("<img>", "<img class = 'bbs_topic_img' src='")
@@ -1205,8 +1208,19 @@ def project_reply(request,project_id):
                 t.forum_project = Project.objects.filter(id=project_id)[0]
 
                 t.forum_user = request.user
+
                 t.save()
-                return HttpResponse(1)
+
+                forum = Project.objects.get(id=project_id).forum_project_set.all()
+
+                t = get_template('forum.html')
+                content_html = t.render(RequestContext(request, {'project_forum':forum}))
+                payload = {
+                        'content_html': content_html,
+                        'success': True
+                    }
+                return HttpResponse(json.dumps(payload), content_type="application/json")
+
             else:
                 return HttpResponse(u'请输入验证码有误!')
 
