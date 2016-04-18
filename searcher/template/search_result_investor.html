@@ -28,9 +28,9 @@
 					{% endif %}
 
 					{% if result.nickname %}
-					<img id="priletter_{{result.user}}" name="{{result.nickname}}" data-id="{{result.user.username}}" src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
+					<img onclick="sendMessage('{{result.nickname}}','{{result.user.username}}')"  src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
 				    {% else %}
-				    <img id="priletter_{{result.user}}" name="{{result.user.username|phone_cut}}" data-id="{{result.user.username}}" src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
+				    <img onclick="sendMessage('{{result.user.username}}','{{result.user.username}}')"  src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
 				    {% endif %}
 				<div id ="person" style=" font-weight:bold;font-size:24px;padding:5px 0;color:#000;margin-top:20px;margin-left:-5px;text-align: left">
 					{% if result.nickname %}
@@ -95,6 +95,18 @@
 	 </div>
 
 <script>
+    function sendMessage(name,userid){
+			{% if user.id %}
+					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
+					'<p>内容:</p>'+
+					'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
+					+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
+					'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
+                   $(html).appendTo("body");
+			{% else %}
+				alert('请先登录!');
+			{% endif %}
+    }
 $(function() {
 	// 在页面添加 mask
 	var mask = function() {
@@ -110,23 +122,8 @@ $(function() {
 				}
 	});
 
-	$("[id^='priletter_']").each(function() {
-	    $(this).click(function(){
-	    	var name = $(this).attr('name');
-	    	var userid = $(this).data('id');
 
-			{% if user.id %}
-					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
-					'<p>内容:</p>'+
-					'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
-					+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
-					'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
-                   $(html).appendTo("body");
-			{% else %}
-				alert('请先登录!');
-			{% endif %}
-		});
-	});
+
 
 	        		// 只有点击 alert 中的按钮 mask 才会被移除
 
@@ -154,19 +151,7 @@ $(function() {
 		$("#mask, #alert").remove();
 	});
 
-		/* $(function(){
-				{% if  user.id %}
-					$("[id^='focus_']").each(function(){
-						$.post("{% url 'get_status' %}",
-						{investor: $(this).attr('name'),},
-						function (data) {if(data.flag==1){$(this).prop('checked',true)}else{$(this).prop('checked',false)};
-						var isCheck = $(this).attr('checked');
-						alert(isCheck);
-						})
-					})
-				{% endif %}
-		})
-		*/
+
 	$("[id^='focus_']").each(function() {
 	    $(this).click(function(){
 
