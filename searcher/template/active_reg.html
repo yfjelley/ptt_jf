@@ -1,0 +1,162 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/active_reg.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/sendtime.js"></script>
+</head>
+<body>
+<div class="trans">
+</div>
+<div id="signup_content">
+    <div class="signup_mid">
+        <form class="registerform" action="{% url 'register' %}" method="post" name="form1">
+            <ul id="signup_ul1">
+                <ul class="log_text">
+                    <li style="font-size:32px;color:blue;margin-left:180px;margin-top:15px;font-style:oblique">
+                        <label>快速注册,轻松搜索</label>
+                    </li>
+                </ul>
+                <ul class="singup_call">
+                    <li id="call_inp">
+                        <label style="margin-left:-40px;font-size:15px;font-weight: bold"> 手机号码：</label>
+                        <label class="call_lbl" style="z-index:999">{{ form.username }}</label>
+
+                        {#              <input type="button" value="验证用户名是否存在？" name="un_valid" onclick="check_valid()">#}
+                    </li>
+                    <li style="clear:both"></li>
+                </ul>
+                <ul class="signup_pwd">
+                    <li id="pwd_inp">
+                        <label style="margin-left:-43px;font-size:15px;font-weight: bold"> 密码：</label>
+                        <label class="pwd_lbl" style="z-index:999">{{ form.password }}</label>
+                        <label><div style="border:0 solid #000;width:90px;height:43px;margin-top:-45px;margin-left:306px;"></div></label>
+
+                    </li>
+                    <li style="clear:both"></li>
+                </ul>
+                <ul class="signup_copwd">
+                    <li id="copwd_inp">
+                        <label style="margin-left:-8px;font-size:15px;font-weight: bold">确认密码：</label>
+                        <label>{{ form.password2 }}</label>
+                        <label><div style="border:0 solid #000;width:90px;height:43px;margin-top:-45px;margin-left:340px;"></div></label>
+                    </li>
+                    <li style="clear:both"></li>
+                </ul>
+                <ul class="signup_yzcode">
+                    <li id="sms_inp">
+                        <label style="margin-left:-30px;font-size:15px;font-weight: bold">验证码：</label>
+                        <label>{{ form.vcode }}</label>
+                        <label style="position:absolute;margin-left:5px;"><img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                                                                        src="{% url 'verifycode' %}"/></label>
+                        <label><div style="border:0 solid #000;width:90px;height:43px;margin-top:-45px;margin-left:320px"></div></label>
+                    </li>
+                </ul>
+                <ul class="singup_smscode">
+                    <li id="yzcode_inp">
+                        <label style="font-size:15px;font-weight: bold">短信验证码：</label>
+                        <label >{{ form.smscode }}</label>
+                        <label><input type="button" id="rulesubmit" style="color:#FFFFFF; background-color:#4a3c70;border:1px solid #4a3c70; border-radius:10px;-webkit-border-radius:3px;z-index:1;width:85px;height:34px;left:100px;margin-left:5px;" value="发送验证码" /></label>
+                        <label><div style="border:0 solid #000;width:90px;height:43px;margin-top:-45px;margin-left:350px"></div></label>
+
+                    </li>
+                    <li style="clear:both"></li>
+                </ul>
+
+                <ul class="signup_agree">
+                    <li>
+                        <div style=" margin:-20px 0 -10px 200px;font-weight:bold;">注册即视为同意天天搜贷<a href="/agreement/"><<服务条款>></a></div>
+                    </li>
+                    <li>
+                        <input type="submit" class="login_butt" id="login" value="注册送礼金" style="margin-left:160px;margin-top:30px;width:300px;height:50px;background-color: #b20202;color:white;font-size:16px;border-radius:10px;-webkit-border-radius:3px;" />
+                    </li>
+                    <li>
+                        <div style="margin-top:15px; margin-left:368px;font-size:12px;">已有天天搜贷账号,<a href="{% url 'login' %}">登录</a></div>
+
+                    </li>
+                </ul>
+            </ul>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                alert('{{ error }}');
+                {% endfor %}
+
+                {% elif form.password.errors %}
+                {% for error in form.password.errors %}
+                    alert('{{ error }}');
+                    {% endfor %}
+
+                    {% elif form.password2.errors %}
+                    {% for error in form.password2.errors %}
+                        alert('{{ error }}');
+                        {% endfor %}
+
+                        {% elif form.smscode.errors %}
+                        {% for error in form.smscode.errors %}
+                            alert('{{ error }}');
+                            {% endfor %}
+
+                            {% elif form.vcode.errors %}
+                            {% for error in form.vcode.errors %}
+                                alert('{{ error }}');
+                                {% endfor %}
+                                {% endif %}
+
+                                //$(".registerform").Validform();  //就这一行代码！;
+                                var demo = $(".registerform").Validform({
+                                    tiptype: 3,
+                                    label: ".label",
+                                    showAllError: true,
+                                    datatype: {
+                                        "zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+                                    },
+                                    ajaxPost: false,
+                                    callback:function(data){
+                                        str = "success";
+                                    }
+                                });
+
+                                //通过$.Tipmsg扩展默认提示信息;
+                                //$.Tipmsg.w["zh1-6"]="请输入1到6个字符！";
+                                demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+                                demo.addRule([
+                                    {
+                                        ele: "#id_username",
+                                        datatype: "m"
+                                    },
+                                    {
+                                        ele: "#id_password",
+                                        datatype: "*6-20"
+                                    },
+                                    {
+                                        ele: "#id_password2",
+                                        datatype: "*6-20",
+                                        recheck: "password"
+                                    },
+                                    {
+                                        ele: "#id_vcode",
+                                        datatype: "n4"
+                                    },
+                                    {
+                                        ele: "#id_smscode",
+                                        datatype: "n4"
+                                    }
+                                ]);
+                            });
+</script>
+</body>
+</html>

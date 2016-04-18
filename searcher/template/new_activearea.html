@@ -1,0 +1,24 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" media="all"/>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all"/>
+</head>
+<body>
+    <div>
+        {% include "header.html" %}
+    </div>
+    <div style="min-width:1024px;max-width:1660px">
+        <img style="background:no-repeat;width:100%" src="/static/images/logost.jpg ">
+    </div>
+        <div>
+            {% include "footer.html" %}
+    </div>
+</body>
+</html>

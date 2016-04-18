@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load settingsvalue %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>天天搜贷</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/detail.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+
+</head>
+
+<body>
+	{% include "header.html" %}
+	<div id="containerdetail">
+			
+			<div class="jecon">
+				{% for bid in bids %}
+					<div class="detail_box detail_border {% if forloop.last %} detail_last {% endif %}">
+						<div class="detail_hdimg">
+							<img src="{{ bid.platform.logo }}"/>
+						</div>
+						<div class="bidname">
+						  <h2 style="font-size:22px; font-weight:bold;" align="center">{{ bid.name|title_cut}}</h2>
+						</div>
+						
+						<div class="detail_conn">
+						       <div class="contwid"></div>
+							   
+							   <div class="detail_ty">
+									 <div>标的金额</div>
+									 <div style="margin-top:10px;">￥{{ bid.amount|floatformat:"0" }}</div>
+								</div>
+								
+								<div style="width:1px;height:60px; background:#EEEEF0;float:left;margin-top:10px;matgin-left:20px;"></div>
+								
+								<div class="detail_ty">
+									 <div>年利率</div>
+									 <div style="margin-top:10px;">{{ bid.income_rate|floatformat:"-2" }}<span>%</span></div>
+								</div>
+								
+								<div style="width:1px;height:60px; background:#EEEEF0;float:left;margin-top:10px;matgin-left:20px;"></div>
+								
+								<div class="detail_ty">
+									 <div>期限</div>
+									 <div style="margin-top:10px;">{{ bid.term_name|floatformat:"-2" }}<span>{{ bid.term_unit }}</span></div>
+								</div>    
+								
+								 <div class="contwid1"></div>
+						</div>
+							
+						<div class="detail_btnn">
+								<div class="btn_xq"><a href="{% url 'bid_detail' bid.id %}" target="_blank" class="seach_cheek">详情</a></div>
+								{% if user.id %}
+							    <div class="btn_tz"><a href="{{ bid.link }}" target="_blank" class="seach_cheek">投资</a></div>
+						        {% else %}
+							    <div class="btn_tz"><label onclick="alert_login()" target="_blank" class="seach_cheek">投资</label></div>
+							    {% endif %}
+						</div>
+				   </div>
+				  
+				{% endfor %}
+				
+			</div>
+	</div>
+{% include "footer.html" %}
+</body>
+<script type="application/javascript">
+    function alert_login(){
+        href = location.href ;
+        a = href.split('/')[4];
+        alert("请先登录");
+        location.href = "/login/?next=/comb_detail/"+a;
+    }
+</script>
+</html>

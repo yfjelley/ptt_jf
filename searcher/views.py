@@ -382,6 +382,24 @@ def info(request):
                                                 "attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
 
+def manage(request):
+    attention_pr =   Project.objects.filter(click=request.user)
+    return render_to_response("manage.html", {"attention_pr":attention_pr}, context_instance=RequestContext(request))
+
+def authenticate(request):
+    return render_to_response("authenticate.html", {}, context_instance=RequestContext(request))
+def invite(request):
+    extend = request.user.extend_user_set.all()
+    if extend:
+        extend = extend[0]
+    return render_to_response("invite.html", {"extend":extend},context_instance=RequestContext(request))
+def message(request):
+    signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
+    notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
+    return render_to_response("message.html", {'signal':signal,'notice':notice},context_instance=RequestContext(request))
+def safe(request):
+    return render_to_response("safe.html", {},context_instance=RequestContext(request))
+
 @login_required
 def userinfo(request,objectid=None):
     url = None

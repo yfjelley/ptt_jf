@@ -1,0 +1,247 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="{% static 'css/header.css' %}" rel="stylesheet"/>
+    <title>天天搜贷</title>
+</head>
+<body>
+<div id="header">
+<div class="top">
+<ul class="nav">
+    <li><img src="/static/images/logo_red.png" width="250" height="60"/></li>
+    <li><a href="{% url 'searchindex' %}">首页</a></li>
+    <li><a href="{% url 'myfavorite' 4 %}" class="needlogin">收藏</a></li>
+    <li><a href="{% url 'bbsindex' %}">社区</a></li>
+    <li><a href="{% url 'activearea' %}">活动</a></li>
+</ul>
+<div class="top_right">
+{% ifequal user.id None %}
+    <ul id="top_r">
+        <li><a class="#" href="{% url 'login' %}">登录</a>
+
+        </li>
+        <li>/</li>
+        <li><a class="register_li" href="{% url 'register' %}">注册</a>
+        </li>
+    </ul>
+    <script type="text/javascript">
+    //未登录
+    $(".needlogin").click(function (e) {
+        alert('请先登录');
+    });
+
+    $(".signin").click(function (e) {
+        e.preventDefault();
+        $("#login-li").toggle();
+        $("#login-li").toggleClass("hov");
+
+        T_Logout();
+        WB_Login();
+        QQ_Login();
+
+
+    });
+
+    $("#login-li").mouseup(function () {
+        return false
+    });
+
+    $(document).mouseup(function (e) {
+        if ($(e.target).parent("a.signin").length == 0) {
+            $(".signin").removeClass("hov");
+            $("#login-li").hide();
+        }
+    });
+
+    //未登陆结束
+    </script>
+{% else %}
+    <ul id="top_r" class="top_name">
+        <div id="logged">
+            <a id="check_log" style="display: none">1</a>
+            {% if user.userinformation.realname %}
+                <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.userinformation.realname}}
+                    <ul>
+                        <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                        <li><a href="{% url 'logout' %}" onClick="T_Logout()">退出</a></li>
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>{{ user.username |phone_cut}}
+                    <ul>
+                        <li><a href="{% url 'userinformation' %}">我的资料</a></li>
+                        <li><a href="{% url 'logout' %}" onClick="T_Logout()">退出</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+        </div>
+    </ul>
+    <script type="text/javascript">
+        //已登陆
+        $(document).ready(function () {
+            $('#logged li').hover(function () {
+                $('ul', this).stop(true,false).slideDown(200);
+                $(this).children('a:first').addClass("hov");
+            }, function () {
+                $('ul', this).stop(true,false).slideUp(100);
+                $(this).children('a:first').removeClass("hov");
+            });
+        });
+        //已登陆结束
+    </script>
+{% endifequal %}
+
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        var script = document.createElement('script');
+        script.setAttribute('data-appid', '101181599');
+        script.setAttribute('data-redirecturi', 'http://ddbid.com/static/html/qc_callback.html');
+        script.setAttribute('charset', 'utf-8');
+        script.src = "http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js";
+        document.head.appendChild(script);
+        var script2 = document.createElement('script');
+        script2.setAttribute('type', 'text/javascript');
+        script2.setAttribute('charset', 'utf-8');
+        script2.src = "http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3896768758&debug=true";
+        document.head.appendChild(script2);
+    }
+    function T_Logout() {
+        //alert("logout");
+        QC.Login.signOut();
+        WB2.logout(function () {
+            //alert('mywblogout');
+        });
+    }
+
+    function QQ_Login() {
+        QC.Login(
+                {
+                    btnId: "qqLoginBtn",
+                    size: "C_S",
+                    scope: "get_user_info",
+                    display: "pc"},
+                function (reqData, opts) {
+                    if (QC.Login.check()) {
+                        QC.Login.getMe(
+                                function (openId, accessToken) {
+                                    $.post("{% url 'qq_is_first' %}",
+                                            {
+                                                openid: openId,
+                                                accessToken: accessToken,
+                                                nickname: reqData.nickname,
+                                                url: reqData.figureurl_qq_1},
+                                            function (data) {
+                                                document.write(data);
+                                                document.close();
+                                            }, "html");
+                                });
+                    } else {
+                        alert("login failed! please try again!");
+                    }
+                },
+                function (opts) {
+                    //alert('QQ登录 注销成功');
+                }
+        );
+        T_Login_Init_Button();
+    }
+
+    function WB_Login() {
+        WB2.anyWhere(function (W) {
+            W.widget.connectButton(
+                    {
+                        id: "wb_connect_btn",
+                        type: '3,2',
+                        callback: {
+                            login: function (o) {
+                                id = o.id;
+                                $.post("{% url 'wb_is_first' %}",
+                                        {
+                                            wbid: id,
+                                            nickname: o.screen_name,
+                                            url: o.profile_image_url },
+                                        function (data) {
+                                            document.write(data);
+                                            document.close();
+                                        }, "html");
+                            },
+                            logout: function () {
+                                //alert('logout');
+                            }
+                        }
+                    });
+        });
+        T_Login_Init_Button();
+    }
+
+    function WB_Login2() {
+        WB2.anyWhere(function (W) {
+            W.widget.connectButton(
+                    {id: "wb_connect_btn",
+                        type: '3,2',
+                        callback: {
+                            login: function (o) {
+                            },
+                            logout: function () {
+                                //alert('wblogout');
+                            }
+                        }
+                    });
+        });
+        T_Login_Init_Button();
+    }
+
+    function T_Login_Init_Button() {
+        {#        alert('qqT_Login_Init_Button');#}
+        {#        alert(document.getElementById("qqLoginBtn").getElementsByTagName('a')[0]);#}
+        {#        alert(document.getElementById("qqLoginBtn").getElementsByTagName('a')[0].getElementsByTagName('img')[0]);#}
+        {#        alert(document.getElementById("qqLoginBtn").getElementsByTagName('a')[0].getElementsByTagName('img')[0].src);#}
+
+
+        if (document.getElementById("qqLoginBtn").getElementsByTagName('a').length > 0) {
+            document.getElementById("qqLoginBtn")
+                    .getElementsByTagName('a')[0]
+                    .getElementsByTagName('img')[0]
+                    .src = "http://ddbid.com/static/images/qq.png";
+        }
+        if (document.getElementById('wb_connect_btn').getElementsByTagName('div') > 0) {
+            alert('wbc');
+            document.getElementById('wb_connect_btn')
+                    .getElementsByTagName('div')[0]
+                    .getElementsByTagName('a')[0]
+                    .getElementsByTagName('img')[0]
+                    .src = "http://ddbid.com/static/images/weblog.png";
+        }
+
+
+        {#        alert('wbqqT_Login_Init_Button');#}
+        {#        alert(document.getElementById('wb_connect_btn').getElementsByTagName('div')[0]);#}
+        {#        alert(document.getElementById('wb_connect_btn').getElementsByTagName('div')[0].getElementsByTagName('a')[0]);#}
+        {#        alert(document.getElementById('wb_connect_btn').getElementsByTagName('div')[0].getElementsByTagName('a')[0].getElementsByTagName('img')[0]);#}
+        {#        alert(document.getElementById('wb_connect_btn').getElementsByTagName('div')[0].getElementsByTagName('a')[0].getElementsByTagName('img')[0].src);#}
+
+
+        $('#wb_connect_btn').bind("DOMNodeInserted", {}, function (event) {
+            document.getElementById('wb_connect_btn')
+                    .getElementsByTagName('div')[0]
+                    .getElementsByTagName('a')[0]
+                    .getElementsByTagName('img')[0]
+                    .src = "http://ddbid.com/static/images/weblog.png";
+        });
+    }
+</script>
+
+
+</body>
+</html>

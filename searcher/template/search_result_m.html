@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load url from future %}
+{% load staticfiles %}
+{% load pagination_tags %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <meta content="width=device-width, initial-scale=1.0,user-scalable=no" name="viewport" id="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <script src="/static/js/jquery.min.js"></script>
+ 	<link rel="stylesheet" href="/static/css/search_result_m.css">
+    <link rel="stylesheet" href="/static/css/login_m.css">
+    <script type="text/javascript" src="/static/js/public.js"></script>
+</head>
+<body>
+<div class="log_conten">
+<header>
+<div id="head_m"></div>
+</header>
+{% if params %}
+    <script>
+        $(document).ready(function () {
+            var a = [{{ params }}];
+            //var a = params.split(',');
+            $.each(a, function (key, value) {
+                $("a[choiceid= " + value + " ]").addClass("btn_blue_").siblings("a").removeClass("btn_blue_");
+            });
+        });
+    </script>
+{% else %}
+    <script>
+        $(document).ready(function () {
+            $(".choices a:first-child").addClass("btn_blue_");
+        });
+    </script>
+{% endif %}
+    <div style="width:4.7rem;height:0.4rem; background:#cccccc;"></div>
+	<div class="log_contenttt">
+		<div style="overflow:hidden;width:4.5rem;height:0.6rem;padding-top:0.2rem;padding-left:0.2rem;">
+			<div style="font-size:0.25rem;float:left;">
+			   标的搜索结果
+			</div>
+			<div class="search_reorder">
+					<a href="javascript:void(0)" sorttype="1"></span>收益<i></i></a>
+					<a href="javascript:void(0)" sorttype="2">&nbsp;&nbsp;投资期限<i></i></a>
+			</div>	
+		 </div>
+		{% include "search_result_single_m.html" %}
+	</div>
+</div>
+</body>
+<script>
+    $(".choices a").on("click", function () {
+        //给当前A标签添加class btn_blue_,当前dom元素兄弟姐级删除Class btn_blue_
+        $(this).addClass("btn_blue_").siblings("a").removeClass("btn_blue_");
+        var a = getElementsByClassName('btn_blue_','choiceid');
+        var amount = $(".lastinput").children("#id_searchWord").val();
+        checkparam(1);
+    });
+
+    $("#save_filter").on("click", function () {
+        var a = getElementsByClassName('btn_blue_','choiceid');
+        $.post("{% url 'save_filter' %}",
+                {
+                    params: a,
+                    processData: false,
+                    contentType: false
+                },
+                function (data) {
+                    alert(data);
+                }
+        );
+    });
+
+    $(".search_reorder a").click(function () {
+        $(this).siblings().removeClass("order_jx");
+        $(this).siblings().removeClass("order_sx");
+        if ($(this).hasClass("order_jx")) {
+            $(this).removeClass("order_jx");
+            $(this).addClass("order_sx");
+        } else if ($(this).hasClass("order_sx")) {
+            $(this).removeClass("order_sx");
+            $(this).addClass("order_jx");
+        } else {
+            $(this).addClass("order_jx");
+        }
+        var page = $('.currentpage').text();
+
+        checkparam(page);
+    });
+
+    function ShowMore() {
+	  
+	
+        var c = $('#check_log').text();
+
+        if (c != 1) {
+            alert('请先登陆');
+            location.href = "/login/"
+        }
+        else {
+            $('#onlinepic').hide();
+			$('.search_outside').show();
+            $('.showDetailInfo').hide();
+        }
+    }
+    function CancelMore() {
+	    $('#onlinepic').show();
+        $('.search_outside').hide();
+        $('.showDetailInfo').show();
+    }
+
+    function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+
+    function takepage(n) {
+        checkparam(n);
+    }
+
+    function checkparam(page) {
+        {# var a = getElementsByClassName('btn_blue_','choiceid'); #}
+        var a = [1,7,13,16,22,28,36];
+        var amount = $(".lastinput").children("#id_searchWord").val();
+        var sortorder = 0;
+        var sorttype = 0;
+
+        var aaa = getElementsByClassName('order_sx','sorttype');
+        var bbb = getElementsByClassName('order_jx','sorttype');
+        if(aaa != ''){
+            sortorder = 1;
+            sorttype = aaa[0];
+        }
+        else if(bbb != ''){
+            sortorder = 2;
+            sorttype = bbb[0];
+        }
+
+
+
+        $.get("{% url 'search_result_m' %}",
+                {
+                    params: a,
+                    amount: amount,
+                    page: page,
+                    sorttype: sorttype,
+                    sortorder: sortorder
+                },
+                function (data) {
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+</script>
+<script type="text/javascript">
+    $(function(){
+        $.get("/m/search/",function(data){ $('#head_m').html(data.content_html);});
+    });
+</script>
+
+
+</html>

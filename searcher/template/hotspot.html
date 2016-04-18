@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/hotspot.css">
+    <title></title>
+</head>
+<body>
+<div class="hot_trans">
+</div>
+<div class="hot_content">
+    <div class="hot_conHeight">
+        <div class="hot_position">
+            <div class="search textbox">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.searchWord }}
+                    <input type="submit" class="btn_search" value="">
+                </form>
+                {% if form.errors %}
+                <script type="application/javascript">
+                    $(function () {
+                        alert('请输入投资金额');
+                    });
+                </script>
+                {% endif %}
+            </div>
+
+            <div class="hot_com">
+                <div class="hot_comtitle"><h3>我的组合搜索</h3></div>
+                <div class="hot_comlist">
+                    <ul>
+                        {% if f_ls %}
+                        {% for f_l in f_ls %}
+                        <li>
+                            <a choices="{{ f_l.choices }}"
+                               href="{% url 'shortcut_request' f_l.id %}">{{ f_l.name }}</a>
+                        </li>
+                        {% endfor %}
+                        {% else %}
+                        <a>您还未设置任何快捷查询</a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hot">
+                <h3>本周热点：</h3>
+                {% for h in hs %}
+                <div class="hot_comlink">
+                <a href="{{ h.url }}" target="_blank">{{ h.title }} </a><br>
+                </div>
+                    {% endfor %}
+            </div>
+            <div style="position: relative;top:-264px;left:-30px;">
+                <img src="/static/images/maopao.gif">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="bbs_search">
+    <div class="bbs_logo fl"><a href="{% url 'searchindex' %}"><img src="/static/images/logo1.png"/></a></div>
+    <div class="bbs_hunt textbox">
+        <form action="{% url 'searchindex' %}" method="post">
+            {% if form.searchWord %}
+                {{ form.searchWord }}
+            {% else %}
+                <input class="fl" id="id_searchWord" name="searchWord" type="text" placeholder="请输入投资金额"/>
+            {% endif %}
+            <input type="submit" class="bbs_search_btn" value="">
+        </form>
+    </div>
+    <div class="lastinput" style="display: none">
+        {{ form.searchWord }}
+    </div>
+</div>
+</body>
+</html>

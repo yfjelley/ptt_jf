@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+{% load url from future %}
+{% load staticfiles %}
+{% load pagination_tags %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title></title>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/public.js"></script>
+    <link rel="stylesheet" href="/static/css/search_listresult_m.css"/>
+
+</head>
+<body>
+<header>
+    <div id="head_m"></div>
+</header>
+
+<article>
+    <section>
+        <div id="container">
+            <div class="con_unify">
+                <ul>
+                    <li class="shou_text">
+                        <label>收益率:</label>
+                    </li>
+                    <li>
+                        <select id="choose" class="get-shouyitxt">
+                            <option choiceid="1">不限</option>
+                            <option choiceid="2"> <8%</option>
+                            <option choiceid="3"> 8%~12%</option>
+                            <option choiceid="4">12%~16%</option>
+                            <option choiceid="5">16%~20%</option>
+                            <option choiceid="6">>20%</option>
+                        </select>
+                    </li>
+                    <li style="clear:both"></li>
+                    <li>
+                        <div
+                            style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                    </li>
+                    <li class="qixian_text">
+                        <label>期限:</label>
+                    </li>
+                    <li>
+                        <select id="qixchoose" class="get-qixiantxt">
+                            <option choiceid="7">不限</option>
+                            <option choiceid="8">1个月</option>
+                            <option choiceid="9">1-3个月</option>
+                            <option choiceid="10">3-6个月</option>
+                            <option choiceid="11">6-12个月</option>
+                            <option choiceid="12">一年以上</option>
+                        </select>
+                    </li>
+                    <li style="clear:both"></li>
+                    <li>
+                        <div
+                                style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                    </li>
+                    <li>
+                        <div class="showDetailInfo">
+                            <a href="javascript:void(0)" onClick="ShowMore()">更多指标</a>
+                            <div style="color:rgb(240,52,89);margin:-0.26rem 0 0 -0.2rem"><label>↓</label></div>
+                        </div>
+
+                    </li>
+                    <div id="onlinepic">
+
+                        <li class="kefou_text">
+                            <label>可否流转:</label>
+                        </li>
+                        <li>
+                            <select id="kefchoose" class="get-kefoutxt">
+                                <option choiceid="13">不限</option>
+                                <option choiceid="14">可流转</option>
+                                <option choiceid="15">不可流转</option>
+                            </select>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                style="width: 4.5rem;height: 0.02rem;background:#999999;margin:0.2rem 0 0.2rem -1.6rem;"></div>
+                        </li>
+                        <li class="sign_text">
+                            <label>平台注册资金:</label>
+                        </li>
+                        <li>
+                            <select id="signchoose" class="get-signtxt">
+                                <option choiceid="16">不限</option>
+                                <option choiceid="17">500万以下</option>
+                                <option choiceid="18">500~1000万</option>
+                                <option choiceid="19">1000~5000万</option>
+                                <option choiceid="20">5000万~1亿</option>
+                                <option choiceid="21">1亿以上</option>
+                            </select>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                        </li>
+                        <li class="sxtime_text">
+                            <label>平台上线时间:</label>
+                        </li>
+                        <li>
+                            <select id="sxtimechoose" class="get-sxtimetxt">
+                                <option choiceid="22">不限</option>
+                                <option choiceid="23">3个月内</option>
+                                <option choiceid="24">3~6个月</option>
+                                <option choiceid="25">6~12个月</option>
+                                <option choiceid="26">1~3年</option>
+                                <option choiceid="27">3年以上</option>
+                            </select>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                        </li>
+                        <li class="type_text">
+                            <label>标的类型:</label>
+                        </li>
+                        <li class="type_div">
+                            <select id="typechoose" class="get-typetxt">
+                                <option choiceid="28">不限</option>
+                                <option choiceid="29">车贷</option>
+                                <option choiceid="30">房贷</option>
+                                <option choiceid="31">个人信用贷</option>
+                                <option choiceid="32">企业贷</option>
+                                <option choiceid="33">债券流转</option>
+                                <option choiceid="34">个人资产管理</option>
+                                <option choiceid="35">平台产品</option>
+                            </select>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                        </li>
+                        <li class="comptype_text">
+                            <label>公司类型:</label>
+                        </li>
+                        <li class="comptype_div">
+                            <select id="compchoose" class="get-comptxt">
+                                <option choiceid="36">不限</option>
+                                <option choiceid="38">PE/VC系</option>
+                                <option choiceid="39">国资国企系</option>
+                                <option choiceid="40">民营系</option>
+                                <option choiceid="41">上市公司系</option>
+                                <option choiceid="42">银行系</option>
+                            </select>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                    style="width: 4.5rem;height: 0.02rem;background:#999999;margin: 0.2rem 0 0.2rem -1.6rem;"></div>
+                        </li>
+                    </div>
+                    <li>
+                        <div class="search_outside">
+                            <a href="javascript:void(0)" onClick="CancelMore()">收起</a>
+                            <div style="color:rgb(240,52,89);margin:-0.26rem 0 0 -0.2rem"><label>↑</label></div>
+                        </div>
+                    </li>
+
+                    <li class="confirm_inp">
+                        <label><input type="button" onclick="detail_search()" value="确认"> </label>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+</article>
+<form id="formid" action="/m/search_listresult/" method="post">
+    <input id="params" name="params" value="" type="text"  style="display:none;"/>
+    <input id="amount" name="amount" value="" type="text"  style="display:none;"/>
+    <input id="page"  name="page" value="" type="text"  style="display:none;"/>
+    <input id="sorttype" name="sorttype" value="" type="text"  style="display:none;"/>
+    <input id="sortorder" name="sortorder" value="" type="text"  style="display:none;"/>
+</form>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $.get("/m/search/",function(data){ $('#head_m').html(data.content_html);});
+    });
+</script>
+<script>
+    $(function(){
+        $('#onlinepic').hide();
+        $('.search_outside').hide();
+    })
+    function ShowMore() {
+        {% ifequal user.id None %}
+            alert('请先登陆');
+            location.href = "/m/login/?next=/m/detail_search"
+        {% else %}
+            $('#onlinepic').show();
+            $('.search_outside').show();
+            $('.showDetailInfo').hide();
+        {% endifequal%}
+    }
+
+    function CancelMore() {
+        $('#onlinepic').hide();
+        $('.search_outside').hide();
+        $('.showDetailInfo').show();
+    }
+
+</script>
+<script type="text/javascript">
+
+        function detail_search(){
+           checkparam(1);
+        }
+
+        function get_option() {
+            var $ids="1";
+            $("#container option:selected").attr('id','1').siblings('option').removeAttr('id','1');
+            var a = getElementsByClassName($ids,'choiceid');
+            return a;
+        }
+
+        function getElementsByClassName(n,m) {
+            var el = [],
+                _el = document.getElementsByTagName('option');
+            for (var i = 0; i < _el.length; i++) {
+                if(_el[i].id==n){
+                    el[el.length] = _el[i].getAttribute(m);
+                }
+            }
+            return el;
+        }
+
+        function takepage(n) {
+            checkparam(n);
+        }
+
+        function checkparam(page) {
+
+            var amount = $(".lastinput").children("#id_searchWord").val();
+            var sortorder = 0;
+            var sorttype = 0;
+
+            var aaa = getElementsByClassName('order_sx','sorttype');
+            var bbb = getElementsByClassName('order_jx','sorttype');
+            if(aaa != ''){
+                sortorder = 1;
+                sorttype = aaa[0];
+            }
+            else if(bbb != ''){
+                sortorder = 2;
+                sorttype = bbb[0];
+            }
+
+           document.getElementById("params").value= get_option();
+           document.getElementById("amount").value= "";
+           document.getElementById("page").value= page;
+           document.getElementById("sorttype").value= sorttype;
+           document.getElementById("sortorder").value= sortorder;
+
+           $("#formid").submit();
+
+        }
+</script>
+</html>

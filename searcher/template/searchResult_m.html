@@ -1,0 +1,334 @@
+<em><!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="/static/css/search_result_m.css">
+    <link rel="stylesheet" href="/static/css/login_m.css">
+    <script type="text/javascript" src="/static/js/public.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.7.1.js"></script>
+    <title></title>
+<script type="text/javascript">
+$(document).ready(function(){
+	var show_per_page = 3; 
+	var number_of_items = $('#content').children().size();
+	var number_of_pages = Math.ceil(number_of_items/show_per_page);
+	$('#current_page').val(0);
+	$('#show_per_page').val(show_per_page);
+	var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
+	var current_link = 0;
+	while(number_of_pages > current_link){
+		navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';
+		current_link++;
+	}
+	navigation_html += '<a class="seach_cheekk" href="javascript:next();">下一页</a>';
+	$('#page_navigation').html(navigation_html);
+	$('#page_navigation .page_link:first').addClass('active_page');
+	$('#content').children().css('display', 'none');
+	$('#content').children().slice(0, show_per_page).css('display', 'block');	
+});
+function previous(){
+	new_page = parseInt($('#current_page').val()) - 1;
+	if($('.active_page').prev('.page_link').length==true){
+		go_to_page(new_page);
+	}
+}
+function next(){
+	new_page = parseInt($('#current_page').val()) + 1;
+	//if there is an item after the current active link run the function
+	if($('.active_page').next('.page_link').length==true){
+		go_to_page(new_page);
+	}
+}
+function go_to_page(page_num){
+	var show_per_page = parseInt($('#show_per_page').val());
+	start_from = page_num * show_per_page;
+	end_on = start_from + show_per_page;
+	$('#content').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+	$('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+	$('#current_page').val(page_num);
+}
+
+</script>
+<script type="text/javascript">
+ $(".search_reorder a").click(function () {
+        $(this).siblings().removeClass("order_jx");
+        $(this).siblings().removeClass("order_sx");
+        if ($(this).hasClass("order_jx")) {
+            $(this).removeClass("order_jx");
+            $(this).addClass("order_sx");
+        } else if ($(this).hasClass("order_sx")) {
+            $(this).removeClass("order_sx");
+            $(this).addClass("order_jx");
+        } else {
+            $(this).addClass("order_jx");
+        }
+        var page = $('.currentpage').text();
+        checkparam(page);
+    });
+
+    function getElementsByClassName(n,m) {
+        var el = [],
+                _el = document.getElementsByTagName('*');
+        for (var i = 0; i < _el.length; i++) {
+            if (_el[i].className == n) {
+                el[el.length] = _el[i].getAttribute(m);
+            }
+        }
+        return el;
+    }
+
+    function takepage(n) {
+        checkparam(n);
+    }
+
+    function checkparam(page) {
+        var a = getElementsByClassName('btn_blue_','choiceid');
+        var amount = $(".lastinput").children("#id_searchWord").val();
+        var sortorder = 0;
+        var sorttype = 0;
+
+        var aaa = getElementsByClassName('order_sx','sorttype');
+        var bbb = getElementsByClassName('order_jx','sorttype');
+        if(aaa != ''){
+            sortorder = 1;
+            sorttype = aaa[0];
+        }
+        else if(bbb != ''){
+            sortorder = 2;
+            sorttype = bbb[0];
+        }
+{#        alert(sortorder);#}
+{#        alert(sorttype);#}
+
+
+        $.get("{% url 'searchindex' %}",
+                {
+                    params: a,
+                    amount: amount,
+                    page: page,
+                    sorttype: sorttype,
+                    sortorder: sortorder
+                },
+                function (data) {
+                    $('#result_form').html(data.content_html);
+                }
+        );
+    }
+</script>
+<style>
+#page_navigation a{
+	padding:3px;
+	border:1px solid gray;
+	margin:2px;
+	color:black;
+	text-decoration:none
+}
+.active_page{
+	background:darkblue;
+	color:white !important;
+}
+.previous_link{display:none;}
+.page_link{display:none;}
+</style>
+</head>
+<body>
+
+     <div style="background-color: #555555;">
+        <ul>
+            <li class="nav_img">
+                <label><img src="/static/images/logo_red.png"></label>
+            </li>
+            <li class="seacher_inp">
+                <label><input type="text"> </label>
+            </li>
+            <li class="nav_btnimg">
+                <label><img src="/static/images/topseacher.png"></label>
+            </li>
+            <li style="clear: both;">
+            </li>
+        </ul>
+    </div>
+
+	
+	<div class="log_conten">
+	<div style="width:4.7rem;height:0.4rem; background:#cccccc;"></div>
+	    <div class="log_contentt">
+		<div style="overflow:hidden;width:4.7rem;height:0.6rem;padding-top:0.2rem;padding-left:0.2rem;">
+			<div style="font-size:0.25rem;float:left;">
+			   标的搜索结果
+			</div>
+			<div class="search_reorder">
+					<a href="javascript:void(0)" sorttype="1">收益<i></i></a>
+					<a href="javascript:void(0)" sorttype="2">投资期限<i></i></a>
+			</div>	
+		</div>
+		<input type='hidden' id='current_page' />
+	    <input type='hidden' id='show_per_page' />
+		  <div id='content'>
+			<div style="padding-left:0.2rem;">
+				<div style="margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心！</span></div>	
+				
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">14.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>		
+			</div>
+			
+			<div style="padding-left:0.2rem;">
+				<div style="margin-top:0.2rem;margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心！</span></div>
+					
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">12.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>	
+			</div>
+			<div style="padding-left:0.2rem;">
+				<div style="margin-top:0.2rem;margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心！</span></div>	
+				
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">11.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>	
+			</div>		
+			<div style="padding-left:0.2rem;">
+				<div style="margin-top:0.2rem;margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心222！</span></div>	
+				
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">10.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>	
+			</div>	
+			<div style="padding-left:0.2rem;">
+				<div style="margin-top:0.2rem;margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心333！</span></div>	
+				
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">10.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>	
+			</div>	
+			<div style="padding-left:0.2rem;margin-bottom:0.2rem;">
+				<div style="margin-top:0.2rem;margin-bottom:0.2rem;"><div style="width:4.5rem;height:1px; background:#EEEEF0";></div></div>
+				<div style="overflow:hidden;width:100%;height:0.3rem;">
+					<div class="search_bd"><img src="/static/images/logo/wz.png"></div>
+					<div class="ckxq"><a href="/bid_detail/90446/" target="_blank" class="seach_cheek">查看详情</a></div>
+				</div>
+				<div style="margin-top:0.2rem"><span class="search_title" >天标尽早还，金牌信誉，投的放心444！</span></div>	
+				
+				<div style="overflow:hidden">
+					<div class="neirong">
+					   <ul>
+						  <li>借款金额：<font class="c_red">121333</font></li>
+						  <li>每万元总收益：<font class="c_red">5.32元</font></li>
+					   </ul>
+					</div>		
+					<div class="neirong1"><div style="width:1px;height:0.5rem; background:#999999"></div></div>	
+					<div class="neirong">
+					   <ul>
+						  <li>期限:<font class="c_red">1</font>天</li>
+						  <li>年化收益:<font class="c_red">10.28</font>%</li>
+					   </ul>
+					</div>	
+				</div>	
+			</div>	
+		  </div>
+		
+		</div>
+		  <div id='page_navigation'></div><br>
+		<!--<div style="float:left;width:5rem; margin-bottom:0.2rem;"><input type="button" class="seach_cheekk" value="下一页"/></div>
+			<div style="float:left;width:5rem; margin-bottom:0.2rem;"><a class="next_link" href="javascript:next();">下一页</a></div>-->
+		<div style="padding-top:0.2rem;margin-left:0.15rem;font-size:0.15rem;"><span>上海辞达金融信息服务有限公司&nbsp; &nbsp;沪ICP备14053768&nbsp; &nbsp;<a href="#" style="font-size:0.1rem;
+		color:#FF0000;text-decoration:none;display:none;">电脑版</a></span></div>
+		</div>
+
+</body>
+{% if  msg %}
+	<script type="text/javascript">
+		alert({{msg}});
+	</script>
+{% endif %}
+</html>
+</em>

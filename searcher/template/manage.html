@@ -1,0 +1,89 @@
+{% extends 'base_userinfo.html' %}
+{% load settingsvalue %}
+{% block content %}
+		<div id="promanager" >
+			<div style="position: relative;top: 35px;">
+				<label style="font-size:30px; padding-top:2px;">项目管理</label>
+			</div>
+			<div class="ProCenter" id="Prodaohang">
+				<a data-qq="ltxm" style="float:left;padding-top:20px;" href="javascript:void(0)"><label class="pro-label">已投项目</label></a>
+				<a data-qq="gzxm" style="float:left;padding-top:20px;" href="javascript:"><label class="pro-label">关注的项目</label></a>
+				<a data-qq="wdxm" style="float:left;padding-top:20px;" href="javascript:;"><label class="pro-label">关注的人</label></a>
+				<div style="float:left; margin-left:-245px;border-right:1px solid #eeeef0;width:1px; height:35px;margin-top: 5px;"></div>
+				<div style="border-right:1px solid #eeeef0;width:1px; height:35px;float:left; margin-left:-110px;margin-top: 5px;"></div>
+				<div style="clear:both"></div>
+				<div style="border-top:1px solid #eeeef0;width:700px; height:1px;margin-top: 5px;"></div>
+			</div>
+<!--项目管理:领投项目-->
+			<div class="prosonPage1"><!--定义内容的宽度,高度---> <div id="ltxm">
+				{% if user.invest_user_set.all %}
+			    {% for i in user.invest_user_set.all %}
+					<ul class="yitou-pro" style="margin-left:-48px;">
+						<li class="img-size" style="float:left;margin-top:10px;">
+							<a href="/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" /></a>
+						</li>
+						<li style="float:left;width: 300px;margin-top:10px;">
+							<label>{{i.invest_project.name}}</label>
+							{% ifequal i.invest_project.status 0 %}
+							<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
+							{% endifequal %}
+							{% ifequal i.invest_project.status 1 %}
+							<label style="color:#C30;font-size:14px; font-weight:bold">众投中</label>
+							{% endifequal %}
+							{% ifequal i.invest_project.status 2 %}
+							<label style="color:#C30;font-size:14px; font-weight:bold">众投成功</label>
+							{% endifequal %}
+						</li>
+						<li style="float:left;width: 400px">
+							<label>融资份额</label><b>{{i.invest_project.invest_num}}万份</b>
+							<label style="margin-left: 100px;">已融份额</label><b>{{i.invest_project.finish}}万份</b>
+						</li>
+						<li style="float:left">
+							<label>我已预约份额</label><b>{{i.invest_num}}万份</b>
+							<label style="margin-left: 70px;">完成率</label><b style="color:#CC6633">{% widthratio i.invest_project.finish i.invest_project.invest_num 100 %}%</b>
+						</li>
+					</ul>
+					<ul style="clear:both"></ul>
+				{% endfor %}
+				{% else %}
+				     你没有领投项目！
+				{% endif %}
+                </div>
+<!--项目管理:领投项目 end-->
+
+<!--项目管理:我的项目-->
+               <div id="wdxm" class="display" style="padding-top:20px">
+					   {% if user %}
+					   {% for i in user.userinformation.attention_persion.all %}
+				   {% if i.userinformation.photo_url %}
+				   <div style="float: left;padding-right: 60px;">
+					   <img width="90" height="90" src="{{i.userinformation.photo_url}}">
+					   <div style="margin-top:5px;">
+						   {% if i.userinformation.nickname %}
+						   {{i.userinformation.nickname }}
+						   {% else %}
+						   {{i.username|phone_cut}}
+						   {% endif %}
+					   </div>
+					   <label style="height:20px;width: 100%;display: block"></label>
+				   </div>
+				    {% endif %}
+					   {% endfor %}
+					   {% endif %}
+               </div>
+<!--项目管理:我的项目 end-->
+
+<!--项目管理:关注项目-->
+               <div id="gzxm" class="display">
+				   {% include 'focus.html' %}
+               </div>
+<!--项目管理:关注项目 end-->
+			</div>
+		</div>
+<script>
+	$('#Prodaohang').find('a').click(function(){
+		var id =$(this).data('qq');
+		$('#'+id).show().siblings().hide();
+	});
+</script>
+{% endblock %}

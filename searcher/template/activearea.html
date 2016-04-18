@@ -1,0 +1,131 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta property="wb:webmaster" content="f1fb53e0ae61a2d9" />
+    <title>关于我们</title>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+td {
+	font-size: 11pt;
+	line-height: 21pt;
+	color: #666666;
+}
+.td1 {
+	font-size: 9pt;
+	color: #666666;
+}
+table a:link {text-decoration: none;}
+table a:visited { color: #666666; text-decoration: none;}
+table a:active { color: #666666; text-decoration: none;}
+table a:hover { color: #FF0000; text-decoration: underline;}
+-->
+</style>
+    <script>
+        function actions(){
+            var obj = document.getElementById('inp_details');
+            window.location.href="http://ddbid.com/bbs/topic/21/";
+        }
+        function signactions(){
+            var obj = document.getElementById('inp_sign');
+            window.location.href="http://ddbid.com/register/";
+        }
+    </script>
+</head>
+
+<body>
+<div id="container">
+{% include "header.html" %}
+<div style=" background:#EEEEF0;">
+<div id="middd" align="center" >
+  <div class="tablebig">
+<table width="895" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="247"><img src="/static/images/contact_about/nr_01bai.png" width="247" height="34" /></td>
+    <td width="636" align="left" background="/static/images/contact_about/nr_02.gif">活动专区</td>
+    <td width="12"><img src="/static/images/contact_about/nr_03.gif" width="12" height="34" /></td>
+  </tr>
+</table>
+<table width="895" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="/static/images/contact_about/nr_04.gif" width="895" height="10" /></td>
+  </tr>
+</table>
+<table width="895" height="407" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="206" align="center" valign="top" background="/static/images/contact_about/nr_05.gif">
+      <table width="100" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="31" height="35"></td>
+        <td width="157" align="left"><a href="{% url 'about_us' %}"><span class="hdzq">公司简介</span></a></td>
+      </tr>
+      <tr>
+        <td colspan="2"><img src="/static/images/contact_about/nr_08.gif" width="188" height="3" /></td>
+      </tr>
+
+      <tr>
+        <td height="35"></td>
+        <td height="35" align="left"><a href="{% url 'contact_us' %}"><span class="hdzq">联系方式</span></a></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><img src="/static/images/contact_about/nr_08.gif" width="188" height="3" /></td>
+      </tr>
+      <tr>
+        <td height="35"></td>
+        <td height="35" align="left"><a href="{% url 'disclaimer' %}"><span class="hdzq">免责条款</span></a></td>
+      </tr>
+	    <tr>
+        <td colspan="2"><img src="/static/images/contact_about/nr_08.gif" width="188" height="3" /></td>
+      </tr>
+      <tr>
+        <td height="35"></td>
+        <td height="35" align="left"><a href="{% url 'activearea' %}"><span class="hdzq">活动专区</span></a></td>
+      </tr>
+    </table>
+    </td>
+    
+    <td width="659" style="background:#FFFFFF;">
+    <table width="95%" border="0" align="right" cellpadding="0" cellspacing="0" style="position:relative;top:-12em;left:0.6em">
+      <tr>
+        <td align="left">
+            <a href="http://42.96.131.5:8000/new_activearea/" style="font-size:1.1em">注册送流量&nbsp;&nbsp;,&nbsp;&nbsp;抢Iphon6s手机详情点击</a>
+        </td>
+      </tr>
+        <tr>
+            <td style="padding:0.5em 0">
+                <div style="width: 610px;height:1px;background:#EEEEF0"></div>
+            </td>
+        </tr>
+    </table>
+    </td>
+    <td width="30" background="/static/images/contact_about/nr_06.gif">&nbsp;</td>
+  </tr>
+</table>
+<table width="895" height="0" border="0" align="center" cellpadding="0" cellspacing="0" background="/static/images/contact_about/nr_07.gif">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<div style="height:40px;"></div>
+</div>
+</div>
+</div>
+{% include "footer.html" %}
+</div>
+</body>
+</html>

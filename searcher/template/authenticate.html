@@ -1,0 +1,159 @@
+{% extends 'base_userinfo.html' %}
+{% block content %}
+    <div id="invest" >
+	<div id="touzirenzheng">
+            <div id="lingtouren">
+                <ul class="tzrzMessage">
+                    <li style="font-size:30px;position: relative;top: 30px;left: -80px;">
+                        <label>投资认证</label>
+                    </li>
+                    <li style="font-size:24px;margin-left:-80px;color:#4a3c70;margin-top:20px">
+                        <label>请完善您的信息</label>
+                    </li>
+                    <li style="font-size:24px;margin-left:130px;color:#000">
+                        <label>您是个人还是机构？</label>
+                    </li>
+                    <li style="margin-top:20px;">
+                        <img id="person" src="/static/images/person.png" style="margin-left:100px" />
+                        <img id="mperson" src="/static/images/mperson.png" style="margin-left:30px"/>
+                    </li>
+                	<li>
+                        <ul id="authentication_type">
+                            <li style="float:left;margin-left:70px;color:#e1604d" >
+                              <input id="gerens" checked="checked" type="radio" name="touzi" />我是个人
+                            </li>
+                            <li style="float:left;margin-left:60px;color:#e1604d" >
+                              <input id="jigous"  type="radio" name="touzi"/>我是机构
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="clear:both"></li>
+					<table id="geren" style="display:block;">
+						<tr>
+							<td width="100">真实姓名:</td>
+
+							{% ifequal user.userinformation.authentication_class '1' %}
+							<td class="real_name"><input id="real_name" type="text" value="{{user.userinformation.realname}}"></td>
+
+							{% else %}
+							<td class="real_name"><input id="real_name" type="text"></td>
+							{% endifequal %}
+						</tr>
+						<tr>
+							<td>身份证号码:</td>
+							{% ifequal user.userinformation.authentication_class '1' %}
+							<td class="icard"><input id = "icard" type="text" value="{{user.userinformation.business_card}}"></td>
+							{% else %}
+							<td class="icard"><input id = "icard" type="text"></td>
+							{% endifequal %}
+						</tr>
+						<tr>
+							<td colspan="3">请上传身份证,帮助我们快速核实您的身份</td>
+						</tr>
+						<tr style="height: 80px;">
+							<td>身份证:</td>
+							<td class="upload_file">
+								<label>
+									点击上传身份证扫描件或高清图片
+									<input type="file" name="file_upload"  id="file_upload" />
+									</label>
+							</td>
+							<td>
+								{% if user.userinformation.id_card  %}
+								<img src="{{ user.userinformation.id_card }}"/>
+								{% endif %}
+							</td>
+						</tr>
+						<tr>
+							<td class="refer-aggree" colspan="3">
+								<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="3">
+								<input id="auth_submit" class="button_save" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;margin-left:-80px;cursor: pointer">
+							</td>
+						</tr>
+					</table>
+					<table id="jigou" style="display:none">
+						<tr>
+							<td>法人姓名:</td>
+							{% ifequal user.userinformation.authentication_class '2' %}
+							<td class="real_name"><input id ="real_name_p" type="text" value="{{user.userinformation.realname}}"></td>
+							{% else %}
+							<td class="real_name"><input id ="real_name_p" type="text"></td>
+							{% endifequal %}
+
+						</tr>
+						<tr>
+							<td>身份证号码:</td>
+							{% ifequal user.userinformation.authentication_class '2' %}
+							<td class="icard"><input id ="icard_p" type="text" value="{{user.userinformation.business_card}}"></td>
+							{% else %}
+							<td class="icard"><input id ="icard_p" type="text"></td>
+							{% endifequal %}
+						</tr>
+						<tr>
+							<td colspan="3">请上传相关证件,帮助我们快速核实您的身份</td>
+						</tr>
+						<tr style="height: 80px;">
+							<td>营业执照</td>
+							<td class="upload_file">
+								<label>
+									点击上传营业执照扫描件或高清图片
+									<input type="file" name=""  id="file_upload_business_license" />
+								</label>
+							</td>
+							<td>
+								{% if user.userinformation.financial_assets %}
+								<img src="{{ user.userinformation.financial_assets }}" />
+								{% endif %}
+							</td>
+						</tr>
+						<tr>
+							<td>组织机构代码</td>
+							<td class="upload_file">
+								<label>
+									点击上传组织机构代码证扫描件或高清图片
+									<input type="file" name=""  id="file_upload_organization_code" />
+								</label>
+							</td>
+							<td>
+								{% if user.userinformation.fixed_assets %}
+								<img src="{{ user.userinformation.fixed_assets }}"/>
+								{% endif %}
+							</td>
+						</tr>
+						<tr>
+							<td>税务登记证</td>
+							<td class="upload_file">
+								<label>
+									点击上传税务登记证扫描或高清图片
+									<input type="file" name=""  id="file_upload_tax" />
+								</label>
+							</td>
+							<td>
+								{% if user.userinformation.income_assets %}
+								<img src="{{ user.userinformation.income_assets }}"/>
+								{% endif %}
+							</td>
+						</tr>
+						<tr>
+							<td class="refer-aggree" colspan="3">
+								<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="3">
+								<input class="button_save" id="submit_p" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;cursor: pointer">
+							</td>
+						</tr>
+					</table>
+                </ul>
+
+           </div>
+        </div>
+
+  <!--投资认证 个人信息 end-->
+</div>
+{% endblock %}

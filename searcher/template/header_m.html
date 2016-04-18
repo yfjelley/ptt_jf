@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheete" href="/static/css/header_m.css">
+</head>
+<body>
+<header>
+    <form action="{% url 'search_result_m' %}"  id="formPW" method="post">
+        {% csrf_token %}
+        <ul>
+            <li class="header_img">
+                <label><img src="/static/images/logo_red.png"></label>
+            </li>
+            <li class="txt_iframe">
+                {{ form.searchWord }}
+            </li>
+            <li class="hea_search">
+                <label><input id ="submit_searchWord" type="submit" value="搜索" /></label>
+            </li>
+            <li style="clear: both;">
+            </li>
+        </ul>
+    </form>
+
+
+    <script type="text/javascript">
+        $(function(){
+            $('#submit_searchWord1').click(function(){
+                var str = $("input[name=searchWord]").val();
+                var reg = /^[1-9]\d{0,8}$/;
+                var r = str.match(reg);
+
+                if(r!=null){
+                    var formdata = $("#formPW").serialize();
+                    alert(formdata);
+                    $.post("{% url 'search_m' %}",
+                        formdata,
+                        function(){}
+                    );
+                }else{alert("请输入1-9位数字！");};
+            });
+        });
+    </script>
+</header>
+</body>
+</html>

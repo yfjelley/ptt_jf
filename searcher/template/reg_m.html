@@ -1,0 +1,192 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0,user-scalable=no" name="viewport" id="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/yz.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/public.js"></script>
+    <script type="text/javascript" src="/static/js/sendtime.js"></script>
+    <link rel="stylesheet" href="/static/css/mreg.css"/>
+    <title>注册</title>
+    <!--[if gte IE 8]>
+    <script src="js/placeholder.min.js"></script>
+    <![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<header>
+    <div id="head_m"></div>
+</header>
+<article>
+    <section>
+        <div class="sign_content">
+            <div class="sign_message">
+                <form class="registerform" action="/m/register/" method="post" name="form1">
+                    <ul>
+                        <li class="sign_text">
+                            <label>注册账户</label>
+                        </li>
+                        <li>
+                            <div
+                                    style="border-top: 0.02rem solid #000000;width: 4.5rem;height: 0.02rem;background:#000000;margin:0.1rem 0 0 -0.8rem"></div>
+                        </li>
+                        <li class="call_text">
+                            <label>手机:</label>
+                        </li>
+                        <li class="call_inp">
+                            <label>{{ form.username }}</label>
+                            {# <input type="button" value="验证用户名是否存在？" name="un_valid" onclick="check_valid()">#}
+                        </li>
+                        <li style="clear:both"></li>
+                        <li class="pwd_text">
+                            <label>密码:</label>
+                        </li>
+                        <li class="pwd_inp">
+                            <label>{{ form.password }}</label>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li class="repwd_text">
+                            <label>确认密码:</label>
+                        </li>
+                        <li class="repwd_inp">
+                            <label>{{ form.password2 }}</label>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li class="pic_text">
+                            <label>验证码:</label>
+                        </li>
+                        <li class="pic_inp">
+                            <label>{{ form.vcode }}</label>
+                            <label class="pic_number"><img
+                                    onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+                                    src="{% url 'verifycode' %}"/></label>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li class="mes_text">
+                            <label>短信验证码:</label>
+                        </li>
+                        <li class="mes_inp">
+                            <label style="float:left">{{ form.smscode }}</label>
+                        </li>
+                        <li class="send_number">
+                            <label><input type="button" id="rulesubmit" value="发送验证码"/></label>
+                        </li>
+                        <li style="clear:both"></li>
+                        <li>
+                            <div
+                                    style="border-top: 0.02rem solid #000000;width: 4.5rem;height: 0.02rem;background:#000000;margin:0.3rem 0 0 -0.8rem"></div>
+                        </li>
+                        <li class="agree_text">
+                            <label>注册即视为同意天天搜贷<a href="/m/agreement/"><<注册协议>></a>
+                            </label>
+                        </li>
+                        <li>
+                            <div
+                                    style="border-top: 0.02rem solid #000000;width: 4.5rem;height: 0.02rem;background:#000000;margin:0.3rem 0 0 -0.8rem"></div>
+                        </li>
+                        <li class="sign_sub">
+                            <label><input type="submit" value="注册"> </label>
+                        </li>
+                        <li class="footer_text">
+                            <label class="sign_name">已有天天搜贷账号,<a
+                                    href="{% url 'login_m' %}">登录</a></label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
+<script type="text/javascript">
+    $(function () {
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                alert('{{ error }}');
+                {% endfor %}
+
+                {% elif form.password.errors %}
+                {% for error in form.password.errors %}
+                    alert('{{ error }}');
+                    {% endfor %}
+
+                    {% elif form.password2.errors %}
+                    {% for error in form.password2.errors %}
+                        alert('{{ error }}');
+                        {% endfor %}
+
+                        {% elif form.smscode.errors %}
+                        {% for error in form.smscode.errors %}
+                            alert('{{ error }}');
+                            {% endfor %}
+
+                            {% elif form.vcode.errors %}
+                            {% for error in form.vcode.errors %}
+                                alert('{{ error }}');
+                                {% endfor %}
+                                {% endif %}
+
+                                //$(".registerform").Validform();  //就这一行代码！;
+                                var demo = $(".registerform").Validform({
+                                    tiptype: 3,
+                                    label: ".label",
+                                    showAllError: true,
+                                    datatype: {
+                                        "zh1-6": /^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+                                    },
+                                    ajaxPost: false,
+                                    callback:function(data){
+                                        str = "success";
+                                    }
+                                });
+
+                                //通过$.Tipmsg扩展默认提示信息;
+                                //$.Tipmsg.w["zh1-6"]="请输入1到6个字符！";
+                                demo.tipmsg.w["zh1-6"] = "请输入1到6个字符！";
+
+                                demo.addRule([
+                                    {
+                                        ele: "#id_username",
+                                        datatype: "m"
+                                    },
+                                    {
+                                        ele: "#id_password",
+                                        datatype: "*6-20"
+                                    },
+                                    {
+                                        ele: "#id_password2",
+                                        datatype: "*6-20",
+                                        recheck: "password"
+                                    },
+                                    {
+                                        ele: "#id_vcode",
+                                        datatype: "n4"
+                                    },
+                                    {
+                                        ele: "#id_smscode",
+                                        datatype: "n4"
+                                    }
+                                ]);
+                            });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $.get("/m/search/",function(data){ $('#head_m').html(data.content_html);});
+    });
+</script>
+</body>
+</html>

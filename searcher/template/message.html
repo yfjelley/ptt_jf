@@ -1,0 +1,29 @@
+{% extends 'base_userinfo.html' %}
+{% block content %}
+		<div id="messageinfo"  style="margin-left: 30px;">
+			<div style="position: relative;top: 35px;left: -30px;">
+				<label style="font-size:30px;">消息通知</label>
+			</div>
+                <div class="ProCenter2" id="xiaoxitongzhi">
+                            <a data-aa="grxx" style="margin-top:30px; margin-left:-30px;float:left" href="javascript:void(0)"><label class="message-label">个人信息</label></a>
+                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;float:left;margin-top:16px;"></div>
+                            <a data-aa="tz" style="margin-top:30px;float:left" href="javascript:void(0)"><label class="message-label">通知</label></a>
+					<div style="width:740px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;margin-left: -30px;"></div>
+                </div>
+			<div class="prosonPage3">
+                <div id="grxx" style="margin-left: -60px;margin-top:25px;">
+					<div id="signal">
+					{% include 'signal.html' %}
+					</div>
+                </div>
+			</div>
+		</div>
+<script>
+        function deleteSignal(signalid){
+		$.post("{% url 'delete_signal' %}",
+		{id:signalid},
+		function (data){if(data.success){$("#signal").html(data.content_html)};}
+		);
+	};
+</script>
+{% endblock %}

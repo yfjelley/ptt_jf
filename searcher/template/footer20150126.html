@@ -1,0 +1,54 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<head>
+<!--百度统计-->
+<script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?afdeb5d28fdd744142dbe81b4203efac";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<script>
+function show()
+{
+ code.style.display="block";
+}
+function hide()
+{
+  code.style.display="none";
+}
+</script>
+</head>
+<body>
+<style type="text/css">
+</style>
+<div id="footer">
+    <div class="footer">
+        <a href="#" class="ico1 fr" onmouseover="show()" onmouseout="hide()"></a>
+        <a href="http://www.weibo.com" class="ico fr" target="_blank"></a>
+        <a href="{% url 'about_us' %}" class="fl">关于我们</a>
+        <a href="{% url 'contact_us' %}" class="fl">联系我们</a>&nbsp;&nbsp;上海辞达金融信息服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备14053786
+        <p id="code" style="display:none;">
+            <img src="/static/images/qrcode.png"/>
+        </p>
+    </div>
+</div>
+{#<script type="text/javascript">#}
+{#    $(document).ready(function() {#}
+{#	$('#top_r li').hover(function() {#}
+{#		$('ul', this).slideDown(200);#}
+{#		$(this).children('a:first').addClass("hov");#}
+{#	}, function() {#}
+{#		$('ul', this).slideUp(100);#}
+{#		$(this).children('a:first').removeClass("hov");#}
+{#	});#}
+{#});#}
+{#</script>#}
+
+</body>

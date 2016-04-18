@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>天天搜贷</title>
+    <link rel="stylesheet" href="/static/css/bid_detail_m.css">
+        <link rel="stylesheet" href="/static/css/header_m.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/highcharts.js"></script>
+    <script src="/static/js/chart.js"></script>
+    <script src="/static/js/public.js"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<header>
+    <div id="head_m"></div>
+</header>
+<article>
+    <section>
+
+        <div>
+            <form>
+                <input type="hidden" value="{{ json_money }}" id="json_money">
+                <input type="hidden" value="{{ json_mount }}" id="json_mount">
+                <input type="hidden" value="{{ json_day }}" id="json_day">
+            </form>
+        </div>
+    <div class="detail_content">
+	 <div class="detail_img">
+	    <img class="dd" src="{{ bid.platform.logo }}"/>
+     </div>
+        <div class="detail_info">
+            <ul>
+                <li class="detail_date">
+                    {{ bid.name }}
+                </li>
+                <li>
+                    <div style="width: 4.2rem;height:  0.02rem;background:#999999;margin:0.13rem 0 0 0.1rem"></div>
+                </li>
+                <li class="detail_money">
+                    <label>标的金额</label>
+                </li>
+                <li class="detail_line">
+                    <div style="width: 0.02rem;height: 0.6rem;background:#999999;margin:0.1rem 0 0 0.1rem">
+                    </div>
+                </li>
+                <li class="detail_parities">
+                    <label>年利率</label>
+                </li>
+                <li class="detail_line">
+                    <div style="width: 0.02rem;height: 0.6rem;background:#999999;margin:0.1rem 0 0 0.1rem">
+                    </div>
+                </li>
+                <li class="detail_time">
+                    <label>期限</label>
+                </li>
+                <li style="clear: both;"></li>
+                <li class="detail_number">
+                    <label>￥{{ bid.amount|floatformat:"0" }}</label>
+                </li>
+                <li class="detail_col">
+                    <label>{{ bid.income_rate|floatformat:"-2" }}<span>%</span></label>
+                </li>
+                <li class="detail_month">
+                    <label>{{ bid.term_name|floatformat:"-2" }}<span>{{ bid.term_unit }}</span></label>
+                </li>
+                <li style="clear: both;"></li>
+                <li>
+                    <div style="width: 4.2rem;height:  0.02rem;background:#999999;margin:0.13rem 0 0 0.1rem"></div>
+                </li>
+            </ul>
+            <ul class="detail_list">
+                <li class="detail_ifmoney">
+                    <label>当前已融金额:</label>
+                    <label>￥{{ bid.finish_amount|floatformat:"0" }}</label>
+
+                </li>
+                <li class="detail_rate">
+                        <label>月利率:</label>
+                        <label>{{ bid.month_rate|floatformat:"-2" }}%</label>
+                </li>
+                <li style="clear: both;"></li>
+                <li class="detail_canmoney">
+                        <label>当前可投余额:</label>
+                        <label>￥{{ bid.allow_amount|floatformat:"0" }}</label>
+                </li>
+                <li class="detail_return">
+                    <label>最低可投金额:</label>
+                    <label>{% if bid.min_amount %} ￥{{ bid.min_amount }} {% else %}
+                        无 {% endif %}</label>
+                </li>
+                <li style="clear: both;"></li>
+                <li class="detail_havemoney">
+                    <label>&nbsp;&nbsp;每万元收益:</label>
+                    <label>￥{{ bid.ten_thousand_revenue|floatformat:"-2" }}</label>
+                        <!--<td>剩余时间 ：</td>-->
+                        <!--<td class="detail_double"><span class="detail_date">无</span></td>-->
+                </li>
+                <li class="detail_avgmoney">
+                    <label>投标进度:</label>
+                    <label class="detail_percent"><em style="width:{{ bid.process }}%"></em></label>
+                    <label class="detail_double"><span>{{ bid.process|floatformat:"0" }}%</span></label>
+                </li>
+                <li style="clear: both;"></li>
+                <li class="detail_ifmoney">
+                    <label>还款方式:</label>
+                    <label>{{ bid.repay_type }}</label>
+                </li>
+          </ul>
+        </div>
+        <div class="footer_content">
+
+            <dl id="detail_a">
+                <dd><a class="collect_a" href="#"><img src="/static/images/shoucang.png" style="height:0.8rem;" alt=""/></a>
+                    <ul id="collect_li">
+                        <li><a href="javascript:void(0)" style="font-size: 0.2rem;" class="addfavorite" ftype="bid">收藏该标的</a></li>
+                        <li><a href="javascript:void(0)" style="font-size: 0.2rem;" class="addfavorite" ftype="platform">收藏该平台</a></li>
+                    </ul>
+                </dd>
+                {% if user.id %}
+                <dd><a class="invest_a" href="{{ bid.link }}"><img src="/static/images/touzi.png" style="height:0.8rem;" alt=""/></a></dd>
+                {% else %}
+                 <dd><a class="invest_a" href="#" onclick="alert_login()"><img src="/static/images/touzi.png" style="height:0.8rem;" alt=""/></a></dd>
+                {% endif %}
+            </dl>
+
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        $(".collect_a").click(function (e) {
+            e.preventDefault();
+            $("#collect_li").toggle();
+            $("#collect_li").toggleClass("active");
+        });
+        $("#collect_li").mouseup(function () {
+            return false;
+        });
+        $(document).mouseup(function (e) {
+            if ($(e.target).parent("a.collect_a").length == 0) {
+                $(".collect_a").removeClass("active");
+                $("#collect_li").hide();
+            }
+        });
+    });
+
+    $(".rmbutton").click(function (e) {
+        var type = $(this).attr("rtype");
+        {% if user.id %}
+            $.post("{% url 'do_reminder' %}",
+                    {
+                        bid: {{ bid.id }},
+                        method: 'add',
+                        type: type
+                    },
+                    function (data) {
+                        alert(data);
+                    }
+            );
+        {% else %}
+            alert('请先登录');
+            location.href = "/m/login/?next=/m/bid_detail/{{ bid.id }}";
+        {% endif %}
+
+
+    });
+
+    $(".addfavorite").click(function (e) {
+        ftype = $(this).attr("ftype");
+        {% if user.id %}
+            if (ftype == 'bid') {
+                $.post("{% url 'add_favoritebid' bid.id %}",
+                        function (data) {
+                            alert(data);
+                        }
+                );
+            }
+            else {
+                $.post("{% url 'add_favoriteplatform' bid.platform.id %}",
+                        function (data) {
+                            alert(data);
+                        }
+                );
+            }
+        {% else %}
+            alert('请先登录');
+            location.href = "/m/login/?next=/m/bid_detail/{{ bid.id }}";
+        {% endif %}
+    });
+
+</script>
+            <script type="text/javascript">
+                $(function(){
+                    $.get("/m/search/",function(data){ $('#head_m').html(data.content_html);});
+                });
+            </script>
+ <script type="application/javascript">
+    function alert_login(){
+        alert("请先登录");
+        location.href = "/m/login/?next=/m/bid_detail/{{ bid.id }}";
+    }
+</script>
+        </div>
+        </div>
+    </section>
+</article>
+</body>
+</html>

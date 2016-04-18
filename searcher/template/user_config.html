@@ -1,0 +1,43 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>天天搜贷</title>
+    <link href="/static/css/user.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <!--[if gte IE 8]>
+<script src="js/placeholder.min.js"></script>
+<![endif]-->
+    <script>
+        function show() {
+            code.style.display = "block";
+        }
+        function hide() {
+            code.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+{% include "header.html" %}
+<div id="mid">
+    <div class="user_con">
+        {% include "little_search.html" %}
+        <div class="user_conter mt10">
+            {% include "little_search.html" %}
+            <div class="user_right fr">
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

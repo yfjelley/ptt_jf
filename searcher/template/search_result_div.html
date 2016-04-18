@@ -1,0 +1,20 @@
+<div class="navbar" id="result_form">
+    <div style="overflow-y:auto;" class="navbar-inner">
+        {% for result in results %}
+            <div class="container" >
+                <a class="brand" href="/">{{ result.name }}<br></a>
+                <ul>
+                    <li>{{ result.id }}</li>
+                    <li>{{ result.term }}</li>
+                    <li>{{ result.name }}</li>
+                    <li>{{ result.amount }}</li>
+                    <li>{{ result.income_rate }}</li>
+                    <li>{{ result.description }}</li>
+                    <li>{{ user.id }}</li>
+                    <span class="label label-default list-meta-node">
+                        <a href="{% url 'add_favoritebid' result.id %}">收藏</a></span>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>

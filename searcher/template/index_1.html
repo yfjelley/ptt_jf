@@ -1,0 +1,51 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta property="qc:admins" content="34362415216636" />
+    <title>天天搜贷</title>
+    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <link href="{% static 'css/base1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+{% include "header.html" %}
+<div id="content">
+    <div class="middle">
+        <div class="middle_search">
+            <div class="logo">
+                <img src="{% static 'image/logo.png' %}"/></div>
+            <div class="search">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.searchWord }}
+                    </table>
+                    <input type="submit" class="btn_search fl" value="">
+                </form>
+                <br>
+                {% if form.errors %}
+                    <p style="color: red;">
+                        {{ form.searchWord.errors }}
+                    </p>
+                {% endif %}
+            </div>
+            <div class="hot">
+                <h3>本周热点：</h3>
+                <a href="#">三六五网1.2亿投资P2P </a>
+                <a href="#">雷军5年内要投资100家公司</a>
+                <a href="#">1280万的逾期能否拖垮贷帮网</a>
+                <a href="#">榕企疑借p2p网络借贷服务行骗</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

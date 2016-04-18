@@ -1,0 +1,68 @@
+{% load staticfiles %}
+{% load settingsvalue %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>天天搜贷</title>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+{% include "header.html" %}
+<div id="content">
+    <div class="middle">
+        <div class="middle_search">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}"/></div>
+            <div class="search textbox">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.searchWord }}
+                    <input type="submit" class="btn_search" value="">
+                </form>
+                <br>
+                {% if form.errors %}
+                    <script type="application/javascript">
+                    $(function(){
+                        alert('请输入投资金额');
+                    });
+                    </script>
+                {% endif %}
+            </div>
+            {% ifnotequal user.id None %}
+                <div class="group">
+                    <div class="g_hd"><h3>我的组合搜索</h3></div>
+                    <div class="g_bd">
+                        <ul class="g_list">
+                            {% if f_ls %}
+                                {% for f_l in f_ls %}
+                                    <li>
+                                        <a choices="{{ f_l.choices }}"
+                                           href="{% url 'shortcut_request' f_l.id %}">{{ f_l.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <a>您还未设置任何快捷查询</a>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% endifnotequal %}
+            <div class="hot" style="padding-left: 7%;padding-top: 1%;">
+                <h3>本周热点：</h3>
+                {% for h in hs %}
+                    <a href="{{ h.url }}" target="_blank">{{ h.title }} </a>
+                {% endfor %}
+				
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

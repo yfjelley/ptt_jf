@@ -1,0 +1,50 @@
+
+<div class="log_contentt" id="result_form">
+     <div style="margin-top:10px;margin-left:10px;font-size:24px;">收益最高&nbsp;TOP5</div>
+     <div style="float:right;margin-right:-5px; color:#FF0000;font-size:16px"><a href="/result/?rank=-income_rate">更多详情</a></div>
+    {% if results %}
+       {% for result in results %}
+            <table cellpadding="0" cellspacing="0" border="0" class="search_Tab">
+			<tr><td colspan="5" style="padding-top: 0px;"><div style=" width:650px;height:1px; background:#eeeef0;padding-left:1%;"></div></td></tr>
+                <tr>
+                <tr>
+                    <td rowspan="2" width="110" align="center" valign="middle">
+					<img src="{{ result.platform.logo }}"/>
+                    </td>
+                    <td class="search_title" style="width:200px; text-align:left;">{{ result.name }}</td>
+                    <td width="50">期限</td>
+                    <td width="70">年化收益</td>
+                    <td rowspan="2" width="70"><label  target="_blank" id="check_is_exist_{{result.id}}" name="{{result.id}}"
+                                                   class="seach_cheek">查看详情</label></td>
+                </tr>
+                <tr>
+                    <td style="width:235px;text-align: left;">
+					借款金额:<font class="c_red">{{ result.amount|floatformat:"0" }}</font>&nbsp;&nbsp;
+					每万元总收益：<font class="c_red">{{ result.ten_thousand_revenue|floatformat:"-2" }}元</font>
+                    </td>
+                    <td>
+					    <font class="c_red">{{ result.term_name|floatformat:"-2" }}</font>{{ result.term_unit }}
+                    </td>
+                    <td><font class="c_red">{{ result.income_rate|floatformat:"-2" }}</font>%</td>
+                </tr>
+            </table>
+        {% endfor %}
+    {% else %}
+        <a>无符合查询条件的纪录</a>
+    {% endif %} 
+</div>
+<script type="text/javascript">
+ $(document).ready(function () {
+    $("[id^='check_is_exist_']").each(function(){
+        $(this).click(function(){
+            var ob = $(this).attr('name');
+            $.post("/bid_detail_p/",{"object_id":ob},function(data)
+                {
+                  if(data==1){ location.href = "/bid_detail/"+ob;}else{alert("该标的已过期，无法显示，敬请谅解！")};});
+       });
+    });
+});
+
+</script>
+
+
