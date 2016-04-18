@@ -309,7 +309,78 @@ def auth_register(request):
     u.invest_class = 2
     u.save()
     return HttpResponse()
+def info(request):
+    url = None
+    user = auth.get_user(request)
+    flag = 1
+    if request.method == 'POST':
 
+        form  = UserInformationForm(request.POST)
+
+        f = request.FILES.get('file',None)
+
+        if f:
+
+            extension = os.path.splitext(f.name)[-1]
+            msg = None
+            if f.size > 1048576:
+                msg = u"图片大小不能超过1MB"
+            if (extension not in ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF']) or ('image' not in f.content_type):
+                msg = u"图片格式必须为jpg，png，gif"
+            if msg:
+                return render_to_response("userinfo.html", {'form': form,'error': msg},
+                                          context_instance=RequestContext(request))
+
+            im = Image.open(f)
+            im.thumbnail((120, 120))
+            name = 'p_user' + storage.get_available_name(str(user.id)) + '.png'
+
+            im.save('%s/%s' % (storage.location, name), 'PNG')
+            url = storage.url(name)
+
+        if form.is_valid():
+            try:
+                u_i = UserInformation.objects.get(user=user)
+                form1 = UserInformationForm(request.POST, instance=u_i)
+                u_i = form1.save(commit=False)
+                if url:
+                    u_i.photo_url = url
+            except ObjectDoesNotExist:
+                u_i = form.save(commit=False)
+                u_i.user = user
+                u_i.photo_url = url
+            u_i.save()
+        else:
+            return render_to_response("userinfo.html", {'form': form, 'flag': flag},
+                                      context_instance=RequestContext(request))
+        return HttpResponseRedirect(reverse('userinfo'))
+    else:
+        try:
+            form = UserInformationForm(instance=user.userinformation)
+        except ObjectDoesNotExist:
+            form = UserInformationForm()
+        #领投项目
+
+        leader  = request.user.invest_user_set.all()
+
+        #跟投项目
+        invest = request.user.investor_set.all()
+
+        #我关注的项目
+        attention_pr =   Project.objects.filter(click=user)
+        #我关注的人
+        attention_persion = request.user.userinformation.attention_persion.all()
+
+        signal =  Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
+        notice = Signal.objects.filter(type=0).order_by("-add_date")[0:6]
+
+        extend = request.user.extend_user_set.all()
+        if extend:
+            extend = extend[0]
+
+    return render_to_response("info.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
+                                                "attention_pr":attention_pr,"attention_persion":attention_persion},
+                              context_instance=RequestContext(request))
 
 @login_required
 def userinfo(request,objectid=None):
@@ -408,6 +479,7 @@ def success(request):
 
 def user(request):
     return render_to_response('user_information.html',{'flag1':1}, context_instance=RequestContext(request))
+
 
 import urllib2, urllib, hashlib, random,re
 def send_smscode(request):

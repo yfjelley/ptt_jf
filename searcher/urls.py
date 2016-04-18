@@ -25,6 +25,7 @@ urlpatterns = patterns('searcher.views',
     url(r'^getverifycode/$', 'verifycode', name='verifycode'),
     url(r'^forgetpw/$', 'forgetpw', name='forgetpw'),
     url(r'^user/$', 'user', name='user'),
+    url(r'^info/$', 'info', name='info'),
 
     url(r'intermediary/(?P<objectid>\d+)/$', 'intermediary', name='intermediary'),
     url(r'^invest_pr/(?P<objectid>\d+)/$',  'invest_pr', name='invest_pr'),
