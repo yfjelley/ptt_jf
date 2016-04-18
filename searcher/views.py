@@ -1169,7 +1169,15 @@ def sendSMS(request):
 def delete_signal(request):
     signal = Signal.objects.get(id=request.POST.get('id'))
     signal.delete()
-    return HttpResponse(json.dumps({"success":0}), content_type="application/json")
+    signal = Signal.objects.filter(who=request.user).order_by("-add_date")[0:6]
+    t = get_template('signal.html')
+    content_html = t.render(
+            RequestContext(request, {'signal':signal}))
+    payload = {
+            'content_html': content_html,
+            'success': True
+        }
+    return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def search_project(request):
     #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)

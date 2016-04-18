@@ -676,89 +676,9 @@ $(function(){
                 </div>
 			<div class="prosonPage3">
                 <div id="grxx" style="margin-left: -60px;margin-top:25px;">
-					{% if signal %}
-					{% for i in signal reversed %}
-					<ul class="personal-message">
-                        <li style="float:left;height: 80px;width: 60px">
-                        <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
-                        </li>
-                        <li style="margin-left:60px;float:left;width: 460px">
-                            <label>{{i.content}}</label>
-                        </li>
-						<li style="float: left;width: 100px">
-							<img src="/static/images/news.png"  />
-						</li>
-                        <li style="float:left;margin-left:52px;">
-                            <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
-                            <label>于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
-                        </li>
-                        <li style="margin-left:620px; margin-top:-80px;float:left">
-							{% if i.user.userinformation.nickname %}
-                            <input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name ="{{i.user.userinformation.nickname}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
-                            {% else %}
-							<input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name="{{i.user.username}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
-                            {% endif %}
-
-						</li>
-						<li style="margin-left:620px; margin-top:-40px;float:left">
-
-                            <input type="button" data-id="{{i.id}}" id ="delete_{{i.id}}" name ="" style="background: url('/static/images/del.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
-						</li>
-                    </ul>
-					<ul>
-						<li style="clear: both">
-						</li>
-					</ul>
-					<ul>
-						<li style="margin-left:-5px;padding:20px 0">
-							<div style="width:740px; height:1px;background-color:#D5D5D5"></div>
-						</li>
-					</ul>
-					{% endfor %}
-					{% else %}
-					<ul>
-                        <li>
-                            <label>您还没有收到消息！</label>
-                        </li>
-                    </ul>
-					{% endif %}
-                </div>
-				<div id="tz" class="display" style="margin-left: -60px;margin-top:25px;">
-					{% if notice %}
-					{% for i in notice  reversed %}
-					<ul class="personal-message">
-						<li style="float:left;height: 80px;width: 60px">
-							<img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
-						</li>
-						<li style="margin-left:60px;float:left;width: 460px;">
-							<label>{{i.content}}</label>
-						</li>
-						<li style="float: left;width: 100px">
-							<img src="/static/images/news.png"  />
-						</li>
-						<li style="margin-left:50px;float:left;margin-top:15px;">
-							<label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
-							<label> 于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
-						</li>
-						
-					</ul>
-					<ul>
-						<li style="clear: both">
-						</li>
-					</ul>
-					<ul>
-						<li style="margin-left:-5px;padding:20px 0">
-							<div style="width:700px; height:1px;background-color:#D5D5D5"></div>
-						</li>
-					</ul>
-					{% endfor %}
-					{% else %}
-					<ul>
-                        <li>
-                            <label>您还没有收到通知！</label>
-                        </li>
-                    </ul>
-					{% endif %}
+					<div id="signal">
+					{% include 'signal.html' %}
+					</div>
                 </div>
 			</div>
 		</div>
@@ -804,74 +724,6 @@ $(function(){
 	</div>
 <!--邀请好友 end-->
 
-<!--提醒设置-->
-		<!--<div id="txsz" class="display">
-			<table class="proleft_detail" width="700" style="padding: 10px 0;margin-top: 65px;margin-left: -20px;">
-				<tr>
-					<td style="font-size:30px">提醒设置</td>
-				</tr>
-				<tr>
-					<td width="220" rowspan="6">
-						<img width="200" height="130" src="/static//images/mojing.jpg"></td>
-					<td align="left">魔镜在线</td>
-					<td align="right" colspan="4">
-						<div class="btn">
-							<a href="#"><img src="/static/images/delete.png"></a>
-						</div>
-						<div class="btn">
-							<a href="#"><img src="/static/images/save.png"></a>
-						</div>
-
-					</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<div style="border-bottom: 1px solid #a8a8a8"></div>
-					</td>
-				</tr>
-				<tr>
-					<td width="16" class="shows">
-						<div class="checkbox">
-							<input id="example" type="checkbox">
-							<label for="example"></label>
-						</div>
-						<label class="lbl-text">众筹开始</label>
-					</td>
-					<td align="left" class='tg-list1' style="padding:0;">
-						<input class='tgl1 tgl-light1' name="checkbox1" id='cb2' type='checkbox'>
-						<label class='tgl-btn1' for='cb2'></label>
-					</td>
-				</tr>
-				<tr>
-					<td class="shows" width="140">
-						<div class="checkbox">
-							<input id="example1" type="checkbox">
-							<label for="example1"></label>
-						</div>
-						<label class="lbl-text">预约金额大于</label></td>
-					<td class="write-text"><input type="text"></td>
-				</tr>
-				<tr>
-					<td class="shows" width="140">
-						<div class="checkbox">
-							<input id="example2" type="checkbox">
-							<label for="example2"></label>
-						</div>
-						<label class="lbl-text">预约率大于</label></td>
-					<td class="write-text"><input type="text"></td>
-				</tr>
-				<tr>
-					<td class="shows" width="140">
-						<div class="checkbox">
-							<input id="example3" type="checkbox">
-							<label for="example3"></label>
-						</div>
-						<label class="lbl-text">预约人数大于</label></td>
-					<td class="write-text"><input type="text"></td>
-				</tr>
-			</table>
-		</div>-->
-<!---->
 </div>
 </div>
 </div>
@@ -932,6 +784,12 @@ $(function(){
 	  })
   </script>
 <script>
+    function deleteSignal(signalid){
+		$.post("{% url 'delete_signal' %}",
+		{id:signalid},
+		function (data){if(data.success){$("#signal").html(data.content_html)};}
+		);
+	};
 $(function() {
 	// 在页面添加 mask
 	var mask = function() {
@@ -965,15 +823,7 @@ $(function() {
 		});
 	});
 
-	$("[id^='delete_']").each(function() {
-	    $(this).click(function(){
-	    	var signalid = $(this).data('id');
-            $.post("{% url 'delete_signal' %}",
-            {id:signalid},
-            function (data){location.reload();}
-            )
-		});
-	});
+
 
 // 只有点击 alert 中的按钮 mask 才会被移除
 

@@ -1,0 +1,93 @@
+
+{% load settingsvalue %}
+{% if signal %}
+    {% for i in signal reversed %}
+    <ul class="personal-message">
+        <li style="float:left;height: 80px;width: 60px">
+        <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
+        </li>
+        <li style="margin-left:60px;float:left;width: 460px">
+            <label>{{i.content}}</label>
+        </li>
+        <li style="float: left;width: 100px">
+            <img src="/static/images/news.png"  />
+        </li>
+        <li style="float:left;margin-left:52px;">
+            {% if i.user.userinformation.nickname %}
+            <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
+            {% else %}
+            <label style="padding-left:10px;">{{i.user.username|phone_cut}}</label>
+            {% endif %}
+            <label>于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
+        </li>
+        <li style="margin-left:620px; margin-top:-80px;float:left">
+            {% if i.user.userinformation.nickname %}
+            <input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name ="{{i.user.userinformation.nickname}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+            {% else %}
+            <input type="button" data-id="{{i.user.username}}" id ="reply_{{i.user.id}}" name="{{i.user.username}}" style="background: url('/static/images/reply.png') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+            {% endif %}
+
+        </li>
+        <li style="margin-left:620px; margin-top:-40px;float:left">
+
+            <input type="button" onclick="deleteSignal('{{i.id}}')" name ="" style="background: url('/static/images/del.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+        </li>
+    </ul>
+    <ul>
+        <li style="clear: both">
+        </li>
+    </ul>
+    <ul>
+        <li style="margin-left:-5px;padding:20px 0">
+            <div style="width:740px; height:1px;background-color:#D5D5D5"></div>
+        </li>
+    </ul>
+    {% endfor %}
+    {% else %}
+    <ul>
+        <li>
+            <label>您还没有收到消息！</label>
+        </li>
+    </ul>
+    {% endif %}
+</div>
+<div id="tz" class="display" style="margin-left: -60px;margin-top:25px;">
+    {% if notice %}
+    {% for i in notice  reversed %}
+    <ul class="personal-message">
+        <li style="float:left;height: 80px;width: 60px">
+            <img src="{{i.user.userinformation.photo_url}}" width="60px" height="50px;" />
+        </li>
+        <li style="margin-left:60px;float:left;width: 460px;">
+            <label>{{i.content}}</label>
+        </li>
+        <li style="float: left;width: 100px">
+            <img src="/static/images/news.png"  />
+        </li>
+        <li style="margin-left:50px;float:left;margin-top:15px;">
+            {% if i.user.userinformation.nickname %}
+            <label style="padding-left:10px;">{{i.user.userinformation.nickname}}</label>
+            {% else %}
+            <label style="padding-left:10px;">{{i.user.username|phone_cut}}</label>
+            {% endif %}
+            <label> 于 {{i.add_date|date:"Y-m-j  H:i:s" }} 发送</label>
+        </li>
+
+    </ul>
+    <ul>
+        <li style="clear: both">
+        </li>
+    </ul>
+    <ul>
+        <li style="margin-left:-5px;padding:20px 0">
+            <div style="width:700px; height:1px;background-color:#D5D5D5"></div>
+        </li>
+    </ul>
+    {% endfor %}
+    {% else %}
+    <ul>
+        <li>
+            <label>您还没有收到通知！</label>
+        </li>
+    </ul>
+    {% endif %}
