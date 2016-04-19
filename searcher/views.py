@@ -281,24 +281,6 @@ def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index_jf'))
 
-@login_required
-def myfavorite(request, tid):
-    flag = int(tid)
-    favorites = {}
-    userid = auth.get_user(request).id
-    userfavoriteBid = UserFavorite.objects.filter(user=userid, favorite_type=1).values("favorite_id")
-    userfavoriteplatform = UserFavorite.objects.filter(user=userid, favorite_type=2).values("favorite_id")
-    favoriteBidNow = Bid.objects.filter(id__in=userfavoriteBid)
-    favoriteBidHis = BidHis.objects.filter(id__in=userfavoriteBid)
-    favoriteplatform = Platform.objects.filter(id__in=userfavoriteplatform)
-    if flag == 4:
-        favorites = list(chain(favoriteBidNow, favoriteBidHis))
-    else:
-        favorites = favoriteplatform
-    return render_to_response("user_favorite.html",
-                              {'favorites': favorites, 'flag': flag}, context_instance=RequestContext(request))
-
-
 
 def auth_register(request):
     u = UserInformation.objects.get(user=request.user)
@@ -489,8 +471,6 @@ def contact_us(request):
 def disclaimer(request):
     return render_to_response('disclaimer.html', context_instance=RequestContext(request))
 
-def phone_infoPage(request):
-    return render_to_response('test_phone.html', context_instance=RequestContext(request))
 
 def success(request):
     return render_to_response('reg_success.html',{'flag1':1}, context_instance=RequestContext(request))
@@ -680,7 +660,6 @@ def safecenter(request):
             return HttpResponse(json.dumps(payload), content_type="application/json")
 
     else:
-        print "safecenter"
         form = ModfiyPWForm()
         t = get_template('safecenter.html')
         content_html = t.render(
@@ -763,90 +742,6 @@ def guide(request):
 def do_reminder(request):
     user = auth.get_user(request)
     return HttpResponse("ok")
-
-#@login_required
-def publish(request):
-    user = auth.get_user(request)
-    if request.method == "POST":
-        form = PublishForm(request.POST)
-        f = request.FILES.get('logo', None)
-        if f:
-            extension = os.path.splitext(f.name)[-1]
-            msg = None
-            if f.size > 1048576:
-                msg = u"图片大小不能超过2MB"
-            if (extension not in ['.jpg', '.png', '.gif', '.JPG', '.PNG', '.GIF']) or ('image' not in f.content_type):
-                msg = u"图片格式必须为jpg，png，gif"
-            if msg:
-                return render_to_response("publish.html", {'form': form, 'error': msg},
-                                          context_instance=RequestContext(request))   #返回用户信息页面
-
-            im = Image.open(f)
-            im.thumbnail((120, 120))
-            name = 'logo' + storage.get_available_name(str(user.id)) + '.png'
-            im.save('%s/%s' % (storage.location, name), 'PNG')
-            logo_url = storage.url(name)
-            print(logo_url)
-        else:
-            msg = u"请上传logo"
-            return render_to_response("publish.html", {'form': form, 'error': msg},
-                                          context_instance=RequestContext(request))
-
-
-        f = request.FILES.get('plan', None)
-        if f:
-            extension = os.path.splitext(f.name)[-1]
-
-            msg = None
-            if f.size > 10485760:
-                msg = u"文件大小不能超过20MB"
-            if (extension not in ['.ppt', '.pptx', '.pdf', '.PPT', '.PPTX', '.PDF']):
-                msg = u"文件格式必须为ppt，pptx，pdf"
-            if msg:
-                return render_to_response("publish.html", {'form': form, 'error': msg},
-                                          context_instance=RequestContext(request))
-            plan_url = handle_uploaded_file(f)
-            print plan_url
-        else:
-            msg = u"请上传商业计划书"
-            return render_to_response("publish.html", {'form': form, 'error': msg},
-                                          context_instance=RequestContext(request))
-
-
-        if form.is_valid():
-            cd = form.cleaned_data
-            project = cd['project']
-            introduction = cd['introduction']
-            description = cd['description']
-            category = cd['category']
-            status = cd['status']
-            founder = cd['founder']
-            flag = 0
-            if project is None:
-                form.valiatetype(2)
-                flag =1
-            elif flag != 1 and introduction is None:
-                form.valiatetype(3)
-                flag =1
-            elif flag != 1 and description is None:
-                form.valiatetype(4)
-                flag =1
-            elif flag !=1 and founder is None:
-                form.valiatetype(5)
-                flag =1
-
-            if flag == 1:
-                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
-            else:
-                p1 = Project(name=cd['project'],introduction=cd['introduction'],description = cd['description'],category = cd['category'],status = cd['status'],founder = cd['founder'],business_plan_url=plan_url,logo=logo_url)
-                p1.save()
-                return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
-        else:
-            return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
-    else:
-        form = PublishForm()
-
-    return render_to_response('publish.html',{'form':form}, context_instance=RequestContext(request))
 
 def investor_detail(request):
     return render_to_response('investor_detail.html',{}, context_instance=RequestContext(request))
@@ -1120,7 +1015,6 @@ def project(request):
 
 def invest_pr(request,objectid):
     p = Project.objects.get(id=objectid[:-1])
-
     return render_to_response('invest_pr.html',{"invest_type":int(objectid[-1]),"project":p}, context_instance=RequestContext(request))
 
 

@@ -58904,3 +58904,153 @@ error: [Errno 104] Connection reset by peer
 [19/Apr/2016 14:17:12] "GET /userinfo/ HTTP/1.1" 200 42057
 [19/Apr/2016 14:17:12] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
 [19/Apr/2016 14:17:12] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[19/Apr/2016 14:47:24] "GET / HTTP/1.1" 200 40210
+[19/Apr/2016 14:47:25] "GET /project/ HTTP/1.1" 200 24021
+[19/Apr/2016 14:47:25] "GET /investor/ HTTP/1.1" 200 42299
+[19/Apr/2016 14:47:25] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 14:47:25] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 14:47:26] "GET /guide/ HTTP/1.1" 200 37746
+[19/Apr/2016 14:47:26] "GET /static/css/zhongchou.css HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr1.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr2.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr3.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr4.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr5.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr6.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/zyxhhr7.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/flowimg.jpg HTTP/1.1" 304 0
+[19/Apr/2016 14:47:26] "GET /static/images/arrows-top.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /about_us/ HTTP/1.1" 200 28771
+[19/Apr/2016 14:47:27] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/sanbanlogo.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/dylylogo.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/wabeilogo.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/xsblogo.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:27] "GET /static/images/cflogo.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:28] "GET /userinfo/ HTTP/1.1" 200 42057
+[19/Apr/2016 14:47:29] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 14:47:29] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[19/Apr/2016 14:47:31] "GET /static/images/submitimg.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:31] "GET /static/site_media/uploadify.swf?preventswfcaching=1461048450300 HTTP/1.1" 200 12767
+[19/Apr/2016 14:47:31] "GET /static/site_media/uploadify.swf?preventswfcaching=1461048450296 HTTP/1.1" 200 12767
+[19/Apr/2016 14:47:31] "GET /static/site_media/uploadify.swf?preventswfcaching=1461048450298 HTTP/1.1" 200 12767
+[19/Apr/2016 14:47:31] "GET /userinfo/ HTTP/1.1" 200 42057
+[19/Apr/2016 14:47:31] "GET /userinfo/ HTTP/1.1" 200 42057
+[19/Apr/2016 14:47:31] "GET /userinfo/ HTTP/1.1" 200 42057
+[19/Apr/2016 14:47:31] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 14:47:31] "GET /static/js/timeplus.js?_=1461048453052 HTTP/1.1" 200 1893
+[19/Apr/2016 14:47:31] "GET /static/css/safecenter.css HTTP/1.1" 304 0
+[19/Apr/2016 14:47:31] "GET /static/js/yz.js?_=1461048453105 HTTP/1.1" 200 41463
+[19/Apr/2016 14:47:32] "GET /static/images/verifyupdate.png HTTP/1.1" 304 0
+[19/Apr/2016 14:47:32] "GET /getverifycode/ HTTP/1.1" 200 2687
+[19/Apr/2016 14:47:37] "GET / HTTP/1.1" 200 40210
+[19/Apr/2016 14:47:38] "GET /project/ HTTP/1.1" 200 24021
+[19/Apr/2016 15:03:01] "GET /investor HTTP/1.1" 301 0
+[19/Apr/2016 15:03:01] "GET /investor/ HTTP/1.1" 302 0
+[19/Apr/2016 15:03:01] "GET /login?next=/investor/ HTTP/1.1" 301 0
+[19/Apr/2016 15:03:01] "GET /login/?next=/investor/ HTTP/1.1" 200 12851
+[19/Apr/2016 15:03:12] "GET /investor HTTP/1.1" 301 0
+[19/Apr/2016 15:03:12] "GET /investor/ HTTP/1.1" 302 0
+[19/Apr/2016 15:03:12] "GET /login?next=/investor/ HTTP/1.1" 301 0
+[19/Apr/2016 15:03:12] "GET /login/?next=/investor/ HTTP/1.1" 200 12851
+[19/Apr/2016 15:03:12] "GET /static/css/zcheader.css HTTP/1.1" 200 4044
+[19/Apr/2016 15:03:12] "GET /static/css/login.css HTTP/1.1" 200 6611
+[19/Apr/2016 15:03:12] "GET /static/css/footer.css HTTP/1.1" 200 2911
+[19/Apr/2016 15:03:12] "GET /static/js/yz.js HTTP/1.1" 200 41463
+[19/Apr/2016 15:03:12] "GET /static/js/jquery.min.js HTTP/1.1" 200 135982
+Validating models...
+
+0 errors found
+April 18, 2016 - 17:31:50
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+safecenter
+----------------------------------------
+Exception happened during processing of request from ('103.37.160.56', 46495)
+----------------------------------------
+[19/Apr/2016 15:17:19] "GET /project/ HTTP/1.1" 500 183909
+Validating models...
+
+0 errors found
+April 19, 2016 - 15:17:15
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[19/Apr/2016 15:17:43] "GET /project/ HTTP/1.1" 500 234764
+[19/Apr/2016 15:18:33] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:18:33] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/css/readMore.css HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/css/footer.css HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/js/jquery.floatDiv.js HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/upload/default.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/heart.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/Rlogo.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/rflag.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/project/nzyz/yz.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/project/gdnk/gdnk.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/images/flag.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:33] "GET /static/project/wz/wz.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:36] "GET / HTTP/1.1" 200 40069
+[19/Apr/2016 15:18:36] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:18:37] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:18:38] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:38] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:38] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 15:18:39] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 15:18:40] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:18:40] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:40] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:42] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:18:43] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:18:43] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:44] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:44] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 15:18:45] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 15:18:47] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:18:47] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:49] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050328620 HTTP/1.1" 200 12767
+[19/Apr/2016 15:18:49] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050328616 HTTP/1.1" 200 12767
+[19/Apr/2016 15:18:49] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050328618 HTTP/1.1" 200 12767
+[19/Apr/2016 15:18:49] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:18:49] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:18:49] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:18:50] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 15:18:50] "GET /static/js/timeplus.js?_=1461050331387 HTTP/1.1" 200 1893
+[19/Apr/2016 15:18:50] "GET /getverifycode/ HTTP/1.1" 200 2687
+[19/Apr/2016 15:18:50] "GET /static/js/yz.js?_=1461050331449 HTTP/1.1" 200 41463
+[19/Apr/2016 15:18:54] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:18:55] "GET /prodetails/13 HTTP/1.1" 301 0
+[19/Apr/2016 15:18:55] "GET /prodetails/13/ HTTP/1.1" 200 42803
+[19/Apr/2016 15:18:55] "GET /static/images/zcfinish.png HTTP/1.1" 304 0
+[19/Apr/2016 15:18:55] "GET /static/images/YK/yk.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:18:55] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:18:55] "GET /getverifycode/ HTTP/1.1" 200 2677
+[19/Apr/2016 15:19:00] "POST /add_attion/13/ HTTP/1.1" 500 8659
+[19/Apr/2016 15:19:01] "POST /cancel_attion/13/ HTTP/1.1" 200 376
+[19/Apr/2016 15:19:02] "POST /add_attion/13/ HTTP/1.1" 500 8659
+[19/Apr/2016 15:19:02] "POST /cancel_attion/13/ HTTP/1.1" 200 376
+[19/Apr/2016 15:20:29] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:20:30] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:20:30] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:20:30] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:20:31] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 15:20:32] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 15:20:33] "GET / HTTP/1.1" 200 40069
+[19/Apr/2016 15:20:34] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:20:35] "GET /prodetails/14 HTTP/1.1" 301 0
+[19/Apr/2016 15:20:35] "GET /prodetails/14/ HTTP/1.1" 200 37898
+[19/Apr/2016 15:20:35] "GET /getverifycode/ HTTP/1.1" 200 2670
+[19/Apr/2016 15:20:36] "GET /invest_pr/141/ HTTP/1.1" 200 12211
+[19/Apr/2016 15:20:36] "GET /static/css/touzi.css HTTP/1.1" 200 984

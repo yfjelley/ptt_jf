@@ -53,7 +53,7 @@ urlpatterns = patterns('searcher.views',
     url(r'^search/$',  'search', name='search'),
 
     url(r'^project/$',  'project', name='project'),
-    url(r'^publish/$',  'publish', name='publish'),
+
     url(r'^checkuser/$',  'checkuser', name='checkuser'),
     url(r'^checkuser_phone/$',  'checkuser_phone', name='checkuser_phone'),
     url(r'^investor_detail/$',  'investor_detail', name='investor_detail'),
