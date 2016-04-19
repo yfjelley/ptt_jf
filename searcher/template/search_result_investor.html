@@ -14,17 +14,11 @@
 				{% endifequal %}
 			</div>
 			<div class="DesPel">
-				<div style="float:right;margin-top: 10px;margin-right:10px">
+				<div style="float:right;margin-top: 10px;margin-right:10px;width:90px;">
 					{% if forloop.counter0|add_all:s %}
-					<div class="checkbox">
-						<input class="focus" id="focus_{{result.user}}" name="{{result.user}}" value=" " checked="checked" type="checkbox" />
-						<label for="focus_{{result.user}}"></label>
-					</div>
+                         <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/focus.jpg" style="padding-left:5px;"/>
 					{% else %}
-					<div class="checkbox">
-						<input class="focus" id="focus_{{result.user}}" name="{{result.user}}" value=" "  type="checkbox" />
-						<label for="focus_{{result.user}}"></label>
-					</div>
+					     <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/refocus.jpg" style="padding-left:5px;"/>
 					{% endif %}
 
 					{% if result.nickname %}
@@ -152,40 +146,32 @@ $(function() {
 	});
 
 
-	$("[id^='focus_']").each(function() {
-	    $(this).click(function(){
 
-		 if($(this).is(':checked')){
-
-		        $.post("{% url 'add_attion_investor' %}",
-                {
-                    investor: $(this).attr('name'),
-                },
-                function (data) {
-
-                })
-         }else{
-         		$.post("{% url 'cancel_attion_investor' %}",
-                {
-                    investor: $(this).attr('name'),
-                },
-                function (data) {
-
-                })
-
-
-
-         }
-		});
-	});
-
-			$(".focus").click(function(){
-				if($(".focus").is(':checked')){
-				}else{
-				}
-			})
 });
 
+function changFocus(obj) {
+	if($(obj).attr('src')=="/static/images/focus.jpg")
+	{
+	     $.post("{% url 'cancel_attion_investor' %}",
+                {
+                    investor: $(obj).attr('name'),
+                },
+                function (data) {
+                    $(obj).attr('src',"/static/images/refocus.jpg");
+                })
+
+		}
+	else
+	{
+	    $.post("{% url 'add_attion_investor' %}",
+                {
+                    investor: $(obj).attr('name'),
+                },
+                function (data) {
+                 $(obj).attr('src',"/static/images/focus.jpg");
+                });
+	    }
+	 }
 </script>
 <style type="text/css">
 #alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
