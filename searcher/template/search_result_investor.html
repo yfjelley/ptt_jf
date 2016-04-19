@@ -14,11 +14,11 @@
 				{% endifequal %}
 			</div>
 			<div class="DesPel">
-				<div style="float:right;margin-top: 10px;margin-right:10px;width:90px;">
+				<div style="float:right;margin-top: 15px;margin-right:15px;width:90px;">
 					{% if forloop.counter0|add_all:s %}
-                         <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/focus.jpg" style="padding-left:5px;"/>
+                         <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/refocus.jpg" style="padding-left:5px;"/>
 					{% else %}
-					     <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/refocus.jpg" style="padding-left:5px;"/>
+					     <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/focus.jpg" style="padding-left:5px;"/>
 					{% endif %}
 
 					{% if result.nickname %}
@@ -150,14 +150,14 @@ $(function() {
 });
 
 function changFocus(obj) {
-	if($(obj).attr('src')=="/static/images/focus.jpg")
+	if($(obj).attr('src')=="/static/images/refocus.jpg")
 	{
 	     $.post("{% url 'cancel_attion_investor' %}",
                 {
                     investor: $(obj).attr('name'),
                 },
                 function (data) {
-                    $(obj).attr('src',"/static/images/refocus.jpg");
+                    $(obj).attr('src',"/static/images/focus.jpg");
                 })
 
 		}
@@ -168,7 +168,7 @@ function changFocus(obj) {
                     investor: $(obj).attr('name'),
                 },
                 function (data) {
-                 $(obj).attr('src',"/static/images/focus.jpg");
+                 $(obj).attr('src',"/static/images/refocus.jpg");
                 });
 	    }
 	 }
