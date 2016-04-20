@@ -59054,3 +59054,550 @@ Quit the server with CONTROL-C.
 [19/Apr/2016 15:20:35] "GET /getverifycode/ HTTP/1.1" 200 2670
 [19/Apr/2016 15:20:36] "GET /invest_pr/141/ HTTP/1.1" 200 12211
 [19/Apr/2016 15:20:36] "GET /static/css/touzi.css HTTP/1.1" 200 984
+[19/Apr/2016 15:26:04] "GET /invest_pr/141/ HTTP/1.1" 200 12211
+[19/Apr/2016 15:26:04] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/css/touzi.css HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/css/footer.css HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/upload/default.png HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:26:04] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:26:07] "GET / HTTP/1.1" 200 40069
+[19/Apr/2016 15:26:07] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:26:08] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:26:08] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:26:08] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:26:09] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 15:26:09] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 15:26:11] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:26:11] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:26:14] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050773166 HTTP/1.1" 200 12767
+[19/Apr/2016 15:26:14] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050773165 HTTP/1.1" 200 12767
+[19/Apr/2016 15:26:14] "GET /static/site_media/uploadify.swf?preventswfcaching=1461050773164 HTTP/1.1" 200 12767
+[19/Apr/2016 15:26:14] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:26:14] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:26:17] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 15:26:17] "GET /static/js/timeplus.js?_=1461050778366 HTTP/1.1" 200 1893
+[19/Apr/2016 15:26:17] "GET /getverifycode/ HTTP/1.1" 200 2676
+[19/Apr/2016 15:26:17] "GET /static/js/yz.js?_=1461050778448 HTTP/1.1" 200 41463
+[19/Apr/2016 15:59:01] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:01] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/css/footer.css HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/js/yz.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/default.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:59:01] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/images/person.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:01] "GET /static/upload/financial_assets21Jellyfish.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:59:02] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[19/Apr/2016 15:59:02] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:02] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:02] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:59:02] "GET /static/images/person2.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:02] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[19/Apr/2016 15:59:04] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 15:59:05] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 15:59:05] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:59:05] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:59:05] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 15:59:06] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 15:59:07] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:07] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 15:59:09] "GET /static/site_media/uploadify.swf?preventswfcaching=1461052749110 HTTP/1.1" 200 12767
+[19/Apr/2016 15:59:09] "GET /static/site_media/uploadify.swf?preventswfcaching=1461052749092 HTTP/1.1" 200 12767
+[19/Apr/2016 15:59:09] "GET /static/site_media/uploadify.swf?preventswfcaching=1461052749109 HTTP/1.1" 200 12767
+[19/Apr/2016 15:59:09] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:09] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:10] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:14] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 15:59:14] "GET /static/js/timeplus.js?_=1461052755214 HTTP/1.1" 200 1893
+[19/Apr/2016 15:59:14] "GET /getverifycode/ HTTP/1.1" 200 2640
+[19/Apr/2016 15:59:14] "GET /static/js/yz.js?_=1461052755266 HTTP/1.1" 200 41463
+[19/Apr/2016 15:59:21] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:21] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:21] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:22] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 15:59:22] "GET /static/js/timeplus.js?_=1461052763420 HTTP/1.1" 200 1893
+[19/Apr/2016 15:59:22] "GET /static/js/yz.js?_=1461052763476 HTTP/1.1" 200 41463
+[19/Apr/2016 15:59:26] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[19/Apr/2016 15:59:26] "GET /static/js/timeplus.js?_=1461052768070 HTTP/1.1" 200 1893
+[19/Apr/2016 15:59:27] "GET /static/js/yz.js?_=1461052768128 HTTP/1.1" 200 41463
+[19/Apr/2016 15:59:29] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 15:59:29] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 16:23:11] "GET / HTTP/1.1" 200 40069
+[19/Apr/2016 16:23:12] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 16:23:14] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 16:23:14] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 16:23:14] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 16:23:15] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 16:23:16] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 16:23:21] "GET /userinfo/ HTTP/1.1" 200 41916
+[19/Apr/2016 16:23:21] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 16:23:23] "GET /about_us/ HTTP/1.1" 200 28630
+[19/Apr/2016 16:23:24] "GET /guide/ HTTP/1.1" 200 37605
+[19/Apr/2016 16:23:24] "GET /investor/ HTTP/1.1" 200 42158
+[19/Apr/2016 16:23:24] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[19/Apr/2016 16:23:24] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[19/Apr/2016 16:23:25] "GET /project/ HTTP/1.1" 200 23880
+[19/Apr/2016 16:23:25] "GET / HTTP/1.1" 200 40069
+[20/Apr/2016 08:43:13] "GET / HTTP/1.0" 200 39642
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[20/Apr/2016 10:07:08] "GET / HTTP/1.0" 200 39642
+[20/Apr/2016 10:07:13] "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0" 404 16427
+[20/Apr/2016 10:07:14] "OPTIONS / HTTP/1.0" 200 39642
+[20/Apr/2016 10:07:14] code 400, message Bad request version ('RTSP/1.0')
+[20/Apr/2016 10:07:14] "OPTIONS / RTSP/1.0" 400 -
+[20/Apr/2016 10:07:21] code 400, message Bad request syntax ('\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 1-2: illegal multibyte sequence
+[20/Apr/2016 10:07:26] code 400, message Bad request syntax ('\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03')
+[20/Apr/2016 10:07:26] "          versionbind   " 400 -
+[20/Apr/2016 10:07:31] code 400, message Bad HTTP/0.9 request type ('\x00')
+[20/Apr/2016 10:07:31] "            " 400 -
+[20/Apr/2016 10:07:31] code 400, message Bad request syntax ('HELP')
+[20/Apr/2016 10:07:31] "HELP" 400 -
+[20/Apr/2016 10:07:31] code 400, message Bad request syntax ('\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 16-17: illegal multibyte sequence
+[20/Apr/2016 10:07:36] code 400, message Bad request syntax ('\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[20/Apr/2016 10:07:41] code 400, message Bad HTTP/0.9 request type ('l\x00')
+[20/Apr/2016 10:07:41] "l          " 400 -
+[20/Apr/2016 10:07:41] code 400, message Bad request syntax ('\x01default')
+[20/Apr/2016 10:07:41] "default" 400 -
+[20/Apr/2016 10:07:46] code 400, message Bad HTTP/0.9 request type ('0')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 13-14: illegal multibyte sequence
+[20/Apr/2016 10:07:51] code 400, message Bad request syntax ('TNMP\x04\x00\x00\x00TNME\x00\x00\x04\x00')
+[20/Apr/2016 10:07:51] "TNMP   TNME   " 400 -
+[20/Apr/2016 10:07:56] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 6-7: illegal multibyte sequence
+[20/Apr/2016 10:08:01] code 400, message Bad request syntax ('DmdT\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x00\x11\x11\x00\xff\x01\xff\x13')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 20-21: illegal multibyte sequence
+[20/Apr/2016 10:08:06] code 400, message Bad request syntax (':\x00\x00\x00/\x00\x00\x00\x02\x00\x00@\x02\x0f\x00\x01\x00=\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x1f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[20/Apr/2016 10:08:06] ":   /     @  =            /         @                 " 400 -
+[20/Apr/2016 10:08:06] code 400, message Bad request version ('>')
+[20/Apr/2016 10:08:06] "< NTP/1.0 >" 400 -
+[20/Apr/2016 10:08:11] code 400, message Bad request syntax ('\x01\x00\x00\xfd\xce\xfa\x0b\xb0\xa0\x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00\xf0\xf0\xf0\xf0\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00\xe0m\xdf_')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 286, in parse_request
+    self.send_error(400, "Bad request syntax (%r)" % requestline)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 4-5: illegal multibyte sequence
+[20/Apr/2016 10:08:16] code 400, message Bad HTTP/0.9 request type ('\x00Z\x00\x00\x01\x00\x00\x00\x016\x01,\x00\x00\x08\x00\x7f\xff\x7f\x08\x00\x00\x00\x01\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'gbk' codec can't decode bytes in position 18-19: illegal multibyte sequence
+Validating models...
+
+0 errors found
+April 19, 2016 - 15:17:42
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.107', 29574)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.27', 44707)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.132', 24461)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.106', 31199)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.26', 45033)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.88', 16857)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.25', 42445)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.25', 44788)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('42.120.145.201', 13001)
+----------------------------------------
+[20/Apr/2016 11:42:31] "GET / HTTP/1.1" 500 100474
+[20/Apr/2016 11:43:37] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 11:43:37] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/notice.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/searchsub.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/weixin_1.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/emails.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/phone.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/address.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/round-timeout.png HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:43:37] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[20/Apr/2016 11:43:40] "GET /userinfo/ HTTP/1.1" 200 41916
+[20/Apr/2016 11:43:40] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:43:40] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[20/Apr/2016 11:43:42] "GET /userinfo/ HTTP/1.1" 200 41916
+[20/Apr/2016 11:43:42] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:43:44] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:43:46] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:43:47] "GET /project/ HTTP/1.1" 200 23880
+[20/Apr/2016 11:46:09] "GET /investor/ HTTP/1.1" 200 42158
+[20/Apr/2016 11:46:09] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:46:09] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:46:54] "GET /about_us/ HTTP/1.1" 200 28630
+Validating models...
+
+0 errors found
+April 20, 2016 - 11:42:24
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[20/Apr/2016 11:47:07] "GET /about_us/ HTTP/1.1" 200 28630
+[20/Apr/2016 11:47:07] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[20/Apr/2016 11:47:07] "GET /static/css/catalog.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:07] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:07] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:07] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/zhuanranglogo.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/sanbanlogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/subway.png HTTP/1.1" 200 526
+[20/Apr/2016 11:47:08] "GET /static/images/dylylogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/wabeilogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/xsblogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/cflogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:08] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:09] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 11:47:12] "GET /project/ HTTP/1.1" 200 23880
+[20/Apr/2016 11:47:13] "GET /investor/ HTTP/1.1" 200 42158
+[20/Apr/2016 11:47:13] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:47:13] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:47:14] "GET /guide/ HTTP/1.1" 200 37605
+[20/Apr/2016 11:47:15] "GET /about_us/ HTTP/1.1" 200 28630
+[20/Apr/2016 11:47:16] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:47:16] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[20/Apr/2016 11:47:18] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:47:20] "GET /static/site_media/uploadify.swf?preventswfcaching=1461124038488 HTTP/1.1" 200 12767
+[20/Apr/2016 11:47:20] "GET /static/site_media/uploadify.swf?preventswfcaching=1461124038485 HTTP/1.1" 200 12767
+[20/Apr/2016 11:47:20] "GET /static/site_media/uploadify.swf?preventswfcaching=1461124038486 HTTP/1.1" 200 12767
+[20/Apr/2016 11:47:20] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[20/Apr/2016 11:47:21] "GET /static/js/timeplus.js?_=1461124041458 HTTP/1.1" 200 1893
+[20/Apr/2016 11:47:21] "GET /static/js/yz.js?_=1461124041515 HTTP/1.1" 200 41463
+[20/Apr/2016 11:47:21] "GET /getverifycode/ HTTP/1.1" 200 2679
+[20/Apr/2016 11:47:21] "GET /static/images/on-clickcopy.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:22] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[20/Apr/2016 11:47:22] "GET /static/js/timeplus.js?_=1461124043240 HTTP/1.1" 200 1893
+[20/Apr/2016 11:47:23] "GET /static/js/yz.js?_=1461124043308 HTTP/1.1" 200 41463
+[20/Apr/2016 11:47:24] "GET / HTTP/1.1" 200 40068
+Validating models...
+
+0 errors found
+April 20, 2016 - 11:47:05
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[20/Apr/2016 11:47:58] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 11:47:58] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/notice.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:47:58] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:59] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:59] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:59] "GET /static/images/round-timeout.png HTTP/1.1" 304 0
+[20/Apr/2016 11:47:59] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:47:59] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[20/Apr/2016 11:48:02] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 11:48:02] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/notice.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/round-timeout.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:02] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[20/Apr/2016 11:48:03] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 11:48:03] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/css/newindex_page.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/notice.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/sqtzr.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/ztsuccess.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/ztbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/ztbannel-1.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/wxcode.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/searmore.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/sdbannel.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/project/xxlx/xinxin.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/roundzt.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/project/wz/wenzheng.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/project/gdnk/gude.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/project/nzyz/yzbanner.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/project/yangkun/yangkun.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/roundwc.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/car.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/round-timeout.png HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/jindutiao.JPG HTTP/1.1" 304 0
+[20/Apr/2016 11:48:03] "GET /static/images/zclogo.png HTTP/1.1" 200 10033
+[20/Apr/2016 11:48:07] "GET /project/ HTTP/1.1" 200 23880
+[20/Apr/2016 11:48:09] "GET /investor/ HTTP/1.1" 200 42158
+[20/Apr/2016 11:48:09] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:48:09] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[20/Apr/2016 11:48:09] "GET /guide/ HTTP/1.1" 200 37605
+[20/Apr/2016 11:48:19] "POST /do_result/ HTTP/1.1" 200 12934
+[20/Apr/2016 11:48:20] "POST /do_search/ HTTP/1.1" 200 541

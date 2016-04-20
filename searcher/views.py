@@ -13,6 +13,7 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.core.urlresolvers import reverse
 from PIL import Image
 from django.core.cache import cache
+from django.views.decorators.cache import cache_page
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -382,6 +383,7 @@ def message(request):
 def safe(request):
     return render_to_response("safe.html", {},context_instance=RequestContext(request))
 
+@cache_page(60 * 15)
 @login_required
 def userinfo(request,objectid=None):
     url = None
@@ -586,7 +588,7 @@ def agreement(request):
     ag = RegistrationAgreement.objects.filter(name="registration_agreement")
     return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
 
-
+@cache_page(60 * 15)
 def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     pr = Project.objects.all().distinct().order_by('status')
@@ -728,12 +730,14 @@ def change_phone_number(request):
             }
         return HttpResponse(json.dumps(payload), content_type="application/json")
 
+@cache_page(60 * 60)
 def about_us(request):
     p = About_us.objects.filter(name=u"上海辞达金融信息服务有限公司")
     mediareports = MediaReports.objects.filter(status=1)
 
     return render_to_response('about.html',{'mediareports':mediareports,"description":p[0].description}, context_instance=RequestContext(request))
 
+@cache_page(60 * 15)
 def guide(request):
     p = About_us.objects.all()
     p1 = RegistrationAgreement.objects.filter(name="mianzetiaokuan")
@@ -774,7 +778,7 @@ def invested(request):
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 
-
+@cache_page(60 * 15)
 @login_required
 def investor(request):
     #web(1:不限，3：认证资深投资人，2：认证投资人，)
@@ -947,7 +951,7 @@ def prodetails(request,objectid):
         return render_to_response('notice.html',{"p":p}, context_instance=RequestContext(request))
     return render_to_response('prodetails.html',{"flag":flag,"result":p,"project_forum":forum,'amount':amount,'invest_detail':invest_de}, context_instance=RequestContext(request))
 
-
+@cache_page(60 * 15)
 def project(request):
     #web(1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例)
     #web(14：不限，15：金融在线，16：电子商务, 17: 医疗, 18: 互联网, 19: 社交，20：生活服务)
