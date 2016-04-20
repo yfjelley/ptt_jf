@@ -37,7 +37,7 @@ $(document).ready(function() {
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/0/',
     'onUploadSuccess' : function(file, data, response) {
-            if(response){alert("上传成功！")};
+            if(data){dataJson = eval("(" + data + ")");$("#upload_id_card").html(dataJson.content_html);};
         }
   });
   $('#file_upload_tax').uploadify({
@@ -50,7 +50,7 @@ $(document).ready(function() {
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/3/',
     'onUploadSuccess' : function(file, data, response) {
-            if(response){alert("上传成功！")};
+           if(data){dataJson = eval("(" + data + ")");$("#upload_income_assets").html(dataJson.content_html);};
         }
   });
     $('#file_upload_organization_code').uploadify({
@@ -63,7 +63,7 @@ $(document).ready(function() {
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/2/',
     'onUploadSuccess' : function(file, data, response) {
-            if(response){alert("上传成功！")};
+            if(data){dataJson = eval("(" + data + ")");$("#upload_fixed_assets").html(dataJson.content_html);};
         }
   });
     $('#file_upload_business_license').uploadify({
@@ -76,7 +76,7 @@ $(document).ready(function() {
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/1/',
     'onUploadSuccess' : function(file, data, response) {
-            if(response){alert("上传成功！")};
+            if(data){dataJson = eval("(" + data + ")");$("#upload_financial_assets").html(dataJson.content_html);};
         }
   });
 
@@ -189,7 +189,7 @@ $(function () {
 				$('#'+id).show().siblings().hide();
 			});
 	
-			$('#Prodaohang').find('a').click(function(){
+			$('#c').find('a').click(function(){
 				var id =$(this).data('qq');
 				//alert(id);
 				$('#'+id).show().siblings().hide();
@@ -537,20 +537,19 @@ $(function(){
 						<tr>
 							<td colspan="3">请上传身份证,帮助我们快速核实您的身份</td>
 						</tr>
-						<tr style="height: 80px;">
-							<td>身份证:</td>
-							<td class="upload_file">
-								<label>
-									点击上传身份证扫描件或高清图片
-									<input type="file" name="file_upload"  id="file_upload" />
+                          <tr style="height: 80px;" >
+							  <td>身份证:</td>
+							     <td class="upload_file">
+								    <label>
+									  点击上传身份证扫描件或高清图片
+									  <input type="file" name="file_upload"  id="file_upload" />
 									</label>
-							</td>
-							<td>
-								{% if user.userinformation.id_card  %}
-								<img src="{{ user.userinformation.id_card }}"/>
-								{% endif %}
-							</td>
-						</tr>
+								 </td>
+							  <td id="upload_id_card">
+								  {% if user.userinformation.id_card  %}
+    												<img src="{{ user.userinformation.id_card }}"/>
+								  {% endif %}
+							  </td></tr>
 						<tr>
 							<td class="refer-aggree" colspan="3">
 								<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
@@ -591,7 +590,7 @@ $(function(){
 									<input type="file" name=""  id="file_upload_business_license" />
 								</label>
 							</td>
-							<td>
+							<td id="upload_financial_assets">
 								{% if user.userinformation.financial_assets %}
 								<img src="{{ user.userinformation.financial_assets }}" />
 								{% endif %}
@@ -605,7 +604,7 @@ $(function(){
 									<input type="file" name=""  id="file_upload_organization_code" />
 								</label>
 							</td>
-							<td>
+							<td id="upload_fixed_assets">
 								{% if user.userinformation.fixed_assets %}
 								<img src="{{ user.userinformation.fixed_assets }}"/>
 								{% endif %}
@@ -619,7 +618,7 @@ $(function(){
 									<input type="file" name=""  id="file_upload_tax" />
 								</label>
 							</td>
-							<td>
+							<td id="upload_income_assets">
 								{% if user.userinformation.income_assets %}
 								<img src="{{ user.userinformation.income_assets }}"/>
 								{% endif %}

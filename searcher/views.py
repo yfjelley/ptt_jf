@@ -778,7 +778,7 @@ def invested(request):
         return HttpResponse(json.dumps({'t': 1}), content_type="application/json")
     return HttpResponse(json.dumps({'t': 0}), content_type="application/json")
 
-@cache_page(60 * 15)
+
 @login_required
 def investor(request):
     #web(1:不限，3：认证资深投资人，2：认证投资人，)
@@ -1350,18 +1350,7 @@ def get_pageset(last_page, pagenum):
 
 
 def uploadify_script(request,objectid):
-    ret="0"
     file = request.FILES.get("Filedata",None)
-    if file:
-        result,new_name=profile_upload(file,request,objectid)
-        if result:
-            ret="1"
-        else:
-            ret="2"
-    json={'ret':ret,'save_name':new_name}
-    return HttpResponse(simplejson.dumps(json,ensure_ascii = False))
-
-def profile_upload(file,request,objectid):
     '''文件上传函数'''
     if file:
         u = request.user.userinformation
@@ -1372,23 +1361,38 @@ def profile_upload(file,request,objectid):
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.id_card = url
+            u.save()
+            new_img = request.user.userinformation.id_card
         elif int(objectid)== 1:
             name = 'financial_assets' + storage.get_available_name(str(request.user.id)) +file.name
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.financial_assets = url
+            u.save()
+            new_img = request.user.userinformation.financial_assets
         elif int(objectid)== 2:
             name = 'fixed_assets' + storage.get_available_name(str(request.user.id)) +file.name
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.fixed_assets = url
+            u.save()
+            new_img = request.user.userinformation.fixed_assets
         elif int(objectid)== 3:
             name = 'income_assets' + storage.get_available_name(str(request.user.id)) +file.name
             im.save('%s/%s' % (storage.location, name), 'PNG')
             url = storage.url(name)
             u.income_assets = url
-        u.save()
-        return (True,name) #change
+            u.save()
+            new_img = request.user.userinformation.income_assets
+
+        t = get_template('upload_id_card.html')
+        content_html = t.render(
+                RequestContext(request, {'new_img': new_img}))
+        payload = {
+                'content_html': content_html,
+                'success': True
+            }
+        return HttpResponse(json.dumps(payload), content_type="application/json")
 
 def profile_delte(request):
     del_file=request.POST.get("delete_file",'')
