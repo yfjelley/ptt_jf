@@ -383,7 +383,7 @@ def message(request):
 def safe(request):
     return render_to_response("safe.html", {},context_instance=RequestContext(request))
 
-@cache_page(60 * 15)
+
 @login_required
 def userinfo(request,objectid=None):
     url = None

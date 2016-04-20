@@ -59601,3 +59601,417 @@ Quit the server with CONTROL-C.
 [20/Apr/2016 11:48:09] "GET /guide/ HTTP/1.1" 200 37605
 [20/Apr/2016 11:48:19] "POST /do_result/ HTTP/1.1" 200 12934
 [20/Apr/2016 11:48:20] "POST /do_search/ HTTP/1.1" 200 541
+[20/Apr/2016 12:34:20] "GET /project/ HTTP/1.1" 200 23880
+[20/Apr/2016 12:34:22] "GET /userinfo/ HTTP/1.1" 200 41916
+[20/Apr/2016 12:34:22] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:34:22] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[20/Apr/2016 12:34:26] "GET /project/ HTTP/1.1" 200 23880
+[20/Apr/2016 12:34:27] "GET /prodetails/14 HTTP/1.1" 301 0
+[20/Apr/2016 12:34:27] "GET /prodetails/14/ HTTP/1.1" 200 37898
+[20/Apr/2016 12:34:27] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/js/emoji.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/js/previewer.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/images/ztzhong.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/project/xxlx/team.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/emoji/img/grinning.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/emoji/img/cat.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/emoji/img/%2B1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/emoji/img/-1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:27] "GET /static/emoji/img/8ball.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/focus_m.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/order.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/mbmoney.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/mgmoney.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/tzpeople.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/images/detail-jindu.PNG HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/100.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/airplane.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/ambulance.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/alien.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/angel.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/anger.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/angry.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/anguished.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/astonished.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/baby.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/blush.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/bowtie.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/confounded.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/confused.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/cry.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/disappointed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/expressionless.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/fearful.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/flushed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/frowning.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/grimacing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/grin.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/hushed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/innocent.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/joy.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/kissing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/laughing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/mask.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/pensive.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/persevere.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/relaxed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/sleeping.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/scream.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/relieved.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/sleepy.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/smirk.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/sob.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/tired_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/triumph.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/yum.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/worried.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/bear.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/dog.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/imp.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/monkey.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/beer.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/bento.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/clap.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/congratulations.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/dancers.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/fist.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:28] "GET /static/emoji/img/icecream.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/key.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/kiss.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/metal.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/microphone.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/muscle.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/musical_note.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/new.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/no_good.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "POST /add_attion/14/ HTTP/1.1" 500 8659
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/open_hands.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/pig.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/point_down.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/point_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/point_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/point_up.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/pray.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/rocket.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/smoking.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/snowman.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/emoji/img/sos.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /static/images/refocus_m.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:29] "GET /getverifycode/ HTTP/1.1" 200 2652
+[20/Apr/2016 12:34:30] "GET /userinfo/ HTTP/1.1" 200 41916
+[20/Apr/2016 12:34:30] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:34:35] "GET /userinfo/ HTTP/1.1" 200 41916
+[20/Apr/2016 12:34:35] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/js/yz.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:34:35] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/images/person.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/upload/financial_assets21Jellyfish.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:35] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:34:40] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:40] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:40] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:34:40] "GET /static/images/person2.png HTTP/1.1" 304 0
+[20/Apr/2016 12:34:40] "GET /static/images/tperson.png HTTP/1.1" 304 0
+Validating models...
+
+0 errors found
+April 20, 2016 - 11:47:55
+Django version 1.6.8, using settings 'ddbid.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+<WSGIRequest
+path:/do_search/,
+GET:<QueryDict: {}>,
+POST:<QueryDict: {u'page': [u'1'], u'keyword': [u'xx']}>,
+COOKIES:{'Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac': '1461124091',
+ 'Hm_lvt_afdeb5d28fdd744142dbe81b4203efac': '1460684026,1460946835,1461030904,1461123818',
+ 'csrftoken': 'U9Cn3aQp8sL2fNtkK9v9z9U6O6USSB5q',
+ 'pgv_pvid': '6535870372',
+ 'sessionid': 'wa091icd3u3iqcaz3uo8en8xaqar9zuc'},
+META:{'CELERY_LOADER': 'djcelery.loaders.DjangoLoader',
+ 'CONTENT_LENGTH': '17',
+ 'CONTENT_TYPE': 'application/x-www-form-urlencoded; charset=UTF-8',
+ 'DJANGO_SETTINGS_MODULE': 'ddbid.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': '*/*',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+ 'HTTP_ACCEPT_LANGUAGE': 'zh-CN,zh;q=0.8',
+ 'HTTP_CONNECTION': 'keep-alive',
+ 'HTTP_COOKIE': 'pgv_pvid=6535870372; csrftoken=U9Cn3aQp8sL2fNtkK9v9z9U6O6USSB5q; sessionid=wa091icd3u3iqcaz3uo8en8xaqar9zuc; Hm_lvt_afdeb5d28fdd744142dbe81b4203efac=1460684026,1460946835,1461030904,1461123818; Hm_lpvt_afdeb5d28fdd744142dbe81b4203efac=1461124091',
+ 'HTTP_HOST': '42.96.131.5:8001',
+ 'HTTP_ORIGIN': 'http://42.96.131.5:8001',
+ 'HTTP_REFERER': 'http://42.96.131.5:8001/do_result/',
+ 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
+ 'HTTP_X_REQUESTED_WITH': 'XMLHttpRequest',
+ 'LANG': 'en_US.UTF-8',
+ 'LANGUAGE': 'en_US:',
+ 'LOGNAME': 'root',
+ 'MAIL': '/var/mail/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ 'PATH_INFO': u'/do_search/',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '211.95.56.242',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'POST',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': 'iZ28vg01g91Z',
+ 'SERVER_PORT': '8001',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SUDO_COMMAND': '/usr/bin/python manage.py runserver 0.0.0.0:8001',
+ 'SUDO_GID': '0',
+ 'SUDO_UID': '0',
+ 'SUDO_USER': 'root',
+ 'TERM': 'xterm',
+ 'TZ': 'Asia/Shanghai',
+ 'USER': 'root',
+ 'USERNAME': 'root',
+ 'wsgi.errors': <open file '<stderr>', mode 'w' at 0x7f51e57e01e0>,
+ 'wsgi.file_wrapper': <class wsgiref.util.FileWrapper at 0x7f51e1c6d600>,
+ 'wsgi.input': <socket._fileobject object at 0x7f51d8f14bd0>,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}>
+[20/Apr/2016 12:35:20] "GET /userinfo/ HTTP/1.1" 200 42848
+[20/Apr/2016 12:35:21] "GET /static/css/promanager.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/css/btn-change.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/css/jquery-ui.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/css/uploadify.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/js/birthday.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/js/timeplus.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/js/yz.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/js/jquery.qrcode.min.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/site_media/jquery.uploadify.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:35:21] "GET /static/project/xxlx/xxlx.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/images/person.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/images/mperson.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/upload/financial_assets21Jellyfish.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:21] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/images/uploadimg.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/images/saveimg.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:35:22] "GET /static/images/person2.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:22] "GET /static/images/tperson.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:27] "GET /prodetails/13 HTTP/1.1" 301 0
+[20/Apr/2016 12:35:27] "GET /prodetails/13/ HTTP/1.1" 200 42803
+[20/Apr/2016 12:35:28] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:35:28] "GET /getverifycode/ HTTP/1.1" 200 2348
+[20/Apr/2016 12:35:29] "POST /add_attion/13/ HTTP/1.1" 500 8659
+[20/Apr/2016 12:35:35] "GET /prodetails/13/ HTTP/1.1" 200 42850
+[20/Apr/2016 12:35:35] "GET /static/css/zcheader.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/css/prodetails.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/js/jquery-1.8.3.min.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/zclogo.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/js/previewer.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/css/footer.css HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/js/emoji.js HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/upload/default.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/zcfinish.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/YK/yk.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/YK/project_02.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/detail-jindu.PNG HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/liulan38-32.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/upload/p_user16.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/mgmoney.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/mbmoney.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/images/tzpeople.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/upload/p_user14.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/upload/p_user15.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:35] "GET /static/upload/p_user1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/upload/p_user26.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/upload/p_user23.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/grinning.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/cat.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/%2B1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/-1.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/8ball.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/100.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/airplane.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/ambulance.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_down.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_lower_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_lower_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_up.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_upper_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/arrow_upper_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/alien.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/angel.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/anger.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/angry.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/anguished.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/astonished.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/baby.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/blush.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/cold_sweat.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/bowtie.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/confounded.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/confused.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/cry.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/disappointed_relieved.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/disappointed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/dizzy_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/expressionless.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/fearful.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/flushed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/frowning.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/full_moon_with_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/grimacing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/grin.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/heart_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/hushed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/innocent.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/joy.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/kissing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/kissing_closed_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/laughing.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/kissing_heart.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/mask.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/no_mouth.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/open_mouth.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/pensive.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/persevere.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/relaxed.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/relieved.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/scream.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/sleeping.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/sleepy.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/smirk.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/sob.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/sunglasses.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/stuck_out_tongue_closed_eyes.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/tired_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/triumph.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/yum.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/worried.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/bear.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/dog.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/hear_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/monkey_face.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/monkey.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/imp.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/see_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/speak_no_evil.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/bento.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/beer.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/clap.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/bullettrain_side.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/congratulations.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/dancers.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/fist.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/heart.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/icecream.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/key.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/kiss.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/microphone.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/metal.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/muscle.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/musical_note.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:36] "GET /static/emoji/img/new.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/no_good.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/open_hands.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/ok_hand.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/pig.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/point_down.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/point_left.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/point_right.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/point_up_2.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/point_up.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/pray.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/raising_hand.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/rocket.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/smoking.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/snowman.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/emoji/img/sos.png HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /static/images/8cm.jpg HTTP/1.1" 304 0
+[20/Apr/2016 12:35:37] "GET /getverifycode/ HTTP/1.1" 200 2624
+[20/Apr/2016 12:35:37] "GET /userinfo/ HTTP/1.1" 200 43818
+[20/Apr/2016 12:35:37] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:35:54] "GET /prodetails/14 HTTP/1.1" 301 0
+[20/Apr/2016 12:35:54] "GET /prodetails/14/ HTTP/1.1" 200 37945
+[20/Apr/2016 12:35:54] "GET /getverifycode/ HTTP/1.1" 200 2668
+[20/Apr/2016 12:35:59] "GET / HTTP/1.1" 200 40068
+[20/Apr/2016 12:36:01] "GET /userinfo/ HTTP/1.1" 200 43818
+[20/Apr/2016 12:36:01] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:36:01] "GET /static/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 1732
+[20/Apr/2016 12:36:05] "GET /investor/ HTTP/1.1" 200 42158
+[20/Apr/2016 12:36:05] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:36:05] "GET /static/upload/p_user24.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:36:05] "GET /guide/ HTTP/1.1" 200 37605
+[20/Apr/2016 12:36:09] "GET /userinfo/ HTTP/1.1" 200 43818
+[20/Apr/2016 12:36:09] "GET /static/upload/p_user22.png HTTP/1.1" 404 1663
+[20/Apr/2016 12:36:12] "GET /static/site_media/uploadify.swf?preventswfcaching=1461126969873 HTTP/1.1" 200 12767
+[20/Apr/2016 12:36:12] "GET /static/site_media/uploadify.swf?preventswfcaching=1461126969871 HTTP/1.1" 200 12767
+[20/Apr/2016 12:36:12] "GET /static/site_media/uploadify.swf?preventswfcaching=1461126969872 HTTP/1.1" 200 12767
+[20/Apr/2016 12:36:12] "GET /userinfo/ HTTP/1.1" 200 43818
+[20/Apr/2016 12:36:12] "GET /userinfo/ HTTP/1.1" 200 43818
+[20/Apr/2016 12:36:13] "GET /change_phone_number/ HTTP/1.1" 200 4762
+[20/Apr/2016 12:36:13] "GET /static/js/timeplus.js?_=1461126973364 HTTP/1.1" 200 1893
+[20/Apr/2016 12:36:13] "GET /static/js/yz.js?_=1461126973427 HTTP/1.1" 200 41463
+[20/Apr/2016 12:36:13] "GET /getverifycode/ HTTP/1.1" 200 2622
+[20/Apr/2016 13:20:53] "GET / HTTP/1.1" 200 39641
