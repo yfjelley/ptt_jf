@@ -27,7 +27,21 @@
 <title></title>
 
 <script type="text/javascript">
-$(document).ready(function() {
+$(function(){
+  $('#upload_photo').uploadify({
+     'successTimeout' : 5,
+     'queueID'  : 'some_file_queue', //进度条
+    'buttonClass': 'myfile',
+    'fileSizeLimit' : '10000KB',
+    'fileTypeDesc' : 'Image Files',
+    'fileTypeExts' : '*.gif; *.jpg; *.png',
+    'swf'      : '/static/site_media/uploadify.swf',
+    'uploader'  : '/upload_photo/',
+    'onUploadSuccess' : function(file, data, response) {
+            if(data){location.reload();};
+        }
+  });
+
   $('#file_upload').uploadify({
      'successTimeout' : 5,
     'buttonClass': 'myfile',
@@ -37,7 +51,7 @@ $(document).ready(function() {
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/0/',
     'onUploadSuccess' : function(file, data, response) {
-            if(data){dataJson = eval("(" + data + ")");$("#upload_id_card").html(dataJson.content_html);};
+            if(data){alert(data);dataJson = eval("(" + data + ")");$("#upload_id_card").html(dataJson.content_html);};
         }
   });
   $('#file_upload_tax').uploadify({
@@ -299,21 +313,23 @@ $(function(){
 
 		<div class="div_right">
 <!--基本信息-->
+
 		<div id="basicmessage">
-         <form class="userinfoform" action="{% url 'userinfo' %}" method="post"  enctype="multipart/form-data" >
+         <form class="userinfoform" action="{% url 'userinfo' %}" method="post">
              {% csrf_token %}
 			<ul style="float:left" class="Userul">
 				<li>
 					<label style="font-size:30px;margin-left:-15px;">基本信息</label>
 				</li>
-				<li>
+				<li id="upload_photo_img">
 					<img src="{{ user.userinformation.photo_url }}" style="margin-left:-20px; margin-top:20px;"/>
 				</li>
 				<li style="margin-top:12px; margin-left:-10px;">
                 	<a class="button-shangchuan" href="javascript:;" style="background: url('/static/images/uploadimg.png') no-repeat;border: 0 none;width:105px;height: 35px;">
-						<input type="file" name="file" />
+						<input type="file" name="upload_photo"  id="upload_photo"/>
                     </a>
 				</li>
+				<div id="some_file_queue" style="z-index:10000;position: fixed;"></div>
 				<li style=" margin-top:12px; margin-left:-10px;">
 					{% ifequal user.userinformation.invest_class 2 %}
                       <img src="/static/images/yerztouzi.png">

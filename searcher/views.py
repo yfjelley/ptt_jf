@@ -457,6 +457,8 @@ def userinfo(request,objectid=None):
     return render_to_response("userinfo.html", {"extend":extend,"notice":notice,"signal":signal,'form': form,"leader":leader,"invest":invest,\
                                                 "attention_pr":attention_pr,"attention_persion":attention_persion},
                               context_instance=RequestContext(request))
+
+
 def generate(request):
     for i in range(1,10):
         code = ''.join(map(lambda xx:(hex(ord(xx))[2:]),os.urandom(6)))
@@ -588,7 +590,7 @@ def agreement(request):
     ag = RegistrationAgreement.objects.filter(name="registration_agreement")
     return render_to_response('agreement.html',{'agreement':ag[0].agreement}, context_instance=RequestContext(request))
 
-@cache_page(60 * 15)
+
 def index_zc(request):
     #1:不限，2：每日精选，3：预热中，4：众筹中，5：众筹成功，6：成功案例
     pr = Project.objects.all().distinct().order_by('status')
@@ -1386,6 +1388,29 @@ def uploadify_script(request,objectid):
             new_img = request.user.userinformation.income_assets
 
         t = get_template('upload_id_card.html')
+        content_html = t.render(
+                RequestContext(request, {'new_img': new_img}))
+        payload = {
+                'content_html': content_html,
+                'success': True
+            }
+        return HttpResponse(json.dumps(payload), content_type="application/json")
+
+def upload_photo(request):
+    file = request.FILES.get("Filedata",None)
+    if file:
+        u = request.user.userinformation
+        im = Image.open(file)
+        im.thumbnail((120, 120))
+        name = 'p_user' + storage.get_available_name(str(request.user.id)) + '.png'
+        im.save('%s/%s' % (storage.location, name), 'PNG')
+        url = storage.url(name)
+
+        u.photo_url = url
+        u.save()
+        new_img = request.user.userinformation.photo_url
+
+        t = get_template('upload_photo.html')
         content_html = t.render(
                 RequestContext(request, {'new_img': new_img}))
         payload = {

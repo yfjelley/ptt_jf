@@ -60,7 +60,8 @@ urlpatterns = patterns('searcher.views',
     url(r'^checkvcode/$',  'checkvcode', name='checkvcode'),
     url(r'^checksmscode/$',  'checksmscode', name='checksmscode'),
     url(r'^uploadify_script/(?P<objectid>\d+)/$', 'uploadify_script'),
-    url(r'^delete_uploadfile/$','profile_delte')
+    url(r'^delete_uploadfile/$','profile_delte'),
+    url(r'^upload_photo/$',  'upload_photo', name='upload_photo'),
 
 )
 
