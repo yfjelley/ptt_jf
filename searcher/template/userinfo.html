@@ -51,7 +51,7 @@ $(function(){
     'swf'      : '/static/site_media/uploadify.swf',
     'uploader'  : '/uploadify_script/0/',
     'onUploadSuccess' : function(file, data, response) {
-            if(data){alert(data);dataJson = eval("(" + data + ")");$("#upload_id_card").html(dataJson.content_html);};
+            if(data){dataJson = eval("(" + data + ")");$("#upload_id_card").html(dataJson.content_html);};
         }
   });
   $('#file_upload_tax').uploadify({
