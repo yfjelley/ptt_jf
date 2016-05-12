@@ -1,19 +1,19 @@
-﻿.conext{width:100%;height:100%;background:#EEEEF0;min-width:1440px;max-width:1660px;min-height: 700px;}
-.div11 {height:100%;width:788px;background-color:#FFFFFF;margin:0 auto;margin-bottom:80px;}
-.a{ text-decoration:none;}
+﻿.guide{width:100%;height:100%;background:#EEEEF0;min-width:1150px;min-height: 700px;}
+.guide-content {height:100%;width:788px;background-color:#FFFFFF;margin:0 auto;margin-bottom:80px;}
+a{ text-decoration:none;}
 li{ list-style-type:none;}
-.div_left{width:140px; position:absolute;line-height:40px;background-color:#FFFFFF;padding:15px;margin-top:20px;}
-.div_left ul{margin-top:50px;}
-.div_left ul li a{margin-left:18px;font-size:18px;width:100px;}
+.guide-content-left{width:140px; position:absolute;line-height:40px;background-color:#FFFFFF;padding:15px;margin-top:20px;}
+.guide-content-left ul{margin-top:50px;}
+.guide-content-left ul li a{margin-left:18px;font-size:18px;width:100px;}
 .blockColor{color:#000000;}
 .grayColor{color:#808080;}
 .clickTag{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
-.div_left a{margin-left:18px;font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
-.div_left a:hover{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
+.guide-content-left a{margin-left:18px;font-size:18px;width:100px;padding:0 5px 0 6px;display:block;height:35px;line-height:60px;}
+.guide-content-left a:hover{border-left:2px solid red;padding:0 5px 0 6px;height:35px;line-height:60px;display:inline-block;}
 .left_label{position: relative;top:-11px;cursor: pointer}
 
 .downline{width:75px;height:1px;background:#ccc;margin:10px 0 10px 17px}
-.div_right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;overflow:hidden}
+.guide-content-right{margin-left:140px;width:653px;height:100%;background-color:#FFFFFF;overflow:hidden}
 .biaoti{font-size:24px;}
 .con_right{padding-top:42px;background:#FFFFFF;margin-left:40px;}
 .con_right p span{font-size:18px;letter-spacing: 3px;}
@@ -229,7 +229,7 @@ li{ list-style-type:none;}
 }
 
 
-.ptxy_div{margin-top:20px;width:560px;margin-left:-30px;}
+.ptxy_div{margin-top:20px;width:560px;}
 .ptxy_div ul li .ptxy_a{float:left;}
 .ptxy_div ul li a .ptxy_img{width:55px;height:60px;}
 .ptxy_div ul li div{clear:both;}
@@ -239,5 +239,3 @@ li{ list-style-type:none;}
 .ptxy_div ul li{height:50px;}
 
 .change_color a{color:#000;}
-a{text-decoration:none;}
-a:hover{color:#e1604d}

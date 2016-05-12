@@ -1,60 +1,57 @@
 
 {% load staticfiles %}
 {% load settingsvalue %}
+
     {% if results %}
         {% for result in results.object_list %}
         {% ifnotequal result.status 4 %}
-		<ul class="mojing">
+		<div class="pro-content module clearfix">
 			<a href="/prodetails/{{result.id}}">
-              <div class="littleimg"> <img src="/static/images/heart.png" />
-				 <label style="padding-right: 18px;font-weight:bold; color:#FFF;height:20px;padding-top:3px;float: right;">{{result.click.all|length}}</label>
-			  </div>
+			<div class="left-top-img">
+				<div class="wd-50">
+					<img src="/static/images/heart.png" width="20" height="20" />
+					<span class="focus-people">{{result.click.all|length}}</span>
+				</div>
+			</div>
 			{% ifequal result.active 1 %}
-			<li>
-				<img style="position:relative;top:-7px;left:144px;" src="/static/images/flag.png" />
-			</li>
-            {% else %}
-            <li>
-				<img style="position:relative;top:-7px;left:144px;" src="/static/images/rflag.png" >
-			</li>
+			<div class="right-top-img">
+				<img src="/static/images/flag.png" width="65" height="66"/>
+			</div>
+			{% else %}
+			<div class="right-top-img">
+				<img  src="/static/images/rflag.png" width="65" height="66">
+			</div>
 			{% endifequal %}
-			<li class="mongjingImg">
-                <img src="{{ result.photo_url }}" style="width:255px;"/>				
-			</li>
-			<li style="margin-top:-5px;">
-				<ul class="Cul1">
-					<li style="padding-top:5px;height:20px">
-						<b style="color:#000000">{{result.name}}</b>
+			<div class="con-img">
+				<img src="{{ result.photo_url }}" width="256" height="152">
+			</div>
+			<div class="con-desc">
+				<ul class="con-desc-item">
+					<li class="item-title">{{result.name}}</li>
+					<li class="item-desc">{{result.introduction}}</li>
+					<li class="item-progress"><em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(/static/images/jindutiao.JPG) no-repeat;"></em></li>
+					<li class="item-rz">
+						<ul class="item-rz-detail">
+							<li><span>融资金额:{% widthratio result.invest_amount 1 result.invest_num  %}万元</span></li>
+							<li><span>已完成:{% widthratio result.finish result.invest_num 100 %}%</span></li>
+						</ul>
 					</li>
-					<li style="padding-top:5px;">
-						<label style="color:#000000;font-size:12px">{{result.introduction}}</label>
-					</li>
-					<li class="index-percent"><div style="width:100%;border:1px solid #868686;border-radius:10px;margin-left:-0.5em">
-						<em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(/static/images/jindutiao.JPG) no-repeat;"></em></div></li>
-					<li style="float:left">
-					<label>融资总额:</label><span>{% widthratio result.invest_amount 1 result.invest_num  %}万元</span>
-					</li>
-					<li style="float:right;margin-right:40px;">
-						<label>已完成:</label><span>{% widthratio result.finish result.invest_num 100 %}%</span>
-					</li>
-					<li style="clear:both">
-						<div style="border-top:1px solid #eeeef0; width:200px;height:1px;"></div>
-					</li>
-					<li style="float:left;">
-						<label>已预约融资:</label><span>{% widthratio result.invest_amount 1 result.finish  %}万元</span>
-					</li>
-					<li style="float:right;margin-right:20px">
-						<label>行业:</label><span>{{result.get_category_display}}</span>
+					<li class="item-yy">
+						<ul class="item-yy-detail">
+							<li><span>已预约融资:{% widthratio result.invest_amount 1 result.finish  %}万元</span></li>
+							<li><span>行业:{{result.get_category_display}}</span></li>
+						</ul>
 					</li>
 				</ul>
-			</li>
-			</a>
-		</ul>
-        {% endifnotequal %}
-     	{% endfor %}
-    {% else %}
-        <a style="margin-left: 20px">无符合查询条件的纪录</a>
-    {% endif %}
+			</div>
+		</a>
+		</div>
+			{% endifnotequal %}
+			{% endfor %}
+			{% else %}
+			<a style="margin-left: 20px">无符合查询条件的纪录</a>
+			{% endif %}
+
     <div class="pagesgd">
         <a href="javascript:void(0)" class="before"
            onclick="takepage(1)">《</a>

@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,85 +11,75 @@
 </head>
 <body>
 {% include "zcheader.html" %}
-
-<div id="forger_conent">
-	<div class="bglogo" style="width: 100%;">
-		<img src="/static/images/bglogo.jpg" width="100%" >
-	</div>
-	<div class="get_pwd">
-		{% if message %}
-		<a style="font-size: 14px">{{ message }}</a>
-		{% else %}
-		<form class="registerform" action="{% url 'forgetpw' %}" method="post">
-			<ul class="get_all">
-				<ul class="log_text">
-					<li style="font-size:32px;margin-left:160px;margin-top:-20px;">
+<div id="forget_content">
+	<div class="zhankeng"></div>
+	<div class="forget_wrapper">
+		<div class="forget_mid">
+			{% if message %}
+			<a style="font-size: 14px">{{ message }}</a>
+			{% else %}
+			<form class="registerform" action="{% url 'forgetpw' %}" method="post">
+				<ul class="forget_list">
+					<li class="flist_item fitem_title">
 						<label>忘记密码</label>
 					</li>
-				</ul>
-				<ul id="ul3">
-					<li>
-						<div style="margin-left:-30px;border-top:1px solid #eeeef0; width:505px;height:1px;"></div>
+					<li class="flist_item" style="margin-left: 0;">
+						<ul class="fitem_desc">
+							<li class="line"></li>
+							<li class="desc_text"><label>请输入注册时填写的手机号获取验证码输入</label></li>
+							<li class="line"></li>
+						</ul>
 					</li>
-					<li>
-						<label>请输入注册时填写的手机号获取验证码输入</label>
+					<li style="margin-top: -20px;" class="flist_item">
+						<ul class="fitem_mobile">
+							<li class="mobile_title">
+								<label> 输入手机号:</label>
+							</li>
+							<li class="field">
+								<label>{{ form.username }}</label>
+							</li>
+						</ul>
 					</li>
-					<li>
-						<div style="margin-left:-30px;border-top:1px solid #eeeef0; width:505px;height:1px;"></div>
-
+					<li class="flist_item">
+						<ul class="fitem_code">
+							<li>
+								<label>验证码:</label>
+							</li>
+							<li class="field">
+								<label style="float:left">{{ form.vcode }}</label>
+								<label style="float:left;margin-left:5px;"><img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
+																				src="{% url 'verifycode' %}"/></label>
+							</li>
+						</ul>
 					</li>
-				</ul>
-				<ul id="print_ucon">
-					<ul class="elul1">
-						<li>
-							<label class="label1"> 输入手机号：</label>
-						</li>
-						<li>
-							<label style="float:left; z-index:999">{{ form.username }}</label>
-							<label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
-						</li>
-						<li style="clear:both"></li>
-					</ul>
-					<ul class="forget_yzcode">
-                              <li>
-                                  <label style="margin-left:-75px;">验证码：</label>
-                              </li>
-                              <li id="sms_inp">
-                                  <label style="float:left">{{ form.vcode }}</label>
-                                  <label style="float:left;margin-left:5px;"><img onclick="this.setAttribute('src',{% url 'verifycode' %} + '?nocache='+Math.random());"
-                                       src="{% url 'verifycode' %}"/></label>
-                                  <label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
-                              </li>
-                              <li style="clear:both"></li>
-                    </ul>
-					<ul class="elul2">
-						<li>
-							<label class="label2"> 手机验证码：</label>
-						</li>
-						<li>
-							<label style="float:left; z-index:999">{{ form.smscode }}</label>
-							<input type="button" id="rulesubmit" style="float:left;color:#FFFFFF; background-color:#4a3c70;border:1px solid #4a3c70; border-radius:3px;-webkit-border-radius:3px;z-index:1;width:94px;height:50px;margin-left:10px;" value="发送验证码" />
-							<label style="float:left"><div style="border:0px solid #000;width:90px;height:52px;"></div></label>
-						</li>
-						<li style="clear:both;"></li>
-					</ul>
-				</ul>
-				<ul id="ul5">
-					<li>
-						<input type="submit" class="input_butt" alt=" " value=" " style="width:413px; height:43px;background:url(/static/images/login.jpg);background-repeat:no-repeat;margin:20px 0 10px -45px;" />
+					<li class="flist_item">
+						<ul class="fitem_smscode">
+							<li class="smscode_title">
+								<label> 短信验证码:</label>
+							</li>
+							<li class="field">
+								<label style="float:left; z-index:999">{{ form.smscode }}</label>
+								<input type="button" id="rulesubmit" style="float:left;color:#FFFFFF; background-color:#4a3c70;border:1px solid #4a3c70; border-radius:3px;-webkit-border-radius:3px;z-index:1;width:94px;height:50px;margin-left:10px;" value="发送验证码" />
+							</li>
+							<li style="clear:both;"></li>
+						</ul>
+					</li>
+					<li class="flist_item--center">
+						<ul class="fitem_button">
+							<li class="button_images">
+								<input type="submit" class="input_butt" alt=" " value=" " />
+							</li>
+						</ul>
 					</li>
 				</ul>
-			</ul>
-		</form>
-		{% endif %}
-
+			</form>
+			{% endif %}
+		</div>
 	</div>
+	<div class="zhankeng"></div>
 </div>
 {% include "footer.html" %}
-
-
 <script type="text/javascript">
-
 $(function(){
         {% if form.smscode.errors %}
             {% for error in form.smscode.errors %}

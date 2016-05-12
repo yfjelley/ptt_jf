@@ -1,13 +1,27 @@
-﻿.conext{width:100%height:100%;background:#EEEEF0;min-width:1440px;max-width:1660px;overflow:hidden;border:1px solid #EEEEF0;}
-.div11 {font-family:"新宋体";height:100%;width:964px;background-color:#FFFFFF;margin:50px 0 90px 250px;}
-.div_left{width:260px;height:100%;float:left;background-color:#FFFFFF;margin-top:25px;margin-left:10px;}
-.div_left  a{margin-left:18px;text-decoration:none;}
-.div_right{margin-left:260px;margin-top:35px;width:704px;height:400px;background-color:#FFFFFF;}
-.biaoti{font-size:20px;font-weight:bold;}
-.border1{width:340px;height:55px;}
-.entr{width:108px;height:40px;background-color:#715C83;
+﻿dl,dd{margin: 0;}
+a{text-decoration: none;}
+.invest-container{background-color: #eeeef0;width: 100%;height: 100%;position: relative;min-width: 1150px;min-height: 540px;}
+.invest-container .invest-wrapper{width: 1150px;margin-left: auto;margin-right: auto;background-color: #fff;}
+.invest-content{padding: 20px;}
+.invest-container .invest-content .content-detail .detail-desc{padding-left: 20px;position: relative;width: 70%;}
+.invest-container .invest-content .content-detail .desc-box .box-title{font-size: 20px;font-weight: bold;}
+.invest-container .invest-content .content-detail .desc-box dd{padding: 10px 0;}
+.invest-container .invest-content .content-detail .desc-box .box-title{border-bottom: 1px solid #ccc;}
+.invest-container .invest-content .content-detail .desc-box .box-count .title{font-size:18px;font-weight:bold;}
+.invest-container .invest-content .content-detail .desc-box .box-count .count{font-size:22px;font-weight:bold;}
+.desc-box .box-count .title,.desc-box .box-count .count{padding: 0 5px;}
+.invest-container .invest-content .content-detail .desc-box .box-order{border:1px solid #666;width: 220px;height: 60px;font-size: 14px;}
+.desc-box .box-order span{display: inline-block;width: 180px;margin-top: 20px;margin-left: 10px;}
+.invest-container .detail-desc .desc-box .box-invest{font-size:18px;font-weight:bold}
+.box-money{position: relative;}
+.invest-container .detail-desc .desc-box .box-money input[type="text"]{width: 340px;height: 55px;}
+.unit{position: absolute;left: 40%;bottom: 40%;}
+.invest-container .detail-desc .desc-box .box-agree{height: 30px;line-height: 30px;}
+.invest-container .detail-desc .desc-box .box-agree input[type='checkbox']{vertical-align: middle;}
+.invest-container .detail-desc .desc-box .box-agree a{color: #ff0000;font-size: 14px;}
+.invest-container .detail-desc .desc-box .box-agree a:hover{text-decoration: underline;}
+.invest-container .detail-desc .desc-box .box-btn input[type='button']{width:108px;height:40px;background-color:#715C83;
       border:1px solid #715C83;color:#FFFFFF;text-align:center;-moz-border-radius:3px;border-radius:3px;}
-.online{width:675px;height:1px;background-color:#EEEEF0;margin-top:10px;}
-.donline1{border:1px solid #666666;width:220px;height:60px;font-size:14px;margin-left:15px}
-.lmoney{margin-top:2px;padding:4px 0}
-.smoney{margin-top:2px;padding:4px 0}
+.clearfix{*zoom : 1;}
+.clearfix:after{content: '';display: block;clear: both;height: 0;}
+.lt{float: left;}

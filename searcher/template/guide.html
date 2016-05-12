@@ -86,12 +86,12 @@
 {% include "zcheader.html" %}
 
 <!--内容-->
-<div class="conext">
+<div class="guide">
 <div style="height:50px;"></div>
 	<!----左边浮动图片------->
 	<a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
-<div class="div11">
-		<div class="div_left" id="daohang">
+<div class="guide-content">
+		<div class="guide-content-left" id="daohang">
 			<a data-pp="gyzc" href="javascript:void(0);" class="blockColor"><label class="left_label">关于众投</label></a>
 			<div class="downline"></div>
 			<a data-pp="tzlc" href="javascript:;" class="grayColor"><label class="left_label">投资流程</label></a>
@@ -104,14 +104,13 @@
 			<div class="downline"></div>
 			<a data-pp="bzzx" href="javascript:;" class="grayColor"><label class="left_label">帮助中心</label></a>
 		</div>
-		<div class="div_right">
+		<div class="guide-content-right">
 		   <div id="gyzc" class="con_right">   
 				 <div class="biaoti">关于众投</div>
 				 <p style="width:570px;"><span>{{description|safe}}</span></p>
 				 <div style="height:78px;"></div>
 		   </div> 
 		   <div id="aqbz" class="display">
-		         
 					 <div class="biaoti">安全保障</div>
 					   <div style="margin-left:100px;margin-top:230px;">
 					 	<div style="width:400px;height:1px;background:#ccc;position:absolute;margin-top:-15px;"></div>
@@ -222,18 +221,16 @@
 				</div>
 			</div>
 			<div id="bzzx" class="bzzx" >
-			
 					  <div style="margin-left:40px;font-size:24px;">帮助中心</div>
-					    <div id="PARENT">
+					    <div style="margin-left:40px;" id="PARENT">
 							<ul id="nav111">
 								<a href="javascript:void(0)">什么是众投？<img src="/static/images/arrows-top.png"></a>
 								<li style="display: none">
 									 <ul>
 										 <li>
-										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;"><span>众投，通俗地讲，就是对于前景看好的项目（企业），汇聚大众的力量一起来投资，众人拾柴火焰高，在成就企业发展的同时，也成就了投资人。</span>
-										 </p>
-										 <div style="margin-left:-40px;" class="donline" id="donline"></div>
+										  <div class="donline" id="donline"></div>
+											<p ><span>众投，通俗地讲，就是对于前景看好的项目（企业），汇聚大众的力量一起来投资，众人拾柴火焰高，在成就企业发展的同时，也成就了投资人。</span></p>
+										 <div  class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 								</li>
@@ -241,13 +238,13 @@
 								<li style="display: none">
 									<ul>
 										<li>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;">
+											<div class="donline" id="donline"></div>
+											<p>
 												<span>“新三板”市场原指中关村科技园区非上市股份有限公司进入代办股份系统进行转让试点，因为挂牌企业均为高科技企业而不同于原转让系统内的退市企业及原STAQ、NET系统挂牌公司，故形象地称为“新三板”。新三板的意义主要是针对公司的，会给该企业／公司带来很大的好处。目前，新三板不再局限于中关村科技园区非上市股份有限公司，也不局限于天津滨海、武汉东湖以及上海张江等试点地的非上市股份有限公司，而是全国性的非上市股份有限公司股权交易平台，主要针对的是中小微型企业。10月8日消息，证监会全面支持新三板市场发展的文件即将公布，将包括分层等制度安排。
 												截止2015年12月25日挂牌企业家数已达5016家。</span>
 
 											</p>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<div class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
@@ -255,14 +252,14 @@
 								<li style="display: none">
 									 <ul>
 										 <li>
-										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" >
+										  <div class="donline" id="donline"></div>
+										 <p>
 											 <span>第一步:注册，葡萄藤众投网站注册<br>
 											 第二步:提交申请，在"我的账户"中点击“认证投资人”,填写完整资料并提交<br>
 											 第三步:审核，葡萄藤众投对“认证投资人”申请进行审核,通过审核即可成为认证投资人,即可在众投项目中预约投资
 											 </span>
 										 </p>
-										 <div style="margin-left:-40px;" class="donline" id="donline"></div>
+										 <div class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 									
@@ -271,8 +268,8 @@
 								<li style="display: none">
 									 <ul>
 										 <li>
-										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" >
+										  <div class="donline" id="donline"></div>
+										 	<p>
 											 <span>第一步：注册并认证成为认证投资人<br>
 											 第二步:选定待投项目，提交预约投资<br>
 											 第三步:待葡萄藤众投审核<br>
@@ -285,7 +282,7 @@
 											 第十步:投资退出，按协议分配收益
 												 </span>
 										 </p>
-											 <div style="margin-left:-40px;" class="donline" id="donline"></div>
+											 <div class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 									 
@@ -294,10 +291,10 @@
 								<li style="display: none">
 									 <ul>
 										 <li>
-										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
-										 <p style="margin-left:-40px;" ><span>目前我们平台的规则为认筹资金到达100%投资人就可以开始打款，邮件或短信也会进行通知。假设A项目募集资金100万元，那么认筹到达120万元的时候可以开始打款，而打款实际到账资金接近100万元的时候，我们以官网或者邮件的形式通知投资人暂停打款，并且会关闭认筹渠道。当然，我们平台和融资方有权选择投资人以及拒绝一些投机或者目的不明的投资人。</span>
+										  <div class="donline" id="donline"></div>
+										 <p><span>目前我们平台的规则为认筹资金到达100%投资人就可以开始打款，邮件或短信也会进行通知。假设A项目募集资金100万元，那么认筹到达120万元的时候可以开始打款，而打款实际到账资金接近100万元的时候，我们以官网或者邮件的形式通知投资人暂停打款，并且会关闭认筹渠道。当然，我们平台和融资方有权选择投资人以及拒绝一些投机或者目的不明的投资人。</span>
 										</p>
-										  <div style="margin-left:-40px;" class="donline" id="donline"></div>
+										  <div class="donline" id="donline"></div>
 										 </li>
 									 </ul>
 								</li>
@@ -305,12 +302,12 @@
 								<li style="display: none">
 									<ul>
 										<li>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" ><span>投资人在签署完有限合伙协议就可以打款了，具体收款账号信息会在有限合伙协议里注明。
+											<div class="donline" id="donline"></div>
+											<p><span>投资人在签署完有限合伙协议就可以打款了，具体收款账号信息会在有限合伙协议里注明。
 												投资人打款完毕后，冷静期为一天，逾期将不接受申请退款
 												</span>
 											</p>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<div class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
@@ -318,12 +315,12 @@
 								<li style="display: none">
 									<ul>
 										<li>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >
+											<div class="donline" id="donline"></div>
+											<p>
 												<span>1.若在约定的挂牌时间内，没有认购到项目总体融资额度的100%，则视项目融资失败。投资人可以和融资方协商，就是否可以按现有的投资和相应的股权比例，签订投资协议。<br>
 												2.若在约定的挂牌时间内，预约额度超过了项目的融资额度，融资方有权选择对自己发展更有利的投资人，创业者也可以和投资人进行商定其它解决方案，如约定统一时间打款，投资人先到先得；或者在投资人接受的条件下，可以有意向的投资人都按照比例少投资一定的金额，而保证所有有意向的投资人都来参与到项目的投资。</span>
 											</p>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<div class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
@@ -331,8 +328,8 @@
 								<li style="display: none">
 									<ul>
 										<li>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >
+											<div class="donline" id="donline"></div>
+											<p>
 												<span>
 												设立有限合伙企业主要从决策程序和税务两方面考虑。<br>
 												第一，有限责任公司股东会决议需要每个股东签字，决策程序繁琐。有限合伙企业由管理合伙人负责，有限合伙人不参与日常管理。在股权融资里，管理合伙人执行重大决议签字，决策还是由所有投资人共同投票决定。<br>
@@ -340,7 +337,7 @@
 												值得注意的是，无论是有限合伙企业还是有限责任公司，分红、股权转让收益都需缴纳20%的个人所得税。
 													</span>
 											</p>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<div class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
@@ -348,20 +345,18 @@
 								<li style="display: none">
 									<ul>
 										<li>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
-											<p style="margin-left:-40px;" >
+											<div class="donline" id="donline"></div>
+											<p>
 												<span>由于有限合伙企业的投资人是由多名个人投资人组成，在投资一定时间之后，如何退出以及何时退出，管理合伙人代表合伙企业决定是否退出，具有最终决定权。</span>
 											</p>
-											<div style="margin-left:-40px;" class="donline" id="donline"></div>
+											<div class="donline" id="donline"></div>
 										</li>
 									</ul>
 								</li>
 							</ul>
 					 </div>		
 					<div style="height:355px;"></div>	  	     		     
-			   </div> 
-		   <div id="right_media" class="display" style="margin-top:60px;background:#FFFFFF;">2222222222222</div> 	
-		   <div id="right_joinour" class="display" style="margin-top:60px;background:#FFFFFF;">6666666666666</div>
+			   </div>
 	    </div>
 	</div>
 

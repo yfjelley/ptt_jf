@@ -1,180 +1,179 @@
-
+<!DOCTYPE html>
 {% load settingsvalue %}
-
-    {% if results %}
-        {% for result in results.object_list %}
-
-	    <div class="Cleft3">
-			<div class="PelPic"><img class="person-img" src="{{ result.photo_url }}" />
-				{% ifequal result.invest_class 2 %}
-					<img style="position: absolute;margin-left:-100px;margin-top:150px" src="/static/images/yerztouzi.png" />
-				{% endifequal %}
-				{% ifequal result.invest_class 3 %}
-					<img style="position: absolute;margin-left:-100px;margin-top:150px" src="/static/images/touzi.png" />
-				{% endifequal %}
-			</div>
-			<div class="DesPel">
-				<div style="float:right;margin-top: 15px;margin-right:15px;width:90px;">
-					{% if forloop.counter0|add_all:s %}
-                         <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/refocus.jpg" style="padding-left:5px;"/>
-					{% else %}
-					     <img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/focus.jpg" style="padding-left:5px;"/>
-					{% endif %}
-
-					{% if result.nickname %}
-					<img onclick="sendMessage('{{result.nickname}}','{{result.user.username}}')"  src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
-				    {% else %}
-				    <img onclick="sendMessage('{{result.user.username}}','{{result.user.username}}')"  src="/static/images/priletter.jpg" style="padding:2px 5px" width="80" height="28"/></div>
-				    {% endif %}
-				<div id ="person" style=" font-weight:bold;font-size:24px;padding:5px 0;color:#000;margin-top:20px;margin-left:-5px;text-align: left">
-					{% if result.nickname %}
-						{{result.nickname}}
-					{% else %}
-					    {{result.user.username|phone_cut}}
-					{% endif %}
-				</div>
-				<div style="width:240px; height:50px;margin-top:30px;">
-					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
-					<div style="float:left;width:100px;height:60px;text-align: center;">
-						<p style="font-weight:bold;font-size:14px;color:#000;height: 25px;margin-top: -1px;display: block;">投资项目</p>
-						<p style="padding:0 22px;font-weight:bold;color:#000;font-size:16px;height: 25px;margin-top: -5px;display: block;">
-
-						 {{result.user.invest_user_set.all.count}}个
-						 </p>						 
-					</div>	 
-					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
-					<div style="float:left;width:130px;height:60px;text-align: center;">
-						 <p style="font-weight:bold;color:#000;font-size:14px;height: 25px;margin-top: -1px;display: block;">累计投资额</p>
-						 <p style="padding:0 30px;color:#000;font-weight:bold;font-size:16px;height: 25px;margin-top: -5px;display: block;">
-                            {{forloop.counter0|add_all:amount}}万元
-
-						 </p>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+		{% load settingsvalue %}
+		{% if results %}
+		{% for result in results.object_list %}
+		<div class="invest-content">
+			<ul class="invest-list clearfix">
+				<li class="list-img lt">
+					<div class="img-people p10"><img src="{{ result.photo_url }}" width="120" height="90"></div>
+					{% ifequal result.invest_class 2 %}
+					<div class="img-invest p10"><img src="/static/images/yerztouzi.png" width="96" height="40"></div>
+					{% endifequal %}
+					{% ifequal result.invest_class 3 %}
+					<div class="img-invest p10"><img src="/static/images/touzi.png" width="96" height="40"></div>
+					{% endifequal %}
+				</li>
+				<li class="list-desc m20 lt">
+					<ul class="desc-detail">
+						<li class="detail-title">
+							{% if result.nickname %}
+							<h2>{{result.nickname}}</h2>
+							{% else %}
+							<h2>{{result.user.username|phone_cut}}</h2>
+							{% endif %}
+						</li>
+						<li class="detail-classify clearfix">
+							<div class="invest-item w110 lt">
+								<span class="title w100">投资项目</span><span class="value w100">{{result.user.invest_user_set.all.count}}个</span>
+							</div>
+							<div class="invest-money w110 lt">
+								<span class="title w100">累计投资额</span><span class="value w100">{{forloop.counter0|add_all:amount}}万元</span>
+							</div>
+						</li>
+						<li class="detail-focus p10 m10">
+							<span class="title">关注行业</span>
+						</li>
+						<li class="detail-content p10">
+							<span class="value">{{result.get_cate_display}}</span>
+						</li>
+					</ul>
+				</li>
+				<li class="list-btn rt">
+						{% if forloop.counter0|add_all:s %}
+						<div class="btn-focus p5">
+							<img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/refocus.jpg" width="80" height="28"/>
+						</div>
+						{% else %}
+						<div class="btn-talk p5">
+							<img name="{{result.user}}" onclick="changFocus(this)" src="/static/images/focus.jpg" width="80" height="28"/>
+						</div>
+						{% endif %}
+					<div class="btn-talk p5">
+						{% if result.nickname %}
+						<img onclick="sendMessage('{{result.nickname}}','{{result.user.username}}')"  src="/static/images/priletter.jpg"  width="80" height="28"/>
+						{% else %}
+						<img onclick="sendMessage('{{result.user.username}}','{{result.user.username}}')"  src="/static/images/priletter.jpg" width="80" height="28"/>
+						{% endif %}
 					</div>
-					<div style="border-right:1px solid #EEEEF0;width:1px;height:50px;float:left;"></div>
-				</div>  	
-				<div style="padding:10px 0;color:#e1604d; font-size:12px;clear:both;font-weight:bold">
-					<label>关注行业</label>
-				</div>
-				<div style="font-size:12px;color:#000;">
-					{{result.get_cate_display}}
-				</div>
-			  </div>
-			{% ifequal result.authentication_class|safe  "游客" %}
-			{% endifequal %}
+				</li>
+			</ul>
 		</div>
-        {% endfor %}
-    {% else %}
-        <a style="margin-left:40px;">无符合查询条件的纪录</a>
-    {% endif %}
-<div style="clear:both">
-</div>
-	 <div class="pagess">
-		 <a href="javascript:void(0)" class="before"
-			onclick="takepage(1)">《</a>
-		 {% if result.has_previous %}
-		 <a href="javascript:void(0)"
-			onclick="takepage({{ result.previous_page_number }})">〈</a>
-		 {% endif %}
-		 {% for page in page_set %}
-		 <a href="javascript:void(0)" {% ifequal page result.number %}
-			class="currentpage" {% endifequal %}
-			onclick="takepage({{ page }})">{{ page }} </a>
-		 {% endfor %}
-		 {% if result.has_next %}
-		 <a href="javascript:void(0)"
-			onclick="takepage({{ result.next_page_number }})">〉</a>
-		 {% endif %}
-		 <a href="javascript:void(0)" class="after"
-			onclick="takepage({{ last_page }})">》</a>
-	 </div>
+		{% ifequal result.authentication_class|safe  "游客" %}
+		{% endifequal %}
+	{% endfor %}
+	{% else %}
+	<a style="margin-left:40px;">无符合查询条件的纪录</a>
+	{% endif %}
+	<div class="clearfix"></div>
+	<div class="pagess">
+		<a href="javascript:void(0)" class="before"
+		   onclick="takepage(1)">《</a>
+		{% if result.has_previous %}
+		<a href="javascript:void(0)"
+		   onclick="takepage({{ result.previous_page_number }})">〈</a>
+		{% endif %}
+		{% for page in page_set %}
+		<a href="javascript:void(0)" {% ifequal page result.number %}
+		   class="currentpage" {% endifequal %}
+		   onclick="takepage({{ page }})">{{ page }} </a>
+		{% endfor %}
+		{% if result.has_next %}
+		<a href="javascript:void(0)"
+		   onclick="takepage({{ result.next_page_number }})">〉</a>
+		{% endif %}
+		<a href="javascript:void(0)" class="after"
+		   onclick="takepage({{ last_page }})">》</a>
+	</div>
 
-<script>
-    function sendMessage(name,userid){
+	<script>
+		function sendMessage(name,userid){
 			{% if user.id %}
-					var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
-					'<p>内容:</p>'+
-					'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
-					+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
-					'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
-                   $(html).appendTo("body");
-			{% else %}
+				var  html= '<div id="alert"  style="hidden"><p>发送给'+name+'</p>' +
+						'<p>内容:</p>'+
+						'<textarea rows="10" cols="30" id="content" name="content"></textarea>'+'<br><br>'
+						+'<input type="button" name='+userid+' value=" " id="no" style="width:80px;height:28px;background:url(/static/images/reset.png);background-repeat:no-repeat;border:0 none;margin-left:133px;display:block;float:left;margin-top:-15px;"/>'+
+						'<input type="button" name='+userid+' value=" " id="ok" style="width:80px;height:28px;background:url(/static/images/send.png);background-repeat:no-repeat;border:0 none;margin-left:74px;display:block;float:left;margin-top:-15px;"/></div>';
+				$(html).appendTo("body");
+				{% else %}
 				alert('请先登录!');
-			{% endif %}
-    }
-$(function() {
-	// 在页面添加 mask
-	var mask = function() {
-			$('<div id="mask" style="width: ' + $(window).width() + 'px; '
-			+ 'height: ' + $(window).height() + 'px;"></div>').appendTo("body");};
+				{% endif %}
+			}
+			$(function() {
+				// 在页面添加 mask
+				var mask = function() {
+					$('<div id="mask" style="width: ' + $(window).width() + 'px; '
+					+ 'height: ' + $(window).height() + 'px;"></div>').appendTo("body");};
 
-	$(window).on("resize", function() {
-		if($("#mask").length) {
-				$("#mask").css({
-						width: $(window).width(),
-						height: $(window).height(),
-						opacity: 0});
+				$(window).on("resize", function() {
+					if($("#mask").length) {
+						$("#mask").css({
+							width: $(window).width(),
+							height: $(window).height(),
+							opacity: 0});
+					}
+				});
+
+
+
+
+				// 只有点击 alert 中的按钮 mask 才会被移除
+
+// 只有点击 alert 中的按钮 mask 才会被移除
+				$(document).on("click", "#ok", function() {
+					{% if user.id %}
+						var content = $("#content").val();
+						//alert(content);
+						if(content.length >50){alert("发送内容请不要超过50个字!")}else{
+							$.post("{% url 'sendSMS' %}",
+									{
+										investor: $("#ok").attr('name'),
+										content: content,
+									},
+									function (data) {
+										if(data.success=="1"){alert('发送成功!');}else{alert("发送内容不能为空!")}
+									})}
+						{% else %}
+						alert('请先登录!');
+						{% endif %}
+						$("#mask, #alert").remove();
+					});
+// 只有点击 alert 中的按钮 mask 才会被移除
+					$(document).on("click", "#no", function() {
+						$("#mask, #alert").remove();
+					});
+
+
+
+				});
+
+				function changFocus(obj) {
+					if($(obj).attr('src')=="/static/images/refocus.jpg")
+					{
+						$.post("{% url 'cancel_attion_investor' %}",
+								{
+									investor: $(obj).attr('name'),
+								},
+								function (data) {
+									$(obj).attr('src',"/static/images/focus.jpg");
+								})
+
+					}
+					else
+					{
+						$.post("{% url 'add_attion_investor' %}",
+								{
+									investor: $(obj).attr('name'),
+								},
+								function (data) {
+									$(obj).attr('src',"/static/images/refocus.jpg");
+								});
+					}
 				}
-	});
-
-
-
-
-	        		// 只有点击 alert 中的按钮 mask 才会被移除
-
-// 只有点击 alert 中的按钮 mask 才会被移除
-	$(document).on("click", "#ok", function() {
-		 {% if user.id %}
-		 	    var content = $("#content").val();
-	    		//alert(content);
-	    		if(content.length >50){alert("发送内容请不要超过50个字!")}else{
-		        $.post("{% url 'sendSMS' %}",
-                {
-                    investor: $("#ok").attr('name'),
-                    content: content,
-                },
-                function (data) {
-                if(data.success=="1"){alert('发送成功!');}else{alert("发送内容不能为空!")}
-                })}
-         {% else %}
-         	alert('请先登录!');
-         {% endif %}
-		$("#mask, #alert").remove();
-	});
-// 只有点击 alert 中的按钮 mask 才会被移除
-	$(document).on("click", "#no", function() {
-		$("#mask, #alert").remove();
-	});
-
-
-
-});
-
-function changFocus(obj) {
-	if($(obj).attr('src')=="/static/images/refocus.jpg")
-	{
-	     $.post("{% url 'cancel_attion_investor' %}",
-                {
-                    investor: $(obj).attr('name'),
-                },
-                function (data) {
-                    $(obj).attr('src',"/static/images/focus.jpg");
-                })
-
-		}
-	else
-	{
-	    $.post("{% url 'add_attion_investor' %}",
-                {
-                    investor: $(obj).attr('name'),
-                },
-                function (data) {
-                 $(obj).attr('src',"/static/images/refocus.jpg");
-                });
-	    }
-	 }
-</script>
-<style type="text/css">
-#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
-#mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
-</style>
-
+	</script>
+</html>

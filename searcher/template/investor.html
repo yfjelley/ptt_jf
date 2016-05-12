@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="/static/css/investor.css"/>
     <link rel="stylesheet" href="/static/css/zcheader.css"/>
-    <link rel="stylesheet" href="/static/css/investor_search.css"/>
+
     <link rel="stylesheet" href="/static/css/owl.carousel.css"/>
     <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
@@ -37,11 +37,11 @@
 {% include "zcheader.html" %}
 
 <!--内容-->
-<div class="Icontainer">
+<div class="invest-people">
     <a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
-    <div class="invest_content">
+    <div class="invest-wrapper clearfix">
         <div id="seatch_norm" class="dhclass">
-        <div style="width:800px;height:85px;float:left;padding-top: 10px;">
+        <div style="float:left;padding: 10px 0;">
             <div id="search_list" class="search_list">
                 <div class="serch_term">
                     <label class="choices" id="choices">
@@ -52,7 +52,7 @@
                     </label>
                 </div>
             </div>
-            <div style="width:800px;height:1px; background:#EEEEF0;"></div>
+            <div style="height:1px; background:#EEEEF0;"></div>
             <div id="search_list" class=" search_list">
                 <div class="serch_term">
                     <label class="choices" id="choices">
@@ -64,17 +64,16 @@
                       <a href="javascript:void(0)"   choiceid="8">新材料</a>
                       <a href="javascript:void(0)"   choiceid="9">新能源</a>
                       <a href="javascript:void(0)" choiceid="10"> 生物制药</a>
-                      <label style="height:5px;width: 100%;display: block"></label>
-                      <a style="margin:3px 15px 0 152px;display:inline-block;" href="javascript:void(0)"   choiceid="11">消费服务</a>
+                      <a style="display:inline-block;" href="javascript:void(0)"   choiceid="11">消费服务</a>
                       <a href="javascript:void(0)" choiceid="12">信息技术</a>
                       <a href="javascript:void(0)" choiceid="13">其他</a>
                     </label>
                 </div>
             </div>
         </div>
-        <div style="float:right;padding-right:20px;padding-top: 10px;"><img src="/static/images/Rlogo.png"/></div>
+        <div style="float:right;padding: 10px 0;width: 200px;"><img src="/static/images/Rlogo.png"/></div>
     </div>
-        <div class="invest_list" id="result_form">{% include "search_result_investor.html" %}</div>
+        <div class="invest-inner" id="result_form">{% include "search_result_investor.html" %}</div>
     </div>
     <div class="side">
         <div id="right_float">

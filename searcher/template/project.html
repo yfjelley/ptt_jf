@@ -105,7 +105,7 @@
 		});
 	});
 </script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		/*返回顶部jquery*/
 		(function($){
 			jQuery(window).scroll(function () {
@@ -127,14 +127,15 @@
 </head>
 <body>
 	{% include "zcheader.html" %}
-	  <div class="asssd1">
-		  <a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
-			<div id="menu" class="mdcx">
-				<div id="seatch_norm" class="dhclass1">
-				   <div class="topleftdiv">
-						<div id="search_list" class="search_list">
+	  <div class="search_more">
+		  <a class="fixed" href="/userinfo/"><img src="/static/images/sqtzr.png"/></a>
+			<div id="menu" class="search_more_wrapper clearfix">
+				<div style="height: 40px;"></div>
+				<div id="seatch_norm" class="search_more_content">
+				   <div class="con_desc">
+						<div class="search_list">
 							<div class="serch_term">
-							  <label class="choices" id="choices">
+							  <label class="choices">
 							  <label >项目类别:</label>
 							  <a  class="btn_blue"  href="#" choiceid="1"> 不限</a>
 							  <a href="javascript:void(0)"   choiceid="2">每日精选</a>
@@ -144,10 +145,10 @@
 							  </label>
 							</div>
 						</div>					
-						<div style="width:800px;height:1px; background:#EEEEF0;"></div>					
-						<div id="search_list" class=" search_list">
+						<div style="height:1px; background:#EEEEF0;"></div>
+						<div class=" search_list">
 							<div class="serch_term1">
-							  <label class="choices" id="choices">
+							  <label class="choices">
 							  <label >行业类别:</label>
 							  <a class="btn_blue" href="javascript:void(0)" choiceid="14"> 不限</a>
 							  <a href="javascript:void(0)"   choiceid="15">移动互联</a>
@@ -163,10 +164,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="toprightdiv"><img src="/static/images/Rlogo.png" /></div>
-				 </div>	    
-				<div class="search_bd" id="result_form">{% include 'search_result_single.html'%}
-				</div>			
+					<div class="con_logo"><img src="/static/images/Rlogo.png" /></div>
+				 </div>
+				<div id="result_form" class="pro-container clearfix">
+					<div class="pro-wrapper">
+						{% include 'search_result_single.html'%}
+						</div>
+				</div>
 			</div>
 		  <!----右边悬浮框----------->
 		  <div class="side">
@@ -194,7 +198,6 @@
 				  </div>
 			  </div>
 		  </div>
-
 	  </div>
 {% include "footer.html" %}
 

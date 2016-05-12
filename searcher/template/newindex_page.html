@@ -131,115 +131,91 @@
     <!----左边浮动图片------->
     <a href="/userinfo/"><div class="fixed"><img src="/static/images/sqtzr.png"/></div></a>
     <!----中间查询内容展示------>
-    <div class="ztmain">
-        <div class="zc-content">
-            <div class="xujgstyle">
-                <div class="biaotidiv">
-                    <ul>
-                        <li class="btstyle">众投项目</li>
-                        <li class="ckgdstyle"><a href="/project/" style="background: url(/static/images/searmore.png) no-repeat;width: 96px;height: 26px;display: block"></a></li>
+    <div class="zc-container">
+        <div class="zc-wrapper clearfix">
+            <div class="zc-title clearfix">
+                <h2 class="lf">众筹项目</h2>
+                <p class="rt"><a href="/project/"></a></p>
+            </div>
+            {% if project %}
+            {% for result in project %}
+            <a href="/prodetails/{{result.id}}">
+            <div class="zc-content module mb-20 clearfix">
+                <div class="con-detail rt">
+                    <h3>{{result.name}}</h3>
+                    <p>{{result.introduction}}</p>
+                    <div class="round">
+                        {% ifnotequal result.status 4 %}
+                        <p class="position"><span class="center">{% widthratio result.finish result.invest_num 100 %}%</span></p>
+                        {% else %}
+                        <p class="position" style="opacity: 0;filter:Alpha(opacity=-50)">1</p>
+                        {% endifnotequal %}
+                        {% ifequal result.status 4 %}
+                            <img src="/static/images/round-timeout.png" width="128" height="128">
+                        {% endifequal %}
+                        {% ifequal result.status 2 %}
+                            <img src="/static/images/roundwc.png" width="128" height="128">
+                        {% endifequal %}
+                        {% ifequal result.status 1 %}
+                            <img src="/static/images/roundzt.png" width="128" height="128">
+                        {% endifequal %}
+                        {% ifequal result.status 0 %}
+                            <img src="/static/images/roundyr.png" width="128" height="128">
+                        {% endifequal %}
+                    </div>
+                    <div class="row-4 clearfix">
+                        <p class="trade lf"><span class="desc">所属行业:</span><span class="value">{{result.get_category_display}}</span></p>
+                        <p class="focus rt"><img src="/static/images/heart.png" width="20" height="20" /><span class="desc">关注:</span><span class="value">{{result.click.all|length}}</span></p>
+                    </div>
+                    <p class="row-5 progress"><em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></p>
+                    <ul class="row-6 clearfix">
+                        <li class="w1">
+                            <p class="desc">融资总额</p>
+                            {% ifequal result.status 4 %}
+                            <p class="count">
+                                <em>----万元</em>
+                            </p>
+                            {% else %}
+                            <p class="count">
+                                <em>{% widthratio result.invest_amount 1 result.invest_num  %}万元</em>
+                            </p>
+                            {% endifequal %}
+                        </li>
+                        <li class="w2">
+                            <p class="desc">已预约</p>
+                            {% ifequal result.status 4 %}
+                            <p class="count">
+                                <em>----万元</em>
+                            </p>
+                            {% else %}
+                            <p class="count">
+                                <em>{% widthratio result.invest_amount 1 result.finish  %}万元</em>
+                            </p>
+                            {% endifequal %}
+                        </li>
+                        <li class="w3">
+                            <p class="desc">剩余时间</p>
+                                {% ifequal result.status 4 %}
+                            <p class="count">
+                                <em>----</em>
+                            </p>
+                                {% else %}
+                            <p class="count">
+                                <em>{{ result.preheat_end_date |remain_time}}</em>
+                            </p>
+                                {% endifequal %}
+                        </li>
                     </ul>
                 </div>
-                <div id="result_form_jingxuan">
-                    {% if project %}
-                    {% for result in project %}
-                    <a href="/prodetails/{{result.id}}">
-                        <div class="clearfix pro_list">
-                        <div style="float: left;">
-                            <img src="{{result.index_url}}">
-                            <!--<img src="{{ result.photo_url }}"/>-->
-                        </div>
-                        <div class="pro-box">
-                            <ul>
-                                <li class="tit"><em>{{result.name}}</em></li>
-                                <li class="ts" style="line-height: 1.6"><em>{{result.introduction}}</em></li>
-                                <li>
-                                    <div class="ct_round">
-                                        <p class="p2">
-                                            {% ifnotequal result.status 4 %}
-                                            <span class="tp rd_orange">{% widthratio result.finish result.invest_num 100 %}%</span>
-                                            {% else %}
-                                            <span class="tp rd_orange" style="opacity: -0.2;filter:Alpha(opacity=-50)">1</span>
-                                            {% endifnotequal %}
-                                            {% ifequal result.status 4 %}
-                                            <p class="p1">
-                                                <img src="/static/images/round-timeout.png">
-                                            </p>
-                                            {% endifequal %}
-                                            {% ifequal result.status 2 %}
-                                            <p class="p1">
-                                                <img src="/static/images/roundwc.png">
-                                            </p>
-                                            {% endifequal %}
-                                            {% ifequal result.status 1 %}
-                                            <p class="p1">
-                                                <img src="/static/images/roundzt.png">
-                                            </p>
-                                            {% endifequal %}
-                                            {% ifequal result.status 0 %}
-                                            <p class="p1">
-                                                <img src="/static/images/roundyr.png">
-                                            </p>
-                                            {% endifequal %}
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="lf_rw1">
-                                    <label class="cs">所属行业:</label><span class="ts"><em style="padding-left:5px">{{result.get_category_display}}</em></span>
-                                </li>
-                                <li class="rt_rw1">
-                                    <img src="/static/images/heart.png" />
-                                    <label class="cs">关注:</label><span class="ts"><em style="padding-left:5px">{{result.click.all|length}}</em></span>
-                                </li>
-                                <li class="lf_rw2" id= 'progress_bar' >
-                                    <div>
-                                        <em style="width:{{result.invest_num|add_with:result.finish}}%;border-radius:10px;background:url(../static/images/jindutiao.JPG) no-repeat;"></em></div></li>
-                                <li class="lf_rw3">
-                                    <label class="cs">融资总额</label>
-                                </li>
-                                <li class="lf_rw3">
-                                    <label class="cs">已预约</label>
-                                </li>
-                                <li class="rt_rw3">
-                                    <label class="cs">剩余时间</label>
-                                </li>
-                                <li class="lf_rw3">
-                                    {% ifequal result.status 4 %}
-                                    <span class="bs"><em>----万元</em></span>
-                                    {% else %}
-                                    <span class="bs"><em>{% widthratio result.invest_amount 1 result.invest_num  %}万元</em></span>
-                                    {% endifequal %}
-                                </li>
-                                <li class="lf_rw3">
-                                    {% ifequal result.status 4 %}
-                                    <span class="bs"><em>----万元</em></span>
-                                    {% else %}
-                                    <span class="bs"><em>{% widthratio result.invest_amount 1 result.finish  %}万元</em></span>
-                                    {% endifequal %}
-                                </li>
-                                <li class="rt_rw3">
-                                    {% ifequal result.status 4 %}
-                                    <span class="bs"><em>----</em></span>
-                                    {% else %}
-                                    <span class="bs"><em>{{ result.preheat_end_date |remain_time}}</em></span>
-                                    {% endifequal %}
-                                </li>
-                                <li class="lt_line">
-                                    <div></div>
-                                </li>
-                                <li class="rt_line">
-                                    <div></div>
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
-                        </a>
-                    {% endfor %}
-                    {% else %}
-                    <a style="margin-left: 40px;">无符合查询条件的纪录</a>
-                    {% endif %}
+                <div class="con-img lf">
+                    <img src="{{result.index_url}}" width="850" height="332">
                 </div>
             </div>
+            </a>
+            {% endfor %}
+            {% else %}
+            <a style="margin-left: 40px;">无符合查询条件的纪录</a>
+            {% endif %}
         </div>
         <div style="height: 30px;"></div>
     </div>
@@ -269,12 +245,8 @@
             </div>
         </div>
     </div>
-
 </div>
-
 {% include "footer.html" %}
-
-
 <script>
     $(document).ready(function(){
         $('#right_float .yidong').hover(function(){

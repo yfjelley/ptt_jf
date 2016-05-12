@@ -9,35 +9,25 @@
 </head>
 <body>
 {% include "zcheader.html" %}
-<div id="div1">
+<div id="agreement">
 	<div style="height:50px;"></div>
-	<div id="div2">
-		<div align="center">
-			<ul class="sign_title">
-				<li>
-					<label>服务协议</label>
-				</li>
-				<li style="margin-left:-10px;margin-top: 20px;">
-					<div style="border-top:1px solid #eeeef0; width:518px; height:1px; "></div>
-				</li>
-			</ul>
-
-		</div>
-		<div class="Overhidden">
-            <span>
-                    {{agreement|safe}}
-            </span>
-		</div>
-		<div align="center">
-			<ul class="return_content">
-				<li style=" margin-left:-10px;margin-top: 25px;">
-					<div style="border-top:1px solid #eeeef0; width:518px; height:1px;"></div>
-				</li>
-				<li>
-					<input id="return_to_register" type="button"
-						   style="height:30px;background-color:#4a3c70;width:80px;" value="返回"/>
-				</li>
-			</ul>
+	<div class="agree_mid">
+		<div class="agree_mid_content">
+			<div class="content_title">
+				<span>服务协议</span>
+				<div></div>
+			</div>
+			<div class="content_scroll">
+                <span>
+					{{agreement|safe}}
+                </span>
+			</div>
+			<div class="content_button">
+				<div class="line"></div>
+				<div class="button_center">
+					<input id="return_to_register" type="button" value="返回"/>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

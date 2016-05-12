@@ -1,137 +1,116 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 {% load settingsvalue %}
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>葡萄藤众筹首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>葡萄藤众筹首页</title>
     <script type="text/javascript">
-        $(function(){
-            $('.dropBtn').bind('click',function(){
-                if($('.dropList').is(':hidden')){
-                    $('.dropList').attr('style','display:block');
-                }else{
-                    $('.dropList').attr('style','display:none')
+        $(function () {
+            $('.dropBtn').bind('click', function () {
+                if ($('.dropList').is(':hidden')) {
+                    $('.dropList').attr('style', 'display:block');
+                } else {
+                    $('.dropList').attr('style', 'display:none')
                 }
             })
-            $('#choose').children('li').bind('click', function(){
-                if($(this).html()=='领投人'){
-                    $('.putIn').attr('value','领投人');
-                    $('.dropList').attr('style','display:none');
-                }else{
-                    $('.putIn').attr('value','找项目');
-                    $('.dropList').attr('style','display:none');
+            $('#choose').children('li').bind('click', function () {
+                if ($(this).html() == '领投人') {
+                    $('.putIn').attr('value', '领投人');
+                    $('.dropList').attr('style', 'display:none');
+                } else {
+                    $('.putIn').attr('value', '找项目');
+                    $('.dropList').attr('style', 'display:none');
                 }
             });
         })
     </script>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="/static/css/zcheader.css" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="/static/css/zcheader.css"/>
+    <link rel="stylesheet" href="/static/css/normalize.css">
 </head>
-
-
 <body>
-<div id="container">		
-		<ul style="position:absolute;top:5px;left:2%;">
-			<li>
-				<img src="/static/images/zclogo.png" />
-			</li>
-		</ul>
-		<div class="nav">
-  		<ul id="menulist" class="ul7">
-    		<li>
-                <a href="{% url 'index_jf' %}">首页</a>
-            </li>
-            <li>
-                <a href="/project/">项目风采</a>
-            </li>
-            <li>
-                <a href="{% url 'investor' %}">投资人风采</a>
-            </li>
-            <li>
-                <a href="{% url 'guide' %}">投资指引</a>
-            </li>
-            <li>
-                <a href="{% url 'about_us' %}">关于我们</a>
-            </li>
-            
-
-		</ul>
+<div id="zt-header">
+    <div class="zt-header-container clearfix">
+        <div class="zt-header-logo">
+            <img src="/static/images/zclogo.png" alt="天天搜贷"/>
         </div>
-		<ul class="ul8">
-    		<li>
-                <div class="dropDown dropDown_zczj">
-                    <input type="text" class="putIn" readonly="readonly" value="找项目">
-                <span class="dropBtn">
-                   <!-- <s></s>-->
-                </span>
-
-                  <!--  <ul id="choose" class="dropList" style="display: none">
-                        &lt;!&ndash;<li>领投人</li>&ndash;&gt;
-                        &lt;!&ndash;<li>找项目</li>&ndash;&gt;
-                    </ul>-->
-                </div>
-                    <button id="submit" type="button" class="btn-search">搜索</button>
-                    <input id="inptext" type="text" class="ipt-search">
-                {% ifequal user.id None %}
-                <ul class="logreg_name">
-                    <li>
-                        <label><a href="{% url 'register' %}">注册</a></label>
-                        <label><a href="{% url 'login' %}">登录</a></label>
+        <div class="zt-header-nav">
+            <ul id="menulist">
+                <li>
+                    <a href="{% url 'index_jf' %}">首页</a>
+                </li>
+                <li>
+                    <a href="/project/">项目风采</a>
+                </li>
+                <li>
+                    <a href="{% url 'investor' %}">投资人风采</a>
+                </li>
+                <li>
+                    <a href="{% url 'guide' %}">投资指引</a>
+                </li>
+                <li>
+                    <a href="{% url 'about_us' %}">关于我们</a>
+                </li>
+            </ul>
+        </div>
+        <div class="zt-header-search">
+            <input class="search-input" type="text" id="input">
+            <button type="submit" class="search-button">搜索</button>
+        </div>
+        <div class="zt-header-user">
+            {% ifequal user.id None %}
+            <ul class="user-text">
+                <li>
+                    <a href="{% url 'register' %}">注册</a>
+                    <a href="{% url 'login' %}">登录</a>
+                </li>
+            </ul>
+            {% else %}
+            <ul id="top_r" class="user-info">
+                <div id="logged">
+                    <a id="check_log" style="display: none">1</a>
+                    <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>
+                        {% if user.userinformation.nickname %}
+                        {{ user.userinformation.nickname }}
+                        {% else %}
+                        {{ user.username |phone_cut }}
+                        {% endif %}
+                        <ul class="loggedy">
+                            <li><a href="{% url 'userinfo' %}">我的资料</a></li>
+                            <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
+                        </ul>
                     </li>
-                </ul>
-                {% else %}
-                <ul id="top_r" class="top_name">
-                    <div id="logged">
-                        <a id="check_log" style="display: none">1</a>
-                        <li><a href="#"><img src="{{ user.userinformation.photo_url }}"/></a>
-                            {% if user.userinformation.nickname %}
-                            {{ user.userinformation.nickname }}
-                            {% else %}
-                            {{ user.username |phone_cut }}
-                            {% endif %}
-                            <ul class="loggedy">
-                                <li><a href="{% url 'userinfo' %}">我的资料</a></li>
-                                <li><a href="{% url 'logout' %}" onclick="T_Logout()">退出</a></li>
-                            </ul>
-                        </li>
-                    </div>
-                </ul>
-                {% endifequal %}
-     			<!--<label>
-                	<select name="choose" id="choose" class="seacher-sele" >
-                    	<option value="找项目" selected>找项目</option>
-                        <option value="领投人">领投人</option>
-                    </select>
-                	<input id="inptext" type="text" class="seacher-text" style="width:140px;height:17px;" />
-                    <input id="submit" type="button" class="seacher-btn" value=" " style="border:none;background:url(/static/images/topseacher.png);background-repeat:no-repeat;color:white;width:28px;height:24px;margin-left:-9px;"  />
-				</label>-->
-		</ul>
-
+                </div>
+            </ul>
+            {% endifequal %}
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
 
-        $(document).ready(function () {
-            $('#logged li').hover(function () {
-                $(this).find(".loggedy").stop().slideDown('slow');
-            }, function () {
-                $(this).find(".loggedy").stop().slideUp('slow');
-            });
-
-         
-            $('#submit').click(function() {
-                   var keyword = $('#inptext').val();
-				   document.getElementById("keyword").value= keyword;
-				   $("#formid").submit();
-
-            })
-
+    $(document).ready(function () {
+        $('#logged li').hover(function () {
+            $(this).find(".loggedy").stop().slideDown('slow');
+        }, function () {
+            $(this).find(".loggedy").stop().slideUp('slow');
         });
-        //已登陆结束
-        function T_Logout() {
-            //alert("logout");
-            QC.Login.signOut();
-            WB2.logout(function () {
+
+
+        $('#submit').click(function () {
+            var keyword = $('#inptext').val();
+            document.getElementById("keyword").value = keyword;
+            $("#formid").submit();
+
+        })
+
+    });
+    //已登陆结束
+    function T_Logout() {
+        //alert("logout");
+        QC.Login.signOut();
+        WB2.logout(function () {
             //alert('mywblogout');
         });
 
@@ -139,7 +118,8 @@
 </script>
 
 <form id="formid" action="/do_result/" method="post">
-    <input id="keyword" name="keyword" value="" type="text"  style="display:none;"/>
+    <label for="keyword"></label>
+    <input id="keyword" name="keyword" value="" type="text" style="display:none;"/>
 </form>
 </body>
 </html>

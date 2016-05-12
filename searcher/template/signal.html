@@ -9,7 +9,7 @@
         <li style="margin-left:60px;float:left;width: 460px">
             <label>{{i.content}}</label>
         </li>
-        <li style="float: left;width: 100px">
+        <li style="float: left;">
             <img src="/static/images/news.png"  />
         </li>
         <li style="float:left;margin-left:52px;">
@@ -50,8 +50,7 @@
         </li>
     </ul>
     {% endif %}
-</div>
-<div id="tz" class="display" style="margin-left: -60px;margin-top:25px;">
+<div id="tz" class="display">
     {% if notice %}
     {% for i in notice  reversed %}
     <ul class="personal-message">

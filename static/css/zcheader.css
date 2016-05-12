@@ -1,36 +1,30 @@
-body,ul{margin:0}
-a{text-decoration: none}
-.ul7{margin-left:17%;}
-.ul7 a{text-decoration:none;color:#FFFFFF;font-size:18px;}
-.ul7 a:hover{color:#e1604d;cursor:pointer;}
-/*.ul7 li.active{background: #cc282a}border-bottom: 2px solid #e1604d;padding:6px 0*/
-.ul7 li{list-style:none;float:left;padding:0 20px;text-align: center}
-
-.ul8 a{text-decoration:none;color:#FFFFFF;margin:0 10px;}
-.ul8 a:hover{color:#e1604d;cursor:pointer;}
-.ul8{ margin-top:-70px;font-size:16px;color:#FFFFFF;float:left;margin-left: 66%;}
-#container{	background-color:#372c3a;height:70px;width:100%;min-width: 1440px;max-width:1660px;line-height: 70px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;}
+#zt-header{width:100%;min-width:1150px;height:70px;background-color:#372c3a;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#zt-header .zt-header-container{width: 1150px;margin-left: auto;margin-right: auto;overflow: hidden;}
+#zt-header .zt-header-logo,.zt-header-nav,.zt-header-search,.zt-header-user{float: left;}
+#zt-header .zt-header-nav a{text-decoration:none;color:#FFFFFF;font-size:18px;display: block;line-height: 70px;}
+#zt-header .zt-header-nav a:hover{color:#e1604d;cursor:pointer;}
+#zt-header .zt-header-nav li{list-style:none;float:left;padding:0 10px;text-align: center}
+#zt-header .zt-header-search a{text-decoration:none;color:#FFFFFF;margin:0 10px;font-size:16px;;}
+#zt-header .zt-header-search a:hover{color:#e1604d;cursor:pointer;}
+#zt-header .zt-header-user{text-decoration:none;margin-left: 30px;overflow: hidden;margin-top: 20px;}
+#zt-header .zt-header-user a{text-decoration: none;padding: 0 5px;}
+.clearfix{*zoom: 1;}
+.clearfix:after{content: '';display: block;clear: both;height: 0;}
 .TopclickTag{color:#e1604d;cursor:pointer;border-bottom: 2px solid #e1604d;padding:6px 0}
 li{list-style:none;}
-.logreg_name{margin-left:120px;position:absolute;width: 152px}
-.logreg_name a{color:#FFFFFF;}
-.logreg_name a:hover{color:#e1604d;cursor:pointer;}
+.user-text{padding: 5px 0;}
+.user-text a{color:#FFFFFF;}
+.user-text a:hover{color:#e1604d;cursor:pointer;}
 #top_r li{ float:left; position:relative; margin:0 5px;height: 50px;}
 #top_r li a{color:#ccc;font-size:14px;}
 #top_r li a:hover{ color:#ff0000;}
 #top_r ul{ display:none; width:200px;  padding:10px; box-shadow: 0px 0px 2px #DDD;
-background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right:-30px; top:48px;}
-#top_r ul li{ width:190px; height:30px; line-height:30px;}
-.top_name{margin-top:20px;margin-left:100px;position:absolute;width: 165px}
-.top_name li{ height:30px; line-height:30px; color:#ccc;}
-.top_name li img{ margin-top:3px; float:left; margin-left:15px; width:24px; height:24px;}
-.top_name ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; }
-.seacher-btn{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;position:relative;top:1px;}
-.seacher-text{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;margin-left:-10px;}
-.seacher-sele{border:1px solid white; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px; height:21px; padding:0px;margin-right: 10px;}
+background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right:-5px; top:48px;}
+#top_r ul li{ height:30px; line-height:30px;}
+.user-info{position:absolute;width: 165px}
+.user-info li{ height:30px; line-height:30px; color:#ccc;}
+.user-info li img{ margin-top:3px; float:left; margin-left:15px; width:24px; height:24px;}
+.user-info ul{ background:rgba(0,0,0,0.6)!important; width:100px!important; }
 /*头部搜索按钮样式*/
 .putIn{
     position:relative;
@@ -68,4 +62,7 @@ background: none repeat scroll 0% 0% #FFF; z-index:999; position:absolute; right
 .dropDown .dropList{display:none;position:absolute;top:37px;left:-1px;width:59px;border:#69bcf7 solid 1px;background:#fff;list-style-type:none;padding:0}
 .dropDown .dropList li{padding:0 0 0 10px;height:25px;line-height:25px;cursor:pointer;color:#333; font-family:"microsoft yahei";font-size:12px}
 .dropDown .dropList li:hover{background:#69bcf7;color:#fff;}
-
+.zt-header-search{margin-top: 15px;margin-left: 10px;}
+.zt-header-search .search-input{float:left;width: 200px;height: 35px;text-indent: 35px;line-height: 35px;font-size: 14px;border: 1px solid #ddd;outline: 0;background:rgb(255,255,255) url(../images/searchsub.png) no-repeat top left;}
+.zt-header-search .search-button{float:left;height: 39px;line-height: 39px;font-size: 14px;background-color: #00b7ee;color: #fff;border: 0;outline: 0;padding: 0 15px;}
+.zt-header-search .search-button:hover{opacity: 0.9;}

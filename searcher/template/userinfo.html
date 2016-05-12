@@ -4,28 +4,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>我的资料</title>
-<link rel="stylesheet" href="/static/css/zcheader.css" />
-<link rel="stylesheet" href="/static/css/promanager.css" />
-<link rel="stylesheet" href="/static/css/btn-change.css" />
-<link rel="stylesheet" href="/static/css/uploadify.css" />
-
-
-<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-
+	<link rel="stylesheet" href="/static/css/zcheader.css"/>
+	<link rel="stylesheet" href="/static/css/userinfo.css"/>
+	<link rel="stylesheet" href="/static/css/btn-change.css"/>
+	<link rel="stylesheet" href="/static/css/uploadify.css"/>
+	<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="/static/js/birthday.js"></script>
-<script src="/static/js/jquery-ui.min.js"></script>
-	    <script type="text/javascript" src="/static/js/timeplus.js"></script>
-    <script src="/static/js/yz.js" type="text/javascript"></script>
-	 <script src="/static/js/jquery.qrcode.min.js" type="text/javascript"></script>
-
-<script src="/static/site_media/jquery.uploadify.js"></script>
-
-	<!DOCTYPE html>
-<html>
+	<script type="text/javascript" src="/static/js/birthday.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/js/timeplus.js"></script>
+	<script src="/static/js/yz.js" type="text/javascript"></script>
+	<script src="/static/js/jquery.qrcode.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/static/site_media/jquery.uploadify.js"></script>
+	<style type="text/css">
+		#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
+		#mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
+	</style>
 <head>
-<title></title>
-
 <script type="text/javascript">
 $(function(){
   $('#upload_photo').uploadify({
@@ -96,9 +91,6 @@ $(function(){
 
 });
 </script>
-
-
-
 <script type="text/javascript">
 $(function(){
 	$("#daohang>ul>li>a").click(function(){
@@ -114,10 +106,8 @@ $(function(){
     $("#save_success").click(function(){alert("保存成功！");});
 });
 </script>
-<script>
-
-
-<!--判断checkbox是否选中-->
+<script type="text/javascript">
+	/*判断checkbox是否选中*/
 	$(function(){
 		$("#agree_fuwu").click(function(){
 			var flag=$("#tiaokuan").is(":checked");
@@ -185,8 +175,7 @@ $(function(){
 
 	});
 </script>
-
-<script>  
+<script type="text/javascript">
 $(function () {
 	$.ms_DatePicker({
             YearSelector: ".sel_year",
@@ -243,7 +232,7 @@ $(function () {
 			});
 	});
 </script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		$(function(){
 			$('#daohang a:eq(0)').addClass('clickTag');
 			$('#daohang').children('a').bind('focus',function(){
@@ -281,466 +270,458 @@ $(function(){
 			});
 	});
 </script>
-
-
 </head>
 <body>
 <!--头部-->
 {% include "zcheader.html" %}
-
-
 <!--中间内容-->
-
-<div class="UserContent">
-	<div class="UserCenter">
-<!--项目的tab按钮:包括基本信息,项目管理,投资认证,安全中心,消息通知,邀请好友-->
-	<div class="ProChange" id="daohang">
-		<a data-pp="basicmessage" href="javascript:void(0);" style="color:#000;"><label class="left_label">基本信息</label></a>
-		<div class="Prohr"><hr /></div>
-		<a data-pp="promanager" href="javascript:void(0);" style="color:#808080;"><label class="left_label">项目管理</label></a>
-		<div class="Prohr"><hr /></div>
-		<a data-pp="invest" href="javascript:void(0);" style="color:#808080;"><label class="left_label">投资认证</label></a>
-		<div class="Prohr"><hr /></div>
-		<a data-pp="selfcenter" id="selfcenterclick" href="javascript:void(0);" style="color:#808080;"><label class="left_label">安全中心</label></a>
-		<div class="Prohr"><hr /></div>
-		<a data-pp="messageinfo" href="javascript:void(0);" style="color:#808080;"><label class="left_label">消息通知</label></a>
-		<div class="Prohr"><hr /></div>
-		<!--<a data-pp="txsz" href="javascript:void(0)" style="color:#808080;"><label class="left_label">提醒设置</label></a>
-		<div class="Prohr"><hr /></div>-->
-		<a data-pp="invitefriend" href="javascript:void(0);" style="color:#808080;"><label class="left_label">邀请好友</label></a>
-	</div>
-<!--项目的tab按钮 end-->
-
-		<div class="div_right">
-<!--基本信息-->
-
-		<div id="basicmessage">
-         <form class="userinfoform" action="{% url 'userinfo' %}" method="post">
-             {% csrf_token %}
-			<ul style="float:left" class="Userul">
-				<li>
-					<label style="font-size:30px;margin-left:-15px;">基本信息</label>
-				</li>
-				<li id="upload_photo_img">
-					<img src="{{ user.userinformation.photo_url }}" style="margin-left:-20px; margin-top:20px;"/>
-				</li>
-				<li style="margin-top:12px; margin-left:-10px;">
-                	<a class="button-shangchuan" href="javascript:;" style="background: url('/static/images/uploadimg.png') no-repeat;border: 0 none;width:105px;height: 35px;">
-						<input type="file" name="upload_photo"  id="upload_photo"/>
-                    </a>
-				</li>
-				<div id="some_file_queue" style="z-index:10000;position: fixed;"></div>
-				<li style=" margin-top:12px; margin-left:-10px;">
-					{% ifequal user.userinformation.invest_class 2 %}
-                      <img src="/static/images/yerztouzi.png">
-					{% endifequal %}
-					{% ifequal user.userinformation.invest_class 3 %}
-					<img src="/static/images/touzi.png" />
-					{% endifequal %}
-
-				</li>
-			</ul>
-			 <table class="Userul1" style="float:left;">
-				 <tr class="user_nick">
-					 <td><label>用户名</label></td>
-					 <td><label>
-						 {{ form.nickname}}
-					 </label></td>
-				 </tr>
-
-				 <tr class="user_name">
-					 <td>
-						 <label>关注行业</label>
-					 </td>
-					 <td>{{ form.cate }}</td>
-				 </tr>
-				 <tr>
-					 <td>
-						 <label>性别</label>
-					 </td>
-					 <td>{{ form.gender }}</td>
-				 </tr>
-				 <tr class="user_birth">
-					 <td>
-						 <label>生日</label>
-					 </td>
-					 <td>{{ form.birthday }}</td>
-				 </tr>
-				 <tr class="user_email">
-					 <td>
-						 <label>邮箱地址</label>
-					 </td>
-					 <td>{{ form.email }}</td>
-				 </tr>
-				 <tr class="user_city">
-					 <td>
-						 <label>居住城市</label>
-					 </td>
-					 <td>{{ form.city }}</td>
-				 </tr>
-				 <tr class="user_addre">
-					 <td><label>居住地址</label></td>
-					 <td>{{ form.address }}</td>
-				 </tr>
-				 <tr class="user_edu">
-					 <td><label>学历</label></td>
-					 <td>{{ form.education }}</td>
-				 </tr>
-				 <tr class="user_income">
-					 <td><label>月收入</label></td>
-					 <td>{{ form.monthly_income }}</td>
-				 </tr>
-				 <tr class="user_income">
-					 <td><label>婚姻状况</label></td>
-					 <td>{{form.marriage}}</td>
-				 </tr>
-				 <tr class="user_wx">
-					 <td><label>微信</label></td>
-					 <td>{{form.wechat_num}}</td>
-				 </tr>
-				 <tr class="user_qq">
-					 <td><label>QQ</label></td>
-					 <td>{{form.qq_num}}</td>
-				 </tr>
-				 <tr class="user_wb">
-					 <td><label>微博</label></td>
-					 <td>{{form.weibo_num}}</td>
-				 </tr>
-				 <tr>
-					 <td>
-					 </td>
-					 <td align="left">
-						 <label>
-							 <input id="save_success"  type="submit" value=" " style="background: url('/static/images/saveimg.png') no-repeat;border: 0 none;width:105px;height: 35px;"/>
-						 </label>
-					 </td>
-				 </tr>
-			 </table>
-         </form>
-		</div>
-<!--基本信息 end-->
-	
-
-<!--项目管理-->
-		<div id="promanager" class="display">
-			<div style="position: relative;top: 35px;">
-				<label style="font-size:30px; padding-top:2px;">项目管理</label>
+<div class="user-container">
+	<div class="user-wrapper">
+		<div class="user-content clearfix">
+			<!--用户导航条:包括基本信息,项目管理,投资认证,安全中心,消息通知,邀请好友-->
+			<div class="content-left" id="daohang">
+				<a data-pp="basicmessage" href="javascript:void(0);" style="color:#000;"><label class="left_label">基本信息</label></a>
+				<div class="Prohr"><hr /></div>
+				<a data-pp="promanager" href="javascript:void(0);" style="color:#808080;"><label class="left_label">项目管理</label></a>
+				<div class="Prohr"><hr /></div>
+				<a data-pp="invest" href="javascript:void(0);" style="color:#808080;"><label class="left_label">投资认证</label></a>
+				<div class="Prohr"><hr /></div>
+				<a data-pp="selfcenter" id="selfcenterclick" href="javascript:void(0);" style="color:#808080;"><label class="left_label">安全中心</label></a>
+				<div class="Prohr"><hr /></div>
+				<a data-pp="messageinfo" href="javascript:void(0);" style="color:#808080;"><label class="left_label">消息通知</label></a>
+				<div class="Prohr"><hr /></div>
+				<!--<a data-pp="txsz" href="javascript:void(0)" style="color:#808080;"><label class="left_label">提醒设置</label></a>
+				<div class="Prohr"><hr /></div>-->
+				<a data-pp="invitefriend" href="javascript:void(0);" style="color:#808080;"><label class="left_label">邀请好友</label></a>
 			</div>
-			<div class="ProCenter" id="Prodaohang">
-				<a data-qq="ltxm" style="float:left;padding-top:20px;" href="javascript:void(0)"><label class="pro-label">已投项目</label></a>
-				<a data-qq="gzxm" style="float:left;padding-top:20px;" href="javascript:"><label class="pro-label">关注的项目</label></a>
-				<a data-qq="wdxm" style="float:left;padding-top:20px;" href="javascript:;"><label class="pro-label">关注的人</label></a>
-				<div style="float:left; margin-left:-245px;border-right:1px solid #eeeef0;width:1px; height:35px;margin-top: 5px;"></div>
-				<div style="border-right:1px solid #eeeef0;width:1px; height:35px;float:left; margin-left:-110px;margin-top: 5px;"></div>
-				<div style="clear:both"></div>
-				<div style="border-top:1px solid #eeeef0;width:700px; height:1px;margin-top: 5px;"></div>
-			</div>
-<!--项目管理:领投项目-->
-			<div class="prosonPage1"><!--定义内容的宽度,高度---> <div id="ltxm">
-				{% if leader %}
-			    {% for i in leader %}
-					<ul class="yitou-pro" style="margin-left:-48px;">
-						<li class="img-size" style="float:left;margin-top:10px;">
-							<a href="/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" /></a>
-						</li>
-						<li style="float:left;width: 300px;margin-top:10px;">
-							<label>{{i.invest_project.name}}</label>
-							{% ifequal i.invest_project.status 0 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
-							{% endifequal %}
-							{% ifequal i.invest_project.status 1 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">众投中</label>
-							{% endifequal %}
-							{% ifequal i.invest_project.status 2 %}
-							<label style="color:#C30;font-size:14px; font-weight:bold">众投成功</label>
-							{% endifequal %}
-						</li>
-						<li style="float:left;width: 400px">
-							<label>融资份额</label><b>{{i.invest_project.invest_num}}万份</b>
-							<label style="margin-left: 100px;">已融份额</label><b>{{i.invest_project.finish}}万份</b>
-						</li>
-						<li style="float:left">
-							<label>我已预约份额</label><b>{{i.invest_num}}万份</b>
-							<label style="margin-left: 70px;">完成率</label><b style="color:#CC6633">{% widthratio i.invest_project.finish i.invest_project.invest_num 100 %}%</b>
-						</li>
-					</ul>
-					<ul style="clear:both"></ul>
-				{% endfor %}
-				{% else %}
-				     你没有领投项目！
-				{% endif %}
-                </div>
-<!--项目管理:领投项目 end-->
+			<!--用户导航条 end-->
+			<!--用户内容-->
+				<div class="content-right">
+					<!--基本信息-->
+					<div id="basicmessage">
+					 <form class="userinfoform" action="{% url 'userinfo' %}" method="post">
+						 {% csrf_token %}
+						<ul style="float:left" class="Userul">
+							<li>
+								<label style="font-size:30px;">基本信息</label>
+							</li>
+							<li id="upload_photo_img">
+								<img src="{{ user.userinformation.photo_url }}" style="margin-top:20px;"/>
+							</li>
+							<li style="margin-top:12px; ">
+								<a class="button-shangchuan" href="javascript:;" style="background: url('/static/images/uploadimg.png') no-repeat;border: 0 none;width:105px;height: 35px;">
+									<input type="file" name="upload_photo"  id="upload_photo"/>
+								</a>
+							</li>
+							<div id="some_file_queue" style="z-index:10000;position: fixed;"></div>
+							<li style=" margin-top:12px; ">
+								{% ifequal user.userinformation.invest_class 2 %}
+								  <img src="/static/images/yerztouzi.png">
+								{% endifequal %}
+								{% ifequal user.userinformation.invest_class 3 %}
+								<img src="/static/images/touzi.png" />
+								{% endifequal %}
 
-<!--项目管理:我的项目-->                
-               <div id="wdxm" class="display" style="padding-top:20px">
-					   {% if user %}
-					   {% for i in user.userinformation.attention_persion.all %}
-				   {% if i.userinformation.photo_url %}
-				   <div style="float: left;padding-right: 60px;">
-					   <img width="90" height="90" src="{{i.userinformation.photo_url}}">
-					   <div style="margin-top:5px;">
-						   {% if i.userinformation.nickname %}
-						   {{i.userinformation.nickname }}
-						   {% else %}
-						   {{i.username|phone_cut}}
-						   {% endif %}
-					   </div>
-					   <label style="height:20px;width: 100%;display: block"></label>
-				   </div>
-				    {% endif %}
-					   {% endfor %}
-					   {% endif %}
-               </div>
-<!--项目管理:我的项目 end-->
+							</li>
+						</ul>
+						 <table class="Userul1" style="float:left;">
+							 <tr class="user_nick">
+								 <td><label>用户名</label></td>
+								 <td><label>
+									 {{ form.nickname}}
+								 </label></td>
+							 </tr>
 
-<!--项目管理:关注项目-->                
-               <div id="gzxm" class="display">
-				   {% include 'focus.html' %}
-               </div>
-<!--项目管理:关注项目 end-->       
-			</div>
-		</div>
-<!--项目管理 end-->
-		<!--投资认证 个人信息-->
-    <div id="invest" class="display">
-	<div id="touzirenzheng">
-            <div id="lingtouren">
-                <ul class="tzrzMessage">
-                    <li style="font-size:30px;position: relative;top: 30px;left: -80px;">
-                        <label>投资认证</label>
-                    </li>
-                    <li style="font-size:24px;margin-left:-80px;color:#4a3c70;margin-top:20px">
-                        <label>请完善您的信息</label>
-                    </li>
-                    <li style="font-size:24px;margin-left:130px;color:#000">
-                        <label>您是个人还是机构？</label>
-                    </li>
-                    <li style="margin-top:20px;">
-                        <img id="person" src="/static/images/person.png" style="margin-left:100px" />
-                        <img id="mperson" src="/static/images/mperson.png" style="margin-left:30px"/>
-                    </li>
-                	<li>
-                        <ul id="authentication_type">
-                            <li style="float:left;margin-left:70px;color:#e1604d" >
-                              <input id="gerens" checked="checked" type="radio" name="touzi" />我是个人                     
-                            </li>
-                            <li style="float:left;margin-left:60px;color:#e1604d" >
-                              <input id="jigous"  type="radio" name="touzi"/>我是机构                     
-                            </li>
-                        </ul>  
-                    </li>
-                    <li style="clear:both"></li>
-					<table id="geren" style="display:block;">
-						<tr>
-							<td width="100">真实姓名:</td>
-
-							{% ifequal user.userinformation.authentication_class '1' %}
-							<td class="real_name"><input id="real_name" type="text" value="{{user.userinformation.realname}}"></td>
-
-							{% else %}
-							<td class="real_name"><input id="real_name" type="text"></td>
-							{% endifequal %}
-						</tr>
-						<tr>
-							<td>身份证号码:</td>
-							{% ifequal user.userinformation.authentication_class '1' %}
-							<td class="icard"><input id = "icard" type="text" value="{{user.userinformation.business_card}}"></td>
-							{% else %}
-							<td class="icard"><input id = "icard" type="text"></td>
-							{% endifequal %}
-						</tr>
-						<tr>
-							<td colspan="3">请上传身份证,帮助我们快速核实您的身份</td>
-						</tr>
-                          <tr style="height: 80px;" >
-							  <td>身份证:</td>
-							     <td class="upload_file">
-								    <label>
-									  点击上传身份证扫描件或高清图片
-									  <input type="file" name="file_upload"  id="file_upload" />
-									</label>
+							 <tr class="user_name">
+								 <td>
+									 <label>关注行业</label>
 								 </td>
-							  <td id="upload_id_card">
-								  {% if user.userinformation.id_card  %}
-    												<img src="{{ user.userinformation.id_card }}"/>
-								  {% endif %}
-							  </td></tr>
-						<tr>
-							<td class="refer-aggree" colspan="3">
-								<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
-							</td>
-						</tr>
-						<tr align="center">
-							<td colspan="3">
-								<input id="auth_submit" class="button_save" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;margin-left:-80px;cursor: pointer">
-							</td>
-						</tr>
-					</table>
-					<table id="jigou" style="display:none">
-						<tr>
-							<td>法人姓名:</td>
-							{% ifequal user.userinformation.authentication_class '2' %}
-							<td class="real_name"><input id ="real_name_p" type="text" value="{{user.userinformation.realname}}"></td>
-							{% else %}
-							<td class="real_name"><input id ="real_name_p" type="text"></td>
-							{% endifequal %}
-
-						</tr>
-						<tr>
-							<td>身份证号码:</td>
-							{% ifequal user.userinformation.authentication_class '2' %}
-							<td class="icard"><input id ="icard_p" type="text" value="{{user.userinformation.business_card}}"></td>
-							{% else %}
-							<td class="icard"><input id ="icard_p" type="text"></td>
-							{% endifequal %}
-						</tr>
-						<tr>
-							<td colspan="3">请上传相关证件,帮助我们快速核实您的身份</td>
-						</tr>
-						<tr style="height: 80px;">
-							<td>营业执照</td>
-							<td class="upload_file">
-								<label>
-									点击上传营业执照扫描件或高清图片
-									<input type="file" name=""  id="file_upload_business_license" />
-								</label>
-							</td>
-							<td id="upload_financial_assets">
-								{% if user.userinformation.financial_assets %}
-								<img src="{{ user.userinformation.financial_assets }}" />
-								{% endif %}
-							</td>
-						</tr>
-						<tr>
-							<td>组织机构代码</td>
-							<td class="upload_file">
-								<label>
-									点击上传组织机构代码证扫描件或高清图片
-									<input type="file" name=""  id="file_upload_organization_code" />
-								</label>
-							</td>
-							<td id="upload_fixed_assets">
-								{% if user.userinformation.fixed_assets %}
-								<img src="{{ user.userinformation.fixed_assets }}"/>
-								{% endif %}
-							</td>
-						</tr>
-						<tr>
-							<td>税务登记证</td>
-							<td class="upload_file">
-								<label>
-									点击上传税务登记证扫描或高清图片
-									<input type="file" name=""  id="file_upload_tax" />
-								</label>
-							</td>
-							<td id="upload_income_assets">
-								{% if user.userinformation.income_assets %}
-								<img src="{{ user.userinformation.income_assets }}"/>
-								{% endif %}
-							</td>
-						</tr>
-						<tr>
-							<td class="refer-aggree" colspan="3">
-								<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
-							</td>
-						</tr>
-						<tr align="center">
-							<td colspan="3">
-								<input class="button_save" id="submit_p" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;cursor: pointer">
-							</td>
-						</tr>
-					</table>
-                </ul>
-               
-           </div>
-        </div>
- 
-  <!--投资认证 个人信息 end-->
-</div>
-<!--投资认证 end-->
-
-<!--安全中心-->			
-        <div id="selfcenter" class="display" style="margin-left:20px;">
-            <div class="ProCenter1"  id="anquanzhongxin">
-				<div style="position: relative;top: 30px;left: -20px;">
-					<label style="font-size:30px;">安全中心</label>
-				</div>
-				<a style="margin-top:50px; margin-left:-20px;float:left" data-dd="ghsj" href="javascript:void(0)"><label class="self-label">更换手机</label></a>
-				<div style="float:left; margin-top:40px; margin-left:5px;width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
-				<a style="margin-top:50px; margin-left:20px;float:left" data-dd="xgmm" href="javascript:void(0)" id="change"><label class="self-label">修改密码</label></a>
-				<div style="clear:both"></div>
-				<div style="width:600px;height:1px; background-color:#D5D5D5;overflow:hidden;margin-top:10px; margin-left:-20px;"></div>
-            </div>
-            <div class="prosonPage2">
-                <div id = "safe_center"></div>
-            </div>
-        </div>
-<!---安全中心 end-->
-
-<!--消息通知-->
-		<div id="messageinfo" class="display" style="margin-left: 30px;">
-			<div style="position: relative;top: 35px;left: -30px;">
-				<label style="font-size:30px;">消息通知</label>
-			</div>
-                <div class="ProCenter2" id="xiaoxitongzhi">
-                            <a data-aa="grxx" style="margin-top:30px; margin-left:-30px;float:left" href="javascript:void(0)"><label class="message-label">个人信息</label></a>
-                            <div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;float:left;margin-top:16px;"></div>
-                            <a data-aa="tz" style="margin-top:30px;float:left" href="javascript:void(0)"><label class="message-label">通知</label></a>
-					<div style="width:740px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;margin-left: -30px;"></div>
-                </div>
-			<div class="prosonPage3">
-                <div id="grxx" style="margin-left: -60px;margin-top:25px;">
-					<div id="signal">
-					{% include 'signal.html' %}
+								 <td>{{ form.cate }}</td>
+							 </tr>
+							 <tr>
+								 <td>
+									 <label>性别</label>
+								 </td>
+								 <td>{{ form.gender }}</td>
+							 </tr>
+							 <tr class="user_birth">
+								 <td>
+									 <label>生日</label>
+								 </td>
+								 <td>{{ form.birthday }}</td>
+							 </tr>
+							 <tr class="user_email">
+								 <td>
+									 <label>邮箱地址</label>
+								 </td>
+								 <td>{{ form.email }}</td>
+							 </tr>
+							 <tr class="user_city">
+								 <td>
+									 <label>居住城市</label>
+								 </td>
+								 <td>{{ form.city }}</td>
+							 </tr>
+							 <tr class="user_addre">
+								 <td><label>居住地址</label></td>
+								 <td>{{ form.address }}</td>
+							 </tr>
+							 <tr class="user_edu">
+								 <td><label>学历</label></td>
+								 <td>{{ form.education }}</td>
+							 </tr>
+							 <tr class="user_income">
+								 <td><label>月收入</label></td>
+								 <td>{{ form.monthly_income }}</td>
+							 </tr>
+							 <tr class="user_income">
+								 <td><label>婚姻状况</label></td>
+								 <td>{{form.marriage}}</td>
+							 </tr>
+							 <tr class="user_wx">
+								 <td><label>微信</label></td>
+								 <td>{{form.wechat_num}}</td>
+							 </tr>
+							 <tr class="user_qq">
+								 <td><label>QQ</label></td>
+								 <td>{{form.qq_num}}</td>
+							 </tr>
+							 <tr class="user_wb">
+								 <td><label>微博</label></td>
+								 <td>{{form.weibo_num}}</td>
+							 </tr>
+							 <tr>
+								 <td>
+								 </td>
+								 <td align="left">
+									 <label>
+										 <input id="save_success"  type="submit" value=" " style="background: url('/static/images/saveimg.png') no-repeat;border: 0 none;width:105px;height: 35px;"/>
+									 </label>
+								 </td>
+							 </tr>
+						 </table>
+					 </form>
 					</div>
-                </div>
-			</div>
-		</div>
-<!--消息通知 end-->
+					<!--基本信息 end-->
+					<!--项目管理-->
+					<div id="promanager" class="display">
+						<div style="position: relative;top: 35px;">
+							<label style="font-size:30px; padding-top:2px;">项目管理</label>
+						</div>
+						<div class="ProCenter" id="Prodaohang">
+							<a data-qq="ltxm" style="float:left;padding-top:20px;" href="javascript:void(0)"><label class="pro-label">已投项目</label></a>
+							<a data-qq="gzxm" style="float:left;padding-top:20px;" href="javascript:"><label class="pro-label">关注的项目</label></a>
+							<a data-qq="wdxm" style="float:left;padding-top:20px;" href="javascript:;"><label class="pro-label">关注的人</label></a>
+							<div style="float:left; margin-left:-245px;border-right:1px solid #eeeef0;width:1px; height:35px;margin-top: 5px;"></div>
+							<div style="border-right:1px solid #eeeef0;width:1px; height:35px;float:left; margin-left:-110px;margin-top: 5px;"></div>
+							<div style="clear:both"></div>
+							<div style="border-top:1px solid #eeeef0;width:700px; height:1px;margin-top: 5px;"></div>
+						</div>
+			<!--项目管理:领投项目-->
+						<div class="prosonPage1"><!--定义内容的宽度,高度---> <div id="ltxm">
+							{% if leader %}
+							{% for i in leader %}
+								<ul class="yitou-pro">
+									<li class="img-size" style="float:left;margin-top:10px;">
+										<a href="/prodetails/{{i.invest_project.id}}"><img src="{{i.invest_project.logo}}" /></a>
+									</li>
+									<li style="float:left;width: 300px;margin-top:10px;">
+										<label>{{i.invest_project.name}}</label>
+										{% ifequal i.invest_project.status 0 %}
+										<label style="color:#C30;font-size:14px; font-weight:bold">预热中</label>
+										{% endifequal %}
+										{% ifequal i.invest_project.status 1 %}
+										<label style="color:#C30;font-size:14px; font-weight:bold">众投中</label>
+										{% endifequal %}
+										{% ifequal i.invest_project.status 2 %}
+										<label style="color:#C30;font-size:14px; font-weight:bold">众投成功</label>
+										{% endifequal %}
+									</li>
+									<li style="float:left;width: 400px">
+										<label>融资份额</label><b>{{i.invest_project.invest_num}}万份</b>
+										<label style="margin-left: 100px;">已融份额</label><b>{{i.invest_project.finish}}万份</b>
+									</li>
+									<li style="float:left">
+										<label>我已预约份额</label><b>{{i.invest_num}}万份</b>
+										<label style="margin-left: 70px;">完成率</label><b style="color:#CC6633">{% widthratio i.invest_project.finish i.invest_project.invest_num 100 %}%</b>
+									</li>
+								</ul>
+								<ul style="clear:both"></ul>
+							{% endfor %}
+							{% else %}
+								 你没有领投项目！
+							{% endif %}
+							</div>
+			<!--项目管理:领投项目 end-->
 
-<!--邀请好友-->
-	<div id="invitefriend" class="display">
-		<div class="ProCenter3">
-			<ul>
-				<li style="position: relative;top: 35px;">
-					<label style="font-size:30px;">邀请好友</label>
-				</li>
-				<li style="margin-top:55px;">
-					<!--<label><b>邀请有好礼</b></label>
-					<label>已邀请0个好友</label>
-					<label><div style="border-top:1px solid #eeeef0;width:100px;height:1px;margin-left:95px;"></div></label><br />-->
-					<label>扫描二维码或复制链接分享给好友注册,有意想不到的惊喜!</label>
-				</li>
-				<li style="margin-top:10px;" id="qrcodeTable">
+			<!--项目管理:我的项目-->
+						   <div id="wdxm" class="display" style="padding-top:20px">
+								   {% if user %}
+								   {% for i in user.userinformation.attention_persion.all %}
+							   {% if i.userinformation.photo_url %}
+							   <div style="float: left;padding-right: 60px;">
+								   <img width="90" height="90" src="{{i.userinformation.photo_url}}">
+								   <div style="margin-top:5px;">
+									   {% if i.userinformation.nickname %}
+									   {{i.userinformation.nickname }}
+									   {% else %}
+									   {{i.username|phone_cut}}
+									   {% endif %}
+								   </div>
+								   <label style="height:20px;width: 100%;display: block"></label>
+							   </div>
+								{% endif %}
+								   {% endfor %}
+								   {% endif %}
+						   </div>
+			<!--项目管理:我的项目 end-->
 
-				</li>
-				<li style="margin-top:-240px;margin-left:300px;">
-					<label><div style="width:1px;height:222px; border-right:1px solid #eeeef0;"></div></label>				
-				</li>
-				<ul class="giftpadding" style="margin-top:-240px;margin-left:300px;">
-					{% if extend %}
+			<!--项目管理:关注项目-->
+						   <div id="gzxm" class="display">
+							   {% include 'focus.html' %}
+						   </div>
+			<!--项目管理:关注项目 end-->
+						</div>
+					</div>
+					<!--项目管理 end-->
+					<!--投资认证 个人信息-->
+					<div id="invest" class="display">
+						<div id="touzirenzheng">
+						<div id="lingtouren">
+							<ul class="tzrzMessage">
+								<li style="font-size:30px;position: relative;top: 35px;">
+									<label>投资认证</label>
+								</li>
+								<li style="font-size:24px;color:#4a3c70;margin-top:20px">
+									<label>请完善您的信息</label>
+								</li>
+								<li style="font-size:24px;margin-left:130px;color:#000">
+									<label>您是个人还是机构？</label>
+								</li>
+								<li style="margin-top:20px;">
+									<img id="person" src="/static/images/person.png" style="margin-left:100px" />
+									<img id="mperson" src="/static/images/mperson.png" style="margin-left:30px"/>
+								</li>
+								<li>
+									<ul id="authentication_type">
+										<li style="float:left;margin-left:70px;color:#e1604d" >
+										  <input id="gerens" checked="checked" type="radio" name="touzi" />我是个人
+										</li>
+										<li style="float:left;margin-left:60px;color:#e1604d" >
+										  <input id="jigous"  type="radio" name="touzi"/>我是机构
+										</li>
+									</ul>
+								</li>
+								<li style="clear:both"></li>
+								<table id="geren" style="display:block;">
+									<tr>
+										<td width="100">真实姓名:</td>
 
-					<li>
-						您的邀请码是:{{extend.extend_code}}
-						<label><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/register/?code={{extend.extend_code}}</textarea></label>
-					</li>
-					<li>
-						<input onclick="copyUrl()" type="button" style="background: url('/static/images/on-clickcopy.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
-					</li>
-					{% else %}
-					<li>
-						<input onclick="generate()" type="button"  value="获取推广邀请码 " />
-					</li>
-					{%  endif  %}
-				</ul>
-			</ul>
+										{% ifequal user.userinformation.authentication_class '1' %}
+										<td class="real_name"><input id="real_name" type="text" value="{{user.userinformation.realname}}"></td>
+
+										{% else %}
+										<td class="real_name"><input id="real_name" type="text"></td>
+										{% endifequal %}
+									</tr>
+									<tr>
+										<td>身份证号码:</td>
+										{% ifequal user.userinformation.authentication_class '1' %}
+										<td class="icard"><input id = "icard" type="text" value="{{user.userinformation.business_card}}"></td>
+										{% else %}
+										<td class="icard"><input id = "icard" type="text"></td>
+										{% endifequal %}
+									</tr>
+									<tr>
+										<td colspan="3">请上传身份证,帮助我们快速核实您的身份</td>
+									</tr>
+									  <tr style="height: 80px;" >
+										  <td>身份证:</td>
+											 <td class="upload_file">
+												<label>
+												  点击上传身份证扫描件或高清图片
+												  <input type="file" name="file_upload"  id="file_upload" />
+												</label>
+											 </td>
+										  <td id="upload_id_card">
+											  {% if user.userinformation.id_card  %}
+																<img src="{{ user.userinformation.id_card }}"/>
+											  {% endif %}
+										  </td></tr>
+									<tr>
+										<td class="refer-aggree" colspan="3">
+											<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
+										</td>
+									</tr>
+									<tr align="center">
+										<td colspan="3">
+											<input id="auth_submit" class="button_save" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;margin-left:-80px;cursor: pointer">
+										</td>
+									</tr>
+								</table>
+								<table id="jigou" style="display:none">
+									<tr>
+										<td>法人姓名:</td>
+										{% ifequal user.userinformation.authentication_class '2' %}
+										<td class="real_name"><input id ="real_name_p" type="text" value="{{user.userinformation.realname}}"></td>
+										{% else %}
+										<td class="real_name"><input id ="real_name_p" type="text"></td>
+										{% endifequal %}
+
+									</tr>
+									<tr>
+										<td>身份证号码:</td>
+										{% ifequal user.userinformation.authentication_class '2' %}
+										<td class="icard"><input id ="icard_p" type="text" value="{{user.userinformation.business_card}}"></td>
+										{% else %}
+										<td class="icard"><input id ="icard_p" type="text"></td>
+										{% endifequal %}
+									</tr>
+									<tr>
+										<td colspan="3">请上传相关证件,帮助我们快速核实您的身份</td>
+									</tr>
+									<tr style="height: 80px;">
+										<td>营业执照</td>
+										<td class="upload_file">
+											<label>
+												点击上传营业执照扫描件或高清图片
+												<input type="file" name=""  id="file_upload_business_license" />
+											</label>
+										</td>
+										<td id="upload_financial_assets">
+											{% if user.userinformation.financial_assets %}
+											<img src="{{ user.userinformation.financial_assets }}" />
+											{% endif %}
+										</td>
+									</tr>
+									<tr>
+										<td>组织机构代码</td>
+										<td class="upload_file">
+											<label>
+												点击上传组织机构代码证扫描件或高清图片
+												<input type="file" name=""  id="file_upload_organization_code" />
+											</label>
+										</td>
+										<td id="upload_fixed_assets">
+											{% if user.userinformation.fixed_assets %}
+											<img src="{{ user.userinformation.fixed_assets }}"/>
+											{% endif %}
+										</td>
+									</tr>
+									<tr>
+										<td>税务登记证</td>
+										<td class="upload_file">
+											<label>
+												点击上传税务登记证扫描或高清图片
+												<input type="file" name=""  id="file_upload_tax" />
+											</label>
+										</td>
+										<td id="upload_income_assets">
+											{% if user.userinformation.income_assets %}
+											<img src="{{ user.userinformation.income_assets }}"/>
+											{% endif %}
+										</td>
+									</tr>
+									<tr>
+										<td class="refer-aggree" colspan="3">
+											<label>提交则视为同意葡萄藤金服<a href="{% url 'guide' %}"><<服务条款>></a>和<a href="{% url 'guide' %}"><<风险提示>></a></label>
+										</td>
+									</tr>
+									<tr align="center">
+										<td colspan="3">
+											<input class="button_save" id="submit_p" type="button" value=" " style="background: url('/static/images/submitimg.png') no-repeat;border: 0 none;width:105px;height: 35px;cursor: pointer">
+										</td>
+									</tr>
+								</table>
+							</ul>
+
+					   </div>
+					</div>
+			  		<!--投资认证 个人信息 end-->
+					</div>
+					<!--投资认证 个人信息 end-->
+					<!--安全中心-->
+					<div id="selfcenter" class="display">
+						<div class="ProCenter1"  id="anquanzhongxin">
+							<div style="position: relative;top: 35px;">
+								<label style="font-size:30px;">安全中心</label>
+							</div>
+							<a style="margin-top:50px;float:left" data-dd="ghsj" href="javascript:void(0)"><label class="self-label">更换手机</label></a>
+							<div style="float:left; margin-top:40px; margin-left:5px;width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;"></div>
+							<a style="margin-top:50px; margin-left:20px;float:left" data-dd="xgmm" href="javascript:void(0)" id="change"><label class="self-label">修改密码</label></a>
+							<div style="clear:both"></div>
+							<div style="width:600px;height:1px; background-color:#D5D5D5;overflow:hidden;margin-top:10px; "></div>
+						</div>
+						<div class="prosonPage2">
+							<div id = "safe_center"></div>
+						</div>
+					</div>
+					<!---安全中心 end-->
+					<!--邀请好友-->
+					<div id="invitefriend" class="display">
+						<div class="ProCenter3">
+							<ul>
+								<li style="position: relative;top: 35px;">
+									<label style="font-size:30px;">邀请好友</label>
+								</li>
+								<li style="margin-top:55px;">
+									<!--<label><b>邀请有好礼</b></label>
+									<label>已邀请0个好友</label>
+									<label><div style="border-top:1px solid #eeeef0;width:100px;height:1px;margin-left:95px;"></div></label><br />-->
+									<label>扫描二维码或复制链接分享给好友注册,有意想不到的惊喜!</label>
+								</li>
+								<li style="margin-top:10px;" id="qrcodeTable">
+
+								</li>
+								<li style="margin-top:-240px;margin-left:280px;">
+									<label><div style="width:1px;height:222px; border-right:1px solid #eeeef0;"></div></label>
+								</li>
+								<ul class="giftpadding" style="margin-top:-240px;margin-left:300px;">
+									{% if extend %}
+
+									<li>
+										您的邀请码是:{{extend.extend_code}}
+										<label><textarea cols="40" rows="2" id="biao1">http://www.pttjf.com/register/?code={{extend.extend_code}}</textarea></label>
+									</li>
+									<li>
+										<input onclick="copyUrl()" type="button" style="background: url('/static/images/on-clickcopy.jpg') no-repeat;border: 0 none;width:105px;height: 35px;" value=" " />
+									</li>
+									{% else %}
+									<li>
+										<input onclick="generate()" type="button"  value="获取推广邀请码 " />
+									</li>
+									{%  endif  %}
+								</ul>
+							</ul>
+						</div>
+					</div>
+					<!--邀请好友 end-->
+					<!--消息通知-->
+					<div id="messageinfo" class="display">
+						<div style="position: relative;top: 35px;">
+							<label style="font-size:30px;">消息通知</label>
+						</div>
+						<div class="ProCenter2" id="xiaoxitongzhi">
+							<a data-aa="grxx" style="margin-top:30px;float:left" href="javascript:void(0)"><label
+									class="message-label">个人信息</label></a>
+							<div style="width:1px;height:30px;background-color:#D5D5D5;overflow:hidden;float:left;margin-top:16px;"></div>
+							<a data-aa="tz" style="margin-top:30px;float:left" href="javascript:void(0)"><label
+									class="message-label">通知</label></a>
+							<div style="width:740px;height:1px;background-color:#D5D5D5;overflow:hidden;float: left;margin-top: 10px;"></div>
+						</div>
+						<div class="prosonPage3">
+							<div id="grxx">
+								<div id="signal">
+									{% include 'signal.html' %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--消息通知 end-->
+				</div>
+			<!--用户内容 end-->
 		</div>
 	</div>
-<!--邀请好友 end-->
-
-</div>
-</div>
 </div>
  <script type="text/javascript">
 	 function copyUrl()
@@ -798,7 +779,7 @@ $(function(){
 			});
 	  })
   </script>
-<script>
+<script type="text/javascript">
     function deleteSignal(signalid){
 		$.post("{% url 'delete_signal' %}",
 		{id:signalid},
@@ -867,8 +848,7 @@ $(function() {
 
 });
 </script>
-
-<script>
+<script type="text/javascript">
 	jQuery('#qrcodeTable').qrcode({
 		render	: "canvas",
 		width   :  256,
@@ -876,14 +856,8 @@ $(function() {
 		text	: "http://www.pttjf.com/register/?code={{extend.extend_code}}"
 	});
 </script>
-
-
-
 <!--底部-->
 {% include "footer.html" %}
 </body>
-<style type="text/css">
-#alert {width: 500px;left: 40%;margin-left: -100px;text-align: center;top: 250px;background: #eee;position: fixed;z-index: 10000;}
-#mask {background: #000;opacity: 0;position: fixed;z-index: 9999;top: 0;left: 0;}
-</style>
+
 </html>
