@@ -126,6 +126,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'searcher/template'),
     os.path.join(BASE_DIR, 'template/top'),
     os.path.join(BASE_DIR, 'bbs/forum/templates/forum'),
+    '/usr/local/lib/python2.7/dist-packages/django_debug_toolbar-1.4-py2.7.egg/debug_toolbar/templates/',
 )
 
 MAX_UPLOAD_SIZE = "524288"
@@ -143,13 +144,11 @@ SERVER_EMAIL = EMAIL_HOST_USER
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 
-
 logging.basicConfig(level=logging.INFO,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
                 filename='/root/zc/ddbid.log',
                 filemode='w')
-
 
 
 
