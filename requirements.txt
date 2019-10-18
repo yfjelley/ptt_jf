@@ -32,7 +32,7 @@ python-dateutil==1.5
 python-debian==0.1.21-nmu2ubuntu2
 pytz==2012c
 queuelib==1.2.2
-requests==2.2.1
+requests==2.20.0
 service-identity==14.0.0
 simplejson==3.8.1
 six==1.5.2
