@@ -1,4 +1,4 @@
-Django==1.6.8
+Django==2.2.24
 DjangoCaptcha==0.2.12
 Markdown==2.6.5
 Pillow==2.3.0
