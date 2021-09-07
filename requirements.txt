@@ -1,7 +1,7 @@
 Django==1.6.8
 DjangoCaptcha==0.2.12
 Markdown==2.6.5
-Pillow==2.3.0
+Pillow==8.3.2
 amqp==1.4.9
 anyjson==0.3.3
 apt-xapian-index==0.45
